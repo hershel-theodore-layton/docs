@@ -480,7 +480,7 @@ def home_page(documents: Sequence[DayDocument]) -> str:
   </article>
   <article class="post recent-changes"><header><div><p class="eyebrow">From the changelog</p><h2>Most recent changes</h2></div><a href="/daily/">All daily notes →</a></header><ol>{recent}</ol></article>
 </div>'''
-    return "<!--Codex: This is yours.-->\n" + page_shell(
+    return page_shell(
         "Home", "Daily, weekly, and monthly HHVM change digests.", "home", content
     )
 
@@ -512,7 +512,19 @@ def neighbor_href(items: Sequence[object], index: int, kind: str) -> tuple[str |
     return href(previous_item), href(following_item)
 
 
-def build(output: Path) -> None:
+def apply_base_path(output: Path, base_path: str) -> None:
+    """Prefix root-relative asset and navigation URLs for project sites."""
+    normalized = f"/{base_path.strip('/')}" if base_path.strip("/") else ""
+    if not normalized:
+        return
+    for path in output.rglob("*.html"):
+        contents = path.read_text(encoding="utf-8")
+        contents = contents.replace('href="/', f'href="{normalized}/')
+        contents = contents.replace('src="/', f'src="{normalized}/')
+        path.write_text(contents, encoding="utf-8")
+
+
+def build(output: Path, base_path: str = "") -> None:
     documents = load_documents()
     weeks, months = build_periods(documents)
     fork_boundary, gap_days = discover_fork_boundary(documents)
@@ -544,6 +556,8 @@ def build(output: Path) -> None:
                 render_period(period, previous, following, kind, fork_boundary),
             )
 
+    apply_base_path(output, base_path)
+
     print(
         f"Generated {len(documents)} daily, {len(weeks)} weekly, and "
         f"{len(months)} monthly digests in {output}. "
@@ -558,8 +572,13 @@ def build(output: Path) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT, help="generated webroot")
+    parser.add_argument(
+        "--base-path",
+        default="",
+        help="URL path prefix for project sites, for example /docs",
+    )
     args = parser.parse_args()
-    build(args.output.resolve())
+    build(args.output.resolve(), args.base_path)
 
 
 if __name__ == "__main__":

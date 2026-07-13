@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="3 noteworthy changes recorded on this day.">
+  <title>Friday, May 23, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Friday, May 23, 2025</h1>
+  <p class="post-meta">3 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/05/23/" aria-current="page">Day</a><a href="/weekly/2025/W21/">Week</a><a href="/monthly/2025/05/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2025/05/22/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2025/05/26/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">Repo-authoritative builds can use repeatable <code>--static-pattern</code> glob options to include only selected files in <code>file.cache</code>; this mode cannot be combined with <code>--cdir</code> or <code>--cfile</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/51c53a7882311765c06f74f9da8a90fc152b45ff" target="_blank" rel="noopener noreferrer">51c53a7882</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/bd70a8f60ace32fc3eccafeac50fe72e4d13068a" target="_blank" rel="noopener noreferrer">bd70a8f60a</a></div></li><li class="change-entry"><div class="entry-copy">HSL adds <code>HH\Lib\Async\LowPri&lt;T&gt;</code> for starting non-critical async work at low priority and promoting it later. <code>run()</code> has callee requirements <code>[ctx $action, write_props]</code>, and <code>prioritize()</code> requires <code>[write_props]</code>, so their callers must provide at least those capabilities. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b90e9d07acd026be0aed76c1dea57fcc3159e011" target="_blank" rel="noopener noreferrer">b90e9d07ac</a></div></li><li class="change-entry"><div class="entry-copy">The HHI for <code>PriorityBridgeWaitHandle::prioritize()</code> now explicitly uses <code>[]</code> instead of omitted brackets. This weakens its callee requirement from implicit <code>[defaults]</code> to no capabilities and is therefore non-breaking for callers. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b90e9d07acd026be0aed76c1dea57fcc3159e011" target="_blank" rel="noopener noreferrer">b90e9d07ac</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

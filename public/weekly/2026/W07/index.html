@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="12 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 7: Feb 9–Feb 15, 2026 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 7: Feb 9–Feb 15, 2026</h1>
+  <p class="post-meta">12 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2026/02/09/">Day</a><a href="/weekly/2026/W07/" aria-current="page">Week</a><a href="/monthly/2026/02/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2026/W06/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2026/W08/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>7 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/02/09/">Mon, Feb 9</a></div>
+  <div class="entry-copy"><code>SQLite3</code>, <code>SQLite3Stmt</code>, and <code>SQLite3Result</code> now release native SQLite resources during request sweeping. File descriptors no longer leak when objects survive until request end without an explicit <code>SQLite3::close()</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/52ada4d82d8edc887244ab9f1cdbe6ff65c641b5" target="_blank" rel="noopener noreferrer">52ada4d82d</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/02/09/">Mon, Feb 9</a></div>
+  <div class="entry-copy"><code>openssl_x509_parse()</code> now frees the owned buffers returned by <code>X509_NAME_oneline()</code>, avoiding repeated native-memory growth while parsing certificates. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b1f4009ddb8f0d167f042c6d4f15aa8cc120526a" target="_blank" rel="noopener noreferrer">b1f4009ddb</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/02/12/">Thu, Feb 12</a></div>
+  <div class="entry-copy">Top-level statements now inherit the package selected by their file path instead of being typed with no package. This removes spurious package errors in Hack notebooks and other files whose statements are wrapped in a synthesized function. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/80ee10b3e1e32dba582282d52d32e8b8f0364fac" target="_blank" rel="noopener noreferrer">80ee10b3e1</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/02/12/">Thu, Feb 12</a></div>
+  <div class="entry-copy">HHBBC now detects cycles while speculating through successor blocks, preventing repo-authoritative compilation from hanging on control-flow loops that revisit the same block. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7029bde607ded75e3534e1ae4fbce8f3bb37d7fc" target="_blank" rel="noopener noreferrer">7029bde607</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/02/13/">Fri, Feb 13</a></div>
+  <div class="entry-copy">Concurrent parsing of <code>.hhvmconfig.hdf</code> wildcard entries no longer races on a shared name counter. Repository-specific maps such as <code>IndexedMethodAttributes</code> will no longer silently lose an entry when multiple files&#x27; options are loaded in parallel. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c0164403a5e9027d137a658b8f20d798f0aabda9" target="_blank" rel="noopener noreferrer">c0164403a5</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/02/14/">Sat, Feb 14</a></div>
+  <div class="entry-copy">Files matched by <code>package_exclude_patterns</code> are now also exempt from <code>__RequirePackage</code> and <code>__SoftRequirePackage</code> access errors, making those annotations consistent with ordinary package-boundary checks. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d615cebfcfcc4a99b8f8abe339a729c9b5ad67c6" target="_blank" rel="noopener noreferrer">d615cebfcf</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/02/15/">Sun, Feb 15</a></div>
+  <div class="entry-copy"><code>HH\package_exists()</code> and the package-definition introspection helpers are now explicitly pure (<code>[]</code>). This is a caller-requirement relaxation from omitted brackets, which mean <code>[defaults]</code>, so package checks can now be performed from a pure context without acquiring any capability. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/483c81b3c7498bbb34c7b2dfbdf114aa30d6b711" target="_blank" rel="noopener noreferrer">483c81b3c7</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>4 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/02/09/">Mon, Feb 9</a></div>
+  <div class="entry-copy">Package-boundary checks now apply to constructor references, including classes with consistent constructors. Constructing a class protected by <code>__RequirePackage</code> without loading the required package is now rejected like calling any other protected method. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5e5abce7a0c1a04d52feac26363a8036890646bb" target="_blank" rel="noopener noreferrer">5e5abce7a0</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/02/11/">Wed, Feb 11</a></div>
+  <div class="entry-copy">A transparent alias around an opaque newtype no longer exposes the opaque type&#x27;s constraint when Hack computes enforcement. Under implicit pessimisation this removes an unsound intersection with the hidden constraint, so code that previously relied on the leaked type can now fail typechecking. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c30d4835f8cc86ebd88555b391cbaf4473eea477" target="_blank" rel="noopener noreferrer">c30d4835f8</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/02/12/">Thu, Feb 12</a></div>
+  <div class="entry-copy">Shape-aware constraint refinement is now unconditional, and the <code>type_refinement_partition_shapes</code> configuration option has been removed. Projects that explicitly disabled the option can see more precise refinements and should delete the stale setting. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f1c42be7847347a6d02926b2888d75af89346685" target="_blank" rel="noopener noreferrer">f1c42be784</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/02/14/">Sat, Feb 14</a></div>
+  <div class="entry-copy"><code>HH\ImplicitContextBase::exists()</code> has been removed now that <code>get()</code> returns <code>null</code> when the context is absent. Subclasses should replace <code>parent::exists()</code> with <code>parent::get() is nonnull</code>, or directly use the nullable value. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/bbb221caf5f2ea4df74ae308af3f38a5791fb145" target="_blank" rel="noopener noreferrer">bbb221caf5</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/02/15/">Sun, Feb 15</a></div>
+  <div class="entry-copy"><code>ReflectionClass::getRequiredThisAsClass()[]: ?string</code> exposes the class named by a trait&#x27;s pre-stable <code>require this as</code> constraint, or <code>null</code> for other classishes and unconstrained traits. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ab878bf11c99dea0a5ec72cf5a5a4ae82eb62a99" target="_blank" rel="noopener noreferrer">ab878bf11c</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

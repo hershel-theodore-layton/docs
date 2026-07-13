@@ -1,0 +1,52 @@
+<!--Codex: This is yours.-->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Daily, weekly, and monthly HHVM change digests.">
+  <title>Home | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts home-content">
+  <article class="post intro-post">
+    <header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">HHVM Change Digest</p>
+  <h1 class="post-title">Follow what changed</h1>
+  <p class="post-meta">What new in HHVM</p>
+  <p class="post-submeta">Upgrade with confidence</p>
+  
+  
+</header>
+    <div class="post-content"><p>A browsable daily, weekly, and monthly digest of HHVM development.</p>
+    <p class="source-note">References the <a href="https://github.com/hershel-theodore-layton/hhvm" target="_blank" rel="noopener noreferrer">hershel-theodore-layton/hhvm</a> fork, changes not available in the Hershel docker images are not shown.</p>
+    <div class="hero-actions"><a class="button" href="/daily/2026/07/09/">Read the latest digest →</a><a class="button" href="/monthly/">Browse all</a></div>
+    </div>
+  </article>
+  <article class="post recent-changes"><header><div><p class="eyebrow">From the changelog</p><h2>Most recent changes</h2></div><a href="/daily/">All daily notes →</a></header><ol><li><a href="/daily/2026/07/09/">Jul 9</a><p>Build support has landed in Hershel&#x27;s HHVM for Ubuntu 26.04 Resolute. <code>./build.sh --ubuntu-26.04</code> selects it, with bundled PCRE and libdwarf compatibility work for the newer distribution; Ubuntu 24.04 remains the default. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0a1acba1cb9adf2489535d992f0584a62233ed64" target="_blank" rel="noopener noreferrer">0a1acba1cb</a></p></li><li><a href="/daily/2026/07/08/">Jul 8</a><p>Hershel&#x27;s HHVM now includes a Ubuntu 24.04 Noble build script. The repository now includes a clean-container build entry point and Debian metadata for regular, nightly, debug-symbol, and development packages; this package build identifies the runtime as HHVM 26.6.5. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e8b37975a048a47fec4de16482e01d2c573b4b6f" target="_blank" rel="noopener noreferrer">e8b37975a0</a></p></li><li><a href="/daily/2026/07/02/">Jul 2</a><p>Open-source HHVM no longer collects its low-level per-request JIT and interpreter timing measurements. On platforms where reading current-thread CPU time requires <code>clock_gettime()</code>, collecting these measurements consumed about 37% of CPU time during JIT warmup; removing them avoids that overhead. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e412a40b27f907f2d9c112fa3a2a2258a818ced1" target="_blank" rel="noopener noreferrer">e412a40b27</a></p></li><li><a href="/daily/2026/06/05/">Jun 5</a><p>A public HIP and Lean formalization now specify the proposed shape-polymorphism and shape-splat typing rules, including field requiredness, splat order, and inference bounds. This is a design artifact rather than a released language feature. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/263c872c37cca6b946c7180ff46ec3a674d751f7" target="_blank" rel="noopener noreferrer">263c872c37</a></p></li><li><a href="/daily/2026/06/05/">Jun 5</a><p>Refining a <code>dynamic</code> value with <code>is</code> or <code>as</code> against a fully enforceable type now drops the useless <code>dynamic</code> intersection and produces the enforced or <code>supportdyn</code> form. Operations after a successful check are therefore checked against the asserted type instead of silently routing through <code>dynamic</code>, which can reveal invalid calls or property accesses that previously passed. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/bee322014e544405eabf37d3a0076dc330465a4e" target="_blank" rel="noopener noreferrer">bee322014e</a></p></li></ol></article>
+</div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

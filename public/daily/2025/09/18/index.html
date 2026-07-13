@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="3 noteworthy changes recorded on this day.">
+  <title>Thursday, September 18, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Thursday, September 18, 2025</h1>
+  <p class="post-meta">3 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/09/18/" aria-current="page">Day</a><a href="/weekly/2025/W38/">Week</a><a href="/monthly/2025/09/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2025/09/17/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2025/09/22/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy"><code>PHP\pack()</code> and <code>PHP\unpack()</code> now support <code>g</code>/<code>G</code> for little-/big-endian floats and <code>e</code>/<code>E</code> for little-/big-endian doubles, matching the formats added in PHP 7.2. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f855f97526945a6550334e91ff9b5f0c03d9c83f" target="_blank" rel="noopener noreferrer">f855f97526</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">Under staged <code>poly_function_pointers</code>, a static method pointer no longer quantifies over an unused class-level generic, even when that generic is reified. For example, a static method that does not mention <code>Wibble&lt;reify T&gt;</code>&#x27;s <code>T</code> can produce an ordinary <code>HH\FunctionRef&lt;(readonly function(): TResult)&gt;</code>; its declared coeffect bracket is preserved. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/dd7e7c248034b160f66cf39e5ac447c723a314cc" target="_blank" rel="noopener noreferrer">dd7e7c2480</a></div></li><li class="change-entry"><div class="entry-copy">Experimental recursive case types now report Typing[4498] instead of the general cyclic-alias Typing[4014]. Update targeted suppressions or diagnostic tooling that distinguishes these errors by code. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/655c4925aa3ff5b80e52e52332dc041fb1395434" target="_blank" rel="noopener noreferrer">655c4925aa</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

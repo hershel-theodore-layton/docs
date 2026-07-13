@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="6 noteworthy changes recorded on this day.">
+  <title>Tuesday, August 1, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Tuesday, August 1, 2023</h1>
+  <p class="post-meta">6 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/08/01/" aria-current="page">Day</a><a href="/weekly/2023/W31/">Week</a><a href="/monthly/2023/08/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2023/07/31/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2023/08/02/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">Under Sound Dynamic, hovering a method call through a like-typed receiver now shows the method&#x27;s ordinary signature instead of rendering the whole callable as a like type. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/bdfd6dc2e9215e764f370d205bf560b2fbc7f206" target="_blank" rel="noopener noreferrer">bdfd6dc2e9</a></div></li><li class="change-entry"><div class="entry-copy">Exhaustivity checking now recognizes pessimised enum types of the form <code>bound &amp; ~E</code>, restoring missing non-exhaustive-switch diagnostics. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/21348ec5432bd0f2cbe38a38e66db53656cd15db" target="_blank" rel="noopener noreferrer">21348ec543</a></div></li><li class="change-entry"><div class="entry-copy">Refactoring code actions now honor the client&#x27;s snippet-edit capability. Clients without it receive ordinary placeholder names such as <code>method0</code>, rather than literal snippet syntax such as <code>${0:method0}</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0041ad042d33d8ab45dbe68280c6b163596ea00f" target="_blank" rel="noopener noreferrer">0041ad042d</a></div></li></ul></section><section class="daily-section"><h2>Security</h2><ul><li class="change-entry"><div class="entry-copy">Malformed Thrift payloads can no longer crash the decoder by declaring an excessive collection capacity; large collections are now reserved incrementally. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3deb3191e00bb6eca9525e35f6f7b9aaf262269b" target="_blank" rel="noopener noreferrer">3deb3191e0</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">Experimental typed-local enforcement now treats tuple indexing like shape indexing when checking assignments such as <code>$x[$i] = $value</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9fa6b85eeaf14f8b83cb2084b46dc14bf9e3beb0" target="_blank" rel="noopener noreferrer">9fa6b85eea</a></div></li><li class="change-entry"><div class="entry-copy">Parser lowering gained an AAST representation for the in-development <code>match</code> statement. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/97f0efe6e5c727e491a5ab7050436679849e2f10" target="_blank" rel="noopener noreferrer">97f0efe6e5</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

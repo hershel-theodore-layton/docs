@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="13 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 9: Feb 27–Mar 5, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 9: Feb 27–Mar 5, 2023</h1>
+  <p class="post-meta">13 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/02/27/">Day</a><a href="/weekly/2023/W09/" aria-current="page">Week</a><a href="/monthly/2023/02/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2023/W08/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2023/W10/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>11 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/02/27/">Mon, Feb 27</a></div>
+  <div class="entry-copy">Sound Dynamic subtype inference now applies the intersection-to-union heuristic when the union contains an optional type variable, improving refinements involving nullable like-types. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/389adc3c783c07d5c2cc5479f822fe0b06b0b8c8" target="_blank" rel="noopener noreferrer">389adc3c78</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/02/27/">Mon, Feb 27</a></div>
+  <div class="entry-copy">Hover and outline information now includes the <code>internal</code> modifier for methods. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/20464398b245136939df3267faedaa1e7961480b" target="_blank" rel="noopener noreferrer">20464398b2</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/02/28/">Tue, Feb 28</a></div>
+  <div class="entry-copy">Safe rename in Sound Dynamic projects no longer generates a deprecated compatibility stub for methods that cannot be called dynamically. Methods that do support dynamic retain the stub; behavior is unchanged when Sound Dynamic is disabled. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ae21dcb1bd51c38dcad0eff29b862d8fa36ff810" target="_blank" rel="noopener noreferrer">ae21dcb1bd</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/02/28/">Tue, Feb 28</a></div>
+  <div class="entry-copy"><code>hh_server</code> now restarts when <code>__PACKAGES__.php</code> changes, just as it does for <code>.hhconfig</code>, so package membership and include changes are not left stale. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a7e3c34ae97d9f0d3653b7a838190556cbe93cb0" target="_blank" rel="noopener noreferrer">a7e3c34ae9</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/03/01/">Wed, Mar 1</a></div>
+  <div class="entry-copy">JSON output from <code>--tast-holes-batch</code> now includes each hole&#x27;s filename, allowing callers to safely combine results from multiple input files. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/738e1b8a3d4061f0b62c4a02e4c7311cbbaa6e99" target="_blank" rel="noopener noreferrer">738e1b8a3d</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/03/02/">Thu, Mar 2</a></div>
+  <div class="entry-copy">Sound-dynamic inference can now solve variables with <code>supportdyn&lt;T&gt;</code> on both sides, push <code>supportdyn</code> through <code>Traversable</code> and <code>KeyedTraversable</code>, and use safe dynamic-aware variance when checking overrides. This accepts more valid SDT collection and override patterns without permitting unrelated like types to override one another. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ccbed68c5ccb54e2790a7a4cfd363be3860e46ba" target="_blank" rel="noopener noreferrer">ccbed68c5c</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/58073f25616e5823a1a70f58d57f3bf271ba7ae8" target="_blank" rel="noopener noreferrer">58073f2561</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7aec7bc986fae2a37ec87c1cf305fc6f352ccf29" target="_blank" rel="noopener noreferrer">7aec7bc986</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/03/02/">Thu, Mar 2</a></div>
+  <div class="entry-copy"><code>HH\ImplicitContext\get_state_unsafe()</code> can report whether the current implicit-context state is null, value, soft-set, inaccessible, or soft-inaccessible. Observing this state can undermine memoization guarantees, so the API is intended only for controlled migrations and diagnostics. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9b41b6f14c861f31acf484fc5232b46cb5327903" target="_blank" rel="noopener noreferrer">9b41b6f14c</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/03/02/">Thu, Mar 2</a></div>
+  <div class="entry-copy">A constructor declared <code>final</code> may no longer be overridden merely because its hierarchy uses <code>&lt;&lt;__ConsistentConstruct&gt;&gt;</code>; Hack now reports the override that HHVM would fatal on while loading the class. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7100e0a74ae72bc652ad8fa4f0382fe0200eb5a7" target="_blank" rel="noopener noreferrer">7100e0a74a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/03/03/">Fri, Mar 3</a></div>
+  <div class="entry-copy"><code>PACKAGES.toml</code> is now part of HHVM&#x27;s repository-options cache key. Changing package definitions invalidates the cached configuration so subsequent compilation or loading sees the new package map. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/90d3e33675e6a22c9898ca0437a7d26ea415c653" target="_blank" rel="noopener noreferrer">90d3e33675</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/03/03/">Fri, Mar 3</a></div>
+  <div class="entry-copy">Repeated use of function-coverage collection no longer risks a JIT crash after coverage state is cleared. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ced950aa4ec60bb4ba95ccc8105b5b90fc3096bb" target="_blank" rel="noopener noreferrer">ced950aa4e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/03/04/">Sat, Mar 4</a></div>
+  <div class="entry-copy">Errors are now sorted by their exact code before deduplication. <code>hh_server</code> and <code>hh_single_type_check</code> should therefore retain the same error when several diagnostics from one phase share a position. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d99aae2f701b8a52259ce259844fc00af224c4ae" target="_blank" rel="noopener noreferrer">d99aae2f70</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/02/27/">Mon, Feb 27</a></div>
+  <div class="entry-copy">Opt-in package-aware typechecking now rejects access to public symbols from an unrelated package, permits access through declared package <code>includes</code>, and points cross-package diagnostics back to the relevant package declaration. <code>hh_single_type_check</code> can accept a package configuration for the same checks. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/df90eb181bba9478150168cebc9e078b5c7d3ecb" target="_blank" rel="noopener noreferrer">df90eb181b</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/bb4687403dc0d09eeadb05b40c166f2354386e51" target="_blank" rel="noopener noreferrer">bb4687403d</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ec97055caf4e6eb9f636a2c8aa223f0cf0a6368b" target="_blank" rel="noopener noreferrer">ec97055caf</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/03/01/">Wed, Mar 1</a></div>
+  <div class="entry-copy">Pre-stable class refinements now allow multiple upper or lower bounds without requiring each later bound to be a subtype of the earlier one. The typechecker still verifies that the refined constant exists and has the correct type-or-context kind, validates every hint inside the refinement, and rejects recursive refinement types. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/fe168082b41ed8d538131d6e6b10601575d602b0" target="_blank" rel="noopener noreferrer">fe168082b4</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/835e676741aff0596a12e10cf5685e6b22c6928b" target="_blank" rel="noopener noreferrer">835e676741</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/68c52d212bfb4c98b79e723553c4b3dcdeb81b54" target="_blank" rel="noopener noreferrer">68c52d212b</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

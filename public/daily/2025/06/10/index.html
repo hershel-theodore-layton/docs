@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="6 noteworthy changes recorded on this day.">
+  <title>Tuesday, June 10, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Tuesday, June 10, 2025</h1>
+  <p class="post-meta">6 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/06/10/" aria-current="page">Day</a><a href="/weekly/2025/W24/">Week</a><a href="/monthly/2025/06/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2025/06/07/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2025/06/11/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">Distributed <code>hh</code> checks avoid repeatedly merging large streamed error sets and instead filter the final result. This substantially reduces completion time on warning-heavy repositories. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/708f72be896848c1c91e1bdd2762bd18afa759e0" target="_blank" rel="noopener noreferrer">708f72be89</a></div></li><li class="change-entry"><div class="entry-copy">Legacy non-Hack notebook cells no longer lose their first character during conversion back from Hack. Wrapper removal now recognizes the complete comment form rather than blindly trimming the cell. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/be786e4c21ed751bd6dc3998707ac34974403b39" target="_blank" rel="noopener noreferrer">be786e4c21</a></div></li><li class="change-entry"><div class="entry-copy">A new <code>print_debug_display(mixed $value, bool $ret = false): mixed</code> built-in formats values with the debugger serializer and honors objects&#x27; <code>__toDebugDisplay()</code> methods. It has no explicit capability list and therefore uses the default capability set. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3ff25b1dfcef854c7455374140b7ebe60221d933" target="_blank" rel="noopener noreferrer">3ff25b1dfc</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy">The JSON-valued <code>.hhconfig</code> setting <code>class_pointer_levels</code> has been replaced by six default-false booleans: <code>class_pointer_ban_classname_new</code>, <code>class_pointer_ban_classname_type_structure</code>, <code>class_pointer_ban_classname_static_prop</code>, <code>class_pointer_ban_classname_static_meth</code>, <code>class_pointer_ban_classname_class_const</code>, and <code>class_pointer_ban_class_array_key</code>. Literal <code>C::class</code> values in string or array-key positions are now errors rather than configurable warnings; use <code>nameof C</code> or <code>HH\class_to_classname()</code> when a name is intended. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/af60977aab1b0069ffc67f424146d78c9f0d80f7" target="_blank" rel="noopener noreferrer">af60977aab</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">Expression-tree operation typing now passes the left or unary operand through <code>Dsl::operationType()</code> before dispatching operator and implicit-boolean methods. This lets a DSL map virtual values such as <code>null</code> onto an object that defines the operation. DSLs using the unstable feature must add the static method; a pure identity implementation should declare <code>[]</code> so it does not add a caller capability requirement. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/77f1b1105e08b135a1664be6130124928559ae7d" target="_blank" rel="noopener noreferrer">77f1b1105e</a></div></li><li class="change-entry"><div class="entry-copy">With unstable case-type where clauses, a direct or indirect reference from a case type&#x27;s own where clause is now rejected with Typing[4485]. The invalid clause is excluded from checking to prevent infinite recursion in constraint solving and subtyping. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f696b2fb3070a0c992c5618974416ae83d71c3f2" target="_blank" rel="noopener noreferrer">f696b2fb30</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

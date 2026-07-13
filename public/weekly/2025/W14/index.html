@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="11 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 14: Mar 31–Apr 6, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 14: Mar 31–Apr 6, 2025</h1>
+  <p class="post-meta">11 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/03/31/">Day</a><a href="/weekly/2025/W14/" aria-current="page">Week</a><a href="/monthly/2025/03/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2025/W13/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2025/W15/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>5 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/03/31/">Mon, Mar 31</a></div>
+  <div class="entry-copy">A missing or unreadable <code>PACKAGES.toml</code>, including exceptions raised while opening it, now logs a warning and falls back to an empty package specification instead of terminating ungracefully. Parse errors in a file that was successfully opened remain fatal configuration errors. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/01d32e26ad08265f4d918e435301fedde3890edc" target="_blank" rel="noopener noreferrer">01d32e26ad</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/04/01/">Tue, Apr 1</a></div>
+  <div class="entry-copy">Redundant or impossible <code>is</code> and <code>as</code> checks are now detected after stripping the <code>dynamic</code> part of most like types, revealing more always-true and always-false checks without producing false positives for <code>~null</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/cb98bf2069d5b0cacad67aeb0efbefbc04bd429e" target="_blank" rel="noopener noreferrer">cb98bf2069</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/04/02/">Wed, Apr 2</a></div>
+  <div class="entry-copy">Constructor arguments are typechecked even when resolving the constructed class yields only <code>dynamic</code>, so errors inside those arguments are no longer missed. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b650999cb76758366b9f71ac6f7da6c6af56e1c1" target="_blank" rel="noopener noreferrer">b650999cb7</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/04/02/">Wed, Apr 2</a></div>
+  <div class="entry-copy">Changes to enum members now correctly fan out to files whose <code>switch</code> exhaustivity depends on that enum. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4a25a14787a48814e2a7a5633af92558defecf00" target="_blank" rel="noopener noreferrer">4a25a14787</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/04/04/">Fri, Apr 4</a></div>
+  <div class="entry-copy">Plain <code>&lt;&lt;__Memoize&gt;&gt;</code> functions with contexts such as <code>[leak_safe]</code> are no longer rejected merely because memoize-policy configuration is enabled. The parser now applies or requires <code>#KeyedByIC</code> only when the function&#x27;s context can actually access implicit context. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a278d85633f2b36bef3a35ea1b3f76f3857c5356" target="_blank" rel="noopener noreferrer">a278d85633</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6d7717e2e1c70bbde544d42c4a41a80fd50aaf8c" target="_blank" rel="noopener noreferrer">6d7717e2e1</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/03/31/">Mon, Mar 31</a></div>
+  <div class="entry-copy">The HHVM repository compiler has removed <code>--repo-options-dir</code>. It now reads <code>.hhvmconfig.hdf</code> and <code>PACKAGES.toml</code> relative to <code>--input-dir</code>, so build scripts that kept source input and repository options in different roots must align or stage those files first. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/cbff84ff23bbbadc2dc48a9d7c8d9f6c998d7a35" target="_blank" rel="noopener noreferrer">cbff84ff23</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>5 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/04/01/">Tue, Apr 1</a></div>
+  <div class="entry-copy">Packages v2 <code>include_paths</code> entries in <code>PACKAGES.toml</code> must now end in <code>/</code>. This prevents a path such as <code>flib/intern</code> from also matching <code>flib/internal_prod</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5f584f16cbbeeac75d44a58d384dbdc54460a0dc" target="_blank" rel="noopener noreferrer">5f584f16cb</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/04/02/">Wed, Apr 2</a></div>
+  <div class="entry-copy">Packages v2 repo builds can now select files from an active deployment, symbol references, or both. <code>--exclude-file</code> and <code>--exclude-pattern</code> remain absolute exclusions, while package rules or symbol references may pull files back from <code>--exclude-dir</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5bd4e8173b8aeff0c0966dd83c83fa3568a46bbf" target="_blank" rel="noopener noreferrer">5bd4e8173b</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/04/03/">Thu, Apr 3</a></div>
+  <div class="entry-copy">Packages v2 repo builds accept <code>--report-files-in-build=&lt;file&gt;</code> to write an exhaustive list of included source files, including files selected without a symbol-reference edge. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e23a4e9c4c1ba3b3f82a8c61618e99c717713331" target="_blank" rel="noopener noreferrer">e23a4e9c4c</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/04/04/">Fri, Apr 4</a></div>
+  <div class="entry-copy">The staged <code>__NeedsConcrete</code> checker now enforces that calls to marked methods have a concrete late-static receiver, while permitting abstract-member access through <code>static</code> inside a <code>__NeedsConcrete</code> method. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8230cf15b4a951a3fab1213003a91fa6b1d9f272" target="_blank" rel="noopener noreferrer">8230cf15b4</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/04/04/">Fri, Apr 4</a></div>
+  <div class="entry-copy">Reflection type-structure kinds now include <code>OF_UNION</code> and <code>OF_RECURSIVE_UNION</code> for case types. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0ab406eaf4dfc4c95a02a3c53129532570b7797e" target="_blank" rel="noopener noreferrer">0ab406eaf4</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

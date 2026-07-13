@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="4 noteworthy changes recorded on this day.">
+  <title>Tuesday, August 20, 2024 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Tuesday, August 20, 2024</h1>
+  <p class="post-meta">4 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/08/20/" aria-current="page">Day</a><a href="/weekly/2024/W34/">Week</a><a href="/monthly/2024/08/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2024/08/19/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2024/08/21/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">Nested debugger expression evaluation now preserves the outer evaluation&#x27;s stdout hook, so output produced after an inner breakpoint evaluation still reaches the debugger. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/62e800fae9048532c11c25d932b1da18faea78cf" target="_blank" rel="noopener noreferrer">62e800fae9</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">When <code>.hhconfig</code> provides an <code>experimental_features</code> list, a file-level <code>__EnableUnstableFeatures</code> attribute can now enable only features named in that list; omitted features are rejected. Projects without the list continue to treat all known experimental features as OngoingRelease. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/35add40d1cf399f48d7e4dde0e9573fb3a89d849" target="_blank" rel="noopener noreferrer">35add40d1c</a></div></li><li class="change-entry"><div class="entry-copy"><code>await_in_splice</code> is now OngoingRelease in HHVM and no longer requires a runtime file-level opt-in. The typechecker continues to use the status configured in <code>.hhconfig</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/84f088b7a994399b36a1e96cfa2a943ef9ff1503" target="_blank" rel="noopener noreferrer">84f088b7a9</a></div></li><li class="change-entry"><div class="entry-copy">Expression-tree lambdas can now declare <code>optional</code> parameters; DSL visitors receive their names and default expressions through <code>visitOptionalParameter()</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/56f84a9ef87cd51b04cd7516bd9b85e15baf4fae" target="_blank" rel="noopener noreferrer">56f84a9ef8</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

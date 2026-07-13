@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="9 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 5: Jan 30–Feb 5, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 5: Jan 30–Feb 5, 2023</h1>
+  <p class="post-meta">9 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/01/30/">Day</a><a href="/weekly/2023/W05/" aria-current="page">Week</a><a href="/monthly/2023/01/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2023/W04/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2023/W06/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>8 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/01/30/">Mon, Jan 30</a></div>
+  <div class="entry-copy">The bundled implicit-context HHI now exposes <code>HH\MemoizeOption#Uncategorized</code>, completing typechecker support for the memoization category added earlier in the month. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6593d8379b6f0a1cb01439affd5f416a729bb133" target="_blank" rel="noopener noreferrer">6593d8379b</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/01/31/">Tue, Jan 31</a></div>
+  <div class="entry-copy">Sound-dynamic hierarchy checks now consider all ancestors, including interfaces inherited through used traits. A class that transitively acquires an SDT interface requirement must itself support dynamic. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/810c57c82f798217aea22bbdf5b37448d953ec0c" target="_blank" rel="noopener noreferrer">810c57c82f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/01/31/">Tue, Jan 31</a></div>
+  <div class="entry-copy">A trait is now considered to support dynamic only when it is marked <code>&lt;&lt;__SupportDynamicType&gt;&gt;</code> and one of its requirements restricts it to SDT classes. This fixes both false acceptance and false rejection around SDT traits and their consumers. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c07151edf950fb717e6d4c25984355065d30af0a" target="_blank" rel="noopener noreferrer">c07151edf9</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/02/01/">Wed, Feb 1</a></div>
+  <div class="entry-copy">Several APC declarations now have narrower capability requirements than their former implicit <code>[defaults]</code>: read operations such as <code>apc_exists()</code> require <code>[read_globals]</code>, mutations require <code>[globals]</code>, and <code>apc_sma_info()</code> is pure. This allows callers with correspondingly restricted contexts to use these APIs. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2aaa02ccf62311fbf72075da60b582c95d59f7a2" target="_blank" rel="noopener noreferrer">2aaa02ccf6</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/02/01/">Wed, Feb 1</a></div>
+  <div class="entry-copy">The Rust <code>.hhconfig</code> reader now recognizes <code>union_intersection_type_hints</code>, so projects using that parser can enable union and intersection type-hint syntax consistently. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/229121c5577cbeb25d1532c0972bc509e8cac04c" target="_blank" rel="noopener noreferrer">229121c557</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/02/03/">Fri, Feb 3</a></div>
+  <div class="entry-copy">Sound Dynamic pessimisation now honors <code>&lt;&lt;__NoAutoDynamic&gt;&gt;</code> on top-level functions and no longer adds inappropriate dynamic bounds to <code>classname&lt;T&gt;</code>, <code>typename&lt;T&gt;</code>, or common generic container declarations. Types such as <code>Vector&lt;string&gt;</code> can therefore support dynamic without requiring their type argument to be exactly <code>dynamic</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a51c28563570fb33072bbae4dbb5aa0160079f28" target="_blank" rel="noopener noreferrer">a51c285635</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/936f37edee1bed88c4680751505b6d29067d11f9" target="_blank" rel="noopener noreferrer">936f37edee</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0ceb0b7ce43330cd9dbbe4d87565f3784c7c1c0c" target="_blank" rel="noopener noreferrer">0ceb0b7ce4</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/02/03/">Fri, Feb 3</a></div>
+  <div class="entry-copy"><code>cpu_get_count()</code> and <code>cpu_get_model()</code> now require only <code>[read_globals]</code> rather than implicit <code>[defaults]</code>, making them callable from functions with a narrower capability set. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/26cae7148066abacf09e962a206fd0e97ed65683" target="_blank" rel="noopener noreferrer">26cae71480</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/02/05/">Sun, Feb 5</a></div>
+  <div class="entry-copy">The Rust <code>.hhconfig</code> reader now warns about unrecognized options instead of silently ignoring them. This should expose misspellings and configuration options that are unavailable in the selected typechecker implementation. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a19a617ce9bb24299c03f0dde36f0609ecb66a07" target="_blank" rel="noopener noreferrer">a19a617ce9</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/02/02/">Thu, Feb 2</a></div>
+  <div class="entry-copy">The experimental BigCode autocomplete path and the corresponding <code>hh_client --bigcode</code> option have been removed. Tooling that still passes the option should stop doing so and use the standard autocomplete service. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/af637e05a1e1a8572881a352dfe253e9fdb17878" target="_blank" rel="noopener noreferrer">af637e05a1</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/cdabde25c117bfb24bd5c4e005d57018d0a12a2a" target="_blank" rel="noopener noreferrer">cdabde25c1</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

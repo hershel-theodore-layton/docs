@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="15 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 38: Sep 16–Sep 22, 2024 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 38: Sep 16–Sep 22, 2024</h1>
+  <p class="post-meta">15 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/09/16/">Day</a><a href="/weekly/2024/W38/" aria-current="page">Week</a><a href="/monthly/2024/09/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2024/W37/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2024/W39/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>7 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/09/16/">Mon, Sep 16</a></div>
+  <div class="entry-copy">Lambdas may reuse the discard parameter name with different annotations, as in <code>(int $_, string $_) ==&gt; {}</code>; Hack no longer compares the discarded parameters with one another and reports a spurious coercion error. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0b59874dd47567e4f27adc18639969ff763ffc92" target="_blank" rel="noopener noreferrer">0b59874dd4</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/09/16/">Mon, Sep 16</a></div>
+  <div class="entry-copy">Direct references to constants and type constants declared by a trait now initialize against the trait&#x27;s own class object, fixing failures for expressions such as <code>TMyTrait::MY_CONSTANT</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4752658e59bebe1f67f2e11d6c6a4ba901d9bd96" target="_blank" rel="noopener noreferrer">4752658e59</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/09/16/">Mon, Sep 16</a></div>
+  <div class="entry-copy">Method hovers selected through an enum-class label now show the label&#x27;s singleton type. Dead-suppression cleanup also removes unused <code>HH_IGNORE</code> comments alongside unused <code>HH_FIXME</code> comments. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9fc76eee7175572cbd969189b3d739b541c19909" target="_blank" rel="noopener noreferrer">9fc76eee71</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9ba137b426f0a28e76d0797fdc4cd126b32a2d25" target="_blank" rel="noopener noreferrer">9ba137b426</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/09/17/">Tue, Sep 17</a></div>
+  <div class="entry-copy"><code>hh_single_type_check --config hack_warnings=false</code> can now disable warnings for one-off checks; <code>true</code> enables the full warning set. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d7fb8b6b4c05bf180a83da1d6f9dbab901ff9833" target="_blank" rel="noopener noreferrer">d7fb8b6b4c</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/09/18/">Wed, Sep 18</a></div>
+  <div class="entry-copy">Hack LSP accepts <code>--disable-format-on-save</code>, which stops advertising <code>textDocument/willSaveWaitUntil</code> while leaving explicit document and range formatting available. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/77c22fb8c64f1bd04c4e5351b07ca57c46717f49" target="_blank" rel="noopener noreferrer">77c22fb8c6</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/09/18/">Wed, Sep 18</a></div>
+  <div class="entry-copy">The <code>HH\lmdb</code> API now exposes typed enums for LMDB environment, database, put, copy, and cursor-operation flags. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/73bc12842a3359619567273c22b4966a62c4c9b9" target="_blank" rel="noopener noreferrer">73bc12842a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/09/20/">Fri, Sep 20</a></div>
+  <div class="entry-copy">A literal <code>nameof C</code> used as an array key is now folded directly into the member key, matching literal-string access and avoiding the generic expression path. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b6fc70430d6ee43216ffed426c1c2a3c5e99dd12" target="_blank" rel="noopener noreferrer">b6fc70430d</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>6 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/09/16/">Mon, Sep 16</a></div>
+  <div class="entry-copy">Staged package-v2 checking now permits a function pointer to a static method in another package, matching the symbol-reference traversal used for deployment boundaries. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/38d78565b8a1cea605ebe826e34629044f007671" target="_blank" rel="noopener noreferrer">38d78565b8</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/09/16/">Mon, Sep 16</a></div>
+  <div class="entry-copy">Work on <code>recursive_case_types</code> now models newtype bounds, enum bounds, and function-type variants when checking recursive case definitions. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/99e7aa82298132f98cf84c45aef7cbf256c88ada" target="_blank" rel="noopener noreferrer">99e7aa8229</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c8b31f79f2bb7ed3cd5881bf86c26cb871c4f762" target="_blank" rel="noopener noreferrer">c8b31f79f2</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d34c456b075504d118d8386f2811d57848055786" target="_blank" rel="noopener noreferrer">d34c456b07</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/09/18/">Wed, Sep 18</a></div>
+  <div class="entry-copy">The configurable class-pointer migration check now covers <code>C::class</code> values used as enum members through the <code>enum</code> key in <code>class_pointer_levels</code>, recommending <code>nameof C</code> before implicit class-to-string conversion is removed. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/dc08ae9cb2b8e3b67e974dd6bf41c65e90d1660f" target="_blank" rel="noopener noreferrer">dc08ae9cb2</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/09/19/">Thu, Sep 19</a></div>
+  <div class="entry-copy">The unstable <code>open_tuples</code> feature now parses, represents, and subtype-checks tuples with optional elements and variadic tails, such as <code>(int, optional string, arraykey...)</code>. Null-coalescing access also understands optional and variadic positions. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/084c06ee9f6bbe0b30145ca1b47cee074647996c" target="_blank" rel="noopener noreferrer">084c06ee9f</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4cf74b6739c027a0871a2039d918b6975dd72316" target="_blank" rel="noopener noreferrer">4cf74b6739</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f67f3046ad9b72d089b6a4a87b90025eaaa0f4d9" target="_blank" rel="noopener noreferrer">f67f3046ad</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7d7f1af223cc2d1675956a4009a030d6a197f8e1" target="_blank" rel="noopener noreferrer">7d7f1af223</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/812d981b8169c056831e1d13c1b487f1b0e40bd6" target="_blank" rel="noopener noreferrer">812d981b81</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/09/19/">Thu, Sep 19</a></div>
+  <div class="entry-copy">The class-pointer migration check&#x27;s <code>arraykey</code> level now diagnoses <code>C::class</code> when used as a <code>dict</code>, <code>keyset</code>, or collection key, or in indexed access, and recommends <code>nameof C</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f34b115e5c0ce109e5077046aa1dcd44fc4c26a8" target="_blank" rel="noopener noreferrer">f34b115e5c</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/09/20/">Fri, Sep 20</a></div>
+  <div class="entry-copy">Recursive case-type checking no longer loops while intersecting recursive variants. With <code>recursive_case_types</code> enabled, case definitions are also exempt from the legacy blanket cyclic-type-alias rejection so valid recursive lists and trees can be checked structurally. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6228f4218f2ef5260ae79385cc5363ccd319356a" target="_blank" rel="noopener noreferrer">6228f4218f</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/781cdb1af583d58780407b888330da1d3a80321d" target="_blank" rel="noopener noreferrer">781cdb1af5</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/09/17/">Tue, Sep 17</a></div>
+  <div class="entry-copy"><code>HH\ImplicitContext\is_inaccessible()[zoned]</code> has been removed. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d87f330ce2766640272fd26402c4cc6125b2a3c9" target="_blank" rel="noopener noreferrer">d87f330ce2</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/09/22/">Sun, Sep 22</a></div>
+  <div class="entry-copy">Deprecated implicit-context states and memoization options have been removed. The <code>NULL</code>, <code>SOFT_SET</code>, and <code>SOFT_INACCESSIBLE</code> state members and the <code>SoftMakeICInaccessible</code> and <code>Uncategorized</code> memoization options are no longer available; use the remaining <code>VALUE</code> / <code>INACCESSIBLE</code> states and <code>KeyedByIC</code> / <code>MakeICInaccessible</code> options. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/23faf7f107b83abddf354ba5423b4f0617fe5a84" target="_blank" rel="noopener noreferrer">23faf7f107</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/efdf82e1d306388931a814bc35c25e065bb8010d" target="_blank" rel="noopener noreferrer">efdf82e1d3</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

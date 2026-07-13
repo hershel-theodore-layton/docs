@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="14 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 3: Jan 12–Jan 18, 2026 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 3: Jan 12–Jan 18, 2026</h1>
+  <p class="post-meta">14 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2026/01/12/">Day</a><a href="/weekly/2026/W03/" aria-current="page">Week</a><a href="/monthly/2026/01/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2026/W02/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2026/W04/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Breaking Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/12/">Mon, Jan 12</a></div>
+  <div class="entry-copy">Package-boundary checking now rejects <code>enum C { use D; }</code> when <code>D</code> belongs to a package that the current package does not include. This applies to both package configuration versions. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/37ec673d6915408c83f744f3ccf24bb54c87ea2c" target="_blank" rel="noopener noreferrer">37ec673d69</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/12/">Mon, Jan 12</a></div>
+  <div class="entry-copy">Direct access to a class constant in an unrelated package is now an error. Use an allowed package relationship or establish the package through the supported package-checking APIs; dynamic class references and <code>type_structure()</code> retain their distinct handling. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e8b8fa9c1652b948b020d1a471e94551c72c603f" target="_blank" rel="noopener noreferrer">e8b8fa9c16</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/13/">Tue, Jan 13</a></div>
+  <div class="entry-copy"><code>HH\watcher_query()</code> now returns <code>Awaitable&lt;string&gt;</code> containing JSON instead of <code>Awaitable&lt;WatcherResult&gt;</code>. Decode the returned string before reading result fields; the content-hash key is now <code>content.sha1hex</code>, not <code>sha1hex</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3161ba224a4dccb7fdfde6c7b5d3d82b34f3599e" target="_blank" rel="noopener noreferrer">3161ba224a</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Highlights</h2><span>5 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/13/">Tue, Jan 13</a></div>
+  <div class="entry-copy">Watcher options now honor an explicitly supplied <code>repo_root</code>, and watcher file metadata covers Watchman&#x27;s clocks, timestamps, ownership, inode, type, symlink, and content-hash fields. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f890ffef5abdee904300461fbbcab507b364558b" target="_blank" rel="noopener noreferrer">f890ffef5a</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3161ba224a4dccb7fdfde6c7b5d3d82b34f3599e" target="_blank" rel="noopener noreferrer">3161ba224a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/14/">Wed, Jan 14</a></div>
+  <div class="entry-copy"><code>AsyncMysqlConnectionOptions</code> now has getters for connection and TCP timeouts, retry count, total and query timeouts, and connection attributes. The async MySQL extension version was raised to 8.1 for feature guards. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d1e418ade67aff0809e2122fcd3cca0ae4567efd" target="_blank" rel="noopener noreferrer">d1e418ade6</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/15/">Thu, Jan 15</a></div>
+  <div class="entry-copy">Async return-type enforcement is preserved when the tail-await optimization removes the normal return bytecode, preventing dynamically introduced bad return values from escaping the check and crashing later. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5e6edbd4350b5231816b35bcaaacade17259889b" target="_blank" rel="noopener noreferrer">5e6edbd435</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/16/">Fri, Jan 16</a></div>
+  <div class="entry-copy">Package-presence expressions are now accepted in <code>invariant()</code> conditions, preparing <code>invariant(package foo, ...)</code> to establish access to <code>foo</code> after the assertion succeeds. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5bd8bcd7238c0c416ad7aa8d6d5cd99d7982e6bf" target="_blank" rel="noopener noreferrer">5bd8bcd723</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/18/">Sun, Jan 18</a></div>
+  <div class="entry-copy">Package-presence checks are now flow-sensitive across continuations. Hack carries successful and failed <code>package foo</code> facts through branches, early exits, loops, included-package relationships, and <code>invariant(package foo, ...)</code>, allowing cross-package calls precisely where runtime control flow proves the package is present. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b1ed57a14a81d4cc67eb11c212c8ee49f3f29207" target="_blank" rel="noopener noreferrer">b1ed57a14a</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>6 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/13/">Tue, Jan 13</a></div>
+  <div class="entry-copy">Files can opt into recursive case-type definitions with <code>__EnableUnstableFeatures(&#x27;recursive_case_types&#x27;)</code>. The feature remains in preview and is separate from the now-releasing base case-type syntax. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3afc799b42871a3f151676d3f9c7da3664504d4f" target="_blank" rel="noopener noreferrer">3afc799b42</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/14/">Wed, Jan 14</a></div>
+  <div class="entry-copy">The unstable extended-await implementation now schedules independent nested awaits concurrently while preserving expression dependencies. It also lays groundwork for awaits in loop conditions and updates. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3b286bd81824569715ada11443b914e3da77f062" target="_blank" rel="noopener noreferrer">3b286bd818</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8b884ff428e3530b00119c5df9c18b8bc7593b2f" target="_blank" rel="noopener noreferrer">8b884ff428</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/14/">Wed, Jan 14</a></div>
+  <div class="entry-copy">With the <code>capture_pipe_variables</code> feature enabled, a lambda declared on the right side of <code>|&gt;</code> or <code>|?&gt;</code> may capture that pipe expression&#x27;s <code>$$</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d54988fbe4f44f95397e86367c88f2418bb99b02" target="_blank" rel="noopener noreferrer">d54988fbe4</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/15/">Thu, Jan 15</a></div>
+  <div class="entry-copy">Open tuple syntax and type splats have entered an ungated rollout and no longer require <code>__EnableUnstableFeatures(&#x27;open_tuples&#x27;)</code> or <code>__EnableUnstableFeatures(&#x27;type_splat&#x27;)</code>. This includes optional/open tuple elements, splats in tuple and callable types, and type-splat function parameters; both features remain pre-stable. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/dc93244172fdd9714502bb68fb11b5ee94b54a9c" target="_blank" rel="noopener noreferrer">dc93244172</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/15/">Thu, Jan 15</a></div>
+  <div class="entry-copy">Unstable extended-await syntax now handles conditionally executed awaits in short-circuit operators, ternaries, null coalescing, assignments, loops, and nullsafe calls while preserving their execution conditions. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ec6d2a9b45dd87eeded49563b0ac5e0795cea257" target="_blank" rel="noopener noreferrer">ec6d2a9b45</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/18/">Sun, Jan 18</a></div>
+  <div class="entry-copy">The upcoming <code>__NeedsConcrete</code> warnings are suppressed in paths configured by <code>warnings_generated_files</code>, avoiding unactionable Safe Abstract warnings in generated code when the feature is enabled. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/68a692a050a8171135fe7e54d779c50fc0a2e198" target="_blank" rel="noopener noreferrer">68a692a050</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

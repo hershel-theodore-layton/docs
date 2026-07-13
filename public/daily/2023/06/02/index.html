@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="3 noteworthy changes recorded on this day.">
+  <title>Friday, June 2, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Friday, June 2, 2023</h1>
+  <p class="post-meta">3 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/06/02/" aria-current="page">Day</a><a href="/weekly/2023/W22/">Week</a><a href="/monthly/2023/06/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2023/06/01/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2023/06/03/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">Nullable member-access errors now offer an “add null-safe get” action that changes same-line <code>$value-&gt;member</code> access to <code>$value?-&gt;member</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9a7621ecd215b62f694a428e938e8400e497bb2d" target="_blank" rel="noopener noreferrer">9a7621ecd2</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy">Runtime type tests such as <code>$value is dynamic</code> are now rejected. HHVM cannot test whether an arbitrary value supports dynamic, so using the result to refine <code>$value</code> to <code>dynamic</code> created a type hole. Test for a concrete runtime type instead. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/89bedcf12d1be47f6a2f6ed69fde67e2cdbc700c" target="_blank" rel="noopener noreferrer">89bedcf12d</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">The nested-<code>Awaitable</code> lint again recognizes <code>Awaitable&lt;~Awaitable&lt;T&gt;&gt;</code> under implicit pessimisation, so accidental double-awaitable returns are not hidden by the like-type wrapper. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/979f436be9a894280623b2c14f8324c9f1b02bf1" target="_blank" rel="noopener noreferrer">979f436be9</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

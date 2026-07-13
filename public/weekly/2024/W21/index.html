@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="11 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 21: May 20–May 26, 2024 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 21: May 20–May 26, 2024</h1>
+  <p class="post-meta">11 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/05/20/">Day</a><a href="/weekly/2024/W21/" aria-current="page">Week</a><a href="/monthly/2024/05/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2024/W20/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2024/W22/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>5 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/05/20/">Mon, May 20</a></div>
+  <div class="entry-copy">Class-pointer migration diagnostics now cover returning <code>C::class</code> from a <code>string</code> function and assigning it to a <code>string</code> property. Use a class-name type or convert explicitly with <code>HH\class_to_classname()</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a910b45d233c8e108ea0c3f8f4ab5651d433194d" target="_blank" rel="noopener noreferrer">a910b45d23</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/05/21/">Tue, May 21</a></div>
+  <div class="entry-copy"><code>Shapes::keyExists()</code> and its negation now refine required, optional, and open shape fields more completely. The false branch knows an optional field is absent, and Hack reports accesses to that known-missing key. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2a66cd61b39ec35263b2bfb2f7c3bbed7a34d394" target="_blank" rel="noopener noreferrer">2a66cd61b3</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b37f5e14654e06067140a27d034f9d6307fed0c0" target="_blank" rel="noopener noreferrer">b37f5e1465</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/05/21/">Tue, May 21</a></div>
+  <div class="entry-copy">Class-pointer migration diagnostics now also catch string concatenation with <code>C::class</code>; convert explicitly when a textual class name is required. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e1f6f11a267cac9ea33f8b6bc927e1b19e6773d2" target="_blank" rel="noopener noreferrer">e1f6f11a26</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/05/23/">Thu, May 23</a></div>
+  <div class="entry-copy">The VS Code debugger now displays string variables and string constants in single quotes, making them visually distinct from names and non-string scalar values. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d60b329ad47356709c17dcf20b6fe7c77859d8d2" target="_blank" rel="noopener noreferrer">d60b329ad4</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/05/24/">Fri, May 24</a></div>
+  <div class="entry-copy">The <code>hack_warnings</code> configuration now accepts <code>true</code>/<code>all</code>, <code>false</code>/<code>none</code>, or a comma-separated allowlist of warning codes such as <code>12005,12006</code>. Projects can enable a targeted warning migration without taking every warning at once. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/dbacc3fc0c60d1f8444463c8b3c5bb09eb2bd430" target="_blank" rel="noopener noreferrer">dbacc3fc0c</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/05/20/">Mon, May 20</a></div>
+  <div class="entry-copy">Namespace names in <code>use</code> declarations may no longer contain <code>:</code>. XHP-style names are not valid namespaces and now produce a parser error. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/092c46226a15a94aad7e961b9f9c58f4a423651d" target="_blank" rel="noopener noreferrer">092c46226a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/05/23/">Thu, May 23</a></div>
+  <div class="entry-copy">Namespace names and aliases in <code>use</code> declarations may no longer contain XHP-style <code>:</code> or <code>-</code> characters. This completes the namespace validation introduced on May 20. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/15efb0012e3ec0dcb519a22cd8171bf1ae80e9eb" target="_blank" rel="noopener noreferrer">15efb0012e</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>4 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/05/22/">Wed, May 22</a></div>
+  <div class="entry-copy">When <code>hh_single_type_check</code> receives <code>--packages-config-path</code>, it now treats that configuration file&#x27;s directory as the project root. Experimental path-based package definitions therefore resolve test files relative to the same location as the package config. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/661620fadc63b9b648de4dac4fe74ce636879395" target="_blank" rel="noopener noreferrer">661620fadc</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/05/23/">Thu, May 23</a></div>
+  <div class="entry-copy">Every nested expression tree must now repeat its DSL name, and that name must match the enclosing tree. The earlier shorthand that inherited the outer DSL is rejected. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c610bf057f0520d54e9c7fccb9a3da41864c2fef" target="_blank" rel="noopener noreferrer">c610bf057f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/05/24/">Fri, May 24</a></div>
+  <div class="entry-copy">Under implicit pessimisation, <code>is this</code> and <code>as this</code> now refine to <code>~this</code> where an exact <code>this</code> result would be unsound. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2e1a710c6b82f60576b771e348245d5818b03c2f" target="_blank" rel="noopener noreferrer">2e1a710c6b</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/05/24/">Fri, May 24</a></div>
+  <div class="entry-copy">Enum refinements nested inside nullable and tuple-like types now preserve the enum&#x27;s stringish or intish weakening instead of unsoundly producing an exact enum type. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9235b6c767a7e062ead992a6a8d0d606eccc4951" target="_blank" rel="noopener noreferrer">9235b6c767</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

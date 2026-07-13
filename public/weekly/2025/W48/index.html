@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="9 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 48: Nov 24–Nov 30, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 48: Nov 24–Nov 30, 2025</h1>
+  <p class="post-meta">9 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/11/24/">Day</a><a href="/weekly/2025/W48/" aria-current="page">Week</a><a href="/monthly/2025/11/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2025/W47/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2025/W49/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>4 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/11/24/">Mon, Nov 24</a></div>
+  <div class="entry-copy"><code>&lt;&lt;__RequirePackage&gt;&gt;</code> on interface and abstract methods no longer makes <code>hackc</code> try to insert a runtime assertion body where no method body can exist, fixing compilation of these declarations. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7850ed7b8631e6420e7065766fa7d31b02f7b907" target="_blank" rel="noopener noreferrer">7850ed7b86</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/11/25/">Tue, Nov 25</a></div>
+  <div class="entry-copy">The null-safe pipe operator <code>|?&gt;</code> is fully released and no longer requires an unstable-feature opt-in. Hack also adds Warn[12031] when its left side cannot be null and Warn[12032] when it is always null. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9c1592aef2c0404a305c1372e5d3b20f9c6dcd45" target="_blank" rel="noopener noreferrer">9c1592aef2</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/49a01a024d301537552009cdc6fd5878581637e9" target="_blank" rel="noopener noreferrer">49a01a024d</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/11/26/">Wed, Nov 26</a></div>
+  <div class="entry-copy">Custom-error <code>**</code> file-prefix patterns no longer swallow a failed required path segment and match an unintended file. Exact and prefix patterns now share the corrected segment matcher. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/95025e2a474065721d3dfb9ceb2b82783b127964" target="_blank" rel="noopener noreferrer">95025e2a47</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/11/28/">Fri, Nov 28</a></div>
+  <div class="entry-copy">When a generic type is supplied the wrong number of arguments, Hack now stops after the arity error instead of inventing <code>Tany</code> arguments and producing misleading follow-on constraint errors. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/db68c7eef30647d1e94c01b66530a142c3f377ef" target="_blank" rel="noopener noreferrer">db68c7eef3</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/11/24/">Mon, Nov 24</a></div>
+  <div class="entry-copy">Named-argument completion snippets now keep <code>parameter_name=</code> outside the editable placeholder, so typing the value no longer deletes the parameter name. Optional parameters remain omitted from call completions. Named arguments are still unstable. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c2d246ec9d63a656c9c26a0036419d061acdf70a" target="_blank" rel="noopener noreferrer">c2d246ec9d</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/11/25/">Tue, Nov 25</a></div>
+  <div class="entry-copy">Type inference for immediately invoked lambdas now accounts for named arguments, fixing both missed errors and rejected valid calls under the unstable named-arguments feature. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d3ef01c111f1f89c06239435088144fcbeef0a5e" target="_blank" rel="noopener noreferrer">d3ef01c111</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/11/25/">Tue, Nov 25</a></div>
+  <div class="entry-copy">Redundant <code>?-&gt;</code> checks have moved from lint codes 5633/5654 to Hack warnings 12029/12030. Update warning filters and suppressions accordingly; expression-tree lowering is excluded to avoid false positives. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/41573b779dbf18db87913112438c196208158ee1" target="_blank" rel="noopener noreferrer">41573b779d</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/65841bca20db834468ac590ad3776a9a5c9d6dd4" target="_blank" rel="noopener noreferrer">65841bca20</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/11/25/">Tue, Nov 25</a></div>
+  <div class="entry-copy">Exceptions thrown by Thrift adapter methods are now exposed to Hack as <code>TProtocolException</code> with <code>ERR_UNEXPECTED_EXCEPTION</code>, rather than leaking the original exception. Code that catches a particular adapter exception will need to catch the protocol exception instead. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ae27f8a1f063871d2a9e4ec30609f15ea46e002e" target="_blank" rel="noopener noreferrer">ae27f8a1f0</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/11/26/">Wed, Nov 26</a></div>
+  <div class="entry-copy"><code>HH\Facts\types_with_attribute()</code> now returns lazy-class values instead of raw strings, statically changing from <code>vec&lt;string&gt;</code> to <code>vec&lt;classname&lt;nonnull&gt;&gt;</code>. Its attribute parameter changes from <code>string</code> to <code>class_or_classname&lt;ClassLikeAttribute&gt;</code>, so callers holding an unrefined <code>string</code> may need to supply a typed class name. Type aliases remain excluded, and the function remains capability-free (<code>[]</code>). <a href="https://github.com/hershel-theodore-layton/hhvm/commit/22eba707f3e52cc3b1d2903c49e3bf15c1daf257" target="_blank" rel="noopener noreferrer">22eba707f3</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

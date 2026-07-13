@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="14 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 49: Dec 1–Dec 7, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 49: Dec 1–Dec 7, 2025</h1>
+  <p class="post-meta">14 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/12/01/">Day</a><a href="/weekly/2025/W49/" aria-current="page">Week</a><a href="/monthly/2025/12/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2025/W48/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2025/W50/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>8 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/12/01/">Mon, Dec 1</a></div>
+  <div class="entry-copy">A successful <code>if (package foo)</code> refinement or <code>&lt;&lt;__RequirePackage(&#x27;foo&#x27;)&gt;&gt;</code> guarantee now also marks every package transitively included by <code>foo</code> as loaded. Code inside the guarded function or branch can therefore access symbols from those included packages without redundant package checks. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/57290fa827c9465cae7415967b75c54b7fe5e693" target="_blank" rel="noopener noreferrer">57290fa827</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/12/01/">Mon, Dec 1</a></div>
+  <div class="entry-copy">The performance regression affecting fresh <code>hh --no-load</code> checks has been fixed. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5edcde72417f33bab549446152c569bc108196ff" target="_blank" rel="noopener noreferrer">5edcde7241</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/12/02/">Tue, Dec 2</a></div>
+  <div class="entry-copy">The Thrift extension now provides <code>thrift_protocol_write_binary_struct_to_string()</code> and <code>thrift_protocol_read_binary_struct_from_string()</code>. They serialize Binary-protocol structs directly to and from strings, avoiding repeated calls into Hack through <code>TMemoryBuffer</code>; both omit explicit capability brackets and therefore require <code>[defaults]</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/956620c50fcbac20a46d5e79e38a04c83c652948" target="_blank" rel="noopener noreferrer">956620c50f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/12/03/">Wed, Dec 3</a></div>
+  <div class="entry-copy"><code>HH\is_any_array($value)</code> now refines types like <code>$value is HH\AnyArray&lt;_, _&gt;</code>. In particular, false branches no longer produce spurious <code>AnyArray</code> arity errors. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/37cae09f341abbb7450d1c836c52a79bff02be56" target="_blank" rel="noopener noreferrer">37cae09f34</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/12/03/">Wed, Dec 3</a></div>
+  <div class="entry-copy">The global, final <code>RequestFanoutLimitExceededException</code> is now declared in the bundled HHI files, so Hack code can name and catch the runtime exception without supplying a local stub. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/fe93d4bbdede4654ab8b74a68e7fda9256c4e4ec" target="_blank" rel="noopener noreferrer">fe93d4bbde</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/12/04/">Thu, Dec 4</a></div>
+  <div class="entry-copy">HHVM debugger listening sockets now use <code>SOCK_CLOEXEC</code>. Access-log processors and other subprocesses no longer inherit the descriptor and prevent the debugger server from reopening its socket after a client disconnects. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8e8e78c5ff11884dfd2d5bc25dd6e367041b5e54" target="_blank" rel="noopener noreferrer">8e8e78c5ff</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/12/04/">Thu, Dec 4</a></div>
+  <div class="entry-copy">Access-log formats can use <code>%M</code> for the request&#x27;s end time as a Unix timestamp in microseconds, providing finer resolution than the existing seconds-level time field. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c8a3b4f976e6543e5e4606acffe37e5986df75f7" target="_blank" rel="noopener noreferrer">c8a3b4f976</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/12/05/">Fri, Dec 5</a></div>
+  <div class="entry-copy">New <code>&lt;&lt;__SoftRequirePackage(&#x27;pkg&#x27;, 100)&gt;&gt;</code> annotations let functions and concrete methods observe missing deployment requirements without failing the call. The package name and optional sample rate must be literals. A missing package emits a sampled notice identifying the callable; the rate defaults to <code>1</code>, while <code>0</code> suppresses logging. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/233ada2c6f651cffc0699f475bcf78e2d4b30689" target="_blank" rel="noopener noreferrer">233ada2c6f</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/12/03/">Wed, Dec 3</a></div>
+  <div class="entry-copy">The void-use check now looks through <code>supportdyn</code>, so consuming an expression typed as <code>supportdyn&lt;void&gt;</code> is rejected just like consuming <code>void</code>. This can reveal previously missed errors in sound-dynamic code. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/26e025e493a06ea005b8b6b5260fcb01b955879e" target="_blank" rel="noopener noreferrer">26e025e493</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/12/05/">Fri, Dec 5</a></div>
+  <div class="entry-copy">The HHI model of <code>HH\string</code> is now final. User classes can no longer extend the primitive&#x27;s synthetic class, while types such as <code>classname&lt;C&gt;</code> remain meaningful subtypes of <code>string</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e71a41b2ba76f76eae4f3fc838d2729b607f1fa5" target="_blank" rel="noopener noreferrer">e71a41b2ba</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>4 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/12/04/">Thu, Dec 4</a></div>
+  <div class="entry-copy">The still-configurable polymorphic function-pointer rollout is now enabled by default. References to generic declarations retain a rank-2 type instead of fixing their type arguments when the reference is created, allowing separate calls to choose separate valid instantiations. Declared parameter, return, and coeffect requirements remain part of the resulting <code>HH\FunctionRef</code>; projects needing a temporary escape hatch can set <code>poly_function_pointers=false</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e4da608d51576bce1743a47abc0ee7bd5d80940e" target="_blank" rel="noopener noreferrer">e4da608d51</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/12/04/">Thu, Dec 4</a></div>
+  <div class="entry-copy">The pre-release <code>__NeedsConcrete</code> override diagnostic now follows the default-false <code>needs_concrete</code> option, so disabling that option suppresses the override check along with the other <code>__NeedsConcrete</code> checks. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d729522778c452eceb3d742b954690f186d525cc" target="_blank" rel="noopener noreferrer">d729522778</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/12/04/">Thu, Dec 4</a></div>
+  <div class="entry-copy">Staged type-constant lower bounds now participate in polymorphic function-pointer synthesis. For nested accesses, upper bounds are intersected and lower bounds are unioned so that every instantiation agrees on the projected type constant; ordinary callable parameter variance and coeffect compatibility remain enforced. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d80b10688e369870237568f408db2d17c94fc5aa" target="_blank" rel="noopener noreferrer">d80b10688e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/12/05/">Fri, Dec 5</a></div>
+  <div class="entry-copy">XHP type constants have moved to OngoingRelease. XHP attributes may use declarations such as <code>attribute MyClass::TMyType attr</code> without a file-level unstable-feature opt-in, but the feature remains pre-stable. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/19d0a58e2e81ca3a7077204816e042626ba9ad58" target="_blank" rel="noopener noreferrer">19d0a58e2e</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

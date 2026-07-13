@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="12 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 33: Aug 14–Aug 20, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 33: Aug 14–Aug 20, 2023</h1>
+  <p class="post-meta">12 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/08/14/">Day</a><a href="/weekly/2023/W33/" aria-current="page">Week</a><a href="/monthly/2023/08/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2023/W32/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2023/W34/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>10 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/08/14/">Mon, Aug 14</a></div>
+  <div class="entry-copy">Sound Dynamic no longer adds an unnecessary outer like type to <code>Vector</code> methods whose collection-shaped result is already enforced by HHVM. Operations such as <code>toSet()</code> now retain their declared container type more precisely. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/995317f216a24ec9e44b0e1a1e4c6b02a54eae4d" target="_blank" rel="noopener noreferrer">995317f216</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/08/15/">Tue, Aug 15</a></div>
+  <div class="entry-copy"><code>hh_single_type_check --map-reduce</code> can now run configured typed-AST analyses and print their reduced JSON result. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0ffd752fc92642fde7e7b24584f0a49536e9716a" target="_blank" rel="noopener noreferrer">0ffd752fc9</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/08/15/">Tue, Aug 15</a></div>
+  <div class="entry-copy">The new <code>hphp_debug_caller_identifier()[leak_safe]: string</code> runtime helper returns the caller&#x27;s full function or <code>Class::method</code> name without constructing the full <code>hphp_debug_caller_info()</code> dictionary. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/dfc3cbbaa01c549ffb861906ca15ef3ad1e1c069" target="_blank" rel="noopener noreferrer">dfc3cbbaa0</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/08/15/">Tue, Aug 15</a></div>
+  <div class="entry-copy">Package module patterns now use prefix-glob semantics matching the runtime: <code>foo.*</code> matches descendants of <code>foo</code>, <code>*</code> matches every module, and other patterns are exact names. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3ef62b5f28ea0f110b1bfc4129f9d54af6acf569" target="_blank" rel="noopener noreferrer">3ef62b5f28</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/08/16/">Wed, Aug 16</a></div>
+  <div class="entry-copy">The new type-counter map reducer can audit a codebase for like, non-like, <code>mixed</code>, <code>supportdyn&lt;mixed&gt;</code>, <code>dynamic</code>, and <code>Tany</code> occurrences. It is available through <code>hh_single_type_check --map-reduce --hh-log-level type_counter 1</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/da3b61a80b98737935e1420a13661763296f8e7d" target="_blank" rel="noopener noreferrer">da3b61a80b</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f0315270fc662ecca60c50b4ebfb572f3367e53a" target="_blank" rel="noopener noreferrer">f0315270fc</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2e8a805e776a716e75251fcbde8fc477abe3ccc4" target="_blank" rel="noopener noreferrer">2e8a805e77</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/08/16/">Wed, Aug 16</a></div>
+  <div class="entry-copy">Find-references requests can now stream partial results through LSP <code>$/progress</code> when the client supplies a partial-result token, allowing editors to show references before the full server search finishes. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e0a82f5c6c2a6a1cecb9d760570c2a2425e5264b" target="_blank" rel="noopener noreferrer">e0a82f5c6c</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8f8b4bb55a2d6aaded9815940f1cdabd51eb8bb7" target="_blank" rel="noopener noreferrer">8f8b4bb55a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/08/18/">Fri, Aug 18</a></div>
+  <div class="entry-copy"><code>C\contains()</code> now performs constant-time membership checks for <code>Set</code> and <code>ImmSet</code>, matching its existing fast path for <code>keyset</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/85252099f628cd58ab278ae5d897a39bab4baa47" target="_blank" rel="noopener noreferrer">85252099f6</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/08/18/">Fri, Aug 18</a></div>
+  <div class="entry-copy">Hack&#x27;s bundled declarations now expose <code>HH\parse_cookies(string)[defaults]: dict&lt;arraykey, mixed&gt;</code>, allowing existing runtime calls to typecheck. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ead349e7115eebfa75a57949fdc74ab9f6c03ef2" target="_blank" rel="noopener noreferrer">ead349e711</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/08/19/">Sat, Aug 19</a></div>
+  <div class="entry-copy">The VS debugger now checks breakpoints around JIT translations and can step from a <code>throw</code> into its matching <code>catch</code>, avoiding missed stops in optimized code. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/31ece450ee21814985457bd3d0e81862cbbaeed5" target="_blank" rel="noopener noreferrer">31ece450ee</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5ff8a7a3ce183e50c4ecbf6d28e705c7ef9853b2" target="_blank" rel="noopener noreferrer">5ff8a7a3ce</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/08/19/">Sat, Aug 19</a></div>
+  <div class="entry-copy"><code>hphp_debugger_set_option(&#x27;disableJit&#x27;, false)</code> can now re-enable the JIT for an attached debugger, even when <code>Eval.JitDisabledByVSDebug</code> normally disables it. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/538ea114cd73078f0eda7f42278d597fbc06bc0c" target="_blank" rel="noopener noreferrer">538ea114cd</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/08/14/">Mon, Aug 14</a></div>
+  <div class="entry-copy">HHVM has removed support for dynamically loaded native extensions, including the <code>-z</code> path and the <code>extension_dir</code>, <code>extensions</code>, <code>DynamicExtensionPath</code>, and <code>DynamicExtensions</code> settings. Extensions must be linked into the HHVM build. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/71e6b01ff54d7511483626cf964033b71177c630" target="_blank" rel="noopener noreferrer">71e6b01ff5</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Security</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/08/15/">Tue, Aug 15</a></div>
+  <div class="entry-copy"><code>Eval.SetHeadersInServerSuperGlobal</code> can now prevent request headers from being copied into <code>$_SERVER</code>; applications can retrieve the raw protected header map with <code>HH\get_headers_secure()</code> instead. The compatibility default remains enabled. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d3b6066fb8f0fe5e45b8c13bb5fa246e54e2c350" target="_blank" rel="noopener noreferrer">d3b6066fb8</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

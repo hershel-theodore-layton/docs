@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="3 noteworthy changes recorded on this day.">
+  <title>Tuesday, February 13, 2024 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Tuesday, February 13, 2024</h1>
+  <p class="post-meta">3 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/02/13/" aria-current="page">Day</a><a href="/weekly/2024/W07/">Week</a><a href="/monthly/2024/02/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2024/02/12/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2024/02/14/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">An explicit <code>hh_server --max-procs</code> value is now honored up to the machine&#x27;s processor count rather than being halved a second time. Without an explicit limit, the server continues to default to half the reported logical processors. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/dcfcc2cb9d5dc90b050e9b9b30fb362297efc623" target="_blank" rel="noopener noreferrer">dcfcc2cb9d</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy">The IMAP extension has been removed, including functions such as <code>imap_open()</code>, <code>imap_fetchbody()</code>, and <code>imap_close()</code>. Applications still using these APIs need an external mail client or service. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ee0bc2cb003a1a6c3b3379da7415852d540c03ba" target="_blank" rel="noopener noreferrer">ee0bc2cb00</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">Sound Dynamic and implicit pessimisation now trust runtime enforcement declared by HHI signatures in the same way as ordinary Hack signatures, removing a legacy exception that affected property assignment. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0507e9f8ad07848bd4512dd064e3378d6fb75465" target="_blank" rel="noopener noreferrer">0507e9f8ad</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="3 noteworthy changes recorded on this day.">
+  <title>Tuesday, May 5, 2026 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Tuesday, May 5, 2026</h1>
+  <p class="post-meta">3 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2026/05/05/" aria-current="page">Day</a><a href="/weekly/2026/W19/">Week</a><a href="/monthly/2026/05/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2026/05/04/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2026/05/06/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy"><code>ReflectionMethod::invoke()</code> and <code>invokeArgs()</code> are now deprecated in Hack declarations. Migrate reflective call sites to <code>HH_FIXME::reflectionMethodInvokeForCallsite()</code> and <code>HH_FIXME::reflectionMethodInvokeArgsForCallsite()</code> while removing avoidable reflection. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5d4b0335e701246567c8555fa383ebd1a501d73f" target="_blank" rel="noopener noreferrer">5d4b0335e7</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">Preview expression trees can now desugar <code>vec[...]</code>, <code>dict[...]</code>, and <code>keyset[...]</code> literals through <code>visitVec</code>, <code>visitDict</code>, and <code>visitKeyset</code>. The support is gated by <code>expression_tree_hack_arrays</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b8379a88ace3b9fb31360670fd4f57bd18e33296" target="_blank" rel="noopener noreferrer">b8379a88ac</a></div></li><li class="change-entry"><div class="entry-copy">The staged named-parameter runtime now has dedicated function entries for optional named parameters and can initialize their defaults consistently in the interpreter and JIT, including coeffect checks after initialization. Named parameters are not yet Released. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4214c0a6a370ef6b8ee6d50de11baef5d8ee2b5e" target="_blank" rel="noopener noreferrer">4214c0a6a3</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e313bccd1133072ff7f1838254692b8b077bcf66" target="_blank" rel="noopener noreferrer">e313bccd11</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/585ae3ac58e509d62f3f85be1bd5bd39eac7346e" target="_blank" rel="noopener noreferrer">585ae3ac58</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ff5c55a8d2adbdbfb8b5424c1b2dab00d6411225" target="_blank" rel="noopener noreferrer">ff5c55a8d2</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

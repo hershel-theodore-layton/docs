@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="13 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 45: Nov 4–Nov 10, 2024 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 45: Nov 4–Nov 10, 2024</h1>
+  <p class="post-meta">13 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/11/04/">Day</a><a href="/weekly/2024/W45/" aria-current="page">Week</a><a href="/monthly/2024/11/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2024/W44/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2024/W46/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Breaking Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/11/04/">Mon, Nov 4</a></div>
+  <div class="entry-copy">HHVM now enforces every upper-bound constraint on typed properties when an object is unserialized and when a property is unset. Values that satisfied the main property hint but violated a generic upper bound can now throw a property type-hint error during APC/unserialization or <code>unset()</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a5b29ce0d7d66dc63d0e11c23524498f4c07cc93" target="_blank" rel="noopener noreferrer">a5b29ce0d7</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>9 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/11/04/">Mon, Nov 4</a></div>
+  <div class="entry-copy">The unstable <code>shape_destructure</code> feature now handles typed-local enforcement, readonly propagation, and lambda captures for shape destructuring. These commits are supporting pieces of the feature rather than a general release. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/cb09ea0337102be53f0ec28388841d9473aa5258" target="_blank" rel="noopener noreferrer">cb09ea0337</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/313b03950659fceaaab31c9d8f80bb7aa976775a" target="_blank" rel="noopener noreferrer">313b039506</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/426e187bb8c7a00d451f95ddccd3bbec8f028723" target="_blank" rel="noopener noreferrer">426e187bb8</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/11/05/">Tue, Nov 5</a></div>
+  <div class="entry-copy">The unfinished <code>module_references</code> feature has been removed, including <code>imports</code> and <code>exports</code> blocks and <code>ReflectionModule::getImports()</code>/<code>getExports()</code>. Ordinary Hack modules and package-v2 relationships are unaffected. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9a3740165f23f45a7e6790bf1c0cf3707f5cbeeb" target="_blank" rel="noopener noreferrer">9a3740165f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/11/06/">Wed, Nov 6</a></div>
+  <div class="entry-copy">Unstable shape destructuring can now be used as a <code>foreach</code> value pattern, including nested shape and tuple patterns. It still requires <code>&lt;&lt;file:__EnableUnstableFeatures(&#x27;shape_destructure&#x27;)&gt;&gt;</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/394673c13a660090358c6cd17625f9e4f63d28ec" target="_blank" rel="noopener noreferrer">394673c13a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/11/06/">Wed, Nov 6</a></div>
+  <div class="entry-copy">Package v2 active deployments are now honored while building a repo: files are selected from <code>include_paths</code> and <code>__PackageOverride</code> attributes instead of module membership. This remains part of the staged package-v2 rollout. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0548222340abfff213b4347af8ad49ff4a507233" target="_blank" rel="noopener noreferrer">0548222340</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/11/06/">Wed, Nov 6</a></div>
+  <div class="entry-copy">Memoized calls now produce the same key for a class name represented as a string, lazy class, or class pointer. This fixes duplicate cache entries during the class-pointer rollout. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9c245379fd7d3d851f80b2185f0a26cfc48e9a1e" target="_blank" rel="noopener noreferrer">9c245379fd</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/11/07/">Thu, Nov 7</a></div>
+  <div class="entry-copy">Behind the class-pointer rollout switches, <code>class&lt;T&gt;</code> now has its own local type instead of being erased to <code>classname&lt;T&gt;</code>. <code>enable_class_pointer_hint=false</code> retains the old erasure, while <code>class_sub_classname</code> temporarily controls the compatibility subtype relation. The implicit <code>C::class</code> constant can likewise be typed as <code>class&lt;C&gt;</code> through the staged <code>class_class_type</code> option. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4e3cc786fe3dbd99a0dc6121c54cfd0cc04d994b" target="_blank" rel="noopener noreferrer">4e3cc786fe</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f9f4398bdf8db35ea41a08af72cb43c5bb19e884" target="_blank" rel="noopener noreferrer">f9f4398bdf</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/11/07/">Thu, Nov 7</a></div>
+  <div class="entry-copy">Package v2 no longer reports package-access errors for exception types named in <code>catch</code> arms. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2b465f3615b315e32a8a9973154b8e59b7efc4c3" target="_blank" rel="noopener noreferrer">2b465f3615</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/11/08/">Fri, Nov 8</a></div>
+  <div class="entry-copy">Package v2 can select a different <code>hhvm.active_deployment</code> for CLI-server requests than for web-server requests. The typechecker also stops reporting package errors inside opaque <code>newtype</code> definitions and constraints, while transparent aliases continue to be checked. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/279d33d3f92c048d61cb35dca7ef7f04993871bf" target="_blank" rel="noopener noreferrer">279d33d3f9</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/97b8a896591b8ae80140f1692b41c3732f36e0b6" target="_blank" rel="noopener noreferrer">97b8a89659</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/11/08/">Fri, Nov 8</a></div>
+  <div class="entry-copy">The temporary runtime/compiler option <code>Eval.PackagesTomlFileName</code> allows the staged package-v2 rollout to load a TOML filename other than <code>PACKAGES.toml</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2e20fd28e9babf875e8f6306e38aeb0a80d42da4" target="_blank" rel="noopener noreferrer">2e20fd28e9</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Highlights</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/11/05/">Tue, Nov 5</a></div>
+  <div class="entry-copy">The new <code>Log.BaseDirectory</code> runtime option prefixes server error, access, admin, and Xbox log-file paths, allowing separate tasks to use the same relative logging configuration under different directories. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2085abb477c6281c7355578c7f3112d9376e054e" target="_blank" rel="noopener noreferrer">2085abb477</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/11/06/">Wed, Nov 6</a></div>
+  <div class="entry-copy">The Thrift extension adds <code>thrift_protocol_write_binary_struct()</code> and <code>thrift_protocol_write_compact_struct()</code>, which serialize a struct without an RPC message envelope. The compact form accepts an optional protocol version, defaulting to 2. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9e49db492bbba72ca272cbefbc420a29ccf26582" target="_blank" rel="noopener noreferrer">9e49db492b</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/11/06/">Wed, Nov 6</a></div>
+  <div class="entry-copy">Generated runtime configuration now forwards <code>Repo.Authoritative</code> correctly after the configuration-system migration, preventing consumers from observing a stale or incorrect repo-mode value. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/67acf766d84c30d63d7e93d097ac19b52143bc5d" target="_blank" rel="noopener noreferrer">67acf766d8</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

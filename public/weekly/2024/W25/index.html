@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="13 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 25: Jun 17–Jun 23, 2024 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 25: Jun 17–Jun 23, 2024</h1>
+  <p class="post-meta">13 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/06/17/">Day</a><a href="/weekly/2024/W25/" aria-current="page">Week</a><a href="/monthly/2024/06/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2024/W24/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2024/W26/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Future Changes</h2><span>8 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/06/17/">Mon, Jun 17</a></div>
+  <div class="entry-copy">Under the preview readonly feature, <code>get_class&lt;T&gt;(readonly T)[]: classname&lt;T&gt;</code> now preserves the object&#x27;s static class type instead of returning an unparameterized class name. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/537dfe98b057399a5dad6ac26df087f23cb22a60" target="_blank" rel="noopener noreferrer">537dfe98b0</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/06/17/">Mon, Jun 17</a></div>
+  <div class="entry-copy">Packages v2 now diagnoses an unknown package named by <code>__PackageOverride</code>, catching misspelled or stale package overrides at typechecking time. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/02462c0d87c439c8e7dca1cdb66cbe011d25cd0d" target="_blank" rel="noopener noreferrer">02462c0d87</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/06/18/">Tue, Jun 18</a></div>
+  <div class="entry-copy">Awaiting multiple splices in an expression tree no longer serializes them into sequential assignments; independent splice expressions can now run concurrently. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/500e484925714c6c89a8707918fb7cbcc86ef4f6" target="_blank" rel="noopener noreferrer">500e484925</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/06/21/">Fri, Jun 21</a></div>
+  <div class="entry-copy">Class-pointer migration checks now cover class and enum-class constant initializers, warning that <code>C::class</code> assigned to a <code>string</code> constant performs an implicit conversion and recommending <code>nameof C</code>. This is controlled by the <code>const</code> entry in <code>class_pointer_levels</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/738d9706a74851ba602d01f67402cff4a65c649b" target="_blank" rel="noopener noreferrer">738d9706a7</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/06/21/">Fri, Jun 21</a></div>
+  <div class="entry-copy">Packages v2 now bypasses package-boundary checks for <code>::class</code> expressions by default, preserving their transitional string-like use while class-pointer migrations continue. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0fa07a7548da8d2d64ef46f5e359fe71de93f042" target="_blank" rel="noopener noreferrer">0fa07a7548</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/06/22/">Sat, Jun 22</a></div>
+  <div class="entry-copy">The Packages v2 test-file exemption now recognizes <code>__tests__</code> anywhere in a path, so test files receive the intended ability to call across package boundaries instead of only matching when the marker begins the full path. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/339e8b72ac65dc208882e3550c065c43f24906d8" target="_blank" rel="noopener noreferrer">339e8b72ac</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/06/22/">Sat, Jun 22</a></div>
+  <div class="entry-copy">Package overrides now propagate through class kinding, preventing class references from silently falling back to the package inferred from their source path. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4bb06d9a646490ffc179fbb097e12b13d724f669" target="_blank" rel="noopener noreferrer">4bb06d9a64</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/06/23/">Sun, Jun 23</a></div>
+  <div class="entry-copy">Packages v2 no longer applies boundary checks to type-only references in type constants and type hints. Cross-package runtime value access remains checked. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4ccc16f888f95e9eeb94ac9e6291a7f64cbd326a" target="_blank" rel="noopener noreferrer">4ccc16f888</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/eee2daea8982b606514f7863632d2df327db33f4" target="_blank" rel="noopener noreferrer">eee2daea89</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/06/18/">Tue, Jun 18</a></div>
+  <div class="entry-copy">The obsolete <code>HH\class_get_class_name()</code> helper has been removed; use the pure <code>HH\class_to_classname()</code> migration helper instead. The internal <code>__hhvm_intrinsics\create_class_pointer()</code> spelling was likewise replaced by <code>HH\classname_to_class()</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/172eb8c361dbd3685815bd48bcac5130e9e4767b" target="_blank" rel="noopener noreferrer">172eb8c361</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Highlights</h2><span>4 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/06/19/">Wed, Jun 19</a></div>
+  <div class="entry-copy">Sound Dynamic like-pushing now handles more types containing unsolved variables, avoiding false incompatibility errors for relationships such as <code>Box&lt;~T&gt; &lt;: ~Box&lt;string&gt;</code> while preserving errors for genuinely mismatched inner types. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9968b678adce4e02b29bf90e6d41d217f5397625" target="_blank" rel="noopener noreferrer">9968b678ad</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/06/20/">Thu, Jun 20</a></div>
+  <div class="entry-copy">Hack now accepts the empty tuple value <code>tuple()</code>, matching existing HHVM runtime support. The empty tuple type <code>()</code> is still not valid syntax. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9e42bbbc13661a95762308c3ec136612dd80135e" target="_blank" rel="noopener noreferrer">9e42bbbc13</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/06/20/">Thu, Jun 20</a></div>
+  <div class="entry-copy">Facts updates now remove file and method attributes that disappeared from source, rather than leaving their old names or argument values in the in-memory attribute maps. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8606084f86eba6d511be8968f6ee7923ac28bf45" target="_blank" rel="noopener noreferrer">8606084f86</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/06/20/">Thu, Jun 20</a></div>
+  <div class="entry-copy">Hack notebooks now resolve XHP elements correctly in top-level statements, restoring diagnostics, completion, and go-to-definition without duplicate namespace elaboration. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/fb1dbb43fb6724d891afa969a804742ad112eab4" target="_blank" rel="noopener noreferrer">fb1dbb43fb</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

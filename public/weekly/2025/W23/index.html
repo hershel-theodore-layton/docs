@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="9 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 23: Jun 2–Jun 8, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 23: Jun 2–Jun 8, 2025</h1>
+  <p class="post-meta">9 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/06/02/">Day</a><a href="/weekly/2025/W23/" aria-current="page">Week</a><a href="/monthly/2025/06/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2025/W22/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2025/W24/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/06/02/">Mon, Jun 2</a></div>
+  <div class="entry-copy">Streaming <code>hh</code> checks now pass a configured <code>watchman_sockname</code> to both <code>watch-project</code> and the Watchman client, avoiding a split where the server and client observe different Watchman instances. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/45d6473b909aa958d08d96833d24cea21b1595ac" target="_blank" rel="noopener noreferrer">45d6473b90</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/06/05/">Thu, Jun 5</a></div>
+  <div class="entry-copy">Notebook-to-Hack conversion now repairs a missing semicolon at the end of a top-level cell, but only when that single edit reduces exactly one parse error to none. Other malformed cells are left unchanged for normal tooling to diagnose. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d82928deebd60a4e6151a334945a5ae27453c5a8" target="_blank" rel="noopener noreferrer">d82928deeb</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/06/02/">Mon, Jun 2</a></div>
+  <div class="entry-copy"><code>type_structure($class_name, ...)</code> now participates in implicit string-to-class conversion notices when its class argument is a string. Class pointers, lazy classes, and objects do not raise this notice. Projects using <code>Eval.RaiseClassConversionNoticeSampleRate</code> can use the signal to find classes that need <code>&lt;&lt;__DynamicallyReferenced&gt;&gt;</code> or callers that should pass a class pointer. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b028e13e25c98949252417a0168f3d776d5709cd" target="_blank" rel="noopener noreferrer">b028e13e25</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/06/04/">Wed, Jun 4</a></div>
+  <div class="entry-copy">The legacy resource-backed representation of enum-class labels and the <code>Eval.EmitNativeEnumClassLabels=false</code> configuration have been removed; labels are now always native values. Public coeffects are unchanged: <code>nameOf()</code> remains <code>[]</code>, while <code>valueOf()</code> remains <code>[write_props]</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ff50cab0ba8a8b344ebf304cb42e74bc45b20758" target="_blank" rel="noopener noreferrer">ff50cab0ba</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/06/07/">Sat, Jun 7</a></div>
+  <div class="entry-copy">Reifying the late-static-bound <code>this</code> type is now permitted only when its lexical class is final and has no type parameters. A final <code>C&lt;T&gt;</code> can no longer hide a non-reified <code>T</code> inside a reified type constant through <code>this</code>; the typechecker reports Typing[4305]. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9b7f7a647c8b1f821fe47aad88f5d21232908900" target="_blank" rel="noopener noreferrer">9b7f7a647c</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/06/02/">Mon, Jun 2</a></div>
+  <div class="entry-copy">Preview type-splat declarations no longer confuse a type-splat parameter with a variadic capture during runtime method-override checks. After <code>T</code> is instantiated as <code>(int, string)</code>, a method with parameters <code>(int, string)</code> can implement one declared with <code>...T</code>; ordinary return-type, coeffect, and parameter checks still apply. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/23b2e8bd5e8fe85021ca3b5027ccb0df5789424b" target="_blank" rel="noopener noreferrer">23b2e8bd5e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/06/04/">Wed, Jun 4</a></div>
+  <div class="entry-copy">Under the unstable <code>no_disjoint_union</code> feature, fixpoint class refinements such as <code>this::TNext</code> bounded by <code>I with { type TNext = this::TNext }</code> now retain their dependent projected type instead of collapsing to <code>TAny</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ac0e6a103f5c279ead5bf365dc46a41882132b38" target="_blank" rel="noopener noreferrer">ac0e6a103f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/06/06/">Fri, Jun 6</a></div>
+  <div class="entry-copy">Enabling Packages V2 now forcibly disables <code>Eval.EnforceDeployment</code>. The initial Packages V2 implementation therefore does not provide Packages V1&#x27;s runtime deployment-boundary enforcement; projects must rely on static package checks. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6f6ee77b3df0b6963ce640b57756096c316f9b69" target="_blank" rel="noopener noreferrer">6f6ee77b3d</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Security</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/06/03/">Tue, Jun 3</a></div>
+  <div class="entry-copy">HHVM&#x27;s binary and compact Thrift deserializers now reject a second field in a strict union implementing <code>IThriftStrictUnion</code>, raising an invalid-data exception instead of silently accepting a malformed payload. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/611265e4d01b1ce9c370a4d5643c5db975cbfd63" target="_blank" rel="noopener noreferrer">611265e4d0</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

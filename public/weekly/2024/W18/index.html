@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="5 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 18: Apr 29–May 5, 2024 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 18: Apr 29–May 5, 2024</h1>
+  <p class="post-meta">5 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/04/30/">Day</a><a href="/weekly/2024/W18/" aria-current="page">Week</a><a href="/monthly/2024/04/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2024/W17/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2024/W19/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Future Changes</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/04/30/">Tue, Apr 30</a></div>
+  <div class="entry-copy">A disabled-by-default <code>strict_switch</code> project option has been added as rollout plumbing for enabling strict switch checking globally. This commit only introduces and loads the option; it does not yet connect the setting to the strict-switch checker. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b3f0c2a764d5ec7151ffb954387367fb5e8c0ff8" target="_blank" rel="noopener noreferrer">b3f0c2a764</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/05/01/">Wed, May 1</a></div>
+  <div class="entry-copy">The experimental strict switch checker is now selected project-wide by the <code>strict_switch</code> configuration. The per-switch <code>&lt;&lt;__StrictSwitch&gt;&gt;</code> attribute and its unstable-feature opt-in no longer select the implementation. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e67c9a80f0e5db2f99a87842d4346748b3e3da4e" target="_blank" rel="noopener noreferrer">e67c9a80f0</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Highlights</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/05/01/">Wed, May 1</a></div>
+  <div class="entry-copy">“Add method stub” is now available when the cursor is on whitespace between class-body declarations, and inserts the selected inherited method at that position. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/60ebc783646ca04c85fd10940ee8b85c4a9ec306" target="_blank" rel="noopener noreferrer">60ebc78364</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/05/01/">Wed, May 1</a></div>
+  <div class="entry-copy">Typechecking cyclic generic upper bounds no longer recurses indefinitely while resolving type-member constraints. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/bcdba1ecd85b23177b533400afe66b14bb53b8a6" target="_blank" rel="noopener noreferrer">bcdba1ecd8</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/05/03/">Fri, May 3</a></div>
+  <div class="entry-copy">Reified generic class values such as <code>T::class</code> no longer trigger the class-pointer migration lint or error; this spelling remains supported while <code>nameof T</code> is intentionally unavailable. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e5353501f731e946b5ffd7099a36e214e61bd2ba" target="_blank" rel="noopener noreferrer">e5353501f7</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

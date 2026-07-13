@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="13 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 17: Apr 24–Apr 30, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 17: Apr 24–Apr 30, 2023</h1>
+  <p class="post-meta">13 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/04/24/">Day</a><a href="/weekly/2023/W17/" aria-current="page">Week</a><a href="/monthly/2023/04/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2023/W16/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2023/W18/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>8 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/04/24/">Mon, Apr 24</a></div>
+  <div class="entry-copy">The misspelled runtime option <code>Preg.BacktraceLimit</code> has been corrected to <code>Preg.BacktrackLimit</code>. The old name remains a fallback during migration, so existing configuration continues to work until it can be updated. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7706006430f803fad5c1afb6869379956a55610d" target="_blank" rel="noopener noreferrer">7706006430</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/04/26/">Wed, Apr 26</a></div>
+  <div class="entry-copy">The Ed25519 primitives added to the Sodium runtime on April 19 are now present in the bundled HHI, so Hack code can call them without local declarations. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f977a1702bc9d45f026cbdbafeb07107365214eb" target="_blank" rel="noopener noreferrer">f977a1702b</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/04/26/">Wed, Apr 26</a></div>
+  <div class="entry-copy">Standalone IDE diagnostics are now refreshed after closing a modified file, restoring squiggles for the version on disk instead of leaving diagnostics for discarded editor contents. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e6bffdd440ec10312f56b57b258e8d4ebee1106e" target="_blank" rel="noopener noreferrer">e6bffdd440</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9c48e841bb3fc0b8affec5298e4bcfe5d276b4f0" target="_blank" rel="noopener noreferrer">9c48e841bb</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/04/27/">Thu, Apr 27</a></div>
+  <div class="entry-copy"><code>hh_single_type_check</code> now accepts general <code>.hhconfig</code> overrides as <code>--config key=value</code>, for example <code>--config timeout=4</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ee8d8d56572fd543a721e64a4aa6f2e274f95e35" target="_blank" rel="noopener noreferrer">ee8d8d5657</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/04/27/">Thu, Apr 27</a></div>
+  <div class="entry-copy">Opening or closing an unchanged file in the IDE no longer cancels a running full check, and a check interrupted by an actual edit now resumes after five seconds even when the client consumes streaming errors. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c99b489259993fca8f62a015b8db9c6701912ba2" target="_blank" rel="noopener noreferrer">c99b489259</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3f8a4ee77fc68b01ec4ef2c12b9845cd17a5bdce" target="_blank" rel="noopener noreferrer">3f8a4ee77f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/04/29/">Sat, Apr 29</a></div>
+  <div class="entry-copy">New <code>HH\stdin()</code>, <code>HH\stdout()</code>, and <code>HH\stderr()</code> functions replace the magic <code>STDIN</code>, <code>STDOUT</code>, and <code>STDERR</code> constants. They return the corresponding resource and throw <code>RuntimeException</code> in server mode, where standard streams are unavailable. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f89adc0d2b9d9a1f18ba825034da140e58a8adbe" target="_blank" rel="noopener noreferrer">f89adc0d2b</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/04/29/">Sat, Apr 29</a></div>
+  <div class="entry-copy">Standalone IDE diagnostics now refresh lazily on code-action requests, hide typing errors while a parse error is present to match <code>hh</code>, and remain visible when an in-progress full check restarts. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/98c35d4bbbba8d122a993f44785a43ebc0dfbdfb" target="_blank" rel="noopener noreferrer">98c35d4bbb</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/276933c9b75887952960fb22dcea6347531a58f1" target="_blank" rel="noopener noreferrer">276933c9b7</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1e6f53b90696d7dc23b9a109553858d51b83b9fd" target="_blank" rel="noopener noreferrer">1e6f53b906</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/04/29/">Sat, Apr 29</a></div>
+  <div class="entry-copy">Repository-authoritative builds with an active deployment now omit files belonging to packages outside that deployment. Builds fail with a clear error when the configured deployment is absent from <code>PACKAGES.toml</code>; files that define modules remain included. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b170bd05fa6e5a7a292186e482d1419e6dbf4f81" target="_blank" rel="noopener noreferrer">b170bd05fa</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>5 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/04/25/">Tue, Apr 25</a></div>
+  <div class="entry-copy"><code>hackfmt</code> now formats case-type variants, with a leading <code>|</code> selecting a consistently multiline layout. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/fb8003152a1ade04516455b69173acf1a4c748d0" target="_blank" rel="noopener noreferrer">fb8003152a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/04/25/">Tue, Apr 25</a></div>
+  <div class="entry-copy">Calls to a <code>&lt;&lt;__CrossPackage(&#x27;foo&#x27;)&gt;&gt;</code> method now require package <code>foo</code> to be loaded at the call site. Declaration and inheritance support is still being completed. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2be16db0f17c1a5932a2e73608f7207f5838dcc2" target="_blank" rel="noopener noreferrer">2be16db0f1</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/04/26/">Wed, Apr 26</a></div>
+  <div class="entry-copy">When checking <code>T &lt;: ~U</code>, sound-dynamic diagnostics now prefer the concrete failure against <code>U</code> over the less useful outer like-type error. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/57e3d1a324cedc75670a95d6a2e5fd7337bea3f2" target="_blank" rel="noopener noreferrer">57e3d1a324</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/04/27/">Thu, Apr 27</a></div>
+  <div class="entry-copy">Explicitly typed nested <code>dict</code> and <code>vec</code> literals no longer acquire unnecessary like-types solely from their expected outer collection type. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2159d75c1aa7455f0b7673a0eeddc8ebbc7e0bbf" target="_blank" rel="noopener noreferrer">2159d75c1a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/04/28/">Fri, Apr 28</a></div>
+  <div class="entry-copy">JSON type representations produced under implicit pessimisation now omit <code>supportdyn</code>, matching the simplified types already used in human-readable diagnostics. Tools consuming these JSON representations should expect the underlying type directly. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6facad56b7b6a5c2e297147e1d2cbad330093d4c" target="_blank" rel="noopener noreferrer">6facad56b7</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

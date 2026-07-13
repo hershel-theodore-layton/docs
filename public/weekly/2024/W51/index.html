@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="4 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 51: Dec 16–Dec 22, 2024 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 51: Dec 16–Dec 22, 2024</h1>
+  <p class="post-meta">4 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/12/16/">Day</a><a href="/weekly/2024/W51/" aria-current="page">Week</a><a href="/monthly/2024/12/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2024/W50/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2024/W52/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Future Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/12/16/">Mon, Dec 16</a></div>
+  <div class="entry-copy">Package-v2 runtime metadata now stores <code>input_paths</code> relative to <code>Server.SourceRoot</code> and matches those relative paths when selecting an active deployment. This fixes deployment filtering when a repository is built under a different absolute root, such as a remote-execution worker. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1bda185dc6da409470134c051734294964d1904f" target="_blank" rel="noopener noreferrer">1bda185dc6</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/12/18/">Wed, Dec 18</a></div>
+  <div class="entry-copy">The configurable class-pointer migration check now follows values already typed as <code>class&lt;T&gt;</code> into <code>dict</code>, <code>keyset</code>, indexed-access, and collection-key positions. Setting the <code>arraykey</code> entry in <code>class_pointer_levels</code> to <code>3</code> emits warning 12013; level <code>4</code> makes it an error. Convert deliberately with <code>HH\class_to_classname()</code> when a string key is intended. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/36e5e97a958891847896b551ec7073d734676540" target="_blank" rel="noopener noreferrer">36e5e97a95</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/12/20/">Fri, Dec 20</a></div>
+  <div class="entry-copy">The unstable <code>require_constraint</code> feature adds <code>require this as C;</code> to traits. It gives the trait body a <code>this &lt;: C</code> assumption without requiring <code>C</code> to be final, and—unlike <code>require extends C</code>—also permits the using class to be exactly <code>C</code>. Enable it with <code>&lt;&lt;file: __EnableUnstableFeatures(&#x27;require_constraint&#x27;)&gt;&gt;</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/aabd163a8502b00d528d6f3b6d3288540b26fe11" target="_blank" rel="noopener noreferrer">aabd163a85</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Highlights</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/12/17/">Tue, Dec 17</a></div>
+  <div class="entry-copy">Hack now discards every warning from the initial typecheck when the merge base has no matching saved state, rather than doing so only on a clean public revision. This favors hiding a stale warning over showing one unrelated to the user&#x27;s changes. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b3432de37575e9a5f54c12d44836c0cea96df9f0" target="_blank" rel="noopener noreferrer">b3432de375</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

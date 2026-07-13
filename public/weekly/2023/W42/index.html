@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="8 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 42: Oct 16–Oct 22, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 42: Oct 16–Oct 22, 2023</h1>
+  <p class="post-meta">8 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/10/17/">Day</a><a href="/weekly/2023/W42/" aria-current="page">Week</a><a href="/monthly/2023/10/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2023/W41/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2023/W43/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>6 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/10/17/">Tue, Oct 17</a></div>
+  <div class="entry-copy">Package diagnostics remain useful when a package mentions an undefined module: Hack now reports the missing module while still using its name to find and explain related package-boundary errors. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/866ce8f064759ecb7cd383e64a5a93f778c1b468" target="_blank" rel="noopener noreferrer">866ce8f064</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/10/18/">Wed, Oct 18</a></div>
+  <div class="entry-copy">Memoized functions may now declare <code>HH\EnumClass\Label</code> parameters without a typechecker error, completing the runtime support added on October 4. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4cd1bb3fc8006049d1872b3419740e820fb1c9a5" target="_blank" rel="noopener noreferrer">4cd1bb3fc8</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/10/18/">Wed, Oct 18</a></div>
+  <div class="entry-copy">A new <code>debugger_dump(mixed): void</code> builtin renders a value using the debugger&#x27;s serializer. In particular, it honors a value&#x27;s debugger-display customization rather than exposing the ordinary <code>var_dump()</code> representation. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/22a6b2b3a7d43a90847f51e381ed89b4bf7fe3b8" target="_blank" rel="noopener noreferrer">22a6b2b3a7</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/10/19/">Thu, Oct 19</a></div>
+  <div class="entry-copy">Enum-class labels now work with the general serializers: <code>serialize()</code>-style modes use the dedicated <code>e:length:label;</code> representation, while JSON encodes a label as a string. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1b80a55bff2d4da33b048e582be94bc12f0b69c2" target="_blank" rel="noopener noreferrer">1b80a55bff</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/10/19/">Thu, Oct 19</a></div>
+  <div class="entry-copy">Shape-key checking now follows every index in nested coalescing expressions such as <code>$shape[&#x27;a&#x27;][&#x27;b&#x27;] ?? $fallback</code>, so a missing inner key is no longer overlooked. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/24b8ff501c2cc1b371c9aafebe3ff6d74b2673ec" target="_blank" rel="noopener noreferrer">24b8ff501c</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/10/20/">Fri, Oct 20</a></div>
+  <div class="entry-copy"><code>$_SERVER[&#x27;REQUEST_TIME_NS&#x27;]</code> now exposes the request start time in nanoseconds. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/12b5ed858fe911632716bddf000f0253666e43b1" target="_blank" rel="noopener noreferrer">12b5ed858f</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/10/19/">Thu, Oct 19</a></div>
+  <div class="entry-copy">The experimental <code>class&lt;T&gt;</code> syntax is now accepted by the typechecker and currently behaves as the migration spelling of <code>classname&lt;T&gt;</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/bc693532b57f5fb1029e98017bad07cd4acf20f1" target="_blank" rel="noopener noreferrer">bc693532b5</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/10/20/">Fri, Oct 20</a></div>
+  <div class="entry-copy">The unstable <code>pipe_await</code> feature now permits nested sequential awaits such as <code>await f(await g(), await h())</code>. Hack rejects nestings that would require a concurrent composition of sequential await groups. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c2eec8e384622ec264ed047387f97c501d074e23" target="_blank" rel="noopener noreferrer">c2eec8e384</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

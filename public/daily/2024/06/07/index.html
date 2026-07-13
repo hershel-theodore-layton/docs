@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="6 noteworthy changes recorded on this day.">
+  <title>Friday, June 7, 2024 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Friday, June 7, 2024</h1>
+  <p class="post-meta">6 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/06/07/" aria-current="page">Day</a><a href="/weekly/2024/W23/">Week</a><a href="/monthly/2024/06/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2024/06/06/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2024/06/09/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">The redundant-generics linter once again recognizes a generic used only contravariantly when multiple <code>as</code> bounds simplify to one effective bound, including bounds introduced by implicit pessimisation. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1ca353c4cb3ddf5881529a1a48990c65a7c0d0c9" target="_blank" rel="noopener noreferrer">1ca353c4cb</a></div></li><li class="change-entry"><div class="entry-copy">Shape refinement no longer causes <code>Shapes::idx()</code> on a different optional field to lose its nullable result type after patterns such as <code>$shape ?? shape()</code> and <code>Shapes::keyExists()</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6254e75cb855abcd967f7ffd9030a17009edeb92" target="_blank" rel="noopener noreferrer">6254e75cb8</a></div></li><li class="change-entry"><div class="entry-copy">The new <code>HH\Facts\validate(vec&lt;string&gt; $types_to_ignore = vec[])[defaults]: void</code> API checks the SQLite Facts database for types mapped to multiple paths and throws <code>UnexpectedValueException</code> when it finds an unignored conflict. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/153ec68b9d26b8bee329bf7d55d4b64d335656fe" target="_blank" rel="noopener noreferrer">153ec68b9d</a></div></li><li class="change-entry"><div class="entry-copy">Hack declarations now expose the pure async CAS helpers <code>HH\RemoteExecution\gen_upload_file(string, string)[]: Awaitable&lt;string&gt;</code> and <code>gen_download_file(string, string, string)[]: Awaitable&lt;bool&gt;</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0c2cb6acbb1cfc0df2dc009f069322cec4058516" target="_blank" rel="noopener noreferrer">0c2cb6acbb</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy">Hack&#x27;s invalid-index check now diagnoses non-<code>int</code> access to <code>vec</code>, including cases hidden behind inferred generic keys. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6a242bdb0d9feb9e715e7f3fa5f22286b9e567c2" target="_blank" rel="noopener noreferrer">6a242bdb0d</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">Unstable expression trees now permit <code>await</code> inside splices when the tree is constructed in an async function. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3c259b10ef347a47eb74de9fb1ae45c7b939210d" target="_blank" rel="noopener noreferrer">3c259b10ef</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="6 noteworthy changes recorded on this day.">
+  <title>Friday, July 11, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Friday, July 11, 2025</h1>
+  <p class="post-meta">6 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/07/11/" aria-current="page">Day</a><a href="/weekly/2025/W28/">Week</a><a href="/monthly/2025/07/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2025/07/10/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2025/07/12/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">LSP document-symbol ranges now begin at the symbol&#x27;s name rather than at the start of its line, improving outline navigation and symbol selection. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0c2b5109ff94bf9d565039eb02b6dcbe751b9c4f" target="_blank" rel="noopener noreferrer">0c2b5109ff</a></div></li><li class="change-entry"><div class="entry-copy"><code>ReflectionTypeConstant::getCanonicalClassname()[]</code> reports the class or trait that actually defines a type constant in non-repo-authoritative mode. Repo-authoritative builds flatten traits and therefore throw when that distinction cannot be recovered; the explicit <code>[]</code> adds no caller capability requirement. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/db653f14e10c943b479f847f9f99ba32565de805" target="_blank" rel="noopener noreferrer">db653f14e1</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy"><code>ReflectionFunction::invoke()</code> and <code>invokeArgs()</code> now throw <code>ReflectionException</code> for named top-level functions. Invocation through a reflection object remains supported for closures. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6e46037c9238b2ece68793f16c8913e94d795c5f" target="_blank" rel="noopener noreferrer">6e46037c92</a></div></li><li class="change-entry"><div class="entry-copy"><code>Eval.ForbidDynamicCallsToFunc</code> now defaults to level <code>3</code>, so raw-string top-level function calls throw even when the target has <code>&lt;&lt;__DynamicallyCallable&gt;&gt;</code>. Use a function pointer, or resolve an explicitly dynamic target through <code>HH\dynamic_fun()</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ee7d2b14b12ae7a363fd260170cde75f836324f6" target="_blank" rel="noopener noreferrer">ee7d2b14b1</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">Experimental <code>can_index</code> solving now supports <code>Map</code> and optional indexed values. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/037d467b12afb85e01b8ec3cb646ca465e231bb5" target="_blank" rel="noopener noreferrer">037d467b12</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/00c9e19540e1bfea68af98d61ca9b03588a35edc" target="_blank" rel="noopener noreferrer">00c9e19540</a></div></li><li class="change-entry"><div class="entry-copy">Expression trees now give a direct unsupported-syntax error for <code>is</code> expressions instead of cascading parse errors. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0a74f2a6a979d4f91bbb43932d4bb3bad38c7d74" target="_blank" rel="noopener noreferrer">0a74f2a6a9</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

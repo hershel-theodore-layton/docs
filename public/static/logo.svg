@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="logo-title logo-description">
+  <title id="logo-title">Community HHVM heart</title>
+  <desc id="logo-description">The HHVM mark centered inside a heart outline.</desc>
+  <path
+    d="M128 230C105 208 48 166 33 116 19 69 47 34 87 34c20 0 35 10 41 26 6-16 21-26 41-26 40 0 68 35 54 82-15 50-72 92-95 114Z"
+    fill="#f9f9f9"
+    stroke="#505050"
+    stroke-width="9"
+    stroke-linejoin="round"
+  />
+  <!-- Optically centered: the asymmetric diagonals need a slight rightward correction. -->
+  <g transform="translate(47 47) scale(.64)">
+    <path fill="#221f20" d="M63.8 217.2l57.6-58.4H63.8zM123.9 32.8L63.8 91.5v61.2l60.1-60.1z"/>
+    <path fill="#eee" d="M128.1 94.7v57.1L186 94.7z"/>
+    <path fill="#221f20" d="M128.1 220.2l61.6-61.4V97.6L128.1 159z"/>
+    <path fill="#e0a33b" d="M123.9 154.2V98.3l-56 55.8z"/>
+    <path fill="#221f20" d="M131.7 90.5h58v-58z"/>
+  </g>
+</svg>

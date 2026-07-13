@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="2 noteworthy changes recorded on this day.">
+  <title>Tuesday, April 14, 2026 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Tuesday, April 14, 2026</h1>
+  <p class="post-meta">2 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2026/04/14/" aria-current="page">Day</a><a href="/weekly/2026/W16/">Week</a><a href="/monthly/2026/04/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2026/04/13/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2026/04/15/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy"><code>hh_client</code> and <code>hh_single_type_check</code> now support <code>--enforcement-at-pos-batch</code>, which reports whether HHVM enforces the type at each requested source position and returns the concrete enforced bounds where applicable. It covers declarations as well as call arguments, returns, property assignments, constructors, and array indices. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/985a6cb528e52380e654db6378026f0bdf832411" target="_blank" rel="noopener noreferrer">985a6cb528</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy">Built-in declarations for ICU, <code>IntervalTimer</code>, OpenSSL, and file APIs now replace many missing parameter and return annotations with concrete types matching their implementations. This improves inference but can expose calls that previously flowed through an effectively untyped signature. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a6c59630b80a3cf0d69e2ffc038e8ef55b284650" target="_blank" rel="noopener noreferrer">a6c59630b8</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4b503a24a794b3b13a958748468158febe1d3b0b" target="_blank" rel="noopener noreferrer">4b503a24a7</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9e5cfbd2babf979e91b3c3d554fc20d142b9ff61" target="_blank" rel="noopener noreferrer">9e5cfbd2ba</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9e2dfa95cab412784338da3826e83209cc2b49cf" target="_blank" rel="noopener noreferrer">9e2dfa95ca</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

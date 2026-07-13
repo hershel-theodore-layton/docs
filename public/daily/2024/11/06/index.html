@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="5 noteworthy changes recorded on this day.">
+  <title>Wednesday, November 6, 2024 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Wednesday, November 6, 2024</h1>
+  <p class="post-meta">5 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/11/06/" aria-current="page">Day</a><a href="/weekly/2024/W45/">Week</a><a href="/monthly/2024/11/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2024/11/05/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2024/11/07/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">The Thrift extension adds <code>thrift_protocol_write_binary_struct()</code> and <code>thrift_protocol_write_compact_struct()</code>, which serialize a struct without an RPC message envelope. The compact form accepts an optional protocol version, defaulting to 2. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9e49db492bbba72ca272cbefbc420a29ccf26582" target="_blank" rel="noopener noreferrer">9e49db492b</a></div></li><li class="change-entry"><div class="entry-copy">Generated runtime configuration now forwards <code>Repo.Authoritative</code> correctly after the configuration-system migration, preventing consumers from observing a stale or incorrect repo-mode value. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/67acf766d84c30d63d7e93d097ac19b52143bc5d" target="_blank" rel="noopener noreferrer">67acf766d8</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">Unstable shape destructuring can now be used as a <code>foreach</code> value pattern, including nested shape and tuple patterns. It still requires <code>&lt;&lt;file:__EnableUnstableFeatures(&#x27;shape_destructure&#x27;)&gt;&gt;</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/394673c13a660090358c6cd17625f9e4f63d28ec" target="_blank" rel="noopener noreferrer">394673c13a</a></div></li><li class="change-entry"><div class="entry-copy">Package v2 active deployments are now honored while building a repo: files are selected from <code>include_paths</code> and <code>__PackageOverride</code> attributes instead of module membership. This remains part of the staged package-v2 rollout. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0548222340abfff213b4347af8ad49ff4a507233" target="_blank" rel="noopener noreferrer">0548222340</a></div></li><li class="change-entry"><div class="entry-copy">Memoized calls now produce the same key for a class name represented as a string, lazy class, or class pointer. This fixes duplicate cache entries during the class-pointer rollout. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9c245379fd7d3d851f80b2185f0a26cfc48e9a1e" target="_blank" rel="noopener noreferrer">9c245379fd</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="10 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 47: Nov 17–Nov 23, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 47: Nov 17–Nov 23, 2025</h1>
+  <p class="post-meta">10 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/11/17/">Day</a><a href="/weekly/2025/W47/" aria-current="page">Week</a><a href="/monthly/2025/11/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2025/W46/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2025/W48/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>5 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/11/17/">Mon, Nov 17</a></div>
+  <div class="entry-copy">Reified type-structure interning now compares semantically equal type structures without depending on dictionary key order, avoiding debug-build assertions for structures assembled through different inheritance and constraint paths. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3688b57f8230ce2879cb3bb9f256e9cb75c4c4c0" target="_blank" rel="noopener noreferrer">3688b57f82</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/11/17/">Mon, Nov 17</a></div>
+  <div class="entry-copy">The JIT no longer applies an unsafe dict/keyset offset optimization when a container may be empty or contain tombstones, preventing incorrect optimized execution. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/90a4d19894b154c754d325770b15fc38df115c13" target="_blank" rel="noopener noreferrer">90a4d19894</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/11/19/">Wed, Nov 19</a></div>
+  <div class="entry-copy">HHBBC no longer performs stack-rewinding or stack-shape-changing reductions while speculating through a block, fixing a path that could incorrectly optimize bytecode. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/58b4eb518ab6a5577db2dd4299d68b1b2af5c71a" target="_blank" rel="noopener noreferrer">58b4eb518a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/11/20/">Thu, Nov 20</a></div>
+  <div class="entry-copy">The debugger no longer sends a DAP <code>thread exited</code> event for a thread whose corresponding <code>thread started</code> event was never sent, keeping client thread state balanced. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9cd2be99d3e27d5c713aa841a648eda0940ef574" target="_blank" rel="noopener noreferrer">9cd2be99d3</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/11/23/">Sun, Nov 23</a></div>
+  <div class="entry-copy">HHBBC now preserves the known staticness of nested dict/keyset keys and values when modeling copy-on-write on an otherwise static array, fixing an optimizer monotonicity bug. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3a858a72742c7eb954d8e1d2fa7de867f65d8db4" target="_blank" rel="noopener noreferrer">3a858a7274</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/11/18/">Tue, Nov 18</a></div>
+  <div class="entry-copy"><code>parent::__construct(...)</code> is now checked as an ordinary method call. This correctly supports constructors with <code>&lt;&lt;__SupportDynamicType&gt;&gt;</code>, but also reports an error when the parent class has no constructor instead of silently accepting the call. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b1f24f75dd93feeacaae26ac12f4d6468c52f51e" target="_blank" rel="noopener noreferrer">b1f24f75dd</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/11/18/">Tue, Nov 18</a></div>
+  <div class="entry-copy">With an active deployment, <code>package foo</code> and <code>HH\package_exists(&#x27;foo&#x27;)</code> now return <code>false</code> when <code>foo</code> is only softly deployed. This also changes whether <code>&lt;&lt;__RequirePackage(&#x27;foo&#x27;)&gt;&gt;</code> requirements are satisfied. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/32f696c3e9a8439d9ff2e29d802312da9f927f51" target="_blank" rel="noopener noreferrer">32f696c3e9</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/11/19/">Wed, Nov 19</a></div>
+  <div class="entry-copy">The runtime functions <code>apache_request_headers()</code> and its alias <code>getallheaders()</code> have been removed. Their declarations had already been removed from the standard-library HHI files. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/be51b361e85e3d9a810e476293c2d97da485bfa0" target="_blank" rel="noopener noreferrer">be51b361e8</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/11/19/">Wed, Nov 19</a></div>
+  <div class="entry-copy"><code>.hhconfig</code> gains <code>check_bool_for_condition</code>: <code>0</code> keeps existing truthiness behavior, <code>1</code> emits Warn[12028], and <code>2</code> emits Typing[4504] unless conditions are subtypes of <code>~bool</code>. The opt-in check covers control-flow conditions, <code>!</code>, <code>&amp;&amp;</code>, <code>||</code>, and ternaries. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f2102bc763d0c7d0a11f3924a0f21039e5cae929" target="_blank" rel="noopener noreferrer">f2102bc763</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Security</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/11/20/">Thu, Nov 20</a></div>
+  <div class="entry-copy">HHVM can now enforce <code>Server.RequestFanoutLimit</code> for recursively spawned Xbox requests. With the new <code>Server.EnforceRequestFanout=true</code> setting, exceeding the limit rolls back the counter and throws <code>RequestFanoutLimitExceededException</code>; enforcement is off by default. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a96d874cb872ecabef24684cb79375fb812671b0" target="_blank" rel="noopener noreferrer">a96d874cb8</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

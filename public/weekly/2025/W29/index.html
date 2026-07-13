@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="15 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 29: Jul 14–Jul 20, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 29: Jul 14–Jul 20, 2025</h1>
+  <p class="post-meta">15 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/07/14/">Day</a><a href="/weekly/2025/W29/" aria-current="page">Week</a><a href="/monthly/2025/07/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2025/W28/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2025/W30/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>8 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/07/14/">Mon, Jul 14</a></div>
+  <div class="entry-copy">Constructor initialization checking no longer reports a false read-before-write error when an inherited property is initialized by a child&#x27;s default value. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/25fc487bb99daf5b85ab386c064396a3ae21e363" target="_blank" rel="noopener noreferrer">25fc487bb9</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/07/15/">Tue, Jul 15</a></div>
+  <div class="entry-copy">Implicit string-to-class conversion notices now identify whether the conversion came from an expression, a static-method call, <code>type_structure()</code>, or <code>HH\dynamic_class_meth()</code>, making class-pointer migrations easier to triage. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d6f352bc64c646333495d499068126152142878e" target="_blank" rel="noopener noreferrer">d6f352bc64</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/07/15/">Tue, Jul 15</a></div>
+  <div class="entry-copy">The compact-protocol readers now accept an optional trailing <code>int $version = 2</code> at runtime, and the public HHI exposes it on <code>thrift_protocol_read_compact_struct_from_string()</code>. Its omitted capability list remains implicit <code>[defaults]</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c292d2c41ec66f491bf3f7cdf78494df68d20814" target="_blank" rel="noopener noreferrer">c292d2c41e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/07/16/">Wed, Jul 16</a></div>
+  <div class="entry-copy">Hack now gives each built-in pseudoconstant—such as <code>__FILE__</code>, <code>__CLASS__</code>, and <code>__METHOD__</code>—a distinct bounded newtype. Existing string and integer uses remain valid, while APIs can distinguish the pseudoconstant&#x27;s origin in their signatures. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4b2d2f26d99b30c40fe4eb9014fd5ebf98f80684" target="_blank" rel="noopener noreferrer">4b2d2f26d9</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/07/16/">Wed, Jul 16</a></div>
+  <div class="entry-copy">Type-switch refinement now preserves the scrutinee&#x27;s generic upper bound in both true and false branches, and sealed-interface knowledge is used more consistently when proving types disjoint. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/57c703bbf521e18dd54d0bdc31675cd4d1ba6d25" target="_blank" rel="noopener noreferrer">57c703bbf5</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e76d7a2c00be63e1075aa9d22de425631b2f86c1" target="_blank" rel="noopener noreferrer">e76d7a2c00</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/07/17/">Thu, Jul 17</a></div>
+  <div class="entry-copy">Type errors caused by generic or newtype upper bounds now point to the value&#x27;s origin and explain the relevant bound definition instead of attributing the mismatch to an opaque solver type. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f53441eb8b5782402bfe6c43085a0286f47f43ef" target="_blank" rel="noopener noreferrer">f53441eb8b</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/07/18/">Fri, Jul 18</a></div>
+  <div class="entry-copy">User-facing type errors now treat <code>e1[e2]</code> as a local flow source, so an invalid indexed value is attributed to the subscript expression rather than only to the distant origin of the container&#x27;s type. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b591ddd593ff375164b4e155e92c7342950f3c2d" target="_blank" rel="noopener noreferrer">b591ddd593</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1249826f2402e946a7ee287767dad1bd3c6fda1a" target="_blank" rel="noopener noreferrer">1249826f24</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/07/18/">Fri, Jul 18</a></div>
+  <div class="entry-copy">The public HHI now exposes <code>getTypeVarNames()[]</code> on <code>ReflectionClass</code> and <code>ReflectionFunctionAbstract</code>, completing the runtime API added earlier in the month. Its empty capability list means any caller context can invoke it. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9786b22b25e77827cb970ebb802865dd7c6f4d44" target="_blank" rel="noopener noreferrer">9786b22b25</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/07/14/">Mon, Jul 14</a></div>
+  <div class="entry-copy">Constructor analysis now checks every reachable use of <code>$this</code> instead of short-circuiting after the first control-flow result. Premature uses in loop conditions, increments, and thrown expressions can now produce initialization errors that were previously missed. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/32d174351de86ac15298884ba45c21966b1b5fbb" target="_blank" rel="noopener noreferrer">32d174351d</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>6 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/07/14/">Mon, Jul 14</a></div>
+  <div class="entry-copy">Expression trees add staged support for the null-coalescing operator, allowing DSLs to receive and interpret <code>??</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/74e9a788982b88212d5c5c6930abf232a4895edc" target="_blank" rel="noopener noreferrer">74e9a78898</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/07/15/">Tue, Jul 15</a></div>
+  <div class="entry-copy">Staged type-splat checking now accepts an ordinary literal lambda where a concrete expanded function signature is expected. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/16001a1770004072b91ef2fec965882833b94ef6" target="_blank" rel="noopener noreferrer">16001a1770</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/07/15/">Tue, Jul 15</a></div>
+  <div class="entry-copy">Polymorphic lambdas and polymorphic function hints have moved to OngoingRelease, but remain a staged feature. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/edf5bb9a63b4108ebc4adf7557b92b9fa0b8bbc7" target="_blank" rel="noopener noreferrer">edf5bb9a63</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/07/15/">Tue, Jul 15</a></div>
+  <div class="entry-copy">Expression trees add staged null-safe property and method access, exposed to DSL visitors through <code>visitPropertyAccessNullSafe</code> and <code>visitInstanceMethodNullSafe</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1dfaf9d7031c1e78375586b760b556bab43d669d" target="_blank" rel="noopener noreferrer">1dfaf9d703</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/07/16/">Wed, Jul 16</a></div>
+  <div class="entry-copy">Nested expression-tree bindings have moved from Preview to OngoingRelease, but remain staged. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/50012bbd1f9d1815377a6d780913a738a76f5554" target="_blank" rel="noopener noreferrer">50012bbd1f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/07/17/">Thu, Jul 17</a></div>
+  <div class="entry-copy">Expression-tree <code>makeTree</code> metadata now includes a <code>variables</code> list containing free local variables used by staged nested bindings. DSL integrations that inspect this metadata should accept the new field. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6491c6a55dcb50533de7bb2e2d52bd2d84d83f83" target="_blank" rel="noopener noreferrer">6491c6a55d</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

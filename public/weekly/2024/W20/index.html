@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="12 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 20: May 13–May 19, 2024 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 20: May 13–May 19, 2024</h1>
+  <p class="post-meta">12 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/05/13/">Day</a><a href="/weekly/2024/W20/" aria-current="page">Week</a><a href="/monthly/2024/05/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2024/W19/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2024/W21/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>6 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/05/13/">Mon, May 13</a></div>
+  <div class="entry-copy">Null checks written as <code>is_null($value)</code> or <code>$value === null</code> now use the same type-switch refinement as <code>$value is null</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8d4f00addaa158d8721748023900dc35fc7b03bb" target="_blank" rel="noopener noreferrer">8d4f00adda</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d749ee3e5ab138687c4c8f653062fa69ab1f05c0" target="_blank" rel="noopener noreferrer">d749ee3e5a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/05/14/">Tue, May 14</a></div>
+  <div class="entry-copy">Referencing <code>$this</code> inside an enum class now produces a direct parser error. HackC and syntax-only checks no longer panic later in compilation. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4f994c02dfb987ffb834798b3f412574bbaf7c07" target="_blank" rel="noopener noreferrer">4f994c02df</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/05/14/">Tue, May 14</a></div>
+  <div class="entry-copy">Shape-key validation now follows a missing field through further indexing on the left of <code>??</code>; <code>$shape[&#x27;missing&#x27;][0] ?? null</code> is no longer accepted when <code>missing</code> is absent. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/da7eb6cb7300637841a235deae2be6d4d487d7d0" target="_blank" rel="noopener noreferrer">da7eb6cb73</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/05/14/">Tue, May 14</a></div>
+  <div class="entry-copy">Under Sound Dynamic, the true branch of a null type test now refines precisely to <code>null</code> instead of the unhelpful <code>~null</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/61db97555fbd07bea810c4a18ff75d6b1bcaec8c" target="_blank" rel="noopener noreferrer">61db97555f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/05/15/">Wed, May 15</a></div>
+  <div class="entry-copy">The built-in constants <code>TRUE</code>, <code>true</code>, <code>FALSE</code>, <code>false</code>, <code>NULL</code>, and <code>null</code> are now declared in HHI files, so attempts to redefine them receive a naming error instead of surviving until HHVM&#x27;s runtime fatal. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/47c1ae0958a5bc8cfff73936367e3b2068ee2ab3" target="_blank" rel="noopener noreferrer">47c1ae0958</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/05/17/">Fri, May 17</a></div>
+  <div class="entry-copy">Hack now reports top-level <code>break</code> or <code>continue</code> inside a <code>finally</code> block during typechecking, matching the fatal that HackC already emitted. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/cba8993c7cb91b3cd4a068e61650edc4e03ec1d9" target="_blank" rel="noopener noreferrer">cba8993c7c</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>5 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/05/15/">Wed, May 15</a></div>
+  <div class="entry-copy"><code>__clone()</code> must declare a <code>void</code> return type. Returned values were always discarded; implementations that returned <code>this</code> or another value must remove the return value and keep mutation in the method body. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/50376266b51002aaa4334be18196d63464f21d59" target="_blank" rel="noopener noreferrer">50376266b5</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/05/16/">Thu, May 16</a></div>
+  <div class="entry-copy"><code>hh_single_type_check</code> now enables <code>everything_sdt</code> by default and has removed the <code>--everything-sdt</code> flag. Tests that need the legacy mode should pass <code>--config everything_sdt=false</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/50f7db53c0260685ee25dec211f97d71027ebf49" target="_blank" rel="noopener noreferrer">50f7db53c0</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/05/16/">Thu, May 16</a></div>
+  <div class="entry-copy">Comparison typechecking now constrains both operands even when one begins as an unresolved type variable. Unconstrained generic or nullable comparisons that could resolve outside <code>int</code>, <code>string</code>, <code>DateTime</code>, or <code>DateTimeImmutable</code> may now report errors. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d45b3df95f8e908b412e3269d970f7865a2b6d0f" target="_blank" rel="noopener noreferrer">d45b3df95f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/05/17/">Fri, May 17</a></div>
+  <div class="entry-copy">The erased <code>UNSAFE_CAST</code> pseudo-function may no longer be captured as a first-class function pointer with <code>UNSAFE_CAST&lt;&gt;</code>. Direct <code>HH\FIXME\UNSAFE_CAST(...)</code> migration calls remain available. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/080efb33510fee5088d21063d948457e46e460e1" target="_blank" rel="noopener noreferrer">080efb3351</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/05/18/">Sat, May 18</a></div>
+  <div class="entry-copy">Trait names are no longer considered runtime-enforceable types. They cannot be supplied to an <code>&lt;&lt;__Enforceable&gt;&gt; reified</code> parameter or used as the target of <code>is</code> and <code>as</code>; use an interface or concrete class for runtime checks. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9001bd2d4083c2e6d3b49f9fb03275d6c828c7a3" target="_blank" rel="noopener noreferrer">9001bd2d40</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/05/16/">Thu, May 16</a></div>
+  <div class="entry-copy">Package-v2 groundwork adds the <code>package_v2</code> option, parsing for path-based <code>include_paths</code>, and an unstable <code>&lt;&lt;file:__PackageOverride(...)&gt;&gt;</code> attribute. The override is syntax-only at this stage; enforcement work follows later. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/405a8e27b8d29e56cf31701c96c257090e3ac3f6" target="_blank" rel="noopener noreferrer">405a8e27b8</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f791873cdddde21544fb83bbe1ced21da8772a48" target="_blank" rel="noopener noreferrer">f791873cdd</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8bd22d74db5843c4d53d2570f95a08d507164fde" target="_blank" rel="noopener noreferrer">8bd22d74db</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

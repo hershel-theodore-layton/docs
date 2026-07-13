@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="49 noteworthy changes, organized by the source changelog sections.">
+  <title>December 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/" aria-current="page">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Monthly digest</p>
+  <h1 class="post-title">December 2025</h1>
+  <p class="post-meta">49 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/12/01/">Day</a><a href="/weekly/2025/W49/">Week</a><a href="/monthly/2025/12/" aria-current="page">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/monthly/2025/11/"><span aria-hidden="true">←</span><span>Previous month</span></a><a class="period-button next" rel="next" href="/monthly/2026/01/"><span aria-hidden="true">→</span><span>Next month</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>25 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W49/">W49</a><span aria-hidden="true"> · </span><a href="/daily/2025/12/01/">Dec 1</a></div>
+  <div class="entry-copy">A successful <code>if (package foo)</code> refinement or <code>&lt;&lt;__RequirePackage(&#x27;foo&#x27;)&gt;&gt;</code> guarantee now also marks every package transitively included by <code>foo</code> as loaded. Code inside the guarded function or branch can therefore access symbols from those included packages without redundant package checks. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/57290fa827c9465cae7415967b75c54b7fe5e693" target="_blank" rel="noopener noreferrer">57290fa827</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W49/">W49</a><span aria-hidden="true"> · </span><a href="/daily/2025/12/01/">Dec 1</a></div>
+  <div class="entry-copy">The performance regression affecting fresh <code>hh --no-load</code> checks has been fixed. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5edcde72417f33bab549446152c569bc108196ff" target="_blank" rel="noopener noreferrer">5edcde7241</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W49/">W49</a><span aria-hidden="true"> · </span><a href="/daily/2025/12/02/">Dec 2</a></div>
+  <div class="entry-copy">The Thrift extension now provides <code>thrift_protocol_write_binary_struct_to_string()</code> and <code>thrift_protocol_read_binary_struct_from_string()</code>. They serialize Binary-protocol structs directly to and from strings, avoiding repeated calls into Hack through <code>TMemoryBuffer</code>; both omit explicit capability brackets and therefore require <code>[defaults]</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/956620c50fcbac20a46d5e79e38a04c83c652948" target="_blank" rel="noopener noreferrer">956620c50f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W49/">W49</a><span aria-hidden="true"> · </span><a href="/daily/2025/12/03/">Dec 3</a></div>
+  <div class="entry-copy"><code>HH\is_any_array($value)</code> now refines types like <code>$value is HH\AnyArray&lt;_, _&gt;</code>. In particular, false branches no longer produce spurious <code>AnyArray</code> arity errors. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/37cae09f341abbb7450d1c836c52a79bff02be56" target="_blank" rel="noopener noreferrer">37cae09f34</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W49/">W49</a><span aria-hidden="true"> · </span><a href="/daily/2025/12/03/">Dec 3</a></div>
+  <div class="entry-copy">The global, final <code>RequestFanoutLimitExceededException</code> is now declared in the bundled HHI files, so Hack code can name and catch the runtime exception without supplying a local stub. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/fe93d4bbdede4654ab8b74a68e7fda9256c4e4ec" target="_blank" rel="noopener noreferrer">fe93d4bbde</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W49/">W49</a><span aria-hidden="true"> · </span><a href="/daily/2025/12/04/">Dec 4</a></div>
+  <div class="entry-copy">HHVM debugger listening sockets now use <code>SOCK_CLOEXEC</code>. Access-log processors and other subprocesses no longer inherit the descriptor and prevent the debugger server from reopening its socket after a client disconnects. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8e8e78c5ff11884dfd2d5bc25dd6e367041b5e54" target="_blank" rel="noopener noreferrer">8e8e78c5ff</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W49/">W49</a><span aria-hidden="true"> · </span><a href="/daily/2025/12/04/">Dec 4</a></div>
+  <div class="entry-copy">Access-log formats can use <code>%M</code> for the request&#x27;s end time as a Unix timestamp in microseconds, providing finer resolution than the existing seconds-level time field. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c8a3b4f976e6543e5e4606acffe37e5986df75f7" target="_blank" rel="noopener noreferrer">c8a3b4f976</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W49/">W49</a><span aria-hidden="true"> · </span><a href="/daily/2025/12/05/">Dec 5</a></div>
+  <div class="entry-copy">New <code>&lt;&lt;__SoftRequirePackage(&#x27;pkg&#x27;, 100)&gt;&gt;</code> annotations let functions and concrete methods observe missing deployment requirements without failing the call. The package name and optional sample rate must be literals. A missing package emits a sampled notice identifying the callable; the rate defaults to <code>1</code>, while <code>0</code> suppresses logging. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/233ada2c6f651cffc0699f475bcf78e2d4b30689" target="_blank" rel="noopener noreferrer">233ada2c6f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W50/">W50</a><span aria-hidden="true"> · </span><a href="/daily/2025/12/08/">Dec 8</a></div>
+  <div class="entry-copy">Hack&#x27;s line-break map now handles CRLF, LF, and a trailing bare CR without an off-by-one access, improving source positions in tools that consume the map. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b09e3f9d1ce119ac212f546b0c09a10a696c39d0" target="_blank" rel="noopener noreferrer">b09e3f9d1c</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W50/">W50</a><span aria-hidden="true"> · </span><a href="/daily/2025/12/08/">Dec 8</a></div>
+  <div class="entry-copy">Eden-backed <code>hh_server</code> file enumeration no longer discards changes that were waiting to be consumed, preventing a full-file query from making subsequent incremental checks miss an edit. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/44760b5d3e47f3e78b2b164761c99decb5e4c306" target="_blank" rel="noopener noreferrer">44760b5d3e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W50/">W50</a><span aria-hidden="true"> · </span><a href="/daily/2025/12/09/">Dec 9</a></div>
+  <div class="entry-copy">Fresh generic parameters that still occur in local-variable types are no longer discarded from the typing environment during refinement and control-flow analysis. This fixes false errors in code that refines generic predicates and then joins values from the resulting branches. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2ec0bc4566f9a6a67650df385f17292cdd530fd6" target="_blank" rel="noopener noreferrer">2ec0bc4566</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W50/">W50</a><span aria-hidden="true"> · </span><a href="/daily/2025/12/10/">Dec 10</a></div>
+  <div class="entry-copy">The parser now processes long <code>else if</code> chains iteratively, avoiding stack growth proportional to the number of branches while preserving the same syntax tree. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/794dce91c052ba8308ae2e518d7c04ab4670d56d" target="_blank" rel="noopener noreferrer">794dce91c0</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W50/">W50</a><span aria-hidden="true"> · </span><a href="/daily/2025/12/10/">Dec 10</a></div>
+  <div class="entry-copy">Tools converting Hack&#x27;s JSON type representation back into local types now map the primitive <code>string</code> entry to <code>HH\string</code> rather than a class literally named <code>string</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0e9e24f115e3d3c2d96c51d53f594ef90e83399d" target="_blank" rel="noopener noreferrer">0e9e24f115</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W50/">W50</a><span aria-hidden="true"> · </span><a href="/daily/2025/12/11/">Dec 11</a></div>
+  <div class="entry-copy">The open-source <code>implicit_context.hhi</code> no longer seals <code>MemoSensitiveImplicitContext</code> to an internal-only subclass, preventing bundled HHI declarations from producing an impossible subclass error in OSS projects. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a455f079d5bc324514bc5740d0fafbd5aef5af9b" target="_blank" rel="noopener noreferrer">a455f079d5</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W50/">W50</a><span aria-hidden="true"> · </span><a href="/daily/2025/12/12/">Dec 12</a></div>
+  <div class="entry-copy">Disjoint-type checking now builds substitutions from the class being instantiated rather than the declaration where a member originated, avoiding an assertion when inherited generic arities differ. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e4a5ef9f9358b67bddfd314ac5ee88ce14520383" target="_blank" rel="noopener noreferrer">e4a5ef9f93</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W50/">W50</a><span aria-hidden="true"> · </span><a href="/daily/2025/12/13/">Dec 13</a></div>
+  <div class="entry-copy"><code>AsyncMysqlQueryResult</code> now exposes <code>mysqlInfo(): ?string</code>, <code>rowsMatched(): ?int</code>, and <code>warningsCount(): int</code>. These distinguish rows matched from rows actually changed by an update and expose server warning metadata; their omitted coeffect brackets mean <code>[defaults]</code>, so they are not callable from a pure <code>[]</code> context. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/aef4881eabe25e53d633dd49710704101ffb9d57" target="_blank" rel="noopener noreferrer">aef4881eab</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W51/">W51</a><span aria-hidden="true"> · </span><a href="/daily/2025/12/15/">Dec 15</a></div>
+  <div class="entry-copy">The Hack manual now documents package inclusion and cross-package calls in greater depth and adds a migration guide covering <code>__PackageOverride</code>, <code>__RequirePackage</code>, and the new <code>__SoftRequirePackage</code> workflow. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/abb3833a4938d1dbb16db4b0b38a1ad386f704ba" target="_blank" rel="noopener noreferrer">abb3833a49</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W51/">W51</a><span aria-hidden="true"> · </span><a href="/daily/2025/12/16/">Dec 16</a></div>
+  <div class="entry-copy">HHBBC no longer performs quadratic dead-code elimination on long chains of array-element additions, reducing compile time for generated code and large literal-building sequences. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a2b1b96b4bcc18f7beb3bf47aa878735835c353b" target="_blank" rel="noopener noreferrer">a2b1b96b4b</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W51/">W51</a><span aria-hidden="true"> · </span><a href="/daily/2025/12/17/">Dec 17</a></div>
+  <div class="entry-copy">A fatal caused by throwing a value that does not implement <code>Throwable</code> now includes the value&#x27;s actual runtime type, making boundary and deserialization failures substantially easier to diagnose. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/94bd1abfe1999c7d4e04392af70470bafdfbdbd3" target="_blank" rel="noopener noreferrer">94bd1abfe1</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W51/">W51</a><span aria-hidden="true"> · </span><a href="/daily/2025/12/18/">Dec 18</a></div>
+  <div class="entry-copy">HHVM avoids building an expensive JIT region context after losing a translation lease, reducing extreme CPU use when many requests contend to translate the same large function. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5a202ad7796f6591b5004f1ddf488c64885cbe10" target="_blank" rel="noopener noreferrer">5a202ad779</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W51/">W51</a><span aria-hidden="true"> · </span><a href="/daily/2025/12/19/">Dec 19</a></div>
+  <div class="entry-copy">CLI-server deployments can set <code>Eval.UnixServerNotifySystemd=true</code> to send <code>READY=1</code> after the Unix server has started accepting connections. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/fa336b0021a71936f149dc8895814c79271c23c6" target="_blank" rel="noopener noreferrer">fa336b0021</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W52/">W52</a><span aria-hidden="true"> · </span><a href="/daily/2025/12/23/">Dec 23</a></div>
+  <div class="entry-copy">New <code>HH\TypedFormatString&lt;TFormatter, TArgs&gt;</code> values carry the placeholder types as a tuple, allowing first-class helpers to pass a format string and its <code>...TArgs</code> without a FIXME. String literals are checked when a typed format string is expected, and concatenating two compatible typed format strings concatenates their argument tuples; the existing <code>HH\FormatString&lt;T&gt;</code> remains as a backward-compatible alias using <code>(mixed...)</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/12cbdcd02f83e46556aa875baf9ee09db26bfb47" target="_blank" rel="noopener noreferrer">12cbdcd02f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W52/">W52</a><span aria-hidden="true"> · </span><a href="/daily/2025/12/23/">Dec 23</a></div>
+  <div class="entry-copy"><code>sprintf()</code>, <code>printf()</code>, <code>HH\invariant()</code>, and <code>HH\invariant_violation()</code> now connect the inferred format tuple to their variadic arguments. <code>sprintf()</code> and the invariant helpers retain <code>[]</code>; <code>printf()</code> still omits a bracket and therefore requires <code>[defaults]</code>, so the stronger typing does not grant callers any new capabilities. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/12cbdcd02f83e46556aa875baf9ee09db26bfb47" target="_blank" rel="noopener noreferrer">12cbdcd02f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W52/">W52</a><span aria-hidden="true"> · </span><a href="/daily/2025/12/25/">Dec 25</a></div>
+  <div class="entry-copy">Nullable <code>?as</code> expressions no longer leave compiler-generated locals initialized on a failed check or on an exception raised while resolving a type structure. This prevents later control flow, including loops in a surrounding <code>catch</code>, from observing dangling temporary state. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/998c829efba1533bd499538165b9d2a97fa4d6cc" target="_blank" rel="noopener noreferrer">998c829efb</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W01/">W01</a><span aria-hidden="true"> · </span><a href="/daily/2025/12/29/">Dec 29</a></div>
+  <div class="entry-copy">JIT recovery now selects the oldest worker for termination and stack capture when the main retranslate-all thread is stuck, even if that worker has not independently exceeded the timeout. A larger initial profiling-prologue table also reduces contention during heavily profiled workloads. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8a64b592756ba3f2abd49b8ad347d6757a600c4e" target="_blank" rel="noopener noreferrer">8a64b59275</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1050ba1a553370ec5a695cd5a4a2d5d3b5bcaf3f" target="_blank" rel="noopener noreferrer">1050ba1a55</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>8 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W49/">W49</a><span aria-hidden="true"> · </span><a href="/daily/2025/12/03/">Dec 3</a></div>
+  <div class="entry-copy">The void-use check now looks through <code>supportdyn</code>, so consuming an expression typed as <code>supportdyn&lt;void&gt;</code> is rejected just like consuming <code>void</code>. This can reveal previously missed errors in sound-dynamic code. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/26e025e493a06ea005b8b6b5260fcb01b955879e" target="_blank" rel="noopener noreferrer">26e025e493</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W49/">W49</a><span aria-hidden="true"> · </span><a href="/daily/2025/12/05/">Dec 5</a></div>
+  <div class="entry-copy">The HHI model of <code>HH\string</code> is now final. User classes can no longer extend the primitive&#x27;s synthetic class, while types such as <code>classname&lt;C&gt;</code> remain meaningful subtypes of <code>string</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e71a41b2ba76f76eae4f3fc838d2729b607f1fa5" target="_blank" rel="noopener noreferrer">e71a41b2ba</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W50/">W50</a><span aria-hidden="true"> · </span><a href="/daily/2025/12/09/">Dec 9</a></div>
+  <div class="entry-copy">The global <code>boolval()</code> function has been removed from Hack&#x27;s HHI files and HHVM&#x27;s standard extension. Replace calls with <code>HH\legacy_is_truthy()</code>, which preserves the legacy conversion behavior and, like the removed function, requires no capabilities (<code>[]</code>). <a href="https://github.com/hershel-theodore-layton/hhvm/commit/27465dc29d848867438aef9808f3ad317e1b6849" target="_blank" rel="noopener noreferrer">27465dc29d</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W51/">W51</a><span aria-hidden="true"> · </span><a href="/daily/2025/12/15/">Dec 15</a></div>
+  <div class="entry-copy">Null-safe pipe syntax has completed its rollout and <code>nullsafe_pipe</code> has been removed from the experimental-feature registry. The syntax remains available by default, but projects should remove stale <code>&lt;&lt;file:__EnableUnstableFeatures(&#x27;nullsafe_pipe&#x27;)&gt;&gt;</code> declarations. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/99ff43dd3d471e74d4ba769d4fc628c04dfa854d" target="_blank" rel="noopener noreferrer">99ff43dd3d</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W51/">W51</a><span aria-hidden="true"> · </span><a href="/daily/2025/12/16/">Dec 16</a></div>
+  <div class="entry-copy">The <code>.hhconfig</code> option <code>constraint_array_index</code> and the legacy array-read checker have been removed. Array reads now always use the constraint-based checker; the separate, default-false <code>constraint_array_index_assign</code> experiment for writes is unchanged. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e68fe7227a62d718598a1db723e3dbacb499ffa0" target="_blank" rel="noopener noreferrer">e68fe7227a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W51/">W51</a><span aria-hidden="true"> · </span><a href="/daily/2025/12/18/">Dec 18</a></div>
+  <div class="entry-copy">The direct-to-string Binary Thrift APIs added on December 2, <code>thrift_protocol_write_binary_struct_to_string()</code> and <code>thrift_protocol_read_binary_struct_from_string()</code>, have been removed. The implementation was rolled back because a backend could identify a result as a Thrift exception while supplying a class that was not throwable. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/773f486d40d64fdc0f5fb156e6e69316b3318fe2" target="_blank" rel="noopener noreferrer">773f486d40</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W52/">W52</a><span aria-hidden="true"> · </span><a href="/daily/2025/12/22/">Dec 22</a></div>
+  <div class="entry-copy"><code>zip_entry_read()</code> now takes only its <code>resource $zip_entry</code> argument and always reads up to 1024 bytes. Remove the optional <code>$length</code> argument from callers. The HHI return type remains <code>string</code>, and the omitted coeffect brackets mean <code>[defaults]</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8fca72ab98b2c95fbf07c20d8736609b551cc857" target="_blank" rel="noopener noreferrer">8fca72ab98</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W52/">W52</a><span aria-hidden="true"> · </span><a href="/daily/2025/12/23/">Dec 23</a></div>
+  <div class="entry-copy">Each component of a concatenated typed format string must now be well formed. Constructions such as <code>&quot;%&quot; . &quot;d&quot;</code> are rejected even though the final plain string would spell a valid placeholder; concatenate complete format fragments instead. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/12cbdcd02f83e46556aa875baf9ee09db26bfb47" target="_blank" rel="noopener noreferrer">12cbdcd02f</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>16 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W49/">W49</a><span aria-hidden="true"> · </span><a href="/daily/2025/12/04/">Dec 4</a></div>
+  <div class="entry-copy">The still-configurable polymorphic function-pointer rollout is now enabled by default. References to generic declarations retain a rank-2 type instead of fixing their type arguments when the reference is created, allowing separate calls to choose separate valid instantiations. Declared parameter, return, and coeffect requirements remain part of the resulting <code>HH\FunctionRef</code>; projects needing a temporary escape hatch can set <code>poly_function_pointers=false</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e4da608d51576bce1743a47abc0ee7bd5d80940e" target="_blank" rel="noopener noreferrer">e4da608d51</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W49/">W49</a><span aria-hidden="true"> · </span><a href="/daily/2025/12/04/">Dec 4</a></div>
+  <div class="entry-copy">The pre-release <code>__NeedsConcrete</code> override diagnostic now follows the default-false <code>needs_concrete</code> option, so disabling that option suppresses the override check along with the other <code>__NeedsConcrete</code> checks. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d729522778c452eceb3d742b954690f186d525cc" target="_blank" rel="noopener noreferrer">d729522778</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W49/">W49</a><span aria-hidden="true"> · </span><a href="/daily/2025/12/04/">Dec 4</a></div>
+  <div class="entry-copy">Staged type-constant lower bounds now participate in polymorphic function-pointer synthesis. For nested accesses, upper bounds are intersected and lower bounds are unioned so that every instantiation agrees on the projected type constant; ordinary callable parameter variance and coeffect compatibility remain enforced. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d80b10688e369870237568f408db2d17c94fc5aa" target="_blank" rel="noopener noreferrer">d80b10688e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W49/">W49</a><span aria-hidden="true"> · </span><a href="/daily/2025/12/05/">Dec 5</a></div>
+  <div class="entry-copy">XHP type constants have moved to OngoingRelease. XHP attributes may use declarations such as <code>attribute MyClass::TMyType attr</code> without a file-level unstable-feature opt-in, but the feature remains pre-stable. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/19d0a58e2e81ca3a7077204816e042626ba9ad58" target="_blank" rel="noopener noreferrer">19d0a58e2e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W50/">W50</a><span aria-hidden="true"> · </span><a href="/daily/2025/12/08/">Dec 8</a></div>
+  <div class="entry-copy">Diagnostics for pre-stable optional function parameters now suggest marking an extra lambda parameter <code>optional</code> when a callable supplies too many mandatory positional parameters for the expected function type. This is guidance for the existing contravariant callable check; parameter variance and coeffect compatibility are unchanged. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a9f0befdc676009119fb729e60c9ac320d152c5c" target="_blank" rel="noopener noreferrer">a9f0befdc6</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W50/">W50</a><span aria-hidden="true"> · </span><a href="/daily/2025/12/09/">Dec 9</a></div>
+  <div class="entry-copy">Type-constant super bounds have moved from Unstable to Preview. The staged syntax permits lower bounds alongside <code>as</code> upper bounds on abstract type constants; it is not yet an OngoingRelease feature. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/913a25ea19e9f8efff7c3d99003eabd860172959" target="_blank" rel="noopener noreferrer">913a25ea19</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W50/">W50</a><span aria-hidden="true"> · </span><a href="/daily/2025/12/10/">Dec 10</a></div>
+  <div class="entry-copy">During the null-safe pipe&#x27;s OngoingRelease phase, <code>await</code> is no longer allowed on the right-hand side of <code>|?&gt;</code>, because that branch is conditionally executed. Await the value before the pipe or move the asynchronous operation into explicit control flow. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/67afb72ad7ae7ee90cb12d5a06b73fc85c027683" target="_blank" rel="noopener noreferrer">67afb72ad7</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W50/">W50</a><span aria-hidden="true"> · </span><a href="/daily/2025/12/10/">Dec 10</a></div>
+  <div class="entry-copy">With the pre-stable <code>open_tuples</code> and <code>type_splat</code> features enabled, a <code>vec&lt;mixed&gt;</code> can now be unpacked into a function declared with <code>...(mixed...)</code> or a generic <code>...TArgs</code>. Subtyping treats the unknown-length vec as a variadic sequence rather than a single tuple slot; the callee&#x27;s capability requirements still undergo the normal caller-superset check. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9dd3259bf2cf2e9aee0007b85d5a897b10596bc4" target="_blank" rel="noopener noreferrer">9dd3259bf2</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W50/">W50</a><span aria-hidden="true"> · </span><a href="/daily/2025/12/11/">Dec 11</a></div>
+  <div class="entry-copy">Diagnostics for pre-stable optional function parameters now call out when a supplied callable accepts too few positional arguments for the expected function type. This makes the accepted-call-set mismatch clearer without changing parameter contravariance or coeffect subtyping. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/65a2637417307cd0498d40ce18c5ec08a717836c" target="_blank" rel="noopener noreferrer">65a2637417</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W50/">W50</a><span aria-hidden="true"> · </span><a href="/daily/2025/12/12/">Dec 12</a></div>
+  <div class="entry-copy">HHBBC now preserves type variables when resolving Preview case-type type structures, matching live HHVM resolution and preventing repo-authoritative builds from silently losing generic information. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6ab86e1f682312f8dec04a86e4fd02cec645ce61" target="_blank" rel="noopener noreferrer">6ab86e1f68</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W51/">W51</a><span aria-hidden="true"> · </span><a href="/daily/2025/12/16/">Dec 16</a></div>
+  <div class="entry-copy">As part of the staged polymorphic function-pointer work, <code>meth_caller()</code> now erases reification on type parameters lifted from the receiver class. For <code>class C&lt;reify T&gt;</code>, an instance-method caller can have a rank-2 type such as <code>function&lt;T&gt;(C&lt;T&gt;, T): void</code> because the receiver already carries the runtime type structure; the method&#x27;s declared capability requirements remain on the synthesized callable. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a17086df772bf021b0a3c806248c3b165a0dc020" target="_blank" rel="noopener noreferrer">a17086df77</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W51/">W51</a><span aria-hidden="true"> · </span><a href="/daily/2025/12/16/">Dec 16</a></div>
+  <div class="entry-copy">An opt-in <code>.hhconfig</code> setting, <code>ignore_string_methods=false</code>, exposes the experimental <code>HH\string::length(): int</code> method and its <code>HH\String\__primitive_length(string): int</code> implementation. Both omit explicit coeffect brackets and therefore use <code>[defaults]</code>; the default setting still hides them. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4e83e221764b3a73cb37f0a1cacf27542b046e33" target="_blank" rel="noopener noreferrer">4e83e22176</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W51/">W51</a><span aria-hidden="true"> · </span><a href="/daily/2025/12/17/">Dec 17</a></div>
+  <div class="entry-copy">Pre-stable open-tuple checking now handles projection from tuples with optional elements before a splat. It also reports <code>Typing[4116]</code> when null-coalescing access requests an index that can never exist. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5538c39818feee002b52bfba646702b4d9dc1ef6" target="_blank" rel="noopener noreferrer">5538c39818</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W51/">W51</a><span aria-hidden="true"> · </span><a href="/daily/2025/12/17/">Dec 17</a></div>
+  <div class="entry-copy">Unstable named-parameter function types now recognize <code>function(optional named bool $b): void</code> as a subtype of <code>function(): void</code>. The former accepts a superset of the calls permitted by the latter, which is the contravariant relationship required for parameters; return types and coeffect brackets must still satisfy their ordinary subtype rules. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8039d96fedb7c49d65e3775136ce4b5f183ded1d" target="_blank" rel="noopener noreferrer">8039d96fed</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W51/">W51</a><span aria-hidden="true"> · </span><a href="/daily/2025/12/18/">Dec 18</a></div>
+  <div class="entry-copy">Runtime arity errors now say that a callable expects a number of <code>positional</code> parameters. This keeps the message accurate for callables that also define named parameters. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7db2c19473bceeeb083cc9a04e7664932c0cea62" target="_blank" rel="noopener noreferrer">7db2c19473</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W51/">W51</a><span aria-hidden="true"> · </span><a href="/daily/2025/12/19/">Dec 19</a></div>
+  <div class="entry-copy">Staged <code>__NeedsConcrete</code> checking now has two independent, default-false controls: <code>needs_concrete</code> enables call-site and related checks, while <code>needs_concrete_override_check</code> enables the warning for a <code>__NeedsConcrete</code> method overriding an unannotated method. Enabling one does not imply the other. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9027820d960fbe9de782bce3509e765565ba5f9f" target="_blank" rel="noopener noreferrer">9027820d96</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

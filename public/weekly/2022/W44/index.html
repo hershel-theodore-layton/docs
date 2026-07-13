@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="14 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 44: Oct 31–Nov 6, 2022 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 44: Oct 31–Nov 6, 2022</h1>
+  <p class="post-meta">14 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2022/11/01/">Day</a><a href="/weekly/2022/W44/" aria-current="page">Week</a><a href="/monthly/2022/11/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><span class="period-button prev disabled" aria-disabled="true"><span aria-hidden="true">←</span><span>Previous week</span></span><a class="period-button next" rel="next" href="/weekly/2022/W45/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>13 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/11/01/">Tue, Nov 1</a></div>
+  <div class="entry-copy">Module import and export rules now survive compilation and are exposed through reflection. Runtime enforcement is not enabled by this change. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a2e15b83bd3ff360068dcf584264a42d85fe0c90" target="_blank" rel="noopener noreferrer">a2e15b83bd</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/11/01/">Tue, Nov 1</a></div>
+  <div class="entry-copy"><code>internal</code> methods may now use <code>&lt;&lt;__DynamicallyCallable&gt;&gt;</code>; private and protected methods remain rejected. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/235cd7a253ad79b283f0f56997bf9dc584696882" target="_blank" rel="noopener noreferrer">235cd7a253</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/11/01/">Tue, Nov 1</a></div>
+  <div class="entry-copy">The typechecker is more reliable when inferring disjunctive subtype constraints, and an internal error involving already-solved type variables has been fixed. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e1e756b3f79a00d41b6cae599e53ec5cc6c732d2" target="_blank" rel="noopener noreferrer">e1e756b3f7</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4500589618c3b217d94e1f5f8d069af5f17bd8c2" target="_blank" rel="noopener noreferrer">4500589618</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/11/01/">Tue, Nov 1</a></div>
+  <div class="entry-copy"><code>HH\execution_context()</code> now declares <code>[read_globals]</code> instead of implicitly requiring <code>[defaults]</code>. A capability list is the callee&#x27;s requirement, so this narrows the obligation on callers rather than granting the callee extra access: a caller that provides <code>read_globals</code>, or any superset such as <code>defaults</code> or <code>globals</code>, can call it. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0f776c17fdb3ac0dcfb0045f0feb76e1496e174c" target="_blank" rel="noopener noreferrer">0f776c17fd</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/11/02/">Wed, Nov 2</a></div>
+  <div class="entry-copy"><code>hh --remove-dead-fixmes</code> no longer consumes the character immediately following an inline <code>HH_FIXME</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/92fd112e0e3886454c2f3f333d41a458e7fb7bcb" target="_blank" rel="noopener noreferrer">92fd112e0e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/11/02/">Wed, Nov 2</a></div>
+  <div class="entry-copy"><code>__toString()</code> declarations in the bundled HHI files now explicitly return <code>string</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/700bee0a4fb288e44c9b8639d297768d9eb45fc4" target="_blank" rel="noopener noreferrer">700bee0a4f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/11/02/">Wed, Nov 2</a></div>
+  <div class="entry-copy"><code>SplFileObject</code> has more accurate iterator declarations: <code>current()</code> is a like-string because CSV mode and end-of-file can produce other values, while <code>getChildren()</code> is nullable. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1ab6c0cebd3f46a081fa2ad4bbf6c71e4b52bde6" target="_blank" rel="noopener noreferrer">1ab6c0cebd</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c4a85bee8808dde72bf67344108d6a825bb63b71" target="_blank" rel="noopener noreferrer">c4a85bee88</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/11/03/">Thu, Nov 3</a></div>
+  <div class="entry-copy">Most previously untyped bundled HHI functions now have the transitional return type <code>HH\FIXME\MISSING_RETURN_TYPE</code>. This still behaves like <code>Tany</code> for compatibility, but is intended to become <code>dynamic</code> in the future. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7ecc475674dd076d1e0040a8ed637c09638335f2" target="_blank" rel="noopener noreferrer">7ecc475674</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/11/03/">Thu, Nov 3</a></div>
+  <div class="entry-copy">Assignment through <code>Map</code> and <code>Vector</code> indexing no longer widens an already inferred element type. In particular, code that starts with an untyped empty collection may now need explicit generic arguments. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a56d5cfefafb9d28032a0d66693ffa272dd9cb01" target="_blank" rel="noopener noreferrer">a56d5cfefa</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/11/03/">Thu, Nov 3</a></div>
+  <div class="entry-copy">In sound-dynamic mode, the result of a dynamic static method call such as <code>ClassName::$method()</code> is inferred as <code>dynamic</code> rather than the unsound <code>Tany</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/17f03a1a34f7a75b159cbc237030df52bb1f68de" target="_blank" rel="noopener noreferrer">17f03a1a34</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/11/04/">Fri, Nov 4</a></div>
+  <div class="entry-copy">Sound-dynamic checking now permits static calls through a value typed as <code>string</code>, matching the rule that <code>string</code> can flow to <code>dynamic</code> in this mode. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/668b6893f54d5d92a1ba66ad33fe1f41661c5eb1" target="_blank" rel="noopener noreferrer">668b6893f5</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/11/04/">Fri, Nov 4</a></div>
+  <div class="entry-copy">A typechecker soundness regression involving intersection types has been fixed. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1adee5934ad4acc31fa9e5e14d6976cecb8abf4a" target="_blank" rel="noopener noreferrer">1adee5934a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/11/04/">Fri, Nov 4</a></div>
+  <div class="entry-copy">Hack lint now reports redundant <code>HH\FIXME\UNSAFE_CAST</code> calls as lint 5647 and offers an autofix that replaces the cast with its input expression. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d02adc3a29769be2cc0baab15a6e3eb24914f0e6" target="_blank" rel="noopener noreferrer">d02adc3a29</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/11/02/">Wed, Nov 2</a></div>
+  <div class="entry-copy">Untyped built-in declarations are beginning to use <code>HH\FIXME\MISSING_RETURN_TYPE</code> instead of the unsound internal <code>Tany</code> type. This is preparatory work toward treating such results as <code>dynamic</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0c5aa56b300692e7a2ddb92c2953feef642ce1f4" target="_blank" rel="noopener noreferrer">0c5aa56b30</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

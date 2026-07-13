@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="4 noteworthy changes recorded on this day.">
+  <title>Monday, July 29, 2024 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Monday, July 29, 2024</h1>
+  <p class="post-meta">4 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/07/29/" aria-current="page">Day</a><a href="/weekly/2024/W31/">Week</a><a href="/monthly/2024/07/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2024/07/26/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2024/07/31/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">When the VS Code debugger is attached to a server, only explicit evaluation output is now sent to the debugger&#x27;s stdout stream. This avoids unrelated request output flooding the debug console and makes evaluation output consistent. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/723c132357511463228cb3c0d2258969a5b3d7ce" target="_blank" rel="noopener noreferrer">723c132357</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/783f6ccf7ad20292037e0f8be23f39459f7fabb9" target="_blank" rel="noopener noreferrer">783f6ccf7a</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy">The <code>disallow_direct_superglobals_refs</code> configuration option has been removed. Direct references to superglobals such as <code>$_GET</code> and <code>$_SERVER</code> remain parse errors; use <code>HH\global_get()</code> and <code>HH\global_set()</code> instead. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/351be32993d6029d6c8482d2808c19c8d3f17031" target="_blank" rel="noopener noreferrer">351be32993</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">An experimental <code>set_oom_multiplier(int): bool</code> API lets a critical request raise its out-of-memory termination threshold by a multiplier of at most 100. The implementation notes that future cost attribution work is still required, so this is not yet a general-purpose memory-management API. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8ec4a3eead440fc190cd51467ab84be520fcaad8" target="_blank" rel="noopener noreferrer">8ec4a3eead</a></div></li><li class="change-entry"><div class="entry-copy">Experimental case-type expansion now preserves the typing environment while simplifying members, avoiding dangling type variables and parameters in later checks. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/19275f0ab49a041ef3281ad9f187c5ad625b43c3" target="_blank" rel="noopener noreferrer">19275f0ab4</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

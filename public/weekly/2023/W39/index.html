@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="13 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 39: Sep 25–Oct 1, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 39: Sep 25–Oct 1, 2023</h1>
+  <p class="post-meta">13 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/09/25/">Day</a><a href="/weekly/2023/W39/" aria-current="page">Week</a><a href="/monthly/2023/09/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2023/W38/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2023/W40/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>9 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/09/25/">Mon, Sep 25</a></div>
+  <div class="entry-copy">HackC no longer constant-folds <code>T::class</code> when <code>T</code> is a reified generic; the emitted code resolves the runtime class supplied for <code>T</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8068a8e3a6b2b9f3479a42f125c7393f1fa233e4" target="_blank" rel="noopener noreferrer">8068a8e3a6</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/09/25/">Mon, Sep 25</a></div>
+  <div class="entry-copy">“Extract into method” now prints the real return type instead of <code>_</code>, including large and currently non-denotable types such as unions. “Add local type hint” likewise stops inserting type-printer fuel messages or truncated types into source. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d37dcf933e48d13f335645c3a6860db1c0a42f31" target="_blank" rel="noopener noreferrer">d37dcf933e</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f2bc2b88cb90a1bd9912d9ab4297cd1db10bf5f4" target="_blank" rel="noopener noreferrer">f2bc2b88cb</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/09/26/">Tue, Sep 26</a></div>
+  <div class="entry-copy">The typechecker and typed AST now retain <code>concurrent</code> blocks instead of first lowering them to generated <code>awaitall</code> code. This improves source positions and typed-local checks, and fixes “Extract into method” omitting <code>async</code> and <code>Awaitable</code> from methods extracted from a concurrent block. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/aef6da73ca00662e23cb5fd261df05de191cc291" target="_blank" rel="noopener noreferrer">aef6da73ca</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/09/27/">Wed, Sep 27</a></div>
+  <div class="entry-copy">The VS Code debugger now steps through async functions correctly with the JIT enabled, including stepping into and out of resumed async frames. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/76c67703401b669eb227c841832d79202d7c01b7" target="_blank" rel="noopener noreferrer">76c6770340</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/09/28/">Thu, Sep 28</a></div>
+  <div class="entry-copy"><code>preg_get_error_message_if_invalid(string $pattern): ?string</code> is now available to typechecked Hack. It returns <code>null</code> for a valid regex or an error message for an invalid one without emitting malformed-pattern warnings. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ed5c1a754e1b8c74d1ca40dc4010580b79284a04" target="_blank" rel="noopener noreferrer">ed5c1a754e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/09/28/">Thu, Sep 28</a></div>
+  <div class="entry-copy"><code>hh --find-refs</code> now accepts <code>Kind|Symbol</code>, covering methods, properties, class constants, type constants, functions, classes, explicit classes, and global constants. <code>ExplicitClass</code> excludes references through <code>self</code>, <code>static</code>, and <code>parent</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7beb2f1aa92cc5fa8f4ddc3cf7f6e057ca479076" target="_blank" rel="noopener noreferrer">7beb2f1aa9</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/09/29/">Fri, Sep 29</a></div>
+  <div class="entry-copy">IDE find-references requests can now be cancelled and immediately retried without leaving a stale shellout, and completion of the search reliably flushes its final streamed results. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/677281266428a68e21495df539027b938a0b94a5" target="_blank" rel="noopener noreferrer">6772812664</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/cbab9e45eadcac637eb3381e057506ebf1df4cbb" target="_blank" rel="noopener noreferrer">cbab9e45ea</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/09/29/">Fri, Sep 29</a></div>
+  <div class="entry-copy">Invalid conversions of reified function pointers, reified class-method pointers, and enum-class labels now throw catchable <code>InvalidOperationException</code>s instead of terminating with an uncatchable fatal. Error text also uses Hack names such as “function,” “class method,” and “float.” <a href="https://github.com/hershel-theodore-layton/hhvm/commit/fcca69ea4fd697f60b9ebd04278cb1d9013a9c27" target="_blank" rel="noopener noreferrer">fcca69ea4f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/09/29/">Fri, Sep 29</a></div>
+  <div class="entry-copy"><code>ReflectionMethod::getCanonicalMethod()</code> and <code>getCanonicalClassname()</code> can locate the trait that actually defines an inherited method in non-repo mode. They throw in repo-authoritative mode, where traits have already been flattened. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/45c1f1f8e9ec0782ed572a388b825a9aecddc687" target="_blank" rel="noopener noreferrer">45c1f1f8e9</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>4 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/09/26/">Tue, Sep 26</a></div>
+  <div class="entry-copy">Unstable strict switches now classify <code>arraykey</code>-typed class constants as both possible integer and string cases, improving wrong-type and duplicate-case diagnostics. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/39494259ecd3cbbc605655f09c439723c14ccfff" target="_blank" rel="noopener noreferrer">39494259ec</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/09/27/">Wed, Sep 27</a></div>
+  <div class="entry-copy">Case-type runtime checks now handle classname-to-string conversion warnings in the JIT instead of reaching an unimplemented path. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/234bc7e5a5f04e714930d2f78269c336ddf96043" target="_blank" rel="noopener noreferrer">234bc7e5a5</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/09/27/">Wed, Sep 27</a></div>
+  <div class="entry-copy">Case-type analysis now detects cycles through generic bounds, newtypes, sealed lists, requirements, and nested case types, making conservative approximations instead of looping or overflowing the typechecker stack. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c49207358d04b40263773f2755bf547062c844b2" target="_blank" rel="noopener noreferrer">c49207358d</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/09/29/">Fri, Sep 29</a></div>
+  <div class="entry-copy">Case types have moved from Unstable to Preview. They still require the <code>case_types</code> file-level opt-in, but Preview status permits opted-in code to run in production now that runtime enforcement is enabled. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/942f1c5a74b9ffb02b909a9eafeef34235c8c3fd" target="_blank" rel="noopener noreferrer">942f1c5a74</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

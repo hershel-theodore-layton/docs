@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="10 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 46: Nov 11–Nov 17, 2024 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 46: Nov 11–Nov 17, 2024</h1>
+  <p class="post-meta">10 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/11/11/">Day</a><a href="/weekly/2024/W46/" aria-current="page">Week</a><a href="/monthly/2024/11/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2024/W45/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2024/W47/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>7 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/11/11/">Mon, Nov 11</a></div>
+  <div class="entry-copy">Hack&#x27;s process, worker, and typechecking-service plumbing now uses <code>poll()</code> instead of <code>select()</code>, avoiding <code>select()</code> file-descriptor limits and failures. This is the repaired, durable re-land after the first implementation was backed out on November 4. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ef1068c70014f26d85fe6562b7e30a5656c27051" target="_blank" rel="noopener noreferrer">ef1068c700</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c5d2342e2e88dbc1021ba23784d9eb7adea6e7cc" target="_blank" rel="noopener noreferrer">c5d2342e2e</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/77738c72b00d60eb8bf786b0dff5bd1f7e36ebc7" target="_blank" rel="noopener noreferrer">77738c72b0</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/11/13/">Wed, Nov 13</a></div>
+  <div class="entry-copy">Out-of-memory exception messages now include both the request&#x27;s measured memory usage and its numeric limit, making production OOM reports more actionable. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ecb246b358d15deb9ff7a54ef0270fb83cc1d79e" target="_blank" rel="noopener noreferrer">ecb246b358</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/11/13/">Wed, Nov 13</a></div>
+  <div class="entry-copy">JSON produced and consumed for function types by batch type-at-position tooling now preserves readonly receivers, readonly returns, and contexts. The serialized <code>capability</code> is the callee&#x27;s required context; when the field is omitted it decodes as <code>[defaults]</code>, not as an unrestricted or capability-granting function. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/210b4af6eb65ed8ad2fd7b2da6033f3136c4bb22" target="_blank" rel="noopener noreferrer">210b4af6eb</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/11/13/">Wed, Nov 13</a></div>
+  <div class="entry-copy"><code>Server.RequestMemoryMaxBytesSet</code> is now a recognized runtime setting, so <code>ini_get(&#x27;hhvm.server.request_memory_max_bytes_set&#x27;)</code> no longer always returns <code>false</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5c81805ef8764bf2610433b1454bf8417deaee90" target="_blank" rel="noopener noreferrer">5c81805ef8</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/11/14/">Thu, Nov 14</a></div>
+  <div class="entry-copy">A JIT store-elimination workaround prevents a required local write from being removed before its metadata update, avoiding crashes caused by unwritten locals. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/19fc705f767191e03ba0117182706b536916ae10" target="_blank" rel="noopener noreferrer">19fc705f76</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/11/15/">Fri, Nov 15</a></div>
+  <div class="entry-copy">The LMDB extension adds <code>HH\lmdb\mdb_get_raw()</code> and <code>HH\lmdb\mdb_put_raw()</code> for direct string payload access without Hack serialization. <code>mdb_put()</code> and the raw variant now only replace the <code>inout</code> value when <code>MDB_NOOVERWRITE</code> makes LMDB return the existing value. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1ce27396b3c96b39933eaab7f388bcd9c71e13ac" target="_blank" rel="noopener noreferrer">1ce27396b3</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/11/15/">Fri, Nov 15</a></div>
+  <div class="entry-copy">HHVM now publishes <code>hhvm.select_queue_duration_us.avg.60</code>, measuring how long messages spend waiting in the server selection queue. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d8e94d74d66fc11f28f92571fe4d637cc87d2c72" target="_blank" rel="noopener noreferrer">d8e94d74d6</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/11/13/">Wed, Nov 13</a></div>
+  <div class="entry-copy">The unstable <code>shape_destructure</code> feature now permits <code>tuple(...)</code> as a destructuring lvalue and deliberately forbids mixing <code>list(...)</code> inside shape/tuple patterns or shape/tuple patterns inside <code>list(...)</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b3151735110602f7786fd9f08cef65b5e4967693" target="_blank" rel="noopener noreferrer">b315173511</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/11/14/">Thu, Nov 14</a></div>
+  <div class="entry-copy">The in-development notebook-to-Hack converter now preserves comments and whitespace and can emit Hack containing notebook syntax errors so standard Hack tooling can diagnose them. The accompanying notebook integration was not yet complete. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c735a7bfe381261b5c49ad8f7b810e98654b51a4" target="_blank" rel="noopener noreferrer">c735a7bfe3</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a4d2d47e1db2bb732e29ed53e91471ea23f43027" target="_blank" rel="noopener noreferrer">a4d2d47e1d</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/11/14/">Thu, Nov 14</a></div>
+  <div class="entry-copy">Package v2 typechecker tools can load an alternate package file with <code>--config packages_config_path=path/to/config</code>; the selected package file is included in the configuration hash. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4f3e29eb015987278cbd13f34b4b7bc8e247b581" target="_blank" rel="noopener noreferrer">4f3e29eb01</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

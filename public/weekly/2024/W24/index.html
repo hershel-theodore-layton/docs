@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="9 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 24: Jun 10–Jun 16, 2024 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 24: Jun 10–Jun 16, 2024</h1>
+  <p class="post-meta">9 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/06/10/">Day</a><a href="/weekly/2024/W24/" aria-current="page">Week</a><a href="/monthly/2024/06/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2024/W23/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2024/W25/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>6 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/06/10/">Mon, Jun 10</a></div>
+  <div class="entry-copy">Extended type errors now include the primary claim&#x27;s source snippet and position, including for constructor calls. When combined with JSON output, <code>--error-format extended</code> also supplies a human-readable rendering of the error. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/67328c1ec92b082bf830725a06c22e5f8dff8757" target="_blank" rel="noopener noreferrer">67328c1ec9</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e7a9c060ca7922c96d314ae323b27275c53b9ef3" target="_blank" rel="noopener noreferrer">e7a9c060ca</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/59443d6edd144f83bdfec16319f2127bf3441163" target="_blank" rel="noopener noreferrer">59443d6edd</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/06/12/">Wed, Jun 12</a></div>
+  <div class="entry-copy"><code>debug_backtrace()[defaults]</code> now returns <code>HH\StackTrace</code>, a <code>vec</code> of open <code>HH\StackFrame</code> shapes whose fields are explicitly optional. This makes code account for fields such as <code>&#x27;args&#x27;</code>, <code>&#x27;file&#x27;</code>, and <code>&#x27;function&#x27;</code> being absent. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/df840cc4bcc7ea91069037857299da1b04195579" target="_blank" rel="noopener noreferrer">df840cc4bc</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/06/12/">Wed, Jun 12</a></div>
+  <div class="entry-copy">In repo-authoritative mode, equality and conditional branching now agree when comparing lazy class values with class pointers. A true <code>$lazy_class === $class_pointer</code> comparison can no longer be optimized into an unreachable branch. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9884cdfbf29092d56d5717fbd55258a5e496117b" target="_blank" rel="noopener noreferrer">9884cdfbf2</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/06/13/">Thu, Jun 13</a></div>
+  <div class="entry-copy">Active implicit contexts are now refcounted correctly while entering and resuming calls, async functions, and wait handles, avoiding lifetime errors when context switching replaces the active object. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c6f02fdab123cabb564f33bf74f0bbe0989364b8" target="_blank" rel="noopener noreferrer">c6f02fdab1</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/06/14/">Fri, Jun 14</a></div>
+  <div class="entry-copy">JIT-compiled <code>is_a()</code> and <code>is_subclass_of()</code> now honor the <code>$allow_string</code> argument and reject trait targets, matching interpreter behavior for class pointers. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c3c428aa95c0244dc1865910fc817a2fa5e09e01" target="_blank" rel="noopener noreferrer">c3c428aa95</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/06/15/">Sat, Jun 15</a></div>
+  <div class="entry-copy">Subclasses of <code>HH\ImplicitContext</code> can now call the inherited protected <code>exists()[zoned]: bool</code> helper to test whether their keyed context is present without reading its value. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9e3108de07a793b87d9927b9a62eebc4440b1003" target="_blank" rel="noopener noreferrer">9e3108de07</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/06/11/">Tue, Jun 11</a></div>
+  <div class="entry-copy"><code>get_class()</code> and <code>get_parent_class()</code> now require an explicit argument; the implicit current-class form has been removed. <code>get_class()</code> also enforces an object argument through its builtin type hint and returns a <code>classname</code> rather than <code>mixed</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/aa31bd583b6bbaffd8c576c354658175bb544d33" target="_blank" rel="noopener noreferrer">aa31bd583b</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Security</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/06/12/">Wed, Jun 12</a></div>
+  <div class="entry-copy">Public classes and interfaces may no longer extend internal types. This restores a firm module boundary and prevents public APIs from exposing a base type that callers outside the module cannot name. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f971a6634fa5375dc0a03ef6046fc63326e9ccf2" target="_blank" rel="noopener noreferrer">f971a6634f</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/06/14/">Fri, Jun 14</a></div>
+  <div class="entry-copy">With Packages v2 enabled, <code>&lt;&lt;file: __PackageOverride(&#x27;name&#x27;)&gt;&gt;</code> no longer needs an <code>__EnableUnstableFeatures</code> declaration. The attribute lets a file opt into the named package for access checking. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ff5b55092bf1bee50dbf854290dbf23e53e9c431" target="_blank" rel="noopener noreferrer">ff5b55092b</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="15 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 46: Nov 14–Nov 20, 2022 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 46: Nov 14–Nov 20, 2022</h1>
+  <p class="post-meta">15 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2022/11/14/">Day</a><a href="/weekly/2022/W46/" aria-current="page">Week</a><a href="/monthly/2022/11/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2022/W45/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2022/W47/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Breaking Changes</h2><span>4 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/11/14/">Mon, Nov 14</a></div>
+  <div class="entry-copy">Module boundary violations are now always enforced with exceptions; the <code>Eval.EnforceModules</code> switch and its disabled/warning modes have been removed. Soft-internal declarations continue to warn. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2b9440d4216cc10a6f38d2f6ea299856034b4605" target="_blank" rel="noopener noreferrer">2b9440d421</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/11/15/">Tue, Nov 15</a></div>
+  <div class="entry-copy">Class-level user attributes are typechecked outside the class context, so <code>self</code> is no longer available in their arguments. Module-internal names remain usable there when the attribute is evaluated inside the same module. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a83ac0b2c2fcce81bc56da606b3e6d66c8407819" target="_blank" rel="noopener noreferrer">a83ac0b2c2</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/11/15/">Tue, Nov 15</a></div>
+  <div class="entry-copy"><code>DirectoryIterator</code> and <code>FilesystemIterator</code> now iterate over <code>~SplFileInfo</code>, since extraction flags can make <code>FilesystemIterator::current()</code> return a string or the iterator itself. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7380211047e294e70fbb2dc606253d1b60e63b75" target="_blank" rel="noopener noreferrer">7380211047</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/11/16/">Wed, Nov 16</a></div>
+  <div class="entry-copy">Stale HHI declarations for runtime classes and class constants that do not exist have been removed. Several method declarations were also corrected, including <code>ReflectionClass::getTraitAliases()</code>, <code>ReflectionFunctionAbstract::getStaticVariables()</code>, and capitalization/finality mismatches in built-ins. Projects relying on the nonexistent declarations will now receive type errors. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f4bc1485be9b187c85f1a19941f1529b8b31fb0d" target="_blank" rel="noopener noreferrer">f4bc1485be</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/74f2d68eda619633ba6eb04fa9445d24d8cc8390" target="_blank" rel="noopener noreferrer">74f2d68eda</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/759eb8b13de0e3b4ee11c5618a7717f1ad466945" target="_blank" rel="noopener noreferrer">759eb8b13d</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Highlights</h2><span>10 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/11/15/">Tue, Nov 15</a></div>
+  <div class="entry-copy">Expression-tree type inference no longer passes pessimised like-types to <code>makeTree</code> when the virtual expression calls a pessimised function. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6f9d9ad3bcbdc93423fe999719550569dcd5b777" target="_blank" rel="noopener noreferrer">6f9d9ad3bc</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/11/15/">Tue, Nov 15</a></div>
+  <div class="entry-copy">The bundled <code>Set</code> declarations now preserve their element type across iteration and common operations such as <code>map</code>, <code>filter</code>, <code>values</code>, and conversions. This should improve inference for projects using legacy Hack collections. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f5ea07c6faee10bed08b67992c2bc6812bf5c977" target="_blank" rel="noopener noreferrer">f5ea07c6fa</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/11/15/">Tue, Nov 15</a></div>
+  <div class="entry-copy">Dead <code>HH\FIXME\UNSAFE_CAST</code> removal is now integrated with <code>hh_server</code>, including repeated analysis until no further redundant casts can be removed. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/097f3c19adbd64e88d3f15b772404b5845bd9341" target="_blank" rel="noopener noreferrer">097f3c19ad</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6ebee6b68966be196d8e363e1a43cbc927037fa9" target="_blank" rel="noopener noreferrer">6ebee6b689</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/11/15/">Tue, Nov 15</a></div>
+  <div class="entry-copy">An <code>internal</code> type alias may now refer to another internal type from the same module. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/61917d4bf00286785b47cb9dcfdd146e1a7c9ae8" target="_blank" rel="noopener noreferrer">61917d4bf0</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/11/15/">Tue, Nov 15</a></div>
+  <div class="entry-copy"><code>HH\classname_from_string_unsafe()</code> is now declared in the HHI files. It converts a string to <code>classname&lt;mixed&gt;</code> without eager validity or module checks and is intended only for exceptional migration cases. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/385ddd879a9b8eb1b2495989b50ed447aea8441e" target="_blank" rel="noopener noreferrer">385ddd879a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/11/16/">Wed, Nov 16</a></div>
+  <div class="entry-copy"><code>get_defined_functions()</code> now preserves the declared capitalization of function names instead of lowercasing every result. Reflection calls with those names continue to work case-insensitively. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e15e774b91bc7cbd705d9c28c7be898e522abf2e" target="_blank" rel="noopener noreferrer">e15e774b91</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/11/17/">Thu, Nov 17</a></div>
+  <div class="entry-copy">Incremental typechecking now correctly fans out changes that add inherited XHP special attributes such as <code>:aria-*</code> and <code>:data-*</code>. Projects should see the same XHP attribute errors without needing a full typecheck. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d615fbde45381187c6acf15253e14a0b93c69867" target="_blank" rel="noopener noreferrer">d615fbde45</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/11/17/">Thu, Nov 17</a></div>
+  <div class="entry-copy">HHI global and class constants with an explicit type may now omit their placeholder value. Initializers have been removed from the bundled handwritten declarations and are no longer copied into generated HSL HHIs. This syntax is specific to HHI declaration files and does not change the constants&#x27; runtime values. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/824ac81dc9a63e1e188dcb1aaa84e6eb687851ac" target="_blank" rel="noopener noreferrer">824ac81dc9</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/833f6d5fe7dd6da8ccc3df35ff32b897500404e2" target="_blank" rel="noopener noreferrer">833f6d5fe7</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0a1f30494ab0cda722ca57a960fd2d21981617de" target="_blank" rel="noopener noreferrer">0a1f30494a</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/80fb463a4904c60c5b92023b74a9d155b9b7258c" target="_blank" rel="noopener noreferrer">80fb463a49</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f5f90c7cad0e2295240a1c7c252e0339bcd64c1a" target="_blank" rel="noopener noreferrer">f5f90c7cad</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/11/17/">Thu, Nov 17</a></div>
+  <div class="entry-copy"><code>hh_server</code> now tolerates duplicated and out-of-order Watchman state notifications during source-control updates, reducing the chance of an incorrect server state after an update or transaction. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/cea00244a173167e08f31fd56b070160c0493d64" target="_blank" rel="noopener noreferrer">cea00244a1</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/11/17/">Thu, Nov 17</a></div>
+  <div class="entry-copy">When code such as <code>$object-&gt;$name</code> attempts dynamic access on a non-<code>dynamic</code> value, naming error 2011 now explains the restriction and offers a quick-fix to ordinary property access such as <code>$object-&gt;name</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/82df50f9da163c1738c0dcc8f2c675159c6392d4" target="_blank" rel="noopener noreferrer">82df50f9da</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/11/16/">Wed, Nov 16</a></div>
+  <div class="entry-copy">Lint 5624 no longer incorrectly labels generics used in pre-stable exact type refinements as redundant. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/044f44601d3e1ee4fb2e9ab59d64b96d6185c535" target="_blank" rel="noopener noreferrer">044f44601d</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="4 noteworthy changes recorded on this day.">
+  <title>Wednesday, April 23, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Wednesday, April 23, 2025</h1>
+  <p class="post-meta">4 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/04/23/" aria-current="page">Day</a><a href="/weekly/2025/W17/">Week</a><a href="/monthly/2025/04/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2025/04/22/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2025/04/24/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy"><code>ReflectionFunctionAbstract::getParamTypeVarNames()</code> returns the type-variable names used by a function or method&#x27;s parameter hints. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/98684268f39763e85f4582011b2f6558720b17ba" target="_blank" rel="noopener noreferrer">98684268f3</a></div></li><li class="change-entry"><div class="entry-copy">The new implicit-context base classes&#x27; private context constructors now require <code>[leak_safe]</code> rather than implicit <code>[defaults]</code>. This weakens their caller requirement, so they can be called from the base class&#x27;s leak-safe context. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/724940306c76df5f0516e596098281745056d69f" target="_blank" rel="noopener noreferrer">724940306c</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy">Reflection <code>getAttributeClass</code> methods now accept <code>class&lt;T&gt;</code> rather than <code>classname&lt;T&gt;</code> in the public HHI. Pass <code>MyAttribute::class</code>, not a classname string. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/59ef42483e221e0f463f63c67e4cf66b485f99ac" target="_blank" rel="noopener noreferrer">59ef42483e</a></div></li><li class="change-entry"><div class="entry-copy"><code>HH\dynamic_class_meth</code> and <code>HH\dynamic_class_meth_force</code> now accept class pointers directly; passing a string remains supported through <code>class_or_classname</code> but raises an implicit string-to-class notice. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3ab00621de5bfb3436802f1f7cfb12d4f25571e5" target="_blank" rel="noopener noreferrer">3ab00621de</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="7 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 3: Jan 13–Jan 19, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 3: Jan 13–Jan 19, 2025</h1>
+  <p class="post-meta">7 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/01/13/">Day</a><a href="/weekly/2025/W03/" aria-current="page">Week</a><a href="/monthly/2025/01/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2025/W02/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2025/W04/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/01/13/">Mon, Jan 13</a></div>
+  <div class="entry-copy">Non-repo-authoritative HHVM gained <code>HH\SimpleLock</code>, a named cross-request mutex API with asynchronous <code>lock()</code>, immediate <code>try_lock()</code>, <code>unlock()</code>, and a timeout helper. Locks abandoned at request shutdown are released automatically. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ea4402743440bab143ec0a6555d8ada69ecf452f" target="_blank" rel="noopener noreferrer">ea44027434</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/01/17/">Fri, Jan 17</a></div>
+  <div class="entry-copy">The new <code>HH\gc_is_conservative()</code> builtin reports whether HHVM&#x27;s garbage collector is operating without any conservative type scanners. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3f6dfef71e34c6ab24cc3609ac60783b4b9e4632" target="_blank" rel="noopener noreferrer">3f6dfef71e</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>5 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/01/13/">Mon, Jan 13</a></div>
+  <div class="entry-copy">Packages v2 now requires every package&#x27;s <code>includes</code> and <code>soft_includes</code> sets to contain their full transitive closure, and reports all missing nested packages in one configuration error. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1f4c78a1a3bdac088db188db2d9e43ca258f61f9" target="_blank" rel="noopener noreferrer">1f4c78a1a3</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/01/16/">Thu, Jan 16</a></div>
+  <div class="entry-copy">Open tuple hints with optional, variadic, or splat elements are now rejected in <code>is</code> and <code>as</code> expressions because HHVM does not yet support enforcing those runtime checks. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/591fe0ae7216d80e889da9d4e1e87dae0059b4a1" target="_blank" rel="noopener noreferrer">591fe0ae72</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/01/17/">Fri, Jan 17</a></div>
+  <div class="entry-copy">Runtime type structures for open tuples now preserve required elements in <code>elem_types</code>, optional elements in <code>optional_elem_types</code>, and a variadic tail in <code>variadic_type</code>. Absent optional or variadic parts omit their corresponding fields. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4c9affb24d07594b72290efcb5718b7c85e5c1fb" target="_blank" rel="noopener noreferrer">4c9affb24d</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/01/17/">Fri, Jan 17</a></div>
+  <div class="entry-copy">A type used after the experimental splat operator must now be known to be a tuple—typically through a bound such as <code>T as (mixed...)</code>. Unconstrained generics used in tuple or function-type splats now produce a constraint error. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/700abe325eeba6f130db69e369490353bcec0db8" target="_blank" rel="noopener noreferrer">700abe325e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/01/17/">Fri, Jan 17</a></div>
+  <div class="entry-copy">Recursive case-type runtime handling now preserves generic arguments, resolves cycles involving aliases more reliably, and refuses recursive <code>is</code>/<code>as</code> enforcement that could recurse without bound. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0d7f21793a1ae7e40a0c728ee5996bb664324324" target="_blank" rel="noopener noreferrer">0d7f21793a</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

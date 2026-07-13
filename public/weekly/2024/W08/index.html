@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="7 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 8: Feb 19–Feb 25, 2024 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 8: Feb 19–Feb 25, 2024</h1>
+  <p class="post-meta">7 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/02/19/">Day</a><a href="/weekly/2024/W08/" aria-current="page">Week</a><a href="/monthly/2024/02/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2024/W07/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2024/W09/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>6 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/02/19/">Mon, Feb 19</a></div>
+  <div class="entry-copy">A new <code>HH\objprof_get_data_extended()</code> profiler reports ordinary object memory together with memoization-cache memory. Its per-property mode attributes caches to individual instance and static memoized methods, including multi-entry static caches. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/bfc168e3ee46182f5d8d7e6bf46b03fcc9a84c9b" target="_blank" rel="noopener noreferrer">bfc168e3ee</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c54a0248e4b7b50d62f2cd93409181bbbadb698d" target="_blank" rel="noopener noreferrer">c54a0248e4</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/bef9514eb34b53e3de73347ad3cb820a39e4b952" target="_blank" rel="noopener noreferrer">bef9514eb3</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6b309566ee5dc5ab798e76e5bc74035c3f40ee7f" target="_blank" rel="noopener noreferrer">6b309566ee</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/02/20/">Tue, Feb 20</a></div>
+  <div class="entry-copy">The IDE now offers both a refactoring and an error quick-fix to prepend <code>await</code> to an <code>Awaitable</code>. When required, the complete action also makes the enclosing function, method, or lambda <code>async</code> and changes its return annotation to <code>Awaitable&lt;...&gt;</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7e9ff18df6ca36bab3b98283084977b1e53445ea" target="_blank" rel="noopener noreferrer">7e9ff18df6</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/675e7b58a5ecd7e87457ff9608aecc2f7fc3de45" target="_blank" rel="noopener noreferrer">675e7b58a5</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4f72da93759c9ae1c7da40bfcab9bf28ff6e4358" target="_blank" rel="noopener noreferrer">4f72da9375</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0b17bfd5a5135e9061cb86b32918eef4687f5246" target="_blank" rel="noopener noreferrer">0b17bfd5a5</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/02ab77e706a773b16e5cad42ac2d9ce5ff324374" target="_blank" rel="noopener noreferrer">02ab77e706</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/02/20/">Tue, Feb 20</a></div>
+  <div class="entry-copy">The Treadmill&#x27;s stuck-request detector now accounts for a request-specific timeout as well as <code>Server.RequestTimeoutSeconds</code>. Requests that deliberately extend their timeout are no longer incorrectly terminated with <code>SIGABRT</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8bf8fcf3bfe50bf876fffbdd5eb8f16003132abd" target="_blank" rel="noopener noreferrer">8bf8fcf3bf</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/02/21/">Wed, Feb 21</a></div>
+  <div class="entry-copy">The new “add <code>await</code>” action now preserves operator precedence and avoids unnecessary parentheses around the inserted expression. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d23fc11169d0d580243af3560c77d9e30c8e9d97" target="_blank" rel="noopener noreferrer">d23fc11169</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/17801ada76ea01e6c48e66545d97feeefd98175c" target="_blank" rel="noopener noreferrer">17801ada76</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/02/21/">Wed, Feb 21</a></div>
+  <div class="entry-copy">The admin status response now includes machine-readable process uptime in seconds. Before the pagelet server starts, its start and uptime values are reported as <code>-1</code> rather than a date near the Unix epoch and a nonsensical duration. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0af897ce58ed27d47cf4142ea72998a52e6362d3" target="_blank" rel="noopener noreferrer">0af897ce58</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/02/23/">Fri, Feb 23</a></div>
+  <div class="entry-copy">Expressions with built-in <code>vec</code> and <code>dict</code> types no longer acquire unnecessary expression-dependent wrappers. Their inferred unions and error messages now show ordinary types such as <code>vec&lt;C&gt;</code> instead of <code>&lt;expr#N&gt; as vec&lt;C&gt;</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/51b81f12acccc539d297cfebd5ac370d441324b1" target="_blank" rel="noopener noreferrer">51b81f12ac</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/02/21/">Wed, Feb 21</a></div>
+  <div class="entry-copy">In the ongoing module-level-traits rollout, public module-level traits may no longer declare <code>internal</code> methods. This reverses the short-lived staged allowance while support is redesigned; use an <code>internal</code> trait or make the method non-<code>internal</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c641788a1aa38553b5831075308e42de90599c67" target="_blank" rel="noopener noreferrer">c641788a1a</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

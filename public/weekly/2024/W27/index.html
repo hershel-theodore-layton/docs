@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="9 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 27: Jul 1–Jul 7, 2024 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 27: Jul 1–Jul 7, 2024</h1>
+  <p class="post-meta">9 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/07/01/">Day</a><a href="/weekly/2024/W27/" aria-current="page">Week</a><a href="/monthly/2024/07/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2024/W26/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2024/W28/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/07/01/">Mon, Jul 1</a></div>
+  <div class="entry-copy"><code>HH\FileDecls::getShapeKeys()</code> now returns the keys of a shape type alias without recursively expanding nested aliases. Class-constant keys retain their <code>Class::CONSTANT</code> spelling. The pure <code>[]</code> API is useful to source-analysis tools that need the declaration&#x27;s written shape rather than a normalized type. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b48159fb69e7d4e363a51fcb729bfd0de970b40d" target="_blank" rel="noopener noreferrer">b48159fb69</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/07/03/">Wed, Jul 3</a></div>
+  <div class="entry-copy">Autocomplete now correctly applies <code>where</code> constraints when a function type&#x27;s return type has been pessimised to a like type. This restores valid suggestions whose availability depends on the callback return type. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3ba747877180afa6c34440c6eb250769e1564aa1" target="_blank" rel="noopener noreferrer">3ba7478771</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/07/04/">Thu, Jul 4</a></div>
+  <div class="entry-copy">Type errors now retain explanations from every disjunct considered while checking generic upper and lower bounds, making failures involving constrained generics less likely to lose the useful branch. Traversability errors also point at the subtype that failed the check rather than the expected supertype. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/bfea95c5c135fb9fe5bf9e2636cd195324161e8f" target="_blank" rel="noopener noreferrer">bfea95c5c1</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/402a8d51e476ccfc88fa95599d717bc56ccd26da" target="_blank" rel="noopener noreferrer">402a8d51e4</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6edbff137a7a11b00927f5ea7883ec0f5de4357e" target="_blank" rel="noopener noreferrer">6edbff137a</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/07/02/">Tue, Jul 2</a></div>
+  <div class="entry-copy">Package v2 no longer reports package-access errors for types used only in erased generic arguments or generic parameter constraints, including constructor and function calls. Reified generic arguments remain runtime-visible and are still subject to package checks. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/aa82f3b4085fc40f209e1380a97cf83509bd0d6a" target="_blank" rel="noopener noreferrer">aa82f3b408</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/07/04/">Thu, Jul 4</a></div>
+  <div class="entry-copy">The opt-in extended type-error explanations now simplify paths through type structure, correctly describe missing shape fields and pessimised returns, and suppress unhelpful implicit <code>supportdyn</code> details. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7a802e4b409c5088e1537deee6beed2cf45241f6" target="_blank" rel="noopener noreferrer">7a802e4b40</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c15dfa75a16a993c3e631516881a71742ddc7960" target="_blank" rel="noopener noreferrer">c15dfa75a1</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8512b745151520bb490f417820d9a005f24e8634" target="_blank" rel="noopener noreferrer">8512b74515</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/07/05/">Fri, Jul 5</a></div>
+  <div class="entry-copy">Identify-symbol and go-to-definition now resolve enum-class labels through dependent, nullable, and pre-stable case types. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/929a95c5b81a23fa0319c29cb9cad8d65a68bbbb" target="_blank" rel="noopener noreferrer">929a95c5b8</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/07/03/">Wed, Jul 3</a></div>
+  <div class="entry-copy">Enum-class labels may no longer refer to type constants. Expressions such as <code>E#T</code> or <code>#T</code> now produce a type error when <code>T</code> is a type constant rather than an enum-class member. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3c9a2a4a23cd1f3f084966b985139a7e938cb1c7" target="_blank" rel="noopener noreferrer">3c9a2a4a23</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/07/03/">Wed, Jul 3</a></div>
+  <div class="entry-copy"><code>HH\ImplicitContext</code> gained an abstract boolean constant named <code>IS_MEMO_SENSITIVE</code>. Subclasses must choose <code>true</code> for memo-sensitive contexts or <code>false</code> for memo-agnostic contexts. This systemlib change precedes the matching HHI declaration added later in the month. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9fbef64f53f9d8b3f7e55ea9de0e3e2341ceb07d" target="_blank" rel="noopener noreferrer">9fbef64f53</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/07/05/">Fri, Jul 5</a></div>
+  <div class="entry-copy"><code>HH\FileDecls</code> now preserves the exact source spelling of string values, including quote style and escapes, instead of normalizing them to single-quoted strings. Source-analysis tools that compare or parse the former normalized output need to accept raw snippets. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a3e0167a71c38c928386505bd29b1d40eac339b1" target="_blank" rel="noopener noreferrer">a3e0167a71</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

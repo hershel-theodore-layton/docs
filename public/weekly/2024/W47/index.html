@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="14 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 47: Nov 18–Nov 24, 2024 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 47: Nov 18–Nov 24, 2024</h1>
+  <p class="post-meta">14 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/11/18/">Day</a><a href="/weekly/2024/W47/" aria-current="page">Week</a><a href="/monthly/2024/11/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2024/W46/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2024/W48/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/11/18/">Mon, Nov 18</a></div>
+  <div class="entry-copy">The pure <code>HH\Facts\sha1(string $path)[]: ?string</code> API returns the SHA-1 already tracked by the active Facts store. It returns <code>null</code> when no hash is available; the repo-autoload implementation does not supply one. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/690ed8a0cdf10fc20f9b6143bc94432fd832b4cb" target="_blank" rel="noopener noreferrer">690ed8a0cd</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/11/19/">Tue, Nov 19</a></div>
+  <div class="entry-copy"><code>json_encode_with_error()</code> accepts the new <code>JSON_FB_FULL_FLOAT_PRECISION</code> flag to emit up to 17 decimal digits for IEEE-754 doubles instead of HHVM&#x27;s usual 14, allowing a JSON encode/decode round trip without losing representable precision. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/09c784c56724b86be0bcd7cf5a2d389502eb0f8e" target="_blank" rel="noopener noreferrer">09c784c567</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/11/22/">Fri, Nov 22</a></div>
+  <div class="entry-copy">In <code>--everything-sdt</code> mode, <code>&lt;&lt;__NoSupportDynamicType&gt;&gt;</code> suppresses the implicit <code>&lt;&lt;__SupportDynamicType&gt;&gt;</code> on a declaration while retaining signature pessimisation, <code>supportdyn</code> wrapping, and implicit <code>supportdyn&lt;mixed&gt;</code> bounds. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1e83a3bfa7dd95bd2f03155c36959f46a6cf313d" target="_blank" rel="noopener noreferrer">1e83a3bfa7</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/11/18/">Mon, Nov 18</a></div>
+  <div class="entry-copy"><code>C::class</code> and <code>self::class</code> may no longer be used as shape keys in shape types, literals, <code>Shapes::idx()</code>-style calls, or other non-subscript positions because they require an implicit class-pointer-to-string conversion. Replace them with <code>nameof C</code> or <code>nameof self</code>; ordinary class constants remain valid shape keys. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c0ab10b73979c164d28d83838f6fd741d2d22d10" target="_blank" rel="noopener noreferrer">c0ab10b739</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9952acc27dcc2c289c11738987d273fa1ebe8e0f" target="_blank" rel="noopener noreferrer">9952acc27d</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>9 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/11/18/">Mon, Nov 18</a></div>
+  <div class="entry-copy">The unstable <code>shape_destructure</code> feature now typechecks shape and tuple patterns structurally, assigning a fresh type variable to each leaf and checking the resulting pattern against the right-hand side. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2e29a769731a2aa439f248221d2eca139a4f4b6b" target="_blank" rel="noopener noreferrer">2e29a76973</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/11/19/">Tue, Nov 19</a></div>
+  <div class="entry-copy">Opt-in extended type-error explanations now trace values through static-property and class-constant accesses and omit the ordinary CLI error-count footer from the detailed document renderer. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7f936bbceea8b6b93ba0958e50f220f95b21df3a" target="_blank" rel="noopener noreferrer">7f936bbcee</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/944e7951ca0546fb797650f6d8233c7d6ee41a46" target="_blank" rel="noopener noreferrer">944e7951ca</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4cf06f194f34ba818ff2d9523e79fba3c278126e" target="_blank" rel="noopener noreferrer">4cf06f194f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/11/19/">Tue, Nov 19</a></div>
+  <div class="entry-copy">Experimental tuple splats can now be indexed, and tuples containing a splatted tail support dynamic when both their fixed elements and tail do. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/bf35c4845697cccd0573d03760f8ed01b11941a3" target="_blank" rel="noopener noreferrer">bf35c48456</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b0df8ac78558824e39d50403e65ee4907e5a7f5c" target="_blank" rel="noopener noreferrer">b0df8ac785</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/11/20/">Wed, Nov 20</a></div>
+  <div class="entry-copy">Typed-local duplicate-definition checks now understand tuple and shape destructuring patterns under the unstable <code>shape_destructure</code> feature. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d172d7ab64937bbd6590f25d9f43105a1e1b0bb7" target="_blank" rel="noopener noreferrer">d172d7ab64</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/11/20/">Wed, Nov 20</a></div>
+  <div class="entry-copy">HackC recognizes the new intrinsic <code>HH\ReifiedGenerics\get_class_from_type&lt;T&gt;()</code>, which produces a class pointer directly instead of extracting the <code>classname</code> string from a type structure. This commit does not add the function to the standard HHI, so it is rollout groundwork rather than a portable project API at this point. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/60b19782a89b97ed036d894a6143daec7b245947" target="_blank" rel="noopener noreferrer">60b19782a8</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/11/21/">Thu, Nov 21</a></div>
+  <div class="entry-copy">The class-pointer rollout adds <code>enum&lt;E&gt;</code>, the class-pointer counterpart to <code>enumname&lt;E&gt;</code>; it expands to <code>class&lt;HH\BuiltinEnum&lt;E&gt;&gt;</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/624d05698f5d91b93567154335553c701df3d423" target="_blank" rel="noopener noreferrer">624d05698f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/11/21/">Thu, Nov 21</a></div>
+  <div class="entry-copy">Beta CLI error streaming now starts during the first typecheck after <code>hh_server</code> is launched instead of waiting until that typecheck has completed. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/78a3b3138e12f3548d093e36838c5319c8b763ed" target="_blank" rel="noopener noreferrer">78a3b3138e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/11/22/">Fri, Nov 22</a></div>
+  <div class="entry-copy">Experimental tuple splats now participate in tuple subtyping: when comparing <code>(T1, T2, ...T)</code> with another tuple, Hack checks the fixed prefix and compares <code>T</code> with the remaining tuple tail. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/02b3e770abe1c3db2673d275760befb26eaf4ebe" target="_blank" rel="noopener noreferrer">02b3e770ab</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/11/22/">Fri, Nov 22</a></div>
+  <div class="entry-copy">Recursive case types must now be contractive. Direct or nullable self aliases such as <code>case type A = A</code> and <code>case type A = ?A</code> are rejected, while recursion underneath a constructor such as <code>case type A = vec&lt;A&gt;</code> remains supported. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5748214e093cc6f3ce0b469c80f5d2295cdaf2df" target="_blank" rel="noopener noreferrer">5748214e09</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Security</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/11/19/">Tue, Nov 19</a></div>
+  <div class="entry-copy">The <code>AdminServer.EnableSSLWithPlainText</code> option has been removed; the admin server no longer multiplexes TLS onto its plaintext port. Deployments using this option must provide TLS through a separate endpoint or proxy. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f75cdaef50ffa63afa7aa65bbc5cef50dd64ce5f" target="_blank" rel="noopener noreferrer">f75cdaef50</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

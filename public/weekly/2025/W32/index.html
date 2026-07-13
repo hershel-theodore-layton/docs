@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="7 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 32: Aug 4–Aug 10, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 32: Aug 4–Aug 10, 2025</h1>
+  <p class="post-meta">7 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/08/04/">Day</a><a href="/weekly/2025/W32/" aria-current="page">Week</a><a href="/monthly/2025/08/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2025/W31/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2025/W33/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>5 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/08/04/">Mon, Aug 4</a></div>
+  <div class="entry-copy">Arity diagnostics now point at the call subexpression whose argument count is wrong, rather than a broader enclosing expression. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ab8c323b645532a804f65729f14f745f5c34048e" target="_blank" rel="noopener noreferrer">ab8c323b64</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/08/04/">Mon, Aug 4</a></div>
+  <div class="entry-copy">Incremental typechecking now records more of the declaration dependencies consulted while checking a file. This closes cases where an incremental check could miss an error found by a clean check, at the possible cost of somewhat larger recheck fanout. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/290788b78993b7cc5f5b72516212824f0f6dc0f6" target="_blank" rel="noopener noreferrer">290788b789</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/08/07/">Thu, Aug 7</a></div>
+  <div class="entry-copy">JSON typecheck output containing warnings but no errors now exits successfully instead of reporting that the check failed. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f6aaac56415e2b4b400a60aaa28063ee3504a8f9" target="_blank" rel="noopener noreferrer">f6aaac5641</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/08/07/">Thu, Aug 7</a></div>
+  <div class="entry-copy">More member and constructor lookups now participate in dependency tracking, reducing further cases where incremental typechecking could disagree with a clean check. Some edits may consequently recheck more files. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/bd0f639422e2f29700befda0dc15964a0b7333d7" target="_blank" rel="noopener noreferrer">bd0f639422</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a51ab4f4c4d37382f0a065e7166693c16c904eb4" target="_blank" rel="noopener noreferrer">a51ab4f4c4</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6473b0760a67641c3f0b14ae3819a71f8f1cef4c" target="_blank" rel="noopener noreferrer">6473b0760a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/08/08/">Fri, Aug 8</a></div>
+  <div class="entry-copy">Enum classes now permit <code>class&lt;T&gt;</code> as their base type, so their members can hold <code>C::class</code> values without an implicit string conversion. Ordinary enums remain restricted to <code>arraykey</code>-compatible values. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d34b8772a3ddf3c9b9324739297af4778f90db3f" target="_blank" rel="noopener noreferrer">d34b8772a3</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/08/05/">Tue, Aug 5</a></div>
+  <div class="entry-copy">Variance analysis for experimental polymorphic function references now follows typedef parameters. When declaration information is unavailable, it conservatively treats type parameters as invariant instead of silently skipping them. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f04fb6b1fe6b4d933059e8a38b2e27be6c9c14e3" target="_blank" rel="noopener noreferrer">f04fb6b1fe</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/08/06/">Wed, Aug 6</a></div>
+  <div class="entry-copy">The experimental <code>constraint_array_index</code> solver received a set of compatibility fixes: better arity and vector diagnostics, more precise result reasons, support for <code>ConstMap</code> and <code>KeyedContainer</code>, and preservation of <code>dynamic</code> results where required. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9863e5fc70605cff777d0acced7325c9055d0213" target="_blank" rel="noopener noreferrer">9863e5fc70</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5666b3033654900cba5b591b1b6cfe32f1465fe3" target="_blank" rel="noopener noreferrer">5666b30336</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/552fe60a08bc7d3458cfa1ecb7d5808d571e5f2d" target="_blank" rel="noopener noreferrer">552fe60a08</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c19e1e052b652b8017d776d0d983fc4ddf546721" target="_blank" rel="noopener noreferrer">c19e1e052b</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7034e9c7f69493ae3b58bd8520453b99169757a7" target="_blank" rel="noopener noreferrer">7034e9c7f6</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="7 noteworthy changes recorded on this day.">
+  <title>Tuesday, November 15, 2022 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Tuesday, November 15, 2022</h1>
+  <p class="post-meta">7 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2022/11/15/" aria-current="page">Day</a><a href="/weekly/2022/W46/">Week</a><a href="/monthly/2022/11/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2022/11/14/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2022/11/16/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">Expression-tree type inference no longer passes pessimised like-types to <code>makeTree</code> when the virtual expression calls a pessimised function. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6f9d9ad3bcbdc93423fe999719550569dcd5b777" target="_blank" rel="noopener noreferrer">6f9d9ad3bc</a></div></li><li class="change-entry"><div class="entry-copy">The bundled <code>Set</code> declarations now preserve their element type across iteration and common operations such as <code>map</code>, <code>filter</code>, <code>values</code>, and conversions. This should improve inference for projects using legacy Hack collections. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f5ea07c6faee10bed08b67992c2bc6812bf5c977" target="_blank" rel="noopener noreferrer">f5ea07c6fa</a></div></li><li class="change-entry"><div class="entry-copy">Dead <code>HH\FIXME\UNSAFE_CAST</code> removal is now integrated with <code>hh_server</code>, including repeated analysis until no further redundant casts can be removed. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/097f3c19adbd64e88d3f15b772404b5845bd9341" target="_blank" rel="noopener noreferrer">097f3c19ad</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6ebee6b68966be196d8e363e1a43cbc927037fa9" target="_blank" rel="noopener noreferrer">6ebee6b689</a></div></li><li class="change-entry"><div class="entry-copy">An <code>internal</code> type alias may now refer to another internal type from the same module. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/61917d4bf00286785b47cb9dcfdd146e1a7c9ae8" target="_blank" rel="noopener noreferrer">61917d4bf0</a></div></li><li class="change-entry"><div class="entry-copy"><code>HH\classname_from_string_unsafe()</code> is now declared in the HHI files. It converts a string to <code>classname&lt;mixed&gt;</code> without eager validity or module checks and is intended only for exceptional migration cases. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/385ddd879a9b8eb1b2495989b50ed447aea8441e" target="_blank" rel="noopener noreferrer">385ddd879a</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy">Class-level user attributes are typechecked outside the class context, so <code>self</code> is no longer available in their arguments. Module-internal names remain usable there when the attribute is evaluated inside the same module. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a83ac0b2c2fcce81bc56da606b3e6d66c8407819" target="_blank" rel="noopener noreferrer">a83ac0b2c2</a></div></li><li class="change-entry"><div class="entry-copy"><code>DirectoryIterator</code> and <code>FilesystemIterator</code> now iterate over <code>~SplFileInfo</code>, since extraction flags can make <code>FilesystemIterator::current()</code> return a string or the iterator itself. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7380211047e294e70fbb2dc606253d1b60e63b75" target="_blank" rel="noopener noreferrer">7380211047</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

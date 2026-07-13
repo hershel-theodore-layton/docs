@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="4 noteworthy changes recorded on this day.">
+  <title>Thursday, April 6, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Thursday, April 6, 2023</h1>
+  <p class="post-meta">4 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/04/06/" aria-current="page">Day</a><a href="/weekly/2023/W14/">Week</a><a href="/monthly/2023/04/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2023/04/05/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2023/04/10/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">A lambda nested inside a <code>finally</code> block may return normally; it is no longer treated as though its own body were part of the enclosing <code>finally</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/52c136dd3aa4de79ae2643627faccd48a31a8393" target="_blank" rel="noopener noreferrer">52c136dd3a</a></div></li><li class="change-entry"><div class="entry-copy">Rust elaboration now reports more accurate positions and error kinds for reading from <code>[]</code>, invalid <code>&lt;&lt;__Deprecated&gt;&gt;</code> strings, generic entry points, duplicate class constants, and wildcard type parameters. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e25f032cdee7d715a0b8436fd50cf1ad26ee8e0b" target="_blank" rel="noopener noreferrer">e25f032cde</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a0b5a2c4a4e14b54d7801d76e14eb690c2df7539" target="_blank" rel="noopener noreferrer">a0b5a2c4a4</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c681a172f89991c5504b0c8c3d2e9a2b961c0b13" target="_blank" rel="noopener noreferrer">c681a172f8</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/93930d39c8a50cdafdcbd4018c6bff9484fbab65" target="_blank" rel="noopener noreferrer">93930d39c8</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/fcab758a8cc61d2c918247f5fe32c0f4ec18df11" target="_blank" rel="noopener noreferrer">fcab758a8c</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">Implicit pessimisation now rejects a bare or implicit return from a function whose declared return type is non-<code>void</code>; it no longer accepts the missing value through <code>dynamic</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6f9c0e2cb39dc57675cfa5723c394582e481d6e0" target="_blank" rel="noopener noreferrer">6f9c0e2cb3</a></div></li><li class="change-entry"><div class="entry-copy">The experimental <code>newtype_super_bounds</code> feature now honors class-typed lower bounds such as <code>newtype T super C = mixed</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b87d8ce093d9e0c43d114d8d98cbeaad9ab0938d" target="_blank" rel="noopener noreferrer">b87d8ce093</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

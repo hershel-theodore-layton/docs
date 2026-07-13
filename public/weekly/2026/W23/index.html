@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="17 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 23: Jun 1–Jun 7, 2026 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 23: Jun 1–Jun 7, 2026</h1>
+  <p class="post-meta">17 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2026/06/01/">Day</a><a href="/weekly/2026/W23/" aria-current="page">Week</a><a href="/monthly/2026/06/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2026/W22/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2026/W27/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Breaking Changes</h2><span>7 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/06/01/">Mon, Jun 1</a></div>
+  <div class="entry-copy">More public HHI declarations now expose their concrete return types: <code>Exception::getTraceOptions()</code> and <code>RecursiveIteratorIterator::getDepth()</code> return <code>int</code>, while <code>HH\asio_get_running()</code> returns <code>ResumableWaitHandle&lt;mixed&gt;</code>. This improves inference but can reject code that used the old missing return types as arbitrary values. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/92f693af87842361efa60ca5542d3afac6033409" target="_blank" rel="noopener noreferrer">92f693af87</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ea4dc7bf50edb8ee875d312233e1914b945d4e52" target="_blank" rel="noopener noreferrer">ea4dc7bf50</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b7291dea21384472de8507bef36bac6a36065a7b" target="_blank" rel="noopener noreferrer">b7291dea21</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/06/02/">Tue, Jun 2</a></div>
+  <div class="entry-copy">Shape refinement now distinguishes open shapes from closed shapes and respects required versus optional fields when splitting <code>is</code> branches. Open shapes can correctly refine to include a newly tested field instead of collapsing a reachable branch to <code>nothing</code>; code in branches previously considered unreachable may now be checked and expose errors. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/abe7c91609b576e82518ea404f3b128951654c9a" target="_blank" rel="noopener noreferrer">abe7c91609</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/06/02/">Tue, Jun 2</a></div>
+  <div class="entry-copy">Public Asio wait-handle callback setters now return <code>void</code> instead of an unspecified missing type. Hack will reject code that tries to use the result of <code>setOnIOWaitEnterCallback()</code>, <code>setOnJoinCallback()</code>, or the corresponding condition, external-event, resumable, and sleep wait-handle callback setters. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/403ca2943f42df3e20c7b15263f50249cd246133" target="_blank" rel="noopener noreferrer">403ca2943f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/06/03/">Wed, Jun 3</a></div>
+  <div class="entry-copy">Lint 5655 now reports any cross-package edge that compiles only because the callee has a load-bearing <code>__PackageOverride</code>, even when the override targets a package included or dynamically loaded by the caller rather than the caller&#x27;s own package. It remains suppressed when the caller can already reach the callee&#x27;s underlying package. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/04e9da19bf9e88e6833c3171a069eab8f281bb12" target="_blank" rel="noopener noreferrer">04e9da19bf</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/06/03/">Wed, Jun 3</a></div>
+  <div class="entry-copy"><code>pow()</code> now has return type <code>num</code> instead of <code>mixed</code>, matching its runtime behavior of returning only <code>int</code> or <code>float</code> and throwing for invalid inputs. Code that treated the result as an unrelated type will now fail checking. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ada1e4482ce50cccba7a37740e66b98349473347" target="_blank" rel="noopener noreferrer">ada1e4482c</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/06/04/">Thu, Jun 4</a></div>
+  <div class="entry-copy">A large HHI cleanup replaces missing return types with concrete enforced types across Reflection, DOM, Memcache, PDO, SimpleXML, SOAP, SQLite3, and XMLWriter. Most affected operations now return <code>bool</code>, <code>int</code>, or <code>string</code>; projects that consumed these results as arbitrary values may gain type errors. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d9bb7065131b40f197a31f55bf610360ef6b56c8" target="_blank" rel="noopener noreferrer">d9bb706513</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/06/05/">Fri, Jun 5</a></div>
+  <div class="entry-copy">Refining a <code>dynamic</code> value with <code>is</code> or <code>as</code> against a fully enforceable type now drops the useless <code>dynamic</code> intersection and produces the enforced or <code>supportdyn</code> form. Operations after a successful check are therefore checked against the asserted type instead of silently routing through <code>dynamic</code>, which can reveal invalid calls or property accesses that previously passed. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/bee322014e544405eabf37d3a0076dc330465a4e" target="_blank" rel="noopener noreferrer">bee322014e</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>4 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/06/01/">Mon, Jun 1</a></div>
+  <div class="entry-copy">Expression-tree support for Hack arrays has moved from Preview to Ongoing Release. It no longer needs per-file unstable-feature enablement, but remains pre-stable while the rollout continues. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e846474534b11ce3adb287c9302d5387186c4162" target="_blank" rel="noopener noreferrer">e846474534</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/06/02/">Tue, Jun 2</a></div>
+  <div class="entry-copy">Runtime support has landed for <code>&lt;&lt;__TestsBypassVisibility&gt;&gt;</code>, allowing configured test-class descendants in non-repo-authoritative mode to reach annotated private, protected, or internal declarations. Hack typechecker integration follows later in the stack, so this is not yet the complete developer-facing feature. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/de0877a17d7ab7a5e13603fbc6e6104607b70e4b" target="_blank" rel="noopener noreferrer">de0877a17d</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/06/03/">Wed, Jun 3</a></div>
+  <div class="entry-copy">Pre-stable open and variadic tuples are no longer mistaken for closed tuples during <code>is</code> refinement and disjointness checks. This removes false “always false” warnings and lets an open tuple refine to a compatible closed tuple in the true branch. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/edf59ddccaf21575ffa8802e96a141c8937611af" target="_blank" rel="noopener noreferrer">edf59ddcca</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/06/05/">Fri, Jun 5</a></div>
+  <div class="entry-copy">A public HIP and Lean formalization now specify the proposed shape-polymorphism and shape-splat typing rules, including field requiredness, splat order, and inference bounds. This is a design artifact rather than a released language feature. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/263c872c37cca6b946c7180ff46ec3a674d751f7" target="_blank" rel="noopener noreferrer">263c872c37</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Highlights</h2><span>5 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/06/02/">Tue, Jun 2</a></div>
+  <div class="entry-copy"><code>.hhconfig</code> values can now span several lines. An indented line continues the preceding value with trimmed content and no inserted separator, making JSON-valued settings such as <code>enable_experimental_stx_features</code> easier to maintain; blank or unindented comment lines end the continuation. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e9fd08104c9e060b138172bec60bb228f8f92665" target="_blank" rel="noopener noreferrer">e9fd08104c</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/06/02/">Tue, Jun 2</a></div>
+  <div class="entry-copy"><code>FunctionCredential</code> now provides <code>getMethodOrFunctionName()</code>, returning either the top-level function name or <code>ClassName::methodName</code>. Credentials for memoized implementation functions retain their <code>$memoize_impl</code> suffix. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/82312e85e943400a21901a4df34feed63eb6666e" target="_blank" rel="noopener noreferrer">82312e85e9</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/06/04/">Thu, Jun 4</a></div>
+  <div class="entry-copy"><code>hhvm --list-extensions</code> now emits JSON describing each loaded extension&#x27;s name, version, and oncall, making runtime capabilities easier to inspect from deployment tooling. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/70bb50106d54e21fa3e02c0f5dad0649780455d2" target="_blank" rel="noopener noreferrer">70bb50106d</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/06/05/">Fri, Jun 5</a></div>
+  <div class="entry-copy"><code>--package-lint-full</code> now evaluates each dependent file in its effective package after applying that file&#x27;s own <code>__PackageOverride</code>, while continuing to evaluate the target without its override. This fixes incorrect load-bearing-override results when both sides are overridden. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/bfb684cc099526d080ff477a0f7e73dfc68d0290" target="_blank" rel="noopener noreferrer">bfb684cc09</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/06/05/">Fri, Jun 5</a></div>
+  <div class="entry-copy"><code>&lt;&lt;__TestsBypassVisibility&gt;&gt;</code> is now understood throughout the Hack typechecker. With <code>permits_bypassing_visibility</code> configured, descendants of the named test base classes may access annotated private, protected, and internal members or classes, while ordinary callers retain normal visibility. Annotated members cannot be silently shadowed, overrides must preserve the attribute, and an annotated internal member requires its internal class to be annotated too. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d386a0d0d4c990309db75112ddf12886f18f07c9" target="_blank" rel="noopener noreferrer">d386a0d0d4</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Security</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/06/04/">Thu, Jun 4</a></div>
+  <div class="entry-copy">The CLI-server handshake now sends and validates a fixed-size magic value before any other data. A non-CLI client can no longer make HHVM interpret attacker-controlled bytes as an arbitrary <code>size_t</code> string length and attempt a process-killing allocation. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/724ce26e558a4c5399200564e77adf25a4d1ea2c" target="_blank" rel="noopener noreferrer">724ce26e55</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="5 noteworthy changes recorded on this day.">
+  <title>Thursday, February 9, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Thursday, February 9, 2023</h1>
+  <p class="post-meta">5 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/02/09/" aria-current="page">Day</a><a href="/weekly/2023/W06/">Week</a><a href="/monthly/2023/02/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2023/02/08/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2023/02/10/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">An async lambda passed where <code>dynamic</code> is expected now infers its omitted return type normally, rather than assuming a <code>dynamic</code> return and rejecting ordinary returns such as <code>return 1</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e2a1356eeb21c88c1661b90f5e7958cb0e9df3df" target="_blank" rel="noopener noreferrer">e2a1356eeb</a></div></li><li class="change-entry"><div class="entry-copy">Large shape types now spend type-printer fuel per field and are explicitly truncated when the budget is exhausted, keeping diagnostics and hover output readable. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/452112ed9235f34870d6a33327b6376659386ff7" target="_blank" rel="noopener noreferrer">452112ed92</a></div></li><li class="change-entry"><div class="entry-copy"><code>&lt;&lt;__NoAutoDynamic&gt;&gt;</code> is now supported on individual methods in both explicit and implicit Sound Dynamic pessimisation. It prevents <code>~</code> and <code>supportdyn</code> from being added to that method&#x27;s signature without disabling dynamic calls to an otherwise Sound Dynamic class. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7da433acc8bdea572279cdd068b436ecea2b54ef" target="_blank" rel="noopener noreferrer">7da433acc8</a></div></li><li class="change-entry"><div class="entry-copy">Exception rendering retains the original class, file, and line when an overridden <code>Exception::getMessage()</code> itself throws, making secondary failures substantially easier to diagnose. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0a6378d03a4bc64020067fb6284dcd820506ac6b" target="_blank" rel="noopener noreferrer">0a6378d03a</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">Pre-stable class refinements now distinguish <code>type</code> members from <code>ctx</code> members. Refining a type constant with <code>ctx</code>, or a context constant with <code>type</code>, produces typing error 4471. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f04bef3304685575583bd5c0f19f4eb461d1f0f1" target="_blank" rel="noopener noreferrer">f04bef3304</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

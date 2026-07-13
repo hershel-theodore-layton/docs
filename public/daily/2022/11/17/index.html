@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="4 noteworthy changes recorded on this day.">
+  <title>Thursday, November 17, 2022 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Thursday, November 17, 2022</h1>
+  <p class="post-meta">4 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2022/11/17/" aria-current="page">Day</a><a href="/weekly/2022/W46/">Week</a><a href="/monthly/2022/11/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2022/11/16/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2022/11/21/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">Incremental typechecking now correctly fans out changes that add inherited XHP special attributes such as <code>:aria-*</code> and <code>:data-*</code>. Projects should see the same XHP attribute errors without needing a full typecheck. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d615fbde45381187c6acf15253e14a0b93c69867" target="_blank" rel="noopener noreferrer">d615fbde45</a></div></li><li class="change-entry"><div class="entry-copy">HHI global and class constants with an explicit type may now omit their placeholder value. Initializers have been removed from the bundled handwritten declarations and are no longer copied into generated HSL HHIs. This syntax is specific to HHI declaration files and does not change the constants&#x27; runtime values. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/824ac81dc9a63e1e188dcb1aaa84e6eb687851ac" target="_blank" rel="noopener noreferrer">824ac81dc9</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/833f6d5fe7dd6da8ccc3df35ff32b897500404e2" target="_blank" rel="noopener noreferrer">833f6d5fe7</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0a1f30494ab0cda722ca57a960fd2d21981617de" target="_blank" rel="noopener noreferrer">0a1f30494a</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/80fb463a4904c60c5b92023b74a9d155b9b7258c" target="_blank" rel="noopener noreferrer">80fb463a49</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f5f90c7cad0e2295240a1c7c252e0339bcd64c1a" target="_blank" rel="noopener noreferrer">f5f90c7cad</a></div></li><li class="change-entry"><div class="entry-copy"><code>hh_server</code> now tolerates duplicated and out-of-order Watchman state notifications during source-control updates, reducing the chance of an incorrect server state after an update or transaction. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/cea00244a173167e08f31fd56b070160c0493d64" target="_blank" rel="noopener noreferrer">cea00244a1</a></div></li><li class="change-entry"><div class="entry-copy">When code such as <code>$object-&gt;$name</code> attempts dynamic access on a non-<code>dynamic</code> value, naming error 2011 now explains the restriction and offers a quick-fix to ordinary property access such as <code>$object-&gt;name</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/82df50f9da163c1738c0dcc8f2c675159c6392d4" target="_blank" rel="noopener noreferrer">82df50f9da</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

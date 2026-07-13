@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="4 noteworthy changes recorded on this day.">
+  <title>Tuesday, March 11, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Tuesday, March 11, 2025</h1>
+  <p class="post-meta">4 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/03/11/" aria-current="page">Day</a><a href="/weekly/2025/W11/">Week</a><a href="/monthly/2025/03/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2025/03/10/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2025/03/12/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">The missing-method-visibility diagnostic now lists <code>internal</code> as a valid choice and offers a quick-fix that inserts it. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c2ab98a8adf81eaf2afdde93dd9d214ba24745c6" target="_blank" rel="noopener noreferrer">c2ab98a8ad</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy">Runtime-enforceable hint validation now resets its “inside reified argument” state between sibling generic arguments. Invalid <code>is</code> hints containing erased arguments after a reified argument are no longer accidentally accepted. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/28716a94fbb8d7c0bf6612df5cac982434dad59e" target="_blank" rel="noopener noreferrer">28716a94fb</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">Safe-abstract typing replaces the special-purpose <code>concreteclassname&lt;T&gt;</code> with the general covariant wrapper <code>concrete&lt;T&gt;</code>. This supports both <code>concrete&lt;classname&lt;T&gt;&gt;</code> and, with class-pointer typing enabled, <code>concrete&lt;class&lt;T&gt;&gt;</code>; the feature remains controlled by <code>safe_abstract</code>, which defaults to <code>false</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f3468eb1070649e9ac2a2753f673c3c9128ad974" target="_blank" rel="noopener noreferrer">f3468eb107</a></div></li><li class="change-entry"><div class="entry-copy">Class-pointer intersection simplification now reduces <code>class&lt;U&gt; &amp; class&lt;V&gt;</code> to <code>class&lt;U &amp; V&gt;</code> and, when <code>class&lt;T&gt;</code> is configured as a subtype of <code>classname&lt;T&gt;</code>, reduces <code>class&lt;U&gt; &amp; classname&lt;V&gt;</code> to <code>classname&lt;U &amp; V&gt;</code>. This gives equality refinement a denotable result instead of retaining an opaque intersection. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/def2bf267678ccf070d9fbf495692799eaf7ccb4" target="_blank" rel="noopener noreferrer">def2bf2676</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

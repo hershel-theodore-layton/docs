@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="21 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 28: Jul 7–Jul 13, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 28: Jul 7–Jul 13, 2025</h1>
+  <p class="post-meta">21 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/07/07/">Day</a><a href="/weekly/2025/W28/" aria-current="page">Week</a><a href="/monthly/2025/07/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2025/W27/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2025/W29/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>5 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/07/07/">Mon, Jul 7</a></div>
+  <div class="entry-copy">HHVM&#x27;s reflection runtime adds <code>getTypeVarNames()[]</code> to <code>ReflectionClass</code> and <code>ReflectionFunctionAbstract</code>, reporting every declared type parameter rather than only parameters appearing in the callable signature. The runtime signature requires no capabilities, but the public HHI does not expose the methods until later in the month. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/844b86e849ae0cead2df4fbe194e70c8b5878dff" target="_blank" rel="noopener noreferrer">844b86e849</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/07/08/">Tue, Jul 8</a></div>
+  <div class="entry-copy">Truthiness analysis now recognizes closures, function references, and <code>class&lt;T&gt;</code> values as always truthy, while <code>vec_or_dict</code> remains potentially empty. Conditions such as <code>if ($closure)</code> can consequently produce the intended always-truthy warning. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0bf71d4a41cccfda5e0f823cd612cd049054e2f3" target="_blank" rel="noopener noreferrer">0bf71d4a41</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/07/11/">Fri, Jul 11</a></div>
+  <div class="entry-copy">LSP document-symbol ranges now begin at the symbol&#x27;s name rather than at the start of its line, improving outline navigation and symbol selection. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0c2b5109ff94bf9d565039eb02b6dcbe751b9c4f" target="_blank" rel="noopener noreferrer">0c2b5109ff</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/07/11/">Fri, Jul 11</a></div>
+  <div class="entry-copy"><code>ReflectionTypeConstant::getCanonicalClassname()[]</code> reports the class or trait that actually defines a type constant in non-repo-authoritative mode. Repo-authoritative builds flatten traits and therefore throw when that distinction cannot be recovered; the explicit <code>[]</code> adds no caller capability requirement. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/db653f14e10c943b479f847f9f99ba32565de805" target="_blank" rel="noopener noreferrer">db653f14e1</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/07/12/">Sat, Jul 12</a></div>
+  <div class="entry-copy">Switch exhaustiveness analysis now strips <code>supportdyn</code> wrappers, avoiding unnecessary default branches when all underlying cases are covered. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7036122c9a5a08a9376830ba603a3a455ae0bb6c" target="_blank" rel="noopener noreferrer">7036122c9a</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>8 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/07/07/">Mon, Jul 7</a></div>
+  <div class="entry-copy">Experimental <code>can_index</code> solving now distributes through like, union, and dynamic types and supports fixed tuples. Tuple indexes that are statically out of bounds receive a dedicated diagnostic. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f745c16e2ad5d958eb729c1836edc773c3938bed" target="_blank" rel="noopener noreferrer">f745c16e2a</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e5e17faa7be08a5d38b0ccface882b12987d4448" target="_blank" rel="noopener noreferrer">e5e17faa7b</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a22e0b04645983f067a2e6d517cbb4a1b3d3e732" target="_blank" rel="noopener noreferrer">a22e0b0464</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/07/08/">Tue, Jul 8</a></div>
+  <div class="entry-copy">JSON serialization of staged polymorphic function types now includes their type parameters, constraints, and user attributes. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d3c29d2e3fa66736ee5566369f6472e8b49c0c3b" target="_blank" rel="noopener noreferrer">d3c29d2e3f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/07/08/">Tue, Jul 8</a></div>
+  <div class="entry-copy">Experimental <code>can_index</code> solving now supports fixed shapes and strings. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8956c8e0843d7a93325f32ececd6c0ad6d8b55a4" target="_blank" rel="noopener noreferrer">8956c8e084</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4ba6db413d806593ee5b5f5e3cdcc9497f8937a5" target="_blank" rel="noopener noreferrer">4ba6db413d</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/07/09/">Wed, Jul 9</a></div>
+  <div class="entry-copy">Experimental <code>can_index</code> constraint solving now supports <code>Pair</code> and reports more precise string-index errors. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2cb9a00c36182add0b9686287667350c9ab4ae30" target="_blank" rel="noopener noreferrer">2cb9a00c36</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a592d9f30cd4af115b485f64232a98c310d2c0c2" target="_blank" rel="noopener noreferrer">a592d9f30c</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/07/10/">Thu, Jul 10</a></div>
+  <div class="entry-copy">The experimental EdenFS watcher can now refresh <code>hh_client</code> streaming errors from Eden&#x27;s own clock instead of trusting a potentially stale errors-file clock. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d60254702c3ac39a782593f61c75d8cc07a413c3" target="_blank" rel="noopener noreferrer">d60254702c</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/07/10/">Thu, Jul 10</a></div>
+  <div class="entry-copy">Experimental <code>can_index</code> solving now handles nullable indexed values and additional sound-dynamic collection flows. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4e9dd4f16b7a8d76c0aee0d5848a1e57a3d28e1a" target="_blank" rel="noopener noreferrer">4e9dd4f16b</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4bdd58be8354e84420158487ce797331600fa9a7" target="_blank" rel="noopener noreferrer">4bdd58be83</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/07/11/">Fri, Jul 11</a></div>
+  <div class="entry-copy">Experimental <code>can_index</code> solving now supports <code>Map</code> and optional indexed values. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/037d467b12afb85e01b8ec3cb646ca465e231bb5" target="_blank" rel="noopener noreferrer">037d467b12</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/00c9e19540e1bfea68af98d61ca9b03588a35edc" target="_blank" rel="noopener noreferrer">00c9e19540</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/07/11/">Fri, Jul 11</a></div>
+  <div class="entry-copy">Expression trees now give a direct unsupported-syntax error for <code>is</code> expressions instead of cascading parse errors. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0a74f2a6a979d4f91bbb43932d4bb3bad38c7d74" target="_blank" rel="noopener noreferrer">0a74f2a6a9</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Security</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/07/09/">Wed, Jul 9</a></div>
+  <div class="entry-copy">Hack&#x27;s Rust dependency lockfile no longer transitively includes the vulnerable <code>owning_ref</code> crate affected by RUSTSEC-2022-0040. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b20fefa60cd62383d1ead53d923c4482d4a32672" target="_blank" rel="noopener noreferrer">b20fefa60c</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/07/09/">Wed, Jul 9</a></div>
+  <div class="entry-copy">HHVM fixes a heap-use-after-free when mutating bespoke <code>LoggingArray</code> values by constructing the replacement before invalidating the old array. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2dbe10d8a1921f7f28430155a8d096b99aa68c2e" target="_blank" rel="noopener noreferrer">2dbe10d8a1</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>6 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/07/09/">Wed, Jul 9</a></div>
+  <div class="entry-copy">Four class-pointer migration settings—<code>class_pointer_ban_classname_new</code>, <code>_type_structure</code>, <code>_static_meth</code>, and <code>_class_const</code>—now take integer levels: <code>0</code> permits the operation, <code>1</code> emits Warn[12022], and <code>2</code> reports an error. Existing boolean values must be replaced with the corresponding integer. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e2bb8738e85bf847c2a4e7051ccc8ecde09fbe48" target="_blank" rel="noopener noreferrer">e2bb8738e8</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/07/09/">Wed, Jul 9</a></div>
+  <div class="entry-copy">Static-property access through <code>classname&lt;T&gt;</code> is now an unconditional type error, and the former <code>class_pointer_ban_classname_static_prop</code> escape hatch has been removed. Migrate the receiver to <code>class&lt;T&gt;</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e2bb8738e85bf847c2a4e7051ccc8ecde09fbe48" target="_blank" rel="noopener noreferrer">e2bb8738e8</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/07/10/">Thu, Jul 10</a></div>
+  <div class="entry-copy"><code>Eval.ForbidDynamicCallsToFunc</code> now defaults to level <code>2</code>. Dynamically calling a top-level function that lacks <code>&lt;&lt;__DynamicallyCallable&gt;&gt;</code> throws, while raw string call sites still warn; migrate ordinary calls to function pointers and use <code>HH\dynamic_fun()</code> only for deliberately opted-in dynamic targets. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/77763d0b698fc381d40b8d899b19adf03164c5ed" target="_blank" rel="noopener noreferrer">77763d0b69</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/950e7c82575f552b39f2191a280bc69000f9680a" target="_blank" rel="noopener noreferrer">950e7c8257</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/07/11/">Fri, Jul 11</a></div>
+  <div class="entry-copy"><code>ReflectionFunction::invoke()</code> and <code>invokeArgs()</code> now throw <code>ReflectionException</code> for named top-level functions. Invocation through a reflection object remains supported for closures. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6e46037c9238b2ece68793f16c8913e94d795c5f" target="_blank" rel="noopener noreferrer">6e46037c92</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/07/11/">Fri, Jul 11</a></div>
+  <div class="entry-copy"><code>Eval.ForbidDynamicCallsToFunc</code> now defaults to level <code>3</code>, so raw-string top-level function calls throw even when the target has <code>&lt;&lt;__DynamicallyCallable&gt;&gt;</code>. Use a function pointer, or resolve an explicitly dynamic target through <code>HH\dynamic_fun()</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ee7d2b14b12ae7a363fd260170cde75f836324f6" target="_blank" rel="noopener noreferrer">ee7d2b14b1</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/07/12/">Sat, Jul 12</a></div>
+  <div class="entry-copy"><code>HH\dynamic_fun()</code> now resolves its target in the caller&#x27;s context, so enabled module and package-deployment boundary checks can reject dynamic calls that previously bypassed enforcement. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4231b683b5c86fc08686783e843518a28f573890" target="_blank" rel="noopener noreferrer">4231b683b5</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

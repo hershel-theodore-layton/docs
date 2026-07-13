@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="4 noteworthy changes recorded on this day.">
+  <title>Thursday, February 16, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Thursday, February 16, 2023</h1>
+  <p class="post-meta">4 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/02/16/" aria-current="page">Day</a><a href="/weekly/2023/W07/">Week</a><a href="/monthly/2023/02/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2023/02/15/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2023/02/17/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">The command form <code>hh --json check .</code> works again after an argument-parsing regression. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/dd5ab5616325887d51fb8818ef711793e0cb7d41" target="_blank" rel="noopener noreferrer">dd5ab56163</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy">Hack now rejects prohibited uses of <code>this</code> in class type parameters, class-variable hints, <code>extends</code>, and <code>require extends</code>. Type accesses rooted at <code>this</code>, such as <code>this::T</code>, remain available; affected declarations should otherwise use an explicit class or type parameter. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/150429e923a60dbe8441a3c89b5024f01da091ff" target="_blank" rel="noopener noreferrer">150429e923</a></div></li><li class="change-entry"><div class="entry-copy"><code>ZipArchive::getFromIndex()</code> now returns <code>null</code>, rather than <code>false</code>, on failure and is typed as <code>?string</code>. Callers checking strictly for <code>false</code> must migrate to a null check. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8ac98e8a2149e01e3ef417fe54ab90f620ad3b86" target="_blank" rel="noopener noreferrer">8ac98e8a21</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">Opt-in expression-tree blocks allow statements directly inside <code>Code`{ ... }` </code> syntax and lower them to an immediately invoked lambda. The ongoing-release feature currently requires <code>&lt;&lt;file:__EnableUnstableFeatures(&#x27;expression_tree_blocks&#x27;)&gt;&gt;</code> for typechecking. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/60a7b62d043aee9a56b4d11e474f70ab8719a771" target="_blank" rel="noopener noreferrer">60a7b62d04</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="14 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 51: Dec 15–Dec 21, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 51: Dec 15–Dec 21, 2025</h1>
+  <p class="post-meta">14 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/12/15/">Day</a><a href="/weekly/2025/W51/" aria-current="page">Week</a><a href="/monthly/2025/12/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2025/W50/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2025/W52/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>5 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/12/15/">Mon, Dec 15</a></div>
+  <div class="entry-copy">The Hack manual now documents package inclusion and cross-package calls in greater depth and adds a migration guide covering <code>__PackageOverride</code>, <code>__RequirePackage</code>, and the new <code>__SoftRequirePackage</code> workflow. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/abb3833a4938d1dbb16db4b0b38a1ad386f704ba" target="_blank" rel="noopener noreferrer">abb3833a49</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/12/16/">Tue, Dec 16</a></div>
+  <div class="entry-copy">HHBBC no longer performs quadratic dead-code elimination on long chains of array-element additions, reducing compile time for generated code and large literal-building sequences. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a2b1b96b4bcc18f7beb3bf47aa878735835c353b" target="_blank" rel="noopener noreferrer">a2b1b96b4b</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/12/17/">Wed, Dec 17</a></div>
+  <div class="entry-copy">A fatal caused by throwing a value that does not implement <code>Throwable</code> now includes the value&#x27;s actual runtime type, making boundary and deserialization failures substantially easier to diagnose. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/94bd1abfe1999c7d4e04392af70470bafdfbdbd3" target="_blank" rel="noopener noreferrer">94bd1abfe1</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/12/18/">Thu, Dec 18</a></div>
+  <div class="entry-copy">HHVM avoids building an expensive JIT region context after losing a translation lease, reducing extreme CPU use when many requests contend to translate the same large function. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5a202ad7796f6591b5004f1ddf488c64885cbe10" target="_blank" rel="noopener noreferrer">5a202ad779</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/12/19/">Fri, Dec 19</a></div>
+  <div class="entry-copy">CLI-server deployments can set <code>Eval.UnixServerNotifySystemd=true</code> to send <code>READY=1</code> after the Unix server has started accepting connections. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/fa336b0021a71936f149dc8895814c79271c23c6" target="_blank" rel="noopener noreferrer">fa336b0021</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/12/15/">Mon, Dec 15</a></div>
+  <div class="entry-copy">Null-safe pipe syntax has completed its rollout and <code>nullsafe_pipe</code> has been removed from the experimental-feature registry. The syntax remains available by default, but projects should remove stale <code>&lt;&lt;file:__EnableUnstableFeatures(&#x27;nullsafe_pipe&#x27;)&gt;&gt;</code> declarations. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/99ff43dd3d471e74d4ba769d4fc628c04dfa854d" target="_blank" rel="noopener noreferrer">99ff43dd3d</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/12/16/">Tue, Dec 16</a></div>
+  <div class="entry-copy">The <code>.hhconfig</code> option <code>constraint_array_index</code> and the legacy array-read checker have been removed. Array reads now always use the constraint-based checker; the separate, default-false <code>constraint_array_index_assign</code> experiment for writes is unchanged. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e68fe7227a62d718598a1db723e3dbacb499ffa0" target="_blank" rel="noopener noreferrer">e68fe7227a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/12/18/">Thu, Dec 18</a></div>
+  <div class="entry-copy">The direct-to-string Binary Thrift APIs added on December 2, <code>thrift_protocol_write_binary_struct_to_string()</code> and <code>thrift_protocol_read_binary_struct_from_string()</code>, have been removed. The implementation was rolled back because a backend could identify a result as a Thrift exception while supplying a class that was not throwable. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/773f486d40d64fdc0f5fb156e6e69316b3318fe2" target="_blank" rel="noopener noreferrer">773f486d40</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>6 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/12/16/">Tue, Dec 16</a></div>
+  <div class="entry-copy">As part of the staged polymorphic function-pointer work, <code>meth_caller()</code> now erases reification on type parameters lifted from the receiver class. For <code>class C&lt;reify T&gt;</code>, an instance-method caller can have a rank-2 type such as <code>function&lt;T&gt;(C&lt;T&gt;, T): void</code> because the receiver already carries the runtime type structure; the method&#x27;s declared capability requirements remain on the synthesized callable. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a17086df772bf021b0a3c806248c3b165a0dc020" target="_blank" rel="noopener noreferrer">a17086df77</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/12/16/">Tue, Dec 16</a></div>
+  <div class="entry-copy">An opt-in <code>.hhconfig</code> setting, <code>ignore_string_methods=false</code>, exposes the experimental <code>HH\string::length(): int</code> method and its <code>HH\String\__primitive_length(string): int</code> implementation. Both omit explicit coeffect brackets and therefore use <code>[defaults]</code>; the default setting still hides them. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4e83e221764b3a73cb37f0a1cacf27542b046e33" target="_blank" rel="noopener noreferrer">4e83e22176</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/12/17/">Wed, Dec 17</a></div>
+  <div class="entry-copy">Pre-stable open-tuple checking now handles projection from tuples with optional elements before a splat. It also reports <code>Typing[4116]</code> when null-coalescing access requests an index that can never exist. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5538c39818feee002b52bfba646702b4d9dc1ef6" target="_blank" rel="noopener noreferrer">5538c39818</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/12/17/">Wed, Dec 17</a></div>
+  <div class="entry-copy">Unstable named-parameter function types now recognize <code>function(optional named bool $b): void</code> as a subtype of <code>function(): void</code>. The former accepts a superset of the calls permitted by the latter, which is the contravariant relationship required for parameters; return types and coeffect brackets must still satisfy their ordinary subtype rules. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8039d96fedb7c49d65e3775136ce4b5f183ded1d" target="_blank" rel="noopener noreferrer">8039d96fed</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/12/18/">Thu, Dec 18</a></div>
+  <div class="entry-copy">Runtime arity errors now say that a callable expects a number of <code>positional</code> parameters. This keeps the message accurate for callables that also define named parameters. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7db2c19473bceeeb083cc9a04e7664932c0cea62" target="_blank" rel="noopener noreferrer">7db2c19473</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/12/19/">Fri, Dec 19</a></div>
+  <div class="entry-copy">Staged <code>__NeedsConcrete</code> checking now has two independent, default-false controls: <code>needs_concrete</code> enables call-site and related checks, while <code>needs_concrete_override_check</code> enables the warning for a <code>__NeedsConcrete</code> method overriding an unannotated method. Enabling one does not imply the other. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9027820d960fbe9de782bce3509e765565ba5f9f" target="_blank" rel="noopener noreferrer">9027820d96</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="8 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 44: Oct 28–Nov 3, 2024 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 44: Oct 28–Nov 3, 2024</h1>
+  <p class="post-meta">8 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/10/28/">Day</a><a href="/weekly/2024/W44/" aria-current="page">Week</a><a href="/monthly/2024/10/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2024/W43/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2024/W45/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Future Changes</h2><span>5 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/10/28/">Mon, Oct 28</a></div>
+  <div class="entry-copy">The new Unstable <code>shape_destructure</code> feature introduces shape expressions as assignment targets, including shapes nested inside list destructuring. This first step adds feature gating and parser recognition; compiler support follows later in the week. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/13cd4d3d36fb03841e94b2e6500d50078c4594e6" target="_blank" rel="noopener noreferrer">13cd4d3d36</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/10/29/">Tue, Oct 29</a></div>
+  <div class="entry-copy">Nested expression trees moved from Preview to Ongoing Release, so ordinary nesting no longer needs the <code>expression_tree_nest</code> opt-in. The separate nested-binding feature remains Unstable. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/377dbfd786e31d0a52f9bb5230a00e5776ce004f" target="_blank" rel="noopener noreferrer">377dbfd786</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/10/29/">Tue, Oct 29</a></div>
+  <div class="entry-copy">Packages v2 exempts both callers in <code>__tests__</code> paths and symbols defined there from package-boundary checks. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3b5d5ffb29412e127e006a5e670225bc9eac0f9b" target="_blank" rel="noopener noreferrer">3b5d5ffb29</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/10/30/">Wed, Oct 30</a></div>
+  <div class="entry-copy">HHVM can now execute the Unstable shape-destructuring syntax, including nested list/shape targets, local and indexed destinations, and string, <code>nameof</code>, or class-constant shape keys. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/54a4bac107d78a582f2b6dfeeb0aa90b56756d71" target="_blank" rel="noopener noreferrer">54a4bac107</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/11/01/">Fri, Nov 1</a></div>
+  <div class="entry-copy">Package v2 now canonicalizes both the project root and the <code>PACKAGES.toml</code> parent in strict mode, and neither in non-strict mode. This fixes <code>include_paths</code> matching when the two paths previously used inconsistent canonicalization. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/966300bf04b20d38ec6231ae5179632a3fac7969" target="_blank" rel="noopener noreferrer">966300bf04</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Highlights</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/10/30/">Wed, Oct 30</a></div>
+  <div class="entry-copy">HHVM now populates <code>$_SERVER[&#x27;REQUEST_TIME_MONOTONIC_NS&#x27;]</code> from the monotonic clock alongside the existing realtime request timestamps, enabling elapsed-time measurements that are not affected by wall-clock adjustments. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5226b112990a942660672a4d66262e074199f4d7" target="_blank" rel="noopener noreferrer">5226b11299</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/10/31/">Thu, Oct 31</a></div>
+  <div class="entry-copy">Hack now loads package configuration before server startup and stores it in the original global options, ensuring remote typechecking receives the same package membership information as the local server. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b0197966f0d565151ae98aa76dff91b4de7780ac" target="_blank" rel="noopener noreferrer">b0197966f0</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/11/01/">Fri, Nov 1</a></div>
+  <div class="entry-copy">Hack now detects more impossible shape accesses when the shape is hidden behind an abstract type constant, generic bound, or intersection. <code>Shapes::idx()</code>, <code>Shapes::at()</code>, <code>Shapes::keyExists()</code>, and coalesced indexing can consequently report new errors or always-false checks, with the explanation pointing back to the relevant shape bound. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b006f0e38f1ab3be000f9b558439c90d91dc7253" target="_blank" rel="noopener noreferrer">b006f0e38f</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/25c058fc89dfd59316d901228fb9ebf5463a8066" target="_blank" rel="noopener noreferrer">25c058fc89</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

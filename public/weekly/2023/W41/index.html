@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="10 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 41: Oct 9–Oct 15, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 41: Oct 9–Oct 15, 2023</h1>
+  <p class="post-meta">10 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/10/09/">Day</a><a href="/weekly/2023/W41/" aria-current="page">Week</a><a href="/monthly/2023/10/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2023/W40/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2023/W42/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>4 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/10/09/">Mon, Oct 9</a></div>
+  <div class="entry-copy">HHVM&#x27;s Proxygen server now includes <code>Retry-After</code> when it returns HTTP 503 because a request timed out in the queue or the server is shutting down, allowing clients and proxies to retry deliberately. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/70f352a4bbf1f543ecc99be26de4ae76a0e060c7" target="_blank" rel="noopener noreferrer">70f352a4bb</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/10/10/">Tue, Oct 10</a></div>
+  <div class="entry-copy">The bundled HHI now gives <code>ReflectionMethod::getDeclaringClass()</code> and <code>getPrototype()</code> their concrete <code>ReflectionClass</code> and <code>ReflectionMethod</code> return types instead of missing-return-type placeholders. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/037cb952288792f43c94f1ad3cad4fcb06f84087" target="_blank" rel="noopener noreferrer">037cb95228</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/10/12/">Thu, Oct 12</a></div>
+  <div class="entry-copy">Exception breakpoints now work while HHVM&#x27;s JIT is enabled. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a225476c972db94583a2dcf2d9dc0fbf31e8d96a" target="_blank" rel="noopener noreferrer">a225476c97</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/10/13/">Fri, Oct 13</a></div>
+  <div class="entry-copy">HackC now records a variadic parameter declared as <code>T ...$args</code> with runtime type metadata <code>vec&lt;T&gt;</code> rather than an erased generic <code>array</code>, matching the value actually presented to the function. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/204aaf50aa1a64d87243584a82662b7b7f84aa30" target="_blank" rel="noopener noreferrer">204aaf50aa</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>4 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/10/09/">Mon, Oct 9</a></div>
+  <div class="entry-copy"><code>ReflectionClass::getRequiredClass()</code> now returns the class named by a trait&#x27;s pre-stable <code>require class</code> constraint, or <code>null</code> when no such constraint exists. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/be3c76e346edc99769737fbbc1eec9d52f443034" target="_blank" rel="noopener noreferrer">be3c76e346</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/10/10/">Tue, Oct 10</a></div>
+  <div class="entry-copy">Implicit pessimisation no longer wraps a declared <code>this</code> return type in a like type. Fluent methods that return <code>$this</code> therefore retain their precise return type under the rollout. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/39873917dbc88f4d004e1440bae8f733de58fbfb" target="_blank" rel="noopener noreferrer">39873917db</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/10/10/">Tue, Oct 10</a></div>
+  <div class="entry-copy">HHVM now limits a fully flattened experimental case type to 48 variants by default, with <code>Eval.MaxCaseTypeVariants</code> available to configure the ceiling. Definitions that exceed it fail during type-alias resolution. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/83d45426598c5a6e78011fc13c95c51e645c9a07" target="_blank" rel="noopener noreferrer">83d4542659</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/10/12/">Thu, Oct 12</a></div>
+  <div class="entry-copy">Hack now rejects static calls such as <code>T::foo()</code> when <code>T</code> is a trait with the pre-stable <code>require class</code> constraint. Call through the concrete class that satisfies the requirement instead; the new diagnostic is typing error 4476. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/66031e6a169b3e38e2bcafd427c564183672384b" target="_blank" rel="noopener noreferrer">66031e6a16</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/10/11/">Wed, Oct 11</a></div>
+  <div class="entry-copy">The boolean <code>Eval.ClassnameNotices</code> setting has been replaced by <code>Eval.ClassnameNoticesSampleRate</code>. Use <code>0</code> to disable notices, <code>1</code> to emit every notice, or a larger value to sample approximately one in that many class-to-classname conversions. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/01c1f4e3cb68298dd549402288dc55c05e3d663f" target="_blank" rel="noopener noreferrer">01c1f4e3cb</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Security</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/10/12/">Thu, Oct 12</a></div>
+  <div class="entry-copy">Proxygen responses no longer send <code>Content-Length</code> together with <code>Transfer-Encoding</code>. Emitting only the transfer coding avoids ambiguous HTTP response framing and keeps HHVM compliant with RFC 9112. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b1a80d1d3d5efd4ed966bf3e905b1c6c24b171d1" target="_blank" rel="noopener noreferrer">b1a80d1d3d</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

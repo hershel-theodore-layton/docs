@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="12 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 48: Nov 25–Dec 1, 2024 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 48: Nov 25–Dec 1, 2024</h1>
+  <p class="post-meta">12 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/11/25/">Day</a><a href="/weekly/2024/W48/" aria-current="page">Week</a><a href="/monthly/2024/11/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2024/W47/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2024/W49/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/11/25/">Mon, Nov 25</a></div>
+  <div class="entry-copy"><code>hh</code> now filters warnings from files whose first 50 lines contain <code>@generated</code>. Pass <code>-Wgenerated</code> to include those warnings again. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0fb414e697fee010374b617106b48f46f96074ec" target="_blank" rel="noopener noreferrer">0fb414e697</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/11/26/">Tue, Nov 26</a></div>
+  <div class="entry-copy">The new <code>sb_profile_ser(string $sandbox_root, string $profile_path)</code> and <code>sb_profile_deser(...)</code> APIs serialize and restore sandbox JIT profile data, returning a status string. Each operation is limited to one attempt during an HHVM process&#x27;s lifetime, and deserialization skips units whose SHA-1 no longer matches. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c773c01184a83cfbd2f95a78c734aa9cb5375354" target="_blank" rel="noopener noreferrer">c773c01184</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5d05ff52a88cbece44f8711b624a255c05a7730f" target="_blank" rel="noopener noreferrer">5d05ff52a8</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/11/29/">Fri, Nov 29</a></div>
+  <div class="entry-copy">The diagnostic for a type constant that captures a class type parameter now correctly says that type constants cannot use type parameters, rather than referring to a nonexistent type-parameter list on the type constant. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2096dcf5b6c4735207fb77203da3fd49a5da0d0c" target="_blank" rel="noopener noreferrer">2096dcf5b6</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/11/25/">Mon, Nov 25</a></div>
+  <div class="entry-copy">Equality disjointness checking now looks through like types. Projects with the relevant warnings enabled can newly receive Warn[12007] for strict comparisons that can never succeed after removing the dynamic component, such as <code>(int, string) === int</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/aeb075f9f22944c25512ec7d5fb00c8a72e04ea9" target="_blank" rel="noopener noreferrer">aeb075f9f2</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>8 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/11/25/">Mon, Nov 25</a></div>
+  <div class="entry-copy">Beta error streaming now falls back to streaming the current errors file when its Watchman freshness query fails, instead of terminating with an exception. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9f832046149e2c4f3557663772e8ec9007ca1cd7" target="_blank" rel="noopener noreferrer">9f83204614</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/11/25/">Mon, Nov 25</a></div>
+  <div class="entry-copy">The in-development notebook converter now preserves notebook and cell metadata, markdown cells, code-cell order, and empty notebooks. Generated Hack wraps top-level cells in an async <code>gen_notebook_main_*()</code> function so notebook code can use <code>await</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e5a68dc1be4a530c69efef396189e5847583b833" target="_blank" rel="noopener noreferrer">e5a68dc1be</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/cb340dc7fc9cca801c3740155b15b09102fc9d8b" target="_blank" rel="noopener noreferrer">cb340dc7fc</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/cc7f4657523935a6dd2f3f8aa20a8e286f173636" target="_blank" rel="noopener noreferrer">cc7f465752</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5674ee32b36fb033dcb6aa4416b92ee8e08bfacc" target="_blank" rel="noopener noreferrer">5674ee32b3</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c65296009500fea759b2391bf46549a1edc411b8" target="_blank" rel="noopener noreferrer">c652960095</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/11/26/">Tue, Nov 26</a></div>
+  <div class="entry-copy">Recursive case-type validation now expands type constants and opaque aliases when checking contractiveness, rejecting indirect cycles such as <code>case type A = ?B::T</code> where <code>B::T</code> resolves back to <code>A</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d3984bcbc6778b96905c50bd77a6a18b0684b30a" target="_blank" rel="noopener noreferrer">d3984bcbc6</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/11/27/">Wed, Nov 27</a></div>
+  <div class="entry-copy">The <code>class&lt;T&gt;</code> parser switch is now enabled by default, and HHVM shallowly enforces <code>class&lt;T&gt;</code> hints. <code>Eval.ClassTypeLevel=0</code> accepts strings, lazy classes, and class pointers with optional string notices, while level 1 rejects strings. As with <code>classname&lt;T&gt;</code>, <code>class&lt;T&gt;</code> is not yet permitted in <code>is</code>/<code>as</code> or reified generics. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/dfca3a4cbe22eb213eedad587de400813d1d543d" target="_blank" rel="noopener noreferrer">dfca3a4cbe</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/11/27/">Wed, Nov 27</a></div>
+  <div class="entry-copy">The class-pointer syntax has entered ongoing release, and the compatibility type <code>HH\class_or_classname&lt;T&gt;</code> has been added for APIs that temporarily accept both class pointers and class names while the subtype relationship is separated. It likewise cannot be used in <code>is</code>/<code>as</code> or reified generics. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b154e2745f0ef1a60ce97a719a144792531c401c" target="_blank" rel="noopener noreferrer">b154e2745f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/11/28/">Thu, Nov 28</a></div>
+  <div class="entry-copy">Beta error streaming now keeps waiting for a genuinely new errors file after rejecting a stale one, using the file&#x27;s inode and change time instead of only its Watchman clock. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f309c53afb19a68a3f69f66e0ca38ae837e5636a" target="_blank" rel="noopener noreferrer">f309c53afb</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/11/29/">Fri, Nov 29</a></div>
+  <div class="entry-copy">Beta error streaming now reports the total error count when <code>--max-errors</code> truncates output and shows the server&#x27;s real progress stages instead of a generic <code>hh_server sync</code> message. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/28ae0a85cdcb1760c9a772c0cb41d02076837e9b" target="_blank" rel="noopener noreferrer">28ae0a85cd</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e2db79b5253fe370ecd93baf21f950d9e5090b4c" target="_blank" rel="noopener noreferrer">e2db79b525</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/11/29/">Fri, Nov 29</a></div>
+  <div class="entry-copy">Recursive case-type subtyping now treats revisiting an already-compared recursive pair as success, enabling sound relationships between contractive recursive definitions while relying on the new contractiveness checks to reject aliases such as <code>A = A</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/62ca09bb76e484521a7e3faecdfbfd8144f17e74" target="_blank" rel="noopener noreferrer">62ca09bb76</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

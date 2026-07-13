@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="6 noteworthy changes recorded on this day.">
+  <title>Monday, April 3, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Monday, April 3, 2023</h1>
+  <p class="post-meta">6 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/04/03/" aria-current="page">Day</a><a href="/weekly/2023/W14/">Week</a><a href="/monthly/2023/04/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2023/04/02/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2023/04/04/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">A new lint reports casts such as <code>(int) new C()</code> where a non-primitive value is cast to a primitive in a way that is unlikely to be meaningful. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/593f41db7843d84ac2783d6a7da4d0dd6692980b" target="_blank" rel="noopener noreferrer">593f41db78</a></div></li><li class="change-entry"><div class="entry-copy">Nested type parameters in higher-kinded types no longer produce a false naming error for not beginning with <code>T</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9b5699d6eef9a2f2f0862db5a5dd17dfe6432407" target="_blank" rel="noopener noreferrer">9b5699d6ee</a></div></li><li class="change-entry"><div class="entry-copy">Watchman-backed status checks now qualify root-relative filenames correctly and keep the server&#x27;s Watchman clock current. This fixes stale “No errors” results and indefinite <code>hh_server sync</code> waits after a file changes. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a084e1375198f8ab2adb176febd6d3d0ca084c03" target="_blank" rel="noopener noreferrer">a084e13751</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a3f47f498e682af49e814199fec9fe07b54ad76d" target="_blank" rel="noopener noreferrer">a3f47f498e</a></div></li><li class="change-entry"><div class="entry-copy">The missing-method diagnostic now offers one quick-fix that generates all required method stubs, rather than a separate fix for each method. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8dfff9994e5170d3f1dbb330c8cf65d2e03bfe46" target="_blank" rel="noopener noreferrer">8dfff9994e</a></div></li><li class="change-entry"><div class="entry-copy">Invalid expression-tree splices now describe the DSL, the expected splice type, the actual Hack value, and the DSL&#x27;s documentation link instead of reporting only generic expression-tree terminology. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/833661e119bfdc3bfecc63a85f6b894e848dcb1e" target="_blank" rel="noopener noreferrer">833661e119</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy"><code>HH\autoload_set_paths()</code> now always throws, as part of the migration to native autoloading. This change is backed out on April 10 while remaining callers are migrated. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d419828855998fc7c1f9e93647b6a4091647d956" target="_blank" rel="noopener noreferrer">d419828855</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

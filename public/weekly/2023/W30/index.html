@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="15 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 30: Jul 24–Jul 30, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 30: Jul 24–Jul 30, 2023</h1>
+  <p class="post-meta">15 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/07/24/">Day</a><a href="/weekly/2023/W30/" aria-current="page">Week</a><a href="/monthly/2023/07/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2023/W29/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2023/W31/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>9 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/07/24/">Mon, Jul 24</a></div>
+  <div class="entry-copy">The switch-exhaustiveness lint no longer emits a duplicate false positive during the sound-dynamic checking pass. Exhaustive enum switches remain clean under implicit pessimization. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7fbe91a59f6a3234d9d28ea0edf04847fe28abd8" target="_blank" rel="noopener noreferrer">7fbe91a59f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/07/24/">Mon, Jul 24</a></div>
+  <div class="entry-copy"><code>hh_single_complete</code> can now use Glean for symbol search, honors <code>--auto-namespace-map</code>, and consistently respects <code>--no-builtins</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/670b9c1b6f5de6a8251682973f027f5208879f51" target="_blank" rel="noopener noreferrer">670b9c1b6f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/07/25/">Tue, Jul 25</a></div>
+  <div class="entry-copy">Nullsafe method calls now tolerate an inferred <code>supportdyn&lt;null&gt;</code> arm, avoiding a spurious sound-dynamic error where the <code>supportdyn</code> wrapper is redundant. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b6e37eaff6334ef08a18d14f2516db29d23acd5a" target="_blank" rel="noopener noreferrer">b6e37eaff6</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/07/25/">Tue, Jul 25</a></div>
+  <div class="entry-copy">Type errors involving an optional shape field now point to that field’s own definition instead of an unrelated required field. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1b3d6ba9158210e103e7ff44f4aa4cc92e89af57" target="_blank" rel="noopener noreferrer">1b3d6ba915</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/07/25/">Tue, Jul 25</a></div>
+  <div class="entry-copy">Under sound dynamic, legacy <code>varray&lt;T&gt;</code> and <code>darray&lt;Tk, Tv&gt;</code> types no longer implicitly pessimise their type arguments to like types. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/fdaedd5885ac969cdba396b63c356abb6f646d62" target="_blank" rel="noopener noreferrer">fdaedd5885</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/07/26/">Wed, Jul 26</a></div>
+  <div class="entry-copy">“Extract shape type” now raises its type-printing limit substantially, preventing large generated aliases from being truncated into invalid Hack. Extremely large types still retain a finite editor-safety limit. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7a2f7f8b458a1ef4e6c74a4bfae9df546311bf5f" target="_blank" rel="noopener noreferrer">7a2f7f8b45</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/07/26/">Wed, Jul 26</a></div>
+  <div class="entry-copy">HHVM now registers the full sodium API consistently, including AES-256-GCM functions that the HHI already promised. Builds and target CPUs must provide a sufficiently recent, fully capable libsodium. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5efda73ea02c7197c5364b556076cedf06350adc" target="_blank" rel="noopener noreferrer">5efda73ea0</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/07/28/">Fri, Jul 28</a></div>
+  <div class="entry-copy">An erased or otherwise unenforceable generic may now appear inside a reified class type used by <code>is</code>/<code>as</code>, such as <code>C&lt;T&gt;</code> where <code>C</code>’s parameter is reified. A direct <code>as T</code> still requires <code>T</code> to be enforceable, and wildcard <code>_</code> is now correctly rejected as a reified runtime witness. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ef78282fefefa2291bbeb4874d4a23d6fc9cb580" target="_blank" rel="noopener noreferrer">ef78282fef</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/07/30/">Sun, Jul 30</a></div>
+  <div class="entry-copy"><code>hh --refactor</code> now generates a deprecated forwarding wrapper when a symbol rename requires one, matching the behavior that was previously available only through <code>hh --ide-refactor</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/118497e85cbabc79c4dab993b4aadbc04d058e7f" target="_blank" rel="noopener noreferrer">118497e85c</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/07/24/">Mon, Jul 24</a></div>
+  <div class="entry-copy">Runtime type structures no longer contain a boolean <code>&quot;like&quot;</code> field, and <code>HH\TypeStructure\get_like()</code> has been removed. Rendering a type from a type structure therefore no longer adds <code>~</code> based on that field; code inspecting raw type structures must stop depending on it. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/367fef24fc46843446f75a72d136ee78f1bd8160" target="_blank" rel="noopener noreferrer">367fef24fc</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/07/25/">Tue, Jul 25</a></div>
+  <div class="entry-copy"><code>as ~T</code> now performs a real runtime check by looking through the like type to <code>T</code>; it is no longer treated as a no-op. Like-type <code>is</code>/<code>as</code> expressions use the same look-through semantics in the typechecker. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a2fadfcddb9f2c3915de84008d4636a5425e51ee" target="_blank" rel="noopener noreferrer">a2fadfcddb</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1cfe2b1978aa3aa6628cdda2d2e8d99a8a21b4ea" target="_blank" rel="noopener noreferrer">1cfe2b1978</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/07/25/">Tue, Jul 25</a></div>
+  <div class="entry-copy">The parser and <code>hackfmt</code> gain an initial experimental <code>match</code> statement with variable, type-refinement, and wildcard-constructor patterns. It remains behind the <code>match</code> unstable-feature opt-in and is not yet a complete language feature. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/33dac5b0df841e8337833d09dfd8563750538552" target="_blank" rel="noopener noreferrer">33dac5b0df</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/07/28/">Fri, Jul 28</a></div>
+  <div class="entry-copy">Case-type refinement now handles intersections with negated special classes correctly, preserving only variants that can satisfy the negative constraint. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e5b7ccbeab2a670a98d61a5250fed359f5b17082" target="_blank" rel="noopener noreferrer">e5b7ccbeab</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/07/29/">Sat, Jul 29</a></div>
+  <div class="entry-copy">A <code>pessimise_builtins</code> typechecker option has been reintroduced to control whether built-ins such as <code>Vector</code> acquire like-typed arguments under sound dynamic. It defaults to false and prepares for enabling sound-dynamic checking by default without implicitly changing every built-in. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c5c9be9976a5d855f1bd36f22bf043e27548b436" target="_blank" rel="noopener noreferrer">c5c9be9976</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Security</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/07/27/">Thu, Jul 27</a></div>
+  <div class="entry-copy">HHVM now detects stack exhaustion while releasing deeply nested heap data, addressing CVE-2023-33935. Instead of recursively overflowing, it leaves the remaining objects for garbage collection. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8161b2d53ab1d05f452965657827a772b0ea4813" target="_blank" rel="noopener noreferrer">8161b2d53a</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

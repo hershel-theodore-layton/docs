@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="15 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 45: Nov 6–Nov 12, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 45: Nov 6–Nov 12, 2023</h1>
+  <p class="post-meta">15 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/11/06/">Day</a><a href="/weekly/2023/W45/" aria-current="page">Week</a><a href="/monthly/2023/11/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2023/W44/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2023/W46/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>11 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/11/06/">Mon, Nov 6</a></div>
+  <div class="entry-copy"><code>hh --config dump_tasts=file_list.txt</code> can now dump the named files&#x27; typed ASTs to <code>/tmp/hh_server/tasts</code> or <code>/tmp/hh_distc/tasts</code>, including when typechecking is distributed. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ac3fec9645a6c8e466c955d093d023317592aac8" target="_blank" rel="noopener noreferrer">ac3fec9645</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/11/07/">Tue, Nov 7</a></div>
+  <div class="entry-copy">Pending debugger commands after a client disconnects now fail with an exception instead of crashing HHVM. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4b60b22276a37184d5f7384ea32fce57e5473af3" target="_blank" rel="noopener noreferrer">4b60b22276</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/11/08/">Wed, Nov 8</a></div>
+  <div class="entry-copy">Autocomplete now works inside top-level statements, primarily improving Hack notebook editing while leaving the ordinary top-level-statement diagnostic intact. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a0de61cb381b31855e4b79ab6387746f7b47b5ca" target="_blank" rel="noopener noreferrer">a0de61cb38</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/11/08/">Wed, Nov 8</a></div>
+  <div class="entry-copy"><code>hash()</code> and <code>hash_copy()</code> are now declared with the empty capability set <code>[]</code> rather than implicit <code>[defaults]</code>. This narrows their requirements and permits calls from pure contexts. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/60c9fc68ebf315c2990afcde5bd5b364f79e8dbc" target="_blank" rel="noopener noreferrer">60c9fc68eb</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/11/09/">Thu, Nov 9</a></div>
+  <div class="entry-copy">A static method call through an invalid <code>string</code> receiver still reports the receiver error, but its result is now typed <code>dynamic</code> rather than an unconstrained variable that commonly collapsed to <code>nothing</code>. This keeps code behind a fixme from gaining an unsoundly precise type. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/26b37f54393b98cbc61d36378d43402977058455" target="_blank" rel="noopener noreferrer">26b37f5439</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/11/09/">Thu, Nov 9</a></div>
+  <div class="entry-copy">Array access through a nullable value now continues with the array&#x27;s element type after reporting the nullability error. Suppressing that first error no longer causes downstream expressions to infer <code>nothing</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d0ff8a66a207650b0db017728be8ff47bb694287" target="_blank" rel="noopener noreferrer">d0ff8a66a2</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/11/09/">Thu, Nov 9</a></div>
+  <div class="entry-copy">XHP auto-close edits now place the cursor before the generated closing tag. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a9b6c46a5499619c40319791a62cff1b5b7ae089" target="_blank" rel="noopener noreferrer">a9b6c46a54</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/11/09/">Thu, Nov 9</a></div>
+  <div class="entry-copy">The VS debugger&#x27;s variable command now serializes all remaining HHVM datatypes instead of failing on unsupported values. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/92655846f6210c9f88558a22547a3b8260ea1c4d" target="_blank" rel="noopener noreferrer">92655846f6</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/11/10/">Fri, Nov 10</a></div>
+  <div class="entry-copy"><code>echo</code> is now represented by a real typed signature, <code>(readonly arraykey ...)[io]: void</code>, instead of a <code>Tany</code>-based special case. Argument and missing-<code>[io]</code> capability errors now point back to that signature. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/11bed300da5db2dd3a6ec0045e8856b971337fc5" target="_blank" rel="noopener noreferrer">11bed300da</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/11/10/">Fri, Nov 10</a></div>
+  <div class="entry-copy">Consecutive top-level statements now share a typing environment. Notebook hover and completion can therefore understand values assigned by earlier statements in the file. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9e37abd5a126e3a2399a643cfb9913442e68ba35" target="_blank" rel="noopener noreferrer">9e37abd5a1</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/11/10/">Fri, Nov 10</a></div>
+  <div class="entry-copy">LSP clients advertising the experimental <code>autoCloseJsx</code> capability can now request automatic XHP closing tags. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4697a751c8b3216324812319e2be5b48cb32303d" target="_blank" rel="noopener noreferrer">4697a751c8</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/11/06/">Mon, Nov 6</a></div>
+  <div class="entry-copy">HHVM no longer populates <code>$_SERVER[&#x27;REQUEST_START_TIME&#x27;]</code>, <code>REQUEST_TIME</code>, or <code>REQUEST_TIME_FLOAT</code>. Use nanosecond-resolution <code>$_SERVER[&#x27;REQUEST_TIME_NS&#x27;]</code> instead. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d23fe23887494c52f74a1620068226c9a8fcf9a3" target="_blank" rel="noopener noreferrer">d23fe23887</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/11/06/">Mon, Nov 6</a></div>
+  <div class="entry-copy">Experimental typed locals now use shallow runtime enforcement, checking the outer declared type without recursively validating all nested type arguments. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9212f22d4c635e588383d34d970fc6506b49a5c1" target="_blank" rel="noopener noreferrer">9212f22d4c</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/11/07/">Tue, Nov 7</a></div>
+  <div class="entry-copy">The upcoming <code>nameof</code> operator now follows <code>::class</code> constexpr rules for <code>parent</code> and <code>static</code>, while uses with reified generic parameters are explicitly rejected. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/94a8f45049fecef1ee73b88730bd7a6fc5651da4" target="_blank" rel="noopener noreferrer">94a8f45049</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5ae441bcccd57d872b289b18662af02953d75747" target="_blank" rel="noopener noreferrer">5ae441bccc</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/11/08/">Wed, Nov 8</a></div>
+  <div class="entry-copy">Runtime violations of experimental typed-local declarations now raise a catchable fatal, matching parameter type-hint enforcement, rather than throwing <code>TypeAssertionException</code> as an <code>as</code> expression does. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/15a807f59e8ff9101eeed25b947387e1757c4134" target="_blank" rel="noopener noreferrer">15a807f59e</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="13 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 49: Dec 5–Dec 11, 2022 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 49: Dec 5–Dec 11, 2022</h1>
+  <p class="post-meta">13 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2022/12/05/">Day</a><a href="/weekly/2022/W49/" aria-current="page">Week</a><a href="/monthly/2022/12/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2022/W48/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2022/W50/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>9 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/12/05/">Mon, Dec 5</a></div>
+  <div class="entry-copy">A type structure derived from an unbounded type constant no longer exposes class-specific fields such as <code>classname</code>. Add an appropriate classish bound before accessing those fields; an unbounded type constant is treated consistently with one bounded by <code>mixed</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ad69f946003e1530e0b981600f5b26bb0bc4d0cd" target="_blank" rel="noopener noreferrer">ad69f94600</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/12/05/">Mon, Dec 5</a></div>
+  <div class="entry-copy">Hovering over declarations now explains the <code>class</code>, <code>interface</code>, <code>trait</code>, <code>enum</code>, <code>enum class</code>, <code>type</code>, and <code>newtype</code> keywords. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d0798849205113b2dbd315e0445d29cb7b231844" target="_blank" rel="noopener noreferrer">d079884920</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/12/06/">Tue, Dec 6</a></div>
+  <div class="entry-copy">The bundled HHI now declares <code>ThriftApplicationException</code>, including its nullable-message constructor, so Hack code can refer to the exception without a local stub. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/aff8fbdb7e78af0c40ba8d1c10edcd16d10a334d" target="_blank" rel="noopener noreferrer">aff8fbdb7e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/12/07/">Wed, Dec 7</a></div>
+  <div class="entry-copy">The typechecker now rejects trait composition that makes a static member overlap an instance member of the same name. Such code would already fatal in HHVM; the error is now caught during typechecking. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4f5f028f385048eda60106e44d01fa2678c282a5" target="_blank" rel="noopener noreferrer">4f5f028f38</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/12/07/">Wed, Dec 7</a></div>
+  <div class="entry-copy">Module names may now contain non-reserved keywords, matching the names accepted for classes. Reserved keywords and XHP-style names remain invalid. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/669b93bd1bd6a152c3f59836b3c040438f45e9e9" target="_blank" rel="noopener noreferrer">669b93bd1b</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/12/07/">Wed, Dec 7</a></div>
+  <div class="entry-copy">Deployments using native Facts can set <code>Autoload.UpdateSuppressionPath</code> to a sentinel file. While that file exists, Facts skips Watchman-driven updates; relative paths are resolved from the repository root. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5f4a1ae19be23ae8470b20a3d10782f60e106070" target="_blank" rel="noopener noreferrer">5f4a1ae19b</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/12/08/">Thu, Dec 8</a></div>
+  <div class="entry-copy">A new lint reports casts whose target type is already identical to the expression&#x27;s inferred type. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a070d39d1ff9ea3387b8fbb0f32f572d77ec68fd" target="_blank" rel="noopener noreferrer">a070d39d1f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/12/08/">Thu, Dec 8</a></div>
+  <div class="entry-copy">When an enum declaration omits its base type, the parser error now offers a quick-fix that inserts <code>: arraykey</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c60763014e80d9d7d30dcfc842df5539dd078d55" target="_blank" rel="noopener noreferrer">c60763014e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/12/08/">Thu, Dec 8</a></div>
+  <div class="entry-copy">Reflection no longer converts enum-class labels found in arbitrary user-attribute arguments as though they were memoization metadata. The special conversion is now limited to memoization attributes. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8ba321326daac8fbcc9d7ef44648dd5ad41db27d" target="_blank" rel="noopener noreferrer">8ba321326d</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/12/05/">Mon, Dec 5</a></div>
+  <div class="entry-copy">Unstable type refinements now use dedicated typing error codes: 4468 for access through an inexact refinement, 4469 for unsupported refinements, and 4470 for invalid class refinements. Suppressions written against the former generic error codes may need updating when adopting the feature. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c50044fcc6c2da86eaeffee073067a54d00e2be0" target="_blank" rel="noopener noreferrer">c50044fcc6</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/12/08/">Thu, Dec 8</a></div>
+  <div class="entry-copy">Diagnostics for pre-stable type refinements now print refinement syntax with source-like spacing, making displayed types easier to read and copy. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/418ef35a328769962c9bc27ac53ac2098151892a" target="_blank" rel="noopener noreferrer">418ef35a32</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/12/09/">Fri, Dec 9</a></div>
+  <div class="entry-copy">The direct-declaration parser now retains pre-stable type-refinement members when they are wrapped as comma-separated list items. Incremental and full typechecking should consequently agree on refined type constants. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4528fb949c08f50362900aaddc2879bdce41389f" target="_blank" rel="noopener noreferrer">4528fb949c</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/12/08/">Thu, Dec 8</a></div>
+  <div class="entry-copy"><code>Iterable::map()</code> and <code>KeyedIterable::mapWithKey()</code> have been removed from their interfaces because their signatures were unsound. Calls through those interface types must use an appropriate concrete collection API or an HSL traversal function. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/899d46019f064a37788c9f56fa2273447957004a" target="_blank" rel="noopener noreferrer">899d46019f</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

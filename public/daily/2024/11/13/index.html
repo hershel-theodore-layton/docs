@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="4 noteworthy changes recorded on this day.">
+  <title>Wednesday, November 13, 2024 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Wednesday, November 13, 2024</h1>
+  <p class="post-meta">4 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/11/13/" aria-current="page">Day</a><a href="/weekly/2024/W46/">Week</a><a href="/monthly/2024/11/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2024/11/11/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2024/11/14/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">Out-of-memory exception messages now include both the request&#x27;s measured memory usage and its numeric limit, making production OOM reports more actionable. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ecb246b358d15deb9ff7a54ef0270fb83cc1d79e" target="_blank" rel="noopener noreferrer">ecb246b358</a></div></li><li class="change-entry"><div class="entry-copy">JSON produced and consumed for function types by batch type-at-position tooling now preserves readonly receivers, readonly returns, and contexts. The serialized <code>capability</code> is the callee&#x27;s required context; when the field is omitted it decodes as <code>[defaults]</code>, not as an unrestricted or capability-granting function. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/210b4af6eb65ed8ad2fd7b2da6033f3136c4bb22" target="_blank" rel="noopener noreferrer">210b4af6eb</a></div></li><li class="change-entry"><div class="entry-copy"><code>Server.RequestMemoryMaxBytesSet</code> is now a recognized runtime setting, so <code>ini_get(&#x27;hhvm.server.request_memory_max_bytes_set&#x27;)</code> no longer always returns <code>false</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5c81805ef8764bf2610433b1454bf8417deaee90" target="_blank" rel="noopener noreferrer">5c81805ef8</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">The unstable <code>shape_destructure</code> feature now permits <code>tuple(...)</code> as a destructuring lvalue and deliberately forbids mixing <code>list(...)</code> inside shape/tuple patterns or shape/tuple patterns inside <code>list(...)</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b3151735110602f7786fd9f08cef65b5e4967693" target="_blank" rel="noopener noreferrer">b315173511</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

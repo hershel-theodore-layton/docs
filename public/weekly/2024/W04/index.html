@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="7 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 4: Jan 22–Jan 28, 2024 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 4: Jan 22–Jan 28, 2024</h1>
+  <p class="post-meta">7 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/01/22/">Day</a><a href="/weekly/2024/W04/" aria-current="page">Week</a><a href="/monthly/2024/01/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2024/W03/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2024/W05/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>4 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/01/22/">Mon, Jan 22</a></div>
+  <div class="entry-copy"><code>HH\package_exists()</code> now returns <code>true</code> for soft-deployed packages, matching their status as loaded packages whose boundary violations warn rather than throw. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a7f1122c6e123c35c6a6767756c55f12a03d83d9" target="_blank" rel="noopener noreferrer">a7f1122c6e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/01/22/">Mon, Jan 22</a></div>
+  <div class="entry-copy">Virtual lambdas synthesized for expression trees are now pure, so expression trees containing virtualized effects can be constructed inside <code>[]</code> functions. Property writes are checked inside an uncalled lambda with the required capability and no longer refine the runtime property. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9abcdf6c657381ad5a2d0392a1e42581617d90da" target="_blank" rel="noopener noreferrer">9abcdf6c65</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/01/24/">Wed, Jan 24</a></div>
+  <div class="entry-copy">The <code>date_format()</code> declaration now accepts <code>DateTimeInterface</code>, matching the runtime and allowing immutable or alternative implementations without a type error. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c14b15ffd27f5f3fd5a6718b17a8b3bfa0e4a962" target="_blank" rel="noopener noreferrer">c14b15ffd2</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/01/25/">Thu, Jan 25</a></div>
+  <div class="entry-copy">When a package defines <code>allow_directories</code>, the typechecker now rejects <code>module foo;</code> declarations in files outside those directories. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/14b0127365af410be43ad9308fdf05a0982f3055" target="_blank" rel="noopener noreferrer">14b0127365</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/01/22/">Mon, Jan 22</a></div>
+  <div class="entry-copy">Runtime upper bounds on generic types are now always fully enforced, and the non-default modes of <code>Eval.EnforceGenericsUB</code> have been removed. Code that relied on warning-only or disabled upper-bound checks can now receive catchable fatals. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/772702fa69d240b285e8e022309362a851cac77e" target="_blank" rel="noopener noreferrer">772702fa69</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/01/23/">Tue, Jan 23</a></div>
+  <div class="entry-copy">Standard runtime parameter type checking for C++ builtins is now enabled in soft mode by default through <code>Eval.CheckBuiltinParamTypeHints=1</code>. Invalid arguments can emit new type-hint warnings; deployments may use <code>0</code> to disable checks or <code>2</code> for hard enforcement. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/cdc7f67f917926bbbfaa230afb196140f2b00f51" target="_blank" rel="noopener noreferrer">cdc7f67f91</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Security</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/01/23/">Tue, Jan 23</a></div>
+  <div class="entry-copy">A function or method carrying <code>&lt;&lt;__CrossPackage(&quot;pkg&quot;)&gt;&gt;</code> now begins with an invariant that the named package is actually loaded. Misconfigured cross-package access fails immediately instead of continuing into boundary violations. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b6593e555d8c3f0e5bd3dd8da0bc47fd1eb1f686" target="_blank" rel="noopener noreferrer">b6593e555d</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

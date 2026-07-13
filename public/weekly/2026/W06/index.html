@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="14 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 6: Feb 2–Feb 8, 2026 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 6: Feb 2–Feb 8, 2026</h1>
+  <p class="post-meta">14 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2026/02/02/">Day</a><a href="/weekly/2026/W06/" aria-current="page">Week</a><a href="/monthly/2026/02/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2026/W05/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2026/W07/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>5 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/02/02/">Mon, Feb 2</a></div>
+  <div class="entry-copy"><code>hh_single_type_check --config</code> now rejects unknown configuration keys and suggests a close valid spelling when one exists. This catches mistyped one-off settings instead of silently typechecking with an unintended configuration. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/934f2c0cee342ce8ae1d9862b49a1c65d4e644ee" target="_blank" rel="noopener noreferrer">934f2c0cee</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/02/05/">Thu, Feb 5</a></div>
+  <div class="entry-copy"><code>HH\ImplicitContext</code>&#x27;s protected <code>runWith()</code> and <code>runWithAsync()</code> methods now require <code>[leak_safe, ctx $f]</code> instead of <code>[this::CRun, ctx $f]</code>. This narrows the fixed callee requirement to <code>leak_safe</code>, so callers no longer need to satisfy a subclass&#x27;s potentially broader <code>CRun</code>; they must still provide a capability set that is a superset of both <code>[leak_safe]</code> and the callback&#x27;s contextual requirement. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/76abaa20a21785724dc7ae75408614c88c74be60" target="_blank" rel="noopener noreferrer">76abaa20a2</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/02/05/">Thu, Feb 5</a></div>
+  <div class="entry-copy">Open-source HHVM builds now use Folly&#x27;s symbolizer for crash reports and perf maps, replacing raw addresses with C++ symbols when the build provides libunwind. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c2909dc0efa055f557c8c2a39d76bb267209f8e7" target="_blank" rel="noopener noreferrer">c2909dc0ef</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/02/06/">Fri, Feb 6</a></div>
+  <div class="entry-copy"><code>HH\Facts\all_modules()[]: vec&lt;string&gt;</code> returns every module defined in a Facts-enabled repository and throws <code>InvalidOperationException</code> when Facts is unavailable. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/202ce61d20d0d9d38634bea0339411619703d7f9" target="_blank" rel="noopener noreferrer">202ce61d20</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/02/06/">Fri, Feb 6</a></div>
+  <div class="entry-copy">The HSL documentation for <code>Str\to_int()</code> now makes its exact round-trip rule explicit: zero-padded strings such as <code>&quot;01&quot;</code> return <code>null</code>; trim the zeros or use <code>Math\from_base()</code> when that input should be accepted. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e9d0ce7fe81b7294d2149303c53642062bb1d358" target="_blank" rel="noopener noreferrer">e9d0ce7fe8</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>5 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/02/03/">Tue, Feb 3</a></div>
+  <div class="entry-copy">A type named in a <code>__Sealed</code> allowlist without being a subtype now produces warning 12035 rather than a lint or optional hard error. The <code>enforce_sealed_subclasses</code> setting has been removed, and the diagnostic now uses the correct <code>extend</code>, <code>implement</code>, or <code>use</code> relationship for each classish kind. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/58d208a5ca1585b976a0b9aa75ea68960319b849" target="_blank" rel="noopener noreferrer">58d208a5ca</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/02/03/">Tue, Feb 3</a></div>
+  <div class="entry-copy">Typedef well-formedness now follows aliases in the same way that runtime type-structure resolution does. Invalid cycles through an opaque newtype are rejected instead of being accepted by <code>hh</code> and potentially failing in HHVM; legal recursion through transparent aliases and an enabled recursive case type remains supported. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/281bde125ed68cc92ab5d3d6dca9f67fd025334c" target="_blank" rel="noopener noreferrer">281bde125e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/02/04/">Wed, Feb 4</a></div>
+  <div class="entry-copy">The dynamic-support pass now reports its own typing errors by default, including under <code>everything_sdt</code>. It is skipped when ordinary typechecking has already found errors to avoid duplicate noise; <code>silence_errors_under_dynamic=true</code> can temporarily restore suppression during a migration. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a48510ac787c186292344b35b173e05f4b4f0e38" target="_blank" rel="noopener noreferrer">a48510ac78</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/02/04/">Wed, Feb 4</a></div>
+  <div class="entry-copy"><code>HH\ImplicitContext\soft_run_with()</code> and <code>soft_run_with_async()</code> have been removed. They were passthrough helpers that no longer changed implicit-context state; call the callback directly. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/52fd0cf488603d5b25595bd363ecac8dbed3a232" target="_blank" rel="noopener noreferrer">52fd0cf488</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/02/05/">Thu, Feb 5</a></div>
+  <div class="entry-copy">A class&#x27;s <code>__Sealed</code> allowlist may no longer contain a trait. Such declarations now report <code>NastCheck[3108]</code>; traits can remain in allowlists on classish kinds where their relationship has defined semantics. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/76df11f97988d48629067f81cc867bf248ee41ff" target="_blank" rel="noopener noreferrer">76df11f979</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/02/03/">Tue, Feb 3</a></div>
+  <div class="entry-copy">The unstable <code>shape_field_punning</code> feature adds <code>shape($foo)</code> as shorthand for <code>shape(&#x27;foo&#x27; =&gt; $foo)</code> and permits punned and explicit fields in the same literal. It remains gated by <code>&lt;&lt;file:__EnableUnstableFeatures(&#x27;shape_field_punning&#x27;)&gt;&gt;</code>; missing-field diagnostics also now say where the field is required. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8aeb30361d6a030c1c94bdf1f1ec743fa4fb30b0" target="_blank" rel="noopener noreferrer">8aeb30361d</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/02/05/">Thu, Feb 5</a></div>
+  <div class="entry-copy">The named-parameter implementation can now carry named argument metadata from HackC into HHVM and execute basic calls with required named parameters in the interpreter. Written left-to-right argument evaluation is preserved even though named values are arranged before positional values on the VM stack; JIT, inlining, and HHBBC optimizations still deliberately fall back for these calls. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/792d13346d2fbc080c897d229780723f39b7fa34" target="_blank" rel="noopener noreferrer">792d13346d</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0a27aa989fca02f187894a9c0da8a689517522bf" target="_blank" rel="noopener noreferrer">0a27aa989f</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3ca68328ff55cb12b71107943ebfd5f8a65c5eb5" target="_blank" rel="noopener noreferrer">3ca68328ff</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7710d53043fbf8eb69dbdec8f779f31b7977e844" target="_blank" rel="noopener noreferrer">7710d53043</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b2105766957a1c9999ed846eabb023075cc825da" target="_blank" rel="noopener noreferrer">b210576695</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Security</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/02/04/">Wed, Feb 4</a></div>
+  <div class="entry-copy">The Hack toolchain&#x27;s Rust <code>bytes</code> dependency was updated to 1.11.1, addressing RUSTSEC-2026-0007, an integer overflow in <code>BytesMut::reserve</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b99ab4f0c161bd2b17ce0de680a6685b49d49669" target="_blank" rel="noopener noreferrer">b99ab4f0c1</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/02/06/">Fri, Feb 6</a></div>
+  <div class="entry-copy">The Hack toolchain&#x27;s Rust <code>time</code> dependency was updated to address RUSTSEC-2026-0009, a denial of service through stack exhaustion. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/fb3457532c8b4fbd5f7731e9f9f76e5425479be9" target="_blank" rel="noopener noreferrer">fb3457532c</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

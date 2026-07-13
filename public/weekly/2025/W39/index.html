@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="9 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 39: Sep 22–Sep 28, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 39: Sep 22–Sep 28, 2025</h1>
+  <p class="post-meta">9 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/09/22/">Day</a><a href="/weekly/2025/W39/" aria-current="page">Week</a><a href="/monthly/2025/09/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2025/W38/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2025/W40/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>7 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/09/22/">Mon, Sep 22</a></div>
+  <div class="entry-copy"><code>hh --tast-holes</code> now preserves like types in its JSON rendering of actual and expected types, giving unsafe-cast codemods the precision needed to retain sound-dynamic boundaries. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/01c2d1d968cb842ae0c3cdc80e7225d07de159e0" target="_blank" rel="noopener noreferrer">01c2d1d968</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/09/22/">Mon, Sep 22</a></div>
+  <div class="entry-copy">A parameter declared as <code>dynamic</code> now remains <code>dynamic</code> inside the function even when its default expression has a narrower like type. Defaults no longer cause false downstream errors when that parameter is passed to other dynamic-aware code. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f3a9352a5a182ab6508449eb3a82d280cdf9af84" target="_blank" rel="noopener noreferrer">f3a9352a5a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/09/22/">Mon, Sep 22</a></div>
+  <div class="entry-copy">Sound-dynamic subtyping can now push like types through contravariant positions nested beneath invariant types. Valid relationships such as <code>Box&lt;Contra&lt;~int&gt;&gt; &lt;: ~Box&lt;Contra&lt;int&gt;&gt;</code> no longer fail because like-pushing happened at the wrong variance. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b90d86fd9aafcf37ce164cbd9e0a350258b25055" target="_blank" rel="noopener noreferrer">b90d86fd9a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/09/24/">Wed, Sep 24</a></div>
+  <div class="entry-copy"><code>type_structure($value, &#x27;T&#x27;)</code> now accepts a first argument of type <code>dynamic</code> instead of rejecting the call during its special type-constant validation. Its public signature retains <code>[]</code>, so callers need no ambient capabilities. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/70d45071f40ce06a4737aa9b3d557c50febefd38" target="_blank" rel="noopener noreferrer">70d45071f4</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/09/24/">Wed, Sep 24</a></div>
+  <div class="entry-copy">New <code>openssl_csr_get_dns_names(mixed): vec&lt;string&gt;</code> and <code>openssl_csr_get_upn(mixed): string</code> APIs read DNS subject-alt names and the Microsoft UPN otherName from a certificate-signing request. Both throw <code>OpenSSLException</code> for an unparseable CSR; the UPN API also throws when no valid UPN exists. Their omitted coeffect brackets mean <code>[defaults]</code>, so they are not callable from a pure <code>[]</code> context. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/120ba485fd1ac285402b7385ca5641fd64c934a0" target="_blank" rel="noopener noreferrer">120ba485fd</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b1691a9392c3b126fc40b47f5f162fcd59e53b59" target="_blank" rel="noopener noreferrer">b1691a9392</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/09/24/">Wed, Sep 24</a></div>
+  <div class="entry-copy">HHVM now loads individual types in dependency order rather than repeatedly retrying whole units. Cross-file dependency chains that only looked cyclic because neither file could be loaded first can now autoload successfully. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d67fb09b37197c71f29dcbccf15b251ba773e936" target="_blank" rel="noopener noreferrer">d67fb09b37</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/09/25/">Thu, Sep 25</a></div>
+  <div class="entry-copy">GADT-style <code>is</code> refinements now preserve class type-constant refinements while learning constraints on an enclosing generic. Checks such as <code>$x is IChild&lt;_&gt;</code> can refine both an inherited generic and <code>with { type T = ... }</code> information without producing false errors. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3ce3fe0a577e7ffe6aad82478bcfbdad001bcb42" target="_blank" rel="noopener noreferrer">3ce3fe0a57</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/09/24/">Wed, Sep 24</a></div>
+  <div class="entry-copy">Unstable named parameters now receive direct call-site checking for missing, extra, duplicate, and incorrectly typed names, plus autocomplete support. Required named parameters may follow optional parameters because their names remove positional ambiguity. Function-type subtyping and override checking do not yet compare parameter names; ordinary parameter contravariance and coeffect compatibility are unchanged. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6ff9985d4dd2febe91907ba21b844ed2bfa9e6a9" target="_blank" rel="noopener noreferrer">6ff9985d4d</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c345859fc2197f6e79f235bd6a289fd6890fb846" target="_blank" rel="noopener noreferrer">c345859fc2</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4427b17a5e4c83c043b39cce9c8c93a5c7ca5fa2" target="_blank" rel="noopener noreferrer">4427b17a5e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/09/25/">Thu, Sep 25</a></div>
+  <div class="entry-copy">Increment and decrement operations on an experimental <code>&lt;&lt;__Const&gt;&gt;</code> property now produce Typing[4196], matching direct assignment. The check currently applies at a mutating helper method&#x27;s declaration; moving it to calls made outside construction is follow-up work. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8adb7b6e42aca8f8cb5b28d06f90a68951ceb98a" target="_blank" rel="noopener noreferrer">8adb7b6e42</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

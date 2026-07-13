@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="15 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 17: Apr 22–Apr 28, 2024 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 17: Apr 22–Apr 28, 2024</h1>
+  <p class="post-meta">15 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/04/22/">Day</a><a href="/weekly/2024/W17/" aria-current="page">Week</a><a href="/monthly/2024/04/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2024/W16/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2024/W18/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>9 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/04/22/">Mon, Apr 22</a></div>
+  <div class="entry-copy"><code>hh --lint path/to/directory</code> now reports that lint accepts files rather than crashing. Directory walking is still unsupported. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3d67603997524619f7227673ee72fcffaecc065a" target="_blank" rel="noopener noreferrer">3d67603997</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/04/22/">Mon, Apr 22</a></div>
+  <div class="entry-copy"><code>ThriftAttributeSerializer</code> now serializes a Thrift <code>SET</code> from the Hack array&#x27;s keys rather than its values, fixing sets whose backing representation stores the member in the key. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/366ea3178193de10ff0ecf165b304c446fa54d1e" target="_blank" rel="noopener noreferrer">366ea31781</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/04/23/">Tue, Apr 23</a></div>
+  <div class="entry-copy"><code>round()</code> now handles precision values outside the meaningful range for a <code>double</code> directly: extremely high precision returns the input unchanged, while sufficiently low precision returns zero, avoiding invalid intermediate calculations. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a6c87cb4c80ca797b57f0a81d5ea3747fb8b8703" target="_blank" rel="noopener noreferrer">a6c87cb4c8</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/04/24/">Wed, Apr 24</a></div>
+  <div class="entry-copy">TAST holes produced for invalid array access now retain the original outer type of a nullable or <code>mixed</code> base instead of incorrectly reporting its non-null inner type. Typed-AST consumers and codemods will see accurate actual types. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/be9a7af8b39e43a8cd7fad015a6e870ffca28e28" target="_blank" rel="noopener noreferrer">be9a7af8b3</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/04/25/">Thu, Apr 25</a></div>
+  <div class="entry-copy">Repo-authoritative optimization now models the concrete values written to memoization caches, avoiding incorrect bottom or return types for forwarded late-static-binding calls such as memoized methods inherited from traits. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9056a5bf64df15b923d93084d8f0920df2cb810c" target="_blank" rel="noopener noreferrer">9056a5bf64</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/04/25/">Thu, Apr 25</a></div>
+  <div class="entry-copy">Top-level autocomplete backed by Glean now matches a declaration&#x27;s autocomplete sort text as well as its name, allowing appropriately ranked declarations to appear for additional prefixes. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/891e663ebc22acdf7da68a16e128f7d367a166c1" target="_blank" rel="noopener noreferrer">891e663ebc</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/04/26/">Fri, Apr 26</a></div>
+  <div class="entry-copy">JSON diagnostics now include a top-level <code>severity</code> field. Consumers of <code>hh --json</code> can distinguish errors from the new warning severity without parsing rendered text. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e19bd61dd072a4fa61629e506d7b24a1be8da992" target="_blank" rel="noopener noreferrer">e19bd61dd0</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/04/26/">Fri, Apr 26</a></div>
+  <div class="entry-copy">While VS Code debugging is paused, newly started request threads are no longer announced until execution resumes, keeping the stopped thread from being displaced in the debugger UI. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e2849902e633029455b8a8c21cd0e7b6d73b463b" target="_blank" rel="noopener noreferrer">e2849902e6</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/04/26/">Fri, Apr 26</a></div>
+  <div class="entry-copy">The “override method” code action now inserts a multiline method body and places the cursor inside it, ready for implementation. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4f550b7331beee367b0d2595158ebcaa758ee85c" target="_blank" rel="noopener noreferrer">4f550b7331</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2298871f365527c63d356f9353a2297a8a4d164d" target="_blank" rel="noopener noreferrer">2298871f36</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>5 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/04/23/">Tue, Apr 23</a></div>
+  <div class="entry-copy">Collection literals inside opted-in expression trees no longer require the separate <code>expression_tree_map</code> unstable-feature attribute. The enclosing expression-tree feature remains staged. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c13997fb6df974563076ece6165d36fdb1777f9c" target="_blank" rel="noopener noreferrer">c13997fb6d</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/04/24/">Wed, Apr 24</a></div>
+  <div class="entry-copy">The unstable <code>expression_tree_nest</code> feature allows an expression tree inside a splice. A nested tree inherits the enclosing DSL and therefore omits its own DSL prefix, except across an ordinary Hack lambda scope; nested trees cannot yet capture client variables from enclosing scopes. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8fd5211674693c38f8ed9115540d5e86d3221d55" target="_blank" rel="noopener noreferrer">8fd5211674</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/04/25/">Thu, Apr 25</a></div>
+  <div class="entry-copy">A disabled-by-default <code>hack_warnings</code> project option introduces non-fatal Hack warnings. The first warns when <code>?X</code> and <code>?Y</code> are compared even though the non-null primitive types <code>X</code> and <code>Y</code> are disjoint. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a5295f752a6c233d296e8f3a02df6072237e1d68" target="_blank" rel="noopener noreferrer">a5295f752a</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f5f47a9cc6bfcf263c0b64a2335bb74f2ec0f114" target="_blank" rel="noopener noreferrer">f5f47a9cc6</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/04/25/">Thu, Apr 25</a></div>
+  <div class="entry-copy">Repo-authoritative optimization now handles enum members and unresolved object members in experimental case-type unions without misclassifying or asserting on the union. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ba2eace20a66dc98d3367ad464605fb760206390" target="_blank" rel="noopener noreferrer">ba2eace20a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/04/26/">Fri, Apr 26</a></div>
+  <div class="entry-copy">When the opt-in Hack warning system is enabled, LSP diagnostics now reach editors with warning severity and are rendered as warnings rather than errors. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/43370c7b5f3d09dce0d20de0808100ca2cc27009" target="_blank" rel="noopener noreferrer">43370c7b5f</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/04/25/">Thu, Apr 25</a></div>
+  <div class="entry-copy">Hack&#x27;s text diagnostic formats now encode severity. In particular, <code>--error-format plain</code> prefixes diagnostics with <code>ERROR:</code> or <code>WARN:</code>, and the raw, contextual, and highlighted renderers distinguish warnings too. Update scripts that parse the previous plain-text layout. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9bbf0bd8bdb2421b158512c750139fd6dff70a26" target="_blank" rel="noopener noreferrer">9bbf0bd8bd</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4f788c05ab4d83fa10620c8ba924436c93189480" target="_blank" rel="noopener noreferrer">4f788c05ab</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ac2791f216b28a11eed364cd9c4ed24f388c6069" target="_blank" rel="noopener noreferrer">ac2791f216</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3059d50fb75990ead7dc860b7d40372e991a17ee" target="_blank" rel="noopener noreferrer">3059d50fb7</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

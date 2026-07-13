@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="5 noteworthy changes recorded on this day.">
+  <title>Tuesday, July 25, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Tuesday, July 25, 2023</h1>
+  <p class="post-meta">5 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/07/25/" aria-current="page">Day</a><a href="/weekly/2023/W30/">Week</a><a href="/monthly/2023/07/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2023/07/24/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2023/07/26/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">Nullsafe method calls now tolerate an inferred <code>supportdyn&lt;null&gt;</code> arm, avoiding a spurious sound-dynamic error where the <code>supportdyn</code> wrapper is redundant. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b6e37eaff6334ef08a18d14f2516db29d23acd5a" target="_blank" rel="noopener noreferrer">b6e37eaff6</a></div></li><li class="change-entry"><div class="entry-copy">Type errors involving an optional shape field now point to that field’s own definition instead of an unrelated required field. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1b3d6ba9158210e103e7ff44f4aa4cc92e89af57" target="_blank" rel="noopener noreferrer">1b3d6ba915</a></div></li><li class="change-entry"><div class="entry-copy">Under sound dynamic, legacy <code>varray&lt;T&gt;</code> and <code>darray&lt;Tk, Tv&gt;</code> types no longer implicitly pessimise their type arguments to like types. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/fdaedd5885ac969cdba396b63c356abb6f646d62" target="_blank" rel="noopener noreferrer">fdaedd5885</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy"><code>as ~T</code> now performs a real runtime check by looking through the like type to <code>T</code>; it is no longer treated as a no-op. Like-type <code>is</code>/<code>as</code> expressions use the same look-through semantics in the typechecker. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a2fadfcddb9f2c3915de84008d4636a5425e51ee" target="_blank" rel="noopener noreferrer">a2fadfcddb</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1cfe2b1978aa3aa6628cdda2d2e8d99a8a21b4ea" target="_blank" rel="noopener noreferrer">1cfe2b1978</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">The parser and <code>hackfmt</code> gain an initial experimental <code>match</code> statement with variable, type-refinement, and wildcard-constructor patterns. It remains behind the <code>match</code> unstable-feature opt-in and is not yet a complete language feature. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/33dac5b0df841e8337833d09dfd8563750538552" target="_blank" rel="noopener noreferrer">33dac5b0df</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="13 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 43: Oct 21–Oct 27, 2024 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 43: Oct 21–Oct 27, 2024</h1>
+  <p class="post-meta">13 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/10/21/">Day</a><a href="/weekly/2024/W43/" aria-current="page">Week</a><a href="/monthly/2024/10/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2024/W42/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2024/W44/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>7 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/10/21/">Mon, Oct 21</a></div>
+  <div class="entry-copy">Extended type-error derivations are now generated during the original check and stored with each error, avoiding a checker restart when detailed reasons are requested. Their rendering also gained clearer step styling and adapts to the current terminal width. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7ba1c0f0d8c06c86fc94377aa1dc113a67224d17" target="_blank" rel="noopener noreferrer">7ba1c0f0d8</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5fa7ba89739865d9a714a65413cb6fe3993ae7fe" target="_blank" rel="noopener noreferrer">5fa7ba8973</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/cb64df5b124d7a6ac65bc12c2a5c8268175b8b25" target="_blank" rel="noopener noreferrer">cb64df5b12</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0119ca86a4b614d5bca2c3a69a2afbc704042c27" target="_blank" rel="noopener noreferrer">0119ca86a4</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/10/21/">Mon, Oct 21</a></div>
+  <div class="entry-copy">Notebook top-level statements are now treated as having the <code>[defaults]</code> capability set, which includes <code>write_props</code>, eliminating spurious coeffect errors for operations that require those capabilities. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a1d70342fbcb75896b732dd9671165c2edbaf1e6" target="_blank" rel="noopener noreferrer">a1d70342fb</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/10/21/">Mon, Oct 21</a></div>
+  <div class="entry-copy"><code>nameof C</code> now has the precise type <code>classname&lt;exact C&gt;</code>, matching <code>C::class</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2009f750024e6920de0b22605139703c325d554c" target="_blank" rel="noopener noreferrer">2009f75002</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/10/24/">Thu, Oct 24</a></div>
+  <div class="entry-copy">Hack now runs both full-fidelity and lowerer syntax checks even when the first pass already found errors, so a single invocation can report more independent syntax problems. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0e55fbf060c2ce122e59b7e8720381d5fbdcfbc0" target="_blank" rel="noopener noreferrer">0e55fbf060</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/10/24/">Thu, Oct 24</a></div>
+  <div class="entry-copy">Notebook conversion is now bidirectional: <code>hh --hack-to-notebook</code> reconstructs notebook JSON from generated Hack on standard input, and both conversion directions apply Hack formatting. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1e45a855cb413065f67d0f9fbd81d1cf76faf46d" target="_blank" rel="noopener noreferrer">1e45a855cb</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/30842a482b4206988f139224169abbbf318d7198" target="_blank" rel="noopener noreferrer">30842a482b</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/10/24/">Thu, Oct 24</a></div>
+  <div class="entry-copy">The single-class filename linter now says that a file &quot;defines&quot; a class rather than incorrectly claiming the class is its only content when typedefs are also present. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/653d1be16238a2ab907c2762dbaeca23f067f160" target="_blank" rel="noopener noreferrer">653d1be162</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/10/25/">Fri, Oct 25</a></div>
+  <div class="entry-copy">Notebook conversion now validates both source formats, reports malformed user-edited Hack separately from internal failures, and lets <code>--notebook-to-hack</code> place a supplied header such as a copyright notice after <code>&lt;?hh</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/932cbaaf196e05293479a324b4fc988df92e7a2e" target="_blank" rel="noopener noreferrer">932cbaaf19</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/019a84b9812eaa63909795cbf89d2ffe1a0266b0" target="_blank" rel="noopener noreferrer">019a84b981</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a4ac1531387e46d19fac91a8e171640cb5b0551d" target="_blank" rel="noopener noreferrer">a4ac153138</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>5 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/10/22/">Tue, Oct 22</a></div>
+  <div class="entry-copy">Packages v2 now permits cross-package type names on the right-hand side of <code>as</code>, matching the existing <code>is</code> exemption. This is only a static-reference exemption: execution can still fail if the target package is not deployed. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9488fb8dd0292d807a4720ed2a6cf1c32408a146" target="_blank" rel="noopener noreferrer">9488fb8dd0</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/10/23/">Wed, Oct 23</a></div>
+  <div class="entry-copy">Packages v2 no longer applies package-boundary checks to class-constant and global-constant type hints, which are not emitted into runtime constant metadata. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/878738dc7db65e8e9b6560eb425f87d5baa85f2f" target="_blank" rel="noopener noreferrer">878738dc7d</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/10/23/">Wed, Oct 23</a></div>
+  <div class="entry-copy">Experimental case types with variant <code>where</code> clauses now retain their nominal case type through intersections and type-switch refinements instead of being unsafely reduced to the raw variant hints. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a2ad3ec620938254d242ed793faae2bb53cd2bd5" target="_blank" rel="noopener noreferrer">a2ad3ec620</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/10/24/">Thu, Oct 24</a></div>
+  <div class="entry-copy">Await expressions on the right side of a pipe, and nested awaits, moved from Preview to Ongoing Release and no longer require the <code>pipe_await</code> feature opt-in. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d26ca17cef432e3811f8c6904a485c8158f52464" target="_blank" rel="noopener noreferrer">d26ca17cef</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/10/25/">Fri, Oct 25</a></div>
+  <div class="entry-copy"><code>--type-at-pos-batch</code> now handles a batch containing both expression-tree splice positions and ordinary positions without applying splice virtualization to the whole batch. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c546c0f2d0b32b03a8c7bf372bed27164fb89334" target="_blank" rel="noopener noreferrer">c546c0f2d0</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/10/23/">Wed, Oct 23</a></div>
+  <div class="entry-copy">Cyclic <code>as</code> bounds on type aliases and newtypes are now rejected explicitly. These already failed indirectly after cycle recovery produced <code>mixed</code>; the checker now points to the unsupported bound itself. Cyclic <code>super</code> bounds are unchanged. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/82a6a0afae456dbde91669669406367ebf5febb4" target="_blank" rel="noopener noreferrer">82a6a0afae</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

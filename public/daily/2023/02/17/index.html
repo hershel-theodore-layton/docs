@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="4 noteworthy changes recorded on this day.">
+  <title>Friday, February 17, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Friday, February 17, 2023</h1>
+  <p class="post-meta">4 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/02/17/" aria-current="page">Day</a><a href="/weekly/2023/W07/">Week</a><a href="/monthly/2023/02/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2023/02/16/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2023/02/20/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">Sound Dynamic subtyping can now push <code>supportdyn</code> through built-in containers and through safe promotions to <code>Traversable</code>, while expected-type inference retains more useful like-type information. This removes several false-positive errors around refined and nested container types. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f9fe075c21bec3961098a42394666c0033fcd63d" target="_blank" rel="noopener noreferrer">f9fe075c21</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/972106d560e7a4be75add1ae16d6243bccce5b5e" target="_blank" rel="noopener noreferrer">972106d560</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/61ab0e31c7281a6a109c4057f2644fbf46c65b4e" target="_blank" rel="noopener noreferrer">61ab0e31c7</a></div></li><li class="change-entry"><div class="entry-copy">Autocomplete now works in generic type-argument positions such as <code>vec&lt;string&gt;</code> without mistaking the angle brackets for XHP syntax. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/480b384688cc081354ad8957e576b04249d219c1" target="_blank" rel="noopener noreferrer">480b384688</a></div></li><li class="change-entry"><div class="entry-copy"><code>hh_single_type_check --sdt-analysis</code> can now identify top-level functions that need <code>__SupportDynamicType</code>, including dynamically callable functions and call sites that require dynamic-aware checking. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0ae3969f18ec8cdeccf721405ba3fe1d0e6519b1" target="_blank" rel="noopener noreferrer">0ae3969f18</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/582b596f55cf26c0e5126e4a5946c362f3810af1" target="_blank" rel="noopener noreferrer">582b596f55</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">Type constants in enum classes have entered ongoing release. The typechecker still requires the <code>enum_class_type_constants</code> opt-in while the runtime rollout completes. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/255787429159bbac7496134a829fce2833fd75c0" target="_blank" rel="noopener noreferrer">2557874291</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="5 noteworthy changes recorded on this day.">
+  <title>Tuesday, December 13, 2022 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Tuesday, December 13, 2022</h1>
+  <p class="post-meta">5 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2022/12/13/" aria-current="page">Day</a><a href="/weekly/2022/W50/">Week</a><a href="/monthly/2022/12/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2022/12/12/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2022/12/14/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">Missing required-XHP-attribute errors now point to the attribute declaration rather than the containing XHP class. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/df7da6ed992739572716325b46738cad96ed1b0f" target="_blank" rel="noopener noreferrer">df7da6ed99</a></div></li><li class="change-entry"><div class="entry-copy">An unbounded generic is now treated like a generic explicitly bounded by <code>mixed</code> when accessing type structures. Class-specific fields such as <code>classname</code> require a classish bound. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/eb806ee50acb04787c65364f98d98284e2524564" target="_blank" rel="noopener noreferrer">eb806ee50a</a></div></li><li class="change-entry"><div class="entry-copy">Several <code>HH\TypeStructure</code> fields have more accurate bundled declarations: <code>return_type</code> and <code>value</code> are <code>mixed</code>, while <code>access_list</code> is <code>?varray&lt;string&gt;</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7926fe9c9d2828669cf50a7420cf3733b55a2e22" target="_blank" rel="noopener noreferrer">7926fe9c9d</a></div></li><li class="change-entry"><div class="entry-copy">Native Facts now coalesces simultaneous update requests behind an already-pending Watchman query instead of scheduling one query per caller. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3db59e7600a66ad6a6021fb1b07b6521efa4b763" target="_blank" rel="noopener noreferrer">3db59e7600</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">Calling <code>HH\autoload_set_paths()</code> while native autoloading is active now raises a deprecation notice. Deployments can set <code>Autoload.UserlandEnabled=false</code> to turn such calls into <code>InvalidOperationException</code>s and find code that must migrate to native autoloading. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0e45a0afae51c565efd806425718a72112b3e77c" target="_blank" rel="noopener noreferrer">0e45a0afae</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

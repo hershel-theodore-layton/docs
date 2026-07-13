@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="11 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 10: Mar 4–Mar 10, 2024 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 10: Mar 4–Mar 10, 2024</h1>
+  <p class="post-meta">11 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/03/04/">Day</a><a href="/weekly/2024/W10/" aria-current="page">Week</a><a href="/monthly/2024/03/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2024/W09/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2024/W11/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>5 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/03/04/">Mon, Mar 4</a></div>
+  <div class="entry-copy">Sound Dynamic method calls can now use like-pushing to satisfy <code>where</code> constraints. A receiver such as <code>ExpectObj&lt;~vec&lt;int&gt;&gt;</code> can call a method constrained with <code>T as Container&lt;mixed&gt;</code>, with the result correctly remaining like-typed. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e6dfdec1be92fa17748123b0eceeab3655f2fef2" target="_blank" rel="noopener noreferrer">e6dfdec1be</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/03/04/">Mon, Mar 4</a></div>
+  <div class="entry-copy">The new pure <code>HH\FileDecls::genParsePath(string)[]: Awaitable&lt;HH\FileDecls&gt;</code> API supports non-blocking declaration parsing, including implementations backed by remote I/O-bound caches. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b041842c13320d6d667cae85d1d6ff46d0d5a934" target="_blank" rel="noopener noreferrer">b041842c13</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/03/04/">Mon, Mar 4</a></div>
+  <div class="entry-copy">Type errors involving shapes reached through aliases now retain the alias definition position, so diagnostics such as error 4108 point to the declaration rather than a later hint. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7e07868621eb657a6009a2d69d57b29fb0475f23" target="_blank" rel="noopener noreferrer">7e07868621</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/03/04/">Mon, Mar 4</a></div>
+  <div class="entry-copy">Image metadata detection gained AVIF and HEIC support through libheif, notably for <code>getimagesize()</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/80f15c38721f1839a34414cacb9e8e3e7d93a9b1" target="_blank" rel="noopener noreferrer">80f15c3872</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/03/08/">Fri, Mar 8</a></div>
+  <div class="entry-copy">The false branch of <code>if ($x)</code> no longer narrows <code>$x</code> to <code>null</code>: Hack now accounts for other falsy values such as <code>false</code> and the empty string, closing an unsound refinement. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/afee63e475d87af1d9b74d632ade801d5266c393" target="_blank" rel="noopener noreferrer">afee63e475</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Security</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/03/05/">Tue, Mar 5</a></div>
+  <div class="entry-copy">Internal type-constant projections inherited into public classes no longer degrade to <code>any</code> outside their module. They remain opaque and distinct, preventing invalid calls from bypassing the intended module boundary. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/05db70051aa5f6629d5a5e6b78d1e57b8708c0d1" target="_blank" rel="noopener noreferrer">05db70051a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/03/06/">Wed, Mar 6</a></div>
+  <div class="entry-copy">Opaque representations of internal generic classes now preserve their type arguments across module boundaries. Distinct instantiations are no longer treated as compatible outside the defining module. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/86f1847927fe266b3ea966541d558747cdc883dd" target="_blank" rel="noopener noreferrer">86f1847927</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/03/06/">Wed, Mar 6</a></div>
+  <div class="entry-copy"><code>HH\classname_to_class()</code> and <code>HH\class_to_classname()</code> now accept preview <code>readonly classname&lt;T&gt;</code> arguments while remaining pure, allowing readonly class values to pass through the migration helpers without a mutable-value error. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/03233e7456d5bf587c7c9850e921180ec51f2d61" target="_blank" rel="noopener noreferrer">03233e7456</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/03/06/">Wed, Mar 6</a></div>
+  <div class="entry-copy">Function type hints in ongoing release now support the <code>optional</code> qualifier without a per-file opt-in. Types such as <code>(function(int, optional int): void)</code> can describe functions whose trailing parameter has a default, but the feature remains pre-stable. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6e9dfb645d49ecc835d0ed238f54434d9b945af9" target="_blank" rel="noopener noreferrer">6e9dfb645d</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/03/08/">Fri, Mar 8</a></div>
+  <div class="entry-copy"><code>meth_caller()</code> no longer accepts a class name as a string. Pass a class value such as <code>C::class</code>; stringly typed call sites should use <code>dynamic_meth_caller()</code> instead. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/159e7c77440712e5781a6043f249ce376f353791" target="_blank" rel="noopener noreferrer">159e7c7744</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/03/09/">Sat, Mar 9</a></div>
+  <div class="entry-copy"><code>$this</code> is now rejected as a parameter name, including in the unparenthesized callable syntax that previously escaped the check. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/40495455d1c6bd4bc4cde7471929cb2c95ca0a3b" target="_blank" rel="noopener noreferrer">40495455d1</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

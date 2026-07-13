@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="5 noteworthy changes recorded on this day.">
+  <title>Wednesday, October 8, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Wednesday, October 8, 2025</h1>
+  <p class="post-meta">5 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/10/08/" aria-current="page">Day</a><a href="/weekly/2025/W41/">Week</a><a href="/monthly/2025/10/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2025/10/07/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2025/10/09/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy"><code>CUSTOM_ERRORS.json</code> rules can now match <code>Module_cross_package_access</code> by the use, declaration, module, and package files and by the current and target module/package names. File patterns support path segments, filename/extension matching, wildcards, and captures. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9243b11d8ac554384d608ab5d113d95a0d7e159f" target="_blank" rel="noopener noreferrer">9243b11d8a</a></div></li><li class="change-entry"><div class="entry-copy">Bad array-index diagnostics now point at the index expression, and Lint[5654] flags <code>?-&gt;</code> when the receiver is statically exactly <code>null</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9b6a914f005778ff3d085f21b76f6a4c584536d2" target="_blank" rel="noopener noreferrer">9b6a914f00</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a9a26055e59620f9578f64fb18176b117acc6101" target="_blank" rel="noopener noreferrer">a9a26055e5</a></div></li><li class="change-entry"><div class="entry-copy">HackC unit-compilation exceptions crossing the Rust/C++ boundary are now rendered as meaningful emitter errors instead of opaque bridge-class failures. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c776cb5c3a5d46458753010405cca6fd3ee90216" target="_blank" rel="noopener noreferrer">c776cb5c3a</a></div></li><li class="change-entry"><div class="entry-copy">Thrift streaming now credits a request when response payload memory is freed on its I/O thread, reducing false per-request out-of-memory failures. Credit is applied when control next returns to the request thread, so several in-flight payloads must still fit within the limit. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6f2c4027dea2196ea374eafbac3282346f085b59" target="_blank" rel="noopener noreferrer">6f2c4027de</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy">The <code>.hhconfig</code> option <code>disallow_invalid_arraykey</code> has been removed. Hack has enforced this behavior unconditionally for years, so removing the stale setting does not relax invalid array-key checks, but project configuration must stop declaring it. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/642bb4521d066512649eb088fa5ed13ba1896022" target="_blank" rel="noopener noreferrer">642bb4521d</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

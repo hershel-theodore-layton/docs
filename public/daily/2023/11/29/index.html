@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="5 noteworthy changes recorded on this day.">
+  <title>Wednesday, November 29, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Wednesday, November 29, 2023</h1>
+  <p class="post-meta">5 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/11/29/" aria-current="page">Day</a><a href="/weekly/2023/W48/">Week</a><a href="/monthly/2023/11/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2023/11/28/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2023/11/30/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">With the new off-by-default <code>implicit_inherit_sdt</code> option, a class or interface can inherit <code>&lt;&lt;__SupportDynamicType&gt;&gt;</code> behavior from an SDT parent instead of repeating the attribute. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/91e91b246cfcd0e89b7de48783acf26e2875c1e3" target="_blank" rel="noopener noreferrer">91e91b246c</a></div></li><li class="change-entry"><div class="entry-copy">Autocomplete declaration paths now retain <code>&lt;&lt;__AutocompleteSortText&gt;&gt;</code> values for methods and class elements, allowing the requested custom ordering to reach completion results. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d093f7148f00e6f735136848a3354b35eddce2c0" target="_blank" rel="noopener noreferrer">d093f7148f</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6aecbfbc4fadd45f7580d3bd50f2ac1fd38231df" target="_blank" rel="noopener noreferrer">6aecbfbc4f</a></div></li><li class="change-entry"><div class="entry-copy">Top-level-statement validation is now a naming error rather than a parsing error. Normal Hack files still reject the statements, but the IDE and <code>hh</code> can continue showing unrelated type errors in the rest of the file, improving notebook feedback. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0e80ee7ded38406dc72ee701e0c5c2b919d3aeaf" target="_blank" rel="noopener noreferrer">0e80ee7ded</a></div></li><li class="change-entry"><div class="entry-copy">The new pure builtin <code>fb_utf8_decompose(string)[]: vec&lt;string&gt;</code> splits a UTF-8 string into individual encoded characters. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0f1b5fd248a0c6e3cae901c45466aead410b81f3" target="_blank" rel="noopener noreferrer">0f1b5fd248</a></div></li></ul></section><section class="daily-section"><h2>Security</h2><ul><li class="change-entry"><div class="entry-copy"><code>HH\classname_to_class()</code> now performs module-boundary checks when resolving a string, closing a path that could otherwise resolve an internal class from another module. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6f6cde3a635b455c9ef83c9d44563136bd3d0e8a" target="_blank" rel="noopener noreferrer">6f6cde3a63</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

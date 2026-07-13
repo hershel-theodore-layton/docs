@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="7 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 12: Mar 17–Mar 23, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 12: Mar 17–Mar 23, 2025</h1>
+  <p class="post-meta">7 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/03/17/">Day</a><a href="/weekly/2025/W12/" aria-current="page">Week</a><a href="/monthly/2025/03/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2025/W11/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2025/W13/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Future Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/03/17/">Mon, Mar 17</a></div>
+  <div class="entry-copy">During the staged class-pointer migration, <code>__DynamicallyReferenced</code> accepts an optional integer literal for additional notice sampling. When HHVM&#x27;s global dynamically-referenced notice sampling selects a string-based class load, <code>&lt;&lt;__DynamicallyReferenced(N)&gt;&gt;</code> applies a further roughly 1-in-<code>N</code> check; <code>0</code> suppresses the soft notice. The argument must be a single integer literal, while the argument-free attribute retains its normal fully opted-in behavior. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/74e1b401c2aec729dc774b6cb26ab676d28257fb" target="_blank" rel="noopener noreferrer">74e1b401c2</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Highlights</h2><span>4 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/03/18/">Tue, Mar 18</a></div>
+  <div class="entry-copy">Async functions and methods may use <code>&lt;&lt;__AsioLowPri&gt;&gt;</code> to suspend eager execution immediately into a low-priority awaitable. Runtime option <code>Eval.EnableLowPriorityAwaitables</code> defaults to <code>true</code>; disabling it leaves the emitted bytecode in place but makes the initial suspension a no-op. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/08153b56f7e05655a4324a99afd0f30ede081fbc" target="_blank" rel="noopener noreferrer">08153b56f7</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/03/19/">Wed, Mar 19</a></div>
+  <div class="entry-copy">Low-priority async wait handles no longer crash when scheduler cleanup examines a ready handle that does not yet have a child. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/046529dc2ecd2d9dc2d7dbdebd198d2cc845688e" target="_blank" rel="noopener noreferrer">046529dc2e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/03/20/">Thu, Mar 20</a></div>
+  <div class="entry-copy">IDE and CLI file-change handling now invalidates folded declarations through the in-memory dependency graph, including descendants reached through inheritance edges. This precise behavior is always enabled, reducing stale errors after editing a parent class without invalidating every folded declaration. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/53cb992bd3d0de322df0cb165168679c38b436a6" target="_blank" rel="noopener noreferrer">53cb992bd3</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/03/20/">Thu, Mar 20</a></div>
+  <div class="entry-copy"><code>HH\asio_get_current_context_depth(): int</code> returns the current scheduler-context nesting depth, or zero outside a scheduler context, and supersedes <code>HH\asio_get_current_context_idx()</code>. The declaration has no explicit context list, so it uses the default context rather than <code>[]</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d3b708103904aeff3cd8cc99a50fa85f90f9c138" target="_blank" rel="noopener noreferrer">d3b7081039</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/03/18/">Tue, Mar 18</a></div>
+  <div class="entry-copy">The second argument of callbacks registered through <code>ResumableWaitHandle::setOnCreateCallback()</code> is now <code>?WaitableWaitHandle&lt;mixed&gt;</code>, because a newly created low-priority async wait handle has no child yet. Existing callbacks that require a non-null second argument must accept and handle <code>null</code>. The HHI method and callback types have no explicit context lists, so they retain the usual default context rather than declaring <code>[]</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/08153b56f7e05655a4324a99afd0f30ede081fbc" target="_blank" rel="noopener noreferrer">08153b56f7</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/03/19/">Wed, Mar 19</a></div>
+  <div class="entry-copy">Non-null refinement now intersects a type with <code>nonnull</code> instead of rewriting the concrete bounds of abstract types. This closes an unsoundness affecting nullsafe calls, shape access, truthiness checks, and related refinements; code that previously smuggled nullable or <code>mixed</code> members into a non-null return type may now fail typechecking. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f4b5b94a0952d5a5e0fc8cd8fb0b6a9e93f4a82a" target="_blank" rel="noopener noreferrer">f4b5b94a09</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

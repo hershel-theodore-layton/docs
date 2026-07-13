@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="20 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 36: Sep 4–Sep 10, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 36: Sep 4–Sep 10, 2023</h1>
+  <p class="post-meta">20 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/09/04/">Day</a><a href="/weekly/2023/W36/" aria-current="page">Week</a><a href="/monthly/2023/09/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2023/W35/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2023/W37/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>9 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/09/04/">Mon, Sep 4</a></div>
+  <div class="entry-copy">Enum-switch exhaustivity checking now recognizes pessimised enum types regardless of whether the enum bound appears before or after its like type in an intersection. This restores missing-case errors after awaiting an enum value and avoids treating intersections of unrelated enums as ordinary enum bounds. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d755a2e87b7fea6f08bfe889cf643aecae295a53" target="_blank" rel="noopener noreferrer">d755a2e87b</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/09/05/">Tue, Sep 5</a></div>
+  <div class="entry-copy">Trait-diamond errors now suggest adding <code>&lt;&lt;__EnableMethodTraitDiamond&gt;&gt;</code> when that attribute is the intended migration. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ce9619696cf3b92b9dd0dc2dbcc9f5e3f3353361" target="_blank" rel="noopener noreferrer">ce9619696c</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/09/06/">Wed, Sep 6</a></div>
+  <div class="entry-copy">Projects can opt in to rejecting direct superglobal variables such as <code>$_SERVER</code> with <code>disallow_direct_superglobals_refs=true</code>; diagnostics direct callers to the corresponding <code>HH\global_*</code> APIs. The compatibility default remains disabled. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/40a5ae7da0e9680045ff7804158d88de1bfb23b3" target="_blank" rel="noopener noreferrer">40a5ae7da0</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/491c65d3bf8662a45851c87486e989f012e58f3b" target="_blank" rel="noopener noreferrer">491c65d3bf</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/09/06/">Wed, Sep 6</a></div>
+  <div class="entry-copy">Package metadata now reaches <code>hh_distc</code>, and typechecker glob matching treats <code>foo.*</code> as matching both <code>foo</code> and its descendants while preferring the most specific exact match. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/93d7c2a8912eb4746541f5852c04edf5e086eab3" target="_blank" rel="noopener noreferrer">93d7c2a891</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2933cd27599bd7ba330246fcae234ae1896e8272" target="_blank" rel="noopener noreferrer">2933cd2759</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/09/07/">Thu, Sep 7</a></div>
+  <div class="entry-copy">Repo-authoritative deployments now include soft packages so accesses can emit deployment-boundary warnings and continue, rather than failing with an undefined function or class. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1171062eb4ad6cbf55b0bd83ee376434a7f4569e" target="_blank" rel="noopener noreferrer">1171062eb4</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/09/07/">Thu, Sep 7</a></div>
+  <div class="entry-copy">Class expressions used as attribute arguments no longer trigger internal or cross-package visibility errors. This permits patterns such as sealing a trait to an internal class because the stored attribute value is only a class-name string. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1d2b48aecd0375f3ac4c81f456f9d023cd627f96" target="_blank" rel="noopener noreferrer">1d2b48aecd</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/09/07/">Thu, Sep 7</a></div>
+  <div class="entry-copy">The HHI declarations for <code>HH\get_headers_secure()</code> and <code>HH\parse_cookies()</code> no longer carry <code>__PHPStdLib</code>, restoring their intended treatment by Hack tooling. Their capability lists remain <code>[read_globals]</code> and <code>[]</code>, respectively. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d5ad640290f495475a16d142895084818b6c7a87" target="_blank" rel="noopener noreferrer">d5ad640290</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/12d45c23a5c93d54df18108630f591d4963bbbc8" target="_blank" rel="noopener noreferrer">12d45c23a5</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/09/08/">Fri, Sep 8</a></div>
+  <div class="entry-copy">Reified-generic checking now preserves the most informative type arguments across union receivers and looks through like-typed function signatures. This removes false missing-type-argument errors while restoring real errors for omitted reified arguments. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c3045c650d9aa9e7e597e31cb52b01396441cda0" target="_blank" rel="noopener noreferrer">c3045c650d</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ed0a6efdfd8983448cfa17b3bf962a8cd82c9b91" target="_blank" rel="noopener noreferrer">ed0a6efdfd</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/09/08/">Fri, Sep 8</a></div>
+  <div class="entry-copy">Implicit lazy-class-to-string notices for argument type hints now identify which argument and function triggered the conversion. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e912bbb1e06e90fb60164d882633e3300676feef" target="_blank" rel="noopener noreferrer">e912bbb1e0</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>8 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/09/04/">Mon, Sep 4</a></div>
+  <div class="entry-copy">Work begins on an opt-in strict-switch checker. Its first stage requires <code>default</code> for open-ended types and rejects a redundant <code>default</code> when the scrutinee has no possible values; broader literal and enum coverage is still being built. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ece08a97a1c634a3a0a079a4fd417ec071f8a09a" target="_blank" rel="noopener noreferrer">ece08a97a1</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/09/05/">Tue, Sep 5</a></div>
+  <div class="entry-copy">Experimental case types can now prove more class alternatives disjoint: unrelated classes and final classes may coexist, while ordinary interfaces remain potentially overlapping unless sealing information proves otherwise. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7c71509fa9e39a54b52768b48ca6321b0f00453f" target="_blank" rel="noopener noreferrer">7c71509fa9</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f87781d60036efe2d558405b4ac5274da3851ba9" target="_blank" rel="noopener noreferrer">f87781d600</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/dc9921602195991d56a9e824a02ea2a2ef157828" target="_blank" rel="noopener noreferrer">dc99216021</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/69ff482b7561e70fa9bf3b15b7c1df5e14d4e48f" target="_blank" rel="noopener noreferrer">69ff482b75</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/09/06/">Wed, Sep 6</a></div>
+  <div class="entry-copy">Opt-in strict switches now reject impossible case values and redundant defaults for <code>nothing</code>/<code>noreturn</code> scrutinees. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7497648c8cca5e04431a7227c9c3fe34e7e849b2" target="_blank" rel="noopener noreferrer">7497648c8c</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/09/06/">Wed, Sep 6</a></div>
+  <div class="entry-copy">Experimental case-type overlap checking now uses <code>require extends</code> constraints on interfaces and traits to reason about their possible implementations. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/21693db81f879528d2158240aafe68820694fb5b" target="_blank" rel="noopener noreferrer">21693db81f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/09/07/">Thu, Sep 7</a></div>
+  <div class="entry-copy">Opt-in strict switches now model <code>null</code>, nullable, <code>nonnull</code>, and negative types, diagnosing missing or repeated <code>case null</code> arms. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/87922666c49f2df61349fa358702c65736f47699" target="_blank" rel="noopener noreferrer">87922666c4</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/09/07/">Thu, Sep 7</a></div>
+  <div class="entry-copy">Parser-schema and <code>hackfmt</code> groundwork lands for a future <code>nameof C</code> expression, but the typechecker still rejects the syntax at this stage. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/55c68773ccf8702205bf57bdf8a0d529cd357a6c" target="_blank" rel="noopener noreferrer">55c68773cc</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/09/08/">Fri, Sep 8</a></div>
+  <div class="entry-copy">Opt-in strict switches now understand boolean scrutinees and can require both <code>true</code> and <code>false</code> arms. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1e3bf333a03126b2a11a25f60930b8faf0d1c61d" target="_blank" rel="noopener noreferrer">1e3bf333a0</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/09/08/">Fri, Sep 8</a></div>
+  <div class="entry-copy">Runtime groundwork for case types now represents primitive and object unions in type constraints, supports properties in repo mode, and keeps property overrides nominal. Case types are still an opt-in language feature at this point. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/32169a9ad6bd8deceea970a2463205b36657c462" target="_blank" rel="noopener noreferrer">32169a9ad6</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a18b5577b725513fa512f397873c03c6add5275c" target="_blank" rel="noopener noreferrer">a18b5577b7</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/808fb25912778d5ddf306529d162ca79ff552693" target="_blank" rel="noopener noreferrer">808fb25912</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ee67a837049d00060c0d3b0481db7c1cf483ba6d" target="_blank" rel="noopener noreferrer">ee67a83704</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/09/06/">Wed, Sep 6</a></div>
+  <div class="entry-copy"><code>hh --search</code> has been removed. IDE autocomplete and search no longer depend on <code>hh_server</code>&#x27;s former SQLite symbol index. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/edd2b799c5542fe5f58f8a14a4050884f53699dd" target="_blank" rel="noopener noreferrer">edd2b799c5</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/09/06/">Wed, Sep 6</a></div>
+  <div class="entry-copy">The typechecker now supplies the built-in <code>default</code> module through HHI. Projects must not declare <code>new module default {}</code> themselves; package diagnostics can now point to this built-in declaration. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/be4229a0c4d30fa01ee75f2f47343a201b9c1d92" target="_blank" rel="noopener noreferrer">be4229a0c4</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/09/08/">Fri, Sep 8</a></div>
+  <div class="entry-copy">Enum-class labels now use a native runtime datatype by default instead of opaque resources. Dumps identify <code>enum class label (#Name)</code>, equality compares label names, and relational comparisons throw <code>InvalidOperationException</code>; code that inspected labels as resources must migrate. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d044eba3a161791f4a7f6acb22b7ba7ea0649286" target="_blank" rel="noopener noreferrer">d044eba3a1</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/353425f2387a15e2982c10d51394f942760830be" target="_blank" rel="noopener noreferrer">353425f238</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ab69809ede17ae3d6fe270e410e0023512a6c611" target="_blank" rel="noopener noreferrer">ab69809ede</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

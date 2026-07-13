@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="9 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 45: Nov 3–Nov 9, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 45: Nov 3–Nov 9, 2025</h1>
+  <p class="post-meta">9 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/11/03/">Day</a><a href="/weekly/2025/W45/" aria-current="page">Week</a><a href="/monthly/2025/11/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2025/W44/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2025/W46/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>5 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/11/03/">Mon, Nov 3</a></div>
+  <div class="entry-copy">Declared-type hovers now omit like types (<code>~T</code>) introduced by pessimization. Hovering a call therefore shows the API&#x27;s source-level declaration instead of the type checker&#x27;s sound-dynamic implementation detail. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d1ed3e8f71eb64e925aced4a0a8f8ca5ce192033" target="_blank" rel="noopener noreferrer">d1ed3e8f71</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/11/04/">Tue, Nov 4</a></div>
+  <div class="entry-copy">A new <code>hh --package-lint FILE</code> command finds references to definitions in a file, providing a targeted way to estimate the impact of moving that file across package boundaries. Its initial JSON response includes each definition and its references. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/572e5972c888b149a64c64b6ad83af0824d7e625" target="_blank" rel="noopener noreferrer">572e5972c8</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/11/05/">Wed, Nov 5</a></div>
+  <div class="entry-copy">Higher-rank type-parameter escape diagnostics now explain that a generic parameter may be escaping its defining scope, instead of asserting that it definitely did. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/801396cf42716db1f51169ba275368b9b4771a1f" target="_blank" rel="noopener noreferrer">801396cf42</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/11/06/">Thu, Nov 6</a></div>
+  <div class="entry-copy">Custom-error file patterns now support a <code>**</code> globstar suffix, which matches zero or more path segments after a fixed prefix, and optional path segments. This makes a single custom-error rule usable across nested or partially optional directory layouts. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/de62e41f780b67c18c7db38dedceec797dc0f464" target="_blank" rel="noopener noreferrer">de62e41f78</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/11/06/">Thu, Nov 6</a></div>
+  <div class="entry-copy"><code>get_executable_lines()</code> no longer repeatedly replaces its line-table cache while walking bytecode offsets, fixing a potentially large per-request memory leak. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/80fec6c41398aa7dfb3f3492157795e743083df4" target="_blank" rel="noopener noreferrer">80fec6c413</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/11/05/">Wed, Nov 5</a></div>
+  <div class="entry-copy"><code>DOMElement::getAttribute()</code> is now declared to return <code>string</code> instead of an untyped result, matching its runtime behavior. Code that null-checks the result or relies on implicit conversion from it may now produce type errors. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/bc373ee080cade0d9ca4958793c2314e8632c541" target="_blank" rel="noopener noreferrer">bc373ee080</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/11/05/">Wed, Nov 5</a></div>
+  <div class="entry-copy">Expression trees now accept late-static-bound method calls and class constants written with <code>static::</code>; <code>self::</code>, <code>parent::</code>, and dynamically selected classes remain unsupported. Expression trees are still an ongoing-release feature. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5699d743ec357cda64e0de16ed66f78772b468ad" target="_blank" rel="noopener noreferrer">5699d743ec</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/11/07/">Fri, Nov 7</a></div>
+  <div class="entry-copy">First-class polymorphism now rejects higher-rank type variables that escape their defining scope, closing a case previously missed by the rank check. This applies to the still-experimental polymorphic-function-hint work. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/520dda036cc7b2aed47838bf1ed802322d02a744" target="_blank" rel="noopener noreferrer">520dda036c</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/11/09/">Sun, Nov 9</a></div>
+  <div class="entry-copy">Custom-error v2 rules can now match the expression-tree &quot;unsupported operator&quot; diagnostic, including the affected DSL class and operator member. Expression trees remain an ongoing-release feature. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/da440e2b51730b037fa42484650a9628ae6ceeae" target="_blank" rel="noopener noreferrer">da440e2b51</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

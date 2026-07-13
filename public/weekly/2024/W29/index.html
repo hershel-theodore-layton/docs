@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="12 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 29: Jul 15–Jul 21, 2024 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 29: Jul 15–Jul 21, 2024</h1>
+  <p class="post-meta">12 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/07/15/">Day</a><a href="/weekly/2024/W29/" aria-current="page">Week</a><a href="/monthly/2024/07/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2024/W28/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2024/W30/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>6 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/07/15/">Mon, Jul 15</a></div>
+  <div class="entry-copy">Calls with explicit or empty type arguments now associate correctly inside subtraction expressions. For example, <code>10 - f&lt;int&gt;(1) - 1</code> is evaluated left-to-right instead of being misparsed into an expression that evaluates to 10. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7d30230a5b2b4f492d2e110d0a97505efac7819a" target="_blank" rel="noopener noreferrer">7d30230a5b</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/07/16/">Tue, Jul 16</a></div>
+  <div class="entry-copy">A method may use <code>&lt;&lt;__Overlapping(&#x27;T1&#x27;, &#x27;T2&#x27;, ...)&gt;&gt;</code> to tell the disjointness lint which class- and method-level generic parameters are intended to overlap. This lets the lint identify calls whose instantiated types make comparisons or membership checks constant without adding API-shaping <code>where</code> constraints. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c94a1e968d30a087283f482be1d2823a1e8addbe" target="_blank" rel="noopener noreferrer">c94a1e968d</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/07/16/">Tue, Jul 16</a></div>
+  <div class="entry-copy">Source-analysis tools can query a file&#x27;s declared module through the pure <code>HH\FileDecls::getFileModuleMembership()</code> and <code>HH\Facts\path_to_module_membership()</code> APIs when module-membership facts are collected and available. The latter accepts a source path and returns the module name, if any. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ad00e885105b87d638102ba098d754937e55cefb" target="_blank" rel="noopener noreferrer">ad00e88510</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/07/17/">Wed, Jul 17</a></div>
+  <div class="entry-copy">Standard collection declarations now annotate <code>contains()</code>, <code>containsKey()</code>, and <code>linearSearch()</code> with <code>__Overlapping</code>. <code>hh --lint</code> can consequently report calls whose inferred argument and element/key types are disjoint and whose result is always the same. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ac1433f124917f312a63b23d89ebb22d7866852c" target="_blank" rel="noopener noreferrer">ac1433f124</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/07/17/">Wed, Jul 17</a></div>
+  <div class="entry-copy">Find-references output from the default parser now uses source XHP spelling such as <code>:xhp:foo-element</code> instead of the internal mangled spelling <code>xhp\foo-element</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c6db057c8eef2855552e94791696869e8cde4364" target="_blank" rel="noopener noreferrer">c6db057c8e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/07/19/">Fri, Jul 19</a></div>
+  <div class="entry-copy"><code>hackfmt --linttool</code> now emits JSON lint replacements for files named on the command line or supplied through an <code>@pathsfile</code>. <code>--linttool-severity</code> controls the emitted severity. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/54fd999ce3275d1dd9d513d0b1f4393926d89504" target="_blank" rel="noopener noreferrer">54fd999ce3</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8fdcb93335591ff5692189f06c5a876f78fdac82" target="_blank" rel="noopener noreferrer">8fdcb93335</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>6 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/07/15/">Mon, Jul 15</a></div>
+  <div class="entry-copy">Package v2 now enforces package access for reified generic arguments to functions and classes. Erased generic arguments remain exempt because their types do not survive at runtime. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/92ed59910e0b966bd942b72429bcb0008160d540" target="_blank" rel="noopener noreferrer">92ed59910e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/07/17/">Wed, Jul 17</a></div>
+  <div class="entry-copy">Opt-in extended type-error explanations can now describe nullable-type decomposition and point to the declarations of classes, type aliases, and newtypes involved in an error. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b4eefe87a3231ceb7b24b1e2be2e2f58be07e1f9" target="_blank" rel="noopener noreferrer">b4eefe87a3</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/bad36007e003126837f385e2204e6f8c5bf0bcb0" target="_blank" rel="noopener noreferrer">bad36007e0</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/07/18/">Thu, Jul 18</a></div>
+  <div class="entry-copy">With <code>.hhconfig</code> option <code>enable_abstract_method_optional_parameters=true</code>, interface and abstract-method declarations may mark a parameter <code>optional</code> without supplying a default. Implementations must provide a default value; <code>optional</code> is rejected on concrete methods and on <code>inout</code> or variadic parameters. Reflection reports these parameters as optional. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/64be82990adf07a0f85b1c6a0b38c560fdccc3b9" target="_blank" rel="noopener noreferrer">64be82990a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/07/18/">Thu, Jul 18</a></div>
+  <div class="entry-copy">Runtime optimization of experimental case types no longer crashes when resolving an alias that combines an enum with another member type. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9971c4deb31d46de8a6cbbfe28522e8486c87391" target="_blank" rel="noopener noreferrer">9971c4deb3</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/07/19/">Fri, Jul 19</a></div>
+  <div class="entry-copy">Package v2 no longer reports package-access errors for type references nested inside shapes, <code>vec</code>, <code>dict</code>, or function types, nor for attributes, interfaces, HHIs, and same-file references that do not require a runtime package check. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/319dcfe9a31433a877d5d80b2f6f1b0009910ee1" target="_blank" rel="noopener noreferrer">319dcfe9a3</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5011d0f10de75371ba58aea5ad22b698cccc13db" target="_blank" rel="noopener noreferrer">5011d0f10d</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/07/19/">Fri, Jul 19</a></div>
+  <div class="entry-copy">The configuration switch for experimental class-level <code>where</code> clauses has been removed. The syntax itself is removed a few days later; projects experimenting with it should migrate toward type refinements. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/361365bd932b6d8361ba8ce69bde349fd58351eb" target="_blank" rel="noopener noreferrer">361365bd93</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

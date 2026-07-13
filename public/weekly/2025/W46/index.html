@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="12 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 46: Nov 10–Nov 16, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 46: Nov 10–Nov 16, 2025</h1>
+  <p class="post-meta">12 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/11/10/">Day</a><a href="/weekly/2025/W46/" aria-current="page">Week</a><a href="/monthly/2025/11/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2025/W45/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2025/W47/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>6 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/11/10/">Mon, Nov 10</a></div>
+  <div class="entry-copy">Awaiting a static method call or class-constant access inside a pipe no longer leaves an unreplaced <code>$$</code> for the emitter. Expressions such as <code>$value |&gt; await $$::method()</code> now compile correctly. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/533fc364b1e22f293a8a7f44bccd465a57817d8f" target="_blank" rel="noopener noreferrer">533fc364b1</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/11/11/">Tue, Nov 11</a></div>
+  <div class="entry-copy">Function pointers to <code>&lt;&lt;__Native&gt;&gt;</code> functions using <code>&lt;&lt;__TrivialHHVMBuiltinWrapper&gt;&gt;</code> now resolve to the wrapper&#x27;s target in the interpreter, matching ordinary calls and JIT execution. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/594c8fb6276d447b216e6ee3aff31e772c43241e" target="_blank" rel="noopener noreferrer">594c8fb627</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/11/11/">Tue, Nov 11</a></div>
+  <div class="entry-copy">The Hack client adds <code>hh --log-errors</code>, an asynchronous mode that type-checks a supplied file list and logs its diagnostics after returning immediately. <code>--log-to-file PATH</code> writes those diagnostics to a file, and the mode honors the usual error and warning filters. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/78608b1f95658e48c2543d1a1a1aafebbe20860b" target="_blank" rel="noopener noreferrer">78608b1f95</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/11/14/">Fri, Nov 14</a></div>
+  <div class="entry-copy">Custom-error configuration now validates repeated bindings across all supported pattern kinds, preventing valid rules from being rejected—or incompatible bindings from being accepted—when they use newer pattern types. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/44ec7ad20cf350491a5b598f18d8da5a2a167c9e" target="_blank" rel="noopener noreferrer">44ec7ad20c</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/11/14/">Fri, Nov 14</a></div>
+  <div class="entry-copy"><code>Vec\map_with_key_async()</code> no longer constrains input keys to <code>arraykey</code>; it now accepts any <code>KeyedTraversable&lt;Tk, Tv&gt;</code>. The callback coeffect remains <code>[ctx $value_func]</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/171f7923facf66605a01bb4c99c73ffde179a41d" target="_blank" rel="noopener noreferrer">171f7923fa</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/11/14/">Fri, Nov 14</a></div>
+  <div class="entry-copy">HHVM&#x27;s unit cache now records a changed repository-options hash even when recompilation produces identical bytecode. Updating <code>.hhvmconfig.hdf</code> or <code>PACKAGES.toml</code> therefore no longer makes unchanged files recompile on every request. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/506ac2d22c268e72b72a5351c0d6373b60a6a4e5" target="_blank" rel="noopener noreferrer">506ac2d22c</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Security</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/11/12/">Wed, Nov 12</a></div>
+  <div class="entry-copy">Package boundary checks now cover global constants. Accessing a constant from another package without a permitted dependency produces Typing[4472], closing a gap in package access enforcement. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/fcd7b5c7716076d1ff776947a54d5fdc99bfaa6f" target="_blank" rel="noopener noreferrer">fcd7b5c771</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/11/12/">Wed, Nov 12</a></div>
+  <div class="entry-copy"><code>hh --package-lint FILE</code> now uses naming and dependency tables instead of fully type-checking reference files. Its JSON output changes from per-definition reference records to a simple array of absolute paths for files that may be affected by moving the input file. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/648d385bc7336f016eb974ed02e7954d60a2d9fa" target="_blank" rel="noopener noreferrer">648d385bc7</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>4 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/11/12/">Wed, Nov 12</a></div>
+  <div class="entry-copy">The ongoing-release <code>sealed_methods</code> feature adds method-level <code>&lt;&lt;__Sealed(...)&gt;&gt;</code>. Its allowlist restricts which classes or traits may directly override a method; constructors, private methods, and interface methods cannot use the attribute. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/83a0b8478c1b29679492af43b9587e958bbce66f" target="_blank" rel="noopener noreferrer">83a0b8478c</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/11/12/">Wed, Nov 12</a></div>
+  <div class="entry-copy">The new unstable <code>xhp_type_constants</code> feature permits type constants such as <code>A::T</code> and <code>this::TData</code> in XHP attribute declarations. Runtime XHP metadata currently represents these attributes as <code>mixed</code>, so the feature still requires <code>__EnableUnstableFeatures</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/acca24cbe13b7487c3131cdef4c272e49825bea9" target="_blank" rel="noopener noreferrer">acca24cbe1</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/11/13/">Thu, Nov 13</a></div>
+  <div class="entry-copy">Preview readonly checking now treats <code>$condition ?: $fallback</code> as readonly when the returned left-hand value or fallback is readonly. Mutating or returning the result in a mutable position can therefore reveal errors that the previous analysis missed. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b2a2b3ea0f218dbbf75e8c510e8a3ee0b825fd5f" target="_blank" rel="noopener noreferrer">b2a2b3ea0f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/11/13/">Thu, Nov 13</a></div>
+  <div class="entry-copy">Under the experimental dynamic-assumptions mode (<code>everything_sdt=false</code>), indexing an unknown field of an open shape refined from <code>dynamic</code> no longer produces a false error after <code>Shapes::keyExists()</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9cef9e19bf41bcf4bb2eb5dd3ef5f4f9db5f003c" target="_blank" rel="noopener noreferrer">9cef9e19bf</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="9 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 36: Sep 1–Sep 7, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 36: Sep 1–Sep 7, 2025</h1>
+  <p class="post-meta">9 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/09/01/">Day</a><a href="/weekly/2025/W36/" aria-current="page">Week</a><a href="/monthly/2025/09/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2025/W35/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2025/W37/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Breaking Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/09/01/">Mon, Sep 1</a></div>
+  <div class="entry-copy">Objprof now visits each reachable object or array value only once per root, preventing exponentially slow heap scans when a value is reachable through many paths. As a consequence, <code>objprof_get_paths()</code> reports one representative path rather than attempting to enumerate every path to the same value. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6f2a571385eeee757d857e806ec55a6248d9d758" target="_blank" rel="noopener noreferrer">6f2a571385</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/09/03/">Wed, Sep 3</a></div>
+  <div class="entry-copy">Constraint-based array-index inference is now enabled by default through <code>constraint_array_index=true</code>. This improves inference when the container or key is generic, but can change accepted programs and diagnostics—for example, some specialized index errors become ordinary Typing[4110] subtype errors. Projects can temporarily set the option to <code>false</code> while migrating. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/cb6c79638611e151bd70a52dc776a7ec022134ca" target="_blank" rel="noopener noreferrer">cb6c796386</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/09/04/">Thu, Sep 4</a></div>
+  <div class="entry-copy">The optional <code>HH\ExtDeclSignature</code> shape field <code>&#x27;cross_package&#x27;</code> has been renamed to <code>&#x27;require_package&#x27;</code>, reflecting the replacement of <code>&lt;&lt;__CrossPackage&gt;&gt;</code> with <code>&lt;&lt;__RequirePackage&gt;&gt;</code>. Tools consuming the ExtDecl API must read the new field name. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5b56df569703bd766440a52c78fc4cc0b19829e3" target="_blank" rel="noopener noreferrer">5b56df5697</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Highlights</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/09/02/">Tue, Sep 2</a></div>
+  <div class="entry-copy">A reified generic marked <code>&lt;&lt;__Newable&gt;&gt;</code> may now make a static call such as <code>T::f()</code> even when the method is abstract on <code>T</code>&#x27;s upper bound. Newability proves that the runtime class is concrete; the called method&#x27;s ordinary parameter, return, and coeffect checks still apply. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/fe174ae69f1ed8418d5b3811b0f763eb5133f88a" target="_blank" rel="noopener noreferrer">fe174ae69f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/09/02/">Tue, Sep 2</a></div>
+  <div class="entry-copy"><code>CUSTOM_ERRORS.json</code> rules can now match missing-member errors by static versus instance access, member kind, class name, member name, and visibility. This covers methods, properties, class constants, and type constants. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b7d5fc5c010ae49ec2d1732501c2f1e83533c8fc" target="_blank" rel="noopener noreferrer">b7d5fc5c01</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/09/05/">Fri, Sep 5</a></div>
+  <div class="entry-copy">Facts/autoload configuration now supports the Eden-compatible <code>Autoload.IncludePaths</code>, <code>Autoload.ExcludePaths</code>, and <code>Autoload.FileExtensions</code> lists, plus <code>Autoload.UseEden</code>. When the path and extension lists are present, HHVM also derives an equivalent Watchman query for backward compatibility; these lists take precedence over <code>Autoload.Query</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f71b97f6d9a145ad01b65c9887c35e717a3457fd" target="_blank" rel="noopener noreferrer">f71b97f6d9</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/09/02/">Tue, Sep 2</a></div>
+  <div class="entry-copy">Packages v2&#x27;s unstable <code>&lt;&lt;__RequirePackage(&#x27;foo&#x27;)&gt;&gt;</code> attribute is now enforced at runtime when an active deployment is configured. Entering an annotated function or method fatals if the required package is not deployed; without an active deployment, the check is not enforced. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d19f80681a9db111169aaa9dda33d6537ed91fc4" target="_blank" rel="noopener noreferrer">d19f80681a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/09/02/">Tue, Sep 2</a></div>
+  <div class="entry-copy">A <code>PACKAGES.toml</code> include path may belong to only one package. Duplicate <code>include_paths</code> now produce a configuration error rather than making file-to-package assignment depend on package order. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1dec51cc163873454ee0034b91dc731c97fec785" target="_blank" rel="noopener noreferrer">1dec51cc16</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Security</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/09/05/">Fri, Sep 5</a></div>
+  <div class="entry-copy">Hack&#x27;s <code>tracing-subscriber</code> dependency has been updated from 0.3.19 to 0.3.20, escaping ANSI control characters in logged untrusted input and addressing RUSTSEC-2025-0055. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/59180f0c9a24bdb44b4acf7cbdae07293e81c78b" target="_blank" rel="noopener noreferrer">59180f0c9a</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

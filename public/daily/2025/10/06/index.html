@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="3 noteworthy changes recorded on this day.">
+  <title>Monday, October 6, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Monday, October 6, 2025</h1>
+  <p class="post-meta">3 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/10/06/" aria-current="page">Day</a><a href="/weekly/2025/W41/">Week</a><a href="/monthly/2025/10/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2025/10/03/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2025/10/07/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">Sound-dynamic typing for integer operations is more precise. Binary <code>&amp;</code>, <code>|</code>, and <code>^</code> return <code>~int</code> only when both operands may hide strings; <code>%</code>, <code>&lt;&lt;</code>, and <code>&gt;&gt;</code> accept like/dynamic integer operands but return <code>int</code>; unary <code>~</code> over a like/dynamic integer returns <code>~int</code>. Invalid operands now receive Typing[4110]. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8b0a654ad28d782b1770394a80a3ed4ddd2b333e" target="_blank" rel="noopener noreferrer">8b0a654ad2</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/cb891dba1b6a78a2b7e289fde4588b44aa215095" target="_blank" rel="noopener noreferrer">cb891dba1b</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8ad57d6c36d26370d0c4370513324ae3019295b2" target="_blank" rel="noopener noreferrer">8ad57d6c36</a></div></li><li class="change-entry"><div class="entry-copy"><code>Eval.WarnOnBitwiseOpInvalidType</code> provides a migration path away from runtime bitwise operations on strings. The default <code>0</code> preserves them, <code>1</code> raises a warning, and <code>2</code> raises an error. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0d19dfbb1330bded2b1ed6b792031ff060c84f8d" target="_blank" rel="noopener noreferrer">0d19dfbb13</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">Unstable named parameters are now parsed in lambdas and function-type hints, compared by name during function subtyping, and supported after one splatted argument. Diagnostics distinguish missing <code>named</code> markers and multiple splats, with quickfixes and narrower source positions. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0dca1d44cae9ce89741833831510f7e9fa8891cb" target="_blank" rel="noopener noreferrer">0dca1d44ca</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f4ef532fa897391be17ce5ff9b53e4043b4bd5b6" target="_blank" rel="noopener noreferrer">f4ef532fa8</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/363a3b9bf453db7cd0518d189dc95013da2348a0" target="_blank" rel="noopener noreferrer">363a3b9bf4</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/dc806083d88daaec32382b69d640811ef7da5f5b" target="_blank" rel="noopener noreferrer">dc806083d8</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f3fdea9f10a67221a5b2a8a1b6ca83ca63fd5373" target="_blank" rel="noopener noreferrer">f3fdea9f10</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e6e42516c3c97a09afb297bcfecbca592ec8ed62" target="_blank" rel="noopener noreferrer">e6e42516c3</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

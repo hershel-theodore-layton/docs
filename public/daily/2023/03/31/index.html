@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="8 noteworthy changes recorded on this day.">
+  <title>Friday, March 31, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Friday, March 31, 2023</h1>
+  <p class="post-meta">8 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/03/31/" aria-current="page">Day</a><a href="/weekly/2023/W13/">Week</a><a href="/monthly/2023/03/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2023/03/30/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2023/04/02/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">HSL adds <code>Vec\map_with_key_async()</code>, which invokes an async callback with each original key and value in parallel and returns an <code>Awaitable&lt;vec&lt;_&gt;&gt;</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c2341d38b1c27f1da5871b30019179b03e0f98c9" target="_blank" rel="noopener noreferrer">c2341d38b1</a></div></li><li class="change-entry"><div class="entry-copy">Nested collection constructors with explicit types now keep precise inner types—for example, <code>vec&lt;vec&lt;int&gt;&gt;[vec[2, 3]]</code> remains <code>vec&lt;vec&lt;int&gt;&gt;</code> rather than acquiring an unnecessary like type. Mutable collection classes are now always treated as pessimised built-ins; the configuration flag no longer disables that behavior. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5ad92d1c7a515f040bbed22e147ebb779c7b5575" target="_blank" rel="noopener noreferrer">5ad92d1c7a</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/103067848a9e4be3ba1755fb40fa4a4de7c2e0a8" target="_blank" rel="noopener noreferrer">103067848a</a></div></li><li class="change-entry"><div class="entry-copy">Lint 5650 recommends <code>async ... ==&gt; await ...</code> when a synchronous lambda directly returns an <code>Awaitable</code>, improving stack traces. Lint 5651 warns about lambdas inferred as <code>Awaitable&lt;Awaitable&lt;_&gt;&gt;</code>, where an inner <code>await</code> was likely omitted. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/328976bc0af15e8e08b2f3ffe8018f5cf1def8e3" target="_blank" rel="noopener noreferrer">328976bc0a</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/642ca62d9084e20135751032436476f842d7283a" target="_blank" rel="noopener noreferrer">642ca62d90</a></div></li><li class="change-entry"><div class="entry-copy">The experimental <code>package NAME</code> expression now has type <code>bool</code>, and an undefined package name produces a naming error based on <code>PACKAGES.toml</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/480031f13c9a3d7706496110d9cd25de169a3a58" target="_blank" rel="noopener noreferrer">480031f13c</a></div></li><li class="change-entry"><div class="entry-copy">Capability checks are now skipped for virtualized expression-tree calls, which are typechecked but never executed. Pure code can therefore construct DSL expressions whose virtual methods have <code>[defaults]</code> without receiving a false call-capability error. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9e6d3f539bb1b0c74286f0749fc72be264897f5d" target="_blank" rel="noopener noreferrer">9e6d3f539b</a></div></li><li class="change-entry"><div class="entry-copy">Local-variable completion items now display the variable&#x27;s inferred type instead of the generic label “local variable.” <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4f8762d58175a5cc9c03fd99ca57db3b16065c9d" target="_blank" rel="noopener noreferrer">4f8762d581</a></div></li><li class="change-entry"><div class="entry-copy"><code>HH\Lib\Async\Poll</code> and <code>BasePoll</code> no longer recurse through long already-satisfied awaitable chains, avoiding stack overflows in large polling workloads. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2033efe3049156e17db788f94ffd0fa7409451a7" target="_blank" rel="noopener noreferrer">2033efe304</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy">Sound-dynamic function-call checking now evaluates each argument once instead of exploring exponentially many static/dynamic combinations. Some previously accepted generic calls can now require an explicit type argument when inference commits to a like type too early. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9f106c6329ea219beea2c0c6fe86fcae17f9dd9f" target="_blank" rel="noopener noreferrer">9f106c6329</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

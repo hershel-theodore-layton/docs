@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="8 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 34: Aug 19–Aug 25, 2024 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 34: Aug 19–Aug 25, 2024</h1>
+  <p class="post-meta">8 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/08/19/">Day</a><a href="/weekly/2024/W34/" aria-current="page">Week</a><a href="/monthly/2024/08/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2024/W33/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2024/W35/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/08/19/">Mon, Aug 19</a></div>
+  <div class="entry-copy"><code>ExtDeclMethodParam</code> now exposes an optional <code>&#x27;is_optional&#x27; =&gt; bool</code> field, distinguishing the <code>optional</code> keyword on abstract and interface method parameters from a concrete default expression. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4443d834bea3ddea3644a5df3cdc39565f853af6" target="_blank" rel="noopener noreferrer">4443d834be</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/08/20/">Tue, Aug 20</a></div>
+  <div class="entry-copy">Nested debugger expression evaluation now preserves the outer evaluation&#x27;s stdout hook, so output produced after an inner breakpoint evaluation still reaches the debugger. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/62e800fae9048532c11c25d932b1da18faea78cf" target="_blank" rel="noopener noreferrer">62e800fae9</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>4 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/08/19/">Mon, Aug 19</a></div>
+  <div class="entry-copy">Features configured as OngoingRelease are now enabled by the typechecker without a file-level unstable-feature attribute, matching their existing runtime behavior. Per-feature <code>.hhconfig</code> status may be stricter than HHVM&#x27;s status. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c23cdade867931ff220612c09316cd456427803d" target="_blank" rel="noopener noreferrer">c23cdade86</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d00bf7b468c677d6d4b942d8fc89b0271c44082d" target="_blank" rel="noopener noreferrer">d00bf7b468</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/08/20/">Tue, Aug 20</a></div>
+  <div class="entry-copy">When <code>.hhconfig</code> provides an <code>experimental_features</code> list, a file-level <code>__EnableUnstableFeatures</code> attribute can now enable only features named in that list; omitted features are rejected. Projects without the list continue to treat all known experimental features as OngoingRelease. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/35add40d1cf399f48d7e4dde0e9573fb3a89d849" target="_blank" rel="noopener noreferrer">35add40d1c</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/08/20/">Tue, Aug 20</a></div>
+  <div class="entry-copy"><code>await_in_splice</code> is now OngoingRelease in HHVM and no longer requires a runtime file-level opt-in. The typechecker continues to use the status configured in <code>.hhconfig</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/84f088b7a994399b36a1e96cfa2a943ef9ff1503" target="_blank" rel="noopener noreferrer">84f088b7a9</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/08/20/">Tue, Aug 20</a></div>
+  <div class="entry-copy">Expression-tree lambdas can now declare <code>optional</code> parameters; DSL visitors receive their names and default expressions through <code>visitOptionalParameter()</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/56f84a9ef87cd51b04cd7516bd9b85e15baf4fae" target="_blank" rel="noopener noreferrer">56f84a9ef8</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Security</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/08/21/">Wed, Aug 21</a></div>
+  <div class="entry-copy"><code>meth_caller(C::class, &#x27;method&#x27;)</code> no longer treats a <code>this</code> return type as exact <code>C</code>. The callable may receive a subclass instance, so its result is now conservatively typed as <code>C</code>, closing an unsound narrowing path. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0f0125fa204e8e67ff04b68406e8aab9dc49cb71" target="_blank" rel="noopener noreferrer">0f0125fa20</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/08/23/">Fri, Aug 23</a></div>
+  <div class="entry-copy"><code>self::class</code>, <code>static::class</code>, and <code>parent::class</code> are no longer valid shape field names. Use an explicit string or <code>nameof</code>-based key instead. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3e77c7b213d75b5ae858f2967f7bd384ea7ef173" target="_blank" rel="noopener noreferrer">3e77c7b213</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

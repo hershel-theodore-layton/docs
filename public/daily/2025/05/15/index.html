@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="4 noteworthy changes recorded on this day.">
+  <title>Thursday, May 15, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Thursday, May 15, 2025</h1>
+  <p class="post-meta">4 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/05/15/" aria-current="page">Day</a><a href="/weekly/2025/W20/">Week</a><a href="/monthly/2025/05/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2025/05/14/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2025/05/16/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">LSP document-symbol ranges for functions and classes now begin on the declaration name instead of on preceding attributes, so IDE sticky-scroll headers show the symbol users are navigating. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/535d3fdec260a55787cce4133a72ac57b85407b1" target="_blank" rel="noopener noreferrer">535d3fdec2</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy"><code>class_parents()</code> and <code>class_implements()</code> now return class-pointer values instead of class-name strings. The result keys remain class names; code that needs string values should convert the class pointers explicitly. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/db1c9385fc08c6432316a632b82746d2aea7bdb2" target="_blank" rel="noopener noreferrer">db1c9385fc</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">Experimental checked unsafe casts have moved from the compile-time <code>Hack.Lang.CheckedUnsafeCast</code> option to the runtime <code>Eval.CheckedUnsafeCast</code> option. HackC now always emits the check instruction and HHVM decides whether to enforce it, so deployments testing the feature must rename their configuration. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/93a6c2ac23fbbfe2dbe3cdd2284f959cfd59620c" target="_blank" rel="noopener noreferrer">93a6c2ac23</a></div></li><li class="change-entry"><div class="entry-copy">An early <code>edenfs_file_watcher_enabled</code> mode can initialize an EdenFS watcher, but notifications still delegate to Watchman and the implementation is explicitly not production-ready. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4ca8b78848d77ffe38fad0f19a8868295dab91e9" target="_blank" rel="noopener noreferrer">4ca8b78848</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6abf46d85d2197b719b135f8a5543b94762e5248" target="_blank" rel="noopener noreferrer">6abf46d85d</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6e0807fb23a02c3467efa77086dd201d831942ed" target="_blank" rel="noopener noreferrer">6e0807fb23</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

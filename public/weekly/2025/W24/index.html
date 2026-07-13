@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="12 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 24: Jun 9–Jun 15, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 24: Jun 9–Jun 15, 2025</h1>
+  <p class="post-meta">12 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/06/10/">Day</a><a href="/weekly/2025/W24/" aria-current="page">Week</a><a href="/monthly/2025/06/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2025/W23/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2025/W25/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>7 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/06/10/">Tue, Jun 10</a></div>
+  <div class="entry-copy">Distributed <code>hh</code> checks avoid repeatedly merging large streamed error sets and instead filter the final result. This substantially reduces completion time on warning-heavy repositories. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/708f72be896848c1c91e1bdd2762bd18afa759e0" target="_blank" rel="noopener noreferrer">708f72be89</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/06/10/">Tue, Jun 10</a></div>
+  <div class="entry-copy">Legacy non-Hack notebook cells no longer lose their first character during conversion back from Hack. Wrapper removal now recognizes the complete comment form rather than blindly trimming the cell. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/be786e4c21ed751bd6dc3998707ac34974403b39" target="_blank" rel="noopener noreferrer">be786e4c21</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/06/10/">Tue, Jun 10</a></div>
+  <div class="entry-copy">A new <code>print_debug_display(mixed $value, bool $ret = false): mixed</code> built-in formats values with the debugger serializer and honors objects&#x27; <code>__toDebugDisplay()</code> methods. It has no explicit capability list and therefore uses the default capability set. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3ff25b1dfcef854c7455374140b7ebe60221d933" target="_blank" rel="noopener noreferrer">3ff25b1dfc</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/06/11/">Wed, Jun 11</a></div>
+  <div class="entry-copy"><code>HH\Lib\Async\LowPri&lt;void&gt;</code> now works: <code>run()</code> no longer assumes that the awaited result is nonnull. Its capability remains <code>[ctx $action, write_props]</code>, so callers still need the action&#x27;s capabilities plus property-write access. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/12fc967b7d0593f33985b5d4615633fccc4fcfc8" target="_blank" rel="noopener noreferrer">12fc967b7d</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/06/12/">Thu, Jun 12</a></div>
+  <div class="entry-copy">XHP attributes declared as <code>class&lt;C&gt;</code> now compile and receive the same runtime attribute validation treatment as <code>classname&lt;C&gt;</code> attributes. This emitter fix does not introduce a new general subtype relationship between the two types. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/72056a5eefca43743f2428e9bb04c2c7c8d5a288" target="_blank" rel="noopener noreferrer">72056a5eef</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/06/12/">Thu, Jun 12</a></div>
+  <div class="entry-copy"><code>hphpd -m notebook</code> adds a continuation-free notebook mode in which each evaluation streams its output, allowing multiline commands without debugger continuation prompts leaking into notebook output. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/cbd1d4510de195a91b4f272f09f85596163561c9" target="_blank" rel="noopener noreferrer">cbd1d4510d</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/06/14/">Sat, Jun 14</a></div>
+  <div class="entry-copy">APC and HHVM-internal serialization now preserve class pointers as lazy-class <code>l:</code> values instead of turning them into strings, including when nested in <code>Pair</code>, <code>Map</code>, or <code>dict</code> values. Ordinary user-facing <code>serialize()</code> remains string-based by default. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/159314f561676cc405c1eecd5650aacfe8b6cc1e" target="_blank" rel="noopener noreferrer">159314f561</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/06/10/">Tue, Jun 10</a></div>
+  <div class="entry-copy">The JSON-valued <code>.hhconfig</code> setting <code>class_pointer_levels</code> has been replaced by six default-false booleans: <code>class_pointer_ban_classname_new</code>, <code>class_pointer_ban_classname_type_structure</code>, <code>class_pointer_ban_classname_static_prop</code>, <code>class_pointer_ban_classname_static_meth</code>, <code>class_pointer_ban_classname_class_const</code>, and <code>class_pointer_ban_class_array_key</code>. Literal <code>C::class</code> values in string or array-key positions are now errors rather than configurable warnings; use <code>nameof C</code> or <code>HH\class_to_classname()</code> when a name is intended. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/af60977aab1b0069ffc67f424146d78c9f0d80f7" target="_blank" rel="noopener noreferrer">af60977aab</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>4 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/06/10/">Tue, Jun 10</a></div>
+  <div class="entry-copy">Expression-tree operation typing now passes the left or unary operand through <code>Dsl::operationType()</code> before dispatching operator and implicit-boolean methods. This lets a DSL map virtual values such as <code>null</code> onto an object that defines the operation. DSLs using the unstable feature must add the static method; a pure identity implementation should declare <code>[]</code> so it does not add a caller capability requirement. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/77f1b1105e08b135a1664be6130124928559ae7d" target="_blank" rel="noopener noreferrer">77f1b1105e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/06/10/">Tue, Jun 10</a></div>
+  <div class="entry-copy">With unstable case-type where clauses, a direct or indirect reference from a case type&#x27;s own where clause is now rejected with Typing[4485]. The invalid clause is excluded from checking to prevent infinite recursion in constraint solving and subtyping. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f696b2fb3070a0c992c5618974416ae83d71c3f2" target="_blank" rel="noopener noreferrer">f696b2fb30</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/06/11/">Wed, Jun 11</a></div>
+  <div class="entry-copy">Preview SimpliHack expressions can request a class&#x27;s constructor, instance and static methods, or instance and static fields through <code>HH\SimpliHack\constructor()</code>, <code>methods()</code>, <code>static_methods()</code>, <code>fields()</code>, and <code>static_fields()</code>. Each takes <code>classname&lt;mixed&gt;</code>, returns <code>string</code>, and requires the <code>[HH\SimpliHack]</code> capability. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/277597ae535ef5f00b18e7196ae9ee2ebe790a28" target="_blank" rel="noopener noreferrer">277597ae53</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/06/13/">Fri, Jun 13</a></div>
+  <div class="entry-copy">Open tuples and type splats have moved from Preview to OngoingRelease. This staged rollout enables them without a file-level unstable-feature opt-in, including arity-polymorphic forms such as <code>TArgs as (mixed...)</code> and <code>...TArgs</code>, but they are not yet fully released. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4d0ce07626e745e5a2cdce15d4fcae8bf8e08414" target="_blank" rel="noopener noreferrer">4d0ce07626</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

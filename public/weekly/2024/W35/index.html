@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="13 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 35: Aug 26–Sep 1, 2024 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 35: Aug 26–Sep 1, 2024</h1>
+  <p class="post-meta">13 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/08/26/">Day</a><a href="/weekly/2024/W35/" aria-current="page">Week</a><a href="/monthly/2024/08/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2024/W34/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2024/W36/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Breaking Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/08/26/">Mon, Aug 26</a></div>
+  <div class="entry-copy">The pure <code>HH\Facts\*_to_path_relative()</code> query family has been removed, including module, type, function, constant, and type-alias variants. Use the corresponding <code>*_to_path()</code> APIs, which return repository paths. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/22e1bf97449ce00523d1fb953ac8a0503e2f324d" target="_blank" rel="noopener noreferrer">22e1bf9744</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Highlights</h2><span>7 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/08/27/">Tue, Aug 27</a></div>
+  <div class="entry-copy">Hack&#x27;s bundled declarations now expose <code>HH\FileDecls::genParsePath(string)[]: Awaitable&lt;HH\FileDecls&gt;</code>, allowing the existing non-blocking, cache-backed declaration parser to typecheck at call sites. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/32b2c8952d0c31742061c1bad11c80cdb6a1c905" target="_blank" rel="noopener noreferrer">32b2c8952d</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/08/27/">Tue, Aug 27</a></div>
+  <div class="entry-copy">Serverless IDE checks of open files now load the warning saved state and filter preexisting warnings just like full-server and streamed checks. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/56a99b43dcd27947c705dec4b0c0d2981c7d2b10" target="_blank" rel="noopener noreferrer">56a99b43dc</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/08/28/">Wed, Aug 28</a></div>
+  <div class="entry-copy"><code>hackfmt --diff</code> now resolves files correctly when the Mercurial repository root is above the project root. The new <code>--diff-root</code> option can supply an explicit base directory. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/72ffd9760d35dc44c04a3137240fca5503051795" target="_blank" rel="noopener noreferrer">72ffd9760d</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/08/28/">Wed, Aug 28</a></div>
+  <div class="entry-copy">Extended type explanations now point back to previously shown definitions, reverse projected subtype direction correctly for contravariant parameters, hide internal <code>supportdyn</code> steps in non-verbose output, and highlight the right-hand side of type definitions. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f16ea44b34719742a71b53184503f01fde54a48f" target="_blank" rel="noopener noreferrer">f16ea44b34</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9aafe24b2ffef8ec4f3a30bb02d762bf35b2517f" target="_blank" rel="noopener noreferrer">9aafe24b2f</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/303cb3304861428bd9663eebbeb45ecb7d221879" target="_blank" rel="noopener noreferrer">303cb33048</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/fb54ffdd4cf86ea37dbe744b286132bcd6ce57b7" target="_blank" rel="noopener noreferrer">fb54ffdd4c</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/08/30/">Fri, Aug 30</a></div>
+  <div class="entry-copy">Tuple type comparison now preserves element order instead of sorting tuples like unions and intersections, so <code>(A, B)</code> is no longer treated as identical to <code>(B, A)</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/172a6d93c9e0eae27f34ac38e4a61d1b68574f0f" target="_blank" rel="noopener noreferrer">172a6d93c9</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/08/30/">Fri, Aug 30</a></div>
+  <div class="entry-copy">The new pure <code>HH\Facts\transitive_subtypes&lt;T&gt;(classname&lt;T&gt;, ?HH\Facts\DeriveFilters = null)[]: vec&lt;string&gt;</code> query computes the full transitive closure of types that extend, implement, or use a base type in one native call. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8755851768547f7a04dd67dc2e11163e0c3a9b36" target="_blank" rel="noopener noreferrer">8755851768</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/08/30/">Fri, Aug 30</a></div>
+  <div class="entry-copy">The sealed <code>HH\GenericEnumClass&lt;+TClass, +TValue&gt;</code> interface is now exposed to Hack, allowing type constants and generic APIs to constrain a value to any concrete enum class without exposing <code>HH\BuiltinEnumClass</code> directly. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/47687c7eaebb1355b8d416a5070d5c1405b005dd" target="_blank" rel="noopener noreferrer">47687c7eae</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Security</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/08/28/">Wed, Aug 28</a></div>
+  <div class="entry-copy">Binary and compact Thrift deserialization no longer preallocates containers from untrusted oversized length fields. Initial reservation is capped at 16K entries, and sizes above the supported array limit raise a warning instead of attempting a multi-gigabyte allocation. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/72771f6bf60b734aeeee989609abe2c3bd4e09ff" target="_blank" rel="noopener noreferrer">72771f6bf6</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>4 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/08/28/">Wed, Aug 28</a></div>
+  <div class="entry-copy"><code>hh_server</code> now correctly uses the experimental-feature status map from <code>.hhconfig</code> instead of falling back to legacy hard-coded statuses, so the configured Preview, OngoingRelease, and Unstable staging rules are actually enforced in full-server checks. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ed7cd083690564a280922e9cf561a71af75144b5" target="_blank" rel="noopener noreferrer">ed7cd08369</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/08/29/">Thu, Aug 29</a></div>
+  <div class="entry-copy">Package configuration parse errors are now propagated to repository builds as build-blocking failures instead of appearing only in the typechecker. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4acf613e39c210042df0a474feb2c2bb06714b3e" target="_blank" rel="noopener noreferrer">4acf613e39</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/08/29/">Thu, Aug 29</a></div>
+  <div class="entry-copy">With an active deployment, repo builds using <code>ForceEnableSymbolRefs</code> now include both deployment files and referenced symbols outside it. Without the option, the build remains limited to the deployment. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c2b16737b117e435241b2c5fbb601ce8b20a2d52" target="_blank" rel="noopener noreferrer">c2b16737b1</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/08/30/">Fri, Aug 30</a></div>
+  <div class="entry-copy">Expression trees now support named instance-method access and calls through the DSL&#x27;s <code>visitInstanceMethod()</code> hook. Nullsafe and dynamically named instance methods remain unsupported. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a84239a02b0ecdbb3778a68e834c612967f8cdec" target="_blank" rel="noopener noreferrer">a84239a02b</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

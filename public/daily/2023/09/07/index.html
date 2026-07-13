@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="5 noteworthy changes recorded on this day.">
+  <title>Thursday, September 7, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Thursday, September 7, 2023</h1>
+  <p class="post-meta">5 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/09/07/" aria-current="page">Day</a><a href="/weekly/2023/W36/">Week</a><a href="/monthly/2023/09/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2023/09/06/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2023/09/08/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">Repo-authoritative deployments now include soft packages so accesses can emit deployment-boundary warnings and continue, rather than failing with an undefined function or class. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1171062eb4ad6cbf55b0bd83ee376434a7f4569e" target="_blank" rel="noopener noreferrer">1171062eb4</a></div></li><li class="change-entry"><div class="entry-copy">Class expressions used as attribute arguments no longer trigger internal or cross-package visibility errors. This permits patterns such as sealing a trait to an internal class because the stored attribute value is only a class-name string. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1d2b48aecd0375f3ac4c81f456f9d023cd627f96" target="_blank" rel="noopener noreferrer">1d2b48aecd</a></div></li><li class="change-entry"><div class="entry-copy">The HHI declarations for <code>HH\get_headers_secure()</code> and <code>HH\parse_cookies()</code> no longer carry <code>__PHPStdLib</code>, restoring their intended treatment by Hack tooling. Their capability lists remain <code>[read_globals]</code> and <code>[]</code>, respectively. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d5ad640290f495475a16d142895084818b6c7a87" target="_blank" rel="noopener noreferrer">d5ad640290</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/12d45c23a5c93d54df18108630f591d4963bbbc8" target="_blank" rel="noopener noreferrer">12d45c23a5</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">Opt-in strict switches now model <code>null</code>, nullable, <code>nonnull</code>, and negative types, diagnosing missing or repeated <code>case null</code> arms. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/87922666c49f2df61349fa358702c65736f47699" target="_blank" rel="noopener noreferrer">87922666c4</a></div></li><li class="change-entry"><div class="entry-copy">Parser-schema and <code>hackfmt</code> groundwork lands for a future <code>nameof C</code> expression, but the typechecker still rejects the syntax at this stage. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/55c68773ccf8702205bf57bdf8a0d529cd357a6c" target="_blank" rel="noopener noreferrer">55c68773cc</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

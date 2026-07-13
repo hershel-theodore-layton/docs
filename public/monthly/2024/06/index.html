@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="41 noteworthy changes, organized by the source changelog sections.">
+  <title>June 2024 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/" aria-current="page">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Monthly digest</p>
+  <h1 class="post-title">June 2024</h1>
+  <p class="post-meta">41 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/06/01/">Day</a><a href="/weekly/2024/W22/">Week</a><a href="/monthly/2024/06/" aria-current="page">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/monthly/2024/05/"><span aria-hidden="true">←</span><span>Previous month</span></a><a class="period-button next" rel="next" href="/monthly/2024/07/"><span aria-hidden="true">→</span><span>Next month</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Breaking Changes</h2><span>6 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W23/">W23</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/03/">Jun 3</a></div>
+  <div class="entry-copy">Hack now rejects calls to protected methods through an interface-typed receiver. The concrete implementing class might be outside the caller&#x27;s class hierarchy, making the apparently valid call fail at runtime. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7b9882a0aef1aec5af80092610b22c88821a09f4" target="_blank" rel="noopener noreferrer">7b9882a0ae</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W23/">W23</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/04/">Jun 4</a></div>
+  <div class="entry-copy">The pure <code>HH\darray()</code> and <code>HH\varray()</code> conversion functions are now deprecated. Use <code>dict()</code> and <code>vec()</code> respectively. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4330501899a288085fd502da1cb9eaad41a4d5b9" target="_blank" rel="noopener noreferrer">4330501899</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W23/">W23</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/07/">Jun 7</a></div>
+  <div class="entry-copy">Hack&#x27;s invalid-index check now diagnoses non-<code>int</code> access to <code>vec</code>, including cases hidden behind inferred generic keys. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6a242bdb0d9feb9e715e7f3fa5f22286b9e567c2" target="_blank" rel="noopener noreferrer">6a242bdb0d</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W24/">W24</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/11/">Jun 11</a></div>
+  <div class="entry-copy"><code>get_class()</code> and <code>get_parent_class()</code> now require an explicit argument; the implicit current-class form has been removed. <code>get_class()</code> also enforces an object argument through its builtin type hint and returns a <code>classname</code> rather than <code>mixed</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/aa31bd583b6bbaffd8c576c354658175bb544d33" target="_blank" rel="noopener noreferrer">aa31bd583b</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W25/">W25</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/18/">Jun 18</a></div>
+  <div class="entry-copy">The obsolete <code>HH\class_get_class_name()</code> helper has been removed; use the pure <code>HH\class_to_classname()</code> migration helper instead. The internal <code>__hhvm_intrinsics\create_class_pointer()</code> spelling was likewise replaced by <code>HH\classname_to_class()</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/172eb8c361dbd3685815bd48bcac5130e9e4767b" target="_blank" rel="noopener noreferrer">172eb8c361</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W26/">W26</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/25/">Jun 25</a></div>
+  <div class="entry-copy">A generic used contravariantly inside <code>HH\EnumClass\Label</code> is now an error when covariance leaves it underconstrained. Replace the redundant parameter with its effective bound or redesign the signature so the label actually determines it. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5832019e44a105c291c3d37f371303b5a2038483" target="_blank" rel="noopener noreferrer">5832019e44</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>14 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W23/">W23</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/03/">Jun 3</a></div>
+  <div class="entry-copy">Preview case types now handle nullable unions and bottom cases such as empty or null-only unions without crashing during runtime type-constraint canonicalization. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/25c4c950e97422b4ad88f28302a25b6ec521e270" target="_blank" rel="noopener noreferrer">25c4c950e9</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7c6ce997e6a18da6f74137e41ea456026cb58699" target="_blank" rel="noopener noreferrer">7c6ce997e6</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W23/">W23</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/04/">Jun 4</a></div>
+  <div class="entry-copy">Preview case types now resolve every arm of aliased unions correctly in HHBBC and avoid applying memo-key optimizations that are invalid for union type constraints. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8b910792af27a0505a94b8f6ab39dc1b40334e43" target="_blank" rel="noopener noreferrer">8b910792af</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/70eab5af405f4c288a07f94a5617dc69040ad06a" target="_blank" rel="noopener noreferrer">70eab5af40</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W23/">W23</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/07/">Jun 7</a></div>
+  <div class="entry-copy">Unstable expression trees now permit <code>await</code> inside splices when the tree is constructed in an async function. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3c259b10ef347a47eb74de9fb1ae45c7b939210d" target="_blank" rel="noopener noreferrer">3c259b10ef</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W24/">W24</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/14/">Jun 14</a></div>
+  <div class="entry-copy">With Packages v2 enabled, <code>&lt;&lt;file: __PackageOverride(&#x27;name&#x27;)&gt;&gt;</code> no longer needs an <code>__EnableUnstableFeatures</code> declaration. The attribute lets a file opt into the named package for access checking. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ff5b55092bf1bee50dbf854290dbf23e53e9c431" target="_blank" rel="noopener noreferrer">ff5b55092b</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W25/">W25</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/17/">Jun 17</a></div>
+  <div class="entry-copy">Under the preview readonly feature, <code>get_class&lt;T&gt;(readonly T)[]: classname&lt;T&gt;</code> now preserves the object&#x27;s static class type instead of returning an unparameterized class name. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/537dfe98b057399a5dad6ac26df087f23cb22a60" target="_blank" rel="noopener noreferrer">537dfe98b0</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W25/">W25</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/17/">Jun 17</a></div>
+  <div class="entry-copy">Packages v2 now diagnoses an unknown package named by <code>__PackageOverride</code>, catching misspelled or stale package overrides at typechecking time. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/02462c0d87c439c8e7dca1cdb66cbe011d25cd0d" target="_blank" rel="noopener noreferrer">02462c0d87</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W25/">W25</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/18/">Jun 18</a></div>
+  <div class="entry-copy">Awaiting multiple splices in an expression tree no longer serializes them into sequential assignments; independent splice expressions can now run concurrently. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/500e484925714c6c89a8707918fb7cbcc86ef4f6" target="_blank" rel="noopener noreferrer">500e484925</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W25/">W25</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/21/">Jun 21</a></div>
+  <div class="entry-copy">Class-pointer migration checks now cover class and enum-class constant initializers, warning that <code>C::class</code> assigned to a <code>string</code> constant performs an implicit conversion and recommending <code>nameof C</code>. This is controlled by the <code>const</code> entry in <code>class_pointer_levels</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/738d9706a74851ba602d01f67402cff4a65c649b" target="_blank" rel="noopener noreferrer">738d9706a7</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W25/">W25</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/21/">Jun 21</a></div>
+  <div class="entry-copy">Packages v2 now bypasses package-boundary checks for <code>::class</code> expressions by default, preserving their transitional string-like use while class-pointer migrations continue. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0fa07a7548da8d2d64ef46f5e359fe71de93f042" target="_blank" rel="noopener noreferrer">0fa07a7548</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W25/">W25</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/22/">Jun 22</a></div>
+  <div class="entry-copy">The Packages v2 test-file exemption now recognizes <code>__tests__</code> anywhere in a path, so test files receive the intended ability to call across package boundaries instead of only matching when the marker begins the full path. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/339e8b72ac65dc208882e3550c065c43f24906d8" target="_blank" rel="noopener noreferrer">339e8b72ac</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W25/">W25</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/22/">Jun 22</a></div>
+  <div class="entry-copy">Package overrides now propagate through class kinding, preventing class references from silently falling back to the package inferred from their source path. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4bb06d9a646490ffc179fbb097e12b13d724f669" target="_blank" rel="noopener noreferrer">4bb06d9a64</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W25/">W25</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/23/">Jun 23</a></div>
+  <div class="entry-copy">Packages v2 no longer applies boundary checks to type-only references in type constants and type hints. Cross-package runtime value access remains checked. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4ccc16f888f95e9eeb94ac9e6291a7f64cbd326a" target="_blank" rel="noopener noreferrer">4ccc16f888</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/eee2daea8982b606514f7863632d2df327db33f4" target="_blank" rel="noopener noreferrer">eee2daea89</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W26/">W26</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/24/">Jun 24</a></div>
+  <div class="entry-copy">Await expressions in expression-tree splices have moved from Unstable to Preview. Multiple awaited splices retain the concurrent execution introduced earlier this month. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a3bf39c601144ec9c5eed5ad6c85ffcbfc636db4" target="_blank" rel="noopener noreferrer">a3bf39c601</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W26/">W26</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/24/">Jun 24</a></div>
+  <div class="entry-copy">Packages v2 now ignores package boundaries while resolving generic type arguments, completing the relaxation for type-only references while retaining checks on value-level symbols. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/cc000535ac3ebec1450f82bac13cae83df4208f1" target="_blank" rel="noopener noreferrer">cc000535ac</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Highlights</h2><span>20 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W23/">W23</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/05/">Jun 5</a></div>
+  <div class="entry-copy">Failed union and intersection subtype checks now retain the errors from every invalid branch. Diagnostics no longer disappear when a disjunction is deferred or collapse to only the last failed alternative. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b92226235f52400986008d6c388382af42eb72f3" target="_blank" rel="noopener noreferrer">b92226235f</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/608d6b4b0781b2447f445ae84e251a4926285dca" target="_blank" rel="noopener noreferrer">608d6b4b07</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b24c0c17515fcfa2ba45314dd47da3ba842fac80" target="_blank" rel="noopener noreferrer">b24c0c1751</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0c7f97fbe87cae01e9a4d373cff538b9a0d5286a" target="_blank" rel="noopener noreferrer">0c7f97fbe8</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W23/">W23</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/06/">Jun 6</a></div>
+  <div class="entry-copy"><code>json_encode()</code> accepts the new <code>JSON_FB_SORT_KEYS</code> flag for deterministic object and dictionary output. Integer keys sort numerically before string keys, which sort lexicographically, making the resulting JSON suitable for stable hashing and cache keys. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/df9fc19be06c70d0ec51bce80dc3bd5b809a84ea" target="_blank" rel="noopener noreferrer">df9fc19be0</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W23/">W23</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/07/">Jun 7</a></div>
+  <div class="entry-copy">The redundant-generics linter once again recognizes a generic used only contravariantly when multiple <code>as</code> bounds simplify to one effective bound, including bounds introduced by implicit pessimisation. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1ca353c4cb3ddf5881529a1a48990c65a7c0d0c9" target="_blank" rel="noopener noreferrer">1ca353c4cb</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W23/">W23</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/07/">Jun 7</a></div>
+  <div class="entry-copy">Shape refinement no longer causes <code>Shapes::idx()</code> on a different optional field to lose its nullable result type after patterns such as <code>$shape ?? shape()</code> and <code>Shapes::keyExists()</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6254e75cb855abcd967f7ffd9030a17009edeb92" target="_blank" rel="noopener noreferrer">6254e75cb8</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W23/">W23</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/07/">Jun 7</a></div>
+  <div class="entry-copy">The new <code>HH\Facts\validate(vec&lt;string&gt; $types_to_ignore = vec[])[defaults]: void</code> API checks the SQLite Facts database for types mapped to multiple paths and throws <code>UnexpectedValueException</code> when it finds an unignored conflict. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/153ec68b9d26b8bee329bf7d55d4b64d335656fe" target="_blank" rel="noopener noreferrer">153ec68b9d</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W23/">W23</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/07/">Jun 7</a></div>
+  <div class="entry-copy">Hack declarations now expose the pure async CAS helpers <code>HH\RemoteExecution\gen_upload_file(string, string)[]: Awaitable&lt;string&gt;</code> and <code>gen_download_file(string, string, string)[]: Awaitable&lt;bool&gt;</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0c2cb6acbb1cfc0df2dc009f069322cec4058516" target="_blank" rel="noopener noreferrer">0c2cb6acbb</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W23/">W23</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/09/">Jun 9</a></div>
+  <div class="entry-copy">Runtime-enforceable <code>is</code> checks now accept wildcard arguments through generic type aliases, so checks such as <code>$x is Alias&lt;_&gt;</code> no longer produce a false error merely because the alias has a type parameter. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/fb09a02486745740a610773494fe183a3c073f65" target="_blank" rel="noopener noreferrer">fb09a02486</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W24/">W24</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/10/">Jun 10</a></div>
+  <div class="entry-copy">Extended type errors now include the primary claim&#x27;s source snippet and position, including for constructor calls. When combined with JSON output, <code>--error-format extended</code> also supplies a human-readable rendering of the error. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/67328c1ec92b082bf830725a06c22e5f8dff8757" target="_blank" rel="noopener noreferrer">67328c1ec9</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e7a9c060ca7922c96d314ae323b27275c53b9ef3" target="_blank" rel="noopener noreferrer">e7a9c060ca</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/59443d6edd144f83bdfec16319f2127bf3441163" target="_blank" rel="noopener noreferrer">59443d6edd</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W24/">W24</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/12/">Jun 12</a></div>
+  <div class="entry-copy"><code>debug_backtrace()[defaults]</code> now returns <code>HH\StackTrace</code>, a <code>vec</code> of open <code>HH\StackFrame</code> shapes whose fields are explicitly optional. This makes code account for fields such as <code>&#x27;args&#x27;</code>, <code>&#x27;file&#x27;</code>, and <code>&#x27;function&#x27;</code> being absent. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/df840cc4bcc7ea91069037857299da1b04195579" target="_blank" rel="noopener noreferrer">df840cc4bc</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W24/">W24</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/12/">Jun 12</a></div>
+  <div class="entry-copy">In repo-authoritative mode, equality and conditional branching now agree when comparing lazy class values with class pointers. A true <code>$lazy_class === $class_pointer</code> comparison can no longer be optimized into an unreachable branch. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9884cdfbf29092d56d5717fbd55258a5e496117b" target="_blank" rel="noopener noreferrer">9884cdfbf2</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W24/">W24</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/13/">Jun 13</a></div>
+  <div class="entry-copy">Active implicit contexts are now refcounted correctly while entering and resuming calls, async functions, and wait handles, avoiding lifetime errors when context switching replaces the active object. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c6f02fdab123cabb564f33bf74f0bbe0989364b8" target="_blank" rel="noopener noreferrer">c6f02fdab1</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W24/">W24</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/14/">Jun 14</a></div>
+  <div class="entry-copy">JIT-compiled <code>is_a()</code> and <code>is_subclass_of()</code> now honor the <code>$allow_string</code> argument and reject trait targets, matching interpreter behavior for class pointers. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c3c428aa95c0244dc1865910fc817a2fa5e09e01" target="_blank" rel="noopener noreferrer">c3c428aa95</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W24/">W24</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/15/">Jun 15</a></div>
+  <div class="entry-copy">Subclasses of <code>HH\ImplicitContext</code> can now call the inherited protected <code>exists()[zoned]: bool</code> helper to test whether their keyed context is present without reading its value. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9e3108de07a793b87d9927b9a62eebc4440b1003" target="_blank" rel="noopener noreferrer">9e3108de07</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W25/">W25</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/19/">Jun 19</a></div>
+  <div class="entry-copy">Sound Dynamic like-pushing now handles more types containing unsolved variables, avoiding false incompatibility errors for relationships such as <code>Box&lt;~T&gt; &lt;: ~Box&lt;string&gt;</code> while preserving errors for genuinely mismatched inner types. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9968b678adce4e02b29bf90e6d41d217f5397625" target="_blank" rel="noopener noreferrer">9968b678ad</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W25/">W25</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/20/">Jun 20</a></div>
+  <div class="entry-copy">Hack now accepts the empty tuple value <code>tuple()</code>, matching existing HHVM runtime support. The empty tuple type <code>()</code> is still not valid syntax. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9e42bbbc13661a95762308c3ec136612dd80135e" target="_blank" rel="noopener noreferrer">9e42bbbc13</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W25/">W25</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/20/">Jun 20</a></div>
+  <div class="entry-copy">Facts updates now remove file and method attributes that disappeared from source, rather than leaving their old names or argument values in the in-memory attribute maps. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8606084f86eba6d511be8968f6ee7923ac28bf45" target="_blank" rel="noopener noreferrer">8606084f86</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W25/">W25</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/20/">Jun 20</a></div>
+  <div class="entry-copy">Hack notebooks now resolve XHP elements correctly in top-level statements, restoring diagnostics, completion, and go-to-definition without duplicate namespace elaboration. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/fb1dbb43fb6724d891afa969a804742ad112eab4" target="_blank" rel="noopener noreferrer">fb1dbb43fb</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W26/">W26</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/24/">Jun 24</a></div>
+  <div class="entry-copy">The value type parameter of <code>HH\EnumClass\Label&lt;-TEnumClass, +TType&gt;</code> is now covariant rather than invariant, allowing a label&#x27;s value type to widen safely. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/49c68bd4beb8611686e09002e910cd9dd56750b9" target="_blank" rel="noopener noreferrer">49c68bd4be</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W26/">W26</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/25/">Jun 25</a></div>
+  <div class="entry-copy">Enum-class labels now use constraint-based typing. Anonymous labels such as <code>#Name</code> have their own inferred type and can be used beyond immediate function-argument position, while qualified labels are checked against the enum class&#x27;s actual constant type. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0bc5384fa2a2738b5af709901d5a1f3fe31f7006" target="_blank" rel="noopener noreferrer">0bc5384fa2</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W26/">W26</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/25/">Jun 25</a></div>
+  <div class="entry-copy">JIT deployment-boundary checks now match the interpreter when the caller is itself outside the active deployment, avoiding a spurious violation on calls from that code. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e8f6d775daeb1a3fb744fd3ab9f9724a7dc55f3d" target="_blank" rel="noopener noreferrer">e8f6d775da</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Security</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W24/">W24</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/12/">Jun 12</a></div>
+  <div class="entry-copy">Public classes and interfaces may no longer extend internal types. This restores a firm module boundary and prevents public APIs from exposing a base type that callers outside the module cannot name. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f971a6634fa5375dc0a03ef6046fc63326e9ccf2" target="_blank" rel="noopener noreferrer">f971a6634f</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

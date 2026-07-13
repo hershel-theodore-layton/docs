@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="7 noteworthy changes recorded on this day.">
+  <title>Wednesday, February 22, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Wednesday, February 22, 2023</h1>
+  <p class="post-meta">7 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/02/22/" aria-current="page">Day</a><a href="/weekly/2023/W08/">Week</a><a href="/monthly/2023/02/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2023/02/21/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2023/02/23/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">Runtime module-boundary errors now correctly describe an internal top-level function called from a method, rather than misreporting it as a method on the caller&#x27;s class. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3d6bddce4980176b3023fb23d285642b5b1bc2e1" target="_blank" rel="noopener noreferrer">3d6bddce49</a></div></li><li class="change-entry"><div class="entry-copy">Sound Dynamic checking avoids another stack overflow while solving <code>supportdyn</code> bounds, supplies dynamic bounds for class-level generics during the additional method-body check, and correctly wraps methods fetched through intersection receivers. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4de931af8171b5fe5a9c90435b5bdd8d406b854f" target="_blank" rel="noopener noreferrer">4de931af81</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/12856381c5adbc22a3fc27f0cfbbf859de0a9008" target="_blank" rel="noopener noreferrer">12856381c5</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/46a1c1580ba3ab136959ee27d327881498bf030e" target="_blank" rel="noopener noreferrer">46a1c1580b</a></div></li><li class="change-entry"><div class="entry-copy">Redundant-cast lints now warn that removing a runtime cast can change behavior, instead of presenting removal as unconditionally safe. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/30abe736a4e3ab43566b5d2ddeb44290fbb996ad" target="_blank" rel="noopener noreferrer">30abe736a4</a></div></li><li class="change-entry"><div class="entry-copy">Optimized code no longer assumes that a value checked by a soft return-type constraint is non-null, preserving the runtime semantics of soft type hints. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7dccf227c0e9c26ad156397167961e40fec5af03" target="_blank" rel="noopener noreferrer">7dccf227c0</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy">Deprecated <code>AwaitAllWaitHandle::fromVector()</code>, <code>fromMap()</code>, and <code>fromContainer()</code> have been removed. Use <code>fromVec()</code> or <code>fromDict()</code> after an appropriate constant-time collection cast. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e0d354d01594378d45fb2b0d5dfbd153576507ab" target="_blank" rel="noopener noreferrer">e0d354d015</a></div></li><li class="change-entry"><div class="entry-copy"><code>AwaitAllWaitHandle::setOnCreateCallback()</code> now passes a <code>vec</code> rather than a <code>Vector</code>. Callbacks that only iterate can accept <code>Traversable&lt;Awaitable&lt;mixed&gt;&gt;</code> to remain compatible. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/75f849cc74ea4835997a9a06b8519bf9e2c9e06b" target="_blank" rel="noopener noreferrer">75f849cc74</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">Initial TOML parsing support has landed for package configuration, including source spans that later diagnostics can map to line numbers. The active package integration remains experimental. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/00899f4f761f91cc1530d8854c95fa176d06e328" target="_blank" rel="noopener noreferrer">00899f4f76</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

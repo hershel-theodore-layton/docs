@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="5 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 1: Dec 29, 2025–Jan 4, 2026 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 1: Dec 29, 2025–Jan 4, 2026</h1>
+  <p class="post-meta">5 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/12/29/">Day</a><a href="/weekly/2026/W01/" aria-current="page">Week</a><a href="/monthly/2025/12/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2025/W52/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2026/W02/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>4 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/12/29/">Mon, Dec 29</a></div>
+  <div class="entry-copy">JIT recovery now selects the oldest worker for termination and stack capture when the main retranslate-all thread is stuck, even if that worker has not independently exceeded the timeout. A larger initial profiling-prologue table also reduces contention during heavily profiled workloads. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8a64b592756ba3f2abd49b8ad347d6757a600c4e" target="_blank" rel="noopener noreferrer">8a64b59275</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1050ba1a553370ec5a695cd5a4a2d5d3b5bcaf3f" target="_blank" rel="noopener noreferrer">1050ba1a55</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/02/">Fri, Jan 2</a></div>
+  <div class="entry-copy"><code>AsyncMysqlQueryResult</code> now exposes <code>mysqlInfo()</code>, <code>rowsMatched()</code>, and <code>warningsCount()</code>, making the server&#x27;s query metadata available through the typed API. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/28a9e15eca191e34a28b595083ccdf7dbb6972a9" target="_blank" rel="noopener noreferrer">28a9e15eca</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/03/">Sat, Jan 3</a></div>
+  <div class="entry-copy">New <code>thrift_protocol_write_binary_struct_to_string()</code> and <code>thrift_protocol_read_binary_struct_from_string()</code> built-ins serialize and deserialize binary-protocol Thrift structs without constructing a transport object. Both signatures omit coeffect brackets and therefore require <code>[defaults]</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3b98248f1e5bd12c322ac002fbc0276d5e5d83c8" target="_blank" rel="noopener noreferrer">3b98248f1e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/03/">Sat, Jan 3</a></div>
+  <div class="entry-copy">The obsolete <code>redundant_id</code> lint has been removed. It no longer emits lint code 5501 for old <code>id()</code> wrappers; use parentheses while removing any remaining deprecated calls. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1d7205fa93554c9c86c2e511e3e8a322c379a8c8" target="_blank" rel="noopener noreferrer">1d7205fa93</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/02/">Fri, Jan 2</a></div>
+  <div class="entry-copy">The Hack manual now documents case-type syntax, runtime-disjoint variants, asymmetric subtyping, and decomposition with <code>is</code> checks. Recursive and conditional case types remain outside this initial guide. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/08a5376dac39f2883993a6dcb9d0a147f0a33c6a" target="_blank" rel="noopener noreferrer">08a5376dac</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

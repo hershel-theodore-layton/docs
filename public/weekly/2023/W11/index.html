@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="11 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 11: Mar 13–Mar 19, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 11: Mar 13–Mar 19, 2023</h1>
+  <p class="post-meta">11 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/03/13/">Day</a><a href="/weekly/2023/W11/" aria-current="page">Week</a><a href="/monthly/2023/03/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2023/W10/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2023/W12/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>11 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/03/13/">Mon, Mar 13</a></div>
+  <div class="entry-copy">Invalid <code>PACKAGES.toml</code> relationships now produce parsing error 1009. The checker reports references to undefined packages and module globs assigned to more than one package. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/fbc8e0d7bb09d00728e3036aa9888c8cc1c91fe7" target="_blank" rel="noopener noreferrer">fbc8e0d7bb</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/03/13/">Mon, Mar 13</a></div>
+  <div class="entry-copy">Implicit pessimization of an async function returning an enforced enum now applies the enum&#x27;s base-type intersection inside <code>Awaitable&lt;...&gt;</code>, rather than intersecting the awaitable itself down to <code>nothing</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/95dae7a0571053eda4336aef3f33ca5abd0d272a" target="_blank" rel="noopener noreferrer">95dae7a057</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/03/13/">Mon, Mar 13</a></div>
+  <div class="entry-copy">Enum classes may now carry the internal SDT marker used by implicit sound-dynamic mode, avoiding recursive subtype failures for pessimised enum classes. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4ff56661ca780309ddf6d4baa491180ea6112212" target="_blank" rel="noopener noreferrer">4ff56661ca</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/03/14/">Tue, Mar 14</a></div>
+  <div class="entry-copy"><code>hh</code> progress is now tracked per repository rather than per server PID, allowing clients to show monitor and server status before connecting. Stale progress from a dead process is ignored, idle servers report <code>ready</code>, and long fanout/typecheck phases provide earlier and more accurate status messages. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/98658279b8e3e51d7e9eff14cdaec9da8761225b" target="_blank" rel="noopener noreferrer">98658279b8</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8550b0f63560e213d9ba3af1ace1f79882e44b59" target="_blank" rel="noopener noreferrer">8550b0f635</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0cd7ddd10ce74f5d10a62ba9abe91904a33959b7" target="_blank" rel="noopener noreferrer">0cd7ddd10c</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/03/15/">Wed, Mar 15</a></div>
+  <div class="entry-copy">Type constants in enum classes are now generally available and no longer require the <code>enum_class_type_constants</code> unstable-feature opt-in. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/bd5838a61b1d8b6156e8135d3a1fb7fe4cd3917b" target="_blank" rel="noopener noreferrer">bd5838a61b</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/03/16/">Thu, Mar 16</a></div>
+  <div class="entry-copy">A new quick-fix application tool consumes <code>hh --lint --json</code> output from standard input or <code>--input-file</code>. It prints patched source by default and can update files with <code>--overwrite</code>; overlapping, stale, or otherwise unsafe fixes are dropped. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/58c5e14cc83e3e4ada33c5244f014598ef9787be" target="_blank" rel="noopener noreferrer">58c5e14cc8</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/03/16/">Thu, Mar 16</a></div>
+  <div class="entry-copy">Package configuration validation now reports every cycle in the <code>includes</code> graph. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6c97dac72010f974ed8fa1f97939c9bf93f12081" target="_blank" rel="noopener noreferrer">6c97dac720</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/03/17/">Fri, Mar 17</a></div>
+  <div class="entry-copy"><code>hackfmt</code> now keeps expression-tree block braces next to their backticks, formatting them as <code>Dsl`{ ... }` </code> rather than separating the backtick and brace. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a665b6d47235e4381ed00c29f64b5e73b36a21c5" target="_blank" rel="noopener noreferrer">a665b6d472</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/03/17/">Fri, Mar 17</a></div>
+  <div class="entry-copy">The March 10 default requiring constant function and lambda default arguments has been reverted. Nonconstant defaults are accepted again unless the stricter options are explicitly enabled. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/04b49bbdfed97b4b612fc29ac53cba06612d5939" target="_blank" rel="noopener noreferrer">04b49bbdfe</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/03/18/">Sat, Mar 18</a></div>
+  <div class="entry-copy">The redundant-cast linter now reports a cast in sound-dynamic code only when it is redundant under both normal and dynamic assumptions, reducing unsafe suggestions at dynamic boundaries. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/13baee84fcc2c281492118d64284c8abc7b5c9ed" target="_blank" rel="noopener noreferrer">13baee84fc</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/cb5f9f9236cd45bd8ac126a9ed43fb4ae2b50347" target="_blank" rel="noopener noreferrer">cb5f9f9236</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/03/19/">Sun, Mar 19</a></div>
+  <div class="entry-copy">Quick-fixes for redundant casts now preserve expression precedence, adding parentheses when removing a cast would otherwise let an enclosing operator capture part of the expression. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a07d4e824a161c4f471834b5d484054053729d0e" target="_blank" rel="noopener noreferrer">a07d4e824a</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

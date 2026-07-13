@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="14 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 32: Aug 7–Aug 13, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 32: Aug 7–Aug 13, 2023</h1>
+  <p class="post-meta">14 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/08/07/">Day</a><a href="/weekly/2023/W32/" aria-current="page">Week</a><a href="/monthly/2023/08/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2023/W31/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2023/W33/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Security</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/08/07/">Mon, Aug 7</a></div>
+  <div class="entry-copy">Pagelet-server callers can now detect or reject the unsafe legacy <code>&quot;Header: value&quot;</code> array form and collisions with keyed headers. <code>Eval.PageletServerHeaderCheck</code> controls warnings or rejection of the legacy form, while <code>Eval.PageletServerHeaderCollide</code> controls collision warnings, precedence, or rejection. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/724d62be19449a49e594ae1d85d9728fe7bc88ae" target="_blank" rel="noopener noreferrer">724d62be19</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>5 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/08/07/">Mon, Aug 7</a></div>
+  <div class="entry-copy"><code>hh_single_type_check</code> no longer accepts the obsolete <code>--like-casts</code> and <code>--simple-pessimize</code> options; targeted explicit pessimisation continues to use the <code>like_casts</code> configuration. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ae834842e3a5b0a1a4ac068b19ceb78d1d502d4d" target="_blank" rel="noopener noreferrer">ae834842e3</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/08/07/">Mon, Aug 7</a></div>
+  <div class="entry-copy"><code>hh --ide-find-refs-by-symbol</code> now always emits JSON, and the human-readable <code>hh_single_type_check --find-refs</code> format now includes the matching symbol text. Tools parsing either command&#x27;s old output need updating. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/da6d7dba160b394cd7bbbe43cd34e09f6f74f652" target="_blank" rel="noopener noreferrer">da6d7dba16</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b24518524ca432a0b1a7ef27bcd2a154bd358f0f" target="_blank" rel="noopener noreferrer">b24518524c</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/08/10/">Thu, Aug 10</a></div>
+  <div class="entry-copy">HHVM has removed the <code>auto_prepend_file</code> and <code>auto_append_file</code> INI settings. Entrypoint setup and teardown must be explicit. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b182e8f63c9b58947404b2935ff281d086126531" target="_blank" rel="noopener noreferrer">b182e8f63c</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/08/10/">Thu, Aug 10</a></div>
+  <div class="entry-copy">The <code>variables_order</code> and <code>request_order</code> settings have been removed; superglobal population order is now fixed. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e258daf596a93e947c1da3704a37b05b693cd8ce" target="_blank" rel="noopener noreferrer">e258daf596</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/08/10/">Thu, Aug 10</a></div>
+  <div class="entry-copy">The unused <code>arg_separator.input</code> setting and configurable <code>arg_separator.output</code> setting have been removed. APIs that used the output default now hard-code <code>&amp;</code> unless a separator is supplied directly. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e4ffa04d4831b370b37789a9236515d6ad913995" target="_blank" rel="noopener noreferrer">e4ffa04d48</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Highlights</h2><span>7 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/08/09/">Wed, Aug 9</a></div>
+  <div class="entry-copy">Bidirectional inference now uses the upper bound of an expected type variable when typing lambdas. Generic helpers such as <code>makeSingle($x ==&gt; $x-&gt;foo())</code> can therefore infer the lambda parameter from the surrounding expected type. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6cb17946fa0a9cc3c8b4f95291ec8e99291bc711" target="_blank" rel="noopener noreferrer">6cb17946fa</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/08/09/">Wed, Aug 9</a></div>
+  <div class="entry-copy">Typechecking very large argument lists and <code>vec</code> literals no longer overflows the typechecker&#x27;s stack. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/265db40acdec1c161e293e98832138ea81b6325e" target="_blank" rel="noopener noreferrer">265db40acd</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/08/09/">Wed, Aug 9</a></div>
+  <div class="entry-copy">Targeted explicit pessimisation now honors <code>&lt;&lt;__NoAutoLikes&gt;&gt;</code> on return types, function types, and <code>inout</code> parameters. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5bc783525a34168951dbca181ca66816fe11e517" target="_blank" rel="noopener noreferrer">5bc783525a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/08/10/">Thu, Aug 10</a></div>
+  <div class="entry-copy">Symbol-info indexes now include inherited class, interface, and trait members by default, improving the accuracy of tools that consume Hack&#x27;s symbol index. The behavior can be gated with <code>symbol_write_index_inherited_members</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c4ad5562ac8b4005b501d1d12f699aafcfb9aa01" target="_blank" rel="noopener noreferrer">c4ad5562ac</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/08/11/">Fri, Aug 11</a></div>
+  <div class="entry-copy">A direct-declaration parsing bug no longer lets <code>&lt;&lt;__NoAutoLikes&gt;&gt;</code> on one method leak into methods declared after it. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/045457670e43f5b593baf779c6d06350c55afc12" target="_blank" rel="noopener noreferrer">045457670e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/08/11/">Fri, Aug 11</a></div>
+  <div class="entry-copy">Sound Dynamic subtype checking now pushes like types through nested invariant type arguments in both directions, admitting relations such as <code>Map&lt;string, Vector&lt;~C&gt;&gt; &lt;: ~Map&lt;string, Vector&lt;C&gt;&gt;</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5919987cd9b4d92eb4b013dedc37dd6bc4bad650" target="_blank" rel="noopener noreferrer">5919987cd9</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/08/11/">Fri, Aug 11</a></div>
+  <div class="entry-copy">Soft package-deployment violation warnings can now be sampled with <code>Eval.DeploymentViolationWarningSampleRate</code>, reducing log volume during migrations. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/38b77e9ac5e7f368f203c755c6784dba05a2fe7e" target="_blank" rel="noopener noreferrer">38b77e9ac5</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/08/09/">Wed, Aug 9</a></div>
+  <div class="entry-copy"><code>require class</code> has entered an ungated rollout and can now be used without a per-file unstable-feature opt-in, but it remains pre-stable. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ad27a74ee0cab6f406e8a8576f8629a9a5013a7f" target="_blank" rel="noopener noreferrer">ad27a74ee0</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

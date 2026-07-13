@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="9 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 12: Mar 18–Mar 24, 2024 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 12: Mar 18–Mar 24, 2024</h1>
+  <p class="post-meta">9 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/03/19/">Day</a><a href="/weekly/2024/W12/" aria-current="page">Week</a><a href="/monthly/2024/03/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2024/W11/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2024/W13/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/03/19/">Tue, Mar 19</a></div>
+  <div class="entry-copy">Autocomplete now recognizes namespace constant declarations, restoring completions at declaration sites inside namespaces. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/62ec1f520156ee20d5b0b65ccb7b404ed3ae2fe3" target="_blank" rel="noopener noreferrer">62ec1f5201</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/03/19/">Tue, Mar 19</a></div>
+  <div class="entry-copy">Type tests of the form <code>if ($x is bool)</code> now use constraint-based partitioning, improving true- and false-branch refinements for unions, intersections, and bounded abstract types. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/769012223d9cec6d38e1cf6499a7f4c75461ee97" target="_blank" rel="noopener noreferrer">769012223d</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/26fb5051ac2a7a1bf53481adab4abb757ba9595b" target="_blank" rel="noopener noreferrer">26fb5051ac</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/51ae0e53ef0f99ce7108f6598fc4ef404b90c4b2" target="_blank" rel="noopener noreferrer">51ae0e53ef</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/03/20/">Wed, Mar 20</a></div>
+  <div class="entry-copy">Hack&#x27;s VS Code diagnostics can now render secondary quickfix locations as dotted gray underlines, and the same quickfix is available when the caret is on one of those hinted locations. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d90eb57776b0fe6ad0edbdb3c54f9e0dbf4383ee" target="_blank" rel="noopener noreferrer">d90eb57776</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/138bc45288ff8fa3e2bf4afcdc8a01ebadd0020a" target="_blank" rel="noopener noreferrer">138bc45288</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f1f9295614c6676a70e623a547473856619102e8" target="_blank" rel="noopener noreferrer">f1f9295614</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/03/19/">Tue, Mar 19</a></div>
+  <div class="entry-copy">Unstable expression trees can now contain keyed collection literals such as <code>Dsl`Collection {&#x27;a&#x27; =&gt; 1}</code>; DSLs receive them through <code>visitKeyedCollection()</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8659f615d52327caae03a0f7f1934f2e72106bfb" target="_blank" rel="noopener noreferrer">8659f615d5</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/03/20/">Wed, Mar 20</a></div>
+  <div class="entry-copy">Preview readonly checking now produces type errors for unary increment and decrement, matching its existing checks for compound assignments such as <code>+=</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d323321cd00421b345081b21741b316f5b3defbb" target="_blank" rel="noopener noreferrer">d323321cd0</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/03/21/">Thu, Mar 21</a></div>
+  <div class="entry-copy">Under the preview readonly feature, <code>meth_caller()</code> now produces a readonly function value because it captures no mutable state. A readonly target method also gives the generated callable a readonly receiver parameter, e.g. <code>(readonly function(readonly C, int): bool)</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/34d1278fc97da5ecfb150b47d1e8861f8981d9ce" target="_blank" rel="noopener noreferrer">34d1278fc9</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/03/20/">Wed, Mar 20</a></div>
+  <div class="entry-copy">Module existence checks now consistently use the pure <code>HH\module_exists(string, bool = true)[]: bool</code> API. The previous global <code>module_exists()</code> runtime spelling has been removed. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f397bd3c97e9bfddc5e744fa46e464e455389664" target="_blank" rel="noopener noreferrer">f397bd3c97</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/03/22/">Fri, Mar 22</a></div>
+  <div class="entry-copy">Hack source text must now be valid UTF-8. The compatibility configuration for non-strict source decoding has been removed. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e768c25fcfc06f69214536d4d169bbc9f344a443" target="_blank" rel="noopener noreferrer">e768c25fcf</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Security</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/03/24/">Sun, Mar 24</a></div>
+  <div class="entry-copy">Hack now rejects <code>meth_caller()</code> for <code>internal</code> methods, even when the callable is created inside the defining module. Such a callable could escape and fail only when invoked outside the module boundary. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/134b288fab00409f94b52b26b988b26ff3bb0ea1" target="_blank" rel="noopener noreferrer">134b288fab</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

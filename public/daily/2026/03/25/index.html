@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="3 noteworthy changes recorded on this day.">
+  <title>Wednesday, March 25, 2026 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Wednesday, March 25, 2026</h1>
+  <p class="post-meta">3 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2026/03/25/" aria-current="page">Day</a><a href="/weekly/2026/W13/">Week</a><a href="/monthly/2026/03/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2026/03/24/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2026/03/26/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">Typechecking functions that conditionally add many fields to a closed shape is substantially faster. Closed-shape unions now bypass subtype checks that cannot succeed, and branch joins reuse physically shared fields instead of repeatedly processing the entire growing shape. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ce7e826544873ade22ecd3bf2b19e3ea0efc0b6d" target="_blank" rel="noopener noreferrer">ce7e826544</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/487491f877cf0ed436c0694710b102ab854be9d4" target="_blank" rel="noopener noreferrer">487491f877</a></div></li><li class="change-entry"><div class="entry-copy">Open-source HHBBC compilation no longer deadlocks when its subprocess scheduler is saturated; a worker waiting for capacity no longer holds the lock needed to register and release other subprocesses. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7215c6d4aead847f8b9a00d53b4b39865a175345" target="_blank" rel="noopener noreferrer">7215c6d4ae</a></div></li></ul></section><section class="daily-section"><h2>Security</h2><ul><li class="change-entry"><div class="entry-copy">HackC no longer constructs invalid Rust strings from binary Hack literals while emitting shape keys, dynamic method names, or enum-class labels. Invalid UTF-8 bytes are replaced lossily instead of causing undefined behavior in later string operations. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8d729a6bfc8fefab92c452e74c0af90762c27ae4" target="_blank" rel="noopener noreferrer">8d729a6bfc</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

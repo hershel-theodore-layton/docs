@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="10 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 44: Oct 27–Nov 2, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 44: Oct 27–Nov 2, 2025</h1>
+  <p class="post-meta">10 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/10/27/">Day</a><a href="/weekly/2025/W44/" aria-current="page">Week</a><a href="/monthly/2025/10/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2025/W43/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2025/W45/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>6 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/10/27/">Mon, Oct 27</a></div>
+  <div class="entry-copy">New auto-imported <code>objprof_get_data_with_graph_stats()</code>, <code>objprof_get_data_extended_with_graph_stats()</code>, and <code>objprof_get_paths_with_graph_stats()</code> can bound traversal with <code>max_depth</code> and <code>max_visits</code>. They return the usual object statistics plus <code>nodes_visited</code> and <code>max_depth_seen</code>; omitted capability brackets mean <code>[defaults]</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b8a2b2c9d7619aad68d2352aa652ffefe9aca3e7" target="_blank" rel="noopener noreferrer">b8a2b2c9d7</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5b20747174b8c886f0ac0260a92d0870fd88ff88" target="_blank" rel="noopener noreferrer">5b20747174</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6663dc9b4e2fdd8f9d2e4b7b4afb222dc8c82fe7" target="_blank" rel="noopener noreferrer">6663dc9b4e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/10/27/">Mon, Oct 27</a></div>
+  <div class="entry-copy"><code>CUSTOM_ERRORS.json</code> can now match <code>Cross_pkg_access</code> and <code>Cross_pkg_access_with_requirepackage</code> by use and declaration file. Missing-member class patterns are also namespace-aware, so top-level names no longer require a leading backslash in a plain string pattern. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/bc740ac7e2875a82723ecf3f00e81ac71e077032" target="_blank" rel="noopener noreferrer">bc740ac7e2</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5b894225af3259ff91226789d92505c161706ee1" target="_blank" rel="noopener noreferrer">5b894225af</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/10/28/">Tue, Oct 28</a></div>
+  <div class="entry-copy">The VS Code debugger&#x27;s <code>stepIn</code> request now records the current stack depth before resuming, fixing cases where stepping entered the wrong function. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b991fdf189f648454c7fc16251ffe05c838014e9" target="_blank" rel="noopener noreferrer">b991fdf189</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/10/30/">Thu, Oct 30</a></div>
+  <div class="entry-copy">Default-parameter initializer bytecode now uses the parameter&#x27;s source location. Runtime type errors point to the parameter declaration rather than the function&#x27;s closing brace, and default-value funclets are excluded from executable-line and coverage results. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3e366bf718fd47a6cda35d1e8130cf4de4500e57" target="_blank" rel="noopener noreferrer">3e366bf718</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/10/31/">Fri, Oct 31</a></div>
+  <div class="entry-copy">Implicit pessimization is more precise for single-parameter functions with enforced return types and for non-overridable methods: top-level functions, non-trait private methods, final methods, and methods in final classes. They accept a like/dynamic argument while retaining the exact enforced return type instead of unnecessarily returning a like type. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a4a706bc7a24b573061fb67b4c0c1996060568c4" target="_blank" rel="noopener noreferrer">a4a706bc7a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/10/31/">Fri, Oct 31</a></div>
+  <div class="entry-copy">Custom-error rules can now capture files from package-primary patterns and member names from missing-member patterns. Custom messages render Markdown styling in terminal and LSP output, and a malformed class name now makes a rule fail to match instead of crashing evaluation. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/378748301560c33075c7a8fb5c986426dc20ee12" target="_blank" rel="noopener noreferrer">3787483015</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8e501c4a0bd7028ab0a1bd1538e5b5c0b1d5eda0" target="_blank" rel="noopener noreferrer">8e501c4a0b</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b0aa1b242809797a657154f1b015173e3111a043" target="_blank" rel="noopener noreferrer">b0aa1b2428</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/32524cb34f2cb3ec8608897a1664b9202b01bf25" target="_blank" rel="noopener noreferrer">32524cb34f</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/10/27/">Mon, Oct 27</a></div>
+  <div class="entry-copy">A generic Watcher runtime abstraction has landed as explicit work in progress toward Watchman and Eden backends. It currently has no typechecker HHI, supports only Watchman, and does not yet return its specified output format, so projects should not adopt it yet. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/cdce35b437c96672107995d0eef65af5d03994f8" target="_blank" rel="noopener noreferrer">cdce35b437</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/10/28/">Tue, Oct 28</a></div>
+  <div class="entry-copy">Experimental recursive case-type localization now carries cycle detection across multiple generic upper bounds, preventing infinite recursion when mutually recursive aliases are reached through more than one bound. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2a025492250f8c467ff22945e8094ff0a7ca6f36" target="_blank" rel="noopener noreferrer">2a02549225</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/10/30/">Thu, Oct 30</a></div>
+  <div class="entry-copy">Experimental expression trees no longer support XHP syntax. DSLs using staged expression trees must splice or otherwise construct XHP outside the tree. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/576aa124fac6fd71b079d60a4b2f3ad3e4fc1303" target="_blank" rel="noopener noreferrer">576aa124fa</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/10/30/">Thu, Oct 30</a></div>
+  <div class="entry-copy"><code>Eval.EnableCodeCoveragePerBytecode</code> now defaults to <code>true</code>, so coverage and <code>HH\get_executable_lines()</code> count only bytecodes representing meaningful actions such as calls, branches, assignments, and returns. Reports may contain fewer executable or covered lines; set it to <code>false</code> temporarily for the legacy all-bytecode behavior. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/23b107df3e8278753415bcc4a8d6a9ccda156e57" target="_blank" rel="noopener noreferrer">23b107df3e</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

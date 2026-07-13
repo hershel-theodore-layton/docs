@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="16 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 5: Jan 26–Feb 1, 2026 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 5: Jan 26–Feb 1, 2026</h1>
+  <p class="post-meta">16 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2026/01/26/">Day</a><a href="/weekly/2026/W05/" aria-current="page">Week</a><a href="/monthly/2026/01/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2026/W04/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2026/W06/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>11 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/26/">Mon, Jan 26</a></div>
+  <div class="entry-copy">The language server&#x27;s formatter no longer deletes content at the top of a file when translating hackfmt output into LSP edits. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1ce73539f38a21caf24a63d47f8c693567434aef" target="_blank" rel="noopener noreferrer">1ce73539f3</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/26/">Mon, Jan 26</a></div>
+  <div class="entry-copy">An override of a <code>&lt;&lt;__DynamicallyCallable&gt;&gt;</code> method no longer has to repeat that annotation. Each dynamically invoked implementation can be annotated independently; the implied <code>&lt;&lt;__SupportDynamicType&gt;&gt;</code> requirement remains inherited. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/73a415207f2891ea436a73c646d98c6eea18975f" target="_blank" rel="noopener noreferrer">73a415207f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/27/">Tue, Jan 27</a></div>
+  <div class="entry-copy">Hack&#x27;s diagnostic engine now consistently distinguishes errors from warnings when backtracking and selecting type-checker paths. Enabling a warning can no longer suppress or manufacture a type error merely by changing that control flow. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/561e592fd65abdddc3847b68757664b390ef7136" target="_blank" rel="noopener noreferrer">561e592fd6</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/27/">Tue, Jan 27</a></div>
+  <div class="entry-copy"><code>FunctionCredential::pack()</code> and <code>FunctionCredential::unpack()</code> can transfer an authenticated function credential between threads in the same HHVM process. Packed values expire after five minutes and cannot be reused after a process restart or in another process; both methods require <code>[]</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/167e4373476a164c6ed23e6012739b855e4fbbd2" target="_blank" rel="noopener noreferrer">167e437347</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/27/">Tue, Jan 27</a></div>
+  <div class="entry-copy"><code>HH\serialize_with_options()</code> accepts <code>disallowCollections =&gt; true</code>, causing serialization of <code>Map</code>, <code>Set</code>, <code>Vector</code>, and <code>Pair</code> values to throw while leaving Hack arrays and ordinary objects unaffected. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f999a274c079ad41e3d90c26c5225de7e647602d" target="_blank" rel="noopener noreferrer">f999a274c0</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/28/">Wed, Jan 28</a></div>
+  <div class="entry-copy"><code>debug_backtrace()</code> now accepts <code>DEBUG_BACKTRACE_SKIP_INLINED</code>, which omits the top frame and any inlined frames so exception and profiler stacks do not report misleading optimized call sites. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/54a1113c6d2f8dc8e0efe2d6aa89a566dfb3c22c" target="_blank" rel="noopener noreferrer">54a1113c6d</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/28/">Wed, Jan 28</a></div>
+  <div class="entry-copy">Hack declarations now expose <code>HH\jit_jumpstarted()</code>, <code>HH\jumpstart_source_host()</code>, and <code>HH\jumpstart_prof_tag()</code> with <code>[read_globals]</code>, plus <code>HH\mark_server_health()</code> with implicit <code>[defaults]</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/549d2871c8bc37febe5710adf63e53f3d2d26b7e" target="_blank" rel="noopener noreferrer">549d2871c8</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/29/">Thu, Jan 29</a></div>
+  <div class="entry-copy">The <code>HH\autoload_*_to_path()</code>, <code>HH\autoload_path_to_*()</code>, and <code>HH\autoload_is_native()</code> declarations now explicitly require <code>[]</code> instead of their former implicit <code>[defaults]</code>. This narrows their caller requirements, allowing these deterministic autoload lookups from pure contexts; it is a capability relaxation, not a breaking change. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5c73ddb33665ee39d8a303d0778d19ca2d75262c" target="_blank" rel="noopener noreferrer">5c73ddb336</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/29/">Thu, Jan 29</a></div>
+  <div class="entry-copy">Runtime <code>is</code> checks against a reified shape or tuple generic now first verify that the value has the matching type-structure kind, preventing a segfault when the actual value has a different kind. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9f0e9f6d43d209e66f03498b141d4f5256c51df5" target="_blank" rel="noopener noreferrer">9f0e9f6d43</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/30/">Fri, Jan 30</a></div>
+  <div class="entry-copy">Hack can now emit warning 12034 when code reads a <code>keyset</code> or <code>ConstSet</code> with <code>$set[$key]</code>. Such indexing either throws or simply returns the key; prefer <code>C\contains_key()</code> or <code>-&gt;contains()</code>. <code>isset</code>, <code>unset</code>, and assignment contexts are excluded. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b4c0fda49e828f2c21dfa6c3416094b877c07b5d" target="_blank" rel="noopener noreferrer">b4c0fda49e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/31/">Sat, Jan 31</a></div>
+  <div class="entry-copy">New pure <code>HH\Sandbox\dict_with_capacity()</code> and <code>HH\Sandbox\vec_with_capacity()</code> helpers return empty arrays with a requested capacity hint, reducing reallocations while populating a known-size collection. Capacity must be positive; HHVM may cap or ignore the hint, and repo-authoritative mode returns a normal empty array. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0e7715a0fc88ebc454f39484fcb8fe0794fa5a17" target="_blank" rel="noopener noreferrer">0e7715a0fc</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c61c8ad0daba058b91853e07a7b73ce8098cc6f5" target="_blank" rel="noopener noreferrer">c61c8ad0da</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>4 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/26/">Mon, Jan 26</a></div>
+  <div class="entry-copy">Errors for <code>require this as SomeInterface</code> now suggest the appropriate <code>require implements SomeInterface</code> constraint. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/036bebf751efae50edefac8b2a585883a0f64283" target="_blank" rel="noopener noreferrer">036bebf751</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/30/">Fri, Jan 30</a></div>
+  <div class="entry-copy">Go-to-definition now follows static methods and properties made visible through the pre-stable <code>require class</code> and <code>require this as</code> constraints. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/db92b9ea668dd4c9dba4a4087051eb1c10958945" target="_blank" rel="noopener noreferrer">db92b9ea66</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/30/">Fri, Jan 30</a></div>
+  <div class="entry-copy"><code>require this as</code> reached ongoing release on the HHVM side and is represented in HackC bytecode and Facts. The typechecker still marks the overall <code>require_constraint</code> feature unstable in <code>.hhconfig</code>, so this is rollout groundwork rather than a general release. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a16677f6c5c56c1e0475a4acd48598fa64a65f65" target="_blank" rel="noopener noreferrer">a16677f6c5</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/10350df40f48211cb3b10e1f9ffaa2755d857d50" target="_blank" rel="noopener noreferrer">10350df40f</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/67a8d9196de9c7498b12f792327fb4475950a6d9" target="_blank" rel="noopener noreferrer">67a8d9196d</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/31/">Sat, Jan 31</a></div>
+  <div class="entry-copy"><code>FunctionCredential</code> instance accessors, <code>pack()</code>, and <code>__debugInfo()</code> are now <code>readonly</code>, so they can be called through readonly credentials when using the pre-stable readonly feature. The accessors and <code>pack()</code> retain <code>[]</code>; <code>__debugInfo()</code> still omits a capability list and therefore requires <code>[defaults]</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/095cbba3b93380d05e698947a928e950ccfefd9c" target="_blank" rel="noopener noreferrer">095cbba3b9</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/27/">Tue, Jan 27</a></div>
+  <div class="entry-copy">A concrete type constant inherited from a parent is now checked against an <code>&lt;&lt;__Enforceable&gt;&gt;</code> requirement introduced by an interface on the child. Previously this combination could accept an erased, non-enforceable type; it now reports error 4302. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/548b917d91b1bfb196261327b237d8579ec461a0" target="_blank" rel="noopener noreferrer">548b917d91</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

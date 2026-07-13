@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="5 noteworthy changes recorded on this day.">
+  <title>Monday, November 7, 2022 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Monday, November 7, 2022</h1>
+  <p class="post-meta">5 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2022/11/07/" aria-current="page">Day</a><a href="/weekly/2022/W45/">Week</a><a href="/monthly/2022/11/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2022/11/04/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2022/11/08/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">Redundant <code>?mixed</code> and <code>?null</code> type hints are now lint warnings (5008 and 5009) instead of type errors. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/04b4d0f60b2f37318d0d2a84ebefa1e0fd551fba" target="_blank" rel="noopener noreferrer">04b4d0f60b</a></div></li><li class="change-entry"><div class="entry-copy">Type-alias expansion now detects cycles instead of repeatedly expanding a cyclic alias. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/57491cc735bcb0d712320cb90dc0584614960504" target="_blank" rel="noopener noreferrer">57491cc735</a></div></li><li class="change-entry"><div class="entry-copy">Sound-dynamic checking handles partially enforced intersection return types and nullable-dynamic array operations more consistently. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/17c37dd75a522353f09873e8cb1c0d644d16b3cc" target="_blank" rel="noopener noreferrer">17c37dd75a</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a7241d4077beb253b44cefbca9aaf48d51975097" target="_blank" rel="noopener noreferrer">a7241d4077</a></div></li><li class="change-entry"><div class="entry-copy"><code>&lt;&lt;__MethodTraitDiamond&gt;&gt;</code> is no longer gated as an experimental Hack feature. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7abe512898024289eb7e56293b7aa2ec6d213e70" target="_blank" rel="noopener noreferrer">7abe512898</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy">Indexed assignment no longer widens inferred Hack array types. Code that builds a <code>vec</code> or <code>dict</code> from an empty value may need an explicit type annotation. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5143993e389b466fb6683241d976836cb929da46" target="_blank" rel="noopener noreferrer">5143993e38</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

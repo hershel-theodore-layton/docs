@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="10 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 22: May 26–Jun 1, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 22: May 26–Jun 1, 2025</h1>
+  <p class="post-meta">10 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/05/26/">Day</a><a href="/weekly/2025/W22/" aria-current="page">Week</a><a href="/monthly/2025/05/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2025/W21/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2025/W23/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Future Changes</h2><span>4 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/05/26/">Mon, May 26</a></div>
+  <div class="entry-copy">Well-formedness checking for unstable polymorphic lambdas now binds the lambda&#x27;s type parameters before checking their explicit bounds, avoiding spurious errors for bounded generic lambdas. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/08dfda4896c4c0114eb79792575ff0022a62e67f" target="_blank" rel="noopener noreferrer">08dfda4896</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/05/27/">Tue, May 27</a></div>
+  <div class="entry-copy">The experimental EdenFS watcher can now initialize when the Hack project is a subdirectory of an Eden mount, and reports a dedicated error when the project is not on Eden. Notifications still use the temporary Watchman bridge. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2188c6b0454a99c6b1018113516c3aab570c0422" target="_blank" rel="noopener noreferrer">2188c6b045</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/05/27/">Tue, May 27</a></div>
+  <div class="entry-copy">Unstable type-splat validation now preserves constraints learned while localizing type-constant projections before checking that the result is a subtype of <code>(mixed...)</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1532063bd0be8e0bb35e3b33883961c66fa24e6f" target="_blank" rel="noopener noreferrer">1532063bd0</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/05/29/">Thu, May 29</a></div>
+  <div class="entry-copy">Hackfmt now preserves the required <code>function</code> keyword on unstable polymorphic lambdas, and lambda well-formedness reuses top-level function binding so parameter types can refer to the lambda&#x27;s own type parameters. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/817ea043fead078084eeca0cd0ab151c69a1006b" target="_blank" rel="noopener noreferrer">817ea043fe</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/09e22a92af5a8f2caf3f490f670b5ea6de4d5270" target="_blank" rel="noopener noreferrer">09e22a92af</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Highlights</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/05/27/">Tue, May 27</a></div>
+  <div class="entry-copy">Reified-type validation now recognizes that <code>this</code> inside a final class has no unknown late-static-binding subtype, allowing it where the checker can determine the concrete reified type. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/269854f5c62209972be39973cf7cc47897252fa7" target="_blank" rel="noopener noreferrer">269854f5c6</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/05/29/">Thu, May 29</a></div>
+  <div class="entry-copy"><code>hh --help</code> now documents <code>--error-format extended</code>, making extended type-error reasons discoverable without consulting source or wrapper scripts. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6275ca880a2b776c051f4b1e9e7669b125cfc2c4" target="_blank" rel="noopener noreferrer">6275ca880a</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>4 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/05/28/">Wed, May 28</a></div>
+  <div class="entry-copy">HHVM now rejects <code>$class::$method()</code> at runtime as well as in the checker. Code generated or executed without <code>hh_server</code> validation must also migrate to a static call or <code>HH\dynamic_class_meth()</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a51e712dc0756e0e9d054fcb789504a14e103d3a" target="_blank" rel="noopener noreferrer">a51e712dc0</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/05/28/">Wed, May 28</a></div>
+  <div class="entry-copy">HHVM also rejects computed static-method forms such as <code>C::{expr}()</code>, completing the runtime removal of dynamic static-call syntax. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7a9777a8a721cb9facde684f5a44a2042b89dfc6" target="_blank" rel="noopener noreferrer">7a9777a8a7</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/05/28/">Wed, May 28</a></div>
+  <div class="entry-copy"><code>iterator_to_array()</code> has been removed from both the HHI and HHVM. Replace it with <code>dict($iterator)</code> when preserving keys or <code>vec($iterator)</code> when collecting values. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1187cf3a01a3a8f5e034362b8bf0e47b161f6925" target="_blank" rel="noopener noreferrer">1187cf3a01</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/05/29/">Thu, May 29</a></div>
+  <div class="entry-copy">Global constants declared under a nonexistent module now receive the same <code>Unbound name</code> error already applied to other top-level declarations. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/351328f8b9d63829c573e420267ac394d9d13d0b" target="_blank" rel="noopener noreferrer">351328f8b9</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

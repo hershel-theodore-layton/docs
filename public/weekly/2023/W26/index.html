@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="14 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 26: Jun 26–Jul 2, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 26: Jun 26–Jul 2, 2023</h1>
+  <p class="post-meta">14 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/06/26/">Day</a><a href="/weekly/2023/W26/" aria-current="page">Week</a><a href="/monthly/2023/06/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2023/W25/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2023/W27/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>7 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/06/26/">Mon, Jun 26</a></div>
+  <div class="entry-copy">Runtime deployment enforcement now distinguishes soft packages. Accessing a symbol from a soft package outside the hard deployment emits a warning in non-repository mode; hard-package violations still throw. Repository-authoritative builds continue to reject the access because soft-package files are not loaded. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/08f82a6cb4b87cf93dc9b43d2f48e91278452dec" target="_blank" rel="noopener noreferrer">08f82a6cb4</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/06/26/">Mon, Jun 26</a></div>
+  <div class="entry-copy">Standalone IDE services and batched change processing now default on in configurations without rollout overrides, bringing open-source and direct-build configurations closer to the current IDE path. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e433190c9ecfbb6c90178f25ab9b2abaf2fc3a39" target="_blank" rel="noopener noreferrer">e433190c9e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/06/27/">Tue, Jun 27</a></div>
+  <div class="entry-copy">An async function containing only <code>yield break</code> is now recognized as an <code>AsyncGenerator</code>, matching functions that yield an actual value. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7e52671c4eeb1f3abd71571dde852984bbc5b52f" target="_blank" rel="noopener noreferrer">7e52671c4e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/06/28/">Wed, Jun 28</a></div>
+  <div class="entry-copy">“Extract shape type” now includes the missing semicolon in generated aliases, so its edits produce syntactically valid Hack. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d996877551f6402237d36305fea21dd714d74f22" target="_blank" rel="noopener noreferrer">d996877551</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/06/28/">Wed, Jun 28</a></div>
+  <div class="entry-copy">Indexed signatures with polymorphic contexts such as <code>[ctx $callback]</code> no longer expose the synthetic type parameter used internally to represent that context. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/572b101e5340ecd28c454deea23b87412bea6878" target="_blank" rel="noopener noreferrer">572b101e53</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/06/29/">Thu, Jun 29</a></div>
+  <div class="entry-copy">The systemlib definitions of <code>HH\stdin()</code>, <code>HH\stdout()</code>, <code>HH\stderr()</code> and their nullable <code>try_*</code> variants now use <code>[]</code>, matching their existing HHI declarations; the HHI also gains documentation for script and web-request behavior. Moving the implementations from implicit <code>[defaults]</code> to <code>[]</code> narrows their capability requirement and is not a caller break. Obtaining a stream handle is pure, while performing I/O still requires the appropriate capability. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/77b6d7744276c66ba38408d33296f7d6ac9a7233" target="_blank" rel="noopener noreferrer">77b6d77442</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/06/30/">Fri, Jun 30</a></div>
+  <div class="entry-copy">“Inline method” now handles empty method bodies instead of crashing on their positionless AST placeholder. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f9709918c4bd020bece57640869e655918538ee3" target="_blank" rel="noopener noreferrer">f9709918c4</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/06/27/">Tue, Jun 27</a></div>
+  <div class="entry-copy">Dynamic property access such as <code>$object-&gt;{$name}</code> now requires the receiver to support <code>dynamic</code>, and the access result is always <code>dynamic</code>. Using it on an ordinary statically typed object is rejected; accidental <code>$</code> insertion still receives the existing quick-fix to normal property access. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/aade1260bd90c5338a935c669beb11ca3f15264b" target="_blank" rel="noopener noreferrer">aade1260bd</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>6 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/06/27/">Tue, Jun 27</a></div>
+  <div class="entry-copy"><code>require class</code> trait requirements have advanced to ongoing release and no longer require the <code>require_class</code> unstable-feature opt-in. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/39ac8989328752a2dd65dec447faf9316c5981a3" target="_blank" rel="noopener noreferrer">39ac898932</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/06/27/">Tue, Jun 27</a></div>
+  <div class="entry-copy">Runtime-datatype information is now used when refining case types, allowing assertions such as <code>$value as vec&lt;_&gt;</code> to select and preserve the compatible <code>vec&lt;T&gt;</code> variant. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/47e0a546531b064baf10efc9cb179b9c5fec8330" target="_blank" rel="noopener noreferrer">47e0a54653</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/06/28/">Wed, Jun 28</a></div>
+  <div class="entry-copy"><code>&lt;&lt;__NoAutoBound&gt;&gt;</code> on a generic parameter disables the automatic <code>as supportdyn&lt;mixed&gt;</code> bound under implicit or explicit pessimisation without opting the surrounding declaration out of other sound-dynamic transformations. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/581ae77b8d5dca00509d317ab1bd405ebe6fb3ef" target="_blank" rel="noopener noreferrer">581ae77b8d</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/06/29/">Thu, Jun 29</a></div>
+  <div class="entry-copy">The “Add local type hint” action is now offered only when the selection covers the assignment&#x27;s left-hand variable or the complete assignment, avoiding unrelated suggestions when selecting part of the right-hand expression. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8c74b8200c581b2e2b29af2bf2a0ada44de2cae2" target="_blank" rel="noopener noreferrer">8c74b8200c</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/06/30/">Fri, Jun 30</a></div>
+  <div class="entry-copy">Readonly method-call checking now handles function types wrapped with <code>dynamic</code> by implicit pessimisation, avoiding false readonly errors and invariant failures. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ab343625af4eb87a4dbc66aab4ff49e54822ebc0" target="_blank" rel="noopener noreferrer">ab343625af</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/07/01/">Sat, Jul 1</a></div>
+  <div class="entry-copy">HHVM gains the first runtime implementation for checking case types in parameter and return positions. Default builds still treat case types as <code>mixed</code> while the rest of runtime enforcement is completed, so this commit is groundwork rather than an immediate behavior change. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7d8e1d9dba8b5e36071b51718af9bc48b7c72ca7" target="_blank" rel="noopener noreferrer">7d8e1d9dba</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

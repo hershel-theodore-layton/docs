@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="2 noteworthy changes recorded on this day.">
+  <title>Friday, March 6, 2026 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Friday, March 6, 2026</h1>
+  <p class="post-meta">2 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2026/03/06/" aria-current="page">Day</a><a href="/weekly/2026/W10/">Week</a><a href="/monthly/2026/03/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2026/03/05/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2026/03/09/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy"><code>HH\type_structure_classname()</code> is now understood specially by the typechecker: it resolves the named type constant and returns the corresponding <code>classname&lt;T&gt;</code> when the type is classish or an enum, while rejecting non-classish type constants. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9b14e5db5dadf41fb96d189e7d294f41f2b92a5b" target="_blank" rel="noopener noreferrer">9b14e5db5d</a></div></li><li class="change-entry"><div class="entry-copy"><code>apc_add()</code>, <code>apc_store()</code>, and their <code>with_pure_sleep</code> variants gained a final <code>$guaranteed_acyclic</code> argument. Setting it to <code>true</code> skips APC&#x27;s cycle-detection walk when the caller can guarantee the stored value contains no cycles. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7fa443e8faee2193cba5b0a69ac087ab1bd9e4d8" target="_blank" rel="noopener noreferrer">7fa443e8fa</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

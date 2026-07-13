@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="4 noteworthy changes recorded on this day.">
+  <title>Tuesday, February 25, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Tuesday, February 25, 2025</h1>
+  <p class="post-meta">4 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/02/25/" aria-current="page">Day</a><a href="/weekly/2025/W09/">Week</a><a href="/monthly/2025/02/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2025/02/24/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2025/02/26/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">Converting notebook JSON to Hack now restores newlines between source-array entries instead of concatenating every line, preventing generated notebooks from hanging later processing on malformed Hack. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c4274610d976ae61913b8ea437e8a2fc29280ef5" target="_blank" rel="noopener noreferrer">c4274610d9</a></div></li><li class="change-entry"><div class="entry-copy">The renamed <code>#NotKeyedByICAndLeakIC__DO_NOT_USE</code> memoization option is now declared in the HHI, so the dangerous opt-out can be recognized by typechecking and autocomplete as well as by the compiler. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2b980a6b20a4c900c070b1daad2397d2392aef08" target="_blank" rel="noopener noreferrer">2b980a6b20</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy">Nested expression trees are fully released and the <code>expression_tree_nest</code> experimental-feature name has been removed. Projects that still list that feature in <code>.hhconfig</code> should remove the obsolete entry. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/28b67ffdf3042c5e7ec8d078d521f7ba66bb5e76" target="_blank" rel="noopener noreferrer">28b67ffdf3</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">The Packages v2 escape hatch <code>package_v2_bypass_package_check_for_class_const</code> has been renamed to <code>package_v2_bypass_package_check_for_classptr_migration</code>. The renamed setting now controls package-check bypasses for type constants as well as <code>::class</code>; disabling it enforces both checks. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0ed24678d6a15f6df1707e9ac7caf9f3f2e37cc0" target="_blank" rel="noopener noreferrer">0ed24678d6</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/28e3f58b84c5a073b833d848831dbd9f9a38277d" target="_blank" rel="noopener noreferrer">28e3f58b84</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

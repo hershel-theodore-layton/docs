@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="11 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 20: May 12–May 18, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 20: May 12–May 18, 2025</h1>
+  <p class="post-meta">11 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/05/12/">Day</a><a href="/weekly/2025/W20/" aria-current="page">Week</a><a href="/monthly/2025/05/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2025/W19/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2025/W21/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Breaking Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/05/12/">Mon, May 12</a></div>
+  <div class="entry-copy"><code>HH\TypeStructure&lt;T&gt;</code> now models <code>generic_types</code>, <code>root_name</code>, and <code>access_list</code> as optional fields. Use <code>??</code>, <code>Shapes::idx()</code>, or a key-presence check rather than assuming the fields exist. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0e0fb9a62e305c789e1172869d0880c5ccf906ff" target="_blank" rel="noopener noreferrer">0e0fb9a62e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/05/15/">Thu, May 15</a></div>
+  <div class="entry-copy"><code>class_parents()</code> and <code>class_implements()</code> now return class-pointer values instead of class-name strings. The result keys remain class names; code that needs string values should convert the class pointers explicitly. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/db1c9385fc08c6432316a632b82746d2aea7bdb2" target="_blank" rel="noopener noreferrer">db1c9385fc</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/05/16/">Fri, May 16</a></div>
+  <div class="entry-copy">Truncated input passed to the compact Thrift <code>from_string</code> path now throws <code>TTransportException</code> with <code>END_OF_FILE</code>, matching <code>TProtocol</code>, instead of falling through to a generic <code>TProtocolException</code>. Exception handlers that matched only the old type may need updating. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/28143ead080b789d0ca70a1e7704bc3207659528" target="_blank" rel="noopener noreferrer">28143ead08</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>5 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/05/12/">Mon, May 12</a></div>
+  <div class="entry-copy">The unstable <code>protected internal</code> visibility modifier is now accepted, as is <code>internal protected</code>. Its access and override rules combine subclass visibility with module-internal visibility. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9a4623425fba05012e79940e0fd5561aa07b7a75" target="_blank" rel="noopener noreferrer">9a4623425f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/05/12/">Mon, May 12</a></div>
+  <div class="entry-copy">HHVM&#x27;s compiler now also rejects memoization attributes on unstable type-splat functions, completing the checker-side restriction added on May 9. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/34727f0d8588a0c251d77d12ae083e90d459ab5a" target="_blank" rel="noopener noreferrer">34727f0d85</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/05/14/">Wed, May 14</a></div>
+  <div class="entry-copy">The <code>class_overrides_all_trait_methods</code> linter no longer treats a trait&#x27;s <code>require this as</code> constraint like <code>require class</code>, eliminating a false warning for valid trait composition. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b8c45182ee3a0757e8755e2bd053aeb8a3f18d6f" target="_blank" rel="noopener noreferrer">b8c45182ee</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/05/15/">Thu, May 15</a></div>
+  <div class="entry-copy">Experimental checked unsafe casts have moved from the compile-time <code>Hack.Lang.CheckedUnsafeCast</code> option to the runtime <code>Eval.CheckedUnsafeCast</code> option. HackC now always emits the check instruction and HHVM decides whether to enforce it, so deployments testing the feature must rename their configuration. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/93a6c2ac23fbbfe2dbe3cdd2284f959cfd59620c" target="_blank" rel="noopener noreferrer">93a6c2ac23</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/05/15/">Thu, May 15</a></div>
+  <div class="entry-copy">An early <code>edenfs_file_watcher_enabled</code> mode can initialize an EdenFS watcher, but notifications still delegate to Watchman and the implementation is explicitly not production-ready. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4ca8b78848d77ffe38fad0f19a8868295dab91e9" target="_blank" rel="noopener noreferrer">4ca8b78848</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6abf46d85d2197b719b135f8a5543b94762e5248" target="_blank" rel="noopener noreferrer">6abf46d85d</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6e0807fb23a02c3467efa77086dd201d831942ed" target="_blank" rel="noopener noreferrer">6e0807fb23</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Highlights</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/05/14/">Wed, May 14</a></div>
+  <div class="entry-copy">Missing reified type-argument errors now point back to the reified type parameter that requires the argument, rather than blaming the enclosing function type or call expression. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d575a6751250db57b4a90ba1d21992cd0f76af5c" target="_blank" rel="noopener noreferrer">d575a67512</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/05/15/">Thu, May 15</a></div>
+  <div class="entry-copy">LSP document-symbol ranges for functions and classes now begin on the declaration name instead of on preceding attributes, so IDE sticky-scroll headers show the symbol users are navigating. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/535d3fdec260a55787cce4133a72ac57b85407b1" target="_blank" rel="noopener noreferrer">535d3fdec2</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/05/16/">Fri, May 16</a></div>
+  <div class="entry-copy">Malformed top-level syntax no longer panics the direct-declaration parser, improving <code>hh_server</code> and IDE recovery while a file is incomplete. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b643631580ed5f65f7004d19e14addeaea23e43f" target="_blank" rel="noopener noreferrer">b643631580</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

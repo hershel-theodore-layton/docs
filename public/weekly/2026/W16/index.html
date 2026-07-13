@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="8 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 16: Apr 13–Apr 19, 2026 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 16: Apr 13–Apr 19, 2026</h1>
+  <p class="post-meta">8 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2026/04/13/">Day</a><a href="/weekly/2026/W16/" aria-current="page">Week</a><a href="/monthly/2026/04/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2026/W15/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2026/W17/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Security</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/04/13/">Mon, Apr 13</a></div>
+  <div class="entry-copy">EXIF parsing now clears stale allocation state after an out-of-memory failure, preventing the cleanup-time use-after-free tracked as CVE-2026-23867. The same resynchronization also fixes overflow and pointer-lifetime bugs in <code>Vector::splice()</code>, Memcache Unix sockets, IPv6 socket scopes, and stream socket peer addresses. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4242fe4f88a17ab75fd88ccc7decbbd19ab25b56" target="_blank" rel="noopener noreferrer">4242fe4f88</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>4 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/04/13/">Mon, Apr 13</a></div>
+  <div class="entry-copy">More standard-library declarations now use their concrete runtime types instead of <code>HH\FIXME\MISSING_*_TYPE</code>: <code>apache_setenv()</code> returns <code>bool</code>, and a large set of Intl functions now have concrete return types. Code that relied on these APIs being effectively untyped may gain type errors. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2531f61026aadfeeefeec716064cf788c2f44753" target="_blank" rel="noopener noreferrer">2531f61026</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/85b373a37fa4e409af61e965c2d177d1e05a8b31" target="_blank" rel="noopener noreferrer">85b373a37f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/04/14/">Tue, Apr 14</a></div>
+  <div class="entry-copy">Built-in declarations for ICU, <code>IntervalTimer</code>, OpenSSL, and file APIs now replace many missing parameter and return annotations with concrete types matching their implementations. This improves inference but can expose calls that previously flowed through an effectively untyped signature. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a6c59630b80a3cf0d69e2ffc038e8ef55b284650" target="_blank" rel="noopener noreferrer">a6c59630b8</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4b503a24a794b3b13a958748468158febe1d3b0b" target="_blank" rel="noopener noreferrer">4b503a24a7</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9e5cfbd2babf979e91b3c3d554fc20d142b9ff61" target="_blank" rel="noopener noreferrer">9e5cfbd2ba</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9e2dfa95cab412784338da3826e83209cc2b49cf" target="_blank" rel="noopener noreferrer">9e2dfa95ca</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/04/15/">Wed, Apr 15</a></div>
+  <div class="entry-copy">The standard-library HHI cleanup now gives concrete types to process, POSIX, zlib, bzip2, math, cURL, APC, array, output-buffering, multibyte-string, and network APIs. Expect stronger return inference and possible errors where callers passed values that the old <code>HH\FIXME\MISSING_*_TYPE</code> placeholders accepted. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3c04556fba3e93969241e500449c0a19c8fa6c15" target="_blank" rel="noopener noreferrer">3c04556fba</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0272e4b014ee433c022712c313289f95a652193d" target="_blank" rel="noopener noreferrer">0272e4b014</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f046e9836b24ef898a426e0890d16f29397c988b" target="_blank" rel="noopener noreferrer">f046e9836b</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2a767b8e7cb35e0af45a0d292d1209023d99a739" target="_blank" rel="noopener noreferrer">2a767b8e7c</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1cdffbf5a7129db8cc7ad155a27eb31d01af9c94" target="_blank" rel="noopener noreferrer">1cdffbf5a7</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/250c92cb6d7b32ce5308fa3222b5104fef17d8d3" target="_blank" rel="noopener noreferrer">250c92cb6d</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/25c06b37a80ae300eba964000e8b9928542c73ab" target="_blank" rel="noopener noreferrer">25c06b37a8</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0422f445b7333e8c3c044dd442005ba39e257dcc" target="_blank" rel="noopener noreferrer">0422f445b7</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ac3aeb093e8602997168a2ef720b86278d87fe10" target="_blank" rel="noopener noreferrer">ac3aeb093e</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ea542c231fbf6cbbf6a710b57c0a3b274d6dd07c" target="_blank" rel="noopener noreferrer">ea542c231f</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/08104dcc6dbc426b641e8d953b4e427db99471ac" target="_blank" rel="noopener noreferrer">08104dcc6d</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/04/16/">Thu, Apr 16</a></div>
+  <div class="entry-copy">Intl HHI declarations now give concrete parameter types to Collator, date formatter, message formatter, number formatter, resource bundle, calendar, timezone, grapheme, and break-iterator APIs. Calls that depended on the previous missing parameter types may now fail type checking. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7a015e0bdb27d9d954c77856cd38fb7173b54a38" target="_blank" rel="noopener noreferrer">7a015e0bdb</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Highlights</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/04/14/">Tue, Apr 14</a></div>
+  <div class="entry-copy"><code>hh_client</code> and <code>hh_single_type_check</code> now support <code>--enforcement-at-pos-batch</code>, which reports whether HHVM enforces the type at each requested source position and returns the concrete enforced bounds where applicable. It covers declarations as well as call arguments, returns, property assignments, constructors, and array indices. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/985a6cb528e52380e654db6378026f0bdf832411" target="_blank" rel="noopener noreferrer">985a6cb528</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/04/15/">Wed, Apr 15</a></div>
+  <div class="entry-copy">The experimental <code>with_refinement_alias</code> feature now permits <code>I with { type T = ... }</code> on the right-hand side of type aliases and type constants. It remains pre-stable and still disallows such refinements in <code>is</code> and <code>as</code> expressions. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/23e4d7e7705fac97f60c2365d7176736ae514494" target="_blank" rel="noopener noreferrer">23e4d7e770</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/04/17/">Fri, Apr 17</a></div>
+  <div class="entry-copy"><code>HH\TypeStructure</code> now declares the optional <code>with_refinements</code> field produced for refined types, including whether each refinement is a context and its equality, upper-bound, or lower-bound data. This accompanies the still-experimental type-alias refinement work. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/10b493a51a1fe2db8cf452446da6428e4e6a262b" target="_blank" rel="noopener noreferrer">10b493a51a</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

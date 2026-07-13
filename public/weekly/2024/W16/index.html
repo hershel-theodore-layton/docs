@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="13 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 16: Apr 15–Apr 21, 2024 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 16: Apr 15–Apr 21, 2024</h1>
+  <p class="post-meta">13 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/04/15/">Day</a><a href="/weekly/2024/W16/" aria-current="page">Week</a><a href="/monthly/2024/04/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2024/W15/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2024/W17/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Breaking Changes</h2><span>5 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/04/15/">Mon, Apr 15</a></div>
+  <div class="entry-copy"><code>where</code> clauses may no longer project a type constant through a generic or abstract receiver, such as <code>where U = T::TC</code>. Express the relationship with a refinement such as <code>T as Base with { type TC = U }</code>. Context-polymorphic coeffect projections such as <code>[$a::Ctx]</code> and <code>[T::Ctx]</code> are explicitly exempt and remain supported. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e9da5a4c6ad368009e34a1643cfe2bc1606ecf64" target="_blank" rel="noopener noreferrer">e9da5a4c6a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/04/16/">Tue, Apr 16</a></div>
+  <div class="entry-copy">Inside a module declaration, an <code>imports</code> block must now appear before an <code>exports</code> block. Reorder declarations that currently export first; the restriction prevents range-formatting from losing the original token order. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2f432af79a3cebd47e88128630b709c136debfd7" target="_blank" rel="noopener noreferrer">2f432af79a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/04/18/">Thu, Apr 18</a></div>
+  <div class="entry-copy"><code>AsyncMysqlErrorResult::mysql_normalize_error()</code> has been removed from the HHI and runtime extension. Migrate callers to the remaining error information, such as <code>mysql_error()</code>, <code>mysql_errno()</code>, or <code>failureType()</code>, as appropriate. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5a9a946d2dbf47ac574773105788fcf37eda1402" target="_blank" rel="noopener noreferrer">5a9a946d2d</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/04/19/">Fri, Apr 19</a></div>
+  <div class="entry-copy">Accessing a private static member through an object expression, such as <code>$object::method()</code>, is now accepted only from that same class when it is <code>final</code>. Cross-class access that previously slipped through now reports that private members cannot be accessed dynamically; prefer <code>self::method()</code> for same-class calls. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c17d4a02210a8e3ab2a82bdbae248b28f154c6c9" target="_blank" rel="noopener noreferrer">c17d4a0221</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/04/19/">Fri, Apr 19</a></div>
+  <div class="entry-copy"><code>DOMDocument::registerNodeClass()</code> class mappings are now case-sensitive. The base-class spelling used during registration must exactly match the class name encountered when DOM objects are created. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ecaf3474e95d600a6f503cad86b51f3dbc574556" target="_blank" rel="noopener noreferrer">ecaf3474e9</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Highlights</h2><span>5 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/04/16/">Tue, Apr 16</a></div>
+  <div class="entry-copy"><code>hackfmt</code> now builds its line table tail-recursively, avoiding a stack overflow on unusually large source files. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/88edd0b8ac64966cdf4b8e176ea3edeb896a906b" target="_blank" rel="noopener noreferrer">88edd0b8ac</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/04/16/">Tue, Apr 16</a></div>
+  <div class="entry-copy"><code>hackfmt</code> now keeps an empty module definition on one line as <code>new module foo {}</code>, matching other empty braced declarations. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0fff1574c614c6aab48df4d82115ad4d1315b926" target="_blank" rel="noopener noreferrer">0fff1574c6</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/04/19/">Fri, Apr 19</a></div>
+  <div class="entry-copy">IDE rename now handles the <code>$</code> prefix correctly for both static properties and the differing declaration/use spellings of instance properties. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/fb8c9ac5b1e3675f03df36206ad6f60872443078" target="_blank" rel="noopener noreferrer">fb8c9ac5b1</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/04/19/">Fri, Apr 19</a></div>
+  <div class="entry-copy">Repo-authoritative compilation accepts <code>--vActiveDeployment=...</code>, allowing a build invocation to set or override the active package deployment without editing <code>build_config.hdf</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1dcd3f2216f340ba886d0cb55f7e56dabff2f891" target="_blank" rel="noopener noreferrer">1dcd3f2216</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/04/20/">Sat, Apr 20</a></div>
+  <div class="entry-copy">The SQLite3 extension now uses SQLite&#x27;s 64-bit integer APIs consistently for returned values, bound parameters, and user-defined function results. Values outside the signed 32-bit range are no longer truncated on those paths. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c9c52eab33966eb991d8c7a063829277ca0227b5" target="_blank" rel="noopener noreferrer">c9c52eab33</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/04/16/">Tue, Apr 16</a></div>
+  <div class="entry-copy">Repo-authoritative optimization no longer asserts when a case-type union contains an unresolved member. The whole union is conservatively left unresolved, matching non-repo HHVM behavior; case types remain a staged feature. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e01cd5e15ab5038e8851be5ad45dc74f7313897d" target="_blank" rel="noopener noreferrer">e01cd5e15a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/04/17/">Wed, Apr 17</a></div>
+  <div class="entry-copy">The typechecker gained internal flow-based provenance nodes for explaining how types move through variance and type constructors, together with a disabled-by-default extended-reasons option. This is groundwork only: the new reasons are not yet surfaced in ordinary project diagnostics. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/abd7cada5ae6da8f5cf0e6b766f8ff89335fe5ea" target="_blank" rel="noopener noreferrer">abd7cada5a</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/11e09fdacf9067d05f47214c90b8eee2059c6be4" target="_blank" rel="noopener noreferrer">11e09fdacf</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/04/18/">Thu, Apr 18</a></div>
+  <div class="entry-copy">Experimental expression-tree splices are now typechecked in the same lowered lambda shape used by code generation. An <code>as</code> refinement performed inside a splice no longer survives after the enclosing expression tree, and values used by splices are treated as captured variables and may be pessimised. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/de35277bac84639b91589ff017749499e65a6696" target="_blank" rel="noopener noreferrer">de35277bac</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

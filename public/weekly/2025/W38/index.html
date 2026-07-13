@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="8 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 38: Sep 15–Sep 21, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 38: Sep 15–Sep 21, 2025</h1>
+  <p class="post-meta">8 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/09/15/">Day</a><a href="/weekly/2025/W38/" aria-current="page">Week</a><a href="/monthly/2025/09/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2025/W37/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2025/W39/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Breaking Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/09/15/">Mon, Sep 15</a></div>
+  <div class="entry-copy">HHVM now raises a runtime notice when a non-async method overrides an async parent method, even if the overriding method returns an <code>Awaitable</code>. This is a notice rather than the hard rejection that was previously backed out, but it may affect logs and user error handlers. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b1945373296fa65f414c3e6012ece39f79fa978d" target="_blank" rel="noopener noreferrer">b194537329</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Highlights</h2><span>5 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/09/16/">Tue, Sep 16</a></div>
+  <div class="entry-copy">Redundant and impossible <code>is</code>/<code>as</code> analysis no longer produces false positives from wildcard tests or unsolved constrained types. Nullable <code>?as</code> assertions now receive the same always-succeeds or always-fails warnings as ordinary <code>as</code> assertions. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/937419689224169e4c0244a288864b2d6de91379" target="_blank" rel="noopener noreferrer">9374196892</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0b4c942af5287382b4cbba1a7596aecdfc9b013c" target="_blank" rel="noopener noreferrer">0b4c942af5</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/09/16/">Tue, Sep 16</a></div>
+  <div class="entry-copy"><code>meth_caller()</code> no longer wraps references to methods without <code>__SupportDynamicType</code> in <code>supportdyn</code>. The resulting callable now reflects the method&#x27;s actual dynamic support while retaining its declared parameter, return, and coeffect information. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3788c4ad242d3fa8e07902b83a8cdc1a45a165da" target="_blank" rel="noopener noreferrer">3788c4ad24</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/09/16/">Tue, Sep 16</a></div>
+  <div class="entry-copy"><code>hphpd</code> print-expression commands now permit assignments, so expressions such as <code>= $value = compute()</code> can update a debugger variable and display the result in one command. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6b677a3e2cedbb9508432d30de4f34e11101d0ab" target="_blank" rel="noopener noreferrer">6b677a3e2c</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/09/17/">Wed, Sep 17</a></div>
+  <div class="entry-copy"><code>hh --find-my-tests</code> accepts one or more method names and returns referencing files under <code>__tests__</code> directories. It can also walk callers backward through the call graph up to a requested maximum distance, finding tests that exercise a method indirectly. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c0adb1229db43ee092a460070e07e1a74874b5cf" target="_blank" rel="noopener noreferrer">c0adb1229d</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/83dbfa02c74099326b91b624655fe9d5a8939ad5" target="_blank" rel="noopener noreferrer">83dbfa02c7</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/09/18/">Thu, Sep 18</a></div>
+  <div class="entry-copy"><code>PHP\pack()</code> and <code>PHP\unpack()</code> now support <code>g</code>/<code>G</code> for little-/big-endian floats and <code>e</code>/<code>E</code> for little-/big-endian doubles, matching the formats added in PHP 7.2. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f855f97526945a6550334e91ff9b5f0c03d9c83f" target="_blank" rel="noopener noreferrer">f855f97526</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/09/18/">Thu, Sep 18</a></div>
+  <div class="entry-copy">Under staged <code>poly_function_pointers</code>, a static method pointer no longer quantifies over an unused class-level generic, even when that generic is reified. For example, a static method that does not mention <code>Wibble&lt;reify T&gt;</code>&#x27;s <code>T</code> can produce an ordinary <code>HH\FunctionRef&lt;(readonly function(): TResult)&gt;</code>; its declared coeffect bracket is preserved. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/dd7e7c248034b160f66cf39e5ac447c723a314cc" target="_blank" rel="noopener noreferrer">dd7e7c2480</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/09/18/">Thu, Sep 18</a></div>
+  <div class="entry-copy">Experimental recursive case types now report Typing[4498] instead of the general cyclic-alias Typing[4014]. Update targeted suppressions or diagnostic tooling that distinguishes these errors by code. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/655c4925aa3ff5b80e52e52332dc041fb1395434" target="_blank" rel="noopener noreferrer">655c4925aa</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

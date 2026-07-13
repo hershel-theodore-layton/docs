@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="3 noteworthy changes recorded on this day.">
+  <title>Tuesday, May 26, 2026 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Tuesday, May 26, 2026</h1>
+  <p class="post-meta">3 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2026/05/26/" aria-current="page">Day</a><a href="/weekly/2026/W22/">Week</a><a href="/monthly/2026/05/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2026/05/23/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2026/05/27/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">The Rust declaration provider received correctness fixes for class/type name collisions, trait <code>__Override</code> diagnostic positions, and descendant invalidation. In particular, unchanged shallow declarations are retained so stale remote declarations cannot suppress required fanout. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5f7f1b100402c8c534c0f06f52fdd4164ca5a2ae" target="_blank" rel="noopener noreferrer">5f7f1b1004</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/92a95e3bf4d3f9d7a49e65c6f5a491aa3c09cc82" target="_blank" rel="noopener noreferrer">92a95e3bf4</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e40ada60a014d77cd3ab1bd2e72b687f9f7ac7ca" target="_blank" rel="noopener noreferrer">e40ada60a0</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy"><code>hh_server</code>, <code>hh_single_type_check</code>, and <code>hh_single_decl</code> now use the Rust provider backend by default where supported. The positive <code>hh_single_type_check --rust-provider-backend</code> flag has been removed; use <code>hh_single_type_check --config rust_provider_backend=false</code> for a temporary shared-memory fallback, or <code>hh_single_decl --no-rust-provider-backend</code> for that tool. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a7830e409b58c8327566f23adbebe238406c7b66" target="_blank" rel="noopener noreferrer">a7830e409b</a></div></li><li class="change-entry"><div class="entry-copy">Conditions are now always checked against <code>~bool</code>, and <code>check_bool_for_condition</code> has been removed. Projects that disabled the check or requested warning-only mode must migrate truthy values to explicit tests such as non-null, non-empty, or non-zero comparisons. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/015f0e5ae7dfb3251de52c245950bca2cb8ae01b" target="_blank" rel="noopener noreferrer">015f0e5ae7</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

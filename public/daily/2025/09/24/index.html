@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="4 noteworthy changes recorded on this day.">
+  <title>Wednesday, September 24, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Wednesday, September 24, 2025</h1>
+  <p class="post-meta">4 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/09/24/" aria-current="page">Day</a><a href="/weekly/2025/W39/">Week</a><a href="/monthly/2025/09/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2025/09/22/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2025/09/25/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy"><code>type_structure($value, &#x27;T&#x27;)</code> now accepts a first argument of type <code>dynamic</code> instead of rejecting the call during its special type-constant validation. Its public signature retains <code>[]</code>, so callers need no ambient capabilities. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/70d45071f40ce06a4737aa9b3d557c50febefd38" target="_blank" rel="noopener noreferrer">70d45071f4</a></div></li><li class="change-entry"><div class="entry-copy">New <code>openssl_csr_get_dns_names(mixed): vec&lt;string&gt;</code> and <code>openssl_csr_get_upn(mixed): string</code> APIs read DNS subject-alt names and the Microsoft UPN otherName from a certificate-signing request. Both throw <code>OpenSSLException</code> for an unparseable CSR; the UPN API also throws when no valid UPN exists. Their omitted coeffect brackets mean <code>[defaults]</code>, so they are not callable from a pure <code>[]</code> context. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/120ba485fd1ac285402b7385ca5641fd64c934a0" target="_blank" rel="noopener noreferrer">120ba485fd</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b1691a9392c3b126fc40b47f5f162fcd59e53b59" target="_blank" rel="noopener noreferrer">b1691a9392</a></div></li><li class="change-entry"><div class="entry-copy">HHVM now loads individual types in dependency order rather than repeatedly retrying whole units. Cross-file dependency chains that only looked cyclic because neither file could be loaded first can now autoload successfully. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d67fb09b37197c71f29dcbccf15b251ba773e936" target="_blank" rel="noopener noreferrer">d67fb09b37</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">Unstable named parameters now receive direct call-site checking for missing, extra, duplicate, and incorrectly typed names, plus autocomplete support. Required named parameters may follow optional parameters because their names remove positional ambiguity. Function-type subtyping and override checking do not yet compare parameter names; ordinary parameter contravariance and coeffect compatibility are unchanged. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6ff9985d4dd2febe91907ba21b844ed2bfa9e6a9" target="_blank" rel="noopener noreferrer">6ff9985d4d</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c345859fc2197f6e79f235bd6a289fd6890fb846" target="_blank" rel="noopener noreferrer">c345859fc2</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4427b17a5e4c83c043b39cce9c8c93a5c7ca5fa2" target="_blank" rel="noopener noreferrer">4427b17a5e</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

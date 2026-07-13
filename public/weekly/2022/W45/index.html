@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="11 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 45: Nov 7–Nov 13, 2022 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 45: Nov 7–Nov 13, 2022</h1>
+  <p class="post-meta">11 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2022/11/07/">Day</a><a href="/weekly/2022/W45/" aria-current="page">Week</a><a href="/monthly/2022/11/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2022/W44/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2022/W46/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>8 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/11/07/">Mon, Nov 7</a></div>
+  <div class="entry-copy">Redundant <code>?mixed</code> and <code>?null</code> type hints are now lint warnings (5008 and 5009) instead of type errors. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/04b4d0f60b2f37318d0d2a84ebefa1e0fd551fba" target="_blank" rel="noopener noreferrer">04b4d0f60b</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/11/07/">Mon, Nov 7</a></div>
+  <div class="entry-copy">Type-alias expansion now detects cycles instead of repeatedly expanding a cyclic alias. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/57491cc735bcb0d712320cb90dc0584614960504" target="_blank" rel="noopener noreferrer">57491cc735</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/11/07/">Mon, Nov 7</a></div>
+  <div class="entry-copy">Sound-dynamic checking handles partially enforced intersection return types and nullable-dynamic array operations more consistently. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/17c37dd75a522353f09873e8cb1c0d644d16b3cc" target="_blank" rel="noopener noreferrer">17c37dd75a</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a7241d4077beb253b44cefbca9aaf48d51975097" target="_blank" rel="noopener noreferrer">a7241d4077</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/11/07/">Mon, Nov 7</a></div>
+  <div class="entry-copy"><code>&lt;&lt;__MethodTraitDiamond&gt;&gt;</code> is no longer gated as an experimental Hack feature. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7abe512898024289eb7e56293b7aa2ec6d213e70" target="_blank" rel="noopener noreferrer">7abe512898</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/11/08/">Tue, Nov 8</a></div>
+  <div class="entry-copy"><code>hhstc</code> gained <code>--remove-dead-unsafe-casts</code>, which removes <code>HH\FIXME\UNSAFE_CAST</code> calls whose input already satisfies the destination type. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/391d94707548066321caed2dce91012f9da8a77d" target="_blank" rel="noopener noreferrer">391d947075</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/11/08/">Tue, Nov 8</a></div>
+  <div class="entry-copy">Bundled declarations now specify that <code>Countable::count()</code> returns <code>int</code>, and several <code>ReflectionMethod</code> predicates and modifier APIs now have concrete <code>bool</code> or <code>int</code> return types. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ac1286cb3960738e15ffac9e8234fb1d93be91e4" target="_blank" rel="noopener noreferrer">ac1286cb39</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9761e022e308e787f15f1f85d1af5f378e139c42" target="_blank" rel="noopener noreferrer">9761e022e3</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/11/08/">Tue, Nov 8</a></div>
+  <div class="entry-copy">Mutable collection <code>clear()</code> methods now return <code>this</code>, allowing their fluent behavior to be represented by the typechecker. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/28e3aaa9cf69fb795ebbcea15029804a7feed603" target="_blank" rel="noopener noreferrer">28e3aaa9cf</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/11/11/">Fri, Nov 11</a></div>
+  <div class="entry-copy">Sound-dynamic pessimisation now handles abstract method return types and inherited intersection return types correctly, avoiding hierarchy errors in affected class trees. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7159fb5c86f6d17070adce6e8b1527c3bde410b8" target="_blank" rel="noopener noreferrer">7159fb5c86</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e58ddaeeed02b280d5cb4aee3d5c5a402b3d94f3" target="_blank" rel="noopener noreferrer">e58ddaeeed</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/11/07/">Mon, Nov 7</a></div>
+  <div class="entry-copy">Indexed assignment no longer widens inferred Hack array types. Code that builds a <code>vec</code> or <code>dict</code> from an empty value may need an explicit type annotation. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5143993e389b466fb6683241d976836cb929da46" target="_blank" rel="noopener noreferrer">5143993e38</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/11/09/">Wed, Nov 9</a></div>
+  <div class="entry-copy">Accessing a known-absent field on a nullable closed shape is now a type error even when using <code>Shapes::idx()</code> or <code>??</code>. Previously, adding nullability could reduce this to a lint or suppress it. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9e49acc366a744eaf0dd7c199c938542e2438f82" target="_blank" rel="noopener noreferrer">9e49acc366</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/11/09/">Wed, Nov 9</a></div>
+  <div class="entry-copy"><code>SplPriorityQueue&lt;T&gt;</code> is now declared as an iterator over <code>~T</code>, reflecting that its extraction flags can make <code>current()</code> return a priority or a value/priority pair instead of <code>T</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4110107aae954fcc77661724be80578d85480796" target="_blank" rel="noopener noreferrer">4110107aae</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="10 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 13: Mar 23–Mar 29, 2026 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 13: Mar 23–Mar 29, 2026</h1>
+  <p class="post-meta">10 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2026/03/24/">Day</a><a href="/weekly/2026/W13/" aria-current="page">Week</a><a href="/monthly/2026/03/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2026/W12/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2026/W14/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>6 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/03/24/">Tue, Mar 24</a></div>
+  <div class="entry-copy">Deleting, renaming, or moving a file during typechecking now restarts the full initialization cycle instead of swallowing <code>File_provider_stale</code> and reporting a spurious internal diagnostic. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/654061e2d8d77aa7544fe880802f8aeb315deac8" target="_blank" rel="noopener noreferrer">654061e2d8</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/03/25/">Wed, Mar 25</a></div>
+  <div class="entry-copy">Typechecking functions that conditionally add many fields to a closed shape is substantially faster. Closed-shape unions now bypass subtype checks that cannot succeed, and branch joins reuse physically shared fields instead of repeatedly processing the entire growing shape. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ce7e826544873ade22ecd3bf2b19e3ea0efc0b6d" target="_blank" rel="noopener noreferrer">ce7e826544</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/487491f877cf0ed436c0694710b102ab854be9d4" target="_blank" rel="noopener noreferrer">487491f877</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/03/25/">Wed, Mar 25</a></div>
+  <div class="entry-copy">Open-source HHBBC compilation no longer deadlocks when its subprocess scheduler is saturated; a worker waiting for capacity no longer holds the lock needed to register and release other subprocesses. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7215c6d4aead847f8b9a00d53b4b39865a175345" target="_blank" rel="noopener noreferrer">7215c6d4ae</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/03/26/">Thu, Mar 26</a></div>
+  <div class="entry-copy"><code>date_diff()</code> once again accepts any <code>DateTimeInterface</code> as its first argument, correcting the overly narrow <code>DateTime</code> HHI introduced earlier in the month. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c869f6c13def7c6af286a8610f1e37c196f551c6" target="_blank" rel="noopener noreferrer">c869f6c13d</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/03/27/">Fri, Mar 27</a></div>
+  <div class="entry-copy">Async lambdas checked against a like-wrapped <code>Awaitable&lt;T&gt;</code> return now reuse the expected <code>T</code> instead of inventing a fresh return type variable. This improves inference when passing async lambdas into dynamically callable APIs. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/05f87d6706557fa2cbfe23c434dc4335dfff065c" target="_blank" rel="noopener noreferrer">05f87d6706</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/03/27/">Fri, Mar 27</a></div>
+  <div class="entry-copy">HHBBC no longer takes quadratic time when folding large keyset literals; it now applies the same efficient element-chain handling already used for dicts. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/edd801ed4464384e2e745d44c3f14cac83804269" target="_blank" rel="noopener noreferrer">edd801ed44</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Security</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/03/25/">Wed, Mar 25</a></div>
+  <div class="entry-copy">HackC no longer constructs invalid Rust strings from binary Hack literals while emitting shape keys, dynamic method names, or enum-class labels. Invalid UTF-8 bytes are replaced lossily instead of causing undefined behavior in later string operations. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8d729a6bfc8fefab92c452e74c0af90762c27ae4" target="_blank" rel="noopener noreferrer">8d729a6bfc</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/03/26/">Thu, Mar 26</a></div>
+  <div class="entry-copy">The pre-stable <code>HH\Runtime\RepresentableAs&lt;T&gt;</code> type now exists in HHVM&#x27;s runtime systemlib as well as the typechecker HHI. <code>HH\Runtime\reveal&lt;T&gt;()</code> safely unwraps it to <code>T</code>; the operation is an identity at runtime because the newtype&#x27;s representation is already <code>T</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4b854c96a62ceede05782f56438ec467b2fa3918" target="_blank" rel="noopener noreferrer">4b854c96a6</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/03/27/">Fri, Mar 27</a></div>
+  <div class="entry-copy">Lint 5655 now reports <code>__PackageOverride</code> dependencies introduced through <code>as</code>/<code>?as</code>, reifiable type constants, and explicit generic arguments even while their package-boundary carveout settings remain enabled. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/90c5cd1df94432172ea577537630b491bdf0f763" target="_blank" rel="noopener noreferrer">90c5cd1df9</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/03/29/">Sun, Mar 29</a></div>
+  <div class="entry-copy">Lint 5656 now checks <code>C::class</code> references from a file with <code>__PackageOverride</code> when the target lacks the same override. These cross-boundary class-pointer dependencies were previously skipped altogether. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5c9c5a31788bbad4da24097e5fc094a4b4580fa9" target="_blank" rel="noopener noreferrer">5c9c5a3178</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

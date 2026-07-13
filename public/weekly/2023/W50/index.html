@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="9 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 50: Dec 11–Dec 17, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 50: Dec 11–Dec 17, 2023</h1>
+  <p class="post-meta">9 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/12/11/">Day</a><a href="/weekly/2023/W50/" aria-current="page">Week</a><a href="/monthly/2023/12/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2023/W49/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2023/W51/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>4 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/12/11/">Mon, Dec 11</a></div>
+  <div class="entry-copy"><code>nameof</code> now accepts transparent and opaque type aliases and returns the alias&#x27;s own name. For example, <code>type T = int</code> produces <code>typename&lt;int&gt;</code>, while an opaque <code>newtype U</code> produces <code>typename&lt;U&gt;</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/119ec37e14f170ae6bf3e7a3a95836562bdeb02e" target="_blank" rel="noopener noreferrer">119ec37e14</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/12/14/">Thu, Dec 14</a></div>
+  <div class="entry-copy"><code>hh_single_complete --root</code> can now locate a downloaded naming table automatically and load project settings from <code>.hhconfig</code>, matching the corresponding <code>hh_single_type_check</code> workflow. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c1f8037cd132ec86b39342ae3a91bacc664577ed" target="_blank" rel="noopener noreferrer">c1f8037cd1</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/12/14/">Thu, Dec 14</a></div>
+  <div class="entry-copy"><code>hackc verify compile</code> can compile a set of Hack files solely to report parse, runtime, and compilation errors without retaining bytecode output. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/cb15edecd973ccb31c4b72af162a949275307ec2" target="_blank" rel="noopener noreferrer">cb15edecd9</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/12/15/">Fri, Dec 15</a></div>
+  <div class="entry-copy">An opt-in strict UTF-8 parser mode can reject source files containing invalid byte sequences. Hack uses <code>strict_utf8=true</code>; HHVM&#x27;s <code>Eval.StrictUtf8Mode</code> remains off at <code>0</code>, rejects source but permits <code>eval</code> input at <code>1</code>, and rejects both at <code>2</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/002372fd69588df6444275312b1ad3fc69469db6" target="_blank" rel="noopener noreferrer">002372fd69</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/12/11/">Mon, Dec 11</a></div>
+  <div class="entry-copy">Runtime type constraints now recognize the explicit <code>HH\object</code> type as “any object.” This is groundwork: no builtin or HHI declaration uses the new constraint yet. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/93db8b6adac4aaf72808dec7eb9dbee8f3ec5703" target="_blank" rel="noopener noreferrer">93db8b6ada</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/12/13/">Wed, Dec 13</a></div>
+  <div class="entry-copy">The unsafe escape hatch for repeated generic-interface instantiations is being renamed to <code>__UNSAFE_AllowMultipleInstantiations</code>. Both the old and new attribute names are accepted at this migration stage. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/588f82b5079b3413ab868ad8cfb8361ec3ea0f4b" target="_blank" rel="noopener noreferrer">588f82b507</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/12/15/">Fri, Dec 15</a></div>
+  <div class="entry-copy">Module-level traits have advanced from Preview to Ongoing Release. The runtime compiler can accept them during the rollout, while typechecked source still needs the <code>module_level_traits</code> file-level feature opt-in. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9cd2521478441a2aa50efc07a7d9138e57869362" target="_blank" rel="noopener noreferrer">9cd2521478</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/12/14/">Thu, Dec 14</a></div>
+  <div class="entry-copy">The language&#x27;s special handling for <code>die</code> has been removed. Replace remaining <code>die(...)</code> calls with <code>exit(...)</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/85d879120e4419f149c317b98b32e42e8e39d8e9" target="_blank" rel="noopener noreferrer">85d879120e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/12/15/">Fri, Dec 15</a></div>
+  <div class="entry-copy">Constructors of <code>__SupportDynamicType</code> classes are now checked under dynamic assumptions, just like their other methods. Constructors that store or return values incompatible with dynamic construction can therefore gain new sound-dynamic errors. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9004eeeb255e06f2459ea3b5c40e1dc558f3b136" target="_blank" rel="noopener noreferrer">9004eeeb25</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

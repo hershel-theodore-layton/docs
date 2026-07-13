@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="4 noteworthy changes recorded on this day.">
+  <title>Friday, April 5, 2024 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Friday, April 5, 2024</h1>
+  <p class="post-meta">4 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/04/05/" aria-current="page">Day</a><a href="/weekly/2024/W14/">Week</a><a href="/monthly/2024/04/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2024/04/04/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2024/04/08/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">Lambda arity mismatches now produce TAST holes around the incompatible function value or lambda. Tools that consume typed ASTs can use the expected and actual function types to offer more precise migrations. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7eccda35266e8366223ca6a6542922c9896e7e3f" target="_blank" rel="noopener noreferrer">7eccda3526</a></div></li><li class="change-entry"><div class="entry-copy"><code>HH\get_executable_lines()</code> no longer reports generated functions or abstract methods as executable. Coverage and debugger clients will no longer see interface methods or class-closing braces as spurious executable lines. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/17236d2dafbd5190801d0669639917861e80d8a6" target="_blank" rel="noopener noreferrer">17236d2daf</a></div></li><li class="change-entry"><div class="entry-copy">Constraint solving now retains the errors from all branches of a disjunction, improving explanations when no branch is valid—particularly for failures involving type-parameter constraints. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/85d958bb73f17a1dd4e6deada52b1d45efbc8d7f" target="_blank" rel="noopener noreferrer">85d958bb73</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">Expression-tree collection literals moved from Preview to OngoingRelease as part of their staged rollout. Expression trees themselves remain experimental. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/eda3f8b79c8c2c8c1fef839e66c643e7a7aef93a" target="_blank" rel="noopener noreferrer">eda3f8b79c</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

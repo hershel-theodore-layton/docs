@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="5 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 34: Aug 21–Aug 27, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 34: Aug 21–Aug 27, 2023</h1>
+  <p class="post-meta">5 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/08/21/">Day</a><a href="/weekly/2023/W34/" aria-current="page">Week</a><a href="/monthly/2023/08/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2023/W33/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2023/W35/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Future Changes</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/08/21/">Mon, Aug 21</a></div>
+  <div class="entry-copy">During the ongoing module rollout, files without an explicit module declaration are now assigned to the internal <code>default</code> module for runtime module and package enforcement. Reflection continues to return <code>null</code> for their module, but boundary errors describe callers as being in the default module rather than outside all modules. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0977c6dffcb28e2ff0b26000ab92d2be6249443d" target="_blank" rel="noopener noreferrer">0977c6dffc</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/08/21/">Mon, Aug 21</a></div>
+  <div class="entry-copy">Experimental case types no longer require every variant to be recoverable. Overlap validation instead compares each pair&#x27;s runtime data types and reports the two conflicting variants directly. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ab94cdfad77dabe107d6cbff1a471d240476601a" target="_blank" rel="noopener noreferrer">ab94cdfad7</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/808d14a22d4e657a040fdfd591d306395c5b323a" target="_blank" rel="noopener noreferrer">808d14a22d</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Highlights</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/08/22/">Tue, Aug 22</a></div>
+  <div class="entry-copy">Hack&#x27;s bundled declarations now expose <code>HH\get_headers_secure()[read_globals]: dict&lt;string, vec&lt;string&gt;&gt;</code>, allowing applications to typecheck use of the runtime&#x27;s protected request-header API. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ea174a9577dd829436d1eec4fb683077b4ee77e4" target="_blank" rel="noopener noreferrer">ea174a9577</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/08/24/">Thu, Aug 24</a></div>
+  <div class="entry-copy">Hack&#x27;s bundled Facts declarations now include <code>HH\Facts\files_with_attribute_and_any_value()</code>, which finds files by file-attribute class and value when Facts is enabled. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/cb4f2f43de81e9499dc5eb57bad66b9cd5611a68" target="_blank" rel="noopener noreferrer">cb4f2f43de</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/08/26/">Sat, Aug 26</a></div>
+  <div class="entry-copy">Compact Thrift deserialization no longer corrupts <code>dict</code> keys or values of wire type <code>I08</code> by incorrectly applying zigzag decoding. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/373966e7ab534af1433d8798708d763ec47e24e0" target="_blank" rel="noopener noreferrer">373966e7ab</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

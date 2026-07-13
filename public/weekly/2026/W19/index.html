@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="8 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 19: May 4–May 10, 2026 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 19: May 4–May 10, 2026</h1>
+  <p class="post-meta">8 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2026/05/04/">Day</a><a href="/weekly/2026/W19/" aria-current="page">Week</a><a href="/monthly/2026/05/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2026/W18/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2026/W20/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/05/04/">Mon, May 4</a></div>
+  <div class="entry-copy">The class manual now gives a consolidated account of <code>public</code>, <code>protected</code>, <code>private</code>, <code>internal</code>, and <code>protected internal</code>, including constructor-promoted properties and visibility rules for overrides. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e750dcbdf6ecc0d77a6a54942af258c5831adff4" target="_blank" rel="noopener noreferrer">e750dcbdf6</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/05/05/">Tue, May 5</a></div>
+  <div class="entry-copy"><code>ReflectionMethod::invoke()</code> and <code>invokeArgs()</code> are now deprecated in Hack declarations. Migrate reflective call sites to <code>HH_FIXME::reflectionMethodInvokeForCallsite()</code> and <code>HH_FIXME::reflectionMethodInvokeArgsForCallsite()</code> while removing avoidable reflection. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5d4b0335e701246567c8555fa383ebd1a501d73f" target="_blank" rel="noopener noreferrer">5d4b0335e7</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/05/07/">Thu, May 7</a></div>
+  <div class="entry-copy"><code>__AutocompleteSortText</code> and its rollout configuration have been removed. The attribute no longer influences IDE completion ordering, and projects should delete it rather than relying on custom sort prefixes. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/912edca7b3fa39a4be980c2dfee65b6a9ea4044d" target="_blank" rel="noopener noreferrer">912edca7b3</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>4 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/05/05/">Tue, May 5</a></div>
+  <div class="entry-copy">Preview expression trees can now desugar <code>vec[...]</code>, <code>dict[...]</code>, and <code>keyset[...]</code> literals through <code>visitVec</code>, <code>visitDict</code>, and <code>visitKeyset</code>. The support is gated by <code>expression_tree_hack_arrays</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b8379a88ace3b9fb31360670fd4f57bd18e33296" target="_blank" rel="noopener noreferrer">b8379a88ac</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/05/05/">Tue, May 5</a></div>
+  <div class="entry-copy">The staged named-parameter runtime now has dedicated function entries for optional named parameters and can initialize their defaults consistently in the interpreter and JIT, including coeffect checks after initialization. Named parameters are not yet Released. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4214c0a6a370ef6b8ee6d50de11baef5d8ee2b5e" target="_blank" rel="noopener noreferrer">4214c0a6a3</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e313bccd1133072ff7f1838254692b8b077bcf66" target="_blank" rel="noopener noreferrer">e313bccd11</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/585ae3ac58e509d62f3f85be1bd5bd39eac7346e" target="_blank" rel="noopener noreferrer">585ae3ac58</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ff5c55a8d2adbdbfb8b5424c1b2dab00d6411225" target="_blank" rel="noopener noreferrer">ff5c55a8d2</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/05/06/">Wed, May 6</a></div>
+  <div class="entry-copy">Sealed methods no longer require an unstable-feature declaration at their use site. The feature is still classified as OngoingRelease rather than Released, so projects should continue to treat it as pre-stable. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2017c9b60240078a2a27f3c83be301f4af78b72c" target="_blank" rel="noopener noreferrer">2017c9b602</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/05/06/">Wed, May 6</a></div>
+  <div class="entry-copy">Named parameters moved from Unstable to Preview in Hack&#x27;s feature registry. This broadens the intended testing audience but does not make their syntax or behavior stable. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8d1b4f3f5d00157a140f4f0eb892ebdc0bf4beb2" target="_blank" rel="noopener noreferrer">8d1b4f3f5d</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Security</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/05/08/">Fri, May 8</a></div>
+  <div class="entry-copy">Hack&#x27;s Rust <code>rand</code> dependency was updated from 0.8.5 to 0.8.6 to address RUSTSEC-2026-0097. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/30e51d9aa3d13c96d3f35a1444d838ad18dd8582" target="_blank" rel="noopener noreferrer">30e51d9aa3</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

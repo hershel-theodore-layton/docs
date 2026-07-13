@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="4 noteworthy changes recorded on this day.">
+  <title>Tuesday, October 21, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Tuesday, October 21, 2025</h1>
+  <p class="post-meta">4 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/10/21/" aria-current="page">Day</a><a href="/weekly/2025/W43/">Week</a><a href="/monthly/2025/10/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2025/10/20/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2025/10/22/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy"><code>HH\FormatString&lt;T&gt;</code> now has an <code>as string</code> upper bound. Generic code can use ordinary string operations on a format string without typechecker special cases or a concatenation trick. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3da9793389a595f18c6f875176ac09d8b6a398c7" target="_blank" rel="noopener noreferrer">3da9793389</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy">Strict string concatenation and interpolation are now unconditional, and the <code>.hhconfig</code> option <code>enable_strict_string_concat_interp</code> has been removed. <code>.</code>, interpolation, and <code>echo</code> accept only <code>string</code> and <code>int</code> (<code>arraykey</code>, plus <code>dynamic</code> under sound-dynamic typing); values such as <code>bool</code>, <code>float</code>, and <code>Stringish</code> must be explicitly converted. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/73bb242fc69cc50c56ccb018d4e71a41cdb16f29" target="_blank" rel="noopener noreferrer">73bb242fc6</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">Staged polymorphic function subtyping now increases rank only when the supertype is universally quantified, avoiding needless rank changes when comparing ordinary callable types. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/df5cd2852ad7f204b5f77d2940083018764f7d33" target="_blank" rel="noopener noreferrer">df5cd2852a</a></div></li><li class="change-entry"><div class="entry-copy">Unstable type splats in method parameter lists must now be tuple types, matching the existing rule for functions. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/02bf96e926338cd578d9167610363eeb7bdc0e5b" target="_blank" rel="noopener noreferrer">02bf96e926</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

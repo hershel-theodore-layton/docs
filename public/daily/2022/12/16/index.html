@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="3 noteworthy changes recorded on this day.">
+  <title>Friday, December 16, 2022 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Friday, December 16, 2022</h1>
+  <p class="post-meta">3 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2022/12/16/" aria-current="page">Day</a><a href="/weekly/2022/W50/">Week</a><a href="/monthly/2022/12/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2022/12/15/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2022/12/19/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">Under <code>everything_sdt</code>, <code>UNSAFE_CAST&lt;TFrom, TTo&gt;</code> is now represented as an upcast to <code>~TTo</code>, including in the TAST. Tools consuming the TAST should expect the like-type, which reflects that the cast does not provide a runtime guarantee. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/90a13f5252f6448225e0493dbb60b4204baf07c8" target="_blank" rel="noopener noreferrer">90a13f5252</a></div></li><li class="change-entry"><div class="entry-copy">Private methods in sound-dynamic classes are now checked as dynamically callable, just like non-private methods, because they can still be reached through <code>dynamic</code> or like-typed receivers. This can expose previously missed sound-dynamic errors. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/822346b50c1d35059716cd56131429e3d0b21669" target="_blank" rel="noopener noreferrer">822346b50c</a></div></li><li class="change-entry"><div class="entry-copy">Implicit pessimisation no longer treats type constants as runtime-enforced by default. Projects experimenting with sound dynamic typing should not rely on a type-constant access alone to enforce the resulting value. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f598a1f4379490ac6a4b23ae87558ca3bd854ae5" target="_blank" rel="noopener noreferrer">f598a1f437</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

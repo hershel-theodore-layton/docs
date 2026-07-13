@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="10 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 16: Apr 17–Apr 23, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 16: Apr 17–Apr 23, 2023</h1>
+  <p class="post-meta">10 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/04/17/">Day</a><a href="/weekly/2023/W16/" aria-current="page">Week</a><a href="/monthly/2023/04/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2023/W15/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2023/W17/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>7 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/04/17/">Mon, Apr 17</a></div>
+  <div class="entry-copy">The invalid-comparison lint now uses the typechecker&#x27;s disjointness rules, reports the concrete compared types, and covers <code>==</code> and <code>!=</code>. It no longer warns merely because two opaque enums or interface types differ when they could still compare equal at runtime. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/43eb4c87efe749e78cadfc352153c101818cab6b" target="_blank" rel="noopener noreferrer">43eb4c87ef</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/04/18/">Tue, Apr 18</a></div>
+  <div class="entry-copy">An unbounded generic and one explicitly bounded by <code>mixed</code> now receive the same class-access diagnostics, including for calls through <code>classname&lt;T&gt;</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e6d63d29f3d1dcec51c0ea4dbb5199025b86ffff" target="_blank" rel="noopener noreferrer">e6d63d29f3</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/04/18/">Tue, Apr 18</a></div>
+  <div class="entry-copy">Renaming an interface method no longer attempts to add a deprecated forwarding method with a body, which is invalid in an interface. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/34d935ebce6826d1a513deae29209a31b1454c3c" target="_blank" rel="noopener noreferrer">34d935ebce</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/04/19/">Wed, Apr 19</a></div>
+  <div class="entry-copy">XHP completion now closes the completed tag based on its <code>children</code> declaration: elements with <code>children empty</code> receive a self-closing tag, while elements that accept children receive matching open and close tags. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/af22df5d2b451b3abc7af60443132690539818f1" target="_blank" rel="noopener noreferrer">af22df5d2b</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/04/19/">Wed, Apr 19</a></div>
+  <div class="entry-copy">The Sodium extension now provides Ed25519 scalar reduction, scalar addition and multiplication, and clamped or unclamped base-point scalar multiplication. Bundled Hack declarations follow on April 26. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9c58ed70534f53f3515eb0ce678592f21479f256" target="_blank" rel="noopener noreferrer">9c58ed7053</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/04/21/">Fri, Apr 21</a></div>
+  <div class="entry-copy">Hover, type-at-position, and go-to-definition now recognize source-level <code>invariant()</code> calls instead of exposing the internal desugared <code>invariant_violation()</code> call. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/466134e155f4ef6e018a038d23c31c31fca4ed5f" target="_blank" rel="noopener noreferrer">466134e155</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/04/22/">Sat, Apr 22</a></div>
+  <div class="entry-copy">Applications can call <code>HH\set_endpoint_name(string)</code> to give a request a more useful endpoint identity than its URL alone. The name is included in server <code>status.json</code> data. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ddfe56dfa1d57f07235583c428585fc65591f7d9" target="_blank" rel="noopener noreferrer">ddfe56dfa1</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/04/17/">Mon, Apr 17</a></div>
+  <div class="entry-copy">Package expressions are now executable: HackC lowers <code>package foo</code> to <code>package_exists(&#x27;foo&#x27;)</code>, matching the type refinements already performed for package conditions. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5d67079833bd249ded8bca140fb328bcf32e6998" target="_blank" rel="noopener noreferrer">5d67079833</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/04/18/">Tue, Apr 18</a></div>
+  <div class="entry-copy">The default <code>Autoload.UserlandDisabledSampleRate</code> is now 1, so deprecated <code>HH\autoload_set_paths()</code> use is recorded for every call while migration logging is enabled. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5a779620cd553dc6eeec91f086024a97c63cb0cd" target="_blank" rel="noopener noreferrer">5a779620cd</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/04/21/">Fri, Apr 21</a></div>
+  <div class="entry-copy">Open shape types now retain the type of unknown fields internally and may print it as <code>shape(&#x27;known&#x27; =&gt; int, _ =&gt; nonnull)</code>. Ordinary <code>...</code> remains equivalent to unknown fields of type <code>mixed</code>; the richer form primarily supports sound-dynamic inference. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a5993a5a699b01f552903d766beab6b7ef342c6e" target="_blank" rel="noopener noreferrer">a5993a5a69</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

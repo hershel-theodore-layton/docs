@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="16 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 17: Apr 21–Apr 27, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 17: Apr 21–Apr 27, 2025</h1>
+  <p class="post-meta">16 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/04/21/">Day</a><a href="/weekly/2025/W17/" aria-current="page">Week</a><a href="/monthly/2025/04/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2025/W16/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2025/W18/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>7 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/04/21/">Mon, Apr 21</a></div>
+  <div class="entry-copy"><code>&lt;&lt;__Reifiable&gt;&gt;</code> abstract type constants are no longer rejected because their <code>as</code> or <code>super</code> bounds contain non-reifiable types; only the constant&#x27;s default or concrete value is relevant. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ef204df70baf3f861007c36446876baab4e128cb" target="_blank" rel="noopener noreferrer">ef204df70b</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/04/21/">Mon, Apr 21</a></div>
+  <div class="entry-copy"><code>HH\IPureMemoizeParam</code> provides a pure <code>getInstanceKey()[]</code>, and the new <code>MemoAgnosticImplicitContext</code> and <code>MemoSensitiveImplicitContext</code> base classes separate the two implicit-context behaviors. Their <code>runWith</code> methods require the context capability plus the callback&#x27;s capability through <code>[this::CRun, ctx $f]</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a45c2854159bc0ed652f5ea16f96dab7b0462c74" target="_blank" rel="noopener noreferrer">a45c285415</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/13fa7c975be8e88527b6baa7badc9d17e5e8730b" target="_blank" rel="noopener noreferrer">13fa7c975b</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/04/22/">Tue, Apr 22</a></div>
+  <div class="entry-copy">Async functions marked <code>&lt;&lt;__AsioLowPri&gt;&gt;</code> now run through a separate scheduler queue. Regular runnable awaitables are drained before low-priority work, while awaiting a child still lifts it into its parent&#x27;s context. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8b9ebdb9533cfb7c360970f4d918beaa9c93510e" target="_blank" rel="noopener noreferrer">8b9ebdb953</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/04/22/">Tue, Apr 22</a></div>
+  <div class="entry-copy">Repeated IDE find-references requests no longer return progressively fewer class-member references as result files become open in the client. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/db5c89546220f122198518da2475ad8e80a2cdc3" target="_blank" rel="noopener noreferrer">db5c895462</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/04/22/">Tue, Apr 22</a></div>
+  <div class="entry-copy">Native <code>&lt;&lt;__OutOnly&gt;&gt;</code> parameters now expose their actual output type in the normal <code>inout</code> type position, and HHVM no longer enforces that type against the ignored incoming value. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/794f98a7f4453d366861a25724b2c8a2e7318574" target="_blank" rel="noopener noreferrer">794f98a7f4</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3644d5ed99652d735f265e551669b60c814780d3" target="_blank" rel="noopener noreferrer">3644d5ed99</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/be95fc5529311cc777bce41cc3c984e24b5df518" target="_blank" rel="noopener noreferrer">be95fc5529</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f4024e274f8e38fc02ec4893c2a53176840e8090" target="_blank" rel="noopener noreferrer">f4024e274f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/04/23/">Wed, Apr 23</a></div>
+  <div class="entry-copy"><code>ReflectionFunctionAbstract::getParamTypeVarNames()</code> returns the type-variable names used by a function or method&#x27;s parameter hints. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/98684268f39763e85f4582011b2f6558720b17ba" target="_blank" rel="noopener noreferrer">98684268f3</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/04/23/">Wed, Apr 23</a></div>
+  <div class="entry-copy">The new implicit-context base classes&#x27; private context constructors now require <code>[leak_safe]</code> rather than implicit <code>[defaults]</code>. This weakens their caller requirement, so they can be called from the base class&#x27;s leak-safe context. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/724940306c76df5f0516e596098281745056d69f" target="_blank" rel="noopener noreferrer">724940306c</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>6 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/04/21/">Mon, Apr 21</a></div>
+  <div class="entry-copy">The unstable class-pointer API adds <code>HH\get_class_from_object</code>, <code>HH\get_parent_class_from_class</code>, and <code>HH\ReifiedGenerics\get_class_from_type</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/048e19045ccb25dff4463bf6a7ec89597d57acbe" target="_blank" rel="noopener noreferrer">048e19045c</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/04/21/">Mon, Apr 21</a></div>
+  <div class="entry-copy">SimpliHack promptlets can use <code>HH\SimpliHack\file()</code> to read a file relative to the <code>.hhconfig</code> root. The callee requires the new <code>HH\SimpliHack</code> context; its <code>as [write_props]</code> bound means that context requires at least <code>write_props</code>, rather than granting property-write access to a caller. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/76ebbfc28a665d3a5bb564c4b332bbd83d3575ce" target="_blank" rel="noopener noreferrer">76ebbfc28a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/04/22/">Tue, Apr 22</a></div>
+  <div class="entry-copy">Packages v2 no longer checks the right-hand side of <code>where</code> constraints for package access, matching symbol-reference build behavior. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c28fd84875eefc5b1cf557ac7702e1f0055ff9ea" target="_blank" rel="noopener noreferrer">c28fd84875</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/04/25/">Fri, Apr 25</a></div>
+  <div class="entry-copy">Pre-stable <code>require class</code> constraints now propagate transitively through trait <code>use</code> relationships, allowing a using trait to rely on members guaranteed by an inherited requirement. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/62494cfe06bab411c66fa2c9a66e76593c04029c" target="_blank" rel="noopener noreferrer">62494cfe06</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/04/25/">Fri, Apr 25</a></div>
+  <div class="entry-copy">The staged <code>require this as</code> constraint now also propagates transitively through trait <code>use</code> relationships. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/62494cfe06bab411c66fa2c9a66e76593c04029c" target="_blank" rel="noopener noreferrer">62494cfe06</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/04/25/">Fri, Apr 25</a></div>
+  <div class="entry-copy">Nested expression trees no longer leak macro-splice variables into surrounding Hack expressions or retain them after leaving the tree. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/373083a98ff967bc8c346e4a3a1e265a9c71cc61" target="_blank" rel="noopener noreferrer">373083a98f</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/04/23/">Wed, Apr 23</a></div>
+  <div class="entry-copy">Reflection <code>getAttributeClass</code> methods now accept <code>class&lt;T&gt;</code> rather than <code>classname&lt;T&gt;</code> in the public HHI. Pass <code>MyAttribute::class</code>, not a classname string. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/59ef42483e221e0f463f63c67e4cf66b485f99ac" target="_blank" rel="noopener noreferrer">59ef42483e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/04/23/">Wed, Apr 23</a></div>
+  <div class="entry-copy"><code>HH\dynamic_class_meth</code> and <code>HH\dynamic_class_meth_force</code> now accept class pointers directly; passing a string remains supported through <code>class_or_classname</code> but raises an implicit string-to-class notice. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3ab00621de5bfb3436802f1f7cfb12d4f25571e5" target="_blank" rel="noopener noreferrer">3ab00621de</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/04/24/">Thu, Apr 24</a></div>
+  <div class="entry-copy">Reading an implicit-context value while that context is inaccessible now returns <code>null</code> instead of throwing <code>InvalidOperationException</code>. Wrappers should expose a nullable return type and callers should stop relying on the exception. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f1de1267ab5c8b786f656e93e5f9cfe00a1355dd" target="_blank" rel="noopener noreferrer">f1de1267ab</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

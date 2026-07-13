@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="6 noteworthy changes recorded on this day.">
+  <title>Wednesday, September 6, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Wednesday, September 6, 2023</h1>
+  <p class="post-meta">6 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/09/06/" aria-current="page">Day</a><a href="/weekly/2023/W36/">Week</a><a href="/monthly/2023/09/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2023/09/05/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2023/09/07/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">Projects can opt in to rejecting direct superglobal variables such as <code>$_SERVER</code> with <code>disallow_direct_superglobals_refs=true</code>; diagnostics direct callers to the corresponding <code>HH\global_*</code> APIs. The compatibility default remains disabled. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/40a5ae7da0e9680045ff7804158d88de1bfb23b3" target="_blank" rel="noopener noreferrer">40a5ae7da0</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/491c65d3bf8662a45851c87486e989f012e58f3b" target="_blank" rel="noopener noreferrer">491c65d3bf</a></div></li><li class="change-entry"><div class="entry-copy">Package metadata now reaches <code>hh_distc</code>, and typechecker glob matching treats <code>foo.*</code> as matching both <code>foo</code> and its descendants while preferring the most specific exact match. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/93d7c2a8912eb4746541f5852c04edf5e086eab3" target="_blank" rel="noopener noreferrer">93d7c2a891</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2933cd27599bd7ba330246fcae234ae1896e8272" target="_blank" rel="noopener noreferrer">2933cd2759</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy"><code>hh --search</code> has been removed. IDE autocomplete and search no longer depend on <code>hh_server</code>&#x27;s former SQLite symbol index. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/edd2b799c5542fe5f58f8a14a4050884f53699dd" target="_blank" rel="noopener noreferrer">edd2b799c5</a></div></li><li class="change-entry"><div class="entry-copy">The typechecker now supplies the built-in <code>default</code> module through HHI. Projects must not declare <code>new module default {}</code> themselves; package diagnostics can now point to this built-in declaration. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/be4229a0c4d30fa01ee75f2f47343a201b9c1d92" target="_blank" rel="noopener noreferrer">be4229a0c4</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">Opt-in strict switches now reject impossible case values and redundant defaults for <code>nothing</code>/<code>noreturn</code> scrutinees. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7497648c8cca5e04431a7227c9c3fe34e7e849b2" target="_blank" rel="noopener noreferrer">7497648c8c</a></div></li><li class="change-entry"><div class="entry-copy">Experimental case-type overlap checking now uses <code>require extends</code> constraints on interfaces and traits to reason about their possible implementations. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/21693db81f879528d2158240aafe68820694fb5b" target="_blank" rel="noopener noreferrer">21693db81f</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

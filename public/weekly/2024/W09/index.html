@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="9 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 9: Feb 26–Mar 3, 2024 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 9: Feb 26–Mar 3, 2024</h1>
+  <p class="post-meta">9 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/02/27/">Day</a><a href="/weekly/2024/W09/" aria-current="page">Week</a><a href="/monthly/2024/02/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2024/W08/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2024/W10/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>4 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/02/27/">Tue, Feb 27</a></div>
+  <div class="entry-copy">Method autocomplete now filters suggestions whose <code>where</code> constraints cannot be satisfied at the call site, instead of offering a completion that immediately produces a type error. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/39a6567878759e17af595ab17be9a7c0ec078944" target="_blank" rel="noopener noreferrer">39a6567878</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/02/27/">Tue, Feb 27</a></div>
+  <div class="entry-copy">Facts queries now treat method names as case-sensitive, matching Hack method lookup. Attribute queries no longer conflate methods whose names differ only by case. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/fbc082a65cc7ce165bb8f62852ab2971cba641e2" target="_blank" rel="noopener noreferrer">fbc082a65c</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/02/28/">Wed, Feb 28</a></div>
+  <div class="entry-copy">Reflection-class helper failures now include the unresolved class name in <code>InvalidArgumentException</code>, replacing the context-free “Unable to find class” message. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d3758273c3b435e623c615f1f0cb1e98d9067446" target="_blank" rel="noopener noreferrer">d3758273c3</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/03/01/">Fri, Mar 1</a></div>
+  <div class="entry-copy">Under Sound Dynamic, calls through like-typed receivers and like-typed function values now produce like-typed results. For example, calling an <code>int</code>-returning method through <code>~C</code> yields <code>~int</code>, closing an unsound path that previously inferred plain <code>int</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2b51ce34b0a9f43fec7f3d7d6fad7cce04e4f13e" target="_blank" rel="noopener noreferrer">2b51ce34b0</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>4 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/02/27/">Tue, Feb 27</a></div>
+  <div class="entry-copy">The experimental package-existence expression now parses the reserved default package name, allowing checks such as <code>if (package default)</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3042a0baa34de0fcd122fb75ea7f264bb4830db9" target="_blank" rel="noopener noreferrer">3042a0baa3</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/02/29/">Thu, Feb 29</a></div>
+  <div class="entry-copy">Attempting to nest an experimental expression tree inside a splice now produces a single targeted diagnostic that recommends assigning the inner tree to a local and splicing that variable. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9e9e317ab6249f50a346cbeb9c50c46478417706" target="_blank" rel="noopener noreferrer">9e9e317ab6</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/02/29/">Thu, Feb 29</a></div>
+  <div class="entry-copy">Like-pushing through an invariant generic argument no longer special-cases a type-variable argument, removing one source of unsound or incomplete inference under implicit pessimisation. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c3eacf2b2da88dc85273cd17729b70c4e92756d0" target="_blank" rel="noopener noreferrer">c3eacf2b2d</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/03/01/">Fri, Mar 1</a></div>
+  <div class="entry-copy">The experimental <code>sound_enum_class_this_type</code> feature now localizes <code>this</code> in enum-class member types against the enum class being accessed, rather than the surrounding class. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2d28f2b3ba80d5fb99330d82faf25c946fcd8abe" target="_blank" rel="noopener noreferrer">2d28f2b3ba</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/02/29/">Thu, Feb 29</a></div>
+  <div class="entry-copy"><code>apc_clear_cache()</code> is no longer available to clear process-wide APC data from server requests: it now returns <code>false</code> without clearing the cache in server execution mode. CLI use remains available. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ca246caaa08d42bc2d9cc1abb9c895f8592c24f9" target="_blank" rel="noopener noreferrer">ca246caaa0</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

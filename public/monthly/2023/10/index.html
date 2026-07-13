@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="51 noteworthy changes, organized by the source changelog sections.">
+  <title>October 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/" aria-current="page">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Monthly digest</p>
+  <h1 class="post-title">October 2023</h1>
+  <p class="post-meta">51 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/10/01/">Day</a><a href="/weekly/2023/W39/">Week</a><a href="/monthly/2023/10/" aria-current="page">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/monthly/2023/09/"><span aria-hidden="true">←</span><span>Previous month</span></a><a class="period-button next" rel="next" href="/monthly/2023/11/"><span aria-hidden="true">→</span><span>Next month</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>28 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W40/">W40</a><span aria-hidden="true"> · </span><a href="/daily/2023/10/03/">Oct 3</a></div>
+  <div class="entry-copy">The Hash extension now supports CRC-32C through <code>hash(&#x27;crc32c&#x27;, ...)</code> and the corresponding incremental hashing APIs. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a0bc5f5044239cc480d85f5667fa2447682fec50" target="_blank" rel="noopener noreferrer">a0bc5f5044</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W40/">W40</a><span aria-hidden="true"> · </span><a href="/daily/2023/10/04/">Oct 4</a></div>
+  <div class="entry-copy">HHVM can now serialize enum-class labels for memoization and use them as memo-table keys. The typechecker still rejects these parameters until its matching update on October 18. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c1e438cad10289dadc6fc6d46ef71083e85fb7a7" target="_blank" rel="noopener noreferrer">c1e438cad1</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W40/">W40</a><span aria-hidden="true"> · </span><a href="/daily/2023/10/04/">Oct 4</a></div>
+  <div class="entry-copy">The debugger no longer resolves unrelated source and function breakpoints while loading units, functions, or classes, avoiding spurious breakpoint binding. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/cc5e336780941c726095c2429528acd34d8fac1e" target="_blank" rel="noopener noreferrer">cc5e336780</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W40/">W40</a><span aria-hidden="true"> · </span><a href="/daily/2023/10/05/">Oct 5</a></div>
+  <div class="entry-copy">New <code>HH\classname_to_class()</code> and <code>HH\class_to_classname()</code> helpers make the runtime representation changes between class names and class pointers explicit. <code>classname_to_class()</code> throws when the class cannot be loaded and emits a sampled notice when the target lacks the newly recognized <code>&lt;&lt;__DynamicallyReferenced&gt;&gt;</code> class attribute. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2b2d440a3564405ac9141a9c47ad1bc05c8759c4" target="_blank" rel="noopener noreferrer">2b2d440a35</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/336f743c5899283ce95fef7743aaa44f6b9e562f" target="_blank" rel="noopener noreferrer">336f743c58</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W40/">W40</a><span aria-hidden="true"> · </span><a href="/daily/2023/10/05/">Oct 5</a></div>
+  <div class="entry-copy">Invalid debugger-style statements such as <code>=$x + 1;</code> now carry a quick-fix that converts the expression to <code>var_dump($x + 1)</code>. A range-calculation fix also makes the new and existing quick-fixes appear for the correct IDE selection. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/046af76074cfb66ff24e0467c339ca146ea76e5b" target="_blank" rel="noopener noreferrer">046af76074</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5cd5c7566707326565ff127e44e81f553dee78e1" target="_blank" rel="noopener noreferrer">5cd5c75667</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W40/">W40</a><span aria-hidden="true"> · </span><a href="/daily/2023/10/06/">Oct 6</a></div>
+  <div class="entry-copy">The IDE now offers an “Add doc comment” code action for supported declarations and correctly removes snippet placeholders before applying it. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/488659d456e8b04aaedd27116b3689d7aa94aa28" target="_blank" rel="noopener noreferrer">488659d456</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9b971b643e06ac498613a5168c56c487788b8a83" target="_blank" rel="noopener noreferrer">9b971b643e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W40/">W40</a><span aria-hidden="true"> · </span><a href="/daily/2023/10/06/">Oct 6</a></div>
+  <div class="entry-copy">A statement beginning with debugger-only <code>=</code> syntax now receives a specific parse error instead of a generic unexpected-token error. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ba6ea045cb26a682ebd00f743dbbf2e0dae57cb1" target="_blank" rel="noopener noreferrer">ba6ea045cb</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W40/">W40</a><span aria-hidden="true"> · </span><a href="/daily/2023/10/06/">Oct 6</a></div>
+  <div class="entry-copy">Repository-authoritative deployment checks now consistently treat soft-deployed packages as outside the active hard deployment. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/70a70f01be8a0056b836fa8fdf7489336d2396c3" target="_blank" rel="noopener noreferrer">70a70f01be</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W41/">W41</a><span aria-hidden="true"> · </span><a href="/daily/2023/10/09/">Oct 9</a></div>
+  <div class="entry-copy">HHVM&#x27;s Proxygen server now includes <code>Retry-After</code> when it returns HTTP 503 because a request timed out in the queue or the server is shutting down, allowing clients and proxies to retry deliberately. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/70f352a4bbf1f543ecc99be26de4ae76a0e060c7" target="_blank" rel="noopener noreferrer">70f352a4bb</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W41/">W41</a><span aria-hidden="true"> · </span><a href="/daily/2023/10/10/">Oct 10</a></div>
+  <div class="entry-copy">The bundled HHI now gives <code>ReflectionMethod::getDeclaringClass()</code> and <code>getPrototype()</code> their concrete <code>ReflectionClass</code> and <code>ReflectionMethod</code> return types instead of missing-return-type placeholders. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/037cb952288792f43c94f1ad3cad4fcb06f84087" target="_blank" rel="noopener noreferrer">037cb95228</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W41/">W41</a><span aria-hidden="true"> · </span><a href="/daily/2023/10/12/">Oct 12</a></div>
+  <div class="entry-copy">Exception breakpoints now work while HHVM&#x27;s JIT is enabled. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a225476c972db94583a2dcf2d9dc0fbf31e8d96a" target="_blank" rel="noopener noreferrer">a225476c97</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W41/">W41</a><span aria-hidden="true"> · </span><a href="/daily/2023/10/13/">Oct 13</a></div>
+  <div class="entry-copy">HackC now records a variadic parameter declared as <code>T ...$args</code> with runtime type metadata <code>vec&lt;T&gt;</code> rather than an erased generic <code>array</code>, matching the value actually presented to the function. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/204aaf50aa1a64d87243584a82662b7b7f84aa30" target="_blank" rel="noopener noreferrer">204aaf50aa</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W42/">W42</a><span aria-hidden="true"> · </span><a href="/daily/2023/10/17/">Oct 17</a></div>
+  <div class="entry-copy">Package diagnostics remain useful when a package mentions an undefined module: Hack now reports the missing module while still using its name to find and explain related package-boundary errors. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/866ce8f064759ecb7cd383e64a5a93f778c1b468" target="_blank" rel="noopener noreferrer">866ce8f064</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W42/">W42</a><span aria-hidden="true"> · </span><a href="/daily/2023/10/18/">Oct 18</a></div>
+  <div class="entry-copy">Memoized functions may now declare <code>HH\EnumClass\Label</code> parameters without a typechecker error, completing the runtime support added on October 4. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4cd1bb3fc8006049d1872b3419740e820fb1c9a5" target="_blank" rel="noopener noreferrer">4cd1bb3fc8</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W42/">W42</a><span aria-hidden="true"> · </span><a href="/daily/2023/10/18/">Oct 18</a></div>
+  <div class="entry-copy">A new <code>debugger_dump(mixed): void</code> builtin renders a value using the debugger&#x27;s serializer. In particular, it honors a value&#x27;s debugger-display customization rather than exposing the ordinary <code>var_dump()</code> representation. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/22a6b2b3a7d43a90847f51e381ed89b4bf7fe3b8" target="_blank" rel="noopener noreferrer">22a6b2b3a7</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W42/">W42</a><span aria-hidden="true"> · </span><a href="/daily/2023/10/19/">Oct 19</a></div>
+  <div class="entry-copy">Enum-class labels now work with the general serializers: <code>serialize()</code>-style modes use the dedicated <code>e:length:label;</code> representation, while JSON encodes a label as a string. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1b80a55bff2d4da33b048e582be94bc12f0b69c2" target="_blank" rel="noopener noreferrer">1b80a55bff</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W42/">W42</a><span aria-hidden="true"> · </span><a href="/daily/2023/10/19/">Oct 19</a></div>
+  <div class="entry-copy">Shape-key checking now follows every index in nested coalescing expressions such as <code>$shape[&#x27;a&#x27;][&#x27;b&#x27;] ?? $fallback</code>, so a missing inner key is no longer overlooked. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/24b8ff501c2cc1b371c9aafebe3ff6d74b2673ec" target="_blank" rel="noopener noreferrer">24b8ff501c</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W42/">W42</a><span aria-hidden="true"> · </span><a href="/daily/2023/10/20/">Oct 20</a></div>
+  <div class="entry-copy"><code>$_SERVER[&#x27;REQUEST_TIME_NS&#x27;]</code> now exposes the request start time in nanoseconds. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/12b5ed858fe911632716bddf000f0253666e43b1" target="_blank" rel="noopener noreferrer">12b5ed858f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W43/">W43</a><span aria-hidden="true"> · </span><a href="/daily/2023/10/23/">Oct 23</a></div>
+  <div class="entry-copy">Runtime deployment checks no longer warn when caller and callee are in the same module, or when the caller itself is already outside the active deployment. This removes two sources of false-positive soft-deployment warnings. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/afc4e864da5ed8c9c95c58ccb9a4a7a430df2d19" target="_blank" rel="noopener noreferrer">afc4e864da</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/09d597f5d8224e722fc7a0effac6ac88d58801da" target="_blank" rel="noopener noreferrer">09d597f5d8</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W43/">W43</a><span aria-hidden="true"> · </span><a href="/daily/2023/10/25/">Oct 25</a></div>
+  <div class="entry-copy">HTTP requests that expire after being dequeued now return the same 503 plus <code>Retry-After</code> response as requests rejected while still queued, closing a gap in overload signaling. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8e43190ec7134c5e03fa630370d226ecdec96a9a" target="_blank" rel="noopener noreferrer">8e43190ec7</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W43/">W43</a><span aria-hidden="true"> · </span><a href="/daily/2023/10/26/">Oct 26</a></div>
+  <div class="entry-copy">Autocomplete after <code>new</code> no longer suggests type aliases, which cannot be instantiated and would produce naming error 2052. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/004e06c11070cfa3a8b67e98c9e7ffca8836cbb5" target="_blank" rel="noopener noreferrer">004e06c110</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W43/">W43</a><span aria-hidden="true"> · </span><a href="/daily/2023/10/26/">Oct 26</a></div>
+  <div class="entry-copy">Functions and methods may use <code>&lt;&lt;__AutocompleteSortText(&#x27;...&#x27;)&gt;&gt;</code> to override their LSP sort key—for example, generated entry points can deliberately appear above their default alphabetical position. The argument must be one static string. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2fce55c0f23d1c5ae444fd060ef2f76a58465d1d" target="_blank" rel="noopener noreferrer">2fce55c0f2</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W43/">W43</a><span aria-hidden="true"> · </span><a href="/daily/2023/10/27/">Oct 27</a></div>
+  <div class="entry-copy">A server may now enable both full and per-file coverage. Each request can select one mode, while attempts to use both modes in the same request fail explicitly. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b3523a4cf01d17a8439d8ce33dfb061ad50ab9a0" target="_blank" rel="noopener noreferrer">b3523a4cf0</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W43/">W43</a><span aria-hidden="true"> · </span><a href="/daily/2023/10/28/">Oct 28</a></div>
+  <div class="entry-copy">Hack code actions now encode edited documents as <code>file://</code> URIs as required by LSP, rather than passing filesystem paths. This preserves VS Code behavior and improves compatibility with stricter language clients. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e9411431d25c280e06a4cd8f3c8fd4bfb3e2420d" target="_blank" rel="noopener noreferrer">e9411431d2</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W44/">W44</a><span aria-hidden="true"> · </span><a href="/daily/2023/10/30/">Oct 30</a></div>
+  <div class="entry-copy">The Hack REPL now warns when a file loaded into its current request has changed on disk, because the already-loaded code will not be refreshed until a new request. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/56722eba423c303499bd1cb0db2ebd9e1aed2d57" target="_blank" rel="noopener noreferrer">56722eba42</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W44/">W44</a><span aria-hidden="true"> · </span><a href="/daily/2023/10/30/">Oct 30</a></div>
+  <div class="entry-copy">The quick-fix for debugger-style <code>=$expression</code> statements now produces <code>debugger_dump($expression)</code> instead of <code>var_dump()</code>. The debugger serializer honors custom debug displays, which helps avoid revealing a value&#x27;s raw representation. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/eb224b9d92dc7c993a474b81fa8a8f76a7285974" target="_blank" rel="noopener noreferrer">eb224b9d92</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W44/">W44</a><span aria-hidden="true"> · </span><a href="/daily/2023/10/31/">Oct 31</a></div>
+  <div class="entry-copy">Nullable runtime assertions now refine like types precisely: if <code>$x</code> has type <code>~Base</code>, then <code>$x as ?Derived</code> is inferred as <code>?Derived</code> just like the non-nullable assertion. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e9d270eff8c92e73309c84c5e00a1fb6f501d842" target="_blank" rel="noopener noreferrer">e9d270eff8</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W44/">W44</a><span aria-hidden="true"> · </span><a href="/daily/2023/10/31/">Oct 31</a></div>
+  <div class="entry-copy">HHVM no longer intermittently loses an implicit context when only the low byte of its internal pointer is zero. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a7c1d33f1762b383e15b6614dbf4a28d5e433681" target="_blank" rel="noopener noreferrer">a7c1d33f17</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>17 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W40/">W40</a><span aria-hidden="true"> · </span><a href="/daily/2023/10/04/">Oct 4</a></div>
+  <div class="entry-copy">Experimental case types now preserve generic arguments when evaluating reified <code>is</code> checks and retain their nominal identity even when they contain a single variant. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/580badd12127f1695a664c81fe0dd91ca5787d85" target="_blank" rel="noopener noreferrer">580badd121</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W40/">W40</a><span aria-hidden="true"> · </span><a href="/daily/2023/10/05/">Oct 5</a></div>
+  <div class="entry-copy">The annotation-gated strict-switch checker now understands enum classes and <code>dynamic</code>. Enum-class arms are checked against the <code>HH\MemberOf</code> interface, while a bare <code>dynamic</code> subject requires <code>default</code> and rejects other arms. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/fe2334dfcfb0f70add8e3c4ad326a534eb366e2f" target="_blank" rel="noopener noreferrer">fe2334dfcf</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5751ee4de9efd24d4ad3f0734275b9f5165e2b7c" target="_blank" rel="noopener noreferrer">5751ee4de9</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W40/">W40</a><span aria-hidden="true"> · </span><a href="/daily/2023/10/05/">Oct 5</a></div>
+  <div class="entry-copy">Code generation now recognizes the experimental <code>class&lt;T&gt;</code> type syntax; typechecker support follows later in the month. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e8a4af259db7300149dbc4b9fd7ab15b8c0d3571" target="_blank" rel="noopener noreferrer">e8a4af259d</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W40/">W40</a><span aria-hidden="true"> · </span><a href="/daily/2023/10/06/">Oct 6</a></div>
+  <div class="entry-copy">The experimental <code>nameof</code> expression is now typechecked and compiled, including resolution of <code>self</code>, <code>parent</code>, <code>static</code>, and reified class names without relying on an implicit class-to-string conversion. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/579290639cfd592f98b15482c7e59e1060001246" target="_blank" rel="noopener noreferrer">579290639c</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W41/">W41</a><span aria-hidden="true"> · </span><a href="/daily/2023/10/09/">Oct 9</a></div>
+  <div class="entry-copy"><code>ReflectionClass::getRequiredClass()</code> now returns the class named by a trait&#x27;s pre-stable <code>require class</code> constraint, or <code>null</code> when no such constraint exists. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/be3c76e346edc99769737fbbc1eec9d52f443034" target="_blank" rel="noopener noreferrer">be3c76e346</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W41/">W41</a><span aria-hidden="true"> · </span><a href="/daily/2023/10/10/">Oct 10</a></div>
+  <div class="entry-copy">Implicit pessimisation no longer wraps a declared <code>this</code> return type in a like type. Fluent methods that return <code>$this</code> therefore retain their precise return type under the rollout. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/39873917dbc88f4d004e1440bae8f733de58fbfb" target="_blank" rel="noopener noreferrer">39873917db</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W41/">W41</a><span aria-hidden="true"> · </span><a href="/daily/2023/10/10/">Oct 10</a></div>
+  <div class="entry-copy">HHVM now limits a fully flattened experimental case type to 48 variants by default, with <code>Eval.MaxCaseTypeVariants</code> available to configure the ceiling. Definitions that exceed it fail during type-alias resolution. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/83d45426598c5a6e78011fc13c95c51e645c9a07" target="_blank" rel="noopener noreferrer">83d4542659</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W41/">W41</a><span aria-hidden="true"> · </span><a href="/daily/2023/10/12/">Oct 12</a></div>
+  <div class="entry-copy">Hack now rejects static calls such as <code>T::foo()</code> when <code>T</code> is a trait with the pre-stable <code>require class</code> constraint. Call through the concrete class that satisfies the requirement instead; the new diagnostic is typing error 4476. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/66031e6a169b3e38e2bcafd427c564183672384b" target="_blank" rel="noopener noreferrer">66031e6a16</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W42/">W42</a><span aria-hidden="true"> · </span><a href="/daily/2023/10/19/">Oct 19</a></div>
+  <div class="entry-copy">The experimental <code>class&lt;T&gt;</code> syntax is now accepted by the typechecker and currently behaves as the migration spelling of <code>classname&lt;T&gt;</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/bc693532b57f5fb1029e98017bad07cd4acf20f1" target="_blank" rel="noopener noreferrer">bc693532b5</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W42/">W42</a><span aria-hidden="true"> · </span><a href="/daily/2023/10/20/">Oct 20</a></div>
+  <div class="entry-copy">The unstable <code>pipe_await</code> feature now permits nested sequential awaits such as <code>await f(await g(), await h())</code>. Hack rejects nestings that would require a concurrent composition of sequential await groups. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c2eec8e384622ec264ed047387f97c501d074e23" target="_blank" rel="noopener noreferrer">c2eec8e384</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W43/">W43</a><span aria-hidden="true"> · </span><a href="/daily/2023/10/25/">Oct 25</a></div>
+  <div class="entry-copy">IDE autocomplete inside experimental <code>nameof</code> expressions now offers all classish declarations, including interfaces and traits rather than only instantiable classes. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2498045ddc4cc7fc3ae30f8504e9a9d10674b015" target="_blank" rel="noopener noreferrer">2498045ddc</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W43/">W43</a><span aria-hidden="true"> · </span><a href="/daily/2023/10/26/">Oct 26</a></div>
+  <div class="entry-copy">Experimental typed locals now preserve runtime checks across destructuring and compound assignments by checking temporary values before committing them. Their shape and tuple checks intentionally remain shallow rather than validating every nested field or element. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b5fae97e2beef7b72f52ca6a49d924306eea6df1" target="_blank" rel="noopener noreferrer">b5fae97e2b</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4a23bbba7061728d5b36bc4f5f4ed9c88a6803ca" target="_blank" rel="noopener noreferrer">4a23bbba70</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W43/">W43</a><span aria-hidden="true"> · </span><a href="/daily/2023/10/27/">Oct 27</a></div>
+  <div class="entry-copy">Calls through intersection types are no longer incorrectly rejected under implicit pessimisation. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/24c4cd9c79f3d56152beb725eace5402aea6552a" target="_blank" rel="noopener noreferrer">24c4cd9c79</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W43/">W43</a><span aria-hidden="true"> · </span><a href="/daily/2023/10/27/">Oct 27</a></div>
+  <div class="entry-copy">An experimental module-level trait may no longer also be <code>internal</code>; the typechecker now catches the combination that HHVM already rejected at runtime. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/820766b1d0f9262e929d2a0da6d37e03f7f50da4" target="_blank" rel="noopener noreferrer">820766b1d0</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W44/">W44</a><span aria-hidden="true"> · </span><a href="/daily/2023/10/30/">Oct 30</a></div>
+  <div class="entry-copy">An experimental module-level trait may use only other traits annotated <code>&lt;&lt;__ModuleLevelTrait&gt;&gt;</code>; Hack now reports the invalid hierarchy before HHVM reaches its matching runtime fatal. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/79e26d95a2b0d29d6a1a808f78ab92e1ed49a7c6" target="_blank" rel="noopener noreferrer">79e26d95a2</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W44/">W44</a><span aria-hidden="true"> · </span><a href="/daily/2023/10/31/">Oct 31</a></div>
+  <div class="entry-copy">The unstable nested-await implementation now diagnoses sequential awaits mixed into incompatible concurrent expressions, including sequential awaits inside a <code>concurrent</code> block. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/13ad0126275eb1a0c19ca74ebddcb3a09c726e9e" target="_blank" rel="noopener noreferrer">13ad012627</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W44/">W44</a><span aria-hidden="true"> · </span><a href="/daily/2023/10/31/">Oct 31</a></div>
+  <div class="entry-copy">Under implicit pessimisation, <code>HH\Readonly\as_mut()</code> now retains its declared return type instead of acquiring an automatic outer like type. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5d156974e2f8c545ad9bfc70e97ac9a117a063bd" target="_blank" rel="noopener noreferrer">5d156974e2</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>5 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W41/">W41</a><span aria-hidden="true"> · </span><a href="/daily/2023/10/11/">Oct 11</a></div>
+  <div class="entry-copy">The boolean <code>Eval.ClassnameNotices</code> setting has been replaced by <code>Eval.ClassnameNoticesSampleRate</code>. Use <code>0</code> to disable notices, <code>1</code> to emit every notice, or a larger value to sample approximately one in that many class-to-classname conversions. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/01c1f4e3cb68298dd549402288dc55c05e3d663f" target="_blank" rel="noopener noreferrer">01c1f4e3cb</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W43/">W43</a><span aria-hidden="true"> · </span><a href="/daily/2023/10/24/">Oct 24</a></div>
+  <div class="entry-copy"><code>HH\classname_from_string_unsafe()</code> has been removed from the bundled HHI, so project calls no longer typecheck. Prefer <code>C::class</code> when the class is statically known; where a typed class name or class pointer is already available, use the explicit conversion helpers introduced on October 5. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e4e180b3874b02328cc74973364595949ef3a9ad" target="_blank" rel="noopener noreferrer">e4e180b387</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W43/">W43</a><span aria-hidden="true"> · </span><a href="/daily/2023/10/26/">Oct 26</a></div>
+  <div class="entry-copy"><code>Eval.EnforceDeployment</code> now defaults to <code>true</code>. Deployments that previously relied on the off-by-default setting may begin warning for soft-package boundary violations and throwing <code>DeploymentBoundaryViolationException</code> for hard violations; fix the package/module boundary or explicitly review the runtime setting. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1146464fbf887db320974022d4c7982db93725f6" target="_blank" rel="noopener noreferrer">1146464fbf</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W44/">W44</a><span aria-hidden="true"> · </span><a href="/daily/2023/10/31/">Oct 31</a></div>
+  <div class="entry-copy">Dynamic static calls with a fixed class, such as <code>C::$method()</code>, are now parse errors. If both pieces truly need runtime dispatch, the remaining supported form is <code>$class::$method()</code>; otherwise call the method by its literal name. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e120477a2187032304e6b38ebea2c49f299cae09" target="_blank" rel="noopener noreferrer">e120477a21</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W44/">W44</a><span aria-hidden="true"> · </span><a href="/daily/2023/10/31/">Oct 31</a></div>
+  <div class="entry-copy"><code>hh_client lsp</code> must now be launched with an explicit project-root argument or from the project root (or one of its subdirectories). Editor integrations that started it from an unrelated working directory must set the root or working directory. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/773a315692c4f1bf186696ad0a0f041b6d21effe" target="_blank" rel="noopener noreferrer">773a315692</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Security</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W41/">W41</a><span aria-hidden="true"> · </span><a href="/daily/2023/10/12/">Oct 12</a></div>
+  <div class="entry-copy">Proxygen responses no longer send <code>Content-Length</code> together with <code>Transfer-Encoding</code>. Emitting only the transfer coding avoids ambiguous HTTP response framing and keeps HHVM compliant with RFC 9112. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b1a80d1d3d5efd4ed966bf3e905b1c6c24b171d1" target="_blank" rel="noopener noreferrer">b1a80d1d3d</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

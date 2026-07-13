@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="19 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 15: Apr 10–Apr 16, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 15: Apr 10–Apr 16, 2023</h1>
+  <p class="post-meta">19 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/04/10/">Day</a><a href="/weekly/2023/W15/" aria-current="page">Week</a><a href="/monthly/2023/04/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2023/W14/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2023/W16/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>10 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/04/10/">Mon, Apr 10</a></div>
+  <div class="entry-copy">The April 3 change that made <code>HH\autoload_set_paths()</code> always throw has been backed out, and the userland autoload map has been restored. Calls work again subject to the existing native-autoload deprecation controls. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6a00b1447eb7c047e1d58e583a8d914f4676a905" target="_blank" rel="noopener noreferrer">6a00b1447e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/04/10/">Mon, Apr 10</a></div>
+  <div class="entry-copy">Hover and go-to-definition now work on locals listed in a lambda&#x27;s <code>use ($x, $y)</code> capture clause and display their inferred types. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5953957e902b991690ad91958839609cb79bf805" target="_blank" rel="noopener noreferrer">5953957e90</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9e1a66f49f3304501b4dc9c2c1213392bb59fbda" target="_blank" rel="noopener noreferrer">9e1a66f49f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/04/11/">Tue, Apr 11</a></div>
+  <div class="entry-copy"><code>hh_server</code> now produces streaming errors by default, including in open-source builds. <code>hh_client</code> can begin displaying errors from an in-progress typecheck instead of waiting for the full check to finish. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ac03e5b0fc41588a2eeffd4f5de49356229ef20a" target="_blank" rel="noopener noreferrer">ac03e5b0fc</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/04/13/">Thu, Apr 13</a></div>
+  <div class="entry-copy">Expression-tree blocks are now a stable syntax feature and no longer require <code>&lt;&lt;__EnableUnstableFeatures(&#x27;expression_tree_blocks&#x27;)&gt;&gt;</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e1aa7c4ce715b357c721eb0c5f9485a8afea670f" target="_blank" rel="noopener noreferrer">e1aa7c4ce7</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/04/13/">Thu, Apr 13</a></div>
+  <div class="entry-copy">Local-variable find-references and rename operations can now be served by the standalone IDE daemon, avoiding a dependency on a fully ready <code>hh_server</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d4fc2e39a8f0592b3fd84d2db219fddd3567e6be" target="_blank" rel="noopener noreferrer">d4fc2e39a8</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b3161a24dc1d0252f20531ac664077534bbc2235" target="_blank" rel="noopener noreferrer">b3161a24dc</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/04/13/">Thu, Apr 13</a></div>
+  <div class="entry-copy">Code in the default package is now callable from every package, while still being allowed to use <code>package foo</code> checks before calling into optional packages. Related diagnostics now point to the originating module. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0a77e5cbc17f7419ac2fca0144bc0056c899a0db" target="_blank" rel="noopener noreferrer">0a77e5cbc1</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/04/14/">Fri, Apr 14</a></div>
+  <div class="entry-copy"><code>DateTime::format()</code> is now declared with an empty capability list. Because it previously had the implicit <code>[defaults]</code> requirement, this is a backwards-compatible relaxation that permits calls from pure contexts. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9137fefeb3feef6ba5b0e8fe843975796b7debf6" target="_blank" rel="noopener noreferrer">9137fefeb3</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/04/14/">Fri, Apr 14</a></div>
+  <div class="entry-copy">Failed calls to sound-dynamic functions now prefer the ordinary static argument error when both static and like-typed checks fail, avoiding confusing diagnostics involving <code>~_</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/814812d3a3c33d5c36e7b4e2ed8f9b4f29eb1bd1" target="_blank" rel="noopener noreferrer">814812d3a3</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/04/16/">Sun, Apr 16</a></div>
+  <div class="entry-copy">With builtin pessimisation enabled, <code>hh_show</code>, <code>hh_expect</code>, and related type-debugging pseudo-functions retain their original argument signatures rather than unnecessarily requiring arguments that support dynamic. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6f27d00daacefadbc200c00e1df3d58d1d260787" target="_blank" rel="noopener noreferrer">6f27d00daa</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/04/16/">Sun, Apr 16</a></div>
+  <div class="entry-copy">HHVM and repository compilation now use success, generic failure, and script-fatal exit statuses more consistently. Automation should continue treating any nonzero status as failure rather than depending on older component-specific values. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/621cef2a1f2b07a82427cfaf20a568c874901d63" target="_blank" rel="noopener noreferrer">621cef2a1f</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>8 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/04/10/">Mon, Apr 10</a></div>
+  <div class="entry-copy">The package feature now recognizes <code>&lt;&lt;__CrossPackage(&#x27;name&#x27;)&gt;&gt;</code> on functions and methods. The named package is considered loaded within the callable, and unknown package names are rejected. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d60543f58b59e49cbdddca5e18bd9fdfe6cfa2a0" target="_blank" rel="noopener noreferrer">d60543f58b</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/eb96979d366fe8ed2d072c5a65d783b7e8314811" target="_blank" rel="noopener noreferrer">eb96979d36</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/04/10/">Mon, Apr 10</a></div>
+  <div class="entry-copy">Soft includes and soft deployments are now carried through the package FFI and exposed to HHVM&#x27;s package reflection. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/126c7ce7125faaccdc3fc3cd7cc6ef75f9007177" target="_blank" rel="noopener noreferrer">126c7ce712</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/04/12/">Wed, Apr 12</a></div>
+  <div class="entry-copy">Sound-dynamic checking now permits an implicit upcast to <code>dynamic</code> when assigning the final value of an <code>inout</code> parameter. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/35635a1e41da5a79f335a0d6c6a43b827f0ddf58" target="_blank" rel="noopener noreferrer">35635a1e41</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/04/12/">Wed, Apr 12</a></div>
+  <div class="entry-copy">In <code>everything_sdt</code> mode, diagnostics and ordinary <code>hh_show</code> output now hide the implementation wrapper <code>supportdyn&lt;T&gt;</code> and print the underlying type. Set the <code>show</code> log level to at least 1 when the wrapper itself is needed for debugging. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9c5e8c21360c8a341e1bee5ed132bee32b081f9b" target="_blank" rel="noopener noreferrer">9c5e8c2136</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/04/13/">Thu, Apr 13</a></div>
+  <div class="entry-copy">Updating a <code>supportdyn&lt;shape(...)&gt;</code> with a value that does not support dynamic now drops the <code>supportdyn</code> wrapper instead of retaining an unsound guarantee. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d3b455e4367eab90f24a619d01955c69112e61c6" target="_blank" rel="noopener noreferrer">d3b455e436</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/04/13/">Thu, Apr 13</a></div>
+  <div class="entry-copy">Sound-dynamic error output now omits redundant <code>as supportdyn&lt;mixed&gt;</code> bounds and internal references to <code>supportdynamic.hhi</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1dc8673888cf5efa809bad4454302674caaa02b8" target="_blank" rel="noopener noreferrer">1dc8673888</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f3a4cb122f2793c1767d20f21d0f33d34661d892" target="_blank" rel="noopener noreferrer">f3a4cb122f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/04/14/">Fri, Apr 14</a></div>
+  <div class="entry-copy">The unstable case-type feature now has parser, declaration, and subtyping support. Syntax such as <code>case type C&lt;T&gt; as Bound = int | vec&lt;T&gt;;</code> defines an opaque type whose variants are accepted as subtypes; unlike a <code>newtype</code>, it remains opaque even in its defining file. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e694755a340eed6a4d850d2389a04b6c4add469e" target="_blank" rel="noopener noreferrer">e694755a34</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/bd99dc17eb25fdb5797f848a0adea3d01cfc5bf5" target="_blank" rel="noopener noreferrer">bd99dc17eb</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/aa1548dfd45ed629ae8af22cf50790303355dcd8" target="_blank" rel="noopener noreferrer">aa1548dfd4</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e53c4cf7b27979fa1504bb76024f25181007f797" target="_blank" rel="noopener noreferrer">e53c4cf7b2</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4cf9a61e23d49509c31a87a86750bb9adf823fe3" target="_blank" rel="noopener noreferrer">4cf9a61e23</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ff74345bf8b7937d14fe8ed269ac5486f3f1ea01" target="_blank" rel="noopener noreferrer">ff74345bf8</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1ebc834d159d5dfc8b49aa65f56fba00c165297b" target="_blank" rel="noopener noreferrer">1ebc834d15</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/04/14/">Fri, Apr 14</a></div>
+  <div class="entry-copy"><code>&lt;&lt;__CrossPackage&gt;&gt;</code> now accepts exactly one package name, preventing ambiguous callables that claim to load several packages. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f9edc902934bd60d33a20ad14d1eee40d564ffe6" target="_blank" rel="noopener noreferrer">f9edc90293</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/04/14/">Fri, Apr 14</a></div>
+  <div class="entry-copy">The boolean <code>Autoload.UserlandEnabled</code> option has been replaced by <code>Autoload.UserlandDisabled</code> and <code>Autoload.UserlandDisabledSampleRate</code>. A disabled value greater than 1 makes <code>HH\autoload_set_paths()</code> throw; a positive value emits the native-autoload deprecation notice and sampled migration logging. Deployment configuration should move to the new option names. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/908ec462008ff7b6e1803a6219ac77d39afd94e6" target="_blank" rel="noopener noreferrer">908ec46200</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

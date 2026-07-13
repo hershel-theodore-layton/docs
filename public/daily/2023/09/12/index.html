@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="5 noteworthy changes recorded on this day.">
+  <title>Tuesday, September 12, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Tuesday, September 12, 2023</h1>
+  <p class="post-meta">5 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/09/12/" aria-current="page">Day</a><a href="/weekly/2023/W37/">Week</a><a href="/monthly/2023/09/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2023/09/11/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2023/09/13/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">Open-source HHVM builds once again parse and enforce <code>PACKAGES.toml</code>, and runtime package matching now agrees with the typechecker that <code>foo.*</code> includes <code>foo</code> itself while exact matches take precedence. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a11552fc4ff8f9f29252d5426a4c09d849ae33c9" target="_blank" rel="noopener noreferrer">a11552fc4f</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5f0823ca7da872cbd9abfb679287358be6837a11" target="_blank" rel="noopener noreferrer">5f0823ca7d</a></div></li><li class="change-entry"><div class="entry-copy">IDE completion cards for top-level functions now include their parameter and return signatures. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/78618a4c42403af56a94a721da26c7e6213dd0c1" target="_blank" rel="noopener noreferrer">78618a4c42</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy">The repo-mode soft-package warning behavior from September 7 has been temporarily backed out. Repo builds once again omit soft packages and can fail with undefined-symbol errors until the corrected reland. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/16c8aaf9404656d59115dfce01879e08e190d807" target="_blank" rel="noopener noreferrer">16c8aaf940</a></div></li><li class="change-entry"><div class="entry-copy">The experimental <code>hh --pause</code> and <code>hh --resume</code> commands have been removed; file changes always trigger the normal full-check workflow. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3bd5161a2cfeaa3413dffe0e3be364a6944b3b7f" target="_blank" rel="noopener noreferrer">3bd5161a2c</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">Opt-in strict switches now recognize integer literals, require a <code>default</code> for the open-ended <code>int</code> domain, and report repeated literal arms. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1fa08641fec8daaed825f8b7b83703cb578efabf" target="_blank" rel="noopener noreferrer">1fa08641fe</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

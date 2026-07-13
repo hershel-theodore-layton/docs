@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="5 noteworthy changes recorded on this day.">
+  <title>Wednesday, July 9, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Wednesday, July 9, 2025</h1>
+  <p class="post-meta">5 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/07/09/" aria-current="page">Day</a><a href="/weekly/2025/W28/">Week</a><a href="/monthly/2025/07/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2025/07/08/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2025/07/10/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Security</h2><ul><li class="change-entry"><div class="entry-copy">Hack&#x27;s Rust dependency lockfile no longer transitively includes the vulnerable <code>owning_ref</code> crate affected by RUSTSEC-2022-0040. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b20fefa60cd62383d1ead53d923c4482d4a32672" target="_blank" rel="noopener noreferrer">b20fefa60c</a></div></li><li class="change-entry"><div class="entry-copy">HHVM fixes a heap-use-after-free when mutating bespoke <code>LoggingArray</code> values by constructing the replacement before invalidating the old array. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2dbe10d8a1921f7f28430155a8d096b99aa68c2e" target="_blank" rel="noopener noreferrer">2dbe10d8a1</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy">Four class-pointer migration settings—<code>class_pointer_ban_classname_new</code>, <code>_type_structure</code>, <code>_static_meth</code>, and <code>_class_const</code>—now take integer levels: <code>0</code> permits the operation, <code>1</code> emits Warn[12022], and <code>2</code> reports an error. Existing boolean values must be replaced with the corresponding integer. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e2bb8738e85bf847c2a4e7051ccc8ecde09fbe48" target="_blank" rel="noopener noreferrer">e2bb8738e8</a></div></li><li class="change-entry"><div class="entry-copy">Static-property access through <code>classname&lt;T&gt;</code> is now an unconditional type error, and the former <code>class_pointer_ban_classname_static_prop</code> escape hatch has been removed. Migrate the receiver to <code>class&lt;T&gt;</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e2bb8738e85bf847c2a4e7051ccc8ecde09fbe48" target="_blank" rel="noopener noreferrer">e2bb8738e8</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">Experimental <code>can_index</code> constraint solving now supports <code>Pair</code> and reports more precise string-index errors. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2cb9a00c36182add0b9686287667350c9ab4ae30" target="_blank" rel="noopener noreferrer">2cb9a00c36</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a592d9f30cd4af115b485f64232a98c310d2c0c2" target="_blank" rel="noopener noreferrer">a592d9f30c</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="10 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 2: Jan 5–Jan 11, 2026 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 2: Jan 5–Jan 11, 2026</h1>
+  <p class="post-meta">10 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2026/01/05/">Day</a><a href="/weekly/2026/W02/" aria-current="page">Week</a><a href="/monthly/2026/01/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2026/W01/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2026/W03/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Future Changes</h2><span>5 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/05/">Mon, Jan 5</a></div>
+  <div class="entry-copy">Runtime refinements now understand nullable predicates such as <code>$x is ?T</code>, including while decomposing variants that use the pre-stable case-type where-clause feature. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/abdfbd2d1e8681d52a0e1e5e4af99594ae6ee309" target="_blank" rel="noopener noreferrer">abdfbd2d1e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/05/">Mon, Jan 5</a></div>
+  <div class="entry-copy">Optional parameters and parameters with defaults may now precede a type-splat parameter such as <code>...Targs</code>. This supports typed-format helpers whose optional format argument is followed by the format tuple. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1128e6a255bbc55084f10e6f88f6527985c1d259" target="_blank" rel="noopener noreferrer">1128e6a255</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/05/">Mon, Jan 5</a></div>
+  <div class="entry-copy">Experimental constraint-based method-call inference can defer resolving an underconstrained receiver inside expression trees. It is gated by <code>try_constraint_method_inference</code>; support for several method features and polished diagnostics is still incomplete. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0000cf2e3e22a988fcd6454fddb3cf3f1c26488f" target="_blank" rel="noopener noreferrer">0000cf2e3e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/06/">Tue, Jan 6</a></div>
+  <div class="entry-copy">Case types moved from Preview to OngoingRelease, so ordinary case-type declarations no longer need <code>__EnableUnstableFeatures(&#x27;case_types&#x27;)</code>. Case-type where clauses remain in Preview, and recursive case types are not part of this pre-stable release. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a5022daa7cfff3562d342a5ed0536449f2669e67" target="_blank" rel="noopener noreferrer">a5022daa7c</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/09/">Fri, Jan 9</a></div>
+  <div class="entry-copy">Case-type refinement with shape predicates now supports optional fields and open shapes. The implementation deliberately favors a bounded-cost, less exhaustive split over combinatorial decomposition. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c2b9b24bf5d7f30085a3b1a6d3b36dc2d7162036" target="_blank" rel="noopener noreferrer">c2b9b24bf5</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Highlights</h2><span>4 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/06/">Tue, Jan 6</a></div>
+  <div class="entry-copy">The strongly typed <code>HH\TypedFormatString</code> implementation introduced on December 23 was temporarily reverted while a memory regression was investigated. This rollback lasted until the corrected reland on January 9. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5b0e3057c14b81db677b036c1e44ce39f1d9c117" target="_blank" rel="noopener noreferrer">5b0e3057c1</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/07/">Wed, Jan 7</a></div>
+  <div class="entry-copy">Hack now provides declarations for <code>HH\watcher_query()</code>, <code>HH\watcher_get_clock()</code>, <code>HH\ext_watcher_version()</code>, and the watcher option/result shapes, eliminating unbound-name errors for the existing watcher extension API. These functions omit coeffect brackets and therefore require <code>[defaults]</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6aab9d86c48f8b4e14fb76d8158552c5813c7d7a" target="_blank" rel="noopener noreferrer">6aab9d86c4</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/09/">Fri, Jan 9</a></div>
+  <div class="entry-copy"><code>HH\TypedFormatString&lt;TFormatter, TArgs&gt;</code> durably relanded after the January 6 rollback. Typed format strings can be passed through first-class helpers, string literals infer their placeholder tuple from the expected formatter, and concatenation combines compatible argument tuples. <code>HH\FormatString&lt;T&gt;</code> remains a compatibility alias using <code>(mixed...)</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/aeef5f7ec176cff82dabe40912a9c276d446ca0e" target="_blank" rel="noopener noreferrer">aeef5f7ec1</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/09/">Fri, Jan 9</a></div>
+  <div class="entry-copy"><code>sprintf()</code>, <code>HH\invariant()</code>, and <code>HH\invariant_violation()</code> retain <code>[]</code> while gaining typed variadic arguments. <code>printf()</code> still omits a capability list and therefore requires <code>[defaults]</code>; the stronger format typing does not relax its caller requirement. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/aeef5f7ec176cff82dabe40912a9c276d446ca0e" target="_blank" rel="noopener noreferrer">aeef5f7ec1</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/09/">Fri, Jan 9</a></div>
+  <div class="entry-copy">Components of a concatenated typed format string must each be valid format fragments. Expressions such as <code>&quot;%&quot; . &quot;d&quot;</code> are rejected even though the resulting plain string would form a valid placeholder. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/aeef5f7ec176cff82dabe40912a9c276d446ca0e" target="_blank" rel="noopener noreferrer">aeef5f7ec1</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

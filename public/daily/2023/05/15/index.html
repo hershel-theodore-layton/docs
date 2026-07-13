@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="4 noteworthy changes recorded on this day.">
+  <title>Monday, May 15, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Monday, May 15, 2023</h1>
+  <p class="post-meta">4 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/05/15/" aria-current="page">Day</a><a href="/weekly/2023/W20/">Week</a><a href="/monthly/2023/05/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2023/05/14/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2023/05/16/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">Switch-exhaustiveness diagnostics list at most ten missing cases, in declaration order, instead of attempting to render every case and potentially crashing on large enums. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5c78876f00c565c7b75813d5e16e9de6697763fa" target="_blank" rel="noopener noreferrer">5c78876f00</a></div></li><li class="change-entry"><div class="entry-copy">A successful equality comparison now refines each operand with the other&#x27;s type. For example, inside <code>$value === 42</code>, a <code>?int</code> value is known to be <code>int</code> without a separate non-null assertion. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ec4f5b16e01140f3acbd97d8a00bb7cac1340a6c" target="_blank" rel="noopener noreferrer">ec4f5b16e0</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy">The obsolete <code>hh --coverage</code> and <code>hh --color</code> commands, along with the old IDE coverage status, have been removed. They predated constraint-based typechecking and no longer represented meaningful type coverage. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/10a04c1344556aa4b4d076145656a7f856477109" target="_blank" rel="noopener noreferrer">10a04c1344</a></div></li><li class="change-entry"><div class="entry-copy">Enabling implicit Sound Dynamic no longer implicitly enables the <code>supportdyn</code> type-hint syntax. Projects writing <code>supportdyn&lt;T&gt;</code> directly must explicitly enable <code>enable_supportdyn_hint</code>; generated pessimised declarations are unaffected. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/126a09182e563d16cda8bd42f4e551a030c2b32d" target="_blank" rel="noopener noreferrer">126a09182e</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

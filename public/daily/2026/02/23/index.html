@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="4 noteworthy changes recorded on this day.">
+  <title>Monday, February 23, 2026 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Monday, February 23, 2026</h1>
+  <p class="post-meta">4 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2026/02/23/" aria-current="page">Day</a><a href="/weekly/2026/W09/">Week</a><a href="/monthly/2026/02/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2026/02/20/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2026/02/24/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">Function-pointer inference now tracks type parameters in other parameters&#x27; constraints, class and type-constant refinements, and occurrences of <code>this</code> with their precise variance. This removes unnecessary first-class polymorphic types while preserving the correct co- or contravariant bound. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/20e6acc12d0ff4ac432f04ad9130b3acbacb3ac2" target="_blank" rel="noopener noreferrer">20e6acc12d</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9a880e8a6be895187c4eae733738b18078bccd14" target="_blank" rel="noopener noreferrer">9a880e8a6b</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/bf9fc1fc91671c4c95e8b60dcda34b9ef23b7c35" target="_blank" rel="noopener noreferrer">bf9fc1fc91</a></div></li><li class="change-entry"><div class="entry-copy">Lambdas created inside a function protected by <code>__RequirePackage</code> or <code>__SoftRequirePackage</code> now retain the package availability of their creation continuation. This permits sound higher-order and recursive uses without granting packages that were unavailable outside the lambda. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/bec949706c6b6797e5ec11c625373bbbaf501453" target="_blank" rel="noopener noreferrer">bec949706c</a></div></li><li class="change-entry"><div class="entry-copy"><code>get_active_worker_counts()</code> is now known to Hack and returns a shape containing pagelet, Xbox, HTTP, and CLI worker counts. The declaration omits coeffect brackets and therefore retains the <code>[defaults]</code> caller requirement. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/531391b170e5a31bb1f0193604cbf4f9b1ac0c02" target="_blank" rel="noopener noreferrer">531391b170</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy">Lint 5655 now reports references from a file assigned by package rules into a file moved into that same package with <code>__PackageOverride</code>. References guarded by an appropriate <code>__SoftRequirePackage</code> are exempt; other edges should move the target, add <code>__RequirePackage</code>, or be guarded by a package check. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/216d08b79c1285a17cfe4699c234d5eb2fd2966e" target="_blank" rel="noopener noreferrer">216d08b79c</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/91243638d10521d9b02c04d51cdc247bc7ba33e4" target="_blank" rel="noopener noreferrer">91243638d1</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

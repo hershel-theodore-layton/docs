@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="5 noteworthy changes recorded on this day.">
+  <title>Friday, September 8, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Friday, September 8, 2023</h1>
+  <p class="post-meta">5 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/09/08/" aria-current="page">Day</a><a href="/weekly/2023/W36/">Week</a><a href="/monthly/2023/09/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2023/09/07/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2023/09/11/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">Reified-generic checking now preserves the most informative type arguments across union receivers and looks through like-typed function signatures. This removes false missing-type-argument errors while restoring real errors for omitted reified arguments. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c3045c650d9aa9e7e597e31cb52b01396441cda0" target="_blank" rel="noopener noreferrer">c3045c650d</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ed0a6efdfd8983448cfa17b3bf962a8cd82c9b91" target="_blank" rel="noopener noreferrer">ed0a6efdfd</a></div></li><li class="change-entry"><div class="entry-copy">Implicit lazy-class-to-string notices for argument type hints now identify which argument and function triggered the conversion. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e912bbb1e06e90fb60164d882633e3300676feef" target="_blank" rel="noopener noreferrer">e912bbb1e0</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy">Enum-class labels now use a native runtime datatype by default instead of opaque resources. Dumps identify <code>enum class label (#Name)</code>, equality compares label names, and relational comparisons throw <code>InvalidOperationException</code>; code that inspected labels as resources must migrate. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d044eba3a161791f4a7f6acb22b7ba7ea0649286" target="_blank" rel="noopener noreferrer">d044eba3a1</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/353425f2387a15e2982c10d51394f942760830be" target="_blank" rel="noopener noreferrer">353425f238</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ab69809ede17ae3d6fe270e410e0023512a6c611" target="_blank" rel="noopener noreferrer">ab69809ede</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">Opt-in strict switches now understand boolean scrutinees and can require both <code>true</code> and <code>false</code> arms. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1e3bf333a03126b2a11a25f60930b8faf0d1c61d" target="_blank" rel="noopener noreferrer">1e3bf333a0</a></div></li><li class="change-entry"><div class="entry-copy">Runtime groundwork for case types now represents primitive and object unions in type constraints, supports properties in repo mode, and keeps property overrides nominal. Case types are still an opt-in language feature at this point. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/32169a9ad6bd8deceea970a2463205b36657c462" target="_blank" rel="noopener noreferrer">32169a9ad6</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a18b5577b725513fa512f397873c03c6add5275c" target="_blank" rel="noopener noreferrer">a18b5577b7</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/808fb25912778d5ddf306529d162ca79ff552693" target="_blank" rel="noopener noreferrer">808fb25912</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ee67a837049d00060c0d3b0481db7c1cf483ba6d" target="_blank" rel="noopener noreferrer">ee67a83704</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

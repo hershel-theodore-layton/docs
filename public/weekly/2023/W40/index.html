@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="12 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 40: Oct 2–Oct 8, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 40: Oct 2–Oct 8, 2023</h1>
+  <p class="post-meta">12 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/10/03/">Day</a><a href="/weekly/2023/W40/" aria-current="page">Week</a><a href="/monthly/2023/10/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2023/W39/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2023/W41/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>8 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/10/03/">Tue, Oct 3</a></div>
+  <div class="entry-copy">The Hash extension now supports CRC-32C through <code>hash(&#x27;crc32c&#x27;, ...)</code> and the corresponding incremental hashing APIs. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a0bc5f5044239cc480d85f5667fa2447682fec50" target="_blank" rel="noopener noreferrer">a0bc5f5044</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/10/04/">Wed, Oct 4</a></div>
+  <div class="entry-copy">HHVM can now serialize enum-class labels for memoization and use them as memo-table keys. The typechecker still rejects these parameters until its matching update on October 18. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c1e438cad10289dadc6fc6d46ef71083e85fb7a7" target="_blank" rel="noopener noreferrer">c1e438cad1</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/10/04/">Wed, Oct 4</a></div>
+  <div class="entry-copy">The debugger no longer resolves unrelated source and function breakpoints while loading units, functions, or classes, avoiding spurious breakpoint binding. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/cc5e336780941c726095c2429528acd34d8fac1e" target="_blank" rel="noopener noreferrer">cc5e336780</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/10/05/">Thu, Oct 5</a></div>
+  <div class="entry-copy">New <code>HH\classname_to_class()</code> and <code>HH\class_to_classname()</code> helpers make the runtime representation changes between class names and class pointers explicit. <code>classname_to_class()</code> throws when the class cannot be loaded and emits a sampled notice when the target lacks the newly recognized <code>&lt;&lt;__DynamicallyReferenced&gt;&gt;</code> class attribute. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2b2d440a3564405ac9141a9c47ad1bc05c8759c4" target="_blank" rel="noopener noreferrer">2b2d440a35</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/336f743c5899283ce95fef7743aaa44f6b9e562f" target="_blank" rel="noopener noreferrer">336f743c58</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/10/05/">Thu, Oct 5</a></div>
+  <div class="entry-copy">Invalid debugger-style statements such as <code>=$x + 1;</code> now carry a quick-fix that converts the expression to <code>var_dump($x + 1)</code>. A range-calculation fix also makes the new and existing quick-fixes appear for the correct IDE selection. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/046af76074cfb66ff24e0467c339ca146ea76e5b" target="_blank" rel="noopener noreferrer">046af76074</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5cd5c7566707326565ff127e44e81f553dee78e1" target="_blank" rel="noopener noreferrer">5cd5c75667</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/10/06/">Fri, Oct 6</a></div>
+  <div class="entry-copy">The IDE now offers an “Add doc comment” code action for supported declarations and correctly removes snippet placeholders before applying it. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/488659d456e8b04aaedd27116b3689d7aa94aa28" target="_blank" rel="noopener noreferrer">488659d456</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9b971b643e06ac498613a5168c56c487788b8a83" target="_blank" rel="noopener noreferrer">9b971b643e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/10/06/">Fri, Oct 6</a></div>
+  <div class="entry-copy">A statement beginning with debugger-only <code>=</code> syntax now receives a specific parse error instead of a generic unexpected-token error. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ba6ea045cb26a682ebd00f743dbbf2e0dae57cb1" target="_blank" rel="noopener noreferrer">ba6ea045cb</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/10/06/">Fri, Oct 6</a></div>
+  <div class="entry-copy">Repository-authoritative deployment checks now consistently treat soft-deployed packages as outside the active hard deployment. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/70a70f01be8a0056b836fa8fdf7489336d2396c3" target="_blank" rel="noopener noreferrer">70a70f01be</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>4 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/10/04/">Wed, Oct 4</a></div>
+  <div class="entry-copy">Experimental case types now preserve generic arguments when evaluating reified <code>is</code> checks and retain their nominal identity even when they contain a single variant. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/580badd12127f1695a664c81fe0dd91ca5787d85" target="_blank" rel="noopener noreferrer">580badd121</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/10/05/">Thu, Oct 5</a></div>
+  <div class="entry-copy">The annotation-gated strict-switch checker now understands enum classes and <code>dynamic</code>. Enum-class arms are checked against the <code>HH\MemberOf</code> interface, while a bare <code>dynamic</code> subject requires <code>default</code> and rejects other arms. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/fe2334dfcfb0f70add8e3c4ad326a534eb366e2f" target="_blank" rel="noopener noreferrer">fe2334dfcf</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5751ee4de9efd24d4ad3f0734275b9f5165e2b7c" target="_blank" rel="noopener noreferrer">5751ee4de9</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/10/05/">Thu, Oct 5</a></div>
+  <div class="entry-copy">Code generation now recognizes the experimental <code>class&lt;T&gt;</code> type syntax; typechecker support follows later in the month. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e8a4af259db7300149dbc4b9fd7ab15b8c0d3571" target="_blank" rel="noopener noreferrer">e8a4af259d</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/10/06/">Fri, Oct 6</a></div>
+  <div class="entry-copy">The experimental <code>nameof</code> expression is now typechecked and compiled, including resolution of <code>self</code>, <code>parent</code>, <code>static</code>, and reified class names without relying on an implicit class-to-string conversion. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/579290639cfd592f98b15482c7e59e1060001246" target="_blank" rel="noopener noreferrer">579290639c</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

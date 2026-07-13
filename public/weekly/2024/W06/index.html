@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="12 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 6: Feb 5–Feb 11, 2024 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 6: Feb 5–Feb 11, 2024</h1>
+  <p class="post-meta">12 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/02/05/">Day</a><a href="/weekly/2024/W06/" aria-current="page">Week</a><a href="/monthly/2024/02/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2024/W05/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2024/W07/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Future Changes</h2><span>6 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/02/05/">Mon, Feb 5</a></div>
+  <div class="entry-copy">As part of the ongoing module-level-traits rollout, <code>&lt;&lt;__ModuleLevelTrait&gt;&gt;</code> no longer requires the per-file <code>module_level_traits</code> opt-in. The feature is still staged rather than generally released. A module-level trait may also compose an ordinary public, non-<code>internal</code> trait. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0257ed18dadd30a412504076b4ea63dd892513a5" target="_blank" rel="noopener noreferrer">0257ed18da</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3cff9cd06623292823b6a39406636876cc66bcb4" target="_blank" rel="noopener noreferrer">3cff9cd066</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/02/06/">Tue, Feb 6</a></div>
+  <div class="entry-copy">HHVM gains the runtime type-structure representation needed for recursive experimental case types such as <code>case type Node = int | shape(&#x27;next&#x27; =&gt; Node)</code>. The typechecker does not support declaring them yet. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/504c07dd961a0bbaa1529fff3541297389dff228" target="_blank" rel="noopener noreferrer">504c07dd96</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/02/07/">Wed, Feb 7</a></div>
+  <div class="entry-copy">Sound Dynamic now preserves the like-type information inside <code>supportdyn&lt;~T&gt;</code> when stripping <code>dynamic</code>, fixing rejected operations such as arithmetic on <code>~int</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/29bac2a65edca8ad3e9570df7500e193d9bfc156" target="_blank" rel="noopener noreferrer">29bac2a65e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/02/08/">Thu, Feb 8</a></div>
+  <div class="entry-copy">HHBBC now preserves module provenance when a staged module-level trait composes an <code>internal</code> trait, so copied methods retain the correct runtime boundary checks after trait flattening. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/73357ffc8d5b9ea3ba5ad0f4e836238c496679e9" target="_blank" rel="noopener noreferrer">73357ffc8d</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/02/08/">Thu, Feb 8</a></div>
+  <div class="entry-copy">Dynamic-aware subtyping no longer takes an incomplete default path before decomposing a right-hand intersection in constraints of the form <code>T &lt;: supportdyn&lt;t&gt;</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4ebf2bc6f179a43183901f3655a9b09831d153f0" target="_blank" rel="noopener noreferrer">4ebf2bc6f1</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/02/09/">Fri, Feb 9</a></div>
+  <div class="entry-copy">Implicit pessimisation can now push a like type through enum returns whose runtime representation appears as an intersection, avoiding false errors for results such as <code>vec&lt;~E &amp; int&gt;</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b8a79a6331da5238f036902517c39d1b154b0629" target="_blank" rel="noopener noreferrer">b8a79a6331</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Security</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/02/06/">Tue, Feb 6</a></div>
+  <div class="entry-copy"><code>idn_to_ascii()</code> now passes ICU the correct output-buffer capacity. Oversized malformed domains return <code>false</code> instead of overwriting the buffer terminator and crashing HHVM. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e5a0315b8812ea1888d50040048b22bdd18eeb46" target="_blank" rel="noopener noreferrer">e5a0315b88</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/02/06/">Tue, Feb 6</a></div>
+  <div class="entry-copy">Runtime parameter type hints on builtins are now enforced by default rather than treated as soft. Calls that relied on passing values of the wrong type to native functions may now fail instead of merely warning. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/11164a1fced1272af6697fc67ba2beeee8af6362" target="_blank" rel="noopener noreferrer">11164a1fce</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Highlights</h2><span>4 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/02/07/">Wed, Feb 7</a></div>
+  <div class="entry-copy">A new <code>type_alias_exists(string $name, bool $autoload = true)[]: bool</code> builtin checks for a type alias without forcing callers to probe it through an exception. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a0e84e265c85e70c77e3da4357019bb77adcd1d0" target="_blank" rel="noopener noreferrer">a0e84e265c</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/02/08/">Thu, Feb 8</a></div>
+  <div class="entry-copy">Tier overrides now accept a <code>tagset</code> matcher containing multiple regular expressions. A machine matches only when its tags satisfy every expression in the set. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7e0dac16238b75188141fa2916b420b5d1a9f63e" target="_blank" rel="noopener noreferrer">7e0dac1623</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/02/08/">Thu, Feb 8</a></div>
+  <div class="entry-copy">The HTTP compression layer now reads the documented <code>zstd.target_block_size</code> option; the previous typo caused configured values to be ignored. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/81d33dc8410e2fa1c0118b967dfda3ef93383fe4" target="_blank" rel="noopener noreferrer">81d33dc841</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/02/09/">Fri, Feb 9</a></div>
+  <div class="entry-copy">Debugger breakpoints set in a unit that was loaded after request startup are now installed reliably, even after execution has already paused in another unit. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7af3e78f4ddd9fa87014ac864023fcedfd9637d9" target="_blank" rel="noopener noreferrer">7af3e78f4d</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

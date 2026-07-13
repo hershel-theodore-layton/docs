@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="15 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 41: Oct 6–Oct 12, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 41: Oct 6–Oct 12, 2025</h1>
+  <p class="post-meta">15 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/10/06/">Day</a><a href="/weekly/2025/W41/" aria-current="page">Week</a><a href="/monthly/2025/10/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2025/W40/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2025/W42/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>9 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/10/06/">Mon, Oct 6</a></div>
+  <div class="entry-copy">Sound-dynamic typing for integer operations is more precise. Binary <code>&amp;</code>, <code>|</code>, and <code>^</code> return <code>~int</code> only when both operands may hide strings; <code>%</code>, <code>&lt;&lt;</code>, and <code>&gt;&gt;</code> accept like/dynamic integer operands but return <code>int</code>; unary <code>~</code> over a like/dynamic integer returns <code>~int</code>. Invalid operands now receive Typing[4110]. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8b0a654ad28d782b1770394a80a3ed4ddd2b333e" target="_blank" rel="noopener noreferrer">8b0a654ad2</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/cb891dba1b6a78a2b7e289fde4588b44aa215095" target="_blank" rel="noopener noreferrer">cb891dba1b</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8ad57d6c36d26370d0c4370513324ae3019295b2" target="_blank" rel="noopener noreferrer">8ad57d6c36</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/10/06/">Mon, Oct 6</a></div>
+  <div class="entry-copy"><code>Eval.WarnOnBitwiseOpInvalidType</code> provides a migration path away from runtime bitwise operations on strings. The default <code>0</code> preserves them, <code>1</code> raises a warning, and <code>2</code> raises an error. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0d19dfbb1330bded2b1ed6b792031ff060c84f8d" target="_blank" rel="noopener noreferrer">0d19dfbb13</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/10/07/">Tue, Oct 7</a></div>
+  <div class="entry-copy">A property-assignment type mismatch now highlights the incompatible right-hand-side expression rather than the entire assignment statement, making Typing[4110] errors substantially easier to locate. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/db5d63a7fa377f104a474cc1c3bbb91a984bef2d" target="_blank" rel="noopener noreferrer">db5d63a7fa</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/10/08/">Wed, Oct 8</a></div>
+  <div class="entry-copy"><code>CUSTOM_ERRORS.json</code> rules can now match <code>Module_cross_package_access</code> by the use, declaration, module, and package files and by the current and target module/package names. File patterns support path segments, filename/extension matching, wildcards, and captures. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9243b11d8ac554384d608ab5d113d95a0d7e159f" target="_blank" rel="noopener noreferrer">9243b11d8a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/10/08/">Wed, Oct 8</a></div>
+  <div class="entry-copy">Bad array-index diagnostics now point at the index expression, and Lint[5654] flags <code>?-&gt;</code> when the receiver is statically exactly <code>null</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9b6a914f005778ff3d085f21b76f6a4c584536d2" target="_blank" rel="noopener noreferrer">9b6a914f00</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a9a26055e59620f9578f64fb18176b117acc6101" target="_blank" rel="noopener noreferrer">a9a26055e5</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/10/08/">Wed, Oct 8</a></div>
+  <div class="entry-copy">HackC unit-compilation exceptions crossing the Rust/C++ boundary are now rendered as meaningful emitter errors instead of opaque bridge-class failures. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c776cb5c3a5d46458753010405cca6fd3ee90216" target="_blank" rel="noopener noreferrer">c776cb5c3a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/10/08/">Wed, Oct 8</a></div>
+  <div class="entry-copy">Thrift streaming now credits a request when response payload memory is freed on its I/O thread, reducing false per-request out-of-memory failures. Credit is applied when control next returns to the request thread, so several in-flight payloads must still fit within the limit. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6f2c4027dea2196ea374eafbac3282346f085b59" target="_blank" rel="noopener noreferrer">6f2c4027de</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/10/09/">Thu, Oct 9</a></div>
+  <div class="entry-copy"><code>protected internal</code> visibility is released and no longer requires <code>&lt;&lt;file: __EnableUnstableFeatures(&#x27;protected_internal&#x27;)&gt;&gt;</code>. The old unstable-feature name has been removed. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3b6cd30facc2ce99c7fa3961e0a6bcdebaa84276" target="_blank" rel="noopener noreferrer">3b6cd30fac</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/10/09/">Thu, Oct 9</a></div>
+  <div class="entry-copy">Compact Thrift string serialization and deserialization now rethrow Hack exception objects unchanged. User exceptions retain their original class and message instead of being wrapped as a generic Thrift error. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5ba682b8b8b80252952bae98bc204e47ca521b44" target="_blank" rel="noopener noreferrer">5ba682b8b8</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>4 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/10/06/">Mon, Oct 6</a></div>
+  <div class="entry-copy">Unstable named parameters are now parsed in lambdas and function-type hints, compared by name during function subtyping, and supported after one splatted argument. Diagnostics distinguish missing <code>named</code> markers and multiple splats, with quickfixes and narrower source positions. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0dca1d44cae9ce89741833831510f7e9fa8891cb" target="_blank" rel="noopener noreferrer">0dca1d44ca</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f4ef532fa897391be17ce5ff9b53e4043b4bd5b6" target="_blank" rel="noopener noreferrer">f4ef532fa8</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/363a3b9bf453db7cd0518d189dc95013da2348a0" target="_blank" rel="noopener noreferrer">363a3b9bf4</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/dc806083d88daaec32382b69d640811ef7da5f5b" target="_blank" rel="noopener noreferrer">dc806083d8</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f3fdea9f10a67221a5b2a8a1b6ca83ca63fd5373" target="_blank" rel="noopener noreferrer">f3fdea9f10</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e6e42516c3c97a09afb297bcfecbca592ec8ed62" target="_blank" rel="noopener noreferrer">e6e42516c3</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/10/09/">Thu, Oct 9</a></div>
+  <div class="entry-copy">Opt-in <code>constraint_method_call</code> inference now compares a method&#x27;s required capabilities with the caller&#x27;s actual provided capability instead of a synthesized <code>[defaults]</code>. Capability requirements are caller obligations and function capabilities are contravariant: the method may require the same or a smaller set than the caller provides, while a requirement outside that set is rejected. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ee31ebee65b8bd3088b924f62f4a13d3644dd8c2" target="_blank" rel="noopener noreferrer">ee31ebee65</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/10/09/">Thu, Oct 9</a></div>
+  <div class="entry-copy">Experimental case-type disjointness now expands sealed classes as well as sealed interfaces. This admits unions such as <code>I | Awaitable&lt;I&gt;</code> when the sealed <code>Awaitable</code> hierarchy proves that the variants cannot overlap. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/707dd89d81cf7fc62e409051ac52d072864abc0e" target="_blank" rel="noopener noreferrer">707dd89d81</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/10/10/">Fri, Oct 10</a></div>
+  <div class="entry-copy">The staged null-safe pipe operator <code>|?&gt;</code> evaluates its right-hand side only when the left-hand side is non-null. Within the right-hand side <code>$$</code> is narrowed to non-null, and the whole expression remains nullable. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1ba856e4ee585eca676db56ab7e0483e0ef85f41" target="_blank" rel="noopener noreferrer">1ba856e4ee</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/10/08/">Wed, Oct 8</a></div>
+  <div class="entry-copy">The <code>.hhconfig</code> option <code>disallow_invalid_arraykey</code> has been removed. Hack has enforced this behavior unconditionally for years, so removing the stale setting does not relax invalid array-key checks, but project configuration must stop declaring it. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/642bb4521d066512649eb088fa5ed13ba1896022" target="_blank" rel="noopener noreferrer">642bb4521d</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Security</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/10/10/">Fri, Oct 10</a></div>
+  <div class="entry-copy">Servers can set <code>Server.AllowExec=false</code> to disable process-launching APIs. HHVM then throws for <code>shell_exec()</code>, <code>exec()</code>, <code>passthru()</code>, <code>system()</code>, <code>proc_open()</code>, <code>pcntl_exec()</code>, and HSL&#x27;s <code>OS\fork_and_execve()</code>; the default remains <code>true</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5a71f2f16a1324091e007718426f2d4416eed62f" target="_blank" rel="noopener noreferrer">5a71f2f16a</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

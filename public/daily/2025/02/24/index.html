@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="4 noteworthy changes recorded on this day.">
+  <title>Monday, February 24, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Monday, February 24, 2025</h1>
+  <p class="post-meta">4 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/02/24/" aria-current="page">Day</a><a href="/weekly/2025/W09/">Week</a><a href="/monthly/2025/02/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2025/02/21/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2025/02/25/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy"><code>CURLOPT_USERPWD</code> and <code>CURLOPT_PROXYUSERPWD</code> now accept <code>null</code>, matching libcurl&#x27;s way to disable credentials that were configured earlier on the same handle. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/dae2facf389dc7cdd375d505c6247ba9d6f28ae5" target="_blank" rel="noopener noreferrer">dae2facf38</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">The ongoing <code>no_disjoint_union</code> rollout adds <code>&lt;&lt;__NoDisjointUnion&gt;&gt;</code> for type parameters. A call or construction now warns when Hack infers a union whose members are pairwise disjoint for an annotated parameter—typically exposing a comparison or helper call that combines unrelated types such as <code>int</code> and <code>string</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f4e7a9f6f6038a27354f388e95b6310bd2766d47" target="_blank" rel="noopener noreferrer">f4e7a9f6f6</a></div></li><li class="change-entry"><div class="entry-copy">Nested expression-tree work now records free variables and their source positions. Without the unstable <code>expression_tree_nested_bindings</code> feature, a nested tree that captures such a variable is rejected; the recorded data prepares splices to bind it from an enclosing tree later. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/056565751c4929fdf31680394130de15522d91e1" target="_blank" rel="noopener noreferrer">056565751c</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/886b66684fb9bfbba1f892a2458ab3eee1bc7111" target="_blank" rel="noopener noreferrer">886b66684f</a></div></li><li class="change-entry"><div class="entry-copy">The class-pointer migration exposes <code>class_or_classname&lt;T&gt;</code> for APIs that temporarily accept either representation. <code>HH\classname_to_class()</code> now returns <code>class&lt;T&gt;</code>, while <code>HH\class_to_classname()</code> accepts the migration type and returns <code>classname&lt;T&gt;</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6d9c06a1154f32f8ba756876e6603a15cc8daeed" target="_blank" rel="noopener noreferrer">6d9c06a115</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

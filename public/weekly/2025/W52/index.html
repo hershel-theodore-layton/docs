@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="5 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 52: Dec 22–Dec 28, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 52: Dec 22–Dec 28, 2025</h1>
+  <p class="post-meta">5 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/12/22/">Day</a><a href="/weekly/2025/W52/" aria-current="page">Week</a><a href="/monthly/2025/12/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2025/W51/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2026/W01/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Breaking Changes</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/12/22/">Mon, Dec 22</a></div>
+  <div class="entry-copy"><code>zip_entry_read()</code> now takes only its <code>resource $zip_entry</code> argument and always reads up to 1024 bytes. Remove the optional <code>$length</code> argument from callers. The HHI return type remains <code>string</code>, and the omitted coeffect brackets mean <code>[defaults]</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8fca72ab98b2c95fbf07c20d8736609b551cc857" target="_blank" rel="noopener noreferrer">8fca72ab98</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/12/23/">Tue, Dec 23</a></div>
+  <div class="entry-copy">Each component of a concatenated typed format string must now be well formed. Constructions such as <code>&quot;%&quot; . &quot;d&quot;</code> are rejected even though the final plain string would spell a valid placeholder; concatenate complete format fragments instead. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/12cbdcd02f83e46556aa875baf9ee09db26bfb47" target="_blank" rel="noopener noreferrer">12cbdcd02f</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Highlights</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/12/23/">Tue, Dec 23</a></div>
+  <div class="entry-copy">New <code>HH\TypedFormatString&lt;TFormatter, TArgs&gt;</code> values carry the placeholder types as a tuple, allowing first-class helpers to pass a format string and its <code>...TArgs</code> without a FIXME. String literals are checked when a typed format string is expected, and concatenating two compatible typed format strings concatenates their argument tuples; the existing <code>HH\FormatString&lt;T&gt;</code> remains as a backward-compatible alias using <code>(mixed...)</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/12cbdcd02f83e46556aa875baf9ee09db26bfb47" target="_blank" rel="noopener noreferrer">12cbdcd02f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/12/23/">Tue, Dec 23</a></div>
+  <div class="entry-copy"><code>sprintf()</code>, <code>printf()</code>, <code>HH\invariant()</code>, and <code>HH\invariant_violation()</code> now connect the inferred format tuple to their variadic arguments. <code>sprintf()</code> and the invariant helpers retain <code>[]</code>; <code>printf()</code> still omits a bracket and therefore requires <code>[defaults]</code>, so the stronger typing does not grant callers any new capabilities. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/12cbdcd02f83e46556aa875baf9ee09db26bfb47" target="_blank" rel="noopener noreferrer">12cbdcd02f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/12/25/">Thu, Dec 25</a></div>
+  <div class="entry-copy">Nullable <code>?as</code> expressions no longer leave compiler-generated locals initialized on a failed check or on an exception raised while resolving a type structure. This prevents later control flow, including loops in a surrounding <code>catch</code>, from observing dangling temporary state. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/998c829efba1533bd499538165b9d2a97fa4d6cc" target="_blank" rel="noopener noreferrer">998c829efb</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

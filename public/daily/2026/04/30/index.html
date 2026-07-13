@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="3 noteworthy changes recorded on this day.">
+  <title>Thursday, April 30, 2026 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Thursday, April 30, 2026</h1>
+  <p class="post-meta">3 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2026/04/30/" aria-current="page">Day</a><a href="/weekly/2026/W18/">Week</a><a href="/monthly/2026/04/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2026/04/29/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2026/05/01/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Security</h2><ul><li class="change-entry"><div class="entry-copy">HHVM&#x27;s reference-count optimizer now models the reified-generics <code>vec</code> passed to <code>NewRClsMeth</code> and <code>NewRFunc</code> as an ownership transfer. This prevents it from deleting a required increment and causing a use-after-free when the resulting callable is released before another use of the same generics vector. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/24fd5d8e9b50754fddc5755e37f5790ed5625544" target="_blank" rel="noopener noreferrer">24fd5d8e9b</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy">Package-boundary checking for non-null <code>as</code> expressions now descends into shape field types, including nested shapes and shapes inside tuples. Strict package configurations can therefore report cross-package asserted types that were previously missed; nullable <code>?as</code> remains exempt. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/879b436c9d28f06313636433162f9ed0562db648" target="_blank" rel="noopener noreferrer">879b436c9d</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">A staged package check can now diagnose cross-package type aliases used at runtime-enforced positions such as parameters, returns, properties, regular enum bases, and generic upper bounds. The main <code>package_allow_enforceable_type_alias_violations</code> switch still defaults to allowing these uses, so this is rollout groundwork; a secondary relief switch can exempt aliases that resolve to class-like types if needed. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/bfa29842f82c45355294505957c396b96603a741" target="_blank" rel="noopener noreferrer">bfa29842f8</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2433ee724c67746c732077867e58f1dc2bec49e5" target="_blank" rel="noopener noreferrer">2433ee724c</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

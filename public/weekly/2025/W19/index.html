@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="7 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 19: May 5–May 11, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 19: May 5–May 11, 2025</h1>
+  <p class="post-meta">7 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/05/06/">Day</a><a href="/weekly/2025/W19/" aria-current="page">Week</a><a href="/monthly/2025/05/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2025/W18/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2025/W20/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/05/06/">Tue, May 6</a></div>
+  <div class="entry-copy">Visibility errors for a <code>protected</code> or <code>private</code> override of an <code>internal</code> member now report the actual narrowing mismatch instead of incorrectly saying that the parent member is inaccessible from its own module. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/78719d189d6cceb3f86cb3251a727e86f01b19dc" target="_blank" rel="noopener noreferrer">78719d189d</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>4 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/05/06/">Tue, May 6</a></div>
+  <div class="entry-copy"><code>HH\TypeStructure&lt;T&gt;</code> now models <code>return_type</code> and <code>param_types</code> as optional fields, matching the runtime values. Code that reads either field directly must first test for it or use <code>??</code> or <code>Shapes::idx()</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/472f99c64d43dd4dd1f7ac2566c2dc1071a3c780" target="_blank" rel="noopener noreferrer">472f99c64d</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5e4e71971c5c879b950dbf0b77e96d9536b41721" target="_blank" rel="noopener noreferrer">5e4e71971c</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/05/07/">Wed, May 7</a></div>
+  <div class="entry-copy"><code>HH\TypeStructure&lt;T&gt;</code> now models <code>elem_types</code>, <code>allows_unknown_fields</code>, <code>is_cls_cns</code>, and <code>optional_shape_field</code> as optional fields rather than always-present nullable fields. Use an optional-shape access before consuming them. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e042434722e4da389a9cbe3a44fc1e83ba9e6b9a" target="_blank" rel="noopener noreferrer">e042434722</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/89362e19c3fc72958aa4a5370c9b476cf224af34" target="_blank" rel="noopener noreferrer">89362e19c3</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/05/08/">Thu, May 8</a></div>
+  <div class="entry-copy"><code>HH\TypeStructure&lt;T&gt;</code> now models <code>nullable</code> and <code>name</code> as optional fields. Their present values are non-null, but callers must account for the keys being absent. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/742f8167f188ebbade0b93bfeb5327fe1992f749" target="_blank" rel="noopener noreferrer">742f8167f1</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/05/09/">Fri, May 9</a></div>
+  <div class="entry-copy"><code>HH\TypeStructure&lt;T&gt;</code> now models <code>value</code>, <code>typevars</code>, and <code>alias</code> as optional fields. Direct indexing that assumed those keys were always present must move to an optional-shape access. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4bd21c5ee9cf8d19080a37c10bfb12e533ddd713" target="_blank" rel="noopener noreferrer">4bd21c5ee9</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Security</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/05/08/">Thu, May 8</a></div>
+  <div class="entry-copy">The Hack toolchain&#x27;s Tokio dependency has been upgraded from 1.41.0 to 1.45.0 to address <code>SNYK-RUST-TOKIO-9804284</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a950001d306b6b427aa32735a3c1831d26776990" target="_blank" rel="noopener noreferrer">a950001d30</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/05/09/">Fri, May 9</a></div>
+  <div class="entry-copy">The checker now rejects <code>&lt;&lt;__Memoize&gt;&gt;</code> and <code>&lt;&lt;__MemoizeLSB&gt;&gt;</code> on functions whose parameter list uses the unstable type-splat syntax. Such declarations cannot currently produce a valid memoization wrapper. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c86642dbcc966ff617146fa26a7dbf900a3319a8" target="_blank" rel="noopener noreferrer">c86642dbcc</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

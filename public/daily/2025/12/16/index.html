@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="4 noteworthy changes recorded on this day.">
+  <title>Tuesday, December 16, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Tuesday, December 16, 2025</h1>
+  <p class="post-meta">4 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/12/16/" aria-current="page">Day</a><a href="/weekly/2025/W51/">Week</a><a href="/monthly/2025/12/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2025/12/15/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2025/12/17/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">HHBBC no longer performs quadratic dead-code elimination on long chains of array-element additions, reducing compile time for generated code and large literal-building sequences. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a2b1b96b4bcc18f7beb3bf47aa878735835c353b" target="_blank" rel="noopener noreferrer">a2b1b96b4b</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy">The <code>.hhconfig</code> option <code>constraint_array_index</code> and the legacy array-read checker have been removed. Array reads now always use the constraint-based checker; the separate, default-false <code>constraint_array_index_assign</code> experiment for writes is unchanged. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e68fe7227a62d718598a1db723e3dbacb499ffa0" target="_blank" rel="noopener noreferrer">e68fe7227a</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">As part of the staged polymorphic function-pointer work, <code>meth_caller()</code> now erases reification on type parameters lifted from the receiver class. For <code>class C&lt;reify T&gt;</code>, an instance-method caller can have a rank-2 type such as <code>function&lt;T&gt;(C&lt;T&gt;, T): void</code> because the receiver already carries the runtime type structure; the method&#x27;s declared capability requirements remain on the synthesized callable. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a17086df772bf021b0a3c806248c3b165a0dc020" target="_blank" rel="noopener noreferrer">a17086df77</a></div></li><li class="change-entry"><div class="entry-copy">An opt-in <code>.hhconfig</code> setting, <code>ignore_string_methods=false</code>, exposes the experimental <code>HH\string::length(): int</code> method and its <code>HH\String\__primitive_length(string): int</code> implementation. Both omit explicit coeffect brackets and therefore use <code>[defaults]</code>; the default setting still hides them. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4e83e221764b3a73cb37f0a1cacf27542b046e33" target="_blank" rel="noopener noreferrer">4e83e22176</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

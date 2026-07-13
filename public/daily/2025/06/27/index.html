@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="3 noteworthy changes recorded on this day.">
+  <title>Friday, June 27, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Friday, June 27, 2025</h1>
+  <p class="post-meta">3 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/06/27/" aria-current="page">Day</a><a href="/weekly/2025/W26/">Week</a><a href="/monthly/2025/06/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2025/06/26/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2025/06/28/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">Redeclaring a non-const static property in a subclass now produces Warn[12021]. The declarations have separate runtime storage rather than overriding one another, so updates through the parent and child names do not share state. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0c9f90144e0a9d470b05bc31071290e62757a5e8" target="_blank" rel="noopener noreferrer">0c9f90144e</a></div></li><li class="change-entry"><div class="entry-copy"><code>HH\serialize_with_options()</code> accepts <code>shape(&#x27;keepClasses&#x27; =&gt; true)</code>. With the option enabled, class and lazy-class values are emitted with HHVM&#x27;s <code>l:</code> representation and deserialize back to class values; the default remains string conversion. The function has no explicit capability list, so it continues to use the default capability set. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/94e3085910ce294c881768cb4f1aa3918b8dfda6" target="_blank" rel="noopener noreferrer">94e3085910</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">Staged polymorphic function-pointer typing lets references such as <code>C::genericMethod&lt;&gt;</code> retain a rank-2 polymorphic function type instead of fixing fresh type variables after their first use. The extracted type accounts for method and class generics, <code>where</code> constraints, variance-sensitive <code>this</code>, and abstract type constants, allowing one reference to be used at multiple compatible instantiations. This typing is not yet the default. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2ff573c3b3e26515bd8661d1111cce3db593054e" target="_blank" rel="noopener noreferrer">2ff573c3b3</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

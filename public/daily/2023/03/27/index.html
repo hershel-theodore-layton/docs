@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="4 noteworthy changes recorded on this day.">
+  <title>Monday, March 27, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Monday, March 27, 2023</h1>
+  <p class="post-meta">4 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/03/27/" aria-current="page">Day</a><a href="/weekly/2023/W13/">Week</a><a href="/monthly/2023/03/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2023/03/25/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2023/03/28/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy"><code>dict</code> is no longer automatically pessimised. Direct construction and indexing preserve value types such as <code>dict&lt;string, int&gt;</code>, while like-typed values produce an explicit type such as <code>dict&lt;string, ~int&gt;</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/73c97aac94bd703cd1bf23db0ce51f1b94911663" target="_blank" rel="noopener noreferrer">73c97aac94</a></div></li><li class="change-entry"><div class="entry-copy">In autocomplete, typing <code>-&gt;</code> after a <code>vec</code>, <code>dict</code>, <code>keyset</code>, or <code>string</code> now offers compatible HSL functions and rewrites the expression into a function call with argument placeholders. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/73284d7d46d1d7971acba3322e41dc09317f56ce" target="_blank" rel="noopener noreferrer">73284d7d46</a></div></li><li class="change-entry"><div class="entry-copy">Package validation now requires each deployment&#x27;s package set to be transitively closed over <code>includes</code> and reports the packages missing from an incomplete deployment. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/43bcd2a96284ba3b8ca5087bde5a56e5e0c00e71" target="_blank" rel="noopener noreferrer">43bcd2a962</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">Symbol identification now sees method calls through a preview <code>readonly</code> expression, restoring navigation and references for those calls. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/857047246c23b0718dc3e4f5c29987a8afc26d74" target="_blank" rel="noopener noreferrer">857047246c</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

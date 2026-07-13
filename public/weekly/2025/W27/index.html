@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="10 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 27: Jun 30–Jul 6, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 27: Jun 30–Jul 6, 2025</h1>
+  <p class="post-meta">10 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/06/30/">Day</a><a href="/weekly/2025/W27/" aria-current="page">Week</a><a href="/monthly/2025/06/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2025/W26/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2025/W28/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Future Changes</h2><span>8 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/06/30/">Mon, Jun 30</a></div>
+  <div class="entry-copy">When the experimental EdenFS-backed file watcher cannot initialize, <code>hh_server</code> now falls back to the next enabled notifier—normally Watchman—instead of failing outright. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6d4cfd4936f5a183a8cf9971c4125d053ceae6a8" target="_blank" rel="noopener noreferrer">6d4cfd4936</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/06/30/">Mon, Jun 30</a></div>
+  <div class="entry-copy">Nested type-parameter declarations used for experimental higher-kinded types, such as <code>class Foo&lt;TC&lt;TX&gt;&gt; {}</code>, are no longer part of Hack&#x27;s grammar. The <code>--enable-higher-kinded-types</code> single-file checker flag and its internal option have also been removed; projects must express abstractions with supported ordinary generics. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b0f3ed5c9cdb2cad3f34d55e757074f86fee1f75" target="_blank" rel="noopener noreferrer">b0f3ed5c9c</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/60adf9a9fb21e6d4f7e3b394bcd9361c64fd34aa" target="_blank" rel="noopener noreferrer">60adf9a9fb</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/07/01/">Tue, Jul 1</a></div>
+  <div class="entry-copy">Rank-2 typing for polymorphic static- and instance-method pointers is now gated by the default-off <code>poly_function_pointers</code> option. Projects not enabling the staged option retain the earlier monomorphic behavior. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0259359b71a5917f35c4e93122b74b817be2b083" target="_blank" rel="noopener noreferrer">0259359b71</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/07/02/">Wed, Jul 2</a></div>
+  <div class="entry-copy">Incremental dependency tracking no longer drops a method dependency created by staged polymorphic <code>meth_caller()</code> typing, so editing the referenced method correctly schedules affected callers for rechecking. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/09093000bd679d8534a9adccb31c588a45674a9e" target="_blank" rel="noopener noreferrer">09093000bd</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/07/02/">Wed, Jul 2</a></div>
+  <div class="entry-copy">With the experimental <code>constraint_array_index</code> option, array access now solves a <code>can_index</code> constraint for <code>vec</code> and <code>dict</code> values. This begins a staged path toward inferring both valid key types and indexed result types. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ff4e369a8cffb39134a90e6f70b8bde2710666b6" target="_blank" rel="noopener noreferrer">ff4e369a8c</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/bfa476bd7281c662923f884e15009ddd3b435061" target="_blank" rel="noopener noreferrer">bfa476bd72</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/07/03/">Thu, Jul 3</a></div>
+  <div class="entry-copy"><code>require this as</code> constraints are now emitted into HHVM metadata, and HHVM checks trait constraints while loading a class. This extends runtime support for the staged constraint syntax. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7e7567642d8ac264b78d554d26f227327e20dc08" target="_blank" rel="noopener noreferrer">7e7567642d</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/07/03/">Thu, Jul 3</a></div>
+  <div class="entry-copy">Experimental <code>can_index</code> constraint solving now covers <code>keyset</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3b516d94fabca61c9d74bce7a2cb33fc6a1f70b8" target="_blank" rel="noopener noreferrer">3b516d94fa</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/07/04/">Fri, Jul 4</a></div>
+  <div class="entry-copy">Experimental <code>can_index</code> constraint solving now supports reads and writes on <code>Vector</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/cd84a528654aefbc07cde8fb8f5076e2fcdfc994" target="_blank" rel="noopener noreferrer">cd84a52865</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/07/03/">Thu, Jul 3</a></div>
+  <div class="entry-copy">The legacy <code>apache_request_headers()</code> and <code>getallheaders()</code> declarations have been removed from the HHI, so typechecked Hack code can no longer call either API. The removed <code>getallheaders()</code> declaration required <code>[read_globals]</code>; this is an API removal, not a narrowing of that capability requirement. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/fdbee7ee64093c2076e7c8f6f2f80e23a721845d" target="_blank" rel="noopener noreferrer">fdbee7ee64</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/07/05/">Sat, Jul 5</a></div>
+  <div class="entry-copy">Distributed typechecking configuration now uses <code>hh_distc_fanout_threshold</code> as the lower activation threshold and replaces <code>hh_distc_fanout_aware_threshold</code> with <code>hh_distc_fanout_full_init_threshold</code>. Fanout-aware mode also requires the new default-false <code>enable_fanout_aware_distc</code> switch, so deployments using the old key must update their server-local configuration. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0617ce83824fd38f8cb318bd25a2c74e68b0baaa" target="_blank" rel="noopener noreferrer">0617ce8382</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

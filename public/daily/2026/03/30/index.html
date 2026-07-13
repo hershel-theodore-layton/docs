@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="4 noteworthy changes recorded on this day.">
+  <title>Monday, March 30, 2026 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Monday, March 30, 2026</h1>
+  <p class="post-meta">4 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2026/03/30/" aria-current="page">Day</a><a href="/weekly/2026/W14/">Week</a><a href="/monthly/2026/03/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2026/03/29/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2026/03/31/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">HackLint 5644&#x27;s quick fix now preserves semantics for always-true and always-false boolean expressions: <code>expr || true</code> becomes <code>true</code>, and <code>expr &amp;&amp; false</code> becomes <code>false</code>, rather than incorrectly dropping the literal and keeping <code>expr</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2961c64c7b48a3806bcc55d31ec46aa1fb184a41" target="_blank" rel="noopener noreferrer">2961c64c7b</a></div></li><li class="change-entry"><div class="entry-copy">Warn[12026] for calling <code>new static()</code> through an uninstantiable class now recommends <code>&lt;&lt;__NeedsConcrete&gt;&gt;</code> on the containing method and offers a quick fix to add it. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4606faa9c0e2201ec8858e0617de5f73eeb28e9b" target="_blank" rel="noopener noreferrer">4606faa9c0</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">The pre-stable typed-local declaration syntax was removed from the parser, HackC, typechecker, IDE actions, and experimental-feature registry. Projects experimenting with <code>let T $x</code> must return to ordinary local assignments. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/599dea0aa083c26edfe33667880f663e63b0fe76" target="_blank" rel="noopener noreferrer">599dea0aa0</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/68b41e15582565fed8bdb250034da62495614e8a" target="_blank" rel="noopener noreferrer">68b41e1558</a></div></li><li class="change-entry"><div class="entry-copy">The opt-in stricter <code>__ConsistentConstruct</code> rollout now warns on abstract-final classes, which cannot be instantiated through <code>new static()</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ae16b6ede279c912ed97f9c9ce05af0cc9ddbf5f" target="_blank" rel="noopener noreferrer">ae16b6ede2</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

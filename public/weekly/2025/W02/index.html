@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="5 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 2: Jan 6–Jan 12, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 2: Jan 6–Jan 12, 2025</h1>
+  <p class="post-meta">5 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/01/07/">Day</a><a href="/weekly/2025/W02/" aria-current="page">Week</a><a href="/monthly/2025/01/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2025/W01/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2025/W03/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Breaking Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/01/07/">Tue, Jan 7</a></div>
+  <div class="entry-copy"><code>DateTimeZone::listIdentifiers()</code> and <code>DateTimeZone::listAbbreviations()</code> now use the default impure context instead of <code>[]</code>. This corrects their dependence on external timezone data, but means they can no longer be called from a pure context. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f073bea3f4364e1f2788d011f05c3fd31586a065" target="_blank" rel="noopener noreferrer">f073bea3f4</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Highlights</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/01/09/">Thu, Jan 9</a></div>
+  <div class="entry-copy"><code>HH\XReqSync</code> now records the next waiter as a mutex&#x27;s owner before waking it, fixing lock handoff failures when several requests contend for the same mutex. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9e251bb7ae78e493eb305d652a6eb8940550d535" target="_blank" rel="noopener noreferrer">9e251bb7ae</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/01/10/">Fri, Jan 10</a></div>
+  <div class="entry-copy">&quot;Extract into method&quot; now strips implicit like types throughout generated parameter and return types, avoiding suggestions containing source-level <code>~T</code> hints that users did not write. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ae9f4200f38af03d0ea2a2c914e734f9a61207e6" target="_blank" rel="noopener noreferrer">ae9f4200f3</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/01/09/">Thu, Jan 9</a></div>
+  <div class="entry-copy">Experimental recursive case types can now satisfy recursively structured <code>as</code> bounds such as <code>shape(?&#x27;a&#x27; =&gt; nonnull)</code> without the cycle detector prematurely replacing the type with <code>mixed</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/72b236ce34c0c57e5cb91d7c49fd31c23c768f5d" target="_blank" rel="noopener noreferrer">72b236ce34</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Security</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/01/10/">Fri, Jan 10</a></div>
+  <div class="entry-copy">Async MySQL certificate callbacks now hold a weak reference to their operation and fail safely if a cancelled or timed-out connection has already released it, preventing a use-after-free during certificate validation. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/693eb7f80edaa891bbaf58753dcec169dfe80f51" target="_blank" rel="noopener noreferrer">693eb7f80e</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

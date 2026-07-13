@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="15 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 9: Feb 23–Mar 1, 2026 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 9: Feb 23–Mar 1, 2026</h1>
+  <p class="post-meta">15 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2026/02/23/">Day</a><a href="/weekly/2026/W09/" aria-current="page">Week</a><a href="/monthly/2026/02/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2026/W08/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2026/W10/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>7 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/02/23/">Mon, Feb 23</a></div>
+  <div class="entry-copy">Function-pointer inference now tracks type parameters in other parameters&#x27; constraints, class and type-constant refinements, and occurrences of <code>this</code> with their precise variance. This removes unnecessary first-class polymorphic types while preserving the correct co- or contravariant bound. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/20e6acc12d0ff4ac432f04ad9130b3acbacb3ac2" target="_blank" rel="noopener noreferrer">20e6acc12d</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9a880e8a6be895187c4eae733738b18078bccd14" target="_blank" rel="noopener noreferrer">9a880e8a6b</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/bf9fc1fc91671c4c95e8b60dcda34b9ef23b7c35" target="_blank" rel="noopener noreferrer">bf9fc1fc91</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/02/23/">Mon, Feb 23</a></div>
+  <div class="entry-copy">Lambdas created inside a function protected by <code>__RequirePackage</code> or <code>__SoftRequirePackage</code> now retain the package availability of their creation continuation. This permits sound higher-order and recursive uses without granting packages that were unavailable outside the lambda. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/bec949706c6b6797e5ec11c625373bbbaf501453" target="_blank" rel="noopener noreferrer">bec949706c</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/02/23/">Mon, Feb 23</a></div>
+  <div class="entry-copy"><code>get_active_worker_counts()</code> is now known to Hack and returns a shape containing pagelet, Xbox, HTTP, and CLI worker counts. The declaration omits coeffect brackets and therefore retains the <code>[defaults]</code> caller requirement. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/531391b170e5a31bb1f0193604cbf4f9b1ac0c02" target="_blank" rel="noopener noreferrer">531391b170</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/02/24/">Tue, Feb 24</a></div>
+  <div class="entry-copy">Reflection parameter APIs now have concrete HHI return types: boolean predicates return <code>bool</code>, class lookups return <code>?ReflectionClass</code>, and <code>isDefaultValueConstant()</code> returns <code>?bool</code>. This replaces <code>HH\FIXME\MISSING_RETURN_TYPE</code>, so callers gain useful static checking. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/bf3d95c54b0404dea50e1e0e3f00c5a70cd26c21" target="_blank" rel="noopener noreferrer">bf3d95c54b</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/02/25/">Wed, Feb 25</a></div>
+  <div class="entry-copy"><code>HH\Asio\cancel_sleep_nothrow(SleepWaitHandle $wh): bool</code> completes a pending sleep successfully with <code>null</code> instead of failing it with an exception. It returns whether cancellation occurred; its omitted coeffect brackets mean <code>[defaults]</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2a17049a2abc75b3794b62f8264a54fd839ee015" target="_blank" rel="noopener noreferrer">2a17049a2a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/02/27/">Fri, Feb 27</a></div>
+  <div class="entry-copy">New <code>HH\ImplicitContext\PreparedContext</code> values let implicit-context subclasses prepare several assignments in pure code and apply them together with <code>runBatch()</code> or <code>runBatchAsync()</code>. The batch methods require <code>[leak_safe, ctx $f]</code>: callers must already have a capability set containing <code>leak_safe</code> and the callback&#x27;s requirement; the list does not grant those capabilities. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3252eaa4eb536cbb997bff62b81d25b7f0a5d3ee" target="_blank" rel="noopener noreferrer">3252eaa4eb</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/02/28/">Sat, Feb 28</a></div>
+  <div class="entry-copy">JIT-compiled <code>is_scalar()</code> now matches the interpreter&#x27;s runtime definition for every value type, removing mode-dependent answers caused by an incorrect JIT type test. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c7843d7c5978cb85707e34bb8bc08f5cfbb40057" target="_blank" rel="noopener noreferrer">c7843d7c59</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>4 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/02/23/">Mon, Feb 23</a></div>
+  <div class="entry-copy">Lint 5655 now reports references from a file assigned by package rules into a file moved into that same package with <code>__PackageOverride</code>. References guarded by an appropriate <code>__SoftRequirePackage</code> are exempt; other edges should move the target, add <code>__RequirePackage</code>, or be guarded by a package check. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/216d08b79c1285a17cfe4699c234d5eb2fd2966e" target="_blank" rel="noopener noreferrer">216d08b79c</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/91243638d10521d9b02c04d51cdc247bc7ba33e4" target="_blank" rel="noopener noreferrer">91243638d1</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/02/25/">Wed, Feb 25</a></div>
+  <div class="entry-copy">Package boundaries are now enforced for function pointers and reified generic arguments, and the <code>package_allow_function_pointers_violations</code> and <code>package_allow_reified_generics_violations</code> escape hatches have been removed. References such as <code>OtherPackage\f&lt;&gt;</code> and cross-package reified type arguments now require that package to be available. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/fb27a911ff2f003c6e21e20a77a1703697a481af" target="_blank" rel="noopener noreferrer">fb27a911ff</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8677c548f3f0b23ff98da8f83b84625bb6cf44f6" target="_blank" rel="noopener noreferrer">8677c548f3</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/02/26/">Thu, Feb 26</a></div>
+  <div class="entry-copy">Type-constant propagation now skips <code>mixed</code> and <code>supportdyn&lt;mixed&gt;</code> upper bounds instead of expanding <code>mixed::T</code> into <code>Tany</code>. This closes a soundness hole in <code>where</code>-clause inference and can reveal errors that were previously hidden after related type variables collapsed to <code>Tany</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e12516a086ea58d2952c7e0406f4b5b3bc758d24" target="_blank" rel="noopener noreferrer">e12516a086</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/02/27/">Fri, Feb 27</a></div>
+  <div class="entry-copy">Package checking is now always enabled, package and deployment inclusions are always checked for transitive closure, and <code>__RequirePackage</code> remains allowed on interface methods. The corresponding <code>check_packages</code>, <code>package_config_disable_transitivity_check</code>, and <code>allow_require_package_on_interface_methods</code> settings have been removed; delete stale overrides. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8d391cf4333468d223d84dbf572b10ffa926462e" target="_blank" rel="noopener noreferrer">8d391cf433</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>4 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/02/24/">Tue, Feb 24</a></div>
+  <div class="entry-copy">Dynamic invocation paths can now pass named-argument metadata through <code>invokeFunc*</code>, including constructor invocation. This extends the staged named-parameter runtime beyond direct bytecode calls, but does not by itself complete the language feature&#x27;s release. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9b3e5ec269b55de73c48b4837269eafa615d3d48" target="_blank" rel="noopener noreferrer">9b3e5ec269</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/02/25/">Wed, Feb 25</a></div>
+  <div class="entry-copy">Lambdas involving expression-dependent type constants with multiple upper bounds no longer make the typechecker recurse indefinitely when a bound refers back to itself. This affects the unstable <code>type_const_multiple_bounds</code> feature. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9118df03a05cde325cf545db384c3659ab203ec9" target="_blank" rel="noopener noreferrer">9118df03a0</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/02/25/">Wed, Feb 25</a></div>
+  <div class="entry-copy">Recursive case-type expansion now preserves the recursive <code>Tnewtype</code> identity underneath constructors such as <code>vec</code>, tuples, shapes, functions, and class applications. This closes an unstable-feature soundness hole where <code>case type CT = vec&lt;CT&gt; | int</code> could incorrectly accept <code>vec&lt;string&gt;</code> as <code>CT</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b5903cf3aa3aa8e9417e5cf2f4d5f1fc367800aa" target="_blank" rel="noopener noreferrer">b5903cf3aa</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/02/27/">Fri, Feb 27</a></div>
+  <div class="entry-copy">The JIT can now use the normal function-entry calling convention for direct named-argument calls whose named parameters are all required. It validates the argument names at translation time and otherwise generates the same happy-path call shape as positional arguments; optional and repacking cases still fall back. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d26c627ba86e44153616cffb5425fad32ab18aa2" target="_blank" rel="noopener noreferrer">d26c627ba8</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="4 noteworthy changes recorded on this day.">
+  <title>Tuesday, April 28, 2026 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Tuesday, April 28, 2026</h1>
+  <p class="post-meta">4 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2026/04/28/" aria-current="page">Day</a><a href="/weekly/2026/W18/">Week</a><a href="/monthly/2026/04/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2026/04/27/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2026/04/29/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">The revised coeffects manual now explains capability subtyping in the correct direction: a callable requiring fewer capabilities is usable where one requiring more was accepted. For example, a function requiring <code>[read_globals]</code> or <code>[]</code> can stand in for <code>(function()[globals]: void)</code>, because callers prepared to supply <code>globals</code> can satisfy the narrower requirement. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/af05be4b70151d9d6d58b87c793ef5d015a48351" target="_blank" rel="noopener noreferrer">af05be4b70</a></div></li></ul></section><section class="daily-section"><h2>Security</h2><ul><li class="change-entry"><div class="entry-copy"><code>ZipArchive::getFromName()</code> and <code>getFromIndex()</code> now reject requested lengths and stored entry sizes above the signed 32-bit range before passing them to a 32-bit string buffer, preventing truncation from becoming a buffer overflow. Oversized reads return an empty string. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d27c559a44750e2b3ba37d154ea5640791277aac" target="_blank" rel="noopener noreferrer">d27c559a44</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">The unstable class-alias pipeline now reaches HackC: aliases are emitted as <code>.class_alias Alias = Original;</code> records with a corresponding class reference. Generic arguments are parsed but are not propagated to HHVM; only class or interface renaming is supported. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/32dff6219239c732d7b204d8cbd588f3c0c05c49" target="_blank" rel="noopener noreferrer">32dff62192</a></div></li><li class="change-entry"><div class="entry-copy">The manual now includes an initial guide for the experimental <code>require this as</code> trait constraint. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/742d1cba0d0d425eed8c7acb9a29df158b50e4c1" target="_blank" rel="noopener noreferrer">742d1cba0d</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

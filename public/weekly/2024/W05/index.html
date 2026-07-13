@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="6 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 5: Jan 29–Feb 4, 2024 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 5: Jan 29–Feb 4, 2024</h1>
+  <p class="post-meta">6 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/01/30/">Day</a><a href="/weekly/2024/W05/" aria-current="page">Week</a><a href="/monthly/2024/01/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2024/W04/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2024/W06/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/01/30/">Tue, Jan 30</a></div>
+  <div class="entry-copy"><code>hh --lint-all</code> now honors <code>typecheck_sample_rate</code>, making repository-wide lint experiments sample the same files as typechecking. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8dac2e5bcc8339758ef4de0a9838c4d1cb206d6c" target="_blank" rel="noopener noreferrer">8dac2e5bcc</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/01/30/">Tue, Jan 30</a></div>
+  <div class="entry-copy">Shape-key diagnostics now explain that a shape cannot mix literal keys with class-constant keys. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a7034a9daa3737cd15d53b878ebc4109c65e779e" target="_blank" rel="noopener noreferrer">a7034a9daa</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/01/31/">Wed, Jan 31</a></div>
+  <div class="entry-copy">The <code>&lt;&lt;__NonDisjoint&gt;&gt;</code> linter now checks generic arguments on instance and static method calls, including enclosing class generics connected through <code>where</code> constraints. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/eba49df19530a70020f9f16949bceb31d37d2f62" target="_blank" rel="noopener noreferrer">eba49df195</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/01/31/">Wed, Jan 31</a></div>
+  <div class="entry-copy">Pre-stable function type hints now support <code>optional</code> parameters, for example <code>(function(int, optional string): void)</code>. Optional parameters must trail required ones and cannot be <code>inout</code> or variadic. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/62e76b97851b95e82e7e6b6e2fb6852535c411ec" target="_blank" rel="noopener noreferrer">62e76b9785</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/02/02/">Fri, Feb 2</a></div>
+  <div class="entry-copy">Hovering over an experimental expression-tree class now shows its expression-tree type instead of an internal name such as <code>TInfer#1</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/fcfb98165b19ca532f0e56173c676b91f9d09f54" target="_blank" rel="noopener noreferrer">fcfb98165b</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/02/01/">Thu, Feb 1</a></div>
+  <div class="entry-copy"><code>array_fill_keys()</code> now always raises a fatal error when a key is not an <code>int</code> or <code>string</code>; the warning and coercion modes are gone. Remove the obsolete <code>Hack.Lang.StrictArrayFillKeys</code> setting from deployment configuration. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/57a4503b012839fe0ef8ab80f549ecbcb7b7d216" target="_blank" rel="noopener noreferrer">57a4503b01</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

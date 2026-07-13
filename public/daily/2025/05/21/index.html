@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="5 noteworthy changes recorded on this day.">
+  <title>Wednesday, May 21, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Wednesday, May 21, 2025</h1>
+  <p class="post-meta">5 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/05/21/" aria-current="page">Day</a><a href="/weekly/2025/W21/">Week</a><a href="/monthly/2025/05/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2025/05/20/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2025/05/22/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy"><code>HH\PriorityBridgeWaitHandle</code> can wrap an awaitable so its child continues at lower priority instead of being promoted by the waiting context, and <code>prioritize()</code> can later lift it. <code>create()</code> requires <code>[]</code>; the initial HHI for <code>prioritize()</code> omits a bracket list, so callers initially need the implicit <code>[defaults]</code> capability. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ab939a7f4a3311a4f74fcf7bf69df0e0a7dad5fd" target="_blank" rel="noopener noreferrer">ab939a7f4a</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/287b567685d73c5a5edd5406753c59a52480c66c" target="_blank" rel="noopener noreferrer">287b567685</a></div></li><li class="change-entry"><div class="entry-copy">The <code>class_overrides_all_trait_methods</code> linter now ignores abstract trait methods that exist to carry user-defined semantic attributes, while continuing to report genuinely dead overrides. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4794a8c90639a7830a2bc6162e29c110dd6ac4bd" target="_blank" rel="noopener noreferrer">4794a8c906</a></div></li><li class="change-entry"><div class="entry-copy"><code>HH\dynamic_class_meth()</code> and <code>HH\dynamic_meth_caller()</code> now accept <code>class_or_classname&lt;mixed&gt;</code> instead of only <code>string</code>, adding class-pointer arguments without rejecting existing classname strings. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9da64160bdb2b09b01a15f8e69156eec63c9d8d3" target="_blank" rel="noopener noreferrer">9da64160bd</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy"><code>HH\meth_caller()</code> now requires <code>class&lt;mixed&gt;</code> rather than <code>classname&lt;mixed&gt;</code>. Pass a class pointer such as <code>C::class</code>; classname strings and variables no longer satisfy the public signature. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/880710ad0c06629ac4cf05ec77254d1400434eaa" target="_blank" rel="noopener noreferrer">880710ad0c</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">Nested expression-tree lowering now orders captured free variables deterministically, preventing run-to-run changes in generated lambda parameters and bytecode while the nested-binding implementation evolves. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/359704caf914be1dcaf483d6d428343f505e209f" target="_blank" rel="noopener noreferrer">359704caf9</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="4 noteworthy changes recorded on this day.">
+  <title>Thursday, January 12, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Thursday, January 12, 2023</h1>
+  <p class="post-meta">4 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/01/12/" aria-current="page">Day</a><a href="/weekly/2023/W02/">Week</a><a href="/monthly/2023/01/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2023/01/11/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2023/01/13/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">Incremental typechecking now rechecks dependents when an inherited XHP attribute becomes required or a new required attribute is added. Projects should receive the same missing-attribute errors without needing a full check. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3fba663915e013e60cf802435d5715c8e1667ed0" target="_blank" rel="noopener noreferrer">3fba663915</a></div></li><li class="change-entry"><div class="entry-copy">The bundled HHI for <code>pcntl_waitpid()</code> now types its status parameter as <code>inout ?int</code>, and <code>Serializable::unserialize()</code> now requires a <code>string</code>. Callers of <code>pcntl_waitpid()</code> must account for the variable remaining nullable after the call. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ece17c06984d261dc222e5b627090cb1822312ce" target="_blank" rel="noopener noreferrer">ece17c0698</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/050792ec94478ea2df2e5ae9078af1ef1da2fe40" target="_blank" rel="noopener noreferrer">050792ec94</a></div></li><li class="change-entry"><div class="entry-copy">HHBBC now treats the <code>classname</code> field in runtime type structures as case-sensitive, matching the shape-key semantics used by type structures. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b9b1d9f2ef32c35b5d916eb3e4466a156791de53" target="_blank" rel="noopener noreferrer">b9b1d9f2ef</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy">Dumping or calling <code>__debugInfo()</code> on a closure no longer reveals captured variables, parameters, or the bound <code>$this</code>; it now produces an empty dictionary. Code must not use closure debug output as a reflection API. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d2cfc9b74dbd2355c4aa3aeb82d0c18bfdccd4de" target="_blank" rel="noopener noreferrer">d2cfc9b74d</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

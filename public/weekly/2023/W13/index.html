@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="19 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 13: Mar 27–Apr 2, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 13: Mar 27–Apr 2, 2023</h1>
+  <p class="post-meta">19 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/03/27/">Day</a><a href="/weekly/2023/W13/" aria-current="page">Week</a><a href="/monthly/2023/03/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2023/W12/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2023/W14/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>17 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/03/27/">Mon, Mar 27</a></div>
+  <div class="entry-copy"><code>dict</code> is no longer automatically pessimised. Direct construction and indexing preserve value types such as <code>dict&lt;string, int&gt;</code>, while like-typed values produce an explicit type such as <code>dict&lt;string, ~int&gt;</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/73c97aac94bd703cd1bf23db0ce51f1b94911663" target="_blank" rel="noopener noreferrer">73c97aac94</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/03/27/">Mon, Mar 27</a></div>
+  <div class="entry-copy">In autocomplete, typing <code>-&gt;</code> after a <code>vec</code>, <code>dict</code>, <code>keyset</code>, or <code>string</code> now offers compatible HSL functions and rewrites the expression into a function call with argument placeholders. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/73284d7d46d1d7971acba3322e41dc09317f56ce" target="_blank" rel="noopener noreferrer">73284d7d46</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/03/27/">Mon, Mar 27</a></div>
+  <div class="entry-copy">Package validation now requires each deployment&#x27;s package set to be transitively closed over <code>includes</code> and reports the packages missing from an incomplete deployment. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/43bcd2a96284ba3b8ca5087bde5a56e5e0c00e71" target="_blank" rel="noopener noreferrer">43bcd2a962</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/03/28/">Tue, Mar 28</a></div>
+  <div class="entry-copy">The IDE now offers an “Extract into variable” refactor for selected expressions. It avoids lvalues and <code>await</code>, but extracting a side-effecting expression can still change evaluation order and should be reviewed before accepting the edit. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4f66c7deb328ed210935c152b3e76b327138ecb8" target="_blank" rel="noopener noreferrer">4f66c7deb3</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/03/28/">Tue, Mar 28</a></div>
+  <div class="entry-copy">Sound-dynamic subtype solving now retains useful <code>T &lt;: ~#var</code> bounds and correctly strips covariant like types from both arguments and bounds of <code>HH\MemberOf</code>, fixing affected enum-class inference. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/291ef8f28017e2a1666f05cfe36926c7b4d1871f" target="_blank" rel="noopener noreferrer">291ef8f280</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/93e36262dd196be31c7d439fbb1261721c6a2b62" target="_blank" rel="noopener noreferrer">93e36262dd</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/03/29/">Wed, Mar 29</a></div>
+  <div class="entry-copy">“Extract into variable” now works inside single-expression and nested lambdas, and tolerates a selection that extends beyond the exact expression boundaries. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ef966ccc4affb09c1a4f169061a8a9821724e198" target="_blank" rel="noopener noreferrer">ef966ccc4a</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/24b553703d3134743277ec5868ad4edc9ef5a381" target="_blank" rel="noopener noreferrer">24b553703d</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/03/29/">Wed, Mar 29</a></div>
+  <div class="entry-copy">Array assignment and append now restore the local environment before their second typechecking pass. Typed-AST types and local refinements are no longer corrupted merely because the left side was checked twice. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/38ca0da32a988f47285305004107ca6c4a809b9c" target="_blank" rel="noopener noreferrer">38ca0da32a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/03/30/">Thu, Mar 30</a></div>
+  <div class="entry-copy">Hover information now prints polymorphic contexts such as <code>[ctx $callback]</code> in source form rather than exposing the lowerer&#x27;s synthetic type-variable name. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/afd31289dd1120c55e1e4a5535f7b4acaa659f3d" target="_blank" rel="noopener noreferrer">afd31289dd</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/03/30/">Thu, Mar 30</a></div>
+  <div class="entry-copy">An opt-in streaming mode can display type errors as <code>hh_server</code> discovers them. Start the server with <code>produce_streaming_errors=true</code> and run the client with <code>ide_standalone=true</code>; JSON output remains on the complete, non-streaming path. Streaming checks can additionally exit with <code>Typecheck_restarted</code> when files change or <code>Typecheck_abandoned</code> when the server terminates. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6af7c50224eaae01e1bba130f56528f402e5ef90" target="_blank" rel="noopener noreferrer">6af7c50224</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/fc4279b6b07aea320600b9451c79ae0a79a6230a" target="_blank" rel="noopener noreferrer">fc4279b6b0</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/03/31/">Fri, Mar 31</a></div>
+  <div class="entry-copy">HSL adds <code>Vec\map_with_key_async()</code>, which invokes an async callback with each original key and value in parallel and returns an <code>Awaitable&lt;vec&lt;_&gt;&gt;</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c2341d38b1c27f1da5871b30019179b03e0f98c9" target="_blank" rel="noopener noreferrer">c2341d38b1</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/03/31/">Fri, Mar 31</a></div>
+  <div class="entry-copy">Nested collection constructors with explicit types now keep precise inner types—for example, <code>vec&lt;vec&lt;int&gt;&gt;[vec[2, 3]]</code> remains <code>vec&lt;vec&lt;int&gt;&gt;</code> rather than acquiring an unnecessary like type. Mutable collection classes are now always treated as pessimised built-ins; the configuration flag no longer disables that behavior. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5ad92d1c7a515f040bbed22e147ebb779c7b5575" target="_blank" rel="noopener noreferrer">5ad92d1c7a</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/103067848a9e4be3ba1755fb40fa4a4de7c2e0a8" target="_blank" rel="noopener noreferrer">103067848a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/03/31/">Fri, Mar 31</a></div>
+  <div class="entry-copy">Lint 5650 recommends <code>async ... ==&gt; await ...</code> when a synchronous lambda directly returns an <code>Awaitable</code>, improving stack traces. Lint 5651 warns about lambdas inferred as <code>Awaitable&lt;Awaitable&lt;_&gt;&gt;</code>, where an inner <code>await</code> was likely omitted. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/328976bc0af15e8e08b2f3ffe8018f5cf1def8e3" target="_blank" rel="noopener noreferrer">328976bc0a</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/642ca62d9084e20135751032436476f842d7283a" target="_blank" rel="noopener noreferrer">642ca62d90</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/03/31/">Fri, Mar 31</a></div>
+  <div class="entry-copy">The experimental <code>package NAME</code> expression now has type <code>bool</code>, and an undefined package name produces a naming error based on <code>PACKAGES.toml</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/480031f13c9a3d7706496110d9cd25de169a3a58" target="_blank" rel="noopener noreferrer">480031f13c</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/03/31/">Fri, Mar 31</a></div>
+  <div class="entry-copy">Capability checks are now skipped for virtualized expression-tree calls, which are typechecked but never executed. Pure code can therefore construct DSL expressions whose virtual methods have <code>[defaults]</code> without receiving a false call-capability error. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9e6d3f539bb1b0c74286f0749fc72be264897f5d" target="_blank" rel="noopener noreferrer">9e6d3f539b</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/03/31/">Fri, Mar 31</a></div>
+  <div class="entry-copy">Local-variable completion items now display the variable&#x27;s inferred type instead of the generic label “local variable.” <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4f8762d58175a5cc9c03fd99ca57db3b16065c9d" target="_blank" rel="noopener noreferrer">4f8762d581</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/03/31/">Fri, Mar 31</a></div>
+  <div class="entry-copy"><code>HH\Lib\Async\Poll</code> and <code>BasePoll</code> no longer recurse through long already-satisfied awaitable chains, avoiding stack overflows in large polling workloads. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2033efe3049156e17db788f94ffd0fa7409451a7" target="_blank" rel="noopener noreferrer">2033efe304</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/04/02/">Sun, Apr 2</a></div>
+  <div class="entry-copy">Package configuration validation no longer reports a deployment error when its computed list of missing packages is empty. Valid deployments should no longer be rejected spuriously. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d642103bf1a6c70c7572f11c47bd88d892aa593f" target="_blank" rel="noopener noreferrer">d642103bf1</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/03/27/">Mon, Mar 27</a></div>
+  <div class="entry-copy">Symbol identification now sees method calls through a preview <code>readonly</code> expression, restoring navigation and references for those calls. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/857047246c23b0718dc3e4f5c29987a8afc26d74" target="_blank" rel="noopener noreferrer">857047246c</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/03/31/">Fri, Mar 31</a></div>
+  <div class="entry-copy">Sound-dynamic function-call checking now evaluates each argument once instead of exploring exponentially many static/dynamic combinations. Some previously accepted generic calls can now require an explicit type argument when inference commits to a like type too early. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9f106c6329ea219beea2c0c6fe86fcae17f9dd9f" target="_blank" rel="noopener noreferrer">9f106c6329</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

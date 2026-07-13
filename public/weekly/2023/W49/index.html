@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="19 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 49: Dec 4–Dec 10, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 49: Dec 4–Dec 10, 2023</h1>
+  <p class="post-meta">19 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/12/04/">Day</a><a href="/weekly/2023/W49/" aria-current="page">Week</a><a href="/monthly/2023/12/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2023/W48/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2023/W50/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>12 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/12/04/">Mon, Dec 4</a></div>
+  <div class="entry-copy">Best-effort notebook support now typechecks top-level statements as the body of a synthetic async function. This restores completions and ordinary type errors around top-level <code>await</code>, and initializes the same implicit capability locals as a function instead of reporting <code>$#capability</code> as undefined. Normal Hack files still receive the general error that top-level statements are unsupported. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/aa87ac15eea44a5dae978a7b0c42a0c0e8a51511" target="_blank" rel="noopener noreferrer">aa87ac15ee</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d5c48abf18ba7c335d76cf539711363fe0cac9ba" target="_blank" rel="noopener noreferrer">d5c48abf18</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/12/04/">Mon, Dec 4</a></div>
+  <div class="entry-copy"><code>debugger_dump()</code> is now visible to typechecked notebook code. This removes only its <code>__PHPStdLib</code> restriction; its omitted capability list continues to mean <code>[defaults]</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8c7dfdb58b0f18db30f94d5398f034b900ab2ab2" target="_blank" rel="noopener noreferrer">8c7dfdb58b</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/12/05/">Tue, Dec 5</a></div>
+  <div class="entry-copy">A trait marked <code>__ModuleLevelTrait</code> may now use an ordinary trait. The runtime fatal has been removed because ordinary traits cannot themselves declare or access module-internal members. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d1cfeadc32e8565c1e98f547e7080c9af0735d6a" target="_blank" rel="noopener noreferrer">d1cfeadc32</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/12/06/">Wed, Dec 6</a></div>
+  <div class="entry-copy">Enum-class-label completion now solves refinement-type constraints before filtering candidates, avoiding the fallback that suggested every label when only a constrained subset was valid. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3b57ad1701b6fce0c29b496b1a12c371b7e2b390" target="_blank" rel="noopener noreferrer">3b57ad1701</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/12/06/">Wed, Dec 6</a></div>
+  <div class="entry-copy"><code>HH\FileDecls::getFile()</code> now returns typedefs and modules under their proper keys instead of accidentally overwriting the file-attributes entry. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/15c78d1216e27b12e33a5958f8254adc274e3ae1" target="_blank" rel="noopener noreferrer">15c78d1216</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/12/07/">Thu, Dec 7</a></div>
+  <div class="entry-copy">Enum-class-label completion no longer resolves a contravariant type variable prematurely to <code>mixed</code> or <code>supportdyn&lt;mixed&gt;</code>, allowing the IDE to retain the useful label candidates implied by narrower bounds. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ee19abb9a321ea70f775ebab0d7f06b49c48a155" target="_blank" rel="noopener noreferrer">ee19abb9a3</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/12/07/">Thu, Dec 7</a></div>
+  <div class="entry-copy">HHVM&#x27;s sodium extension adds the missing Ristretto255 point operations: <code>sodium_crypto_core_ristretto255_add()</code>, <code>sodium_crypto_core_ristretto255_sub()</code>, <code>sodium_crypto_core_ristretto255_is_valid_point()</code>, and <code>sodium_crypto_core_ristretto255_random()</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ed0c96f18999f73c69500463411eed1bc3516ecf" target="_blank" rel="noopener noreferrer">ed0c96f189</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/12/08/">Fri, Dec 8</a></div>
+  <div class="entry-copy">IDE completion signatures now print declared coeffects, including <code>[]</code>, named contexts, and context-polymorphic requirements, instead of silently omitting them. This is a presentation fix: callee requirements and the rule that callers need a superset of those capabilities are unchanged. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b1a1774b1f3c028843b0674f9a72ce044399f82b" target="_blank" rel="noopener noreferrer">b1a1774b1f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/12/08/">Fri, Dec 8</a></div>
+  <div class="entry-copy">Override diagnostics now compare against and describe the instantiated parent member type, producing more useful explanations for failures inherited through generic parents and traits. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3c76b90da3bcc0a71fc4083aff66c240b04787a1" target="_blank" rel="noopener noreferrer">3c76b90da3</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/12/08/">Fri, Dec 8</a></div>
+  <div class="entry-copy">The standard hash extension now supports unkeyed BLAKE3 through APIs such as <code>hash(&#x27;blake3&#x27;, $data)</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d648c1cc26e249633de38af17e79e44eab160a6f" target="_blank" rel="noopener noreferrer">d648c1cc26</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/12/08/">Fri, Dec 8</a></div>
+  <div class="entry-copy">The HHI for <code>debugger_dump()</code> now gives its argument the real <code>mixed</code> type, so arbitrary values no longer need a missing-type workaround. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0c5f03837e4bf39f87a3ec412d79012579eb2425" target="_blank" rel="noopener noreferrer">0c5f03837e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/12/09/">Sat, Dec 9</a></div>
+  <div class="entry-copy"><code>meth_caller(nameof C, &#x27;method&#x27;)</code> is now accepted as an alternative to <code>meth_caller(C::class, &#x27;method&#x27;)</code>. As before, the target must be a class rather than a trait. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b10117f0227999080a7d1ec838e445f015f504a7" target="_blank" rel="noopener noreferrer">b10117f022</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/12/04/">Mon, Dec 4</a></div>
+  <div class="entry-copy">A trait with the pre-stable <code>require class C</code> constraint may now call <code>parent::</code>; the call is checked against the required class&#x27;s parent just as it is for <code>require extends</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c2149e92816ed70408751c6563e996d65df0d593" target="_blank" rel="noopener noreferrer">c2149e9281</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/12/05/">Tue, Dec 5</a></div>
+  <div class="entry-copy">IDE rename now handles Preview typed-local declarations, and typechecker errors point at the declared local rather than the entire <code>let</code> statement. Runtime enforcement failures are also prefixed with “Typed local assignment” to distinguish them from parameter and return-type failures. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1332c3ee4226f1e8b9c6ad042ffd39684d0bfbd2" target="_blank" rel="noopener noreferrer">1332c3ee42</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a164327813d28e7f5f622da83371167afa6f296d" target="_blank" rel="noopener noreferrer">a164327813</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/12/08/">Fri, Dec 8</a></div>
+  <div class="entry-copy">The unstable <code>function_references</code> feature introduces invariant <code>HH\FunctionRef&lt;T&gt;</code> types for APIs that update a named function pointer. Named function pointers receive the wrapper type, lambdas do not, and the wrapper is erased before runtime. Where unstable features are allowed, opt in with <code>&lt;&lt;file:__EnableUnstableFeatures(&#x27;function_references&#x27;)&gt;&gt;</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5bb1ca7dcae446080cc07f058665a67bc27c66c0" target="_blank" rel="noopener noreferrer">5bb1ca7dca</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>4 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/12/06/">Wed, Dec 6</a></div>
+  <div class="entry-copy">The declaration-inspection extension has moved its global <code>FileDecls</code> class, shapes, and constants into the <code>HH</code> namespace, and a new HHI makes the API available to the typechecker. Update calls to use <code>HH\FileDecls</code> and qualify associated types and constants. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5fe71bb694e53d3691609ee614cfc5b4de05981b" target="_blank" rel="noopener noreferrer">5fe71bb694</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/12/06/">Wed, Dec 6</a></div>
+  <div class="entry-copy">Converting a reified function pointer to <code>bool</code> now consistently produces <code>true</code>. The interpreter previously threw <code>InvalidOperationException</code> while JIT-compiled code already returned <code>true</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/327f2611e6100c7789383ea8546cf028f7599bb9" target="_blank" rel="noopener noreferrer">327f2611e6</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/12/07/">Thu, Dec 7</a></div>
+  <div class="entry-copy">Ancestor traversal now gives directly declared <code>implements</code> entries precedence over interfaces inherited through <code>extends</code>. For a type that reaches the same generic interface at several instantiations, this can change which instantiation wins and can expose type errors that the previous ordering hid. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/23ac49c0fab9ca72263ca564cf06ca63f825f4c1" target="_blank" rel="noopener noreferrer">23ac49c0fa</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/12/08/">Fri, Dec 8</a></div>
+  <div class="entry-copy">When a class or interface reaches the same generic interface at multiple instantiations, the winning instantiation must now be a subtype of every ignored instantiation. Invalid hierarchies report <code>Typing[4480]</code>; <code>__AllowMultipleInstantiations</code> is available as an unsafe migration escape hatch. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f61d45647352081ed1123e714c8d367f0d9e6bb3" target="_blank" rel="noopener noreferrer">f61d456473</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

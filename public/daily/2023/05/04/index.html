@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="4 noteworthy changes recorded on this day.">
+  <title>Thursday, May 4, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Thursday, May 4, 2023</h1>
+  <p class="post-meta">4 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/05/04/" aria-current="page">Day</a><a href="/weekly/2023/W18/">Week</a><a href="/monthly/2023/05/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2023/05/03/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2023/05/05/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">Sound Dynamic subtyping now prefers the concrete type mismatch over a secondary <code>dynamic</code> mismatch, and implicit-pessimisation failures choose more useful union branches. Error messages should point closer to the actual incompatible type. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5e765d67945cd47787e33a158a61b418fc96fc98" target="_blank" rel="noopener noreferrer">5e765d6794</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2523b6b4f0f338cb31da8ea9f100ecb9c2758f8f" target="_blank" rel="noopener noreferrer">2523b6b4f0</a></div></li><li class="change-entry"><div class="entry-copy">Rename now updates references in unsaved open files instead of relying exclusively on positions from the on-disk <code>hh_server</code> state. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8f8391cdbdda8eea4d54f7b2944ca6b750670b8d" target="_blank" rel="noopener noreferrer">8f8391cdbd</a></div></li><li class="change-entry"><div class="entry-copy">The debugger now handles captures from both current Hack lambdas and older closure forms, and its REPL can evaluate async expressions and join the resulting wait handle. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/cf298fe57984779c39e09fc89f7d6f700dde12f5" target="_blank" rel="noopener noreferrer">cf298fe579</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/66be6e72753baa2579511a18cb573b3582c9c6b0" target="_blank" rel="noopener noreferrer">66be6e7275</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy">Enum supertyping is now fully released and its <code>.hhconfig</code> release flag has been removed. Enum <code>includes</code> declarations are checked unconditionally. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/910382a92e75b4d927caf7f44d132464b4737665" target="_blank" rel="noopener noreferrer">910382a92e</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

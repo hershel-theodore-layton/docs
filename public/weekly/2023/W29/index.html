@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="15 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 29: Jul 17–Jul 23, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 29: Jul 17–Jul 23, 2023</h1>
+  <p class="post-meta">15 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/07/17/">Day</a><a href="/weekly/2023/W29/" aria-current="page">Week</a><a href="/monthly/2023/07/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2023/W28/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2023/W30/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>10 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/07/17/">Mon, Jul 17</a></div>
+  <div class="entry-copy">Type displays now consistently render a union of <code>dynamic | T</code> as the like type <code>~T</code>, even when sound dynamic is not enabled. This affects diagnostics, hover text, typed-AST output, and other pretty-printed types. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1919727869bdbfd9635fdac863bdbb6dac3b7da4" target="_blank" rel="noopener noreferrer">1919727869</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/07/17/">Mon, Jul 17</a></div>
+  <div class="entry-copy">When multiple package module globs match, HHVM now assigns the module to the package with the longest, most-specific prefix, matching the typechecker’s interpretation. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/79819e903ffc4026390cf7922127846546ca4a2c" target="_blank" rel="noopener noreferrer">79819e903f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/07/18/">Tue, Jul 18</a></div>
+  <div class="entry-copy">Under sound-dynamic pessimization, <code>HH\FIXME\UNSAFE_CAST&lt;Tin, Tout&gt;()</code> is now checked through its declared HHI signature: both source and destination must support dynamic, and the result receives the expected pessimised type. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/943dbbf32a43acf2ae6a604b5762889088d388e1" target="_blank" rel="noopener noreferrer">943dbbf32a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/07/18/">Tue, Jul 18</a></div>
+  <div class="entry-copy">Standalone IDE mode now loads <code>PACKAGES.toml</code>, so package-access diagnostics stay in sync with a full <code>hh_server</code> typecheck. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/fbcf2bfbe3222f988b5fb0624dca7faf52dbab94" target="_blank" rel="noopener noreferrer">fbcf2bfbe3</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/07/19/">Wed, Jul 19</a></div>
+  <div class="entry-copy">Autocomplete now follows chained method calls through <code>supportdyn</code> and like types more reliably, restoring member suggestions under implicit sound-dynamic pessimization. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7eda8da7c30d1d59e6621b9a66716bf213955555" target="_blank" rel="noopener noreferrer">7eda8da7c3</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/07/19/">Wed, Jul 19</a></div>
+  <div class="entry-copy"><code>HH\get_headers_secure()</code> now declares the precise <code>[read_globals]</code> capability instead of implicit <code>[defaults]</code>, allowing calls from contexts that grant global reads without granting every default capability. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8e93d5e2a85a09ac2a1c8bb6b77d2c4c4a3a8e2c" target="_blank" rel="noopener noreferrer">8e93d5e2a8</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/07/19/">Wed, Jul 19</a></div>
+  <div class="entry-copy">The Facts API adds <code>HH\Facts\files_with_attribute_and_any_value()</code>, returning files whose file attribute has a requested value. Query values support booleans, integers, strings, dicts, vecs, and keysets; unsupported values are coerced to <code>null</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7935244238772845d6fa9354bcc51711a340b6da" target="_blank" rel="noopener noreferrer">7935244238</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/07/20/">Thu, Jul 20</a></div>
+  <div class="entry-copy"><code>HH\parse_cookies()</code> parses a raw Cookie header into the same nested dict/vec shape used by <code>$_COOKIE</code>, without mutating request globals. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ad7a65180a03b9ac2118550d51383b204b291ddc" target="_blank" rel="noopener noreferrer">ad7a65180a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/07/20/">Thu, Jul 20</a></div>
+  <div class="entry-copy">The splat operator may now contain <code>await</code> directly, enabling calls such as <code>f(...await $args)</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b62d8f788f6dd9153d2246d8400dce76af342dbd" target="_blank" rel="noopener noreferrer">b62d8f788f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/07/21/">Fri, Jul 21</a></div>
+  <div class="entry-copy"><code>hh_single_complete --root ... --naming-table ...</code> now resolves names from its naming-table fallback correctly instead of producing bogus <code>==&gt;</code> parse errors for affected completions. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/99f9df3a9769db0e774cb3c4aab6b307df7d3978" target="_blank" rel="noopener noreferrer">99f9df3a97</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>4 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/07/17/">Mon, Jul 17</a></div>
+  <div class="entry-copy">Experimental typed locals are now tracked correctly inside arrow lambdas and PHP-style closures with explicit <code>use</code> captures. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f13f87d9925eaa9d6a97f661ec73523d8493c3ff" target="_blank" rel="noopener noreferrer">f13f87d992</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2f410f33e0da940132d6d587e0c728fd80219072" target="_blank" rel="noopener noreferrer">2f410f33e0</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/07/18/">Tue, Jul 18</a></div>
+  <div class="entry-copy">HackC now understands wildcard types in lambda parameter and return hints and treats <code>_</code> itself as unenforced at runtime while retaining the surrounding type check. The typechecker still rejects explicit lambda wildcards at this point; this is groundwork for later accepting forms such as <code>(vec&lt;_&gt; $x) ==&gt; ...</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/54356672cb1f6f23751bddf14e3bba5277e5cf8f" target="_blank" rel="noopener noreferrer">54356672cb</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/07/19/">Wed, Jul 19</a></div>
+  <div class="entry-copy">Intersections now expose and filter case-type variants when the other constraints identify a concrete data type. Refinements such as <code>CT &amp; vec&lt;mixed&gt;</code> and negative <code>is</code> branches can therefore simplify to a usable surviving variant. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ac30c4d79267f2cd6ba8ed7b7bd5280f65f55857" target="_blank" rel="noopener noreferrer">ac30c4d792</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/07/20/">Thu, Jul 20</a></div>
+  <div class="entry-copy">Experimental typed locals now flow correctly through <code>try</code>/<code>catch</code>/<code>finally</code>, <code>switch</code>, and <code>foreach</code> statements. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/230741a3e26ad843945f9bf740fe580dc8cd5a60" target="_blank" rel="noopener noreferrer">230741a3e2</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c5781f6f1bbf4d40479c840527416c8644a10acb" target="_blank" rel="noopener noreferrer">c5781f6f1b</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/07/21/">Fri, Jul 21</a></div>
+  <div class="entry-copy">The obsolete <code>mbstring.http_input</code> and <code>mbstring.http_output</code> INI settings have been removed. Deployment configurations that still set them should delete those entries. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6a26df249940b361d88c6b5de6aa7bcee702f91b" target="_blank" rel="noopener noreferrer">6a26df2499</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

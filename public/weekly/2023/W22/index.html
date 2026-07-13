@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="12 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 22: May 29–Jun 4, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 22: May 29–Jun 4, 2023</h1>
+  <p class="post-meta">12 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/05/30/">Day</a><a href="/weekly/2023/W22/" aria-current="page">Week</a><a href="/monthly/2023/05/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2023/W21/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2023/W23/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>5 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/05/30/">Tue, May 30</a></div>
+  <div class="entry-copy">When both ordinary and dynamic-aware checks of a Sound Dynamic function call fail, Hack now reports whichever branch produces fewer errors. This suppresses cascades of like-type mismatches in favor of the underlying application error. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ba26aab5fd8aa7ada32feb4a70387cb64e2ea483" target="_blank" rel="noopener noreferrer">ba26aab5fd</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/05/30/">Tue, May 30</a></div>
+  <div class="entry-copy">All IDE code actions are now resolved lazily after selection, reducing the work required to display the initial lightbulb menu. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/07b43be5a58c69deec8edbba19ecd058496eecb2" target="_blank" rel="noopener noreferrer">07b43be5a5</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/05/31/">Wed, May 31</a></div>
+  <div class="entry-copy">Built-in container factory functions now opt out of automatic pessimisation where their implementations guarantee the declared result, removing unnecessary like-types from returned containers. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b24a872b6208b3ab90425a2bcc327d0960a39ee7" target="_blank" rel="noopener noreferrer">b24a872b62</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/05/31/">Wed, May 31</a></div>
+  <div class="entry-copy">Hover no longer displays the implicit <code>as mixed</code> rendering of Sound Dynamic&#x27;s synthetic <code>as supportdyn&lt;mixed&gt;</code> generic bound. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d6f94a7cf1eca030e72461aabccfb604d9b52049" target="_blank" rel="noopener noreferrer">d6f94a7cf1</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/06/02/">Fri, Jun 2</a></div>
+  <div class="entry-copy">Nullable member-access errors now offer an “add null-safe get” action that changes same-line <code>$value-&gt;member</code> access to <code>$value?-&gt;member</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9a7621ecd215b62f694a428e938e8400e497bb2d" target="_blank" rel="noopener noreferrer">9a7621ecd2</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>5 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/05/30/">Tue, May 30</a></div>
+  <div class="entry-copy">The experimental <code>typed_local_variables</code> feature introduces declarations such as <code>let $value: int = 1;</code>. This initial step parses and erases the annotation to an ordinary assignment; full assignment consistency and possible runtime enforcement are still future work. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/489986a389b702d353325254cb0ea24fb6bd453a" target="_blank" rel="noopener noreferrer">489986a389</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/06/01/">Thu, Jun 1</a></div>
+  <div class="entry-copy">Under implicit pessimisation, readonly array updates now look through <code>readonly</code> expressions before handling like-types. This fixes incorrect inferred types for readonly array operations. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6279fa521a0b36f14f087d35c7aab828f9de97af" target="_blank" rel="noopener noreferrer">6279fa521a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/06/01/">Thu, Jun 1</a></div>
+  <div class="entry-copy">The typed-local parser now correctly requires the declaration tokens instead of asserting that they are present, producing syntax errors rather than parser failures for malformed <code>let $x: T = ...</code> declarations. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/553b4196ef1497131b568f319083624a9669e525" target="_blank" rel="noopener noreferrer">553b4196ef</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/06/02/">Fri, Jun 2</a></div>
+  <div class="entry-copy">The nested-<code>Awaitable</code> lint again recognizes <code>Awaitable&lt;~Awaitable&lt;T&gt;&gt;</code> under implicit pessimisation, so accidental double-awaitable returns are not hidden by the like-type wrapper. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/979f436be9a894280623b2c14f8324c9f1b02bf1" target="_blank" rel="noopener noreferrer">979f436be9</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/06/03/">Sat, Jun 3</a></div>
+  <div class="entry-copy">The unused <code>hh_client --refactor-sound-dynamic</code> mode has been removed. Sound-dynamic-aware behavior is now part of the ordinary refactoring paths; the corresponding single-file experimentation mode remains available. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1f137c6dce4e469840063fba964c3309b0a1318d" target="_blank" rel="noopener noreferrer">1f137c6dce</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/05/31/">Wed, May 31</a></div>
+  <div class="entry-copy">The legacy <code>hh --auto-complete</code> command has been removed. Editor integrations and other consumers should use the IDE autocomplete service. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7ff9a5ae35d8eb8da1ec3af635abc17c5c23fc6d" target="_blank" rel="noopener noreferrer">7ff9a5ae35</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/06/02/">Fri, Jun 2</a></div>
+  <div class="entry-copy">Runtime type tests such as <code>$value is dynamic</code> are now rejected. HHVM cannot test whether an arbitrary value supports dynamic, so using the result to refine <code>$value</code> to <code>dynamic</code> created a type hole. Test for a concrete runtime type instead. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/89bedcf12d1be47f6a2f6ed69fde67e2cdbc700c" target="_blank" rel="noopener noreferrer">89bedcf12d</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

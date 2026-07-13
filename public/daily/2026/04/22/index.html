@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="4 noteworthy changes recorded on this day.">
+  <title>Wednesday, April 22, 2026 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Wednesday, April 22, 2026</h1>
+  <p class="post-meta">4 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2026/04/22/" aria-current="page">Day</a><a href="/weekly/2026/W17/">Week</a><a href="/monthly/2026/04/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2026/04/21/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2026/04/23/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Security</h2><ul><li class="change-entry"><div class="entry-copy"><code>popen()</code> and <code>pclose()</code> now obey the same <code>AllowExec</code> and <code>AllowUngatedExec</code> process-execution gates as <code>exec()</code>, <code>system()</code>, and <code>proc_open()</code>. Deployments that disable either gate will now reject these shell-pipe APIs too. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d33c8c0de09916159ada8743a08397a7b80bb115" target="_blank" rel="noopener noreferrer">d33c8c0de0</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy">Memcached HHI declarations now give concrete types to 27 methods, including boolean operation results, <code>getResultCode(): int</code>, <code>getResultMessage(): string</code>, and a nullable-string constructor argument. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3b7f6b9fb48804801daf23fbb3ed8b320bfdc417" target="_blank" rel="noopener noreferrer">3b7f6b9fb4</a></div></li><li class="change-entry"><div class="entry-copy">A new <code>Warn[12042]</code> reports property access through <code>dynamic</code>, including dynamic intersections and <code>supportdyn</code> wrappers. This mirrors the existing warning for dynamic method calls and may affect projects that promote warnings to failures. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/faa70e09f37c5d21863b42ae2c2700e45b5810e4" target="_blank" rel="noopener noreferrer">faa70e09f3</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">The manual now documents Preview-stage recursive case types, including guarded and mutual recursion and the current limitation around single-variant shape definitions. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e2f872bce474cb596bd0fb672a14ddc9807a306c" target="_blank" rel="noopener noreferrer">e2f872bce4</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

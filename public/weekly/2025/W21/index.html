@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="16 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 21: May 19–May 25, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 21: May 19–May 25, 2025</h1>
+  <p class="post-meta">16 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/05/19/">Day</a><a href="/weekly/2025/W21/" aria-current="page">Week</a><a href="/monthly/2025/05/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2025/W20/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2025/W22/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Future Changes</h2><span>4 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/05/19/">Mon, May 19</a></div>
+  <div class="entry-copy">Declarations using the unstable type-splat syntax are now checked to ensure the splatted parameter type is a subtype of <code>(mixed...)</code>. Generic splats therefore need an appropriate tuple bound instead of remaining unchecked at declaration time. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/768846af7bd1ceb27860694f4e99e07e6e64d2f6" target="_blank" rel="noopener noreferrer">768846af7b</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/05/21/">Wed, May 21</a></div>
+  <div class="entry-copy">Nested expression-tree lowering now orders captured free variables deterministically, preventing run-to-run changes in generated lambda parameters and bytecode while the nested-binding implementation evolves. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/359704caf914be1dcaf483d6d428343f505e209f" target="_blank" rel="noopener noreferrer">359704caf9</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/05/22/">Thu, May 22</a></div>
+  <div class="entry-copy">Class-pointer diagnostics for dynamic static calls now include the type&#x27;s definition site, and the unstable <code>HH\ReifiedGenerics\get_class_from_type()</code> intrinsic accepts abstract type constants without <code>&lt;&lt;__Reifiable&gt;&gt;</code> because it consumes their type structure rather than preserving a reification witness. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/497d0712966b384377b9c8cc154ad011dd197e06" target="_blank" rel="noopener noreferrer">497d071296</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b2082d530e04ccf763cd30265ae7ebe62bd93ff6" target="_blank" rel="noopener noreferrer">b2082d530e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/05/22/">Thu, May 22</a></div>
+  <div class="entry-copy">The unstable polymorphic-lambda feature now supports both <code>function&lt;T&gt;(T $x): T ==&gt; $x</code> and generic legacy anonymous functions. Parameters and returns must be explicitly typed, and reified, variant, higher-kinded, and shadowing type parameters remain disallowed. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/bb4279c923ec6cc9eab19a42c0d269e78ed8bb47" target="_blank" rel="noopener noreferrer">bb4279c923</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3e1031ad4c4009cbba551444fadc7c049ceb20a9" target="_blank" rel="noopener noreferrer">3e1031ad4c</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Highlights</h2><span>8 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/05/20/">Tue, May 20</a></div>
+  <div class="entry-copy"><code>ReflectionClass::getName()</code> is now typed as <code>classname&lt;mixed&gt;</code> rather than plain <code>string</code>, preserving class-name information through reflection without changing the runtime string representation. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/87ff6350386bff400e826c072fe7f0ee92f09d07" target="_blank" rel="noopener noreferrer">87ff635038</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/05/21/">Wed, May 21</a></div>
+  <div class="entry-copy"><code>HH\PriorityBridgeWaitHandle</code> can wrap an awaitable so its child continues at lower priority instead of being promoted by the waiting context, and <code>prioritize()</code> can later lift it. <code>create()</code> requires <code>[]</code>; the initial HHI for <code>prioritize()</code> omits a bracket list, so callers initially need the implicit <code>[defaults]</code> capability. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ab939a7f4a3311a4f74fcf7bf69df0e0a7dad5fd" target="_blank" rel="noopener noreferrer">ab939a7f4a</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/287b567685d73c5a5edd5406753c59a52480c66c" target="_blank" rel="noopener noreferrer">287b567685</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/05/21/">Wed, May 21</a></div>
+  <div class="entry-copy">The <code>class_overrides_all_trait_methods</code> linter now ignores abstract trait methods that exist to carry user-defined semantic attributes, while continuing to report genuinely dead overrides. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4794a8c90639a7830a2bc6162e29c110dd6ac4bd" target="_blank" rel="noopener noreferrer">4794a8c906</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/05/21/">Wed, May 21</a></div>
+  <div class="entry-copy"><code>HH\dynamic_class_meth()</code> and <code>HH\dynamic_meth_caller()</code> now accept <code>class_or_classname&lt;mixed&gt;</code> instead of only <code>string</code>, adding class-pointer arguments without rejecting existing classname strings. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9da64160bdb2b09b01a15f8e69156eec63c9d8d3" target="_blank" rel="noopener noreferrer">9da64160bd</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/05/22/">Thu, May 22</a></div>
+  <div class="entry-copy">Calling <code>PriorityBridgeWaitHandle::prioritize()</code> after the wrapped wait handle has already finished is now a no-op instead of crashing. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/dd5cdaf7a4c5c99321b030e3c34cf6f62223b577" target="_blank" rel="noopener noreferrer">dd5cdaf7a4</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/05/23/">Fri, May 23</a></div>
+  <div class="entry-copy">Repo-authoritative builds can use repeatable <code>--static-pattern</code> glob options to include only selected files in <code>file.cache</code>; this mode cannot be combined with <code>--cdir</code> or <code>--cfile</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/51c53a7882311765c06f74f9da8a90fc152b45ff" target="_blank" rel="noopener noreferrer">51c53a7882</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/bd70a8f60ace32fc3eccafeac50fe72e4d13068a" target="_blank" rel="noopener noreferrer">bd70a8f60a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/05/23/">Fri, May 23</a></div>
+  <div class="entry-copy">HSL adds <code>HH\Lib\Async\LowPri&lt;T&gt;</code> for starting non-critical async work at low priority and promoting it later. <code>run()</code> has callee requirements <code>[ctx $action, write_props]</code>, and <code>prioritize()</code> requires <code>[write_props]</code>, so their callers must provide at least those capabilities. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b90e9d07acd026be0aed76c1dea57fcc3159e011" target="_blank" rel="noopener noreferrer">b90e9d07ac</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/05/23/">Fri, May 23</a></div>
+  <div class="entry-copy">The HHI for <code>PriorityBridgeWaitHandle::prioritize()</code> now explicitly uses <code>[]</code> instead of omitted brackets. This weakens its callee requirement from implicit <code>[defaults]</code> to no capabilities and is therefore non-breaking for callers. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b90e9d07acd026be0aed76c1dea57fcc3159e011" target="_blank" rel="noopener noreferrer">b90e9d07ac</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>4 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/05/20/">Tue, May 20</a></div>
+  <div class="entry-copy">The checker no longer accepts dynamic static-method call syntax such as <code>$class::$method()</code> or <code>C::{expr}()</code>. Use a statically named method or the explicit <code>HH\dynamic_class_meth()</code> API. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/458b0899896485f5e059d3c5909741c485f37bed" target="_blank" rel="noopener noreferrer">458b089989</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f5759593e2f8a5ab4cbbbbbc48cf9c427b5d770d" target="_blank" rel="noopener noreferrer">f5759593e2</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/05/20/">Tue, May 20</a></div>
+  <div class="entry-copy">The legacy <code>HH\ImplicitContext</code> abstract class and its private context-construction path have been removed; the <code>HH\ImplicitContext</code> namespace remains. Projects still using the class should migrate to the memo-sensitive or memo-agnostic API. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/dc65144f44c2cfb3ecf339f249ab781ef47269b4" target="_blank" rel="noopener noreferrer">dc65144f44</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/05/20/">Tue, May 20</a></div>
+  <div class="entry-copy"><code>HH\MemoAgnosticImplicitContext</code> and <code>HH\MemoSensitiveImplicitContext</code> are now sealed to their approved platform subclasses. Direct subclasses outside that hierarchy are no longer accepted. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/529cf1661b4bf2fabd742eeab12c3abac85d73db" target="_blank" rel="noopener noreferrer">529cf1661b</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/05/21/">Wed, May 21</a></div>
+  <div class="entry-copy"><code>HH\meth_caller()</code> now requires <code>class&lt;mixed&gt;</code> rather than <code>classname&lt;mixed&gt;</code>. Pass a class pointer such as <code>C::class</code>; classname strings and variables no longer satisfy the public signature. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/880710ad0c06629ac4cf05ec77254d1400434eaa" target="_blank" rel="noopener noreferrer">880710ad0c</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="15 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 17: Apr 20–Apr 26, 2026 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 17: Apr 20–Apr 26, 2026</h1>
+  <p class="post-meta">15 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2026/04/20/">Day</a><a href="/weekly/2026/W17/" aria-current="page">Week</a><a href="/monthly/2026/04/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2026/W16/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2026/W18/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Breaking Changes</h2><span>7 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/04/20/">Mon, Apr 20</a></div>
+  <div class="entry-copy">Fileinfo, mailparse, and Async MySQL declarations now replace additional missing HHI types with concrete runtime signatures. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b10a40ecb8b69fb553ee739042aeec85ba6360cb" target="_blank" rel="noopener noreferrer">b10a40ecb8</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/750d2077d05cc4ac52ab8cf99a754d1b091f1bc4" target="_blank" rel="noopener noreferrer">750d2077d0</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/edf0a3bfbc6f68004176c5c101c9cd01e50033cc" target="_blank" rel="noopener noreferrer">edf0a3bfbc</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/04/20/">Mon, Apr 20</a></div>
+  <div class="entry-copy"><code>is</code> expressions now validate their right-hand type even when the expression is not being used to refine the left-hand side. Invalid type hints that previously escaped localization now produce errors. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8b49bb13047afc39fb08e3fc454e6b21b718b038" target="_blank" rel="noopener noreferrer">8b49bb1304</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/04/20/">Mon, Apr 20</a></div>
+  <div class="entry-copy">Inherited <code>class</code>, <code>classname</code>, and <code>string</code> return constraints now apply the same configuration-controlled warnings, errors, and class-to-string conversions as directly declared constraints. Projects relying on the previous inherited-constraint gap may see new runtime diagnostics or failures. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/14aceb719a5200f777e6e66fcc44a5ae738f4172" target="_blank" rel="noopener noreferrer">14aceb719a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/04/22/">Wed, Apr 22</a></div>
+  <div class="entry-copy">Memcached HHI declarations now give concrete types to 27 methods, including boolean operation results, <code>getResultCode(): int</code>, <code>getResultMessage(): string</code>, and a nullable-string constructor argument. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3b7f6b9fb48804801daf23fbb3ed8b320bfdc417" target="_blank" rel="noopener noreferrer">3b7f6b9fb4</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/04/22/">Wed, Apr 22</a></div>
+  <div class="entry-copy">A new <code>Warn[12042]</code> reports property access through <code>dynamic</code>, including dynamic intersections and <code>supportdyn</code> wrappers. This mirrors the existing warning for dynamic method calls and may affect projects that promote warnings to failures. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/faa70e09f37c5d21863b42ae2c2700e45b5810e4" target="_blank" rel="noopener noreferrer">faa70e09f3</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/04/23/">Thu, Apr 23</a></div>
+  <div class="entry-copy">Higher-rank generic validation now traverses nested types when looking for escaping type parameters. Invalid escapes that were hidden below the top level can now be reported. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/653e481d9c2221a240087fe1ca9d2a60d2627b9e" target="_blank" rel="noopener noreferrer">653e481d9c</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/04/23/">Thu, Apr 23</a></div>
+  <div class="entry-copy">Reflection declarations now expose concrete types for <code>Reflection::getModifierNames()</code>, <code>ReflectionFunction::isDisabled()</code>, and several <code>ReflectionProperty</code> queries. This improves inference and can reject callers that relied on the previous missing types. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/64fd36da55be82a9700183e2ef073404fdfdc832" target="_blank" rel="noopener noreferrer">64fd36da55</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>4 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/04/20/">Mon, Apr 20</a></div>
+  <div class="entry-copy">The experimental <code>TypeStructure</code> representation for refinements now correctly types <code>as</code> and <code>super</code> entries as <code>vec&lt;mixed&gt;</code>, since a refinement may carry multiple bounds. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7713c28719bc82c612f7b348e9b81b4f16e3049d" target="_blank" rel="noopener noreferrer">7713c28719</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/04/21/">Tue, Apr 21</a></div>
+  <div class="entry-copy">Parser and AST support has landed for unstable class and interface aliases such as <code>class C = D;</code> and <code>interface I = D;</code>, including generic syntax. The feature is gated by <code>class_aliases_everywhere</code> and is not yet stable for production use. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/314b03ace49e451d2f40684caad8ed88763c4939" target="_blank" rel="noopener noreferrer">314b03ace4</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0150d9ae6728f16d4810acb525c866da25eaacd9" target="_blank" rel="noopener noreferrer">0150d9ae67</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/04/22/">Wed, Apr 22</a></div>
+  <div class="entry-copy">The manual now documents Preview-stage recursive case types, including guarded and mutual recursion and the current limitation around single-variant shape definitions. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e2f872bce474cb596bd0fb672a14ddc9807a306c" target="_blank" rel="noopener noreferrer">e2f872bce4</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/04/23/">Thu, Apr 23</a></div>
+  <div class="entry-copy">The experimental type-alias refinement checker now looks through aliases when rejecting refinements in <code>is</code>, <code>as</code>, and reified-generic positions, closing a way to hide an unsupported refinement behind a typedef. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/59f35936ddaa49337de608056456baca67fa3b09" target="_blank" rel="noopener noreferrer">59f35936dd</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Highlights</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/04/21/">Tue, Apr 21</a></div>
+  <div class="entry-copy">Go-to-definition on <code>nameof SomeTypeAlias</code> now navigates to the alias declaration instead of incorrectly resolving through <code>typename</code> to the <code>HH\string</code> HHI declaration. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f0c1da1d2aace11358c9b07de20d517dbe1cc354" target="_blank" rel="noopener noreferrer">f0c1da1d2a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/04/23/">Thu, Apr 23</a></div>
+  <div class="entry-copy">Runtime tests with an abstract <code>&lt;&lt;__Enforceable&gt;&gt;</code> type constant are now allowed even when its <code>as</code> bound is not itself enforceable; a concrete implementation can still provide an enforceable type. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/edc62dc1c264998af992782f4db27677c93756bb" target="_blank" rel="noopener noreferrer">edc62dc1c2</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/04/23/">Thu, Apr 23</a></div>
+  <div class="entry-copy">Nullable <code>?as</code> no longer triggers package-boundary diagnostics. Unlike <code>as</code>, a failed <code>?as</code> yields <code>null</code> rather than fatalling, so it does not require the asserted type to be available across the boundary. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/13a5c1efc4e9147d5577f017ed3091a2403ef1d7" target="_blank" rel="noopener noreferrer">13a5c1efc4</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Security</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/04/22/">Wed, Apr 22</a></div>
+  <div class="entry-copy"><code>popen()</code> and <code>pclose()</code> now obey the same <code>AllowExec</code> and <code>AllowUngatedExec</code> process-execution gates as <code>exec()</code>, <code>system()</code>, and <code>proc_open()</code>. Deployments that disable either gate will now reject these shell-pipe APIs too. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d33c8c0de09916159ada8743a08397a7b80bb115" target="_blank" rel="noopener noreferrer">d33c8c0de0</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

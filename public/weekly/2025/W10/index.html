@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="8 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 10: Mar 3–Mar 9, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 10: Mar 3–Mar 9, 2025</h1>
+  <p class="post-meta">8 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/03/03/">Day</a><a href="/weekly/2025/W10/" aria-current="page">Week</a><a href="/monthly/2025/03/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2025/W09/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2025/W11/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/03/03/">Mon, Mar 3</a></div>
+  <div class="entry-copy">Type printers now collapse nested nullable wrappers, so TAST and diagnostic-oriented tooling displays types such as <code>~?int</code> instead of the invalid-looking <code>~??int</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6acb549bd849f6223134d9a34e946cbd840f42fb" target="_blank" rel="noopener noreferrer">6acb549bd8</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/03/07/">Fri, Mar 7</a></div>
+  <div class="entry-copy">Truthiness analysis no longer strips the like-type wrapper from <code>~null</code>. This avoids false-positive “always truthy” warnings for nullable values commonly produced by operations such as <code>idx()</code> on dynamic data. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a59544983a7701098d123cbd7af1f5e92d57f2b8" target="_blank" rel="noopener noreferrer">a59544983a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/03/07/">Fri, Mar 7</a></div>
+  <div class="entry-copy">The bundled <code>classname&lt;T&gt;</code> documentation and IDE hover text now describe class-name strings using the <code>nameof C</code> spelling. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0a174765d92b901adfe442b16a735c84a8f8793f" target="_blank" rel="noopener noreferrer">0a174765d9</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Security</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/03/03/">Mon, Mar 3</a></div>
+  <div class="entry-copy"><code>gmp_pow()</code> now rejects exponents greater than <code>UINT32_MAX</code>, raises a warning, and returns <code>false</code>. This prevents unbounded allocations inside GMP that are not charged to HHVM&#x27;s request heap. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/94defb192104959e46a769b548e55a32d2438a52" target="_blank" rel="noopener noreferrer">94defb1921</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/03/03/">Mon, Mar 3</a></div>
+  <div class="entry-copy">Transparent type aliases may no longer put constraints on their type parameters. A declaration such as <code>type T&lt;X as Foo&gt; = ...</code> is now a parse error; use <code>newtype</code> when the constraint is part of the abstraction, or remove the constraint. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/fb39956d48a621210ed6b4f1a1546c53e548b5c2" target="_blank" rel="noopener noreferrer">fb39956d48</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/03/03/">Mon, Mar 3</a></div>
+  <div class="entry-copy">With <code>.hhconfig</code> option <code>safe_abstract=true</code>, accessing an abstract class constant through a receiver that may denote an abstract class now produces warning 12018. Concrete constants remain safe. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/280387469b70b1b0f04812e9185d2a2c5b1fbdde" target="_blank" rel="noopener noreferrer">280387469b</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/03/07/">Fri, Mar 7</a></div>
+  <div class="entry-copy">Experimental nested expression-tree bindings are now typechecked across splices: a nested expression tree may capture locals from the enclosing splice, and those captured types are tracked through control-flow joins. This requires the staged <code>expression_tree_nested_bindings</code> feature. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b1fb7f1d5248921dfd8db297b1b25b9184b26f10" target="_blank" rel="noopener noreferrer">b1fb7f1d52</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/03/07/">Fri, Mar 7</a></div>
+  <div class="entry-copy">IDE hover for the staged <code>class&lt;T&gt;</code> type now distinguishes class pointers from <code>classname&lt;T&gt;</code> strings and explains the operations supported by each. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0a174765d92b901adfe442b16a735c84a8f8793f" target="_blank" rel="noopener noreferrer">0a174765d9</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="12 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 2: Jan 8–Jan 14, 2024 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 2: Jan 8–Jan 14, 2024</h1>
+  <p class="post-meta">12 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/01/08/">Day</a><a href="/weekly/2024/W02/" aria-current="page">Week</a><a href="/monthly/2024/01/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2024/W01/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2024/W03/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>6 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/01/08/">Mon, Jan 8</a></div>
+  <div class="entry-copy">Type printers now render empty unions as <code>nothing</code> and empty intersections as <code>mixed</code>, replacing confusing output such as <code>|()</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ac9984d4bfb3ddc670094fe63cfb5d0592bdc606" target="_blank" rel="noopener noreferrer">ac9984d4bf</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/01/08/">Mon, Jan 8</a></div>
+  <div class="entry-copy">An overriding method without its own <code>&lt;&lt;__AutocompleteSortText&gt;&gt;</code> now inherits the sort key from its parent declaration. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3e5fa6a58a358f44d93aff8b59a6e0bb0ba21360" target="_blank" rel="noopener noreferrer">3e5fa6a58a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/01/10/">Wed, Jan 10</a></div>
+  <div class="entry-copy"><code>hh --single file.php --show-tast</code> now provides a dedicated way to print one file&#x27;s typed AST. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b4fa8c14db3528451e33c16f60c33365631a2df7" target="_blank" rel="noopener noreferrer">b4fa8c14db</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/01/10/">Wed, Jan 10</a></div>
+  <div class="entry-copy">Sound Dynamic call inference now tries a dynamic check first when an argument is already like-typed but its generic parameter is not. This removes false errors for calls that mix lambda arguments with pessimised values. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f544f07cb4a9f88b9202bd69c28de677c037ec43" target="_blank" rel="noopener noreferrer">f544f07cb4</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/01/10/">Wed, Jan 10</a></div>
+  <div class="entry-copy">Cross-package calls no longer require the <code>package</code> unstable-feature opt-in. Bundled declarations now also expose <code>HH\module_exists(string, bool)[]: bool</code> and <code>HH\package_exists(string)[defaults]: bool</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6c9d99cc029eaed2f341e6d006961badb85e8b55" target="_blank" rel="noopener noreferrer">6c9d99cc02</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/01/12/">Fri, Jan 12</a></div>
+  <div class="entry-copy">XHP attribute checking no longer leaks refinements from its constructor-style pass into the second attribute-specification pass, eliminating spurious type holes and inaccurate TAST types. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/524bddd78f52d903a30860aea0df5d1184de5d5a" target="_blank" rel="noopener noreferrer">524bddd78f</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/01/08/">Mon, Jan 8</a></div>
+  <div class="entry-copy">Hack&#x27;s AST no longer has separate <code>Darray</code> and <code>Varray</code> nodes: legacy <code>darray[...]</code> and <code>varray[...]</code> syntax is lowered to <code>dict</code> and <code>vec</code> nodes. Typed-AST and parser tooling that distinguishes the legacy nodes must migrate. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/489f6fe4055c5f9a8cd1623f4d6fefe5f583d9b8" target="_blank" rel="noopener noreferrer">489f6fe405</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/01/10/">Wed, Jan 10</a></div>
+  <div class="entry-copy">The old <code>&lt;&lt;__AllowMultipleInstantiations&gt;&gt;</code> spelling has been removed; experimental code must use the explicitly unsafe <code>&lt;&lt;__UNSAFE_AllowMultipleInstantiations&gt;&gt;</code> name. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/53a31ae7b7704dffb8bd06110200e8de7e01cdd6" target="_blank" rel="noopener noreferrer">53a31ae7b7</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/01/12/">Fri, Jan 12</a></div>
+  <div class="entry-copy">Magic method names are now recognized with their exact Hack casing. A differently cased name is treated as an ordinary method and no longer receives magic-method-specific validation. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/64f425c7df912491f0e66394e12ad8d893888ccf" target="_blank" rel="noopener noreferrer">64f425c7df</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/01/08/">Mon, Jan 8</a></div>
+  <div class="entry-copy">Experimental module-level traits can now define <code>internal</code> methods and properties while preserving the trait&#x27;s original module for boundary checks. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a1db805b0a3b288f968edfb3f9080e3b83de2df1" target="_blank" rel="noopener noreferrer">a1db805b0a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/01/09/">Tue, Jan 9</a></div>
+  <div class="entry-copy">Experimental case-type overlap checking now models <code>EnumClass\Label</code> as its own runtime datatype, avoiding incorrect overlap conclusions for label variants. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2a3d2853a047097c518e582d187dc0bc54dc5e7c" target="_blank" rel="noopener noreferrer">2a3d2853a0</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Security</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/01/13/">Sat, Jan 13</a></div>
+  <div class="entry-copy">HHBBC no longer treats class-pointer resolution as effect-free or removes class-method calls when doing so could suppress a module or deployment boundary violation. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/aae991594c69eafdfab6d936b751093b10abdf36" target="_blank" rel="noopener noreferrer">aae991594c</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

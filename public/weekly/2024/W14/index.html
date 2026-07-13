@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="9 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 14: Apr 1–Apr 7, 2024 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 14: Apr 1–Apr 7, 2024</h1>
+  <p class="post-meta">9 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/04/01/">Day</a><a href="/weekly/2024/W14/" aria-current="page">Week</a><a href="/monthly/2024/04/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2024/W13/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2024/W15/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>5 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/04/01/">Mon, Apr 1</a></div>
+  <div class="entry-copy">Hack now permits global function declarations whose names differ only by case, matching the language&#x27;s case-sensitive function lookup. Exact duplicate declarations remain invalid. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/bf677366a73ac455e3c6964c536fd5430fa7803a" target="_blank" rel="noopener noreferrer">bf677366a7</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/04/04/">Thu, Apr 4</a></div>
+  <div class="entry-copy"><code>HH\Facts\files_with_attribute_and_any_value()</code> now uses the in-memory symbol map by default again, avoiding stale or incorrect DB-only results while files are changing. Deployments that need the old strategy can set <code>Autoload.DB.UseSymbolMapForGetFilesWithAttributeAndAnyVal</code> to <code>false</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/70bd28a8354143551ff957ed6606cb4be8545782" target="_blank" rel="noopener noreferrer">70bd28a835</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/04/05/">Fri, Apr 5</a></div>
+  <div class="entry-copy">Lambda arity mismatches now produce TAST holes around the incompatible function value or lambda. Tools that consume typed ASTs can use the expected and actual function types to offer more precise migrations. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7eccda35266e8366223ca6a6542922c9896e7e3f" target="_blank" rel="noopener noreferrer">7eccda3526</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/04/05/">Fri, Apr 5</a></div>
+  <div class="entry-copy"><code>HH\get_executable_lines()</code> no longer reports generated functions or abstract methods as executable. Coverage and debugger clients will no longer see interface methods or class-closing braces as spurious executable lines. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/17236d2dafbd5190801d0669639917861e80d8a6" target="_blank" rel="noopener noreferrer">17236d2daf</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/04/05/">Fri, Apr 5</a></div>
+  <div class="entry-copy">Constraint solving now retains the errors from all branches of a disjunction, improving explanations when no branch is valid—particularly for failures involving type-parameter constraints. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/85d958bb73f17a1dd4e6deada52b1d45efbc8d7f" target="_blank" rel="noopener noreferrer">85d958bb73</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/04/02/">Tue, Apr 2</a></div>
+  <div class="entry-copy">The runtime parser now accepts <code>nameof</code> expressions as attribute arguments. This is only the runtime half of the change; typed Hack projects will continue to see a typechecker error until the matching support lands on April 10. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/80415702c0ea4ed403fd85329b7796e73511e24c" target="_blank" rel="noopener noreferrer">80415702c0</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/04/03/">Wed, Apr 3</a></div>
+  <div class="entry-copy">HackC&#x27;s expression-tree debug output now gives generated temporaries valid Hack variable names, so the lowered output can be passed through <code>hackfmt</code>. Expression trees remain experimental. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/adacdb6ddf512a3804ba6405d0c1226ee9b25842" target="_blank" rel="noopener noreferrer">adacdb6ddf</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/04/05/">Fri, Apr 5</a></div>
+  <div class="entry-copy">Expression-tree collection literals moved from Preview to OngoingRelease as part of their staged rollout. Expression trees themselves remain experimental. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/eda3f8b79c8c2c8c1fef839e66c643e7a7aef93a" target="_blank" rel="noopener noreferrer">eda3f8b79c</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/04/04/">Thu, Apr 4</a></div>
+  <div class="entry-copy">Variadic parameters must now have a capture variable. Replace bare <code>...</code> in functions, methods, and lambdas with a named parameter such as <code>...$args</code>; the runtime parser now rejects the unnamed form that the Hack typechecker already rejected in strict code. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/64a98f185b270bd5becb384403e34e51acbf10b2" target="_blank" rel="noopener noreferrer">64a98f185b</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

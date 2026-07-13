@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="3 noteworthy changes recorded on this day.">
+  <title>Wednesday, June 25, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Wednesday, June 25, 2025</h1>
+  <p class="post-meta">3 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/06/25/" aria-current="page">Day</a><a href="/weekly/2025/W26/">Week</a><a href="/monthly/2025/06/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2025/06/24/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2025/06/26/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">Notebook-to-Hack conversion no longer generates an empty async entry-point function when the notebook has no top-level statements. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9a43d12c8da50334def5f98819e50cb27f4d7d11" target="_blank" rel="noopener noreferrer">9a43d12c8d</a></div></li><li class="change-entry"><div class="entry-copy">Development builds of HHVM no longer abort during process shutdown after asynchronous writes through HSL&#x27;s standard file descriptors. Descriptor sweeping is now a no-op because request shutdown already closes the underlying built-in files. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f32e4281d804f55bca2ff4f877b92c7914529626" target="_blank" rel="noopener noreferrer">f32e4281d8</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy">The HHI signatures for <code>HH\Facts\subtypes&lt;T&gt;()</code> and <code>transitive_subtypes&lt;T&gt;()</code> now return <code>vec&lt;class&lt;T&gt;&gt;</code>; <code>supertypes()</code> returns <code>vec&lt;class&lt;mixed&gt;&gt;</code>. This exposes the class-pointer runtime change to static typing while preserving subtype information and the APIs&#x27; <code>[]</code> capability lists. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d81dc7b2f933a54bd61a0b518f641d8d83d35109" target="_blank" rel="noopener noreferrer">d81dc7b2f9</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

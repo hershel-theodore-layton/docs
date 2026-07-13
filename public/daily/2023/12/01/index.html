@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="6 noteworthy changes recorded on this day.">
+  <title>Friday, December 1, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Friday, December 1, 2023</h1>
+  <p class="post-meta">6 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/12/01/" aria-current="page">Day</a><a href="/weekly/2023/W48/">Week</a><a href="/monthly/2023/12/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2023/11/30/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2023/12/02/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy"><code>hh_single_type_check --root</code> can now locate a downloaded naming table automatically and reads <code>enable_sound_dynamic_type</code> and <code>everything_sdt</code> from the project&#x27;s <code>.hhconfig</code>, reducing differences from a normal <code>hh</code> run. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/99c4e207d07acad0169589f9527c3765837fba1f" target="_blank" rel="noopener noreferrer">99c4e207d0</a></div></li><li class="change-entry"><div class="entry-copy">The Hack manual now documents <code>__AutocompleteSortText</code>, which lets a declaration supply the sort key used for its IDE completion entry. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1785b081e2583ba5562b863c0d8e3195ea01659e" target="_blank" rel="noopener noreferrer">1785b081e2</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy"><code>hh_single_type_check</code> no longer accepts the <code>--like-type-hints</code> switch and always enables like-type hints by default. Use <code>--config like_type_hints=false</code> when the legacy behavior is required. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/12e71b4968fe9f300ecfbf3ae8a931957f113846" target="_blank" rel="noopener noreferrer">12e71b4968</a></div></li><li class="change-entry"><div class="entry-copy">The typechecker now rejects <code>varray[...]</code> and <code>darray[...]</code> initializer syntax. Migrate remaining initializers to <code>vec[...]</code> and <code>dict[...]</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6e4f4cfed0983843aa47e31700942346def24c3d" target="_blank" rel="noopener noreferrer">6e4f4cfed0</a></div></li><li class="change-entry"><div class="entry-copy">A function marked <code>__DynamicallyCallable</code> and a class marked <code>__DynamicallyReferenced</code> are now implicitly treated as <code>__SupportDynamicType</code>. This removes the need to repeat the latter attribute, but it also checks those declarations under sound-dynamic assumptions and can expose new errors in their bodies or signatures. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f84c931769bf6d16481e903e89539ea67526cc41" target="_blank" rel="noopener noreferrer">f84c931769</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f81b17b45470cf6fb26f1479e8cc91e27db783ab" target="_blank" rel="noopener noreferrer">f81b17b454</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">Typed local variables have moved from Unstable to Preview. They still require <code>&lt;&lt;file:__EnableUnstableFeatures(&#x27;typed_local_variables&#x27;)&gt;&gt;</code>, but the Preview status permits opted-in code to run in production. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/466d39061604a2d5b93a072820e4dd155ffa001f" target="_blank" rel="noopener noreferrer">466d390616</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

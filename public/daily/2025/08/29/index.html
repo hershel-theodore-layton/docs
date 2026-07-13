@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="4 noteworthy changes recorded on this day.">
+  <title>Friday, August 29, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Friday, August 29, 2025</h1>
+  <p class="post-meta">4 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/08/29/" aria-current="page">Day</a><a href="/weekly/2025/W35/">Week</a><a href="/monthly/2025/08/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2025/08/28/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2025/08/31/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy"><code>await</code> now looks through <code>supportdyn</code>, so <code>supportdyn&lt;Awaitable&lt;T&gt;&gt;</code>, <code>Awaitable&lt;supportdyn&lt;T&gt;&gt;</code>, and dynamically typed awaitables work under sound-dynamic and implicit-pessimization modes. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a4b3e14491daddfc626fb7480a2fffe2a7f8c49c" target="_blank" rel="noopener noreferrer">a4b3e14491</a></div></li><li class="change-entry"><div class="entry-copy">Hack&#x27;s built-in declarations now expose <code>SimpleXMLElement::isTruthy()[]</code> and <code>HH\legacy_is_truthy(mixed)[]</code> for code that must preserve legacy boolean-coercion behavior explicitly. Both require no capabilities, so they remain callable from <code>[]</code> contexts. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/98e73e75fe3058a4af807aa1b6ac57ed19e84281" target="_blank" rel="noopener noreferrer">98e73e75fe</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/298dae45eb7d706994bd53de363334d2e4c51435" target="_blank" rel="noopener noreferrer">298dae45eb</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy">The Hack symbol indexer now skips files that are 5 MiB or larger, and also skips files whose size cannot be read. Typechecking is unaffected, but symbol-index consumers will not receive definitions or references from those files. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/60a17f4a0e6cd35be62dea0c886edc8673f104b5" target="_blank" rel="noopener noreferrer">60a17f4a0e</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">Under Package v2, <code>HH\get_all_packages()</code> now includes each package&#x27;s <code>soft_includes</code> alongside <code>includes</code> and <code>include_paths</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2fea51f549f4955f0437bbf57f8f17469f404f2e" target="_blank" rel="noopener noreferrer">2fea51f549</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="4 noteworthy changes recorded on this day.">
+  <title>Wednesday, April 29, 2026 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Wednesday, April 29, 2026</h1>
+  <p class="post-meta">4 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2026/04/29/" aria-current="page">Day</a><a href="/weekly/2026/W18/">Week</a><a href="/monthly/2026/04/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2026/04/28/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2026/04/30/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy">Returning a value from a generator is now a parser error (<code>Parsing[1002]</code>) instead of a later NAST-check error. HHVM therefore rejects such code even when it is compiled without a full typecheck; generators always complete with <code>null</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/89a5c434fcb5c1ece859aec99f72d84c201f1d1b" target="_blank" rel="noopener noreferrer">89a5c434fc</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/32080e91f09bf1c39dbe563c029c8af894915c80" target="_blank" rel="noopener noreferrer">32080e91f0</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">Type-constant <code>super</code> bounds have moved from Preview to Ongoing Release. They no longer require per-file unstable-feature enablement, but remain pre-stable while the rollout continues. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/81c412b911054332d74bf6c97ce5440e5346d143" target="_blank" rel="noopener noreferrer">81c412b911</a></div></li><li class="change-entry"><div class="entry-copy"><code>RepresentableAs</code> has moved from Unstable to Preview. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/451c9c875a0f9bec43b19058f465289a7908bb87" target="_blank" rel="noopener noreferrer">451c9c875a</a></div></li><li class="change-entry"><div class="entry-copy">The manual now documents the experimental <code>named_parameters</code> feature, including that named parameter names are part of the API and must be preserved by overrides and function types. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/75d958cfed2b18fde368df894bee521a7094d844" target="_blank" rel="noopener noreferrer">75d958cfed</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

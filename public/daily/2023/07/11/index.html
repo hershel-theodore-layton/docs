@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="4 noteworthy changes recorded on this day.">
+  <title>Tuesday, July 11, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Tuesday, July 11, 2023</h1>
+  <p class="post-meta">4 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/07/11/" aria-current="page">Day</a><a href="/weekly/2023/W28/">Week</a><a href="/monthly/2023/07/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2023/07/10/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2023/07/12/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">Command-line symbol renaming no longer applies a replacement twice—for example, renaming <code>Foo</code> to <code>Bar</code> now produces <code>Bar</code>, not <code>BarBar</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/29daa1ba32d553aa46116f65f130d8e584f257de" target="_blank" rel="noopener noreferrer">29daa1ba32</a></div></li><li class="change-entry"><div class="entry-copy">Another group of HSL functions now uses <code>&lt;&lt;__NoAutoLikes&gt;&gt;</code>, keeping precise types under implicit sound-dynamic pessimization. Higher-order helpers remain excluded while lambda inference is being improved. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/722cd5215619d3f914c2fb2579d05486ba99add2" target="_blank" rel="noopener noreferrer">722cd52156</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy">The <code>STDIN</code>, <code>STDOUT</code>, and <code>STDERR</code> pseudo-constants have been removed from Hack’s bundled declarations. Replace them with <code>HH\stdin()</code>, <code>HH\stdout()</code>, and <code>HH\stderr()</code> (or their <code>try_</code> variants). <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d615f24ec40481f9038d5218e4766201fa5031df" target="_blank" rel="noopener noreferrer">d615f24ec4</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">A case type may no longer be the base type of an enum or enum class. This is rejected until case-type enforcement in those positions has consistent runtime semantics. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c8befa3337f5cdd6496a95a2b444b5f03e5c2526" target="_blank" rel="noopener noreferrer">c8befa3337</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

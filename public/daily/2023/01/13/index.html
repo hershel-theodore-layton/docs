@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="4 noteworthy changes recorded on this day.">
+  <title>Friday, January 13, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Friday, January 13, 2023</h1>
+  <p class="post-meta">4 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/01/13/" aria-current="page">Day</a><a href="/weekly/2023/W02/">Week</a><a href="/monthly/2023/01/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2023/01/12/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2023/01/17/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">Missing and extra shape-field errors now point at the individual field, and a missing field in a shape literal offers a quick-fix that inserts a <code>TODO</code> value. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5f0a767ff1df407b782a576cae11676b2ef639a4" target="_blank" rel="noopener noreferrer">5f0a767ff1</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/bbff846c010c54a31b35cb24d5f1be07727a3d20" target="_blank" rel="noopener noreferrer">bbff846c01</a></div></li><li class="change-entry"><div class="entry-copy">HHI declarations now type the output of <code>parse_str()</code> and the arrays passed to <code>Collator::sort()</code> and <code>Collator::asort()</code> as <code>dynamic</code>, accurately representing their heterogeneous results. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/083c6643efdb1eb7fa4bea57811d188330b90496" target="_blank" rel="noopener noreferrer">083c6643ef</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/834a393008a212ec8c6796016dcaddc7d41e0259" target="_blank" rel="noopener noreferrer">834a393008</a></div></li><li class="change-entry"><div class="entry-copy">Runtime type-structure helpers now compare the <code>alias</code> and <code>kind</code> fields case-sensitively, like other shape keys. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/16acff3a5cdc8bffc35359a58ef83104c9be1018" target="_blank" rel="noopener noreferrer">16acff3a5c</a></div></li><li class="change-entry"><div class="entry-copy">Only the exactly cased method name <code>__construct</code> is treated as a constructor by runtime method-name checks. A differently cased method such as <code>__Construct</code> remains an ordinary method. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/114f38dff3df47bd98001b97a3fe734840e54ce3" target="_blank" rel="noopener noreferrer">114f38dff3</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

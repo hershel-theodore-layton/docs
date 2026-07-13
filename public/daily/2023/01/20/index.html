@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="3 noteworthy changes recorded on this day.">
+  <title>Friday, January 20, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Friday, January 20, 2023</h1>
+  <p class="post-meta">3 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/01/20/" aria-current="page">Day</a><a href="/weekly/2023/W03/">Week</a><a href="/monthly/2023/01/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2023/01/19/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2023/01/22/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">Array-access errors now retain the actual base and index types in typed-AST holes, and inferred <code>KeyedContainer</code> key types are constrained to <code>arraykey</code>. IDE fixes and type-error explanations should no longer suggest impossible types such as <code>KeyedContainer&lt;bool, nothing&gt;</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5519413eb5bf284d9042b60f979e4f0cf9a90838" target="_blank" rel="noopener noreferrer">5519413eb5</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/01bddda5869becf471ecc93ccebea4769515a5ec" target="_blank" rel="noopener noreferrer">01bddda586</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/59a15c7f2773b29cb36ec2e8f860d5e2413aaced" target="_blank" rel="noopener noreferrer">59a15c7f27</a></div></li><li class="change-entry"><div class="entry-copy">The dead-<code>UNSAFE_CAST</code> codemod now omits redundant parentheses for expressions that cannot be captured by surrounding syntax, producing smaller and more idiomatic patches. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/952e984837ca498828e3269a79c0e8c1795288f9" target="_blank" rel="noopener noreferrer">952e984837</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy"><code>tls://</code> stream sockets no longer negotiate TLS 1.0 and instead use the modern TLS client or server method. Connections to endpoints that only support TLS 1.0 will now fail and should be migrated to a current protocol. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/083f5ffdee661f61512909d16f9a5b98cff3cf0b" target="_blank" rel="noopener noreferrer">083f5ffdee</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

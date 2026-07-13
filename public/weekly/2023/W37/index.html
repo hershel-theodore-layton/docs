@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="14 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 37: Sep 11–Sep 17, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 37: Sep 11–Sep 17, 2023</h1>
+  <p class="post-meta">14 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/09/11/">Day</a><a href="/weekly/2023/W37/" aria-current="page">Week</a><a href="/monthly/2023/09/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2023/W36/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2023/W38/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Future Changes</h2><span>5 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/09/11/">Mon, Sep 11</a></div>
+  <div class="entry-copy">HHVM now enforces case-type runtime constraints by default instead of treating them as <code>mixed</code>. This completes the runtime side, but source use remains behind the case-types opt-in until its later Preview transition. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ed350e54e268d37e5b10e71caa7ac51f4e6b3800" target="_blank" rel="noopener noreferrer">ed350e54e2</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/09/11/">Mon, Sep 11</a></div>
+  <div class="entry-copy">The runtime implementation of <code>preg_get_error_message_if_invalid()</code> can validate a regex and return <code>?string</code> without raising the usual malformed-pattern warning. Its HHI declaration has not landed yet, so typechecked projects cannot use it normally at this stage. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/922ca33aa77ce1230a36ac8aced47f918bc4efb9" target="_blank" rel="noopener noreferrer">922ca33aa7</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/09/12/">Tue, Sep 12</a></div>
+  <div class="entry-copy">Opt-in strict switches now recognize integer literals, require a <code>default</code> for the open-ended <code>int</code> domain, and report repeated literal arms. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1fa08641fec8daaed825f8b7b83703cb578efabf" target="_blank" rel="noopener noreferrer">1fa08641fe</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/09/13/">Wed, Sep 13</a></div>
+  <div class="entry-copy">Opt-in strict switches now accept integer-valued class constants and transparent enum constants, and can diagnose repeated constants where their symbolic names match. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d2a05fad8e9fc3521621f4ea3ae0fdf000db1048" target="_blank" rel="noopener noreferrer">d2a05fad8e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/09/15/">Fri, Sep 15</a></div>
+  <div class="entry-copy">Opt-in strict switches now require integer case literals to use a consistent base and provide better source locations when a case has the wrong type. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9e65ee8eec1ccadf16800d31cdb624097c929dcd" target="_blank" rel="noopener noreferrer">9e65ee8eec</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a2f0f8f4e0f3d4bf619ca02e151ec2278ddd0b54" target="_blank" rel="noopener noreferrer">a2f0f8f4e0</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Highlights</h2><span>5 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/09/12/">Tue, Sep 12</a></div>
+  <div class="entry-copy">Open-source HHVM builds once again parse and enforce <code>PACKAGES.toml</code>, and runtime package matching now agrees with the typechecker that <code>foo.*</code> includes <code>foo</code> itself while exact matches take precedence. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a11552fc4ff8f9f29252d5426a4c09d849ae33c9" target="_blank" rel="noopener noreferrer">a11552fc4f</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5f0823ca7da872cbd9abfb679287358be6837a11" target="_blank" rel="noopener noreferrer">5f0823ca7d</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/09/12/">Tue, Sep 12</a></div>
+  <div class="entry-copy">IDE completion cards for top-level functions now include their parameter and return signatures. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/78618a4c42403af56a94a721da26c7e6213dd0c1" target="_blank" rel="noopener noreferrer">78618a4c42</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/09/14/">Thu, Sep 14</a></div>
+  <div class="entry-copy">HHVM&#x27;s sodium extension adds Ed25519 point validation, addition, subtraction, and unclamped point scalar multiplication through <code>sodium_crypto_core_ed25519_is_valid_point()</code>, <code>sodium_crypto_core_ed25519_add()</code>, <code>sodium_crypto_core_ed25519_sub()</code>, and <code>sodium_crypto_scalarmult_ed25519_noclamp()</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/123c63cc3ffbbf53770afe36d122a1c81fcb8dbe" target="_blank" rel="noopener noreferrer">123c63cc3f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/09/15/">Fri, Sep 15</a></div>
+  <div class="entry-copy">Nested blocks inside <code>finally</code> are now flattened correctly during elaboration, preventing a typechecker crash. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2df376a2e3187b184e64dff18e1e09942e53f01c" target="_blank" rel="noopener noreferrer">2df376a2e3</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/09/15/">Fri, Sep 15</a></div>
+  <div class="entry-copy">Native enum-class labels now retain their former opaque-resource serialization contract: JSON reports an unsupported type, memoization rejects labels, and <code>serialize()</code> throws an error identifying <code>EnumClassLabel</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/82316bc93d241402cd9ee1d34896b6687b94e1cc" target="_blank" rel="noopener noreferrer">82316bc93d</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>4 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/09/12/">Tue, Sep 12</a></div>
+  <div class="entry-copy">The repo-mode soft-package warning behavior from September 7 has been temporarily backed out. Repo builds once again omit soft packages and can fail with undefined-symbol errors until the corrected reland. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/16c8aaf9404656d59115dfce01879e08e190d807" target="_blank" rel="noopener noreferrer">16c8aaf940</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/09/12/">Tue, Sep 12</a></div>
+  <div class="entry-copy">The experimental <code>hh --pause</code> and <code>hh --resume</code> commands have been removed; file changes always trigger the normal full-check workflow. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3bd5161a2cfeaa3413dffe0e3be364a6944b3b7f" target="_blank" rel="noopener noreferrer">3bd5161a2c</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/09/13/">Wed, Sep 13</a></div>
+  <div class="entry-copy">Reflection&#x27;s default-expression text for array access with a class constant, such as <code>$items[C::class]</code>, is now emitted like the equivalent string-key expression. Invoking the function is unchanged, but reflective evaluation now follows the same failure behavior as <code>$items[&quot;C&quot;]</code> instead of the old special case. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e51ba0edb32357184f7aacb12aa34c8022d4a73d" target="_blank" rel="noopener noreferrer">e51ba0edb3</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/09/14/">Thu, Sep 14</a></div>
+  <div class="entry-copy">HHVM&#x27;s native PostgreSQL extension and its <code>pg_*</code> APIs have been removed, along with the libpq build dependency. Applications must use another database client. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/dabfb89185dd16074a0dab638607f4aab2217a9b" target="_blank" rel="noopener noreferrer">dabfb89185</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="8 noteworthy changes recorded on this day.">
+  <title>Wednesday, March 4, 2026 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Wednesday, March 4, 2026</h1>
+  <p class="post-meta">8 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2026/03/04/" aria-current="page">Day</a><a href="/weekly/2026/W10/">Week</a><a href="/monthly/2026/03/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2026/03/03/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2026/03/05/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy"><code>hh --help</code> now shows a curated everyday command set instead of roughly 70 rarely used flags; <code>hh --ultrahelp</code> retains the complete option list. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/300f886607da532078b512996e2537a6d71d5974" target="_blank" rel="noopener noreferrer">300f886607</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy">An <code>if (package p)</code> expression is now rejected unless package <code>p</code> includes the package containing the current file, matching the well-formedness rule for <code>__RequirePackage</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/49861893617bc329743a5bc8c998263d87187941" target="_blank" rel="noopener noreferrer">4986189361</a></div></li><li class="change-entry"><div class="entry-copy">The cross-package migration linter now tracks <code>C::class</code> references when <code>package_allow_classconst_violations=true</code>; projects using that temporary carveout may see new lint 5656 diagnostics for undeclared package dependencies. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6671f217e0e029271d871ec665bcf0f8a0fb4fbc" target="_blank" rel="noopener noreferrer">6671f217e0</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">Symbol information now retains the pre-stable <code>named</code> and <code>readonly</code> parameter modifiers when rendering function type hints, so tools consuming <code>displayType</code> no longer erase them from the displayed function type. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d927c424f2e2b151988935290c6f95e3fc9370ab" target="_blank" rel="noopener noreferrer">d927c424f2</a></div></li><li class="change-entry"><div class="entry-copy">The pre-stable extended-await implementation now supports conditional and sequential awaits inside <code>concurrent</code> blocks, preserves <code>using</code> statement lifetime correctly, and evaluates <code>for</code> initializer and iterator expression lists in source order. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/31f3c8b933dc164344a2bbeba0b8f87957c8278f" target="_blank" rel="noopener noreferrer">31f3c8b933</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4b74fe53e8048c4e8122b6231ef9357e3d4ce35a" target="_blank" rel="noopener noreferrer">4b74fe53e8</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/de3ebf325fa82f6fd72eb62d7b7dd8c0e8d79a18" target="_blank" rel="noopener noreferrer">de3ebf325f</a></div></li><li class="change-entry"><div class="entry-copy">The pre-stable <code>delay</code> operator explicitly leaves an <code>Awaitable&lt;T&gt;</code> un-awaited while preserving its type. It is a runtime no-op, is permitted only in async functions, and is intended to distinguish deliberate delayed awaiting from accidentally discarded awaitables. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5872d7ec97e2bd2636e7c12a85468a46c5ca7d77" target="_blank" rel="noopener noreferrer">5872d7ec97</a></div></li><li class="change-entry"><div class="entry-copy">Runtime type structures can now represent exact, upper-bound, lower-bound, and context-constant refinements such as <code>I with { type T = int }</code>. This is groundwork for using pre-stable class refinements on the right-hand side of type aliases and type constants. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b05c47edf39a366b1e17a0ea0b2b06fadf35dd60" target="_blank" rel="noopener noreferrer">b05c47edf3</a></div></li><li class="change-entry"><div class="entry-copy">Setting <code>disallow_bool_cast=true</code> now makes <code>(bool)</code> casts a parse error, providing an opt-in migration path away from implicit truthiness conversions. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6479cd2461c895c13f4008b8b6fe878007c80e6e" target="_blank" rel="noopener noreferrer">6479cd2461</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

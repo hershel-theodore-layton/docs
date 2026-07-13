@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="6 noteworthy changes recorded on this day.">
+  <title>Friday, June 16, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Friday, June 16, 2023</h1>
+  <p class="post-meta">6 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/06/16/" aria-current="page">Day</a><a href="/weekly/2023/W24/">Week</a><a href="/monthly/2023/06/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2023/06/15/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2023/06/18/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">Filesystem errors encountered while reading package or custom-error configuration are now reported rather than silently ignored. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/73a7fc0d89d6742df96143b8fe8c9bab82d14f50" target="_blank" rel="noopener noreferrer">73a7fc0d89</a></div></li><li class="change-entry"><div class="entry-copy">Rename, find-references, and go-to-implementation requests served through an <code>hh</code> shell-out now return errors reliably and honor LSP cancellation. Starting a newer shell-out cancels the displaced request instead of leaving it pending. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e04a24773108b3b71ce8db157b6ca3eedd8bfd44" target="_blank" rel="noopener noreferrer">e04a247731</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7aaf84b16c7eef9058c73696706ff49b1d4af171" target="_blank" rel="noopener noreferrer">7aaf84b16c</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6c5ce3afca1c8f5f571b2c1c2cb8a91f47b035c2" target="_blank" rel="noopener noreferrer">6c5ce3afca</a></div></li><li class="change-entry"><div class="entry-copy">A client/server version mismatch no longer makes the client forcibly restart <code>hh_server</code>; the monitor handles the mismatch and termination flow. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1c24979190db9e9d59d3c863376a7c1910dc036a" target="_blank" rel="noopener noreferrer">1c24979190</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy"><code>hackfmt</code> now formats typed locals as <code>let $x: T = expression;</code>, with appropriate line breaking for long types or initializers. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/147008b7f103b457cf3ecb840041a062dc8942d4" target="_blank" rel="noopener noreferrer">147008b7f1</a></div></li><li class="change-entry"><div class="entry-copy">When typed-local syntax is enabled for a file, the IDE offers “Add local type hint” on assignments and names the target variable in the action. It is not offered in files without the feature opt-in. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4c3ab66c129befe5191522b50fa92fce41a22b89" target="_blank" rel="noopener noreferrer">4c3ab66c12</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d80d3f81c9beb97860e3e0bfd0b622a6ab4b1c4f" target="_blank" rel="noopener noreferrer">d80d3f81c9</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7987bfc07de925f7c1563ee4e43cd0cb5d036b7d" target="_blank" rel="noopener noreferrer">7987bfc07d</a></div></li><li class="change-entry"><div class="entry-copy">Sound-dynamic array updates hidden by a <code>FIXME</code> now preserve <code>supportdyn</code> on the value type instead of widening the array to <code>mixed</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/fb963301e20d6841e883fdaed254c06ca241b009" target="_blank" rel="noopener noreferrer">fb963301e2</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

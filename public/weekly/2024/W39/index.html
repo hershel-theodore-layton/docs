@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="8 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 39: Sep 23–Sep 29, 2024 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 39: Sep 23–Sep 29, 2024</h1>
+  <p class="post-meta">8 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/09/23/">Day</a><a href="/weekly/2024/W39/" aria-current="page">Week</a><a href="/monthly/2024/09/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2024/W38/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2024/W40/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Future Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/09/23/">Mon, Sep 23</a></div>
+  <div class="entry-copy">Shape metadata and bytecode can now distinguish a <code>C::class</code> field key from an ordinary string key, preserving its classname origin for the class-pointer migration instead of flattening both forms immediately. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0e7d274be9ea1efaae6291b48d77668bf4f7a8ff" target="_blank" rel="noopener noreferrer">0e7d274be9</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/150718487f15012a5737fe2a6172f0fe57e5ebee" target="_blank" rel="noopener noreferrer">150718487f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/09/24/">Tue, Sep 24</a></div>
+  <div class="entry-copy">Under the staged package-v2 checker, the type named on the right-hand side of an <code>as</code> expression is now checked for package-boundary violations. Cross-package casts that relied on this type reference being ignored must expose the target through the package relationship or avoid the cast before enabling package v2. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ae4edca75470361a3b950bd573f5ce0b18dac09e" target="_blank" rel="noopener noreferrer">ae4edca754</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/09/26/">Thu, Sep 26</a></div>
+  <div class="entry-copy">The unstable <code>type_splat</code> feature introduces arity-polymorphic parameters such as <code>...TArgs</code>, paired with an open-tuple bound like <code>TArgs as (mixed...)</code>. It is enabled together with <code>open_tuples</code> via <code>&lt;&lt;file: __EnableUnstableFeatures(&#x27;open_tuples&#x27;, &#x27;type_splat&#x27;)&gt;&gt;</code>; HackC lowers the resulting tuple parameter through the variadic calling convention. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ee442186bce956d10e3f9813dfd7eebf7b2165fb" target="_blank" rel="noopener noreferrer">ee442186bc</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/547e6436a144dc745ef4a7697aeb46ad03db7008" target="_blank" rel="noopener noreferrer">547e6436a1</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Highlights</h2><span>4 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/09/25/">Wed, Sep 25</a></div>
+  <div class="entry-copy">Lambda parameter and return annotations may now contain inferred wildcards, including nested forms such as <code>vec&lt;_&gt;</code> and <code>Awaitable&lt;vec&lt;_&gt;&gt;</code>. Each wildcard is solved from the lambda body and call context; reified arguments remain ineligible. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/eaf589aa7e5c69707e6b3f127ad37b652a2888f5" target="_blank" rel="noopener noreferrer">eaf589aa7e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/09/26/">Thu, Sep 26</a></div>
+  <div class="entry-copy"><code>extended_reasons=legacy</code> is now available in <code>.hhconfig</code> and command-line configuration. It retains extended provenance while typing but emits the traditional diagnostic presentation, making it useful for measuring rollout differences without changing error text. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/bf67242a781ee8d93a8178fb6775cafbf205d068" target="_blank" rel="noopener noreferrer">bf67242a78</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/09/27/">Fri, Sep 27</a></div>
+  <div class="entry-copy">Qualified <code>nameof</code> expressions such as <code>nameof N\C</code> are now accepted as constant expressions by the typechecker, including in enum initializers. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7761a6b906f8def31834d9cb49b8068122b001b0" target="_blank" rel="noopener noreferrer">7761a6b906</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/09/27/">Fri, Sep 27</a></div>
+  <div class="entry-copy">When initializing from a clean public revision, Hack records its warning hashes and discards those baseline warnings, reducing unrelated warning noise after moving from the saved-state revision to a merge base. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9d511a4f906998d7af4af1b25c13bb827a482bf2" target="_blank" rel="noopener noreferrer">9d511a4f90</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Security</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/09/25/">Wed, Sep 25</a></div>
+  <div class="entry-copy">HHVM&#x27;s <code>EnforceDeployment</code> runtime option now defaults to <code>false</code>, so deployment boundaries are not enforced at runtime unless operators explicitly turn the option back on. Applications that treated the previous default as a safety boundary should review their deployment configuration. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d1c18616130a514471dcaf34e8ea54cbcd2f5053" target="_blank" rel="noopener noreferrer">d1c1861613</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="3 noteworthy changes recorded on this day.">
+  <title>Friday, June 20, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Friday, June 20, 2025</h1>
+  <p class="post-meta">3 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/06/20/" aria-current="page">Day</a><a href="/weekly/2025/W25/">Week</a><a href="/monthly/2025/06/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2025/06/19/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2025/06/23/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">Direct static method calls on a trait now produce Warn[12020]. Call the method through a using class, or use <code>self::</code>/<code>static::</code> inside the trait, to avoid accessing the trait&#x27;s separate runtime state. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b3cc106aee871393bc3878e3be6b09e1911f04f7" target="_blank" rel="noopener noreferrer">b3cc106aee</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy"><code>HH\Facts\subtypes()</code>, <code>transitive_subtypes()</code>, and <code>supertypes()</code> now return class-pointer values instead of bare strings, avoiding dynamic class loads when their results are used as classes. All three functions retain <code>[]</code>; code that stores, concatenates, or serializes the returned values as strings must convert them deliberately. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4b4b297617993aa34525431494b19547952ef85a" target="_blank" rel="noopener noreferrer">4b4b297617</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">Within an unstable polymorphic lambda&#x27;s body, wildcard hints are now allowed in refinements such as <code>$x is A&lt;_&gt;</code>. Wildcards remain forbidden in the lambda&#x27;s parameter and return types, including nested lambda signatures. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7c45cf525ea1212eed31754773299a086536c4ba" target="_blank" rel="noopener noreferrer">7c45cf525e</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

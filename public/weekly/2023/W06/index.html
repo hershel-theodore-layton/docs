@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="15 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 6: Feb 6–Feb 12, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 6: Feb 6–Feb 12, 2023</h1>
+  <p class="post-meta">15 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/02/06/">Day</a><a href="/weekly/2023/W06/" aria-current="page">Week</a><a href="/monthly/2023/02/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2023/W05/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2023/W07/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>13 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/02/06/">Mon, Feb 6</a></div>
+  <div class="entry-copy">Local-variable autocomplete is no longer suppressed merely because a function call follows the cursor, and suggestions are now filtered by the prefix already typed. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/18aff16dd03429b769c9f689a164611e61c597e6" target="_blank" rel="noopener noreferrer">18aff16dd0</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5fd5cf56135afa902608e6b15968511ed59d7114" target="_blank" rel="noopener noreferrer">5fd5cf5613</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/02/06/">Mon, Feb 6</a></div>
+  <div class="entry-copy">The bundled <code>MemoizeOption</code> declarations now document each option, improving hover and go-to-definition information for arguments to <code>__Memoize</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/fb1c9f59e063fce8e4e60e3364b71c639f633226" target="_blank" rel="noopener noreferrer">fb1c9f59e0</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/02/08/">Wed, Feb 8</a></div>
+  <div class="entry-copy">Exact class types no longer use a class&#x27;s declared variance to establish subtyping. This closes an unsoundness where incompatible exact generic instantiations could be accepted. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7b326d1b8b7bf79c7aa6a175bc26a5fc36038a99" target="_blank" rel="noopener noreferrer">7b326d1b8b</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/02/08/">Wed, Feb 8</a></div>
+  <div class="entry-copy"><code>DateTime</code> HHI declarations now describe their actual capability requirements. Pure getters, property-writing mutators, and global-reading methods can be called from appropriately narrow contexts instead of all implicitly requiring <code>[defaults]</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/49b10540ed9ec4520b01da0a31c246993ba8ccc4" target="_blank" rel="noopener noreferrer">49b10540ed</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/02/08/">Wed, Feb 8</a></div>
+  <div class="entry-copy">Sound Dynamic union simplification now preserves <code>supportdyn</code> wrappers instead of immediately merging separate wrapped union members back into one wrapper, avoiding incorrect type acceptance. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/cd49bf2e547932e17aea74650e1e8de015b19e76" target="_blank" rel="noopener noreferrer">cd49bf2e54</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/02/08/">Wed, Feb 8</a></div>
+  <div class="entry-copy">Runtime failures while converting a throwable to text now include the underlying failure details instead of returning an uninformative placeholder. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0309a310b5960fe262a43e3f0fc6e905b4bfd469" target="_blank" rel="noopener noreferrer">0309a310b5</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/02/09/">Thu, Feb 9</a></div>
+  <div class="entry-copy">An async lambda passed where <code>dynamic</code> is expected now infers its omitted return type normally, rather than assuming a <code>dynamic</code> return and rejecting ordinary returns such as <code>return 1</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e2a1356eeb21c88c1661b90f5e7958cb0e9df3df" target="_blank" rel="noopener noreferrer">e2a1356eeb</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/02/09/">Thu, Feb 9</a></div>
+  <div class="entry-copy">Large shape types now spend type-printer fuel per field and are explicitly truncated when the budget is exhausted, keeping diagnostics and hover output readable. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/452112ed9235f34870d6a33327b6376659386ff7" target="_blank" rel="noopener noreferrer">452112ed92</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/02/09/">Thu, Feb 9</a></div>
+  <div class="entry-copy"><code>&lt;&lt;__NoAutoDynamic&gt;&gt;</code> is now supported on individual methods in both explicit and implicit Sound Dynamic pessimisation. It prevents <code>~</code> and <code>supportdyn</code> from being added to that method&#x27;s signature without disabling dynamic calls to an otherwise Sound Dynamic class. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7da433acc8bdea572279cdd068b436ecea2b54ef" target="_blank" rel="noopener noreferrer">7da433acc8</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/02/09/">Thu, Feb 9</a></div>
+  <div class="entry-copy">Exception rendering retains the original class, file, and line when an overridden <code>Exception::getMessage()</code> itself throws, making secondary failures substantially easier to diagnose. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0a6378d03a4bc64020067fb6284dcd820506ac6b" target="_blank" rel="noopener noreferrer">0a6378d03a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/02/10/">Fri, Feb 10</a></div>
+  <div class="entry-copy">Sound Dynamic like-type pushing now handles generic lower bounds, allowing relationships such as <code>vec&lt;~int&gt; &lt;: ~T</code> when <code>vec&lt;int&gt; &lt;: T</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4f90a4b70c8496b8e86bca77c8a9137f5638bd27" target="_blank" rel="noopener noreferrer">4f90a4b70c</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/02/10/">Fri, Feb 10</a></div>
+  <div class="entry-copy">HHVM now clears the implicit context at every VM entry boundary. Server-mode exceptions from warmup, shutdown, or presend hooks can no longer leak an implicit context into a subsequent request. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4e07ff06fc22069240822ed14bc50c4f86bde68b" target="_blank" rel="noopener noreferrer">4e07ff06fc</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/02/11/">Sat, Feb 11</a></div>
+  <div class="entry-copy">Cloning an object whose properties are still lazily represented in APC no longer triggers an assertion; the lazy property values are copied safely. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8c70fede944e3b871460a5f8a3ccbdec0b3a003a" target="_blank" rel="noopener noreferrer">8c70fede94</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/02/07/">Tue, Feb 7</a></div>
+  <div class="entry-copy">Runtime module-boundary checks now cover enum and enum-class constants. Accessing an <code>internal</code> enum or enum-class constant from another module raises the same boundary violation as other internal symbols, including in optimized code. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/859da9f1c9d790c1824d2e009481769a258a69c0" target="_blank" rel="noopener noreferrer">859da9f1c9</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/02/09/">Thu, Feb 9</a></div>
+  <div class="entry-copy">Pre-stable class refinements now distinguish <code>type</code> members from <code>ctx</code> members. Refining a type constant with <code>ctx</code>, or a context constant with <code>type</code>, produces typing error 4471. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f04bef3304685575583bd5c0f19f4eb461d1f0f1" target="_blank" rel="noopener noreferrer">f04bef3304</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="19 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 7: Feb 13–Feb 19, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 7: Feb 13–Feb 19, 2023</h1>
+  <p class="post-meta">19 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/02/13/">Day</a><a href="/weekly/2023/W07/" aria-current="page">Week</a><a href="/monthly/2023/02/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2023/W06/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2023/W08/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>9 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/02/13/">Mon, Feb 13</a></div>
+  <div class="entry-copy">Enum-class labels in attribute arguments are now preserved through naming, enabling typechecking, hover, and completion for forms such as <code>&lt;&lt;__Memoize(#Key)&gt;&gt;</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b9dd041059eb4fb2afe214efac82e6191a5e5fb0" target="_blank" rel="noopener noreferrer">b9dd041059</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/02/13/">Mon, Feb 13</a></div>
+  <div class="entry-copy">In <code>--everything-sdt</code> mode, method return expressions are now checked against a <code>supportdyn</code>-wrapped return type, matching explicitly Sound Dynamic methods. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/82c7fcccc7c94a001670955d718fc474943fd293" target="_blank" rel="noopener noreferrer">82c7fcccc7</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/02/14/">Tue, Feb 14</a></div>
+  <div class="entry-copy"><code>hh --tast-holes-batch</code> accepts a newline-separated list of source files and reports TAST holes across the batch, making type-precision analysis easier to automate. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c41d55d42c89ae60cfb7a19561494c8e39f23cf3" target="_blank" rel="noopener noreferrer">c41d55d42c</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/02/14/">Tue, Feb 14</a></div>
+  <div class="entry-copy">Invalid <code>__Memoize</code> arguments now distinguish wrong arity from an invalid option and report the expected number of arguments. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/fa4f4eb1ef5df98e42c46d673263dc8433ed692e" target="_blank" rel="noopener noreferrer">fa4f4eb1ef</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/02/14/">Tue, Feb 14</a></div>
+  <div class="entry-copy">Partially written methods are lowered far enough for IDE features to work, <code>__Override</code> diagnostics retain complete positions, and autocomplete can suggest overridden method names after an incomplete <code>&lt;&lt;__Override&gt;&gt;</code> declaration. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/80775a8a3608b30247933d2035837ad95fdcd4e9" target="_blank" rel="noopener noreferrer">80775a8a36</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f25f7d4b3e81b5f499fc54a9afd5c07fc67f9e34" target="_blank" rel="noopener noreferrer">f25f7d4b3e</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/dabbec63a9b33666eb052b85d0cfb805be278c49" target="_blank" rel="noopener noreferrer">dabbec63a9</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/02/16/">Thu, Feb 16</a></div>
+  <div class="entry-copy">The command form <code>hh --json check .</code> works again after an argument-parsing regression. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/dd5ab5616325887d51fb8818ef711793e0cb7d41" target="_blank" rel="noopener noreferrer">dd5ab56163</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/02/17/">Fri, Feb 17</a></div>
+  <div class="entry-copy">Sound Dynamic subtyping can now push <code>supportdyn</code> through built-in containers and through safe promotions to <code>Traversable</code>, while expected-type inference retains more useful like-type information. This removes several false-positive errors around refined and nested container types. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f9fe075c21bec3961098a42394666c0033fcd63d" target="_blank" rel="noopener noreferrer">f9fe075c21</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/972106d560e7a4be75add1ae16d6243bccce5b5e" target="_blank" rel="noopener noreferrer">972106d560</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/61ab0e31c7281a6a109c4057f2644fbf46c65b4e" target="_blank" rel="noopener noreferrer">61ab0e31c7</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/02/17/">Fri, Feb 17</a></div>
+  <div class="entry-copy">Autocomplete now works in generic type-argument positions such as <code>vec&lt;string&gt;</code> without mistaking the angle brackets for XHP syntax. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/480b384688cc081354ad8957e576b04249d219c1" target="_blank" rel="noopener noreferrer">480b384688</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/02/17/">Fri, Feb 17</a></div>
+  <div class="entry-copy"><code>hh_single_type_check --sdt-analysis</code> can now identify top-level functions that need <code>__SupportDynamicType</code>, including dynamically callable functions and call sites that require dynamic-aware checking. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0ae3969f18ec8cdeccf721405ba3fe1d0e6519b1" target="_blank" rel="noopener noreferrer">0ae3969f18</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/582b596f55cf26c0e5126e4a5946c362f3810af1" target="_blank" rel="noopener noreferrer">582b596f55</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>7 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/02/13/">Mon, Feb 13</a></div>
+  <div class="entry-copy">The <code>fun()</code>, <code>class_meth()</code>, and <code>inst_meth()</code> pseudo-function-pointer forms are now rejected by default. Migrate to first-class pointers such as <code>function_name&lt;&gt;</code>, <code>ClassName::method&lt;&gt;</code>, and <code>$object-&gt;method&lt;&gt;</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4c7ba8532fe188b6b49e632960ac6f3eaf18da69" target="_blank" rel="noopener noreferrer">4c7ba8532f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/02/13/">Mon, Feb 13</a></div>
+  <div class="entry-copy">Unimplemented and obsolete <code>STREAM_CRYPTO_METHOD_*</code> constants have been removed, including the protocol-version-specific TLS and legacy SSL constants. Use <code>STREAM_CRYPTO_METHOD_TLS_CLIENT</code>, <code>STREAM_CRYPTO_METHOD_TLS_SERVER</code>, or the corresponding <code>ANY</code> constants. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a5ce6b07f0327455206c1017c097d502381f2677" target="_blank" rel="noopener noreferrer">a5ce6b07f0</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/02/13/">Mon, Feb 13</a></div>
+  <div class="entry-copy">String arguments such as <code>&lt;&lt;__Memoize(&quot;foo&quot;)&gt;&gt;</code> are now rejected where a memoize option enum-class label is required. Use the appropriate label syntax instead. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b9dd041059eb4fb2afe214efac82e6191a5e5fb0" target="_blank" rel="noopener noreferrer">b9dd041059</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/02/15/">Wed, Feb 15</a></div>
+  <div class="entry-copy">HHVM now defaults <code>Autoload.Enabled</code> to <code>true</code>. Deployments that need the previous behavior should explicitly set <code>Autoload.Enabled = false</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a714af2744b0ef5c6f42bbcc7ee42c32c7f9f4ca" target="_blank" rel="noopener noreferrer">a714af2744</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/02/15/">Wed, Feb 15</a></div>
+  <div class="entry-copy">Thrift stream and sink failures are now delivered as <code>ThriftApplicationException</code> rather than <code>TApplicationException</code>. Code catching the older concrete class should catch the new exception or a shared base such as <code>Exception</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0e2f06e78102d20063a967916caf4c459e9ca563" target="_blank" rel="noopener noreferrer">0e2f06e781</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/02/16/">Thu, Feb 16</a></div>
+  <div class="entry-copy">Hack now rejects prohibited uses of <code>this</code> in class type parameters, class-variable hints, <code>extends</code>, and <code>require extends</code>. Type accesses rooted at <code>this</code>, such as <code>this::T</code>, remain available; affected declarations should otherwise use an explicit class or type parameter. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/150429e923a60dbe8441a3c89b5024f01da091ff" target="_blank" rel="noopener noreferrer">150429e923</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/02/16/">Thu, Feb 16</a></div>
+  <div class="entry-copy"><code>ZipArchive::getFromIndex()</code> now returns <code>null</code>, rather than <code>false</code>, on failure and is typed as <code>?string</code>. Callers checking strictly for <code>false</code> must migrate to a null check. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8ac98e8a2149e01e3ef417fe54ab90f620ad3b86" target="_blank" rel="noopener noreferrer">8ac98e8a21</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/02/14/">Tue, Feb 14</a></div>
+  <div class="entry-copy">The experimental packages work now lowers <code>package</code> declarations containing module patterns and included packages, and <code>hh_server</code> can load a repository-level <code>__PACKAGES__.php</code> into its package map. The syntax remains gated by the unstable <code>packages</code> feature. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/135540312dede77c4951326768d1376989249b1c" target="_blank" rel="noopener noreferrer">135540312d</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/32f3dab8678512367c444764e3fd8f4f9799e46f" target="_blank" rel="noopener noreferrer">32f3dab867</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/02/16/">Thu, Feb 16</a></div>
+  <div class="entry-copy">Opt-in expression-tree blocks allow statements directly inside <code>Code`{ ... }` </code> syntax and lower them to an immediately invoked lambda. The ongoing-release feature currently requires <code>&lt;&lt;file:__EnableUnstableFeatures(&#x27;expression_tree_blocks&#x27;)&gt;&gt;</code> for typechecking. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/60a7b62d043aee9a56b4d11e474f70ab8719a771" target="_blank" rel="noopener noreferrer">60a7b62d04</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/02/17/">Fri, Feb 17</a></div>
+  <div class="entry-copy">Type constants in enum classes have entered ongoing release. The typechecker still requires the <code>enum_class_type_constants</code> opt-in while the runtime rollout completes. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/255787429159bbac7496134a829fce2833fd75c0" target="_blank" rel="noopener noreferrer">2557874291</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="5 noteworthy changes recorded on this day.">
+  <title>Monday, September 16, 2024 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Monday, September 16, 2024</h1>
+  <p class="post-meta">5 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/09/16/" aria-current="page">Day</a><a href="/weekly/2024/W38/">Week</a><a href="/monthly/2024/09/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2024/09/13/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2024/09/17/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">Lambdas may reuse the discard parameter name with different annotations, as in <code>(int $_, string $_) ==&gt; {}</code>; Hack no longer compares the discarded parameters with one another and reports a spurious coercion error. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0b59874dd47567e4f27adc18639969ff763ffc92" target="_blank" rel="noopener noreferrer">0b59874dd4</a></div></li><li class="change-entry"><div class="entry-copy">Direct references to constants and type constants declared by a trait now initialize against the trait&#x27;s own class object, fixing failures for expressions such as <code>TMyTrait::MY_CONSTANT</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4752658e59bebe1f67f2e11d6c6a4ba901d9bd96" target="_blank" rel="noopener noreferrer">4752658e59</a></div></li><li class="change-entry"><div class="entry-copy">Method hovers selected through an enum-class label now show the label&#x27;s singleton type. Dead-suppression cleanup also removes unused <code>HH_IGNORE</code> comments alongside unused <code>HH_FIXME</code> comments. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9fc76eee7175572cbd969189b3d739b541c19909" target="_blank" rel="noopener noreferrer">9fc76eee71</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9ba137b426f0a28e76d0797fdc4cd126b32a2d25" target="_blank" rel="noopener noreferrer">9ba137b426</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">Staged package-v2 checking now permits a function pointer to a static method in another package, matching the symbol-reference traversal used for deployment boundaries. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/38d78565b8a1cea605ebe826e34629044f007671" target="_blank" rel="noopener noreferrer">38d78565b8</a></div></li><li class="change-entry"><div class="entry-copy">Work on <code>recursive_case_types</code> now models newtype bounds, enum bounds, and function-type variants when checking recursive case definitions. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/99e7aa82298132f98cf84c45aef7cbf256c88ada" target="_blank" rel="noopener noreferrer">99e7aa8229</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c8b31f79f2bb7ed3cd5881bf86c26cb871c4f762" target="_blank" rel="noopener noreferrer">c8b31f79f2</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d34c456b075504d118d8386f2811d57848055786" target="_blank" rel="noopener noreferrer">d34c456b07</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

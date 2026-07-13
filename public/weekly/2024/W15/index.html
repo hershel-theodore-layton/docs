@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="10 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 15: Apr 8–Apr 14, 2024 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 15: Apr 8–Apr 14, 2024</h1>
+  <p class="post-meta">10 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/04/08/">Day</a><a href="/weekly/2024/W15/" aria-current="page">Week</a><a href="/monthly/2024/04/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2024/W14/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2024/W16/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>7 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/04/08/">Mon, Apr 8</a></div>
+  <div class="entry-copy"><code>debugger_dump(null)</code> is now a no-op instead of printing <code>null</code>. This also keeps null-valued notebook and debugger evaluations from producing a redundant display value. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ced9997e2122868488958e80ddb8cf5eb31113ea" target="_blank" rel="noopener noreferrer">ced9997e21</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/04/08/">Mon, Apr 8</a></div>
+  <div class="entry-copy">HHVM now agrees with the typechecker when a variadic method implements a variadic abstract method while declaring additional compatible non-variadic parameters. These implementations no longer fail at class loading. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/743fc08410e6225991de7081c0549d8a0402781b" target="_blank" rel="noopener noreferrer">743fc08410</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/04/08/">Mon, Apr 8</a></div>
+  <div class="entry-copy">Repo-authoritative builds now stop on directory-open or file-stat errors instead of silently omitting affected Hack files from the compiled repository. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/915842a0ce3368d07e6b5d9e9ae7512df669c786" target="_blank" rel="noopener noreferrer">915842a0ce</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/04/09/">Tue, Apr 9</a></div>
+  <div class="entry-copy"><code>Str\replace_every_nonrecursive()</code> is now declared with the empty capability list <code>[]</code>. Its previous omitted list meant <code>[defaults]</code>; narrowing the callee requirement to <code>[]</code> is non-breaking and lets callers with any capability superset—including pure callers—use it. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/62965cc8902cdfcfecf72cfe2a2ae1984e9b5844" target="_blank" rel="noopener noreferrer">62965cc890</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/04/10/">Wed, Apr 10</a></div>
+  <div class="entry-copy">The typechecker now uses obvious argument types—such as locals and simple literals—to infer the parameter types of an immediately invoked lambda. This accepts more concise calls without requiring redundant lambda annotations. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/725364297de7189d406f1fca3f00ac373aa3fdd9" target="_blank" rel="noopener noreferrer">725364297d</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/04/10/">Wed, Apr 10</a></div>
+  <div class="entry-copy"><code>nameof</code> is now supported as an attribute argument by both the typechecker and runtime, completing the parser-side work from April 2. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5db8d278e2db323d4dabb7bda77d7e8aff24ac29" target="_blank" rel="noopener noreferrer">5db8d278e2</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/04/11/">Thu, Apr 11</a></div>
+  <div class="entry-copy">Repo-authoritative optimization no longer loops forever when a subclass-analysis split contains exactly 25,000 classes. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8c73cc33e22def26863422e3badf45e5bfa088a0" target="_blank" rel="noopener noreferrer">8c73cc33e2</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/04/11/">Thu, Apr 11</a></div>
+  <div class="entry-copy">JSON rendering of pre-stable function types, including <code>hh --type-at-pos-batch</code>, now preserves whether a parameter is <code>optional</code>. Consumers can distinguish <code>(function(int, optional bool): int)</code> from a function whose second parameter is required. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8fb398ec3149e42a4923936d1af98ef193b7a4ab" target="_blank" rel="noopener noreferrer">8fb398ec31</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/04/11/">Thu, Apr 11</a></div>
+  <div class="entry-copy">Expression-tree lowering now passes XHP element names to <code>visitXhp()</code> using <code>nameof</code>, producing strings instead of the class-pointer values previously emitted with <code>::class</code>. This affects experimental expression-tree DSLs that inspect those visitor arguments. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0f8bb1e8f813ee6bfc8956b800c0e94453b3577c" target="_blank" rel="noopener noreferrer">0f8bb1e8f8</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/04/11/">Thu, Apr 11</a></div>
+  <div class="entry-copy">A disabled-by-default <code>class_pointer_levels</code> migration setting can lint or reject a direct <code>C::class</code> argument where a string parameter would trigger an implicit conversion, and offers <code>nameof C</code> as the fix. The first implementation is deliberately syntactic and does not follow the value through a local variable; it is groundwork for the future <code>class&lt;C&gt;</code> type. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ffb5154a1189c545a0bc6c5164c15dadda74e88d" target="_blank" rel="noopener noreferrer">ffb5154a11</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

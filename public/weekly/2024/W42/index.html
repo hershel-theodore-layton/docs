@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="10 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 42: Oct 14–Oct 20, 2024 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 42: Oct 14–Oct 20, 2024</h1>
+  <p class="post-meta">10 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/10/14/">Day</a><a href="/weekly/2024/W42/" aria-current="page">Week</a><a href="/monthly/2024/10/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2024/W41/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2024/W43/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Future Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/10/14/">Mon, Oct 14</a></div>
+  <div class="entry-copy">Experimental case-type variants with <code>where</code> clauses now participate correctly in subtyping and call-site inference: a value must satisfy both the variant hint and that variant&#x27;s constraints. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/39a1d238eef30a2b0d2d797f57903d07ea1c1b1e" target="_blank" rel="noopener noreferrer">39a1d238ee</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/10/15/">Tue, Oct 15</a></div>
+  <div class="entry-copy">Packages v2 introduces the unstable <code>&lt;&lt;__RequirePackage(&#x27;pkg&#x27;)&gt;&gt;</code> function and method attribute. The checker validates its single literal package argument, uses it to typecheck conditionally available calls, and reports an actionable error when the required package has not been established as loaded. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3577dadb29f041ac0066655f4565eefa6dda1d43" target="_blank" rel="noopener noreferrer">3577dadb29</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e3397da7da5854c115cc620aaf3405c16ab60f1e" target="_blank" rel="noopener noreferrer">e3397da7da</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9aeaa0b4c7abfd61453f99f89bbca8ff33b4ac80" target="_blank" rel="noopener noreferrer">9aeaa0b4c7</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a19ae73c44d9172356861e8da4c3936736505e19" target="_blank" rel="noopener noreferrer">a19ae73c44</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/10/15/">Tue, Oct 15</a></div>
+  <div class="entry-copy">Package-version checks reserve <code>__CrossPackage</code> for v1 and <code>__RequirePackage</code> for v2. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/595cc603143c5456f5b891c640a2373231f83643" target="_blank" rel="noopener noreferrer">595cc60314</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Highlights</h2><span>5 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/10/15/">Tue, Oct 15</a></div>
+  <div class="entry-copy">Errors caused by illegal recursive aliases now explain why the alias was replaced with <code>mixed</code>, instead of presenting that <code>mixed</code> as an unexplained source type. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/bc618c335b1963b1b9aa9245818be28ff89394d9" target="_blank" rel="noopener noreferrer">bc618c335b</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/10/15/">Tue, Oct 15</a></div>
+  <div class="entry-copy">Hovering over the generic <code>this</code> type now also shows its upper bounds. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/bdb90e88e2d5501ab075cb14d59164f3ff8deea6" target="_blank" rel="noopener noreferrer">bdb90e88e2</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/10/16/">Wed, Oct 16</a></div>
+  <div class="entry-copy">Repo builds now follow enum and enum-class inclusion when collecting symbol references, so included parent enums are no longer omitted from the built repository. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b0817d9e425e3d1081fec1a7cb1e8ffeac3b7c19" target="_blank" rel="noopener noreferrer">b0817d9e42</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/10/17/">Thu, Oct 17</a></div>
+  <div class="entry-copy">The JIT&#x27;s optimized multi-string concatenation now decrements every consumed operand with distinct profiling identifiers, fixing refcount corruption in long concatenations and formatting operations. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3b51bc187287795cee342b68bca50d8caee509aa" target="_blank" rel="noopener noreferrer">3b51bc1872</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/10/18/">Fri, Oct 18</a></div>
+  <div class="entry-copy">Type inference now assigns the correct source span to <code>TypeAlias::class</code> and <code>nameof TypeAlias</code> expressions instead of extending the alias token&#x27;s position over the whole expression. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c31617ee8ced1507783037dfddb1614bd13723c7" target="_blank" rel="noopener noreferrer">c31617ee8c</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/10/15/">Tue, Oct 15</a></div>
+  <div class="entry-copy">A <code>package</code> expression inside <code>invariant(...)</code> no longer establishes package availability for following code. Use an <code>if (package pkg)</code> block instead. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7f948abbc086a1862cf98aecb074f4b7a2cd4fa7" target="_blank" rel="noopener noreferrer">7f948abbc0</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/10/18/">Fri, Oct 18</a></div>
+  <div class="entry-copy"><code>enum_exists()</code> now takes <code>classname&lt;mixed&gt;</code> rather than <code>string</code>. Literal class names, lazy class values, and class pointers work at runtime, but callers passing an arbitrary <code>string</code> variable must first establish that it is a classname. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ac3a1175d5194cf63124fb87d364af0773461048" target="_blank" rel="noopener noreferrer">ac3a1175d5</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

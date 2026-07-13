@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="5 noteworthy changes recorded on this day.">
+  <title>Monday, February 13, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Monday, February 13, 2023</h1>
+  <p class="post-meta">5 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/02/13/" aria-current="page">Day</a><a href="/weekly/2023/W07/">Week</a><a href="/monthly/2023/02/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2023/02/11/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2023/02/14/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">Enum-class labels in attribute arguments are now preserved through naming, enabling typechecking, hover, and completion for forms such as <code>&lt;&lt;__Memoize(#Key)&gt;&gt;</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b9dd041059eb4fb2afe214efac82e6191a5e5fb0" target="_blank" rel="noopener noreferrer">b9dd041059</a></div></li><li class="change-entry"><div class="entry-copy">In <code>--everything-sdt</code> mode, method return expressions are now checked against a <code>supportdyn</code>-wrapped return type, matching explicitly Sound Dynamic methods. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/82c7fcccc7c94a001670955d718fc474943fd293" target="_blank" rel="noopener noreferrer">82c7fcccc7</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy">The <code>fun()</code>, <code>class_meth()</code>, and <code>inst_meth()</code> pseudo-function-pointer forms are now rejected by default. Migrate to first-class pointers such as <code>function_name&lt;&gt;</code>, <code>ClassName::method&lt;&gt;</code>, and <code>$object-&gt;method&lt;&gt;</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4c7ba8532fe188b6b49e632960ac6f3eaf18da69" target="_blank" rel="noopener noreferrer">4c7ba8532f</a></div></li><li class="change-entry"><div class="entry-copy">Unimplemented and obsolete <code>STREAM_CRYPTO_METHOD_*</code> constants have been removed, including the protocol-version-specific TLS and legacy SSL constants. Use <code>STREAM_CRYPTO_METHOD_TLS_CLIENT</code>, <code>STREAM_CRYPTO_METHOD_TLS_SERVER</code>, or the corresponding <code>ANY</code> constants. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a5ce6b07f0327455206c1017c097d502381f2677" target="_blank" rel="noopener noreferrer">a5ce6b07f0</a></div></li><li class="change-entry"><div class="entry-copy">String arguments such as <code>&lt;&lt;__Memoize(&quot;foo&quot;)&gt;&gt;</code> are now rejected where a memoize option enum-class label is required. Use the appropriate label syntax instead. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b9dd041059eb4fb2afe214efac82e6191a5e5fb0" target="_blank" rel="noopener noreferrer">b9dd041059</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

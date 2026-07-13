@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="3 noteworthy changes recorded on this day.">
+  <title>Wednesday, May 10, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Wednesday, May 10, 2023</h1>
+  <p class="post-meta">3 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/05/10/" aria-current="page">Day</a><a href="/weekly/2023/W19/">Week</a><a href="/monthly/2023/05/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2023/05/09/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2023/05/11/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">Sound Dynamic hover now handles more expression and declaration forms correctly. Structured JSON from <code>--type-at-pos</code> hides migration-only like-type wrappers while the display string retains them, and redundant <code>HH\FIXME\UNSAFE_CAST_NONNULL</code> casts can now be removed by the quick-fix and codemod. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9cf23265f20513f4f16c447ec2a1b6194647646f" target="_blank" rel="noopener noreferrer">9cf23265f2</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ccf7af145a0b4c4dc1ea52b80ce75aebb63f8f1a" target="_blank" rel="noopener noreferrer">ccf7af145a</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/95353318c35f64374e15c5ce2fc5753c8bd88485" target="_blank" rel="noopener noreferrer">95353318c3</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy">Source use of <code>&lt;&lt;__NoAutoDynamic&gt;&gt;</code> now requires <code>enable_no_auto_dynamic = true</code>; HHI declarations remain exempt. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/da86d4290fffd0e69383aabecbb379687d47b6e0" target="_blank" rel="noopener noreferrer">da86d4290f</a></div></li><li class="change-entry"><div class="entry-copy">Reserved type-name checks now apply uniformly to class, interface, trait, enum, enum-class, and type-alias declarations, including declarations inside namespaces. <code>varray</code> and <code>darray</code> are explicitly unavailable as alias names, while <code>classname</code> is now allowed as a user-defined classish or enum name. Direct HackC users may newly see parse errors for names that <code>hh</code> already rejected. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3ee812d373c17de521135593dd92699e99d238ef" target="_blank" rel="noopener noreferrer">3ee812d373</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8f41d4f642621feaf91d2b468bd9a2cc1dcfaadb" target="_blank" rel="noopener noreferrer">8f41d4f642</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/76a42d2d94887da4035331bee40a0f5a681c52a8" target="_blank" rel="noopener noreferrer">76a42d2d94</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/da292e9950620c2d2b8e852dba97737db8d58b49" target="_blank" rel="noopener noreferrer">da292e9950</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ade4fad16e444cbb5f51ca21274c53016daaca11" target="_blank" rel="noopener noreferrer">ade4fad16e</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

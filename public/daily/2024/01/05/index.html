@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="5 noteworthy changes recorded on this day.">
+  <title>Friday, January 5, 2024 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Friday, January 5, 2024</h1>
+  <p class="post-meta">5 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/01/05/" aria-current="page">Day</a><a href="/weekly/2024/W01/">Week</a><a href="/monthly/2024/01/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2024/01/03/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2024/01/08/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">Separate Hack notebook kernels can now define declarations with the same source names without colliding, and top-level notebook statements now respect the repository&#x27;s auto-namespace map. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3475febb1c9782b1054653e82d5d94243d0b8371" target="_blank" rel="noopener noreferrer">3475febb1c</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/33f41836a4f1437ef8d850642e4adf056d8a5de1" target="_blank" rel="noopener noreferrer">33f41836a4</a></div></li><li class="change-entry"><div class="entry-copy">The new pure <code>HH\FileDecls::parseTypeExpression(string)[]</code> API parses a standalone type expression into a recursive declaration structure without the cost of runtime <code>type_structure()</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/96ee1ec4c5f5f77d6e47d2ac9ae8d2ca156c2009" target="_blank" rel="noopener noreferrer">96ee1ec4c5</a></div></li></ul></section><section class="daily-section"><h2>Security</h2><ul><li class="change-entry"><div class="entry-copy">The fb303 server can now check and enforce access-control lists using <code>Fb303Server.EnableAclChecks</code>, <code>Fb303Server.EnforceAclChecks</code>, and <code>Fb303Server.Identity</code>. The feature is disabled by default. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/de71bf51b0af499587007d9dcd1a7b3e14979465" target="_blank" rel="noopener noreferrer">de71bf51b0</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy">Built-in declarations that accidentally used the nonexistent <code>object</code> type now use concrete DOM types or <code>HH\object</code>. In particular, <code>XSLTProcessor::importStylesheet()</code> now accepts <code>DOMDocument</code>, not <code>SimpleXMLElement</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3c1e77a511ca3a5fcf4160763b9f41ad41c8ecd0" target="_blank" rel="noopener noreferrer">3c1e77a511</a></div></li><li class="change-entry"><div class="entry-copy">The legacy <code>fb_set_post_autoload_handler()</code> API has been removed. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8f0646db1fca843a8f3a8d797ad7f30f733adac4" target="_blank" rel="noopener noreferrer">8f0646db1f</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

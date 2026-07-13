@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="3 noteworthy changes recorded on this day.">
+  <title>Wednesday, February 19, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Wednesday, February 19, 2025</h1>
+  <p class="post-meta">3 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/02/19/" aria-current="page">Day</a><a href="/weekly/2025/W08/">Week</a><a href="/monthly/2025/02/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2025/02/17/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2025/02/20/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">HHVM now correctly locks a <code>const</code> object while unwinding from a constructor invoked through the interpreter, preserving the object&#x27;s immutability guarantees on this exception path. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e35e12ac41ae6c86de321198a52c6704742c4779" target="_blank" rel="noopener noreferrer">e35e12ac41</a></div></li><li class="change-entry"><div class="entry-copy"><code>hh --dump-config</code> prints the configuration parsed by <code>hh_client</code>, making it easier to diagnose differences between client and server settings. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/10dde3aab4427e78091964a940c6dc45d41ec9de" target="_blank" rel="noopener noreferrer">10dde3aab4</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">The class-pointer migration gained a <code>classname_class</code> level in <code>class_pointer_levels</code>. At an error level above 1, using a <code>classname&lt;T&gt;</code> variable in <code>new</code>, static method, class-constant, or static-property access is rejected in favor of <code>class&lt;T&gt;</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b7d8bb6c3239d099db16594576a1780f6df2964e" target="_blank" rel="noopener noreferrer">b7d8bb6c32</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

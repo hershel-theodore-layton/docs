@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="11 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 25: Jun 16–Jun 22, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 25: Jun 16–Jun 22, 2025</h1>
+  <p class="post-meta">11 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/06/16/">Day</a><a href="/weekly/2025/W25/" aria-current="page">Week</a><a href="/monthly/2025/06/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2025/W24/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2025/W26/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>6 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/06/16/">Mon, Jun 16</a></div>
+  <div class="entry-copy">The extract-method refactoring now leaves the original method&#x27;s doc comment attached to that method instead of moving it to the newly extracted method. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3f0bf0852f367f5ab8420d6ad0a33449d0f83161" target="_blank" rel="noopener noreferrer">3f0bf0852f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/06/17/">Tue, Jun 17</a></div>
+  <div class="entry-copy"><code>hh_server</code> no longer crashes when an Eden-backed watcher observes a directory rename in a repository root below the Eden mount point. The watcher now issues the correct relative glob and the test suite verifies that the server did not silently restart. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d3f1c8d92c419ff8fe967062539576cacd017b1a" target="_blank" rel="noopener noreferrer">d3f1c8d92c</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/06/18/">Wed, Jun 18</a></div>
+  <div class="entry-copy">The native <code>HH\Facts\subtypes()</code>, <code>transitive_subtypes()</code>, and <code>supertypes()</code> implementations now accept either class pointers or class names without raising string-to-class conversion notices. These APIs retain their explicit <code>[]</code> capability lists and therefore require no ambient capabilities from callers. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/17a3032494673f1e5d308fae7210b9ba58920476" target="_blank" rel="noopener noreferrer">17a3032494</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/06/18/">Wed, Jun 18</a></div>
+  <div class="entry-copy">Generated HHI declarations no longer need memoization-parameter annotations when a project enables <code>disallow_non_annotated_memoize</code>. This prevents bundled HSL declarations from causing <code>hh_server</code> to fail during startup; user source remains subject to the setting. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d7772b96df98098611e756f87da0aef933b6acea" target="_blank" rel="noopener noreferrer">d7772b96df</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/06/19/">Thu, Jun 19</a></div>
+  <div class="entry-copy">Generic inference now expands type variables before removing covariant like types. Valid calls involving refined generic settings and nested <code>shape</code>, <code>vec</code>, or <code>dict</code> values no longer produce false subtyping errors under sound-dynamic checking. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f784cde71208f0c547a360d77c71adec26ef2261" target="_blank" rel="noopener noreferrer">f784cde712</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/06/20/">Fri, Jun 20</a></div>
+  <div class="entry-copy">Direct static method calls on a trait now produce Warn[12020]. Call the method through a using class, or use <code>self::</code>/<code>static::</code> inside the trait, to avoid accessing the trait&#x27;s separate runtime state. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b3cc106aee871393bc3878e3be6b09e1911f04f7" target="_blank" rel="noopener noreferrer">b3cc106aee</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/06/16/">Mon, Jun 16</a></div>
+  <div class="entry-copy">Compiler-special functions without ordinary runtime definitions can no longer be captured with function-pointer syntax. Naming[2105] now rejects pointers to <code>HH\classname_to_class</code>, <code>exit</code>, <code>HH\ReifiedGenerics\get_class_from_type</code>, <code>HH\global_get</code>, <code>HH\global_set</code>, <code>HH\tag_provenance_here</code>, <code>HH\FIXME\UNSAFE_CAST</code>, and <code>HH\FIXME\UNSAFE_NONNULL_CAST</code>; direct calls remain supported. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/87c01f69af89994a8b9877ccbc4f3ed768e40754" target="_blank" rel="noopener noreferrer">87c01f69af</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/06/20/">Fri, Jun 20</a></div>
+  <div class="entry-copy"><code>HH\Facts\subtypes()</code>, <code>transitive_subtypes()</code>, and <code>supertypes()</code> now return class-pointer values instead of bare strings, avoiding dynamic class loads when their results are used as classes. All three functions retain <code>[]</code>; code that stores, concatenates, or serializes the returned values as strings must convert them deliberately. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4b4b297617993aa34525431494b19547952ef85a" target="_blank" rel="noopener noreferrer">4b4b297617</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/06/16/">Mon, Jun 16</a></div>
+  <div class="entry-copy">Under unstable <code>no_disjoint_union</code>, type-constant access through union and intersection types now updates the dependent <code>this</code> type for each constituent. Fixpoint refinements consequently retain their precise projected types after these flows. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ede7843927166a1e797f1a79794789f9e6a25a45" target="_blank" rel="noopener noreferrer">ede7843927</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/06/18/">Wed, Jun 18</a></div>
+  <div class="entry-copy">With <code>needs_concrete</code> checking enabled, calls to <code>__NeedsConcrete</code> methods through <code>self::</code> and <code>parent::</code> now account for their forwarding of the late-static receiver. Unsafe calls are rejected, while calls made from another <code>__NeedsConcrete</code> method are accepted when the receiver is known to be concrete. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/95e848e66c183bfd9d800e15de30dcb3879373a2" target="_blank" rel="noopener noreferrer">95e848e66c</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/06/20/">Fri, Jun 20</a></div>
+  <div class="entry-copy">Within an unstable polymorphic lambda&#x27;s body, wildcard hints are now allowed in refinements such as <code>$x is A&lt;_&gt;</code>. Wildcards remain forbidden in the lambda&#x27;s parameter and return types, including nested lambda signatures. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7c45cf525ea1212eed31754773299a086536c4ba" target="_blank" rel="noopener noreferrer">7c45cf525e</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

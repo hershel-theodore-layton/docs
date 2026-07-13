@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="7 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 7: Feb 12–Feb 18, 2024 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 7: Feb 12–Feb 18, 2024</h1>
+  <p class="post-meta">7 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/02/12/">Day</a><a href="/weekly/2024/W07/" aria-current="page">Week</a><a href="/monthly/2024/02/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2024/W06/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2024/W08/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>5 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/02/12/">Mon, Feb 12</a></div>
+  <div class="entry-copy">Generic calls now type explicitly annotated lambda parameters before other arguments. This lets calls such as <code>any($values, (C $value) ==&gt; ...)</code> infer <code>C</code> before applying like-pushing to a <code>vec&lt;~C&gt;</code> argument. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/11c6d5334331a676dfef12204124cbdbdf89b2a6" target="_blank" rel="noopener noreferrer">11c6d53343</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/02/12/">Mon, Feb 12</a></div>
+  <div class="entry-copy">Repository-authoritative deployments can now execute a configured prelude. A prelude path beginning <code>${SOURCE_ROOT}/</code> is resolved relative to the directory containing the applicable <code>.hhvmconfig.hdf</code>, and missing preludes produce an actionable log message. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/45c319db7db5590a5fb6c1c1358b4b16090df101" target="_blank" rel="noopener noreferrer">45c319db7d</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/02/13/">Tue, Feb 13</a></div>
+  <div class="entry-copy">An explicit <code>hh_server --max-procs</code> value is now honored up to the machine&#x27;s processor count rather than being halved a second time. Without an explicit limit, the server continues to default to half the reported logical processors. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/dcfcc2cb9d5dc90b050e9b9b30fb362297efc623" target="_blank" rel="noopener noreferrer">dcfcc2cb9d</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/02/14/">Wed, Feb 14</a></div>
+  <div class="entry-copy">The IDE now offers “Extract into variable” as a quick-fix when an <code>await</code> is rejected for being conditionally executed. The underlying refactoring is also available inside braceless lambdas and expands them to a block when necessary. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0dbb8a21c65c9b65a97cdf834fce551341068e28" target="_blank" rel="noopener noreferrer">0dbb8a21c6</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8f2e2fa5d483e196a7b74610bc63167dfbdc99e4" target="_blank" rel="noopener noreferrer">8f2e2fa5d4</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/02/15/">Thu, Feb 15</a></div>
+  <div class="entry-copy">Known class references now resolve directly while retaining module-boundary checks for object construction and static access. Literal access such as <code>C::$property</code> no longer produces a spurious string-to-class conversion notice, and lazy-class resolution no longer bypasses the corresponding modularity check. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0bd6a0cf1e835aa60d5d090c6a2f6784fe8de060" target="_blank" rel="noopener noreferrer">0bd6a0cf1e</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3af9a08b53afba25386adef3366fe8add5b8b18d" target="_blank" rel="noopener noreferrer">3af9a08b53</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/02/13/">Tue, Feb 13</a></div>
+  <div class="entry-copy">The IMAP extension has been removed, including functions such as <code>imap_open()</code>, <code>imap_fetchbody()</code>, and <code>imap_close()</code>. Applications still using these APIs need an external mail client or service. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ee0bc2cb003a1a6c3b3379da7415852d540c03ba" target="_blank" rel="noopener noreferrer">ee0bc2cb00</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/02/13/">Tue, Feb 13</a></div>
+  <div class="entry-copy">Sound Dynamic and implicit pessimisation now trust runtime enforcement declared by HHI signatures in the same way as ordinary Hack signatures, removing a legacy exception that affected property assignment. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0507e9f8ad07848bd4512dd064e3378d6fb75465" target="_blank" rel="noopener noreferrer">0507e9f8ad</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

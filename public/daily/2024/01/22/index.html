@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="3 noteworthy changes recorded on this day.">
+  <title>Monday, January 22, 2024 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Monday, January 22, 2024</h1>
+  <p class="post-meta">3 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/01/22/" aria-current="page">Day</a><a href="/weekly/2024/W04/">Week</a><a href="/monthly/2024/01/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2024/01/19/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2024/01/23/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy"><code>HH\package_exists()</code> now returns <code>true</code> for soft-deployed packages, matching their status as loaded packages whose boundary violations warn rather than throw. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a7f1122c6e123c35c6a6767756c55f12a03d83d9" target="_blank" rel="noopener noreferrer">a7f1122c6e</a></div></li><li class="change-entry"><div class="entry-copy">Virtual lambdas synthesized for expression trees are now pure, so expression trees containing virtualized effects can be constructed inside <code>[]</code> functions. Property writes are checked inside an uncalled lambda with the required capability and no longer refine the runtime property. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9abcdf6c657381ad5a2d0392a1e42581617d90da" target="_blank" rel="noopener noreferrer">9abcdf6c65</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy">Runtime upper bounds on generic types are now always fully enforced, and the non-default modes of <code>Eval.EnforceGenericsUB</code> have been removed. Code that relied on warning-only or disabled upper-bound checks can now receive catchable fatals. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/772702fa69d240b285e8e022309362a851cac77e" target="_blank" rel="noopener noreferrer">772702fa69</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

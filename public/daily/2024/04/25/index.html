@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="5 noteworthy changes recorded on this day.">
+  <title>Thursday, April 25, 2024 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Thursday, April 25, 2024</h1>
+  <p class="post-meta">5 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/04/25/" aria-current="page">Day</a><a href="/weekly/2024/W17/">Week</a><a href="/monthly/2024/04/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2024/04/24/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2024/04/26/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">Repo-authoritative optimization now models the concrete values written to memoization caches, avoiding incorrect bottom or return types for forwarded late-static-binding calls such as memoized methods inherited from traits. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9056a5bf64df15b923d93084d8f0920df2cb810c" target="_blank" rel="noopener noreferrer">9056a5bf64</a></div></li><li class="change-entry"><div class="entry-copy">Top-level autocomplete backed by Glean now matches a declaration&#x27;s autocomplete sort text as well as its name, allowing appropriately ranked declarations to appear for additional prefixes. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/891e663ebc22acdf7da68a16e128f7d367a166c1" target="_blank" rel="noopener noreferrer">891e663ebc</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy">Hack&#x27;s text diagnostic formats now encode severity. In particular, <code>--error-format plain</code> prefixes diagnostics with <code>ERROR:</code> or <code>WARN:</code>, and the raw, contextual, and highlighted renderers distinguish warnings too. Update scripts that parse the previous plain-text layout. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9bbf0bd8bdb2421b158512c750139fd6dff70a26" target="_blank" rel="noopener noreferrer">9bbf0bd8bd</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4f788c05ab4d83fa10620c8ba924436c93189480" target="_blank" rel="noopener noreferrer">4f788c05ab</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ac2791f216b28a11eed364cd9c4ed24f388c6069" target="_blank" rel="noopener noreferrer">ac2791f216</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3059d50fb75990ead7dc860b7d40372e991a17ee" target="_blank" rel="noopener noreferrer">3059d50fb7</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">A disabled-by-default <code>hack_warnings</code> project option introduces non-fatal Hack warnings. The first warns when <code>?X</code> and <code>?Y</code> are compared even though the non-null primitive types <code>X</code> and <code>Y</code> are disjoint. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a5295f752a6c233d296e8f3a02df6072237e1d68" target="_blank" rel="noopener noreferrer">a5295f752a</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f5f47a9cc6bfcf263c0b64a2335bb74f2ec0f114" target="_blank" rel="noopener noreferrer">f5f47a9cc6</a></div></li><li class="change-entry"><div class="entry-copy">Repo-authoritative optimization now handles enum members and unresolved object members in experimental case-type unions without misclassifying or asserting on the union. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ba2eace20a66dc98d3367ad464605fb760206390" target="_blank" rel="noopener noreferrer">ba2eace20a</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

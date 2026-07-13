@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="11 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 27: Jul 3–Jul 9, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 27: Jul 3–Jul 9, 2023</h1>
+  <p class="post-meta">11 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/07/04/">Day</a><a href="/weekly/2023/W27/" aria-current="page">Week</a><a href="/monthly/2023/07/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2023/W26/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2023/W28/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>10 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/07/04/">Tue, Jul 4</a></div>
+  <div class="entry-copy">The “extract interface” code action no longer copies an invalid <code>async</code> modifier onto the extracted interface method. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0610faf8064c10a940eab98713be047b6caf4b9a" target="_blank" rel="noopener noreferrer">0610faf806</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/07/04/">Tue, Jul 4</a></div>
+  <div class="entry-copy">“Extract into method” now handles a selection whose first line is a comment without generating syntactically invalid Hack. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6b3d7678c0ea1fd8d3b7baf22e6909431869b099" target="_blank" rel="noopener noreferrer">6b3d7678c0</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/07/05/">Wed, Jul 5</a></div>
+  <div class="entry-copy">The IDE’s “Extract shape type” action now works on shape type hints as well as shape expressions. Its generated alias starts with <code>T</code>, and the placeholder name is selected for immediate renaming. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/77d0d735088d7c5fd8a8267c228e09cb47bc4a0e" target="_blank" rel="noopener noreferrer">77d0d73508</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5c1517fe0a9c74413fd52835e2c0a05e63a95b64" target="_blank" rel="noopener noreferrer">5c1517fe0a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/07/05/">Wed, Jul 5</a></div>
+  <div class="entry-copy">Many HSL array, dictionary, keyset, and vector helpers now opt out of automatic like-type insertion under sound dynamic, preserving more precise declared return types. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7d39d37d935df5bcfc4d77cec60a19a3b5acec3a" target="_blank" rel="noopener noreferrer">7d39d37d93</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2cae1c79ff7f6bcf436d745a439933f366251b7e" target="_blank" rel="noopener noreferrer">2cae1c79ff</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f0b48d90698e440592088da2db54c3aa11431146" target="_blank" rel="noopener noreferrer">f0b48d9069</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/07/05/">Wed, Jul 5</a></div>
+  <div class="entry-copy">Sound-dynamic typing now preserves a <code>supportdyn</code> element constraint when widening an array-like lower bound to typecheck indexed access. This avoids spurious failures where the widened element type previously collapsed to <code>mixed</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/640749cbd495e85da8b54470bf0d0e8efe9b47c3" target="_blank" rel="noopener noreferrer">640749cbd4</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/07/06/">Thu, Jul 6</a></div>
+  <div class="entry-copy">Type inference now recognizes equivalent nullable bounds of the form <code>null, T &lt;: #x &lt;: ?T</code>, improving solutions for otherwise underconstrained type variables. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4e824a897adecddb3f404af14140746f8cdd5abd" target="_blank" rel="noopener noreferrer">4e824a897a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/07/06/">Thu, Jul 6</a></div>
+  <div class="entry-copy">Under implicit sound-dynamic pessimization, <code>&lt;&lt;__NoAutoLikes&gt;&gt;</code> suppresses only inserted like types. Generic parameters still receive a <code>supportdyn&lt;mixed&gt;</code> bound unless that parameter also has <code>&lt;&lt;__NoAutoBound&gt;&gt;</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/98b6c9f1781fe72dd081f56eb8b6453a653ad3bc" target="_blank" rel="noopener noreferrer">98b6c9f178</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/07/07/">Fri, Jul 7</a></div>
+  <div class="entry-copy">Invalid cycles through trait <code>require class</code> or <code>require implements</code> clauses now produce ordinary diagnostics without overflowing the typechecker’s stack. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/dc3b6cfafb938fd4c91b16960b00d82314da423e" target="_blank" rel="noopener noreferrer">dc3b6cfafb</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/07/07/">Fri, Jul 7</a></div>
+  <div class="entry-copy">The IDE now returns the LSP <code>ContentModified</code> error when a requested code action can no longer be resolved, rather than crashing the language server. “Extract shape type” also survives an internal candidate invariant violation and continues serving later requests. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a1344f26cbe532e8ec418c332f72be5ee3195540" target="_blank" rel="noopener noreferrer">a1344f26cb</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5c55e0af6f71d081806ae7e8f5db65c2d3a6b0b5" target="_blank" rel="noopener noreferrer">5c55e0af6f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/07/07/">Fri, Jul 7</a></div>
+  <div class="entry-copy">“Extract into method” is now offered for the expression body of a lambda such as <code>() ==&gt; 3 + 3</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f5a7a56c924568a533645112ce9a5348c4c13fc4" target="_blank" rel="noopener noreferrer">f5a7a56c92</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/07/06/">Thu, Jul 6</a></div>
+  <div class="entry-copy">The experimental typed-local syntax now permits declarations without an initializer, such as <code>let $x: int;</code>. Reading the local before a later assignment remains an error. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/87d5938fe6f9e5a343ec03201d5ac928fd2a6aae" target="_blank" rel="noopener noreferrer">87d5938fe6</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

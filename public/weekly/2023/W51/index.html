@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="12 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 51: Dec 18–Dec 24, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 51: Dec 18–Dec 24, 2023</h1>
+  <p class="post-meta">12 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/12/18/">Day</a><a href="/weekly/2023/W51/" aria-current="page">Week</a><a href="/monthly/2023/12/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2023/W50/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2023/W52/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>9 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/12/18/">Mon, Dec 18</a></div>
+  <div class="entry-copy"><code>HH\FileDecls::parsePath()</code> is now implemented: it reads a Hack file from disk and returns the same declaration view as <code>parseText()</code>, throwing <code>InvalidArgumentException</code> when the path is missing or cannot be opened. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/de1dd54b178d2010e187971dcc13735c39e38c55" target="_blank" rel="noopener noreferrer">de1dd54b17</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/12/18/">Mon, Dec 18</a></div>
+  <div class="entry-copy"><code>HH\class_to_classname()</code> now retains dynamically constructed string inputs correctly, preventing its returned classname string from becoming invalid after the native wrapper releases the argument. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f4402a8d7a4ac561dc55cda0bc8577ee2c8a89c1" target="_blank" rel="noopener noreferrer">f4402a8d7a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/12/19/">Tue, Dec 19</a></div>
+  <div class="entry-copy">Find-references, find-class-references, and refactor requests no longer restart their file iteration after cancellation polling, fixing searches that could run indefinitely. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6808aa6797de6e84129c327425c01f4a7ef793fd" target="_blank" rel="noopener noreferrer">6808aa6797</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/12/19/">Tue, Dec 19</a></div>
+  <div class="entry-copy">LSP request cancellation is now enabled by default, so abandoned IDE work can stop rather than delaying the replacement request. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/94342a995cadfe768e6f3970e31c16fd18ce110c" target="_blank" rel="noopener noreferrer">94342a995c</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/12/19/">Tue, Dec 19</a></div>
+  <div class="entry-copy">Direct-declaration parsing with user attributes retained no longer drops heredoc, nowdoc, or parenthesized expressions. This prevents affected constants from degrading to an unknown type in downstream typechecking. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/230809b98e6ea61e7ee91ae0b8388f103cbc5d45" target="_blank" rel="noopener noreferrer">230809b98e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/12/19/">Tue, Dec 19</a></div>
+  <div class="entry-copy">Type errors that refer to expression-dependent types now print stable internal <code>&lt;expr#…&gt;</code> identifiers rather than renumbering them for display. The numbers may be larger or nonconsecutive, but repeated runs are deterministic. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/65e011a6fd4bfa1fbc2bd692dc0adbafd7888d09" target="_blank" rel="noopener noreferrer">65e011a6fd</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/12/20/">Wed, Dec 20</a></div>
+  <div class="entry-copy">The Hack manual now includes a package guide covering package definitions, deployments, cross-package calls, and <code>PACKAGES.toml</code> configuration. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/77eea71427755c4bb61b20092b85cbf01541e885" target="_blank" rel="noopener noreferrer">77eea71427</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/12/21/">Thu, Dec 21</a></div>
+  <div class="entry-copy">The VS Code debugger now evaluates a request without an explicit frame ID in the frame selected by the most recent <code>scopes</code> request, when execution is paused. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9de19a803e83d191449f5513a676328e8b6d6845" target="_blank" rel="noopener noreferrer">9de19a803e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/12/21/">Thu, Dec 21</a></div>
+  <div class="entry-copy">Repo-authoritative optimization now converts type constraints back to unresolved form when their target class is later found to be missing or uninstantiable, avoiding stale resolved constraints against nonexistent classes. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6de1d23d1854eb09ec5e25af487e99c83a0d866f" target="_blank" rel="noopener noreferrer">6de1d23d18</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/12/18/">Mon, Dec 18</a></div>
+  <div class="entry-copy">Support for <code>meth_caller(nameof C, &#x27;method&#x27;)</code>, introduced on December 9, has been backed out because the compiler lowering was unsound. Use <code>meth_caller(C::class, &#x27;method&#x27;)</code> again. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/420490f6e17b4e9df47fad26c31b21cf6234b325" target="_blank" rel="noopener noreferrer">420490f6e1</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/12/20/">Wed, Dec 20</a></div>
+  <div class="entry-copy"><code>FixDefaultArgReflection</code> now defaults to mode <code>2</code>. If evaluating a parameter&#x27;s default expression during reflection fails, HHVM emits a warning and reports the reflected default as <code>null</code> instead of exposing the evaluator&#x27;s exception under the old mode. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6adc7b1655cc665725b689b42237d4e8bd674a26" target="_blank" rel="noopener noreferrer">6adc7b1655</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/12/21/">Thu, Dec 21</a></div>
+  <div class="entry-copy"><code>hh_single_type_check</code> no longer accepts <code>--math-new-code</code>; the newer arithmetic-checking behavior is always enabled in the tool. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6c1dbdb71de7fc8eb32c60ab69160ce53b50eb4a" target="_blank" rel="noopener noreferrer">6c1dbdb71d</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

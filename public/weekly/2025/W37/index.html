@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="9 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 37: Sep 8–Sep 14, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 37: Sep 8–Sep 14, 2025</h1>
+  <p class="post-meta">9 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/09/09/">Day</a><a href="/weekly/2025/W37/" aria-current="page">Week</a><a href="/monthly/2025/09/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2025/W36/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2025/W38/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/09/09/">Tue, Sep 9</a></div>
+  <div class="entry-copy">HEIF and AVIF decoding through the GD extension now reports whether a requested read position is available, beyond end-of-file, or failed, while restoring the stream cursor after checking. This fixes decoding behavior needed by newer libheif releases. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/98c14764febcd54214b5664b613809c24a936a12" target="_blank" rel="noopener noreferrer">98c14764fe</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/09/10/">Wed, Sep 10</a></div>
+  <div class="entry-copy">Packages v2 is now Hack and HHVM&#x27;s only package model and no longer requires an unstable-feature opt-in. <code>&lt;&lt;__RequirePackage&gt;&gt;</code> is the released attribute for declaring a function or method&#x27;s package requirement. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4ed554f36f4fafb904892682148db903dfea6b54" target="_blank" rel="noopener noreferrer">4ed554f36f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/09/12/">Fri, Sep 12</a></div>
+  <div class="entry-copy">Custom-error schema version 2 can match naming errors as well as typing errors. Its first naming pattern, <code>Unbound_name</code>, can restrict matches by the missing name and by contexts such as function, constant, module, package, class, trait, or other type; version 1 typing-error rules remain supported. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0fedc4eba494f76c8dbcbb7bdcf5fda0a41205f3" target="_blank" rel="noopener noreferrer">0fedc4eba4</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/09/09/">Tue, Sep 9</a></div>
+  <div class="entry-copy">Legacy dynamic typing has been removed. The <code>.hhconfig</code> option <code>enable_sound_dynamic_type</code> no longer exists, and Hack now always uses sound-dynamic coercion, subtyping, and TAST generation. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0eb895abd4264c65057ac57409ea57b8d25f9bd9" target="_blank" rel="noopener noreferrer">0eb895abd4</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/09/10/">Wed, Sep 10</a></div>
+  <div class="entry-copy">Packages v1 and <code>&lt;&lt;__CrossPackage&gt;&gt;</code> have been removed. The <code>Eval.PackageV2</code>, <code>Eval.EnforceDeployment</code>, and <code>.hhconfig</code> <code>package_v2</code> switches are gone, and migration options formerly prefixed <code>package_v2_</code> have been renamed to <code>package_</code> equivalents, such as <code>package_exclude_patterns</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4ed554f36f4fafb904892682148db903dfea6b54" target="_blank" rel="noopener noreferrer">4ed554f36f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/09/10/">Wed, Sep 10</a></div>
+  <div class="entry-copy"><code>hh_server</code> no longer verifies by default that every <code>PACKAGES.toml</code> include path exists on the local filesystem. Malformed paths and paths assigned to multiple packages remain configuration errors. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1b6a11ff14073fd3d83ec74ee2d93acf4fc2049e" target="_blank" rel="noopener noreferrer">1b6a11ff14</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/09/09/">Tue, Sep 9</a></div>
+  <div class="entry-copy">Opt-in <code>constraint_array_index_assign</code> inference now understands writes through <code>dynamic</code> containers and string offsets, extending the constraint-based read path to more indexed assignments. The option remains disabled by default. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2aaede9d97bc27e8af3afabf7d6c42600a791ee9" target="_blank" rel="noopener noreferrer">2aaede9d97</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/bae68aa2ae0a9da55b9c24d176add478b3a01467" target="_blank" rel="noopener noreferrer">bae68aa2ae</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/09/09/">Tue, Sep 9</a></div>
+  <div class="entry-copy">Experimental <code>&lt;&lt;__Const&gt;&gt;</code> may no longer annotate an entire class, interface, trait, or enum. The staged const-object work is narrowing to explicitly const properties instead of implicitly making every property const. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ee81f08f047504f53e9a64d244d7f9d85889ee87" target="_blank" rel="noopener noreferrer">ee81f08f04</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/09/11/">Thu, Sep 11</a></div>
+  <div class="entry-copy">The expression-tree <code>??</code> and <code>?-&gt;</code> subfeatures have moved to OngoingRelease. DSLs can use null coalescing and null-safe member access without those individual opt-ins, though expression trees themselves remain experimental. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d34f379825148f8ac033674aeebc29958fc8bf32" target="_blank" rel="noopener noreferrer">d34f379825</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

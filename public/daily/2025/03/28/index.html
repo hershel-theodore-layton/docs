@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="4 noteworthy changes recorded on this day.">
+  <title>Friday, March 28, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Friday, March 28, 2025</h1>
+  <p class="post-meta">4 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/03/28/" aria-current="page">Day</a><a href="/weekly/2025/W13/">Week</a><a href="/monthly/2025/03/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2025/03/27/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2025/03/29/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy"><code>HH\mangle_unit_sha1(string $sha1 = &#x27;&#x27;, string $ext = &#x27;.php&#x27;, ?string $repo = null): string</code> and the convenience wrapper <code>HH\unit_schema(?string $repo = null): string</code> are now available to Hack. Both declarations omit an explicit context list and therefore use the default context. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2bb86e7bf2eca07af8484806fd7412ff50c99811" target="_blank" rel="noopener noreferrer">2bb86e7bf2</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">Experimental expression-tree splices now evaluate eagerly and pass every spliced expression through the DSL&#x27;s static <code>lift()</code> method before checking it as <code>Spliceable</code>. Nested-binding splices use the ordinary <code>splice()</code> visitor method with captured variable names as an optional fourth argument; the short-lived <code>macroSplice()</code> and <code>asyncMacroSplice()</code> protocol is no longer used. A capability-free DSL implementation can declare a helper such as <code>public static function lift&lt;T&gt;(DslExpression&lt;T&gt; $x)[]: DslExpression&lt;T&gt;</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f0b3d5104bf05d8635bae75ae72676e52d9d5df4" target="_blank" rel="noopener noreferrer">f0b3d5104b</a></div></li><li class="change-entry"><div class="entry-copy">Preview <code>__SimpliHack</code> IDE code actions are gated by the corrected feature name <code>simpli_hack</code>. The attribute may take a prompt string directly instead of a promptlet class pointer; clients must still implement the generated inline-chat command. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/33e4701f2ea693d3accc3599541122d4d2a5a633" target="_blank" rel="noopener noreferrer">33e4701f2e</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c6d59c68341e9a5387e2452665d7b3763c4034c6" target="_blank" rel="noopener noreferrer">c6d59c6834</a></div></li><li class="change-entry"><div class="entry-copy">Class-pointer subtyping now clears stale <code>this</code> and like-type state while simplifying covariant <code>class&lt;T&gt;</code> propositions, avoiding spurious unsimplified unions and downstream diagnostics under sound dynamic. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/733c16a23cf5bd1c70dd65da7e4b80cc2f1b652a" target="_blank" rel="noopener noreferrer">733c16a23c</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

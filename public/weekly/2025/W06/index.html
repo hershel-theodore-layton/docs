@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="7 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 6: Feb 3–Feb 9, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 6: Feb 3–Feb 9, 2025</h1>
+  <p class="post-meta">7 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/02/03/">Day</a><a href="/weekly/2025/W06/" aria-current="page">Week</a><a href="/monthly/2025/02/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2025/W05/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2025/W07/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/02/03/">Mon, Feb 3</a></div>
+  <div class="entry-copy">Under sound-dynamic typing, enum-class constant initializers now accept like-typed values without incorrectly widening the enum class&#x27;s own base type and inherited API. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a575025b82056492ddad48631279c8de459f586c" target="_blank" rel="noopener noreferrer">a575025b82</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/02/07/">Fri, Feb 7</a></div>
+  <div class="entry-copy">Type-variable solving no longer performs a redundant, occasionally incomplete <code>T &lt;: T</code> check when a union or intersection lower bound contains nothing that can be freshened. This removes false type errors for complex invariant bounds. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a37f19dfe78e08ce3732c6250adc4b18d9db7cae" target="_blank" rel="noopener noreferrer">a37f19dfe7</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/02/03/">Mon, Feb 3</a></div>
+  <div class="entry-copy">The specialized <code>&lt;&lt;__Memoize(#ICInaccessibleSpecialCase)&gt;&gt;</code> option has been renamed to <code>#NotKeyedByICAndLeakIC__DO_NOT_USE</code>. The new name makes its dangerous behavior explicit: implicit context is omitted from the cache key but remains readable, so callers must migrate the label and should avoid it unless this cache sharing is deliberate. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ad1c1555763f96b103ad016bd0dc5615ccd63598" target="_blank" rel="noopener noreferrer">ad1c155576</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/02/05/">Wed, Feb 5</a></div>
+  <div class="entry-copy">Open shape type hints now receive the same field-name validity checks as closed shapes, including when the shape is wrapped in <code>supportdyn</code>; invalid keys can no longer escape checking merely because the shape permits unknown fields. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7afeeadee34cfd1783bc5908d3bfb5a08affa05c" target="_blank" rel="noopener noreferrer">7afeeadee3</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/02/03/">Mon, Feb 3</a></div>
+  <div class="entry-copy">Experimental <code>require this as</code> constraints now permit a class to use a trait that requires that same class. Requiring a final class with <code>require this as</code> is rejected with guidance to use <code>require class</code>, which expresses the only possible implementation more accurately. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e3b0f70eb7efbbc800bb670c75e5f3456923d62e" target="_blank" rel="noopener noreferrer">e3b0f70eb7</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/02/05/">Wed, Feb 5</a></div>
+  <div class="entry-copy">Two opt-in migration settings were added for plain <code>&lt;&lt;__Memoize&gt;&gt;</code>. <code>disallow_non_annotated_memoize=true</code> rejects it unless a label such as <code>#KeyedByIC</code> is supplied, while <code>treat_non_annotated_memoize_as_kbic=true</code> interprets an unlabeled annotation as <code>#KeyedByIC</code>; the latter takes precedence when both are enabled. Their HHVM equivalents are <code>Hack.Lang.DisallowNonAnnotatedMemoize</code> and <code>Hack.Lang.TreatNonAnnotatedMemoizeAsKBIC</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c6c17213485a8d6537836d28bb695b2e79d6718f" target="_blank" rel="noopener noreferrer">c6c1721348</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ea7256253b265158b30391927d74c38f5c276d61" target="_blank" rel="noopener noreferrer">ea7256253b</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/02/07/">Fri, Feb 7</a></div>
+  <div class="entry-copy"><code>HH\TypeStructureKind</code> now exposes <code>OF_CLASS_PTR</code> and <code>OF_CLASS_OR_CLASSNAME</code>, allowing code that inspects runtime type structures to distinguish the staged <code>class&lt;T&gt;</code> and class-pointer migration representations. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a96b81787868092c5b6a14851be9f895f83faea8" target="_blank" rel="noopener noreferrer">a96b817878</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

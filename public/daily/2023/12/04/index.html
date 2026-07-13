@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="3 noteworthy changes recorded on this day.">
+  <title>Monday, December 4, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Monday, December 4, 2023</h1>
+  <p class="post-meta">3 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/12/04/" aria-current="page">Day</a><a href="/weekly/2023/W49/">Week</a><a href="/monthly/2023/12/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2023/12/02/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2023/12/05/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">Best-effort notebook support now typechecks top-level statements as the body of a synthetic async function. This restores completions and ordinary type errors around top-level <code>await</code>, and initializes the same implicit capability locals as a function instead of reporting <code>$#capability</code> as undefined. Normal Hack files still receive the general error that top-level statements are unsupported. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/aa87ac15eea44a5dae978a7b0c42a0c0e8a51511" target="_blank" rel="noopener noreferrer">aa87ac15ee</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d5c48abf18ba7c335d76cf539711363fe0cac9ba" target="_blank" rel="noopener noreferrer">d5c48abf18</a></div></li><li class="change-entry"><div class="entry-copy"><code>debugger_dump()</code> is now visible to typechecked notebook code. This removes only its <code>__PHPStdLib</code> restriction; its omitted capability list continues to mean <code>[defaults]</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8c7dfdb58b0f18db30f94d5398f034b900ab2ab2" target="_blank" rel="noopener noreferrer">8c7dfdb58b</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">A trait with the pre-stable <code>require class C</code> constraint may now call <code>parent::</code>; the call is checked against the required class&#x27;s parent just as it is for <code>require extends</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c2149e92816ed70408751c6563e996d65df0d593" target="_blank" rel="noopener noreferrer">c2149e9281</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

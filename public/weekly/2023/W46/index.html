@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="9 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 46: Nov 13–Nov 19, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 46: Nov 13–Nov 19, 2023</h1>
+  <p class="post-meta">9 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/11/13/">Day</a><a href="/weekly/2023/W46/" aria-current="page">Week</a><a href="/monthly/2023/11/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2023/W45/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2023/W47/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>7 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/11/13/">Mon, Nov 13</a></div>
+  <div class="entry-copy">Accessing an undeclared field on an open shape now uses the shape&#x27;s <code>...</code> value type after reporting the missing-field error, rather than producing an error variable that usually inferred as <code>nothing</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/54d1903493915b45ad21a8f9defc3b5f98c14afc" target="_blank" rel="noopener noreferrer">54d1903493</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/11/13/">Mon, Nov 13</a></div>
+  <div class="entry-copy">Standard math declarations now expose precise, pure signatures: most transcendental functions return <code>float</code>, predicates return <code>bool</code>, and <code>pow()</code> accepts <code>num</code> arguments. Hover, autocomplete, and downstream inference no longer see missing placeholder types for these APIs. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c53dbdd62ba63663abccc597f977b19aea682f5f" target="_blank" rel="noopener noreferrer">c53dbdd62b</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/11/13/">Mon, Nov 13</a></div>
+  <div class="entry-copy">The “Extract into variable” code action now works in top-level notebook statements. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9f0236914832342408d425410dd8c7db36a6212e" target="_blank" rel="noopener noreferrer">9f02369148</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/11/14/">Tue, Nov 14</a></div>
+  <div class="entry-copy">Hack&#x27;s LSP now defaults to pull diagnostics, allowing the editor to request current diagnostics rather than relying solely on pushed updates. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a8624fccda45c4377c44a95feac2ebf96bfb8f7c" target="_blank" rel="noopener noreferrer">a8624fccda</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/11/16/">Thu, Nov 16</a></div>
+  <div class="entry-copy"><code>nameof</code> has graduated from the <code>nameof_class</code> unstable feature and can now be used without a file-level opt-in. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/24c626761ee952c31c09e3efb49aefc42fdd3939" target="_blank" rel="noopener noreferrer">24c626761e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/11/16/">Thu, Nov 16</a></div>
+  <div class="entry-copy">The IDE can now initialize repositories that contain duplicate symbol names, consistently using the naming table&#x27;s selected winner instead of refusing to start. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/58ee67640451446bfd6e4bac627dc10581eb0e85" target="_blank" rel="noopener noreferrer">58ee676404</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/11/16/">Thu, Nov 16</a></div>
+  <div class="entry-copy"><code>hh_show()</code> output no longer corrupts the language server&#x27;s JSON-RPC stream and shut down editor features. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d2da36c1054cb6648f2baa7c55af789013bdef08" target="_blank" rel="noopener noreferrer">d2da36c105</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/11/14/">Tue, Nov 14</a></div>
+  <div class="entry-copy">The <code>pipe_await</code> feature has moved from unstable to preview status. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/524e0def3d77c9db33bd4bfc02e91459ea2fe01d" target="_blank" rel="noopener noreferrer">524e0def3d</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/11/14/">Tue, Nov 14</a></div>
+  <div class="entry-copy">Package expressions used by <code>if package</code> have also moved to preview status as package enforcement rolls out. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0b51b26aca1bbf11740e34a0b407eeea064db1af" target="_blank" rel="noopener noreferrer">0b51b26aca</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

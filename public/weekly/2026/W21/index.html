@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="6 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 21: May 18–May 24, 2026 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 21: May 18–May 24, 2026</h1>
+  <p class="post-meta">6 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2026/05/18/">Day</a><a href="/weekly/2026/W21/" aria-current="page">Week</a><a href="/monthly/2026/05/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2026/W20/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2026/W22/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Security</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/05/18/">Mon, May 18</a></div>
+  <div class="entry-copy">SOAP 1.2 array decoding now treats a parsed dimension smaller than one as one, avoiding an uninitialized-memory path in <code>to_zval_array()</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a2664c456497c830e2b14552e6fc1344704a2f79" target="_blank" rel="noopener noreferrer">a2664c4564</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Highlights</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/05/19/">Tue, May 19</a></div>
+  <div class="entry-copy"><code>hh --infer-dynamic FUNCTION</code> and <code>hh --infer-dynamic-as-data FUNCTION</code> infer candidate types for local <code>dynamic</code> values from how they are called, indexed, traversed, awaited, and refined. The server returns JSON solutions; the <code>as-data</code> form favors shapes and vectors for data-like access patterns. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e3ecb1cc099e29460bb0838042ad9612953b1da5" target="_blank" rel="noopener noreferrer">e3ecb1cc09</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5e30b94a43410fbc55c2d88085df47f3e11e708c" target="_blank" rel="noopener noreferrer">5e30b94a43</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4268ce9b9a7e2fe5de7cd8047d4435419fe4ce48" target="_blank" rel="noopener noreferrer">4268ce9b9a</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e766c827f986cf4e4e69ae3e220eb8771a1f78e1" target="_blank" rel="noopener noreferrer">e766c827f9</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/05/20/">Wed, May 20</a></div>
+  <div class="entry-copy">The VS Code debugger now loads its startup document while the sandbox source root is active. Debugger REPL expressions can therefore resolve classes and class constants from the local checkout instead of accidentally initializing the autoloader against the deployed tree. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1111b878a77df7d03e766cca41644f61f6e678c8" target="_blank" rel="noopener noreferrer">1111b878a7</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/05/19/">Tue, May 19</a></div>
+  <div class="entry-copy">HackC can now emit bytecode for unstable shape and tuple destructuring. Together with the parser and typechecker work from earlier in the month, the basic staged implementation now spans the frontend and runtime. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4c20e788819a950016c25f963a5869df43e438f2" target="_blank" rel="noopener noreferrer">4c20e78881</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/05/22/">Fri, May 22</a></div>
+  <div class="entry-copy">Preview <code>RepresentableAs</code> now refines case-type variants correctly across files and accepts structurally compatible generic and dependent types through their bounds. This fixes cases where <code>RepresentableAs&lt;int&gt;</code> or tuple-backed variants previously degraded to <code>mixed</code> or failed subtyping. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0626e4c354f28e0e3dfccb57df5f0b3a40e7513d" target="_blank" rel="noopener noreferrer">0626e4c354</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d1836b6ae644bf781691a95fc9b9c6b6ecc592af" target="_blank" rel="noopener noreferrer">d1836b6ae6</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/05/23/">Sat, May 23</a></div>
+  <div class="entry-copy"><code>ReflectionParameter::isNamed()[]</code> reports whether a parameter uses Preview named-parameter syntax. Positional parameters return <code>false</code>; named parameters, including optional ones, return <code>true</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a53d527ec7605d561ae18205427106b6436a5167" target="_blank" rel="noopener noreferrer">a53d527ec7</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

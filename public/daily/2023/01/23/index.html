@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="5 noteworthy changes recorded on this day.">
+  <title>Monday, January 23, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Monday, January 23, 2023</h1>
+  <p class="post-meta">5 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/01/23/" aria-current="page">Day</a><a href="/weekly/2023/W04/">Week</a><a href="/monthly/2023/01/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2023/01/22/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2023/01/24/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">Incremental typechecking now correctly rechecks both files involved in a duplicate module-name collision, avoiding stale module diagnostics after edits. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0021cf60bb1b473c87d903bf846604ff2e185f17" target="_blank" rel="noopener noreferrer">0021cf60bb</a></div></li><li class="change-entry"><div class="entry-copy"><code>&lt;&lt;__SoftInternal&gt;&gt;</code> is now accepted on constructor-promoted properties with <code>internal</code> visibility and rejected on ordinary constructor parameters or properties with other visibility. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2c2ac6d2d305a72a83a5d8be7eadf4830a54b892" target="_blank" rel="noopener noreferrer">2c2ac6d2d3</a></div></li><li class="change-entry"><div class="entry-copy"><code>hphp_get_stats(&#x27;units&#x27;)</code> and <code>hphp_get_stats(&#x27;funcs&#x27;)</code> can now report the number of loaded units and allocated function IDs, respectively, which is useful for auditing how much code a script loads. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f62641e738be3f6393d700c49713d47a2849f1b0" target="_blank" rel="noopener noreferrer">f62641e738</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy">The stale systemlib declaration of <code>RpcOptions::setFaultToInject()</code> has been removed, completing the earlier runtime removal. Calls now fail typechecking as well as at runtime. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/084d4228442db4dc501f5f9b8e4ad28438ddd063" target="_blank" rel="noopener noreferrer">084d422844</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">The typechecker now accepts <code>&lt;&lt;__SoftInternal&gt;&gt;</code> on enums and enum classes ahead of runtime support. Treat this as migration groundwork rather than a fully available runtime feature. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e373f377f5e4e967be658df5a75a7bb5f7160966" target="_blank" rel="noopener noreferrer">e373f377f5</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

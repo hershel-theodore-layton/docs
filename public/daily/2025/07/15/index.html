@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="5 noteworthy changes recorded on this day.">
+  <title>Tuesday, July 15, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Tuesday, July 15, 2025</h1>
+  <p class="post-meta">5 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/07/15/" aria-current="page">Day</a><a href="/weekly/2025/W29/">Week</a><a href="/monthly/2025/07/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2025/07/14/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2025/07/16/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">Implicit string-to-class conversion notices now identify whether the conversion came from an expression, a static-method call, <code>type_structure()</code>, or <code>HH\dynamic_class_meth()</code>, making class-pointer migrations easier to triage. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d6f352bc64c646333495d499068126152142878e" target="_blank" rel="noopener noreferrer">d6f352bc64</a></div></li><li class="change-entry"><div class="entry-copy">The compact-protocol readers now accept an optional trailing <code>int $version = 2</code> at runtime, and the public HHI exposes it on <code>thrift_protocol_read_compact_struct_from_string()</code>. Its omitted capability list remains implicit <code>[defaults]</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c292d2c41ec66f491bf3f7cdf78494df68d20814" target="_blank" rel="noopener noreferrer">c292d2c41e</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">Staged type-splat checking now accepts an ordinary literal lambda where a concrete expanded function signature is expected. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/16001a1770004072b91ef2fec965882833b94ef6" target="_blank" rel="noopener noreferrer">16001a1770</a></div></li><li class="change-entry"><div class="entry-copy">Polymorphic lambdas and polymorphic function hints have moved to OngoingRelease, but remain a staged feature. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/edf5bb9a63b4108ebc4adf7557b92b9fa0b8bbc7" target="_blank" rel="noopener noreferrer">edf5bb9a63</a></div></li><li class="change-entry"><div class="entry-copy">Expression trees add staged null-safe property and method access, exposed to DSL visitors through <code>visitPropertyAccessNullSafe</code> and <code>visitInstanceMethodNullSafe</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1dfaf9d7031c1e78375586b760b556bab43d669d" target="_blank" rel="noopener noreferrer">1dfaf9d703</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

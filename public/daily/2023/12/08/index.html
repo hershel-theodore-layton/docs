@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="6 noteworthy changes recorded on this day.">
+  <title>Friday, December 8, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Friday, December 8, 2023</h1>
+  <p class="post-meta">6 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/12/08/" aria-current="page">Day</a><a href="/weekly/2023/W49/">Week</a><a href="/monthly/2023/12/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2023/12/07/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2023/12/09/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">IDE completion signatures now print declared coeffects, including <code>[]</code>, named contexts, and context-polymorphic requirements, instead of silently omitting them. This is a presentation fix: callee requirements and the rule that callers need a superset of those capabilities are unchanged. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b1a1774b1f3c028843b0674f9a72ce044399f82b" target="_blank" rel="noopener noreferrer">b1a1774b1f</a></div></li><li class="change-entry"><div class="entry-copy">Override diagnostics now compare against and describe the instantiated parent member type, producing more useful explanations for failures inherited through generic parents and traits. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3c76b90da3bcc0a71fc4083aff66c240b04787a1" target="_blank" rel="noopener noreferrer">3c76b90da3</a></div></li><li class="change-entry"><div class="entry-copy">The standard hash extension now supports unkeyed BLAKE3 through APIs such as <code>hash(&#x27;blake3&#x27;, $data)</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d648c1cc26e249633de38af17e79e44eab160a6f" target="_blank" rel="noopener noreferrer">d648c1cc26</a></div></li><li class="change-entry"><div class="entry-copy">The HHI for <code>debugger_dump()</code> now gives its argument the real <code>mixed</code> type, so arbitrary values no longer need a missing-type workaround. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0c5f03837e4bf39f87a3ec412d79012579eb2425" target="_blank" rel="noopener noreferrer">0c5f03837e</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy">When a class or interface reaches the same generic interface at multiple instantiations, the winning instantiation must now be a subtype of every ignored instantiation. Invalid hierarchies report <code>Typing[4480]</code>; <code>__AllowMultipleInstantiations</code> is available as an unsafe migration escape hatch. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f61d45647352081ed1123e714c8d367f0d9e6bb3" target="_blank" rel="noopener noreferrer">f61d456473</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">The unstable <code>function_references</code> feature introduces invariant <code>HH\FunctionRef&lt;T&gt;</code> types for APIs that update a named function pointer. Named function pointers receive the wrapper type, lambdas do not, and the wrapper is erased before runtime. Where unstable features are allowed, opt in with <code>&lt;&lt;file:__EnableUnstableFeatures(&#x27;function_references&#x27;)&gt;&gt;</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5bb1ca7dcae446080cc07f058665a67bc27c66c0" target="_blank" rel="noopener noreferrer">5bb1ca7dca</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

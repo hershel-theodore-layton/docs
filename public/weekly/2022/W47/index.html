@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="8 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 47: Nov 21–Nov 27, 2022 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 47: Nov 21–Nov 27, 2022</h1>
+  <p class="post-meta">8 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2022/11/21/">Day</a><a href="/weekly/2022/W47/" aria-current="page">Week</a><a href="/monthly/2022/11/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2022/W46/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2022/W48/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>6 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/11/21/">Mon, Nov 21</a></div>
+  <div class="entry-copy">Short enum-class labels such as <code>#X</code> can now be inferred when the expected parameter type is a nullable <code>HH\EnumClass\Label</code>. Invalid labels and labels with the wrong value type continue to produce the usual diagnostics. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/153cf04a0dffdf3155782a869550c17a3c666993" target="_blank" rel="noopener noreferrer">153cf04a0d</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/11/22/">Tue, Nov 22</a></div>
+  <div class="entry-copy">Sound Dynamic checking now preserves <code>supportdyn</code> when <code>type_structure()</code> examines a type constant bounded by an open shape. It also permits valid reads and appends through nullable containers while performing the additional <code>__SupportDynamicType</code> function-body check, avoiding false-positive errors in code that has already initialized or refined the container. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e467b3f779dc4151c23a34dbf1579e454b9f4be1" target="_blank" rel="noopener noreferrer">e467b3f779</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4f3e8fbfaae00abdc636c2573a35ccf9a67519c8" target="_blank" rel="noopener noreferrer">4f3e8fbfaa</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/11/22/">Tue, Nov 22</a></div>
+  <div class="entry-copy">Hover text no longer mistakes class or namespace names beginning with <code>HH_</code> for members of the <code>HH</code> namespace. A class named <code>HH_FOO</code>, for example, is now displayed without losing its prefix. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/90d00b469a77f56822e3e8e6f6d0b27ce75c5c0b" target="_blank" rel="noopener noreferrer">90d00b469a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/11/23/">Wed, Nov 23</a></div>
+  <div class="entry-copy">Sound Dynamic function-body checking now permits mutation after a value has been refined to <code>AnyArray</code>, including flows using <code>HH\is_any_array()</code>. These writes can be safely treated as an implicit upcast to <code>dynamic</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3f1cef23f72267ea0cf7eb745edcfabc5c9a0d2d" target="_blank" rel="noopener noreferrer">3f1cef23f7</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/11/24/">Thu, Nov 24</a></div>
+  <div class="entry-copy"><code>hh_single_type_check --count-imprecise-types</code> now emits a JSON summary of inferred <code>mixed</code>, <code>nonnull</code>, and <code>dynamic</code> expression types for each function and method in a file. This can help projects identify good starting points for type-precision migrations. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/93c754fdb8b594e2fcd48b85e64a197e46eb5a67" target="_blank" rel="noopener noreferrer">93c754fdb8</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/11/27/">Sun, Nov 27</a></div>
+  <div class="entry-copy">A keyset literal in a context expecting <code>mixed</code> now retains the required <code>arraykey</code> element bound instead of being inferred as the invalid type <code>keyset&lt;mixed&gt;</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2d1262a16ef0a5bd62228df28cd1bb33183c4dc3" target="_blank" rel="noopener noreferrer">2d1262a16e</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/11/21/">Mon, Nov 21</a></div>
+  <div class="entry-copy">Type constants in enum classes have moved from unstable to preview status. The syntax remains opt-in through <code>&lt;&lt;file:__EnableUnstableFeatures(&#x27;enum_class_type_constants&#x27;)&gt;&gt;</code>, but preview status permits explicitly enabled code to run in production. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/810ea41057a11456ac8e6dc804cdfb73dcb6db21" target="_blank" rel="noopener noreferrer">810ea41057</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2022/11/23/">Wed, Nov 23</a></div>
+  <div class="entry-copy">Enforceability analysis can now resolve type-constant accesses through concrete, abstract, and inherited definitions while safely terminating on cycles. This prepares Sound Dynamic signatures for future runtime enforcement of type constants. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e92a9672ce85d125a9992806fe59776f6345c401" target="_blank" rel="noopener noreferrer">e92a9672ce</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

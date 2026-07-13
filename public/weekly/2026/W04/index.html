@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="14 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 4: Jan 19–Jan 25, 2026 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 4: Jan 19–Jan 25, 2026</h1>
+  <p class="post-meta">14 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2026/01/19/">Day</a><a href="/weekly/2026/W04/" aria-current="page">Week</a><a href="/monthly/2026/01/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2026/W03/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2026/W05/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>5 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/19/">Mon, Jan 19</a></div>
+  <div class="entry-copy"><code>HH\Lib\Str\format()</code> and <code>format_l()</code> now preserve a <code>HH\TypedFormatString&lt;SprintfFormat, Targs&gt;</code> placeholder tuple through their <code>...Targs</code> arguments, so first-class wrappers retain format-argument types without a FIXME. Both functions remain <code>[]</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/60d4799e1f824278177feb95720392c3a5e6c947" target="_blank" rel="noopener noreferrer">60d4799e1f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/19/">Mon, Jan 19</a></div>
+  <div class="entry-copy">The runtime definition of <code>HH\TypedFormatString</code> is now present alongside its HHI declaration, so runtime type structures and aliases agree with Hack&#x27;s typechecker. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e0e9fe6410d684d707e9f6d6d499c45bc528f5e0" target="_blank" rel="noopener noreferrer">e0e9fe6410</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/20/">Tue, Jan 20</a></div>
+  <div class="entry-copy">Prefixed string literals such as <code>re&#x27;/foo/&#x27;</code> are now accepted by both the runtime parser and typechecker in constant positions, including class constants, enum values, and default parameters. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d7b2ba938189a8f689a325da0f6207fb47b74145" target="_blank" rel="noopener noreferrer">d7b2ba9381</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/21/">Wed, Jan 21</a></div>
+  <div class="entry-copy">Package requirements are now modeled as declaration-level access requirements rather than as part of a callable&#x27;s function type, fixing their interaction with polymorphism. New <code>&lt;&lt;__SoftRequirePackage(&#x27;pkg&#x27;)&gt;&gt;</code> support represents a requirement on a softly included package. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4762185971a6eafcae823aac90966fef515d9ecd" target="_blank" rel="noopener noreferrer">4762185971</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/23/">Fri, Jan 23</a></div>
+  <div class="entry-copy">Document formatting no longer consumes the last nonblank line when the only required edit is removing trailing newlines. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/21784c07ada71a5ddbc065af0b5a33ba06f9d9a6" target="_blank" rel="noopener noreferrer">21784c07ad</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/19/">Mon, Jan 19</a></div>
+  <div class="entry-copy">Calls to <code>Str\format()</code> and <code>Str\format_l()</code> now type-check variadic arguments against literal placeholders instead of accepting arbitrary <code>mixed</code> arguments. Fix newly reported calls by matching each placeholder&#x27;s required type or by correcting the format string. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/60d4799e1f824278177feb95720392c3a5e6c947" target="_blank" rel="noopener noreferrer">60d4799e1f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/20/">Tue, Jan 20</a></div>
+  <div class="entry-copy"><code>hh_client --save-state</code>, <code>hh_server --save-state</code>, and <code>--gen-saved-ignore-type-errors</code> have been removed, along with the corresponding server RPC. Generate saved states with <code>hh_distc</code>, which can also run locally. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f6cc06f5b6e7ea42cc62e69395f9ce09f7b790b2" target="_blank" rel="noopener noreferrer">f6cc06f5b6</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/21/">Wed, Jan 21</a></div>
+  <div class="entry-copy">Hack now validates package-requirement annotations against the declaring file&#x27;s package and checks their relationships across overrides. A <code>&lt;&lt;__RequirePackage&gt;&gt;</code> or <code>&lt;&lt;__SoftRequirePackage&gt;&gt;</code> target must strictly include the declaring package; remove redundant same-package annotations and correct unrelated or only-soft-included targets. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4762185971a6eafcae823aac90966fef515d9ecd" target="_blank" rel="noopener noreferrer">4762185971</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>6 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/20/">Tue, Jan 20</a></div>
+  <div class="entry-copy">In the pre-stable readonly feature, <code>&lt;&lt;__IgnoreReadonlyError&gt;&gt;</code> on a callable parameter now applies to the callback&#x27;s return coercion and propagates through nested, bidirectionally typed lambdas. Readonly-returning callbacks no longer produce the suppressed mismatch at either level. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/cb714a6040c89abcfd801c03d4924fcd1afa3b3a" target="_blank" rel="noopener noreferrer">cb714a6040</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2409334bab2fbe4d122a24c9b955c0b3e33c4865" target="_blank" rel="noopener noreferrer">2409334bab</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/20/">Tue, Jan 20</a></div>
+  <div class="entry-copy">Safe Abstract and <code>__NeedsConcrete</code> now have user-facing documentation and tested warning examples ahead of the <code>needs_concrete</code> configuration&#x27;s release. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a50aed61a05af740ab6c9eafb8b7c4c366e44363" target="_blank" rel="noopener noreferrer">a50aed61a0</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/21/">Wed, Jan 21</a></div>
+  <div class="entry-copy">IDE hover text for an argument matched by a pre-stable type-splat parameter now includes the tuple index, such as <code>$args[1]</code>, instead of losing the parameter name after the first element. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a62607552a9bf0c9655aa37ef2bd5c422c7955c9" target="_blank" rel="noopener noreferrer">a62607552a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/21/">Wed, Jan 21</a></div>
+  <div class="entry-copy">Safe Abstract now rejects <code>&lt;&lt;__NeedsConcrete&gt;&gt;</code> on final classes, where the annotation would be ineffective or make the method unusable. This affects projects that explicitly enable the not-yet-released <code>needs_concrete</code> checks. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/76c06fb06cd3b9e6b743d4b4d86b37ae35f46641" target="_blank" rel="noopener noreferrer">76c06fb06c</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/22/">Thu, Jan 22</a></div>
+  <div class="entry-copy">Safe Abstract now rejects <code>&lt;&lt;__NeedsConcrete&gt;&gt;</code> on instance methods and constructors. Such members already require an instantiated—and therefore concrete—class, so the annotation is redundant. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5e8effe259768eb580bf7bad187cb122db605f7d" target="_blank" rel="noopener noreferrer">5e8effe259</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/01/23/">Fri, Jan 23</a></div>
+  <div class="entry-copy">For the pre-stable type-splat feature, IDE signature help and autocomplete now expand an instantiated parameter such as <code>...(int, int) $args</code> into indexed arguments, restoring parameter hints and enum completions for generic splat APIs. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a264781a6a128e40302fbc31bb553ac11025a1ff" target="_blank" rel="noopener noreferrer">a264781a6a</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

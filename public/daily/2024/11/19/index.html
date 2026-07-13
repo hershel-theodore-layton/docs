@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="4 noteworthy changes recorded on this day.">
+  <title>Tuesday, November 19, 2024 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Tuesday, November 19, 2024</h1>
+  <p class="post-meta">4 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/11/19/" aria-current="page">Day</a><a href="/weekly/2024/W47/">Week</a><a href="/monthly/2024/11/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2024/11/18/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2024/11/20/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy"><code>json_encode_with_error()</code> accepts the new <code>JSON_FB_FULL_FLOAT_PRECISION</code> flag to emit up to 17 decimal digits for IEEE-754 doubles instead of HHVM&#x27;s usual 14, allowing a JSON encode/decode round trip without losing representable precision. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/09c784c56724b86be0bcd7cf5a2d389502eb0f8e" target="_blank" rel="noopener noreferrer">09c784c567</a></div></li></ul></section><section class="daily-section"><h2>Security</h2><ul><li class="change-entry"><div class="entry-copy">The <code>AdminServer.EnableSSLWithPlainText</code> option has been removed; the admin server no longer multiplexes TLS onto its plaintext port. Deployments using this option must provide TLS through a separate endpoint or proxy. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f75cdaef50ffa63afa7aa65bbc5cef50dd64ce5f" target="_blank" rel="noopener noreferrer">f75cdaef50</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">Opt-in extended type-error explanations now trace values through static-property and class-constant accesses and omit the ordinary CLI error-count footer from the detailed document renderer. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7f936bbceea8b6b93ba0958e50f220f95b21df3a" target="_blank" rel="noopener noreferrer">7f936bbcee</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/944e7951ca0546fb797650f6d8233c7d6ee41a46" target="_blank" rel="noopener noreferrer">944e7951ca</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4cf06f194f34ba818ff2d9523e79fba3c278126e" target="_blank" rel="noopener noreferrer">4cf06f194f</a></div></li><li class="change-entry"><div class="entry-copy">Experimental tuple splats can now be indexed, and tuples containing a splatted tail support dynamic when both their fixed elements and tail do. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/bf35c4845697cccd0573d03760f8ed01b11941a3" target="_blank" rel="noopener noreferrer">bf35c48456</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b0df8ac78558824e39d50403e65ee4907e5a7f5c" target="_blank" rel="noopener noreferrer">b0df8ac785</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

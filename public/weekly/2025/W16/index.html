@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="7 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 16: Apr 14–Apr 20, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 16: Apr 14–Apr 20, 2025</h1>
+  <p class="post-meta">7 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/04/14/">Day</a><a href="/weekly/2025/W16/" aria-current="page">Week</a><a href="/monthly/2025/04/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2025/W15/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2025/W17/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Future Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/04/14/">Mon, Apr 14</a></div>
+  <div class="entry-copy">Packages v2 is tightening boundary checks around class-pointer migration. New compatibility flags can temporarily allow violations from <code>::class</code>, reifiable type constants, reified or erased generics, and all type constants; strict configurations can now check each of those positions. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5fa8eae5c6b3776ad59753ea25dc4c4adc93dcd4" target="_blank" rel="noopener noreferrer">5fa8eae5c6</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a5c3b02b55e4188c1ee46eda9fbbd275eb926e56" target="_blank" rel="noopener noreferrer">a5c3b02b55</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/cd924b79dd8c81391311870e8e98f959323a7c9d" target="_blank" rel="noopener noreferrer">cd924b79dd</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f11e6f2900f89b7a3080e7dbd40168753bd0bcdc" target="_blank" rel="noopener noreferrer">f11e6f2900</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/cec831da05a3ac57266aa77679249e5299edf478" target="_blank" rel="noopener noreferrer">cec831da05</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/04/15/">Tue, Apr 15</a></div>
+  <div class="entry-copy">A type and a tuple containing only that type as a splat are now treated as equivalent: <code>(...T) &lt;: T</code> and <code>T &lt;: (...T)</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/399bc551e2fa2fe99352079a0446b89808ea1a40" target="_blank" rel="noopener noreferrer">399bc551e2</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/04/17/">Thu, Apr 17</a></div>
+  <div class="entry-copy">Calls to functions with a type-splat parameter can now pass an expression splat. For example, a final <code>...$args</code> is checked by comparing the actual tuple, including its splat tail, with the parameter tuple. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/830f0a4d733fd890b8d777a23a36b920c238166c" target="_blank" rel="noopener noreferrer">830f0a4d73</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Highlights</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/04/16/">Wed, Apr 16</a></div>
+  <div class="entry-copy">HSL&#x27;s OS exception dispatch no longer uses class pointers as <code>keyset</code> string keys, eliminating a burst of implicit class-to-string notices when an OS operation throws. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a0698adb2aee2fa88c74fbf12d2346cff95c071e" target="_blank" rel="noopener noreferrer">a0698adb2a</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/04/16/">Wed, Apr 16</a></div>
+  <div class="entry-copy">The runtime implementation of reflection&#x27;s <code>getAttributeClass</code> now expects a <code>class&lt;mixed&gt;</code> and performs its own explicit classname conversion, beginning the migration away from accepting classname strings. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7a0f146cd3d36ef4bdb7ccf43df6dd7b5e19801f" target="_blank" rel="noopener noreferrer">7a0f146cd3</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/04/18/">Fri, Apr 18</a></div>
+  <div class="entry-copy">The deprecated <code>HH\asio_get_current_context_idx</code> and <code>HH\asio_get_running_in_context</code> functions have been removed from the HHI and autoimports. Use <code>HH\asio_get_current_context_depth</code> and <code>HH\asio_get_running</code> instead. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/13c7313fb12d0f514b1c008322c3a81c38c4ace5" target="_blank" rel="noopener noreferrer">13c7313fb1</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/04/19/">Sat, Apr 19</a></div>
+  <div class="entry-copy">The runtime implementations of the deprecated <code>HH\asio_get_current_context_idx</code> and <code>HH\asio_get_running_in_context</code> functions have now been removed as well. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/bb54bd8f9980086512114960194be13a63c03177" target="_blank" rel="noopener noreferrer">bb54bd8f99</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

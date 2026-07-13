@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="14 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 32: Aug 5–Aug 11, 2024 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 32: Aug 5–Aug 11, 2024</h1>
+  <p class="post-meta">14 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/08/05/">Day</a><a href="/weekly/2024/W32/" aria-current="page">Week</a><a href="/monthly/2024/08/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2024/W31/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2024/W33/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>6 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/08/05/">Mon, Aug 5</a></div>
+  <div class="entry-copy">Hack&#x27;s symbol indexer now maps constants and enumerators in generated Thrift enums back to their source definitions without crashing during indexing. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/780baf4afd5d6593a9ff7407163a3181172f01bd" target="_blank" rel="noopener noreferrer">780baf4afd</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/08/08/">Thu, Aug 8</a></div>
+  <div class="entry-copy"><code>hh_client</code> can now filter warnings with <code>-Wall</code>, <code>-Wnone</code>, <code>-W CODE</code>, <code>-Wno CODE</code>, and <code>-Wignore-files REGEXP</code>. Unknown warning codes are rejected instead of silently ignored. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5304af98f7ac15ad891435bbb668d6a033bc8c31" target="_blank" rel="noopener noreferrer">5304af98f7</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/08/08/">Thu, Aug 8</a></div>
+  <div class="entry-copy">Generated Thrift constant references can now navigate back to the original constant declaration recorded in the generated docblock. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/abc8d5d7cb23c5277213a69576955fb71b87771f" target="_blank" rel="noopener noreferrer">abc8d5d7cb</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/08/08/">Thu, Aug 8</a></div>
+  <div class="entry-copy">Function interception no longer clears the active implicit context, preserving keyed context values across intercepted calls now that the old incompatible-state mechanism is gone. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/853f87ce43cc3ec2524913d6620d0b3d07a96fa4" target="_blank" rel="noopener noreferrer">853f87ce43</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/08/09/">Fri, Aug 9</a></div>
+  <div class="entry-copy">The new <code>.hhconfig</code> option <code>warnings_default_all</code> chooses whether bare <code>hh</code> behaves like <code>hh -Wall</code> or <code>hh -Wnone</code>, including while errors are streamed. Its default is false. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d22e238d668209d831f567ef9f6cc8001ef0a718" target="_blank" rel="noopener noreferrer">d22e238d66</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/08/09/">Fri, Aug 9</a></div>
+  <div class="entry-copy">Constraint-based refinement now handles <code>~nonnull</code> tested against <code>null</code> correctly by moving <code>dynamic</code> outside only on the false side of a type switch. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/90eff9efc1511975b6f41d5b892cde56d929d97b" target="_blank" rel="noopener noreferrer">90eff9efc1</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>5 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/08/05/">Mon, Aug 5</a></div>
+  <div class="entry-copy">Awaited expression-tree splices are now rejected in conditionally executed positions, matching the ordinary restriction on conditional <code>await</code> expressions. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f1a6a2f37374c4223fb5fc6e25233d7062242fc7" target="_blank" rel="noopener noreferrer">f1a6a2f373</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/08/06/">Tue, Aug 6</a></div>
+  <div class="entry-copy">The redundant-generics check no longer reports valid generics used in pre-stable <code>as</code> or <code>super</code> type-constant refinements because of an incomplete variance calculation. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b960631c280bf4d1973114ace0dcc6215546c5a6" target="_blank" rel="noopener noreferrer">b960631c28</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/08/06/">Tue, Aug 6</a></div>
+  <div class="entry-copy">Conditional-splice detection now looks through client-language expression-tree lambdas instead of treating them like ordinary Hack lambdas, closing a path that still admitted conditionally executed awaits. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/803f1ee2f937f8ca8581994410de4a701d24d3be" target="_blank" rel="noopener noreferrer">803f1ee2f9</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/08/06/">Tue, Aug 6</a></div>
+  <div class="entry-copy">Preview case types now preserve the current enum context separately for each queued alias while HHBBC flattens nested unions, preventing unrelated class arms from being mistaken for enum members. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/63b1647cae27a29201b5d6da7dfff8c7416ac43a" target="_blank" rel="noopener noreferrer">63b1647cae</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/08/08/">Thu, Aug 8</a></div>
+  <div class="entry-copy">Mutually recursive case types no longer recurse indefinitely through localization, union simplification, and subtyping. Cycle diagnostics are also emitted by callers rather than by repeated localization passes. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f597abcaae3a2c02061945cb9b7f1e60a8809859" target="_blank" rel="noopener noreferrer">f597abcaae</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/fdc1cd065c03c628ad7711a7c3accfefb8071acc" target="_blank" rel="noopener noreferrer">fdc1cd065c</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/08/07/">Wed, Aug 7</a></div>
+  <div class="entry-copy">The unused <code>hh --format</code> command has been removed. Use <code>hackfmt</code> or editor formatting instead. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/bf408a3876f2024faef70b08e462c91f93e02330" target="_blank" rel="noopener noreferrer">bf408a3876</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/08/07/">Wed, Aug 7</a></div>
+  <div class="entry-copy">The deprecated <code>call_user_func()</code> pseudofunction is no longer declared or specially lowered by Hack. Invoke a typed callable directly. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e37946a1b108982441ac03c174c1d7ac4a167c35" target="_blank" rel="noopener noreferrer">e37946a1b1</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/08/07/">Wed, Aug 7</a></div>
+  <div class="entry-copy"><code>HH\is_vec_or_varray()</code> and <code>HH\is_dict_or_darray()</code> have been removed from Hack&#x27;s declarations and refinement logic. Use <code>is vec&lt;_&gt;</code> and <code>is dict&lt;_, _&gt;</code> checks. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/20333fb1c7123d5eb15c14ecacb8f634af4ac752" target="_blank" rel="noopener noreferrer">20333fb1c7</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

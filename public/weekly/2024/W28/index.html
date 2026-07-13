@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="6 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 28: Jul 8–Jul 14, 2024 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 28: Jul 8–Jul 14, 2024</h1>
+  <p class="post-meta">6 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/07/08/">Day</a><a href="/weekly/2024/W28/" aria-current="page">Week</a><a href="/monthly/2024/07/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2024/W27/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2024/W29/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/07/08/">Mon, Jul 8</a></div>
+  <div class="entry-copy">Samples returned by <code>HH\xenon_get_data()</code> may now include optional <code>PageletWorkers</code>, <code>XboxWorkers</code>, <code>HttpWorkers</code>, and <code>CliWorkers</code> fields in <code>HH\XenonSample</code>. Consumers should continue treating these worker-category counts as optional. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a5a47241f932d1c196685cb21831b4198de89e0d" target="_blank" rel="noopener noreferrer">a5a47241f9</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/07/10/">Wed, Jul 10</a></div>
+  <div class="entry-copy"><code>Vec\intersect()</code> now materializes a forward-only first <code>Traversable</code> before processing it. Passing a <code>Generator</code> as the first argument no longer attempts to rewind it and throw. The function remains pure (<code>[]</code>). <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ed1ef19ce5bfa1b9e5a66cc30c57fb69f12c39d5" target="_blank" rel="noopener noreferrer">ed1ef19ce5</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/07/10/">Wed, Jul 10</a></div>
+  <div class="entry-copy">The <code>Dict\from_keys()</code> documentation now links to the actual asynchronous counterpart, <code>Dict\from_keys_async()</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3c80238bdc0c8c582d16a439cb3ef12966aec175" target="_blank" rel="noopener noreferrer">3c80238bdc</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/07/09/">Tue, Jul 9</a></div>
+  <div class="entry-copy">The opt-in warning formerly reported as code 12002 is now divided into 12009 (<code>is</code> always true), 12010 (<code>is</code> always false), 12011 (<code>as</code> always succeeds), and 12012 (<code>as</code> always fails). Projects that enable these warnings should update warning-code suppressions and tooling. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d6e5153e6c6524413c73a0f88786a451a7f87367" target="_blank" rel="noopener noreferrer">d6e5153e6c</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/07/11/">Thu, Jul 11</a></div>
+  <div class="entry-copy"><code>.hhconfig</code> gained an <code>enable_experimental_stx_features</code> JSON map as the new configuration path for experimental syntax-tree features. At this stage, configured statuses must agree with the compiler&#x27;s hardcoded feature statuses; the option is rollout plumbing rather than a way to enable arbitrary syntax. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/25411fc7144a6e7d77ceb4f7906455f98a88423c" target="_blank" rel="noopener noreferrer">25411fc714</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/07/12/">Fri, Jul 12</a></div>
+  <div class="entry-copy"><code>HH\ImplicitContext</code> gained an abstract context constant, <code>CRun</code>. Its base <code>runWith()</code>, <code>runWithAsync()</code>, <code>get()</code>, and <code>exists()</code> methods now require <code>[this::CRun]</code> instead of a fixed <code>[zoned]</code> capability, and subclasses must choose a concrete requirement such as <code>const ctx CRun = [zoned]</code>. This annotation does not grant the listed capability: it is a requirement on the callee, so a caller must have a capability set that contains the subclass&#x27;s chosen <code>CRun</code>. Both <code>runWith()</code> and <code>runWithAsync()</code> additionally require the callback&#x27;s context through <code>ctx $f</code>. Choosing a narrower <code>CRun</code> relaxes the requirement on callers. The matching HHI declaration follows later in the month. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d36ec6e83214ebb7f42d6f841dec7001d4017cba" target="_blank" rel="noopener noreferrer">d36ec6e832</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="12 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 2: Jan 9–Jan 15, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 2: Jan 9–Jan 15, 2023</h1>
+  <p class="post-meta">12 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/01/09/">Day</a><a href="/weekly/2023/W02/" aria-current="page">Week</a><a href="/monthly/2023/01/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2023/W01/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2023/W03/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>11 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/01/09/">Mon, Jan 9</a></div>
+  <div class="entry-copy">Lint 5649 now warns when <code>::class</code> is taken from an <code>internal</code> class, since the resulting raw string can escape its module without visibility checks. Keep such classnames inside the declaring module or avoid producing them. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ac5b19049b7fbc232d4dd7750cfc3879141e4c85" target="_blank" rel="noopener noreferrer">ac5b19049b</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/01/09/">Mon, Jan 9</a></div>
+  <div class="entry-copy">Bundled SPL and system-class declarations now give iterator methods more precise types: implementations of <code>valid()</code> and <code>hasChildren()</code> return <code>bool</code>, while several <code>current()</code> and <code>getChildren()</code> declarations preserve their iterator type parameters. This should reduce <code>mixed</code> propagation when consuming built-in iterators. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/05841133e51759d6fd14b0d87c479f12d5f3e0e4" target="_blank" rel="noopener noreferrer">05841133e5</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3274d2043b3c7477b76e9ab4b2b1da2b7b13e5b6" target="_blank" rel="noopener noreferrer">3274d2043b</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/50314df3fa649a8e8900ac9c8591f148463eceb5" target="_blank" rel="noopener noreferrer">50314df3fa</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c58cbdbc794f00efbc1a4015eb41d5abd5b6fc7e" target="_blank" rel="noopener noreferrer">c58cbdbc79</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/01/10/">Tue, Jan 10</a></div>
+  <div class="entry-copy">Sound-dynamic checking no longer rejects assigning a value of type <code>~T</code> back to an <code>inout T</code> parameter solely because the function or method is being checked for dynamic calls. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/fab2e559dd7e8bacda3181001ef4492cb705736e" target="_blank" rel="noopener noreferrer">fab2e559dd</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/01/11/">Wed, Jan 11</a></div>
+  <div class="entry-copy">Objects created by the DOM extension now use canonical class capitalization such as <code>DOMDocument</code> and <code>DOMElement</code>. <code>DOMDocument::registerNodeClass()</code> remains case-insensitive, but reflection and <code>get_class()</code> now see the correctly cased built-in name. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/df0d4d282730014560bd50a111631b459bc6d945" target="_blank" rel="noopener noreferrer">df0d4d2827</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/01/12/">Thu, Jan 12</a></div>
+  <div class="entry-copy">Incremental typechecking now rechecks dependents when an inherited XHP attribute becomes required or a new required attribute is added. Projects should receive the same missing-attribute errors without needing a full check. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3fba663915e013e60cf802435d5715c8e1667ed0" target="_blank" rel="noopener noreferrer">3fba663915</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/01/12/">Thu, Jan 12</a></div>
+  <div class="entry-copy">The bundled HHI for <code>pcntl_waitpid()</code> now types its status parameter as <code>inout ?int</code>, and <code>Serializable::unserialize()</code> now requires a <code>string</code>. Callers of <code>pcntl_waitpid()</code> must account for the variable remaining nullable after the call. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ece17c06984d261dc222e5b627090cb1822312ce" target="_blank" rel="noopener noreferrer">ece17c0698</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/050792ec94478ea2df2e5ae9078af1ef1da2fe40" target="_blank" rel="noopener noreferrer">050792ec94</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/01/12/">Thu, Jan 12</a></div>
+  <div class="entry-copy">HHBBC now treats the <code>classname</code> field in runtime type structures as case-sensitive, matching the shape-key semantics used by type structures. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b9b1d9f2ef32c35b5d916eb3e4466a156791de53" target="_blank" rel="noopener noreferrer">b9b1d9f2ef</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/01/13/">Fri, Jan 13</a></div>
+  <div class="entry-copy">Missing and extra shape-field errors now point at the individual field, and a missing field in a shape literal offers a quick-fix that inserts a <code>TODO</code> value. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5f0a767ff1df407b782a576cae11676b2ef639a4" target="_blank" rel="noopener noreferrer">5f0a767ff1</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/bbff846c010c54a31b35cb24d5f1be07727a3d20" target="_blank" rel="noopener noreferrer">bbff846c01</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/01/13/">Fri, Jan 13</a></div>
+  <div class="entry-copy">HHI declarations now type the output of <code>parse_str()</code> and the arrays passed to <code>Collator::sort()</code> and <code>Collator::asort()</code> as <code>dynamic</code>, accurately representing their heterogeneous results. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/083c6643efdb1eb7fa4bea57811d188330b90496" target="_blank" rel="noopener noreferrer">083c6643ef</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/834a393008a212ec8c6796016dcaddc7d41e0259" target="_blank" rel="noopener noreferrer">834a393008</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/01/13/">Fri, Jan 13</a></div>
+  <div class="entry-copy">Runtime type-structure helpers now compare the <code>alias</code> and <code>kind</code> fields case-sensitively, like other shape keys. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/16acff3a5cdc8bffc35359a58ef83104c9be1018" target="_blank" rel="noopener noreferrer">16acff3a5c</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/01/13/">Fri, Jan 13</a></div>
+  <div class="entry-copy">Only the exactly cased method name <code>__construct</code> is treated as a constructor by runtime method-name checks. A differently cased method such as <code>__Construct</code> remains an ordinary method. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/114f38dff3df47bd98001b97a3fe734840e54ce3" target="_blank" rel="noopener noreferrer">114f38dff3</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/01/12/">Thu, Jan 12</a></div>
+  <div class="entry-copy">Dumping or calling <code>__debugInfo()</code> on a closure no longer reveals captured variables, parameters, or the bound <code>$this</code>; it now produces an empty dictionary. Code must not use closure debug output as a reflection API. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d2cfc9b74dbd2355c4aa3aeb82d0c18bfdccd4de" target="_blank" rel="noopener noreferrer">d2cfc9b74d</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

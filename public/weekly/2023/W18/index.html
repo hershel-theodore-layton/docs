@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="15 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 18: May 1–May 7, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 18: May 1–May 7, 2023</h1>
+  <p class="post-meta">15 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/05/01/">Day</a><a href="/weekly/2023/W18/" aria-current="page">Week</a><a href="/monthly/2023/05/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2023/W17/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2023/W19/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>12 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/05/01/">Mon, May 1</a></div>
+  <div class="entry-copy">Find-references requests from the IDE daemon now recompute results for open files, so unsaved edits are reflected instead of returning only the server&#x27;s on-disk view. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/36d3d923ee2b95ce9ce09aa4cb0b61db67e496c9" target="_blank" rel="noopener noreferrer">36d3d923ee</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/05/02/">Tue, May 2</a></div>
+  <div class="entry-copy"><code>Shapes::toDict()</code> and <code>Shapes::toArray()</code> now preserve the unknown-field type of open <code>supportdyn</code> shapes instead of losing that information during conversion. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ae1529d00758116f76e9bee588e26bd420635925" target="_blank" rel="noopener noreferrer">ae1529d007</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/05/02/">Tue, May 2</a></div>
+  <div class="entry-copy">Package-aware function subtyping now reports mismatched <code>__CrossPackage</code> requirements in method overrides. A function restricted to one package can only override a function with the same package restriction, while an unrestricted function remains a valid supertype. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a9ec0570789ee1318c611574c5c0fe3e72d64fc1" target="_blank" rel="noopener noreferrer">a9ec057078</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/05/02/">Tue, May 2</a></div>
+  <div class="entry-copy">Uncaught exceptions from <code>hh check</code> once again print their call stack, making failed typechecker invocations actionable without additional logging. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/21d9be5ae9075717c216d07c93c141c2da84f331" target="_blank" rel="noopener noreferrer">21d9be5ae9</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/05/03/">Wed, May 3</a></div>
+  <div class="entry-copy">HHVM gained experimental execution recording and replay support, including <code>hhvm_wrapper.php --record</code> and <code>--replay</code> modes for reproducing requests and native-call results. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ef45cfd53823cfa1c0930e3b4d6f448223c429bf" target="_blank" rel="noopener noreferrer">ef45cfd538</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/05/03/">Wed, May 3</a></div>
+  <div class="entry-copy">When the typechecker is occupied while a client connects, <code>hh_client</code> now reports <code>hh_server is busy [connecting]</code> rather than appearing to hang without context. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c49bbae52f1185b28af7d21c035e202b596e4731" target="_blank" rel="noopener noreferrer">c49bbae52f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/05/04/">Thu, May 4</a></div>
+  <div class="entry-copy">Sound Dynamic subtyping now prefers the concrete type mismatch over a secondary <code>dynamic</code> mismatch, and implicit-pessimisation failures choose more useful union branches. Error messages should point closer to the actual incompatible type. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5e765d67945cd47787e33a158a61b418fc96fc98" target="_blank" rel="noopener noreferrer">5e765d6794</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2523b6b4f0f338cb31da8ea9f100ecb9c2758f8f" target="_blank" rel="noopener noreferrer">2523b6b4f0</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/05/04/">Thu, May 4</a></div>
+  <div class="entry-copy">Rename now updates references in unsaved open files instead of relying exclusively on positions from the on-disk <code>hh_server</code> state. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8f8391cdbdda8eea4d54f7b2944ca6b750670b8d" target="_blank" rel="noopener noreferrer">8f8391cdbd</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/05/04/">Thu, May 4</a></div>
+  <div class="entry-copy">The debugger now handles captures from both current Hack lambdas and older closure forms, and its REPL can evaluate async expressions and join the resulting wait handle. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/cf298fe57984779c39e09fc89f7d6f700dde12f5" target="_blank" rel="noopener noreferrer">cf298fe579</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/66be6e72753baa2579511a18cb573b3582c9c6b0" target="_blank" rel="noopener noreferrer">66be6e7275</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/05/05/">Fri, May 5</a></div>
+  <div class="entry-copy">Sound Dynamic&#x27;s second function-body check is skipped when the ordinary check already produced errors, avoiding duplicate or near-duplicate diagnostics. Additional subtype failures also choose more specific branches and no longer point into <code>supportdyn.hhi</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/29fb0882d80f3153a93f5e050031758edb6b4dfe" target="_blank" rel="noopener noreferrer">29fb0882d8</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/055331f66f2846ffe9d84ebcc3fac87e0c48bd2a" target="_blank" rel="noopener noreferrer">055331f66f</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/bf529b35170739703bcd8c645777a746b15d88a7" target="_blank" rel="noopener noreferrer">bf529b3517</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/05/05/">Fri, May 5</a></div>
+  <div class="entry-copy">Typechecker exit records now include the exception message and call stack for an uncaught server failure, improving diagnostics from wrappers and monitoring systems. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9899d086e99ffbf6ba9f9b946c43ae32f071ac90" target="_blank" rel="noopener noreferrer">9899d086e9</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/05/06/">Sat, May 6</a></div>
+  <div class="entry-copy">Equality comparisons involving <code>num</code> or <code>arraykey</code> no longer receive the incorrect diagnostic that the comparison can never succeed. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7c35e3b3c34f52030f391f696cba0efd84d3c952" target="_blank" rel="noopener noreferrer">7c35e3b3c3</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Security</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/05/02/">Tue, May 2</a></div>
+  <div class="entry-copy">Multipart upload handling now uses overflow-safe size calculations. This fixes an integer overflow through which a sufficiently large multibyte upload could cause an out-of-bounds write; deployments accepting uploads should update promptly. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6c8ad0530c73abcd38f02a954be7e84e6807d2e9" target="_blank" rel="noopener noreferrer">6c8ad0530c</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/05/04/">Thu, May 4</a></div>
+  <div class="entry-copy">Enum supertyping is now fully released and its <code>.hhconfig</code> release flag has been removed. Enum <code>includes</code> declarations are checked unconditionally. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/910382a92e75b4d927caf7f44d132464b4737665" target="_blank" rel="noopener noreferrer">910382a92e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/05/06/">Sat, May 6</a></div>
+  <div class="entry-copy"><code>HH\autoload_get_paths()</code> has been removed. Applications can no longer enumerate every file known to the native autoloader through this API. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/fc420c2e7d361ace2c8459193d3194eeec3b316b" target="_blank" rel="noopener noreferrer">fc420c2e7d</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="4 noteworthy changes recorded on this day.">
+  <title>Friday, October 3, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Friday, October 3, 2025</h1>
+  <p class="post-meta">4 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/10/03/" aria-current="page">Day</a><a href="/weekly/2025/W40/">Week</a><a href="/monthly/2025/10/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2025/10/02/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2025/10/06/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">HHVM now provides <code>openssl_x509_get_upn(mixed): string</code> for extracting a Microsoft User Principal Name from an X.509 certificate&#x27;s subject-alt names. It throws <code>OpenSSLException</code> when the certificate cannot be parsed or has no valid UPN; its omitted capability brackets mean <code>[defaults]</code>, and the public HHI follows on October 14. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/fd5f758c2ccad8d7ccb1efdb02fcb4c95275e133" target="_blank" rel="noopener noreferrer">fd5f758c2c</a></div></li><li class="change-entry"><div class="entry-copy">The x86 JIT now preserves native stack alignment while filling omitted default arguments, avoiding ABI-unsafe calls into the <code>uninitDefaultArgs</code> helper. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/751e89833eee3ce0a87c0f37141387111d5412dc" target="_blank" rel="noopener noreferrer">751e89833e</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy">The Watchman extension has removed <code>HH\watchman_query()</code>, <code>HH\watchman_subscribe()</code>, <code>HH\watchman_check_sub()</code>, <code>HH\watchman_sync_sub()</code>, and <code>HH\watchman_unsubscribe()</code>. Projects calling these APIs need to replace them; <code>HH\watchman_run()</code> and <code>HH\ext_watchman_version()</code> remain. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b61ee2ea1b4eb89d90927f3f57b5118fdd783523" target="_blank" rel="noopener noreferrer">b61ee2ea1b</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">Violating the staged <code>__NeedsConcrete</code> override rule now produces Warn[12027] instead of Typing[4487]. This permits hierarchy-by-hierarchy adoption while continuing to flag an override that imposes a stricter concreteness requirement than its parent. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9ec3de934231c5d6e81db2e73b723443e2f4c400" target="_blank" rel="noopener noreferrer">9ec3de9342</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

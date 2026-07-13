@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="32 noteworthy changes, organized by the source changelog sections.">
+  <title>January 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/" aria-current="page">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Monthly digest</p>
+  <h1 class="post-title">January 2025</h1>
+  <p class="post-meta">32 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/01/01/">Day</a><a href="/weekly/2025/W01/">Week</a><a href="/monthly/2025/01/" aria-current="page">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/monthly/2024/12/"><span aria-hidden="true">←</span><span>Previous month</span></a><a class="period-button next" rel="next" href="/monthly/2025/02/"><span aria-hidden="true">→</span><span>Next month</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>18 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W01/">W01</a><span aria-hidden="true"> · </span><a href="/daily/2025/01/02/">Jan 2</a></div>
+  <div class="entry-copy">The new <code>HH\is_cli_server_mode()</code> builtin reports whether the current request is proxying filesystem and system calls through HHVM&#x27;s CLI-server protocol. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e8893477e1ba064523ae6de0dcc4949a5aba7e2f" target="_blank" rel="noopener noreferrer">e8893477e1</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W01/">W01</a><span aria-hidden="true"> · </span><a href="/daily/2025/01/03/">Jan 3</a></div>
+  <div class="entry-copy">The redundant-generics check no longer reports parameters whose replacement would require a non-denotable intersection type, including intersections hidden beneath <code>supportdyn</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/caec562dfdff476587f0c65c9c18d3774a9af3fb" target="_blank" rel="noopener noreferrer">caec562dfd</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W02/">W02</a><span aria-hidden="true"> · </span><a href="/daily/2025/01/09/">Jan 9</a></div>
+  <div class="entry-copy"><code>HH\XReqSync</code> now records the next waiter as a mutex&#x27;s owner before waking it, fixing lock handoff failures when several requests contend for the same mutex. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9e251bb7ae78e493eb305d652a6eb8940550d535" target="_blank" rel="noopener noreferrer">9e251bb7ae</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W02/">W02</a><span aria-hidden="true"> · </span><a href="/daily/2025/01/10/">Jan 10</a></div>
+  <div class="entry-copy">&quot;Extract into method&quot; now strips implicit like types throughout generated parameter and return types, avoiding suggestions containing source-level <code>~T</code> hints that users did not write. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ae9f4200f38af03d0ea2a2c914e734f9a61207e6" target="_blank" rel="noopener noreferrer">ae9f4200f3</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W03/">W03</a><span aria-hidden="true"> · </span><a href="/daily/2025/01/13/">Jan 13</a></div>
+  <div class="entry-copy">Non-repo-authoritative HHVM gained <code>HH\SimpleLock</code>, a named cross-request mutex API with asynchronous <code>lock()</code>, immediate <code>try_lock()</code>, <code>unlock()</code>, and a timeout helper. Locks abandoned at request shutdown are released automatically. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ea4402743440bab143ec0a6555d8ada69ecf452f" target="_blank" rel="noopener noreferrer">ea44027434</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W03/">W03</a><span aria-hidden="true"> · </span><a href="/daily/2025/01/17/">Jan 17</a></div>
+  <div class="entry-copy">The new <code>HH\gc_is_conservative()</code> builtin reports whether HHVM&#x27;s garbage collector is operating without any conservative type scanners. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3f6dfef71e34c6ab24cc3609ac60783b4b9e4632" target="_blank" rel="noopener noreferrer">3f6dfef71e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W04/">W04</a><span aria-hidden="true"> · </span><a href="/daily/2025/01/20/">Jan 20</a></div>
+  <div class="entry-copy">Hack&#x27;s language server now implements the standard <code>$/setTrace</code> notification in addition to VS Code&#x27;s older <code>$/setTraceNotification</code>, allowing clients to toggle verbose protocol tracing without receiving a method-not-found response. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6ff6878cbde986338b8517af0f4d0157f8c937c4" target="_blank" rel="noopener noreferrer">6ff6878cbd</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W04/">W04</a><span aria-hidden="true"> · </span><a href="/daily/2025/01/20/">Jan 20</a></div>
+  <div class="entry-copy">The Hack server gained an exhaustive folded-declaration invalidation mode for saved files, favoring correctness when stale folded declarations would otherwise make IDE results disagree with the CLI. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7ef88171965358fcc7c8aab17ea8e034c9b9ca01" target="_blank" rel="noopener noreferrer">7ef8817196</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W04/">W04</a><span aria-hidden="true"> · </span><a href="/daily/2025/01/21/">Jan 21</a></div>
+  <div class="entry-copy">Timezone data was updated to the 2025a release, including newly added historical transitions that can change results for old timestamps. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e49a2d45dcc7b26c91a269bca75bc538974ffbc6" target="_blank" rel="noopener noreferrer">e49a2d45dc</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W04/">W04</a><span aria-hidden="true"> · </span><a href="/daily/2025/01/21/">Jan 21</a></div>
+  <div class="entry-copy">Overrides of ordinary class methods marked <code>&lt;&lt;__NoAutoLikes&gt;&gt;</code> now inherit that behavior automatically, so their return types are not implicitly widened to like types. Interface implementations still need their own annotation. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7a353344ec39816e94ebcdf585854e57f71a6532" target="_blank" rel="noopener noreferrer">7a353344ec</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W04/">W04</a><span aria-hidden="true"> · </span><a href="/daily/2025/01/23/">Jan 23</a></div>
+  <div class="entry-copy">Classes using the same trait through many branches of a trait diamond no longer count duplicate imported methods toward HHVM&#x27;s 65,535-method limit, avoiding a false &quot;Class has more than 65,535 methods&quot; failure. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2566b4e7d8b52ff200ea9b93434a89e891435332" target="_blank" rel="noopener noreferrer">2566b4e7d8</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W04/">W04</a><span aria-hidden="true"> · </span><a href="/daily/2025/01/24/">Jan 24</a></div>
+  <div class="entry-copy">HHVM now reports a clear error when a non-default <code>Eval.PackagesTomlFileName</code> cannot be opened instead of silently continuing with an empty package specification. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f9035ba6005d53b4268c07f4747618c9d13abab0" target="_blank" rel="noopener noreferrer">f9035ba600</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W04/">W04</a><span aria-hidden="true"> · </span><a href="/daily/2025/01/24/">Jan 24</a></div>
+  <div class="entry-copy">The unsurfaced-exception lint no longer produces false positives for exception variables captured by lambdas during the dynamic TAST pass. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/527a1dc8e73e7e1d0015d8e5d650c760f0062731" target="_blank" rel="noopener noreferrer">527a1dc8e7</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W04/">W04</a><span aria-hidden="true"> · </span><a href="/daily/2025/01/24/">Jan 24</a></div>
+  <div class="entry-copy"><code>HH\SimpleLock\is_held()</code> reports whether any request currently holds a named SimpleLock. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a2466c5ee3b3141d6d5e664fe029f3b09d9d5a73" target="_blank" rel="noopener noreferrer">a2466c5ee3</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W04/">W04</a><span aria-hidden="true"> · </span><a href="/daily/2025/01/24/">Jan 24</a></div>
+  <div class="entry-copy">The new <code>#ICInaccessibleSpecialCase</code> memoization option allows specialized functions to read implicit context without sharding their memo cache by it. Like <code>#MakeICInaccessible</code>, it is restricted to <code>defaults</code>, <code>leak_safe_shallow</code>, or <code>leak_safe_local</code> contexts. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2e164dc8db462025e2f33fcef24f7b537398d690" target="_blank" rel="noopener noreferrer">2e164dc8db</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W05/">W05</a><span aria-hidden="true"> · </span><a href="/daily/2025/01/28/">Jan 28</a></div>
+  <div class="entry-copy">HHVM now carries complete property type-constraint intersections through runtime enforcement and JIT analysis, so generic upper bounds are considered consistently—including for compound property assignments—instead of consulting only the primary hint. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4e1ae2c191eaeb606bc0508855edd5d1352a85da" target="_blank" rel="noopener noreferrer">4e1ae2c191</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/938742f7ec87f49e1afed3fdc7594239888c0b95" target="_blank" rel="noopener noreferrer">938742f7ec</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0e0fd266cf55fe827868e6dab2b9df8a286c84fc" target="_blank" rel="noopener noreferrer">0e0fd266cf</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e95d7acaf4226ae846c11b539f509fc01102a86a" target="_blank" rel="noopener noreferrer">e95d7acaf4</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W05/">W05</a><span aria-hidden="true"> · </span><a href="/daily/2025/01/29/">Jan 29</a></div>
+  <div class="entry-copy">Warning filtering works again when error streaming delegates a full check to <code>hh_distc</code>; streamed worker batches are now filtered as they arrive and carry the updated warning saved state through the distributed check. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/732a576117b7c97612c089989342b02f26905a26" target="_blank" rel="noopener noreferrer">732a576117</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W05/">W05</a><span aria-hidden="true"> · </span><a href="/daily/2025/01/30/">Jan 30</a></div>
+  <div class="entry-copy">The VS Code debugger now sets breakpoints on every non-contiguous bytecode block mapped to a source line, fixing missed stops when compiler optimizations duplicate a loop body. Some multiline expressions can consequently produce more than one breakpoint. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2b8ada7314da791c8cea0284f6a1401faf376d10" target="_blank" rel="noopener noreferrer">2b8ada7314</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W02/">W02</a><span aria-hidden="true"> · </span><a href="/daily/2025/01/07/">Jan 7</a></div>
+  <div class="entry-copy"><code>DateTimeZone::listIdentifiers()</code> and <code>DateTimeZone::listAbbreviations()</code> now use the default impure context instead of <code>[]</code>. This corrects their dependence on external timezone data, but means they can no longer be called from a pure context. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f073bea3f4364e1f2788d011f05c3fd31586a065" target="_blank" rel="noopener noreferrer">f073bea3f4</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W05/">W05</a><span aria-hidden="true"> · </span><a href="/daily/2025/01/31/">Jan 31</a></div>
+  <div class="entry-copy">The <code>report_pos_from_reason</code> typechecker option has been removed. Diagnostics no longer append <code>[FROM REASON INFO]</code>, and positions derived from type reasons no longer receive special treatment that prevented <code>HH_FIXME</code> or <code>HH_IGNORE_ERROR</code> suppression. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/485b19043aeb9b126a0923b7065eeb783a561555" target="_blank" rel="noopener noreferrer">485b19043a</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>11 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W02/">W02</a><span aria-hidden="true"> · </span><a href="/daily/2025/01/09/">Jan 9</a></div>
+  <div class="entry-copy">Experimental recursive case types can now satisfy recursively structured <code>as</code> bounds such as <code>shape(?&#x27;a&#x27; =&gt; nonnull)</code> without the cycle detector prematurely replacing the type with <code>mixed</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/72b236ce34c0c57e5cb91d7c49fd31c23c768f5d" target="_blank" rel="noopener noreferrer">72b236ce34</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W03/">W03</a><span aria-hidden="true"> · </span><a href="/daily/2025/01/13/">Jan 13</a></div>
+  <div class="entry-copy">Packages v2 now requires every package&#x27;s <code>includes</code> and <code>soft_includes</code> sets to contain their full transitive closure, and reports all missing nested packages in one configuration error. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1f4c78a1a3bdac088db188db2d9e43ca258f61f9" target="_blank" rel="noopener noreferrer">1f4c78a1a3</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W03/">W03</a><span aria-hidden="true"> · </span><a href="/daily/2025/01/16/">Jan 16</a></div>
+  <div class="entry-copy">Open tuple hints with optional, variadic, or splat elements are now rejected in <code>is</code> and <code>as</code> expressions because HHVM does not yet support enforcing those runtime checks. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/591fe0ae7216d80e889da9d4e1e87dae0059b4a1" target="_blank" rel="noopener noreferrer">591fe0ae72</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W03/">W03</a><span aria-hidden="true"> · </span><a href="/daily/2025/01/17/">Jan 17</a></div>
+  <div class="entry-copy">Runtime type structures for open tuples now preserve required elements in <code>elem_types</code>, optional elements in <code>optional_elem_types</code>, and a variadic tail in <code>variadic_type</code>. Absent optional or variadic parts omit their corresponding fields. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4c9affb24d07594b72290efcb5718b7c85e5c1fb" target="_blank" rel="noopener noreferrer">4c9affb24d</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W03/">W03</a><span aria-hidden="true"> · </span><a href="/daily/2025/01/17/">Jan 17</a></div>
+  <div class="entry-copy">A type used after the experimental splat operator must now be known to be a tuple—typically through a bound such as <code>T as (mixed...)</code>. Unconstrained generics used in tuple or function-type splats now produce a constraint error. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/700abe325eeba6f130db69e369490353bcec0db8" target="_blank" rel="noopener noreferrer">700abe325e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W03/">W03</a><span aria-hidden="true"> · </span><a href="/daily/2025/01/17/">Jan 17</a></div>
+  <div class="entry-copy">Recursive case-type runtime handling now preserves generic arguments, resolves cycles involving aliases more reliably, and refuses recursive <code>is</code>/<code>as</code> enforcement that could recurse without bound. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0d7f21793a1ae7e40a0c728ee5996bb664324324" target="_blank" rel="noopener noreferrer">0d7f21793a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W04/">W04</a><span aria-hidden="true"> · </span><a href="/daily/2025/01/21/">Jan 21</a></div>
+  <div class="entry-copy">Expression-tree lambdas now reject a bare nested splice such as <code>${$x ==&gt; ${$x}}</code>; splicing is only valid while the parser is directly inside an expression-tree literal. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d796173ae42e73523966f7b487f11b4253c915aa" target="_blank" rel="noopener noreferrer">d796173ae4</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W04/">W04</a><span aria-hidden="true"> · </span><a href="/daily/2025/01/23/">Jan 23</a></div>
+  <div class="entry-copy">JSON-encoded type information for open tuples now carries <code>optional_args</code>, <code>variadic_arg</code>, or <code>splat_arg</code> instead of collapsing every open tail into <code>fields_known: false</code>. This improves structured type-error and IDE consumers. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ade6c781178e4a0e0d413a419c643ede4f885edf" target="_blank" rel="noopener noreferrer">ade6c78117</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W05/">W05</a><span aria-hidden="true"> · </span><a href="/daily/2025/01/28/">Jan 28</a></div>
+  <div class="entry-copy">Trait <code>require class</code> and experimental <code>require this as</code> declarations now share one constraint representation. Checks that previously considered only <code>require class</code> now also honor <code>require this as</code>, including inherited constraint handling. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0a38aa99be44e6e7013ea5d74c8c67d7dc0ef361" target="_blank" rel="noopener noreferrer">0a38aa99be</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W05/">W05</a><span aria-hidden="true"> · </span><a href="/daily/2025/01/30/">Jan 30</a></div>
+  <div class="entry-copy">Expression trees gained Preview support for shape literals and shape-typed parameters behind <code>expression_tree_shape_creation</code>. DSLs can virtualize shape construction with proper required, optional, open-field, and nested-shape checking, but shape reads and writes are not included yet. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0783044e49361c3592e230b029a478da060d2b9d" target="_blank" rel="noopener noreferrer">0783044e49</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5f4cd41fcf060f7198bcf8c32bd1a3bdb6fe4da9" target="_blank" rel="noopener noreferrer">5f4cd41fcf</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W05/">W05</a><span aria-hidden="true"> · </span><a href="/daily/2025/01/30/">Jan 30</a></div>
+  <div class="entry-copy">Hack&#x27;s <code>TypeStructure&lt;T&gt;</code> shape now exposes optional <code>optional_elem_types</code> and <code>variadic_type</code> fields for tuple types, matching the runtime representation added earlier in the month. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/84b51c4165ce3dab0f1496cdcb5237a7ba835418" target="_blank" rel="noopener noreferrer">84b51c4165</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Security</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W02/">W02</a><span aria-hidden="true"> · </span><a href="/daily/2025/01/10/">Jan 10</a></div>
+  <div class="entry-copy">Async MySQL certificate callbacks now hold a weak reference to their operation and fail safely if a cancelled or timed-out connection has already released it, preventing a use-after-free during certificate validation. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/693eb7f80edaa891bbaf58753dcec169dfe80f51" target="_blank" rel="noopener noreferrer">693eb7f80e</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

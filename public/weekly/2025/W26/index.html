@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="12 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 26: Jun 23–Jun 29, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 26: Jun 23–Jun 29, 2025</h1>
+  <p class="post-meta">12 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/06/23/">Day</a><a href="/weekly/2025/W26/" aria-current="page">Week</a><a href="/monthly/2025/06/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2025/W25/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2025/W27/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>6 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/06/23/">Mon, Jun 23</a></div>
+  <div class="entry-copy">Package-boundary checking no longer reports violations for an enum or enum-class base type or constraint type, matching the fact that those hints do not create symbol-reference dependencies. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d238628006f6acf4b8f7c85a403b3ff40925b200" target="_blank" rel="noopener noreferrer">d238628006</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/06/24/">Tue, Jun 24</a></div>
+  <div class="entry-copy">Class-pointer results from <code>HH\Facts\subtypes()</code>, <code>transitive_subtypes()</code>, and <code>supertypes()</code> are now sorted before being returned, producing deterministic ordering in both interpreter and JIT modes. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ca7697d7107e68de97f5032820ed7efb49226f0d" target="_blank" rel="noopener noreferrer">ca7697d710</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/06/25/">Wed, Jun 25</a></div>
+  <div class="entry-copy">Notebook-to-Hack conversion no longer generates an empty async entry-point function when the notebook has no top-level statements. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9a43d12c8da50334def5f98819e50cb27f4d7d11" target="_blank" rel="noopener noreferrer">9a43d12c8d</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/06/25/">Wed, Jun 25</a></div>
+  <div class="entry-copy">Development builds of HHVM no longer abort during process shutdown after asynchronous writes through HSL&#x27;s standard file descriptors. Descriptor sweeping is now a no-op because request shutdown already closes the underlying built-in files. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f32e4281d804f55bca2ff4f877b92c7914529626" target="_blank" rel="noopener noreferrer">f32e4281d8</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/06/27/">Fri, Jun 27</a></div>
+  <div class="entry-copy">Redeclaring a non-const static property in a subclass now produces Warn[12021]. The declarations have separate runtime storage rather than overriding one another, so updates through the parent and child names do not share state. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0c9f90144e0a9d470b05bc31071290e62757a5e8" target="_blank" rel="noopener noreferrer">0c9f90144e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/06/27/">Fri, Jun 27</a></div>
+  <div class="entry-copy"><code>HH\serialize_with_options()</code> accepts <code>shape(&#x27;keepClasses&#x27; =&gt; true)</code>. With the option enabled, class and lazy-class values are emitted with HHVM&#x27;s <code>l:</code> representation and deserialize back to class values; the default remains string conversion. The function has no explicit capability list, so it continues to use the default capability set. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/94e3085910ce294c881768cb4f1aa3918b8dfda6" target="_blank" rel="noopener noreferrer">94e3085910</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/06/23/">Mon, Jun 23</a></div>
+  <div class="entry-copy">Direct static property access through a trait name is now rejected with Typing[4497]. A trait and each class that uses it have distinct static storage, so access the property through the using class or through <code>self::</code>/<code>static::</code> as appropriate. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4efd0792f27ed27a428765894848524b9758d0dc" target="_blank" rel="noopener noreferrer">4efd0792f2</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/06/25/">Wed, Jun 25</a></div>
+  <div class="entry-copy">The HHI signatures for <code>HH\Facts\subtypes&lt;T&gt;()</code> and <code>transitive_subtypes&lt;T&gt;()</code> now return <code>vec&lt;class&lt;T&gt;&gt;</code>; <code>supertypes()</code> returns <code>vec&lt;class&lt;mixed&gt;&gt;</code>. This exposes the class-pointer runtime change to static typing while preserving subtype information and the APIs&#x27; <code>[]</code> capability lists. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d81dc7b2f933a54bd61a0b518f641d8d83d35109" target="_blank" rel="noopener noreferrer">d81dc7b2f9</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/06/26/">Thu, Jun 26</a></div>
+  <div class="entry-copy">The unused <code>.hhconfig</code> key <code>log_exhaustivity_check</code> has been removed. Deleting it does not change switch-exhaustiveness checking because the option had no effect. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/cd143bb3eb320888977b22c05910434f1e19b4e7" target="_blank" rel="noopener noreferrer">cd143bb3eb</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/06/24/">Tue, Jun 24</a></div>
+  <div class="entry-copy">The <code>protected internal</code> member visibility has moved from Unstable to Preview, and HackC now preserves it through bytecode IR and assembly. It remains a staged feature rather than a generally released visibility mode. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e83acda317d5a8e26cf036ff79696193b9e91579" target="_blank" rel="noopener noreferrer">e83acda317</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/346b857de94fb8a3d2d476db3a8205cd8a9d75cc" target="_blank" rel="noopener noreferrer">346b857de9</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/06/27/">Fri, Jun 27</a></div>
+  <div class="entry-copy">Staged polymorphic function-pointer typing lets references such as <code>C::genericMethod&lt;&gt;</code> retain a rank-2 polymorphic function type instead of fixing fresh type variables after their first use. The extracted type accounts for method and class generics, <code>where</code> constraints, variance-sensitive <code>this</code>, and abstract type constants, allowing one reference to be used at multiple compatible instantiations. This typing is not yet the default. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2ff573c3b3e26515bd8661d1111cce3db593054e" target="_blank" rel="noopener noreferrer">2ff573c3b3</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/06/28/">Sat, Jun 28</a></div>
+  <div class="entry-copy">Under the staged polymorphic function-pointer typing, <code>meth_caller()</code> gives polymorphic instance methods a rank-2 polymorphic function type, including an implicit first parameter representing the receiver&#x27;s <code>this</code> type. This prevents one use from prematurely fixing method or receiver type variables and removes false errors when the same caller is used at compatible instantiations. This typing is not yet the default. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b3fb0d692484af3e687552489d93e269febafe65" target="_blank" rel="noopener noreferrer">b3fb0d6924</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

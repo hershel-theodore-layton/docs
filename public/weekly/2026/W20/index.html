@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="14 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 20: May 11–May 17, 2026 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 20: May 11–May 17, 2026</h1>
+  <p class="post-meta">14 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2026/05/11/">Day</a><a href="/weekly/2026/W20/" aria-current="page">Week</a><a href="/monthly/2026/05/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2026/W19/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2026/W21/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>4 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/05/11/">Mon, May 11</a></div>
+  <div class="entry-copy">Date/time APIs now expose substantially more precise types: <code>DateTime::add()</code>, <code>sub()</code>, and <code>setTimezone()</code> return <code>DateTime</code>; <code>diff()</code> returns <code>DateInterval</code>; <code>DateTimeZone::getOffset()</code> returns <code>int</code>; and the corresponding procedural helpers no longer return <code>mixed</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6d919856b8d02ae7d662eb9b4c5b796e326b1de8" target="_blank" rel="noopener noreferrer">6d919856b8</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/05/13/">Wed, May 13</a></div>
+  <div class="entry-copy">Package lints 5655 and 5656 now report cross-boundary references even when the caller has <code>__SoftRequirePackage</code> for the target&#x27;s original package. Soft loading does not make an override edge or class-pointer edge structurally valid. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/34397692a579b37cb4044b337e5f3b4b2750deed" target="_blank" rel="noopener noreferrer">34397692a5</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/05/13/">Wed, May 13</a></div>
+  <div class="entry-copy"><code>AsyncMysqlConnection::getSslVersion()</code> returns the TLS version negotiated for the connection, or an empty string when unavailable. Its declaration omits a capability list and therefore requires <code>[defaults]</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6d84b0bce898b277db74064faa7655e459367562" target="_blank" rel="noopener noreferrer">6d84b0bce8</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/05/14/">Thu, May 14</a></div>
+  <div class="entry-copy">When a <code>foreach</code> target attempts to reassign a variable used by a dependent capability such as <code>[$v::C]</code>, error 4404 now points at the offending target variable rather than the entire <code>foreach</code> expression. This is a position fix; it does not change the capability requirement. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/584dc969b83d5b336d003988b8c6abcead7e5874" target="_blank" rel="noopener noreferrer">584dc969b8</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/05/11/">Mon, May 11</a></div>
+  <div class="entry-copy"><code>DateTime::diff()</code> now accepts <code>DateTimeInterface</code> rather than <code>mixed</code>. Calls whose argument is still statically <code>mixed</code> must refine or validate it before calling; this aligns Hack&#x27;s signature with the runtime check that already existed. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6d919856b8d02ae7d662eb9b4c5b796e326b1de8" target="_blank" rel="noopener noreferrer">6d919856b8</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/05/13/">Wed, May 13</a></div>
+  <div class="entry-copy">The <code>package_allow_reifiable_tconst_violations</code> and <code>package_allow_all_generics_violations</code> configuration escape hatches have been removed. Reified type-constant and generic package-boundary violations are now always hard errors. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8a12a927f2965254d20ddfda987323a4bdced38b" target="_blank" rel="noopener noreferrer">8a12a927f2</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/05/14/">Thu, May 14</a></div>
+  <div class="entry-copy"><code>package_allow_typedef_violations</code> has been removed. Transparent type aliases that cross an unavailable package boundary now always produce a hard error, and their referenced symbols count as production-affecting edges. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b96d110f204ed125eb720824a4d59ed7e7d71b8f" target="_blank" rel="noopener noreferrer">b96d110f20</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>7 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/05/11/">Mon, May 11</a></div>
+  <div class="entry-copy"><code>DateTimeImmutable::createFromFormat()</code> is now typed as the pre-stable case type <code>BoolOrDateTimeImmutable</code>, accurately representing its <code>false</code> failure result without falling back to <code>mixed</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6d919856b8d02ae7d662eb9b4c5b796e326b1de8" target="_blank" rel="noopener noreferrer">6d919856b8</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/05/12/">Tue, May 12</a></div>
+  <div class="entry-copy">Experimental constraint-based method-call inference now honors <code>&lt;&lt;__IgnoreReadonlyError&gt;&gt;</code> on callable parameters, including nested lambda return comparisons. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/108d91d898cb16249fa69491fc54e567dc06eeb0" target="_blank" rel="noopener noreferrer">108d91d898</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/05/12/">Tue, May 12</a></div>
+  <div class="entry-copy">Unstable shape and tuple destructuring now has dedicated parser and AST nodes for patterns such as <code>shape(&#x27;x&#x27; =&gt; $x) = $value</code> and <code>tuple($x, $y) = $value</code>. Typing and emission were still landing separately. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3f5a8d867a59decf0b04ebd19f348ed1f7a3fed1" target="_blank" rel="noopener noreferrer">3f5a8d867a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/05/13/">Wed, May 13</a></div>
+  <div class="entry-copy">The accepted named-parameters HIP is now published with the proposed syntax, ordering and compatibility rules, reflection model, and rationale. Named parameters remain in Preview. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c9337aa404e6083b4db435752e7dc1527de95e4a" target="_blank" rel="noopener noreferrer">c9337aa404</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/05/13/">Wed, May 13</a></div>
+  <div class="entry-copy">Unstable shape and tuple destructuring can now be typechecked, including its interactions with subtyping, <code>dynamic</code>, and like types. Runtime emission was still pending on this date. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4343f5bcae5e1a20d9098a2823ed38120a902d7a" target="_blank" rel="noopener noreferrer">4343f5bcae</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/05/14/">Thu, May 14</a></div>
+  <div class="entry-copy">The <code>__NeedsConcrete</code> HIP is now published, documenting the proposed Safe Abstract contract for static methods that may only be called through a concrete class. The checks still require <code>needs_concrete=true</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/75d4d868bb7fe1e61735397d15f12c377b282a9a" target="_blank" rel="noopener noreferrer">75d4d868bb</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/05/15/">Fri, May 15</a></div>
+  <div class="entry-copy">The shape-and-tuple-destructuring HIP is now published, covering pattern syntax, typing, runtime behavior, evaluation-order constraints, and the intended migration away from permissive <code>list(...)</code> destructuring. The feature remains Unstable. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/defc97a3eb0f3aa6e53a77d9921264f5a78f4a21" target="_blank" rel="noopener noreferrer">defc97a3eb</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

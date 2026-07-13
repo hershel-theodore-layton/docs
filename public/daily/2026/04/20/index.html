@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="4 noteworthy changes recorded on this day.">
+  <title>Monday, April 20, 2026 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Monday, April 20, 2026</h1>
+  <p class="post-meta">4 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2026/04/20/" aria-current="page">Day</a><a href="/weekly/2026/W17/">Week</a><a href="/monthly/2026/04/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2026/04/17/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2026/04/21/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy">Fileinfo, mailparse, and Async MySQL declarations now replace additional missing HHI types with concrete runtime signatures. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b10a40ecb8b69fb553ee739042aeec85ba6360cb" target="_blank" rel="noopener noreferrer">b10a40ecb8</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/750d2077d05cc4ac52ab8cf99a754d1b091f1bc4" target="_blank" rel="noopener noreferrer">750d2077d0</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/edf0a3bfbc6f68004176c5c101c9cd01e50033cc" target="_blank" rel="noopener noreferrer">edf0a3bfbc</a></div></li><li class="change-entry"><div class="entry-copy"><code>is</code> expressions now validate their right-hand type even when the expression is not being used to refine the left-hand side. Invalid type hints that previously escaped localization now produce errors. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8b49bb13047afc39fb08e3fc454e6b21b718b038" target="_blank" rel="noopener noreferrer">8b49bb1304</a></div></li><li class="change-entry"><div class="entry-copy">Inherited <code>class</code>, <code>classname</code>, and <code>string</code> return constraints now apply the same configuration-controlled warnings, errors, and class-to-string conversions as directly declared constraints. Projects relying on the previous inherited-constraint gap may see new runtime diagnostics or failures. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/14aceb719a5200f777e6e66fcc44a5ae738f4172" target="_blank" rel="noopener noreferrer">14aceb719a</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">The experimental <code>TypeStructure</code> representation for refinements now correctly types <code>as</code> and <code>super</code> entries as <code>vec&lt;mixed&gt;</code>, since a refinement may carry multiple bounds. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7713c28719bc82c612f7b348e9b81b4f16e3049d" target="_blank" rel="noopener noreferrer">7713c28719</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

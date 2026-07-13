@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="4 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 1: Dec 30, 2024–Jan 5, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 1: Dec 30, 2024–Jan 5, 2025</h1>
+  <p class="post-meta">4 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/12/30/">Day</a><a href="/weekly/2025/W01/" aria-current="page">Week</a><a href="/monthly/2024/12/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2024/W52/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2025/W02/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>4 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/12/30/">Mon, Dec 30</a></div>
+  <div class="entry-copy"><code>HH\XReqSync</code> provides named, cross-request asynchronous locks in non-authoritative mode. <code>get()</code> obtains a named lock object, <code>genLock()</code> waits with an optional millisecond timeout and resolves to whether the lock was acquired, and <code>unlock()</code> releases it; destruction also releases a held lock. All three public methods explicitly declare <code>[]</code>, so callers need no ambient capabilities. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9220fd60767b25d7a92ff14a469d6623492e0797" target="_blank" rel="noopener noreferrer">9220fd6076</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/12/30/">Mon, Dec 30</a></div>
+  <div class="entry-copy">Sound-dynamic diagnostics now retain like-type provenance when a dynamic or like-typed value is used as the receiver of a method call. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ed7dbea12d86939fe4c4e02aba1838b540d45265" target="_blank" rel="noopener noreferrer">ed7dbea12d</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/01/02/">Thu, Jan 2</a></div>
+  <div class="entry-copy">The new <code>HH\is_cli_server_mode()</code> builtin reports whether the current request is proxying filesystem and system calls through HHVM&#x27;s CLI-server protocol. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e8893477e1ba064523ae6de0dcc4949a5aba7e2f" target="_blank" rel="noopener noreferrer">e8893477e1</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/01/03/">Fri, Jan 3</a></div>
+  <div class="entry-copy">The redundant-generics check no longer reports parameters whose replacement would require a non-denotable intersection type, including intersections hidden beneath <code>supportdyn</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/caec562dfdff476587f0c65c9c18d3774a9af3fb" target="_blank" rel="noopener noreferrer">caec562dfd</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

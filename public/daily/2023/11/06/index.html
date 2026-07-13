@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="3 noteworthy changes recorded on this day.">
+  <title>Monday, November 6, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Monday, November 6, 2023</h1>
+  <p class="post-meta">3 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/11/06/" aria-current="page">Day</a><a href="/weekly/2023/W45/">Week</a><a href="/monthly/2023/11/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2023/11/03/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2023/11/07/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy"><code>hh --config dump_tasts=file_list.txt</code> can now dump the named files&#x27; typed ASTs to <code>/tmp/hh_server/tasts</code> or <code>/tmp/hh_distc/tasts</code>, including when typechecking is distributed. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ac3fec9645a6c8e466c955d093d023317592aac8" target="_blank" rel="noopener noreferrer">ac3fec9645</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy">HHVM no longer populates <code>$_SERVER[&#x27;REQUEST_START_TIME&#x27;]</code>, <code>REQUEST_TIME</code>, or <code>REQUEST_TIME_FLOAT</code>. Use nanosecond-resolution <code>$_SERVER[&#x27;REQUEST_TIME_NS&#x27;]</code> instead. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d23fe23887494c52f74a1620068226c9a8fcf9a3" target="_blank" rel="noopener noreferrer">d23fe23887</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">Experimental typed locals now use shallow runtime enforcement, checking the outer declared type without recursively validating all nested type arguments. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9212f22d4c635e588383d34d970fc6506b49a5c1" target="_blank" rel="noopener noreferrer">9212f22d4c</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

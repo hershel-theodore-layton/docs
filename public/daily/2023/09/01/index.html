@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="4 noteworthy changes recorded on this day.">
+  <title>Friday, September 1, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Friday, September 1, 2023</h1>
+  <p class="post-meta">4 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/09/01/" aria-current="page">Day</a><a href="/weekly/2023/W35/">Week</a><a href="/monthly/2023/09/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2023/08/31/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2023/09/04/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">Sound Dynamic joins now simplify unions and intersections through <code>supportdyn</code> wrappers, avoiding unnecessarily large or imprecise inferred unions after control-flow joins. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/55f4a9ddff54126c1aca1aacf4ad7e9e71245ced" target="_blank" rel="noopener noreferrer">55f4a9ddff</a></div></li><li class="change-entry"><div class="entry-copy">Soft-package class access no longer emits a duplicate deployment-boundary warning while resolving the class. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/497854503aa05cf37569d64add1a2b58e2d12572" target="_blank" rel="noopener noreferrer">497854503a</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy">Sound Dynamic has backed out the all-dynamic fallback for calls through <code>supportdyn</code> function types. Calls that only typechecked after pessimising every parameter may now report argument errors. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/349eca7fa11453cd3102b9c998bea260da788ddb" target="_blank" rel="noopener noreferrer">349eca7fa1</a></div></li><li class="change-entry"><div class="entry-copy">A property whose alias or newtype resolves to <code>nothing</code> is now rejected at class initialization with an invalid-property-type fatal, rather than slipping through runtime resolution. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/57141c389a132a478735881885233194a5751c2a" target="_blank" rel="noopener noreferrer">57141c389a</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="9 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 1: Jan 2–Jan 8, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 1: Jan 2–Jan 8, 2023</h1>
+  <p class="post-meta">9 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/01/03/">Day</a><a href="/weekly/2023/W01/" aria-current="page">Week</a><a href="/monthly/2023/01/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2022/W52/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2023/W02/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>8 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/01/03/">Tue, Jan 3</a></div>
+  <div class="entry-copy">HHVM no longer reports a false <code>Cannot declare self-referencing constant</code> fatal when an interval-timer callback interrupts the initialization of a large global or class constant. Genuine recursive constants remain invalid. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/bc6c72f81aeeaf173f872ecfba1eecf97db25153" target="_blank" rel="noopener noreferrer">bc6c72f81a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/01/03/">Tue, Jan 3</a></div>
+  <div class="entry-copy">The diagnostic for using <code>#MakeICInaccessible</code> or <code>#SoftMakeICInaccessible</code> with an incompatible context now correctly refers to <code>leak_safe_shallow</code>, rather than the incompatible <code>leak_safe</code> context. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9592c3ee4d91b5870587f45fbf481382ebab5d21" target="_blank" rel="noopener noreferrer">9592c3ee4d</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/01/04/">Wed, Jan 4</a></div>
+  <div class="entry-copy">Memoized functions and methods may now use <code>&lt;&lt;__Memoize(#Uncategorized)&gt;&gt;</code> or its <code>__MemoizeLSB</code> equivalent. This has ordinary memoization behavior but records the explicit category in reflection. Functions whose contexts cannot access implicit context must continue to omit a memoization option. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e2bc6db35d4669e3870e9f2c1bb5507c8fd5dbad" target="_blank" rel="noopener noreferrer">e2bc6db35d</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/01/04/">Wed, Jan 4</a></div>
+  <div class="entry-copy">Hover information for functions and methods that support dynamic now prints the source-level <code>&lt;&lt;__SupportDynamicType&gt;&gt;</code> attribute instead of exposing its internal <code>supportdyn&lt;...&gt;</code> representation. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/df90d157ec9214370794203146003c84428df05f" target="_blank" rel="noopener noreferrer">df90d157ec</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/01/05/">Thu, Jan 5</a></div>
+  <div class="entry-copy">Dynamic-aware checking of indexing and indexed assignment now preserves the <code>dynamic</code> part of <code>supportdyn&lt;T&gt;</code>. This fixes rejected reads, appends, and writes in <code>&lt;&lt;__SupportDynamicType&gt;&gt;</code> code where the operation is valid through <code>dynamic</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3921de4f83837143b25e7f3cacb08ef101b92042" target="_blank" rel="noopener noreferrer">3921de4f83</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/01/06/">Fri, Jan 6</a></div>
+  <div class="entry-copy">Hack modules no longer require <code>&lt;&lt;file:__EnableUnstableFeatures(&#x27;modules&#x27;)&gt;&gt;</code>. The separate <code>module_references</code> experiment still requires its own unstable-feature opt-in. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d3bdad4f2fc5be6bbbaf6e9c3b50a219c19a2d43" target="_blank" rel="noopener noreferrer">d3bdad4f2f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/01/06/">Fri, Jan 6</a></div>
+  <div class="entry-copy"><code>HH\ImplicitContext\run_with_soft_inaccessible_state()</code> and its async counterpart can run a callable in the soft-inaccessible implicit-context state during migrations. They accept a blame key, may only be entered from a null implicit-context state, and should be removed once the logged violations have been addressed. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/402b7ded0e0fbca8d096bebbd416cd9e2b1873fb" target="_blank" rel="noopener noreferrer">402b7ded0e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/01/06/">Fri, Jan 6</a></div>
+  <div class="entry-copy">Hover and typed-AST data can now distinguish anonymous functions from named functions instead of assigning synthetic names to closures. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e18be7371b3388b501d098f14b7d47a8ea5906c8" target="_blank" rel="noopener noreferrer">e18be7371b</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/01/06/">Fri, Jan 6</a></div>
+  <div class="entry-copy">The Thrift extension no longer implements or registers <code>RpcOptions::setFaultToInject()</code>. Projects using this fault-injection API must remove those calls. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/64a89b91a6da25dd42330a3d01de0ad4f3236935" target="_blank" rel="noopener noreferrer">64a89b91a6</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

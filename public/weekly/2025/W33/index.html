@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="13 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 33: Aug 11–Aug 17, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 33: Aug 11–Aug 17, 2025</h1>
+  <p class="post-meta">13 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/08/11/">Day</a><a href="/weekly/2025/W33/" aria-current="page">Week</a><a href="/monthly/2025/08/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2025/W32/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2025/W34/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>5 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/08/11/">Mon, Aug 11</a></div>
+  <div class="entry-copy"><code>hh_client check --single</code> now processes batches of ten or more files in parallel. The new <code>--multi FILE</code> form reads one path per line, making large targeted checks easier to script. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8c8f596073530d6b604de41ce7f8cadc3cef13eb" target="_blank" rel="noopener noreferrer">8c8f596073</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5ca15ac9d8b3db9cc26e79834f6246791f98230b" target="_blank" rel="noopener noreferrer">5ca15ac9d8</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/08/11/">Mon, Aug 11</a></div>
+  <div class="entry-copy">The dead-<code>HH_FIXME</code> and dead-unsafe-cast cleanup modes no longer require restarting <code>hh_server</code> with <code>--no-load</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e7f422bb80e469f71b0fe34bf69a671766122836" target="_blank" rel="noopener noreferrer">e7f422bb80</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/08/13/">Wed, Aug 13</a></div>
+  <div class="entry-copy">The JIT now has a dedicated implementation for <code>HH\Lib\PseudoRandom\int()</code>, avoiding the pessimization associated with a generic native call while preserving its inclusive range behavior. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d51a44a881e11b165c506b52b7566bb110348a72" target="_blank" rel="noopener noreferrer">d51a44a881</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/08/15/">Fri, Aug 15</a></div>
+  <div class="entry-copy">Dependency tracking now covers more static members, XHP checks, switch exhaustivity, constructors, and IDE member lookups. Incremental checks should miss fewer affected files, though some changes may produce larger recheck fanout. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/46ce64d38659ba8855859aba69a6d8b1496e3e6f" target="_blank" rel="noopener noreferrer">46ce64d386</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/967773dd8a995800003c273546ceb07775731f30" target="_blank" rel="noopener noreferrer">967773dd8a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/08/16/">Sat, Aug 16</a></div>
+  <div class="entry-copy">HHVM now frees the losing class object when concurrent requests race to define the same class, closing a runtime memory leak in non-repo-authoritative deployments. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/aefb3fa9311847fdf8033fc7d192379b3143eb71" target="_blank" rel="noopener noreferrer">aefb3fa931</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>7 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/08/11/">Mon, Aug 11</a></div>
+  <div class="entry-copy">Parser support has begun for named parameters and named arguments. These commits only recognize the pre-MVP syntax; full naming and typing behavior is not yet available. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f6791eda8fd8b7e260640b049c53ff069e3e0bce" target="_blank" rel="noopener noreferrer">f6791eda8f</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b270ae7302ee3f676533feb6f548ae3dc9a7f056" target="_blank" rel="noopener noreferrer">b270ae7302</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/08/12/">Tue, Aug 12</a></div>
+  <div class="entry-copy">The opt-in warning system now reports warning 12023 when <code>e1 ?? e2</code> has a left operand known to be always null or never null. Array-subscript forms are excluded because their null behavior is intentional and common. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/bd805a1455e2ba7744145502704d2f5ef6a36911" target="_blank" rel="noopener noreferrer">bd805a1455</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/08/13/">Wed, Aug 13</a></div>
+  <div class="entry-copy">Named arguments are now lowered from the concrete syntax tree into the Hack AST, continuing the pre-MVP implementation begun earlier in the week. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9063a1301e18c9b157022524750dd69fd9557181" target="_blank" rel="noopener noreferrer">9063a1301e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/08/13/">Wed, Aug 13</a></div>
+  <div class="entry-copy">The class-pointer migration adds <code>HH\type_structure_class($class_or_object, $type_constant)[]</code>, a <code>NoDoc</code> helper that loads and returns the <code>class&lt;mixed&gt;</code> named by a type constant. Its empty coeffect list means it can be called from capability-free contexts. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6123f3b736242ae56a0bdb0ae149d3070f62d028" target="_blank" rel="noopener noreferrer">6123f3b736</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/08/14/">Thu, Aug 14</a></div>
+  <div class="entry-copy">With the opt-in <code>needs_concrete</code> analysis enabled, unsafe calls and instantiations through abstract classes are now warnings 12024–12026 rather than hard type errors 4490–4492. This makes the safe-abstract migration incremental. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7ae30448ae6cf8917c16154e75f02cdfa4297ac4" target="_blank" rel="noopener noreferrer">7ae30448ae</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/08/15/">Fri, Aug 15</a></div>
+  <div class="entry-copy">The ongoing <code>no_disjoint_union</code> rollout now applies <code>&lt;&lt;__NoDisjointUnion&gt;&gt;</code> to the key type of <code>HH\idx()</code> and <code>HH\idx_readonly()</code>. Calls that infer incompatible key types, such as a <code>string</code> key for a vector-like container, can now produce warning 12017. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c5f6c4171ef544335edc98fad807280d2d06638e" target="_blank" rel="noopener noreferrer">c5f6c4171e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/08/15/">Fri, Aug 15</a></div>
+  <div class="entry-copy">Named parameter declarations are now represented in the AST, but the named-argument feature remains pre-MVP and unavailable for general use. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/98bc300a621d27f71a177b91adf35d1b2dcb403a" target="_blank" rel="noopener noreferrer">98bc300a62</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/08/12/">Tue, Aug 12</a></div>
+  <div class="entry-copy"><code>hphpd</code> no longer implements the <code>down</code>, <code>up</code>, <code>next</code>, <code>frame</code>, <code>step</code>, or <code>out</code> commands. Command-line debugging is no longer supported; the remaining tool is primarily useful as a REPL. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/86676af0f47ac96c009e1fe7b2444d9de726bd17" target="_blank" rel="noopener noreferrer">86676af0f4</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

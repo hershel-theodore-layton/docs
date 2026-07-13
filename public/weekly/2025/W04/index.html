@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="11 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 4: Jan 20–Jan 26, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 4: Jan 20–Jan 26, 2025</h1>
+  <p class="post-meta">11 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/01/20/">Day</a><a href="/weekly/2025/W04/" aria-current="page">Week</a><a href="/monthly/2025/01/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2025/W03/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2025/W05/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>9 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/01/20/">Mon, Jan 20</a></div>
+  <div class="entry-copy">Hack&#x27;s language server now implements the standard <code>$/setTrace</code> notification in addition to VS Code&#x27;s older <code>$/setTraceNotification</code>, allowing clients to toggle verbose protocol tracing without receiving a method-not-found response. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6ff6878cbde986338b8517af0f4d0157f8c937c4" target="_blank" rel="noopener noreferrer">6ff6878cbd</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/01/20/">Mon, Jan 20</a></div>
+  <div class="entry-copy">The Hack server gained an exhaustive folded-declaration invalidation mode for saved files, favoring correctness when stale folded declarations would otherwise make IDE results disagree with the CLI. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7ef88171965358fcc7c8aab17ea8e034c9b9ca01" target="_blank" rel="noopener noreferrer">7ef8817196</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/01/21/">Tue, Jan 21</a></div>
+  <div class="entry-copy">Timezone data was updated to the 2025a release, including newly added historical transitions that can change results for old timestamps. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e49a2d45dcc7b26c91a269bca75bc538974ffbc6" target="_blank" rel="noopener noreferrer">e49a2d45dc</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/01/21/">Tue, Jan 21</a></div>
+  <div class="entry-copy">Overrides of ordinary class methods marked <code>&lt;&lt;__NoAutoLikes&gt;&gt;</code> now inherit that behavior automatically, so their return types are not implicitly widened to like types. Interface implementations still need their own annotation. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7a353344ec39816e94ebcdf585854e57f71a6532" target="_blank" rel="noopener noreferrer">7a353344ec</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/01/23/">Thu, Jan 23</a></div>
+  <div class="entry-copy">Classes using the same trait through many branches of a trait diamond no longer count duplicate imported methods toward HHVM&#x27;s 65,535-method limit, avoiding a false &quot;Class has more than 65,535 methods&quot; failure. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2566b4e7d8b52ff200ea9b93434a89e891435332" target="_blank" rel="noopener noreferrer">2566b4e7d8</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/01/24/">Fri, Jan 24</a></div>
+  <div class="entry-copy">HHVM now reports a clear error when a non-default <code>Eval.PackagesTomlFileName</code> cannot be opened instead of silently continuing with an empty package specification. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f9035ba6005d53b4268c07f4747618c9d13abab0" target="_blank" rel="noopener noreferrer">f9035ba600</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/01/24/">Fri, Jan 24</a></div>
+  <div class="entry-copy">The unsurfaced-exception lint no longer produces false positives for exception variables captured by lambdas during the dynamic TAST pass. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/527a1dc8e73e7e1d0015d8e5d650c760f0062731" target="_blank" rel="noopener noreferrer">527a1dc8e7</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/01/24/">Fri, Jan 24</a></div>
+  <div class="entry-copy"><code>HH\SimpleLock\is_held()</code> reports whether any request currently holds a named SimpleLock. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a2466c5ee3b3141d6d5e664fe029f3b09d9d5a73" target="_blank" rel="noopener noreferrer">a2466c5ee3</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/01/24/">Fri, Jan 24</a></div>
+  <div class="entry-copy">The new <code>#ICInaccessibleSpecialCase</code> memoization option allows specialized functions to read implicit context without sharding their memo cache by it. Like <code>#MakeICInaccessible</code>, it is restricted to <code>defaults</code>, <code>leak_safe_shallow</code>, or <code>leak_safe_local</code> contexts. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2e164dc8db462025e2f33fcef24f7b537398d690" target="_blank" rel="noopener noreferrer">2e164dc8db</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/01/21/">Tue, Jan 21</a></div>
+  <div class="entry-copy">Expression-tree lambdas now reject a bare nested splice such as <code>${$x ==&gt; ${$x}}</code>; splicing is only valid while the parser is directly inside an expression-tree literal. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d796173ae42e73523966f7b487f11b4253c915aa" target="_blank" rel="noopener noreferrer">d796173ae4</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/01/23/">Thu, Jan 23</a></div>
+  <div class="entry-copy">JSON-encoded type information for open tuples now carries <code>optional_args</code>, <code>variadic_arg</code>, or <code>splat_arg</code> instead of collapsing every open tail into <code>fields_known: false</code>. This improves structured type-error and IDE consumers. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ade6c781178e4a0e0d413a419c643ede4f885edf" target="_blank" rel="noopener noreferrer">ade6c78117</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

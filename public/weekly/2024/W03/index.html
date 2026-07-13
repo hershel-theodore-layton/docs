@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="7 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 3: Jan 15–Jan 21, 2024 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 3: Jan 15–Jan 21, 2024</h1>
+  <p class="post-meta">7 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/01/15/">Day</a><a href="/weekly/2024/W03/" aria-current="page">Week</a><a href="/monthly/2024/01/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2024/W02/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2024/W04/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>5 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/01/15/">Mon, Jan 15</a></div>
+  <div class="entry-copy">Quick fixes now appear whenever the cursor is inside an error span; the editor no longer requires the entire error span to fit inside a selection. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/42c3a995ee3f53b22e5c94fec38d9a592e856689" target="_blank" rel="noopener noreferrer">42c3a995ee</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/01/15/">Mon, Jan 15</a></div>
+  <div class="entry-copy">Sound Dynamic like-type pushing now handles nullable generic bounds split into separate <code>null</code> and nonnull lower bounds, removing false subtype failures such as <code>vec&lt;~int&gt; &lt;: ~?vec&lt;int&gt;</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/36221d581444bbcb419aa8e42ed7b17071c5e4ce" target="_blank" rel="noopener noreferrer">36221d5814</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/01/16/">Tue, Jan 16</a></div>
+  <div class="entry-copy">Sound Dynamic refinement now treats shapes as enforceable when every field type is enforceable, producing more precise results after <code>is</code> checks on like-typed values. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/12878d63e84c44c790ba45cf5f008afd666fd2ae" target="_blank" rel="noopener noreferrer">12878d63e8</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/01/17/">Wed, Jan 17</a></div>
+  <div class="entry-copy">Debugger step-over now handles multiple calls on the same source line without incorrectly pausing inside the second callee. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/72fbdf973c31a85351a3a62878b46347abcfafb6" target="_blank" rel="noopener noreferrer">72fbdf973c</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/01/19/">Fri, Jan 19</a></div>
+  <div class="entry-copy">Lambda compatibility now compares the full accepted argument range when default parameters are present. A lambda is accepted when it can handle every arity promised by the expected function type, rather than requiring identical minimum arities. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/98a4a79060ef4382f0d7c3de19416a4dd61ceb07" target="_blank" rel="noopener noreferrer">98a4a79060</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/01/16/">Tue, Jan 16</a></div>
+  <div class="entry-copy"><code>HH\classname</code> is now always handled as the dedicated classname runtime annotation, independent of <code>Eval.ClassPassesClassname</code>; string conversion must go through an explicit string position. The pure <code>HH\class_to_classname()</code> builtin is also tightened from <code>mixed -&gt; mixed</code> to <code>classname&lt;mixed&gt; -&gt; classname&lt;mixed&gt;</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f0ec4483d16cb38e45f8b8417910dc2f3a6a92c3" target="_blank" rel="noopener noreferrer">f0ec4483d1</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/01/19/">Fri, Jan 19</a></div>
+  <div class="entry-copy">Package configuration parsing now accepts an <code>allow_directories</code> field, canonicalizes its relative paths and optional <code>*</code> suffixes, and rejects paths that do not exist. Typechecker enforcement follows later in the month. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1e848e45b1c809d92b47e417db5a94bb3df2cde5" target="_blank" rel="noopener noreferrer">1e848e45b1</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

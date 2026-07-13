@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="12 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 28: Jul 10–Jul 16, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 28: Jul 10–Jul 16, 2023</h1>
+  <p class="post-meta">12 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/07/10/">Day</a><a href="/weekly/2023/W28/" aria-current="page">Week</a><a href="/monthly/2023/07/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2023/W27/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2023/W29/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>5 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/07/10/">Mon, Jul 10</a></div>
+  <div class="entry-copy">“Extract into method” once again formats the generated method body at the correct indentation after inserting its editor rename placeholder. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/07ad225ee4695aebb80df7f81ca4ab7dfd802d0d" target="_blank" rel="noopener noreferrer">07ad225ee4</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/07/11/">Tue, Jul 11</a></div>
+  <div class="entry-copy">Command-line symbol renaming no longer applies a replacement twice—for example, renaming <code>Foo</code> to <code>Bar</code> now produces <code>Bar</code>, not <code>BarBar</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/29daa1ba32d553aa46116f65f130d8e584f257de" target="_blank" rel="noopener noreferrer">29daa1ba32</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/07/11/">Tue, Jul 11</a></div>
+  <div class="entry-copy">Another group of HSL functions now uses <code>&lt;&lt;__NoAutoLikes&gt;&gt;</code>, keeping precise types under implicit sound-dynamic pessimization. Higher-order helpers remain excluded while lambda inference is being improved. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/722cd5215619d3f914c2fb2579d05486ba99add2" target="_blank" rel="noopener noreferrer">722cd52156</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/07/13/">Thu, Jul 13</a></div>
+  <div class="entry-copy"><code>_</code> may now request inference in nested explicit type arguments, as in <code>foo&lt;vec&lt;_&gt;&gt;()</code>. It is still rejected anywhere beneath a type parameter declared <code>&lt;&lt;__Explicit&gt;&gt;</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e1811dd241b9c831249882729e146c6ad4e88506" target="_blank" rel="noopener noreferrer">e1811dd241</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/07/14/">Fri, Jul 14</a></div>
+  <div class="entry-copy">“Extract shape type” is now offered only when a shape expression is selected, avoiding an IDE invariant failure for selections that merely contain a shape. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ce1676deced596ed84212cc18b3670426ffabc9e" target="_blank" rel="noopener noreferrer">ce1676dece</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>4 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/07/11/">Tue, Jul 11</a></div>
+  <div class="entry-copy">The <code>STDIN</code>, <code>STDOUT</code>, and <code>STDERR</code> pseudo-constants have been removed from Hack’s bundled declarations. Replace them with <code>HH\stdin()</code>, <code>HH\stdout()</code>, and <code>HH\stderr()</code> (or their <code>try_</code> variants). <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d615f24ec40481f9038d5218e4766201fa5031df" target="_blank" rel="noopener noreferrer">d615f24ec4</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/07/12/">Wed, Jul 12</a></div>
+  <div class="entry-copy">Hack’s language server now always runs in standalone IDE mode. The old modes that delegated IDE operations or diagnostics to a persistent <code>hh_server</code> can no longer be selected through local configuration. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/24039fc87d067d552cd4e950eaa746dc26ee3958" target="_blank" rel="noopener noreferrer">24039fc87d</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/07/14/">Fri, Jul 14</a></div>
+  <div class="entry-copy"><code>hh --json</code> now writes JSON to standard output by default. Scripts that previously read the JSON stream from standard error should update their redirection. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/647e96e8366b4341c8851efc42472177df7521f9" target="_blank" rel="noopener noreferrer">647e96e836</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/07/14/">Fri, Jul 14</a></div>
+  <div class="entry-copy">HHVM has removed the <code>STDIN</code>, <code>STDOUT</code>, and <code>STDERR</code> pseudo-constants at runtime, completing the declaration removal from July 11. Use <code>HH\stdin()</code>, <code>HH\stdout()</code>, and <code>HH\stderr()</code> instead. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b34346b202ad48f88c9ba4396ae2637a8c6bf12b" target="_blank" rel="noopener noreferrer">b34346b202</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/07/11/">Tue, Jul 11</a></div>
+  <div class="entry-copy">A case type may no longer be the base type of an enum or enum class. This is rejected until case-type enforcement in those positions has consistent runtime semantics. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c8befa3337f5cdd6496a95a2b444b5f03e5c2526" target="_blank" rel="noopener noreferrer">c8befa3337</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/07/13/">Thu, Jul 13</a></div>
+  <div class="entry-copy">A generic name used illegally in a trait’s <code>require class</code> clause now yields a normal type error instead of raising an exception in the typechecker. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/58855f85777266628a17bfca1cfed19d75682ac5" target="_blank" rel="noopener noreferrer">58855f8577</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/07/14/">Fri, Jul 14</a></div>
+  <div class="entry-copy">Experimental typed locals now enforce their declared types and diagnose redeclaration, shadowing, and incompatible control-flow joins. Typed-local declarations are also supported inside <code>concurrent</code> blocks; coverage for further statement and lambda forms continues in later commits. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9055f3104c13150ca00a33f0b899637617e4c238" target="_blank" rel="noopener noreferrer">9055f3104c</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/28e003b54b44e05bef1d6348ae57ef5ad6546e4b" target="_blank" rel="noopener noreferrer">28e003b54b</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

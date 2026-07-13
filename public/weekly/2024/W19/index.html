@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="7 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 19: May 6–May 12, 2024 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 19: May 6–May 12, 2024</h1>
+  <p class="post-meta">7 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/05/06/">Day</a><a href="/weekly/2024/W19/" aria-current="page">Week</a><a href="/monthly/2024/05/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2024/W18/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2024/W20/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/05/06/">Mon, May 6</a></div>
+  <div class="entry-copy"><code>HH\Facts\type_to_path_relative(string)[]: ?string</code> now returns a type&#x27;s path relative to the Facts repository root, avoiding caller-specific stripping of an absolute root. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/41f678c1190708e9b092d66a02877763d3c0c7c1" target="_blank" rel="noopener noreferrer">41f678c119</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/05/07/">Tue, May 7</a></div>
+  <div class="entry-copy">LSP <code>textDocument/documentSymbol</code> responses now include function and method signatures with parameter names, plus detail text for properties, class constants, and type constants. File outlines also include type aliases and global constants. Editors and coding assistants therefore receive a substantially richer structural view of each Hack file. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/06ce20461acf5314bf7b810e2e1283442021f4e8" target="_blank" rel="noopener noreferrer">06ce20461a</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/31047fbe1bc04c9697ba9b38df21b7080f0188b9" target="_blank" rel="noopener noreferrer">31047fbe1b</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9c05e9b17588495fb93fc1a888ab0ea9954f5c0a" target="_blank" rel="noopener noreferrer">9c05e9b175</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/05/09/">Thu, May 9</a></div>
+  <div class="entry-copy">Relative-path variants are now available for every Facts symbol-to-path query: modules, types, type aliases, functions, constants, and the combined type-or-alias lookup. The existing absolute-path APIs remain available during migration. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7f90612b91bed4f5c57e4b4f2d7c4e143ef87229" target="_blank" rel="noopener noreferrer">7f90612b91</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/05/06/">Mon, May 6</a></div>
+  <div class="entry-copy">Strict-switch diagnostics now handle negated type predicates directly. A subject described only as “not primitive” still requires <code>default</code>, but no longer produces a misleading exhaustiveness explanation. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b04e4a7bc547be175a2ff5bec246f408ad83d82a" target="_blank" rel="noopener noreferrer">b04e4a7bc5</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/05/09/">Thu, May 9</a></div>
+  <div class="entry-copy">Nested expression trees have moved from unstable to preview status. They remain pre-stable and continue to require the <code>expression_tree_nest</code> feature where preview features are not enabled. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0d9f8f88addad37e44539c49c6d6bea5fb4c0af7" target="_blank" rel="noopener noreferrer">0d9f8f88ad</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/05/11/">Sat, May 11</a></div>
+  <div class="entry-copy">In the staged module-level trait work, public module-level traits may declare <code>internal</code> methods without separately enabling <code>module_level_traits_extensions</code>. Internal properties on public traits remain invalid. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2b00d0ec8be75a013510fbaa15985600f3eed33d" target="_blank" rel="noopener noreferrer">2b00d0ec8b</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/05/11/">Sat, May 11</a></div>
+  <div class="entry-copy"><code>HH\ImplicitContext\soft_run_with()</code> and <code>soft_run_with_async()</code> no longer create a soft implicit-context state from their <code>$key</code>; they now invoke the callback without changing context. Code that depended on the key creating separate memoization context should migrate to an explicit implicit-context API. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9461b78f481c4b09d1dd97572131cb130f09c791" target="_blank" rel="noopener noreferrer">9461b78f48</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

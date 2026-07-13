@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="21 noteworthy changes, organized by the source changelog sections.">
+  <title>December 2024 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/" aria-current="page">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Monthly digest</p>
+  <h1 class="post-title">December 2024</h1>
+  <p class="post-meta">21 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/12/01/">Day</a><a href="/weekly/2024/W48/">Week</a><a href="/monthly/2024/12/" aria-current="page">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/monthly/2024/11/"><span aria-hidden="true">←</span><span>Previous month</span></a><a class="period-button next" rel="next" href="/monthly/2025/01/"><span aria-hidden="true">→</span><span>Next month</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>13 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W49/">W49</a><span aria-hidden="true"> · </span><a href="/daily/2024/12/02/">Dec 2</a></div>
+  <div class="entry-copy">Extended Hack diagnostics can now render source context for positions inside HHI files instead of falling back to “No source found.” This makes errors that point into built-in declarations substantially easier to interpret. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ddb28b2550722343866e5db0af7e8fad3342addf" target="_blank" rel="noopener noreferrer">ddb28b2550</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W49/">W49</a><span aria-hidden="true"> · </span><a href="/daily/2024/12/06/">Dec 6</a></div>
+  <div class="entry-copy"><code>HH\get_class_from_object(readonly object)[]: class&lt;mixed&gt;</code> returns an object&#x27;s class pointer, while <code>HH\get_parent_class_from_class(readonly class&lt;mixed&gt;)[]: ?class&lt;mixed&gt;</code> returns its parent or <code>null</code>. Both APIs have an explicit empty capability list <code>[]</code>, so callers need no ambient capabilities. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c4650b12f72329b34890111966127bdba6ed6d0d" target="_blank" rel="noopener noreferrer">c4650b12f7</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W49/">W49</a><span aria-hidden="true"> · </span><a href="/daily/2024/12/06/">Dec 6</a></div>
+  <div class="entry-copy">Diagnostics involving implicitly pessimised properties and returns now explain why the like type was introduced—for example, an unenforced generic argument, type constant, function type, or call on a dynamic value. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0d45f2066cdea68b4040ead75282fb3986a8e632" target="_blank" rel="noopener noreferrer">0d45f2066c</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W50/">W50</a><span aria-hidden="true"> · </span><a href="/daily/2024/12/09/">Dec 9</a></div>
+  <div class="entry-copy">With error streaming enabled, <code>hh --error-format raw</code> once again prints <code>No errors!</code> when the check succeeds. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2cb35690cd69f8963bb071ec82a248416ac7981a" target="_blank" rel="noopener noreferrer">2cb35690cd</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W50/">W50</a><span aria-hidden="true"> · </span><a href="/daily/2024/12/09/">Dec 9</a></div>
+  <div class="entry-copy">Sound-dynamic error reasons now retain the provenance of a like type as it passes through a function that supports dynamic calling. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d7ae8d152846894f8fe351beb9d13b0a83fa0cc8" target="_blank" rel="noopener noreferrer">d7ae8d1528</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W50/">W50</a><span aria-hidden="true"> · </span><a href="/daily/2024/12/11/">Dec 11</a></div>
+  <div class="entry-copy">A top-level generic function pointer now retains a universally quantified function type. A reference such as <code>identity&lt;&gt;</code> can therefore instantiate independently as <code>(function(int): int)</code> and <code>(function(string): string)</code> at different uses, while respecting its generic bounds and where-constraints. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/98103efcd3dd7e042456feb3e34d1839d0a0ce8b" target="_blank" rel="noopener noreferrer">98103efcd3</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W50/">W50</a><span aria-hidden="true"> · </span><a href="/daily/2024/12/12/">Dec 12</a></div>
+  <div class="entry-copy">Initial warning suppression is now applied before errors are streamed, preventing baseline warnings from being sent to the client before the end-of-check filter can remove them. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e93229f61e2a41aeec4ff12ed9eef6d5403f66dd" target="_blank" rel="noopener noreferrer">e93229f61e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W50/">W50</a><span aria-hidden="true"> · </span><a href="/daily/2024/12/12/">Dec 12</a></div>
+  <div class="entry-copy"><code>HH\TypeStructureKind</code> now exposes <code>OF_CLASS_PTR</code> and <code>OF_CLASS_OR_CLASSNAME</code>, matching the <code>kind</code> values returned by <code>type_structure()</code> and <code>ReflectionTypeConstant::getTypeStructure()</code> for <code>class&lt;T&gt;</code> and transitional class-or-classname types. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/14a113c6d091b8d1b9812e39a4a1d524c27a4b9e" target="_blank" rel="noopener noreferrer">14a113c6d0</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W50/">W50</a><span aria-hidden="true"> · </span><a href="/daily/2024/12/13/">Dec 13</a></div>
+  <div class="entry-copy">The Hack manual now documents <code>class&lt;C&gt;</code> as the type for class references used in construction and static member access, and distinguishes it from the string-compatible <code>classname&lt;C&gt;</code> type. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/006861e2fa913725d6a35ee59f219b8cf4b57012" target="_blank" rel="noopener noreferrer">006861e2fa</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W51/">W51</a><span aria-hidden="true"> · </span><a href="/daily/2024/12/17/">Dec 17</a></div>
+  <div class="entry-copy">Hack now discards every warning from the initial typecheck when the merge base has no matching saved state, rather than doing so only on a clean public revision. This favors hiding a stale warning over showing one unrelated to the user&#x27;s changes. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b3432de37575e9a5f54c12d44836c0cea96df9f0" target="_blank" rel="noopener noreferrer">b3432de375</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W52/">W52</a><span aria-hidden="true"> · </span><a href="/daily/2024/12/23/">Dec 23</a></div>
+  <div class="entry-copy">The built-in declarations now include <code>thrift_protocol_write_compact_struct()</code> and <code>thrift_protocol_write_binary_struct()</code>. Their signatures omit a capability list, so callers require <code>[defaults]</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/46905493487665fc4d93e0cae20842c02e4ed2b7" target="_blank" rel="noopener noreferrer">4690549348</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W01/">W01</a><span aria-hidden="true"> · </span><a href="/daily/2024/12/30/">Dec 30</a></div>
+  <div class="entry-copy"><code>HH\XReqSync</code> provides named, cross-request asynchronous locks in non-authoritative mode. <code>get()</code> obtains a named lock object, <code>genLock()</code> waits with an optional millisecond timeout and resolves to whether the lock was acquired, and <code>unlock()</code> releases it; destruction also releases a held lock. All three public methods explicitly declare <code>[]</code>, so callers need no ambient capabilities. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9220fd60767b25d7a92ff14a469d6623492e0797" target="_blank" rel="noopener noreferrer">9220fd6076</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2025/W01/">W01</a><span aria-hidden="true"> · </span><a href="/daily/2024/12/30/">Dec 30</a></div>
+  <div class="entry-copy">Sound-dynamic diagnostics now retain like-type provenance when a dynamic or like-typed value is used as the receiver of a method call. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ed7dbea12d86939fe4c4e02aba1838b540d45265" target="_blank" rel="noopener noreferrer">ed7dbea12d</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>7 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W49/">W49</a><span aria-hidden="true"> · </span><a href="/daily/2024/12/06/">Dec 6</a></div>
+  <div class="entry-copy">The unstable expression-tree implementation now preserves the enclosing async state through generated and explicit client lambdas, so <code>await</code> inside nested splices is lowered correctly. Unsupported <code>yield</code> expressions also receive a direct diagnostic. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/fa0ef516d23dd705fce4c78dee9119203fa9502c" target="_blank" rel="noopener noreferrer">fa0ef516d2</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/033b63456422ee8131cc8e1305d3975ad0ed7b71" target="_blank" rel="noopener noreferrer">033b634564</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W50/">W50</a><span aria-hidden="true"> · </span><a href="/daily/2024/12/09/">Dec 9</a></div>
+  <div class="entry-copy">Pre-stable function references are now enabled by default. A pointer such as <code>foo&lt;&gt;</code> is typed as <code>HH\FunctionRef&lt;(readonly function(...): ...)&gt;</code> rather than only as its underlying function type; the wrapped signature retains the function&#x27;s declared capability list. Projects can temporarily restore the previous typing with <code>enable_function_references=false</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/76890b5a623d956d7777558936418398913caffb" target="_blank" rel="noopener noreferrer">76890b5a62</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W50/">W50</a><span aria-hidden="true"> · </span><a href="/daily/2024/12/09/">Dec 9</a></div>
+  <div class="entry-copy">The staged package-v2 checker accepts <code>package_v2_exclude_patterns</code> as a comma-separated list of path regexes. Matching source or target files are exempt from package-boundary checks; the initial default excludes <code>.*/__tests__/.*</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/bf5b18d2dcc355c592a633004850033d8520a9d8" target="_blank" rel="noopener noreferrer">bf5b18d2dc</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W50/">W50</a><span aria-hidden="true"> · </span><a href="/daily/2024/12/09/">Dec 9</a></div>
+  <div class="entry-copy">Package-v2 boundary errors now point separately to the illegal reference, each file&#x27;s package membership source, and the relevant <code>PACKAGES.toml</code> relationship. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d5bbd48c446d42cad74e7bf6207920e7a9f3b06e" target="_blank" rel="noopener noreferrer">d5bbd48c44</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W51/">W51</a><span aria-hidden="true"> · </span><a href="/daily/2024/12/16/">Dec 16</a></div>
+  <div class="entry-copy">Package-v2 runtime metadata now stores <code>input_paths</code> relative to <code>Server.SourceRoot</code> and matches those relative paths when selecting an active deployment. This fixes deployment filtering when a repository is built under a different absolute root, such as a remote-execution worker. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1bda185dc6da409470134c051734294964d1904f" target="_blank" rel="noopener noreferrer">1bda185dc6</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W51/">W51</a><span aria-hidden="true"> · </span><a href="/daily/2024/12/18/">Dec 18</a></div>
+  <div class="entry-copy">The configurable class-pointer migration check now follows values already typed as <code>class&lt;T&gt;</code> into <code>dict</code>, <code>keyset</code>, indexed-access, and collection-key positions. Setting the <code>arraykey</code> entry in <code>class_pointer_levels</code> to <code>3</code> emits warning 12013; level <code>4</code> makes it an error. Convert deliberately with <code>HH\class_to_classname()</code> when a string key is intended. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/36e5e97a958891847896b551ec7073d734676540" target="_blank" rel="noopener noreferrer">36e5e97a95</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W51/">W51</a><span aria-hidden="true"> · </span><a href="/daily/2024/12/20/">Dec 20</a></div>
+  <div class="entry-copy">The unstable <code>require_constraint</code> feature adds <code>require this as C;</code> to traits. It gives the trait body a <code>this &lt;: C</code> assumption without requiring <code>C</code> to be final, and—unlike <code>require extends C</code>—also permits the using class to be exactly <code>C</code>. Enable it with <code>&lt;&lt;file: __EnableUnstableFeatures(&#x27;require_constraint&#x27;)&gt;&gt;</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/aabd163a8502b00d528d6f3b6d3288540b26fe11" target="_blank" rel="noopener noreferrer">aabd163a85</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W50/">W50</a><span aria-hidden="true"> · </span><a href="/daily/2024/12/09/">Dec 9</a></div>
+  <div class="entry-copy"><code>class&lt;C&gt;</code> no longer satisfies a generic <code>string</code> or <code>arraykey</code> bound merely through the transitional <code>class&lt;C&gt; &lt;: classname&lt;C&gt;</code> relation. Type hints such as <code>dict&lt;class&lt;C&gt;, V&gt;</code> are rejected at the generic boundary; use <code>classname&lt;C&gt;</code> for string keys, or keep class pointers out of array-key positions. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/bb07c68abe3aa84ebaaf5d0e7a8df1b4873609e2" target="_blank" rel="noopener noreferrer">bb07c68abe</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

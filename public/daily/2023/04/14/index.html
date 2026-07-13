@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="5 noteworthy changes recorded on this day.">
+  <title>Friday, April 14, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Friday, April 14, 2023</h1>
+  <p class="post-meta">5 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/04/14/" aria-current="page">Day</a><a href="/weekly/2023/W15/">Week</a><a href="/monthly/2023/04/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2023/04/13/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2023/04/16/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy"><code>DateTime::format()</code> is now declared with an empty capability list. Because it previously had the implicit <code>[defaults]</code> requirement, this is a backwards-compatible relaxation that permits calls from pure contexts. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9137fefeb3feef6ba5b0e8fe843975796b7debf6" target="_blank" rel="noopener noreferrer">9137fefeb3</a></div></li><li class="change-entry"><div class="entry-copy">Failed calls to sound-dynamic functions now prefer the ordinary static argument error when both static and like-typed checks fail, avoiding confusing diagnostics involving <code>~_</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/814812d3a3c33d5c36e7b4e2ed8f9b4f29eb1bd1" target="_blank" rel="noopener noreferrer">814812d3a3</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy">The boolean <code>Autoload.UserlandEnabled</code> option has been replaced by <code>Autoload.UserlandDisabled</code> and <code>Autoload.UserlandDisabledSampleRate</code>. A disabled value greater than 1 makes <code>HH\autoload_set_paths()</code> throw; a positive value emits the native-autoload deprecation notice and sampled migration logging. Deployment configuration should move to the new option names. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/908ec462008ff7b6e1803a6219ac77d39afd94e6" target="_blank" rel="noopener noreferrer">908ec46200</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">The unstable case-type feature now has parser, declaration, and subtyping support. Syntax such as <code>case type C&lt;T&gt; as Bound = int | vec&lt;T&gt;;</code> defines an opaque type whose variants are accepted as subtypes; unlike a <code>newtype</code>, it remains opaque even in its defining file. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e694755a340eed6a4d850d2389a04b6c4add469e" target="_blank" rel="noopener noreferrer">e694755a34</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/bd99dc17eb25fdb5797f848a0adea3d01cfc5bf5" target="_blank" rel="noopener noreferrer">bd99dc17eb</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/aa1548dfd45ed629ae8af22cf50790303355dcd8" target="_blank" rel="noopener noreferrer">aa1548dfd4</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e53c4cf7b27979fa1504bb76024f25181007f797" target="_blank" rel="noopener noreferrer">e53c4cf7b2</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4cf9a61e23d49509c31a87a86750bb9adf823fe3" target="_blank" rel="noopener noreferrer">4cf9a61e23</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ff74345bf8b7937d14fe8ed269ac5486f3f1ea01" target="_blank" rel="noopener noreferrer">ff74345bf8</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1ebc834d159d5dfc8b49aa65f56fba00c165297b" target="_blank" rel="noopener noreferrer">1ebc834d15</a></div></li><li class="change-entry"><div class="entry-copy"><code>&lt;&lt;__CrossPackage&gt;&gt;</code> now accepts exactly one package name, preventing ambiguous callables that claim to load several packages. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f9edc902934bd60d33a20ad14d1eee40d564ffe6" target="_blank" rel="noopener noreferrer">f9edc90293</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="10 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 30: Jul 21–Jul 27, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 30: Jul 21–Jul 27, 2025</h1>
+  <p class="post-meta">10 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/07/21/">Day</a><a href="/weekly/2025/W30/" aria-current="page">Week</a><a href="/monthly/2025/07/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2025/W29/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2025/W31/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/07/21/">Mon, Jul 21</a></div>
+  <div class="entry-copy">Type refinements for runtime generic-class tests now instantiate wildcard arguments existentially. Checks such as <code>$x is C&lt;_&gt;</code> can therefore partition and refine generic values without inventing a concrete wildcard type. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a2835215c6905cec11a6c06bd6d4af72087d95a5" target="_blank" rel="noopener noreferrer">a2835215c6</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/215bdd8e7ee8019521c5d0cecce7ec0fc4567997" target="_blank" rel="noopener noreferrer">215bdd8e7e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/07/22/">Tue, Jul 22</a></div>
+  <div class="entry-copy">Runtime <code>is</code> checks and type verification now treat <code>&lt;&lt;__Soft&gt;&gt;</code> constraints as <code>mixed</code>, matching the textual bytecode backend and preventing a soft annotation from being accidentally enforced as a hard type. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/32c03fcd51a3c7929e6eec8a2ea99410baba494a" target="_blank" rel="noopener noreferrer">32c03fcd51</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>7 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/07/21/">Mon, Jul 21</a></div>
+  <div class="entry-copy"><code>protected internal</code> visibility has moved to OngoingRelease. It remains staged rather than generally released. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ae839954615c5d1c02d20c04757c2e211536b327" target="_blank" rel="noopener noreferrer">ae83995461</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/07/21/">Mon, Jul 21</a></div>
+  <div class="entry-copy"><code>Hack.Lang.EmitCheckedUnsafeCast</code> again controls whether staged checked <code>HH\FIXME\UNSAFE_CAST</code> operations emit runtime verification bytecode. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/510db3d62436d741c3b896983a75f5f46b66f4f4" target="_blank" rel="noopener noreferrer">510db3d624</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/07/22/">Tue, Jul 22</a></div>
+  <div class="entry-copy"><code>Eval.CheckedUnsafeCastSampleRate</code> controls runtime checking of staged unsafe casts: <code>0</code> disables checks, <code>1</code> checks every cast, and larger values sample one in every N casts. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/421c0f37881c3cd56bccee18ee6280055ca14527" target="_blank" rel="noopener noreferrer">421c0f3788</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/07/22/">Tue, Jul 22</a></div>
+  <div class="entry-copy">Experimental <code>can_index</code> solving now handles additional <code>supportdyn</code> values and the <code>anyarray</code> supertype. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/10c6c23233d214a89894a23b31b95aab9a4167e0" target="_blank" rel="noopener noreferrer">10c6c23233</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/797f721dc05fcc0f801699fe0f71a4ed5f2ae3dc" target="_blank" rel="noopener noreferrer">797f721dc0</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/07/23/">Wed, Jul 23</a></div>
+  <div class="entry-copy">The experimental EdenFS watcher adds <code>edenfs_file_watcher_throttle_time_ms</code>, allowing projects to set the minimum interval between change notifications. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5f9013dd5596476dee7b818dfb8fe4c6deedc83b" target="_blank" rel="noopener noreferrer">5f9013dd55</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/07/24/">Thu, Jul 24</a></div>
+  <div class="entry-copy">Experimental <code>can_index</code> solving now permits dynamic keys in sound-dynamic code and treats the key parameter covariantly, improving inference for indexed generic values. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b4e92a8d51b15391fdbeca4a1d914eb51378f771" target="_blank" rel="noopener noreferrer">b4e92a8d51</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/11d432e4d1babb4502059171741291bc7cc1983a" target="_blank" rel="noopener noreferrer">11d432e4d1</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/07/25/">Fri, Jul 25</a></div>
+  <div class="entry-copy">Experimental <code>can_index</code> solving now understands optional and variadic tuple elements and produces more specific tuple-index diagnostics. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/65834b5156eeaedd41a567da4e3c3867fca48edc" target="_blank" rel="noopener noreferrer">65834b5156</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/532dd723e59e52338c5fb8d55a71390aa78a93eb" target="_blank" rel="noopener noreferrer">532dd723e5</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2025/07/25/">Fri, Jul 25</a></div>
+  <div class="entry-copy"><code>SoapServer::addFunction()</code> now throws <code>SoapException</code> when passed a single function-name string. Code using string registration must move to one of the API&#x27;s supported non-string registration forms or redesign the dispatch path. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/eebe7d5a17776367afe88c9ea201947511c0ce20" target="_blank" rel="noopener noreferrer">eebe7d5a17</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

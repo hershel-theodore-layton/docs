@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="6 noteworthy changes recorded on this day.">
+  <title>Thursday, August 31, 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Thursday, August 31, 2023</h1>
+  <p class="post-meta">6 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/08/31/" aria-current="page">Day</a><a href="/weekly/2023/W35/">Week</a><a href="/monthly/2023/08/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2023/08/30/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2023/09/01/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">Sound Dynamic no longer unnecessarily pessimises <code>$shape[&#x27;field&#x27;] ?? $default</code>; the null-coalesced result keeps the precise union of the field and default types. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3c10902b5322efd207309bd63c09dd7252886556" target="_blank" rel="noopener noreferrer">3c10902b53</a></div></li><li class="change-entry"><div class="entry-copy">Streaming find-references now flushes all remaining results after the server search completes and reliably includes references from IDE-open files. Temporary result files have also moved out of the project root into the server&#x27;s temporary directory. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9463755411d55c3dbeebbce3e43d1efc805d9841" target="_blank" rel="noopener noreferrer">9463755411</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2df5c0ee107f0faf76a5b83a6f8aac1d9a5ddc3a" target="_blank" rel="noopener noreferrer">2df5c0ee10</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/44a3b226d43acdd29279a866ce897fc98ec6be0b" target="_blank" rel="noopener noreferrer">44a3b226d4</a></div></li></ul></section><section class="daily-section"><h2>Security</h2><ul><li class="change-entry"><div class="entry-copy"><code>Eval.DisableParsedCookies</code> can now stop parsing cookies into <code>$_COOKIE</code> and <code>$_REQUEST</code>, and removes the <code>$_COOKIE</code> superglobal entirely when enabled. Raw headers remain available for application-controlled parsing. The compatibility default remains disabled. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3b831a6debce1e8802ac1242bd249ef8cce436e8" target="_blank" rel="noopener noreferrer">3b831a6deb</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">HackC no longer panics when lowering <code>??=</code> through a readonly access path while readonly remains a Preview feature. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f17676df4bc93c600ffea5a1739f39ef2f1b762d" target="_blank" rel="noopener noreferrer">f17676df4b</a></div></li><li class="change-entry"><div class="entry-copy">Like-type pushing now composes through pre-stable case types, admitting relationships such as <code>vec&lt;~string&gt; &lt;: ~CTVec&lt;string&gt;</code> when <code>CTVec&lt;T&gt;</code> wraps <code>vec&lt;T&gt;</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3878bd424d99dd02ecd95a5361f8ea9c4315464f" target="_blank" rel="noopener noreferrer">3878bd424d</a></div></li><li class="change-entry"><div class="entry-copy">The unstable <code>pipe_await</code> feature now permits <code>await</code> directly on the right-hand side of <code>|&gt;</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9422600fb298eca577bb1b02b0a7fb8d863efc61" target="_blank" rel="noopener noreferrer">9422600fb2</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

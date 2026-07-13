@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="3 noteworthy changes recorded on this day.">
+  <title>Tuesday, February 3, 2026 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Tuesday, February 3, 2026</h1>
+  <p class="post-meta">3 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2026/02/03/" aria-current="page">Day</a><a href="/weekly/2026/W06/">Week</a><a href="/monthly/2026/02/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2026/02/02/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2026/02/04/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy">A type named in a <code>__Sealed</code> allowlist without being a subtype now produces warning 12035 rather than a lint or optional hard error. The <code>enforce_sealed_subclasses</code> setting has been removed, and the diagnostic now uses the correct <code>extend</code>, <code>implement</code>, or <code>use</code> relationship for each classish kind. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/58d208a5ca1585b976a0b9aa75ea68960319b849" target="_blank" rel="noopener noreferrer">58d208a5ca</a></div></li><li class="change-entry"><div class="entry-copy">Typedef well-formedness now follows aliases in the same way that runtime type-structure resolution does. Invalid cycles through an opaque newtype are rejected instead of being accepted by <code>hh</code> and potentially failing in HHVM; legal recursion through transparent aliases and an enabled recursive case type remains supported. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/281bde125ed68cc92ab5d3d6dca9f67fd025334c" target="_blank" rel="noopener noreferrer">281bde125e</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">The unstable <code>shape_field_punning</code> feature adds <code>shape($foo)</code> as shorthand for <code>shape(&#x27;foo&#x27; =&gt; $foo)</code> and permits punned and explicit fields in the same literal. It remains gated by <code>&lt;&lt;file:__EnableUnstableFeatures(&#x27;shape_field_punning&#x27;)&gt;&gt;</code>; missing-field diagnostics also now say where the field is required. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8aeb30361d6a030c1c94bdf1f1ec743fa4fb30b0" target="_blank" rel="noopener noreferrer">8aeb30361d</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="44 noteworthy changes, organized by the source changelog sections.">
+  <title>January 2023 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/" aria-current="page">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Monthly digest</p>
+  <h1 class="post-title">January 2023</h1>
+  <p class="post-meta">44 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/01/01/">Day</a><a href="/weekly/2022/W52/">Week</a><a href="/monthly/2023/01/" aria-current="page">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/monthly/2022/12/"><span aria-hidden="true">←</span><span>Previous month</span></a><a class="period-button next" rel="next" href="/monthly/2023/02/"><span aria-hidden="true">→</span><span>Next month</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>38 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W01/">W01</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/03/">Jan 3</a></div>
+  <div class="entry-copy">HHVM no longer reports a false <code>Cannot declare self-referencing constant</code> fatal when an interval-timer callback interrupts the initialization of a large global or class constant. Genuine recursive constants remain invalid. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/bc6c72f81aeeaf173f872ecfba1eecf97db25153" target="_blank" rel="noopener noreferrer">bc6c72f81a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W01/">W01</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/03/">Jan 3</a></div>
+  <div class="entry-copy">The diagnostic for using <code>#MakeICInaccessible</code> or <code>#SoftMakeICInaccessible</code> with an incompatible context now correctly refers to <code>leak_safe_shallow</code>, rather than the incompatible <code>leak_safe</code> context. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9592c3ee4d91b5870587f45fbf481382ebab5d21" target="_blank" rel="noopener noreferrer">9592c3ee4d</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W01/">W01</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/04/">Jan 4</a></div>
+  <div class="entry-copy">Memoized functions and methods may now use <code>&lt;&lt;__Memoize(#Uncategorized)&gt;&gt;</code> or its <code>__MemoizeLSB</code> equivalent. This has ordinary memoization behavior but records the explicit category in reflection. Functions whose contexts cannot access implicit context must continue to omit a memoization option. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e2bc6db35d4669e3870e9f2c1bb5507c8fd5dbad" target="_blank" rel="noopener noreferrer">e2bc6db35d</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W01/">W01</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/04/">Jan 4</a></div>
+  <div class="entry-copy">Hover information for functions and methods that support dynamic now prints the source-level <code>&lt;&lt;__SupportDynamicType&gt;&gt;</code> attribute instead of exposing its internal <code>supportdyn&lt;...&gt;</code> representation. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/df90d157ec9214370794203146003c84428df05f" target="_blank" rel="noopener noreferrer">df90d157ec</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W01/">W01</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/05/">Jan 5</a></div>
+  <div class="entry-copy">Dynamic-aware checking of indexing and indexed assignment now preserves the <code>dynamic</code> part of <code>supportdyn&lt;T&gt;</code>. This fixes rejected reads, appends, and writes in <code>&lt;&lt;__SupportDynamicType&gt;&gt;</code> code where the operation is valid through <code>dynamic</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3921de4f83837143b25e7f3cacb08ef101b92042" target="_blank" rel="noopener noreferrer">3921de4f83</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W01/">W01</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/06/">Jan 6</a></div>
+  <div class="entry-copy">Hack modules no longer require <code>&lt;&lt;file:__EnableUnstableFeatures(&#x27;modules&#x27;)&gt;&gt;</code>. The separate <code>module_references</code> experiment still requires its own unstable-feature opt-in. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d3bdad4f2fc5be6bbbaf6e9c3b50a219c19a2d43" target="_blank" rel="noopener noreferrer">d3bdad4f2f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W01/">W01</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/06/">Jan 6</a></div>
+  <div class="entry-copy"><code>HH\ImplicitContext\run_with_soft_inaccessible_state()</code> and its async counterpart can run a callable in the soft-inaccessible implicit-context state during migrations. They accept a blame key, may only be entered from a null implicit-context state, and should be removed once the logged violations have been addressed. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/402b7ded0e0fbca8d096bebbd416cd9e2b1873fb" target="_blank" rel="noopener noreferrer">402b7ded0e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W01/">W01</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/06/">Jan 6</a></div>
+  <div class="entry-copy">Hover and typed-AST data can now distinguish anonymous functions from named functions instead of assigning synthetic names to closures. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e18be7371b3388b501d098f14b7d47a8ea5906c8" target="_blank" rel="noopener noreferrer">e18be7371b</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W02/">W02</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/09/">Jan 9</a></div>
+  <div class="entry-copy">Lint 5649 now warns when <code>::class</code> is taken from an <code>internal</code> class, since the resulting raw string can escape its module without visibility checks. Keep such classnames inside the declaring module or avoid producing them. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ac5b19049b7fbc232d4dd7750cfc3879141e4c85" target="_blank" rel="noopener noreferrer">ac5b19049b</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W02/">W02</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/09/">Jan 9</a></div>
+  <div class="entry-copy">Bundled SPL and system-class declarations now give iterator methods more precise types: implementations of <code>valid()</code> and <code>hasChildren()</code> return <code>bool</code>, while several <code>current()</code> and <code>getChildren()</code> declarations preserve their iterator type parameters. This should reduce <code>mixed</code> propagation when consuming built-in iterators. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/05841133e51759d6fd14b0d87c479f12d5f3e0e4" target="_blank" rel="noopener noreferrer">05841133e5</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3274d2043b3c7477b76e9ab4b2b1da2b7b13e5b6" target="_blank" rel="noopener noreferrer">3274d2043b</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/50314df3fa649a8e8900ac9c8591f148463eceb5" target="_blank" rel="noopener noreferrer">50314df3fa</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c58cbdbc794f00efbc1a4015eb41d5abd5b6fc7e" target="_blank" rel="noopener noreferrer">c58cbdbc79</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W02/">W02</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/10/">Jan 10</a></div>
+  <div class="entry-copy">Sound-dynamic checking no longer rejects assigning a value of type <code>~T</code> back to an <code>inout T</code> parameter solely because the function or method is being checked for dynamic calls. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/fab2e559dd7e8bacda3181001ef4492cb705736e" target="_blank" rel="noopener noreferrer">fab2e559dd</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W02/">W02</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/11/">Jan 11</a></div>
+  <div class="entry-copy">Objects created by the DOM extension now use canonical class capitalization such as <code>DOMDocument</code> and <code>DOMElement</code>. <code>DOMDocument::registerNodeClass()</code> remains case-insensitive, but reflection and <code>get_class()</code> now see the correctly cased built-in name. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/df0d4d282730014560bd50a111631b459bc6d945" target="_blank" rel="noopener noreferrer">df0d4d2827</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W02/">W02</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/12/">Jan 12</a></div>
+  <div class="entry-copy">Incremental typechecking now rechecks dependents when an inherited XHP attribute becomes required or a new required attribute is added. Projects should receive the same missing-attribute errors without needing a full check. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3fba663915e013e60cf802435d5715c8e1667ed0" target="_blank" rel="noopener noreferrer">3fba663915</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W02/">W02</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/12/">Jan 12</a></div>
+  <div class="entry-copy">The bundled HHI for <code>pcntl_waitpid()</code> now types its status parameter as <code>inout ?int</code>, and <code>Serializable::unserialize()</code> now requires a <code>string</code>. Callers of <code>pcntl_waitpid()</code> must account for the variable remaining nullable after the call. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ece17c06984d261dc222e5b627090cb1822312ce" target="_blank" rel="noopener noreferrer">ece17c0698</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/050792ec94478ea2df2e5ae9078af1ef1da2fe40" target="_blank" rel="noopener noreferrer">050792ec94</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W02/">W02</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/12/">Jan 12</a></div>
+  <div class="entry-copy">HHBBC now treats the <code>classname</code> field in runtime type structures as case-sensitive, matching the shape-key semantics used by type structures. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b9b1d9f2ef32c35b5d916eb3e4466a156791de53" target="_blank" rel="noopener noreferrer">b9b1d9f2ef</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W02/">W02</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/13/">Jan 13</a></div>
+  <div class="entry-copy">Missing and extra shape-field errors now point at the individual field, and a missing field in a shape literal offers a quick-fix that inserts a <code>TODO</code> value. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5f0a767ff1df407b782a576cae11676b2ef639a4" target="_blank" rel="noopener noreferrer">5f0a767ff1</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/bbff846c010c54a31b35cb24d5f1be07727a3d20" target="_blank" rel="noopener noreferrer">bbff846c01</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W02/">W02</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/13/">Jan 13</a></div>
+  <div class="entry-copy">HHI declarations now type the output of <code>parse_str()</code> and the arrays passed to <code>Collator::sort()</code> and <code>Collator::asort()</code> as <code>dynamic</code>, accurately representing their heterogeneous results. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/083c6643efdb1eb7fa4bea57811d188330b90496" target="_blank" rel="noopener noreferrer">083c6643ef</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/834a393008a212ec8c6796016dcaddc7d41e0259" target="_blank" rel="noopener noreferrer">834a393008</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W02/">W02</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/13/">Jan 13</a></div>
+  <div class="entry-copy">Runtime type-structure helpers now compare the <code>alias</code> and <code>kind</code> fields case-sensitively, like other shape keys. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/16acff3a5cdc8bffc35359a58ef83104c9be1018" target="_blank" rel="noopener noreferrer">16acff3a5c</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W02/">W02</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/13/">Jan 13</a></div>
+  <div class="entry-copy">Only the exactly cased method name <code>__construct</code> is treated as a constructor by runtime method-name checks. A differently cased method such as <code>__Construct</code> remains an ordinary method. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/114f38dff3df47bd98001b97a3fe734840e54ce3" target="_blank" rel="noopener noreferrer">114f38dff3</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W03/">W03</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/17/">Jan 17</a></div>
+  <div class="entry-copy">Several standard-library HHI output parameters now have concrete nullable types. APC success outputs are <code>inout ?bool</code>, while the error-code outputs of <code>msg_send()</code> and <code>msg_receive()</code> are <code>inout ?int</code>. Variables passed to these functions should use the corresponding nullable type and be checked after the call. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ff9df8962124be81b6b2642bbd0e1ab0b529b460" target="_blank" rel="noopener noreferrer">ff9df89621</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W03/">W03</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/18/">Jan 18</a></div>
+  <div class="entry-copy">Expression-tree lambdas are now fully inferred during sound-dynamic checking. This fixes spurious constraint errors on expression trees whose inferred type parameter cannot be <code>dynamic</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e6189ec286c9ba0b84a92ba3caa4025785ad3fac" target="_blank" rel="noopener noreferrer">e6189ec286</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W03/">W03</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/18/">Jan 18</a></div>
+  <div class="entry-copy">More HHI output parameters now describe their results: <code>pcntl_wait()</code> uses <code>?int</code>, <code>exec()</code> and <code>preg_match_with_error()</code> use <code>dynamic</code>, and the resource collections used by <code>proc_open()</code> and <code>stream_select()</code> are nullable <code>vec_or_dict&lt;resource&gt;</code>. Existing variables passed by <code>inout</code> may need matching annotations. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/14b294fef6ed514b1a291b1936e86eec089a339d" target="_blank" rel="noopener noreferrer">14b294fef6</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W03/">W03</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/20/">Jan 20</a></div>
+  <div class="entry-copy">Array-access errors now retain the actual base and index types in typed-AST holes, and inferred <code>KeyedContainer</code> key types are constrained to <code>arraykey</code>. IDE fixes and type-error explanations should no longer suggest impossible types such as <code>KeyedContainer&lt;bool, nothing&gt;</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5519413eb5bf284d9042b60f979e4f0cf9a90838" target="_blank" rel="noopener noreferrer">5519413eb5</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/01bddda5869becf471ecc93ccebea4769515a5ec" target="_blank" rel="noopener noreferrer">01bddda586</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/59a15c7f2773b29cb36ec2e8f860d5e2413aaced" target="_blank" rel="noopener noreferrer">59a15c7f27</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W03/">W03</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/20/">Jan 20</a></div>
+  <div class="entry-copy">The dead-<code>UNSAFE_CAST</code> codemod now omits redundant parentheses for expressions that cannot be captured by surrounding syntax, producing smaller and more idiomatic patches. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/952e984837ca498828e3269a79c0e8c1795288f9" target="_blank" rel="noopener noreferrer">952e984837</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W03/">W03</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/22/">Jan 22</a></div>
+  <div class="entry-copy">Expressions involving a missing class now receive type <code>nothing</code> instead of an unconstrained fresh type variable. This avoids large, misleading inferred unions and reflects that executing the unresolved class reference will fatal, even if its naming error was suppressed. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1a16e3c578bedec0e742fb3b29f3deb4c32da4ac" target="_blank" rel="noopener noreferrer">1a16e3c578</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W04/">W04</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/23/">Jan 23</a></div>
+  <div class="entry-copy">Incremental typechecking now correctly rechecks both files involved in a duplicate module-name collision, avoiding stale module diagnostics after edits. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0021cf60bb1b473c87d903bf846604ff2e185f17" target="_blank" rel="noopener noreferrer">0021cf60bb</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W04/">W04</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/23/">Jan 23</a></div>
+  <div class="entry-copy"><code>&lt;&lt;__SoftInternal&gt;&gt;</code> is now accepted on constructor-promoted properties with <code>internal</code> visibility and rejected on ordinary constructor parameters or properties with other visibility. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2c2ac6d2d305a72a83a5d8be7eadf4830a54b892" target="_blank" rel="noopener noreferrer">2c2ac6d2d3</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W04/">W04</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/23/">Jan 23</a></div>
+  <div class="entry-copy"><code>hphp_get_stats(&#x27;units&#x27;)</code> and <code>hphp_get_stats(&#x27;funcs&#x27;)</code> can now report the number of loaded units and allocated function IDs, respectively, which is useful for auditing how much code a script loads. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f62641e738be3f6393d700c49713d47a2849f1b0" target="_blank" rel="noopener noreferrer">f62641e738</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W04/">W04</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/24/">Jan 24</a></div>
+  <div class="entry-copy">Pessimized expression trees now strip like types from inferred virtualized types even when they appear inside unions or <code>supportdyn&lt;...&gt;</code>. This fixes spurious generic-constraint errors passed to <code>makeTree()</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0cb80422c19f91e8082c16a4c2461ef7e0442c8e" target="_blank" rel="noopener noreferrer">0cb80422c1</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W04/">W04</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/25/">Jan 25</a></div>
+  <div class="entry-copy">Projects using implicit sound-dynamic pessimization can now put the experimental <code>&lt;&lt;__NoAutoDynamic&gt;&gt;</code> attribute on a top-level function or class to disable automatic pessimization within that declaration. This is a local escape hatch: use it where the declaration is deliberately kept outside the dynamic boundary. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5bf4a9604da547fd42420e14d0fccba91ad49b0d" target="_blank" rel="noopener noreferrer">5bf4a9604d</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W04/">W04</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/25/">Jan 25</a></div>
+  <div class="entry-copy">Disjointness checks now terminate safely when generic upper bounds form a cycle, preventing affected subtype queries from diverging. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f298d5f2fe9bfdaf6d67d55d6b61fdfa11f901e7" target="_blank" rel="noopener noreferrer">f298d5f2fe</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W04/">W04</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/26/">Jan 26</a></div>
+  <div class="entry-copy">Method calls that violate a <code>where</code> constraint now place a typed-AST hole on the receiver. IDE and codemod consumers can identify the receiver as the source of error 4323 instead of receiving an unlocated constraint failure. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c788fbc3ec485dbfa92295d373788dd15621a452" target="_blank" rel="noopener noreferrer">c788fbc3ec</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W04/">W04</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/26/">Jan 26</a></div>
+  <div class="entry-copy">Hover cards now show a declaration&#x27;s documentation URL before its doc comment, keeping the link visible even when the comment is long. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/dca161bc9058d5566dd1fc94e0ed47152520f7b7" target="_blank" rel="noopener noreferrer">dca161bc90</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W04/">W04</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/27/">Jan 27</a></div>
+  <div class="entry-copy">The experimental <code>&lt;&lt;__NoAutoDynamic&gt;&gt;</code> escape hatch now applies to type aliases as well as functions and classes. Under implicit sound-dynamic mode, an unannotated alias still receives an implicit <code>as supportdyn&lt;mixed&gt;</code> bound; annotating the alias suppresses that transformation. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d7f9a9ec91412797a506ed2643e85779f14a6c62" target="_blank" rel="noopener noreferrer">d7f9a9ec91</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W04/">W04</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/28/">Jan 28</a></div>
+  <div class="entry-copy"><code>&lt;&lt;__NoAutoDynamic&gt;&gt;</code> now disables implicit pessimization while checking function and method return expressions, not only while building their declarations. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7d1201c5675c9f9d759f73e70d47091b342ac461" target="_blank" rel="noopener noreferrer">7d1201c567</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W05/">W05</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/30/">Jan 30</a></div>
+  <div class="entry-copy">The bundled implicit-context HHI now exposes <code>HH\MemoizeOption#Uncategorized</code>, completing typechecker support for the memoization category added earlier in the month. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6593d8379b6f0a1cb01439affd5f416a729bb133" target="_blank" rel="noopener noreferrer">6593d8379b</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W05/">W05</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/31/">Jan 31</a></div>
+  <div class="entry-copy">Sound-dynamic hierarchy checks now consider all ancestors, including interfaces inherited through used traits. A class that transitively acquires an SDT interface requirement must itself support dynamic. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/810c57c82f798217aea22bbdf5b37448d953ec0c" target="_blank" rel="noopener noreferrer">810c57c82f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W05/">W05</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/31/">Jan 31</a></div>
+  <div class="entry-copy">A trait is now considered to support dynamic only when it is marked <code>&lt;&lt;__SupportDynamicType&gt;&gt;</code> and one of its requirements restricts it to SDT classes. This fixes both false acceptance and false rejection around SDT traits and their consumers. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c07151edf950fb717e6d4c25984355065d30af0a" target="_blank" rel="noopener noreferrer">c07151edf9</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>5 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W01/">W01</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/06/">Jan 6</a></div>
+  <div class="entry-copy">The Thrift extension no longer implements or registers <code>RpcOptions::setFaultToInject()</code>. Projects using this fault-injection API must remove those calls. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/64a89b91a6da25dd42330a3d01de0ad4f3236935" target="_blank" rel="noopener noreferrer">64a89b91a6</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W02/">W02</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/12/">Jan 12</a></div>
+  <div class="entry-copy">Dumping or calling <code>__debugInfo()</code> on a closure no longer reveals captured variables, parameters, or the bound <code>$this</code>; it now produces an empty dictionary. Code must not use closure debug output as a reflection API. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d2cfc9b74dbd2355c4aa3aeb82d0c18bfdccd4de" target="_blank" rel="noopener noreferrer">d2cfc9b74d</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W03/">W03</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/19/">Jan 19</a></div>
+  <div class="entry-copy">HHI declarations must now provide explicit parameter, return, method, and property types. Authors of project-specific HHIs should add real types where known and use an appropriate placeholder only where the declaration truly cannot be typed. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/96f6e5b16fe743d5df959620efdde74ecf15425b" target="_blank" rel="noopener noreferrer">96f6e5b16f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W03/">W03</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/20/">Jan 20</a></div>
+  <div class="entry-copy"><code>tls://</code> stream sockets no longer negotiate TLS 1.0 and instead use the modern TLS client or server method. Connections to endpoints that only support TLS 1.0 will now fail and should be migrated to a current protocol. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/083f5ffdee661f61512909d16f9a5b98cff3cf0b" target="_blank" rel="noopener noreferrer">083f5ffdee</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W04/">W04</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/23/">Jan 23</a></div>
+  <div class="entry-copy">The stale systemlib declaration of <code>RpcOptions::setFaultToInject()</code> has been removed, completing the earlier runtime removal. Calls now fail typechecking as well as at runtime. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/084d4228442db4dc501f5f9b8e4ad28438ddd063" target="_blank" rel="noopener noreferrer">084d422844</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W04/">W04</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/23/">Jan 23</a></div>
+  <div class="entry-copy">The typechecker now accepts <code>&lt;&lt;__SoftInternal&gt;&gt;</code> on enums and enum classes ahead of runtime support. Treat this as migration groundwork rather than a fully available runtime feature. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e373f377f5e4e967be658df5a75a7bb5f7160966" target="_blank" rel="noopener noreferrer">e373f377f5</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="4 noteworthy changes recorded on this day.">
+  <title>Wednesday, November 12, 2025 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Wednesday, November 12, 2025</h1>
+  <p class="post-meta">4 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/11/12/" aria-current="page">Day</a><a href="/weekly/2025/W46/">Week</a><a href="/monthly/2025/11/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2025/11/11/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2025/11/13/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Security</h2><ul><li class="change-entry"><div class="entry-copy">Package boundary checks now cover global constants. Accessing a constant from another package without a permitted dependency produces Typing[4472], closing a gap in package access enforcement. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/fcd7b5c7716076d1ff776947a54d5fdc99bfaa6f" target="_blank" rel="noopener noreferrer">fcd7b5c771</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy"><code>hh --package-lint FILE</code> now uses naming and dependency tables instead of fully type-checking reference files. Its JSON output changes from per-definition reference records to a simple array of absolute paths for files that may be affected by moving the input file. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/648d385bc7336f016eb974ed02e7954d60a2d9fa" target="_blank" rel="noopener noreferrer">648d385bc7</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">The ongoing-release <code>sealed_methods</code> feature adds method-level <code>&lt;&lt;__Sealed(...)&gt;&gt;</code>. Its allowlist restricts which classes or traits may directly override a method; constructors, private methods, and interface methods cannot use the attribute. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/83a0b8478c1b29679492af43b9587e958bbce66f" target="_blank" rel="noopener noreferrer">83a0b8478c</a></div></li><li class="change-entry"><div class="entry-copy">The new unstable <code>xhp_type_constants</code> feature permits type constants such as <code>A::T</code> and <code>this::TData</code> in XHP attribute declarations. Runtime XHP metadata currently represents these attributes as <code>mixed</code>, so the feature still requires <code>__EnableUnstableFeatures</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/acca24cbe13b7487c3131cdef4c272e49825bea9" target="_blank" rel="noopener noreferrer">acca24cbe1</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

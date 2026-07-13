@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="4 noteworthy changes recorded on this day.">
+  <title>Friday, August 30, 2024 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Friday, August 30, 2024</h1>
+  <p class="post-meta">4 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/08/30/" aria-current="page">Day</a><a href="/weekly/2024/W35/">Week</a><a href="/monthly/2024/08/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2024/08/29/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2024/09/03/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">Tuple type comparison now preserves element order instead of sorting tuples like unions and intersections, so <code>(A, B)</code> is no longer treated as identical to <code>(B, A)</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/172a6d93c9e0eae27f34ac38e4a61d1b68574f0f" target="_blank" rel="noopener noreferrer">172a6d93c9</a></div></li><li class="change-entry"><div class="entry-copy">The new pure <code>HH\Facts\transitive_subtypes&lt;T&gt;(classname&lt;T&gt;, ?HH\Facts\DeriveFilters = null)[]: vec&lt;string&gt;</code> query computes the full transitive closure of types that extend, implement, or use a base type in one native call. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8755851768547f7a04dd67dc2e11163e0c3a9b36" target="_blank" rel="noopener noreferrer">8755851768</a></div></li><li class="change-entry"><div class="entry-copy">The sealed <code>HH\GenericEnumClass&lt;+TClass, +TValue&gt;</code> interface is now exposed to Hack, allowing type constants and generic APIs to constrain a value to any concrete enum class without exposing <code>HH\BuiltinEnumClass</code> directly. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/47687c7eaebb1355b8d416a5070d5c1405b005dd" target="_blank" rel="noopener noreferrer">47687c7eae</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">Expression trees now support named instance-method access and calls through the DSL&#x27;s <code>visitInstanceMethod()</code> hook. Nullsafe and dynamically named instance methods remain unsupported. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a84239a02b0ecdbb3778a68e834c612967f8cdec" target="_blank" rel="noopener noreferrer">a84239a02b</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

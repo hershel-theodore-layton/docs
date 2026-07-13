@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="6 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 12: Mar 16–Mar 22, 2026 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 12: Mar 16–Mar 22, 2026</h1>
+  <p class="post-meta">6 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2026/03/17/">Day</a><a href="/weekly/2026/W12/" aria-current="page">Week</a><a href="/monthly/2026/03/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2026/W11/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2026/W13/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/03/17/">Tue, Mar 17</a></div>
+  <div class="entry-copy"><code>hh --find-refs</code> and symbol-indexing cross-references no longer lose class receivers when a union also contains <code>dynamic</code> or <code>Tany</code>. Method references remain discoverable after repeated <code>is</code> refinements that introduce like types. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e2490020decff61e094aacd84d823fdf9966e7ac" target="_blank" rel="noopener noreferrer">e2490020de</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/03/19/">Thu, Mar 19</a></div>
+  <div class="entry-copy">Concurrent use of the LMDB extension no longer races while closing environments or cursors, corrupting its handle map and crashing HHVM. LMDB handles are now tracked per request thread. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4a781cffc4f7875658ebb670e401e45b1fdb26bd" target="_blank" rel="noopener noreferrer">4a781cffc4</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/03/18/">Wed, Mar 18</a></div>
+  <div class="entry-copy">Hack now emits Warn[12036] when an expression has a genuine unresolved <code>Tany</code> type that can silently pass as any type. <code>Tany</code> caused solely by a missing type in the hierarchy is excluded to avoid duplicating the underlying error. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/bcbc39eec52ef59130e7282d76511cd7e5234f95" target="_blank" rel="noopener noreferrer">bcbc39eec5</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/03/19/">Thu, Mar 19</a></div>
+  <div class="entry-copy">Conflicting trait-method detection now catches a method re-imported through both a parent class and multiple traits. Hack follows HHVM&#x27;s trait flattening and reports the ambiguous trait definitions instead of incorrectly retaining the inherited class method. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f316fd38e66fc830d5ee86c00b5c7a699643976a" target="_blank" rel="noopener noreferrer">f316fd38e6</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/03/20/">Fri, Mar 20</a></div>
+  <div class="entry-copy"><code>method_trait_diamond</code> and <code>require_class</code> completed their release and were removed from the experimental-feature registry. Their syntax is available without <code>__EnableUnstableFeatures</code>; remove those now-stale feature names from file attributes and experimental-feature configuration. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/25c20acf30331ca695a06ad1885d54e7d9ac0880" target="_blank" rel="noopener noreferrer">25c20acf30</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/775769c0e6d73021a13b7558d21ec3528a531b1d" target="_blank" rel="noopener noreferrer">775769c0e6</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/03/18/">Wed, Mar 18</a></div>
+  <div class="entry-copy">Package-boundary checking can now cover types used by <code>as</code> and <code>?as</code>, which must be deployed because these expressions resolve a runtime type structure. The new <code>package_allow_as_expression_violations</code> carveout defaults to <code>true</code> for migration; setting it to <code>false</code> enables hard errors. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/872d098c0de398eb0b258586ef8336440b2f21a4" target="_blank" rel="noopener noreferrer">872d098c0d</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

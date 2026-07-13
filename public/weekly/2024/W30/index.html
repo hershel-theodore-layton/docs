@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="8 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 30: Jul 22–Jul 28, 2024 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 30: Jul 22–Jul 28, 2024</h1>
+  <p class="post-meta">8 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/07/22/">Day</a><a href="/weekly/2024/W30/" aria-current="page">Week</a><a href="/monthly/2024/07/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2024/W29/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2024/W31/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Breaking Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/07/22/">Mon, Jul 22</a></div>
+  <div class="entry-copy"><code>ConstIndexAccess</code> and <code>IndexAccess</code> now constrain their key type parameter with <code>as arraykey</code>; collection <code>contains()</code> and <code>containsKey()</code> declarations received the same constraint. Custom implementations and calls that explicitly supplied an unconstrained, non-<code>arraykey</code> type argument may now fail type checking. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/716478479edbfee4697f8cfb96ce85bc56d2a6e8" target="_blank" rel="noopener noreferrer">716478479e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/07/24/">Wed, Jul 24</a></div>
+  <div class="entry-copy">The HHI for <code>HH\ImplicitContext</code> now exposes the abstract <code>IS_MEMO_SENSITIVE</code> boolean and <code>CRun</code> context constant introduced in systemlib earlier this month, so typed subclasses must define both. Calls to <code>runWith()</code>, <code>runWithAsync()</code>, <code>get()</code>, and <code>exists()</code> must provide a capability set that is a superset of the subclass&#x27;s selected <code>CRun</code>; <code>[this::CRun]</code> states a callee requirement and does not grant that capability to the caller. Both <code>runWith()</code> and <code>runWithAsync()</code> additionally carry the callback&#x27;s contextual requirement through <code>ctx $f</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0746e19f3fb2692aabd5f9af92681151595ce63e" target="_blank" rel="noopener noreferrer">0746e19f3f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/07/24/">Wed, Jul 24</a></div>
+  <div class="entry-copy">The <code>hh --xhp-autocomplete-snippet</code> command-line option has been removed. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ac67a519c549de2fc6e583355a04558eedc09a57" target="_blank" rel="noopener noreferrer">ac67a519c5</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/07/22/">Mon, Jul 22</a></div>
+  <div class="entry-copy">Experimental class-level <code>where</code> clauses have been removed from the language. They were never enabled as a supported feature; use type refinements for constraints on associated types. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/46632da40466238ca686c0b66b05d47a17621b56" target="_blank" rel="noopener noreferrer">46632da404</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/07/24/">Wed, Jul 24</a></div>
+  <div class="entry-copy">The disabled-by-default <code>.hhconfig</code> option <code>type_refinement_partition_shapes=true</code> enables constraint-based <code>is</code> refinements for closed shapes with required fields. Open shapes and shapes with optional fields are not yet handled by this path. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e99ed3d0460ac7aa43fb73e93f853e61cbb996d9" target="_blank" rel="noopener noreferrer">e99ed3d046</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Highlights</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/07/24/">Wed, Jul 24</a></div>
+  <div class="entry-copy">When <code>hh</code> is invoked with <code>--from</code>, an explicit <code>--error-format</code> now takes precedence instead of being silently replaced with plain output. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/392e317d126098dfd7a4513ab424a12fbfd23537" target="_blank" rel="noopener noreferrer">392e317d12</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/07/26/">Fri, Jul 26</a></div>
+  <div class="entry-copy">HHVM now registers ARM JIT trap fixups correctly, preventing trap metadata from taking precedence over the intended fixup and breaking stack unwinding. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/dec8107878fe762ebf63c6df2101ec40b30eba7e" target="_blank" rel="noopener noreferrer">dec8107878</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2024/07/26/">Fri, Jul 26</a></div>
+  <div class="entry-copy">HSL sorting documentation now states the comparator contract consistently: return a negative value, zero, or a positive value when the first argument sorts before, equal to, or after the second, respectively, as with <code>&lt;=&gt;</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b3a1874c44a81952e1fc04ca895cfbc231b773e1" target="_blank" rel="noopener noreferrer">b3a1874c44</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

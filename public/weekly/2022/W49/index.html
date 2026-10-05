@@ -54,7 +54,7 @@
   <div class="entry-copy">Deployments using native Facts can set <code>Autoload.UpdateSuppressionPath</code> to a sentinel file. While that file exists, Facts skips Watchman-driven updates; relative paths are resolved from the repository root. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5f4a1ae19be23ae8470b20a3d10782f60e106070" target="_blank" rel="noopener noreferrer">5f4a1ae19b</a></div>
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/daily/2022/12/08/">Thu, Dec 8</a></div>
-  <div class="entry-copy">A new lint reports casts whose target type is already identical to the expression&#x27;s inferred type. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a070d39d1ff9ea3387b8fbb0f32f572d77ec68fd" target="_blank" rel="noopener noreferrer">a070d39d1f</a></div>
+  <div class="entry-copy">A new lint reports redundant casts to <code>int</code>, <code>string</code>, <code>bool</code>, or <code>float</code> when the expression already has that primitive type, and offers an autofix that removes the cast. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a070d39d1ff9ea3387b8fbb0f32f572d77ec68fd" target="_blank" rel="noopener noreferrer">a070d39d1f</a></div>
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/daily/2022/12/08/">Thu, Dec 8</a></div>
   <div class="entry-copy">When an enum declaration omits its base type, the parser error now offers a quick-fix that inserts <code>: arraykey</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c60763014e80d9d7d30dcfc842df5539dd078d55" target="_blank" rel="noopener noreferrer">c60763014e</a></div>
@@ -72,7 +72,7 @@
   <div class="entry-copy">The direct-declaration parser now retains pre-stable type-refinement members when they are wrapped as comma-separated list items. Incremental and full typechecking should consequently agree on refined type constants. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4528fb949c08f50362900aaddc2879bdce41389f" target="_blank" rel="noopener noreferrer">4528fb949c</a></div>
 </li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>1 change</span></header><ul><li class="change-entry">
   <div class="entry-meta"><a href="/daily/2022/12/08/">Thu, Dec 8</a></div>
-  <div class="entry-copy"><code>Iterable::map()</code> and <code>KeyedIterable::mapWithKey()</code> have been removed from their interfaces because their signatures were unsound. Calls through those interface types must use an appropriate concrete collection API or an HSL traversal function. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/899d46019f064a37788c9f56fa2273447957004a" target="_blank" rel="noopener noreferrer">899d46019f</a></div>
+  <div class="entry-copy"><code>Iterable::map()</code>, <code>KeyedIterable::map()</code>, and <code>KeyedIterable::mapWithKey()</code> have been removed from their interfaces because their signatures were unsound. Calls through those interface types must use an appropriate concrete collection API or an HSL traversal function. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/899d46019f064a37788c9f56fa2273447957004a" target="_blank" rel="noopener noreferrer">899d46019f</a></div>
 </li></ul></section></div></div></article></div></div></main>
     </div>
     <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>

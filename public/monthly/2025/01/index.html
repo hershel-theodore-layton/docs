@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="32 noteworthy changes, organized by the source changelog sections.">
+  <meta name="description" content="30 noteworthy changes, organized by the source changelog sections.">
   <title>January 2025 | HHVM Change Digest</title>
   <link rel="stylesheet" href="/static/css/main.css">
   <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
@@ -30,11 +30,11 @@
   <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
   <p class="post-authorName">Monthly digest</p>
   <h1 class="post-title">January 2025</h1>
-  <p class="post-meta">32 noteworthy changes, organized by the source changelog sections.</p>
+  <p class="post-meta">30 noteworthy changes, organized by the source changelog sections.</p>
   
   <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/01/01/">Day</a><a href="/weekly/2025/W01/">Week</a><a href="/monthly/2025/01/" aria-current="page">Month</a></nav>
   <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/monthly/2024/12/"><span aria-hidden="true">←</span><span>Previous month</span></a><a class="period-button next" rel="next" href="/monthly/2025/02/"><span aria-hidden="true">→</span><span>Next month</span></a></nav>
-</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>18 changes</span></header><ul><li class="change-entry">
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>16 changes</span></header><ul><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2025/W01/">W01</a><span aria-hidden="true"> · </span><a href="/daily/2025/01/02/">Jan 2</a></div>
   <div class="entry-copy">The new <code>HH\is_cli_server_mode()</code> builtin reports whether the current request is proxying filesystem and system calls through HHVM&#x27;s CLI-server protocol. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e8893477e1ba064523ae6de0dcc4949a5aba7e2f" target="_blank" rel="noopener noreferrer">e8893477e1</a></div>
 </li><li class="change-entry">
@@ -51,16 +51,13 @@
   <div class="entry-copy">Non-repo-authoritative HHVM gained <code>HH\SimpleLock</code>, a named cross-request mutex API with asynchronous <code>lock()</code>, immediate <code>try_lock()</code>, <code>unlock()</code>, and a timeout helper. Locks abandoned at request shutdown are released automatically. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ea4402743440bab143ec0a6555d8ada69ecf452f" target="_blank" rel="noopener noreferrer">ea44027434</a></div>
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2025/W03/">W03</a><span aria-hidden="true"> · </span><a href="/daily/2025/01/17/">Jan 17</a></div>
-  <div class="entry-copy">The new <code>HH\gc_is_conservative()</code> builtin reports whether HHVM&#x27;s garbage collector is operating without any conservative type scanners. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3f6dfef71e34c6ab24cc3609ac60783b4b9e4632" target="_blank" rel="noopener noreferrer">3f6dfef71e</a></div>
+  <div class="entry-copy">The new <code>HH\gc_is_conservative()</code> builtin reports whether HHVM&#x27;s garbage collector is operating without any non-conservative type scanners. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3f6dfef71e34c6ab24cc3609ac60783b4b9e4632" target="_blank" rel="noopener noreferrer">3f6dfef71e</a></div>
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2025/W04/">W04</a><span aria-hidden="true"> · </span><a href="/daily/2025/01/20/">Jan 20</a></div>
   <div class="entry-copy">Hack&#x27;s language server now implements the standard <code>$/setTrace</code> notification in addition to VS Code&#x27;s older <code>$/setTraceNotification</code>, allowing clients to toggle verbose protocol tracing without receiving a method-not-found response. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6ff6878cbde986338b8517af0f4d0157f8c937c4" target="_blank" rel="noopener noreferrer">6ff6878cbd</a></div>
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2025/W04/">W04</a><span aria-hidden="true"> · </span><a href="/daily/2025/01/20/">Jan 20</a></div>
   <div class="entry-copy">The Hack server gained an exhaustive folded-declaration invalidation mode for saved files, favoring correctness when stale folded declarations would otherwise make IDE results disagree with the CLI. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7ef88171965358fcc7c8aab17ea8e034c9b9ca01" target="_blank" rel="noopener noreferrer">7ef8817196</a></div>
-</li><li class="change-entry">
-  <div class="entry-meta"><a href="/weekly/2025/W04/">W04</a><span aria-hidden="true"> · </span><a href="/daily/2025/01/21/">Jan 21</a></div>
-  <div class="entry-copy">Timezone data was updated to the 2025a release, including newly added historical transitions that can change results for old timestamps. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e49a2d45dcc7b26c91a269bca75bc538974ffbc6" target="_blank" rel="noopener noreferrer">e49a2d45dc</a></div>
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2025/W04/">W04</a><span aria-hidden="true"> · </span><a href="/daily/2025/01/21/">Jan 21</a></div>
   <div class="entry-copy">Overrides of ordinary class methods marked <code>&lt;&lt;__NoAutoLikes&gt;&gt;</code> now inherit that behavior automatically, so their return types are not implicitly widened to like types. Interface implementations still need their own annotation. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7a353344ec39816e94ebcdf585854e57f71a6532" target="_blank" rel="noopener noreferrer">7a353344ec</a></div>
@@ -70,9 +67,6 @@
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2025/W04/">W04</a><span aria-hidden="true"> · </span><a href="/daily/2025/01/24/">Jan 24</a></div>
   <div class="entry-copy">HHVM now reports a clear error when a non-default <code>Eval.PackagesTomlFileName</code> cannot be opened instead of silently continuing with an empty package specification. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f9035ba6005d53b4268c07f4747618c9d13abab0" target="_blank" rel="noopener noreferrer">f9035ba600</a></div>
-</li><li class="change-entry">
-  <div class="entry-meta"><a href="/weekly/2025/W04/">W04</a><span aria-hidden="true"> · </span><a href="/daily/2025/01/24/">Jan 24</a></div>
-  <div class="entry-copy">The unsurfaced-exception lint no longer produces false positives for exception variables captured by lambdas during the dynamic TAST pass. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/527a1dc8e73e7e1d0015d8e5d650c760f0062731" target="_blank" rel="noopener noreferrer">527a1dc8e7</a></div>
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2025/W04/">W04</a><span aria-hidden="true"> · </span><a href="/daily/2025/01/24/">Jan 24</a></div>
   <div class="entry-copy"><code>HH\SimpleLock\is_held()</code> reports whether any request currently holds a named SimpleLock. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a2466c5ee3b3141d6d5e664fe029f3b09d9d5a73" target="_blank" rel="noopener noreferrer">a2466c5ee3</a></div>
@@ -99,7 +93,7 @@
   <div class="entry-copy">Experimental recursive case types can now satisfy recursively structured <code>as</code> bounds such as <code>shape(?&#x27;a&#x27; =&gt; nonnull)</code> without the cycle detector prematurely replacing the type with <code>mixed</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/72b236ce34c0c57e5cb91d7c49fd31c23c768f5d" target="_blank" rel="noopener noreferrer">72b236ce34</a></div>
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2025/W03/">W03</a><span aria-hidden="true"> · </span><a href="/daily/2025/01/13/">Jan 13</a></div>
-  <div class="entry-copy">Packages v2 now requires every package&#x27;s <code>includes</code> and <code>soft_includes</code> sets to contain their full transitive closure, and reports all missing nested packages in one configuration error. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1f4c78a1a3bdac088db188db2d9e43ca258f61f9" target="_blank" rel="noopener noreferrer">1f4c78a1a3</a></div>
+  <div class="entry-copy">Packages v2 now requires each package to list nested hard dependencies in <code>includes</code>, and nested soft dependencies in either <code>includes</code> or <code>soft_includes</code>. Configuration diagnostics list all missing nested packages. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1f4c78a1a3bdac088db188db2d9e43ca258f61f9" target="_blank" rel="noopener noreferrer">1f4c78a1a3</a></div>
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2025/W03/">W03</a><span aria-hidden="true"> · </span><a href="/daily/2025/01/16/">Jan 16</a></div>
   <div class="entry-copy">Open tuple hints with optional, variadic, or splat elements are now rejected in <code>is</code> and <code>as</code> expressions because HHVM does not yet support enforcing those runtime checks. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/591fe0ae7216d80e889da9d4e1e87dae0059b4a1" target="_blank" rel="noopener noreferrer">591fe0ae72</a></div>

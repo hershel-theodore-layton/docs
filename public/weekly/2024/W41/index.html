@@ -51,7 +51,7 @@
   <div class="entry-copy">Command-line diagnostics now print warnings before errors, leaving the errors at the bottom of the output where they are easier to find. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a84a03948ee7aa1651d24feca312ff3ee20d0ef4" target="_blank" rel="noopener noreferrer">a84a03948e</a></div>
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/daily/2024/10/10/">Thu, Oct 10</a></div>
-  <div class="entry-copy"><code>nameof C</code> and <code>C::class</code> are now handled consistently as class-name shape keys, including namespace and <code>self</code> resolution. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/99e117526a5d4dc0b432351dfd453f6dc434ecf2" target="_blank" rel="noopener noreferrer">99e117526a</a></div>
+  <div class="entry-copy"><code>nameof C</code> and <code>C::class</code> are now handled consistently as class-name shape keys, including namespace resolution. <code>self</code> remains forbidden in shape type keys. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/99e117526a5d4dc0b432351dfd453f6dc434ecf2" target="_blank" rel="noopener noreferrer">99e117526a</a></div>
 </li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>5 changes</span></header><ul><li class="change-entry">
   <div class="entry-meta"><a href="/daily/2024/10/07/">Mon, Oct 7</a></div>
   <div class="entry-copy">Runtime type information now preserves the nullable part of an explicit like-nullable hint, so a value accepted as <code>~?T</code> can actually be <code>null</code> at runtime. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5743f65f39b1b0596ad1991e7fcef59426465fe8" target="_blank" rel="noopener noreferrer">5743f65f39</a></div>

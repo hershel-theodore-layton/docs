@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="48 noteworthy changes, organized by the source changelog sections.">
+  <meta name="description" content="47 noteworthy changes, organized by the source changelog sections.">
   <title>April 2024 | HHVM Change Digest</title>
   <link rel="stylesheet" href="/static/css/main.css">
   <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
@@ -30,11 +30,11 @@
   <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
   <p class="post-authorName">Monthly digest</p>
   <h1 class="post-title">April 2024</h1>
-  <p class="post-meta">48 noteworthy changes, organized by the source changelog sections.</p>
+  <p class="post-meta">47 noteworthy changes, organized by the source changelog sections.</p>
   
   <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/04/01/">Day</a><a href="/weekly/2024/W14/">Week</a><a href="/monthly/2024/04/" aria-current="page">Month</a></nav>
   <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/monthly/2024/03/"><span aria-hidden="true">←</span><span>Previous month</span></a><a class="period-button next" rel="next" href="/monthly/2024/05/"><span aria-hidden="true">→</span><span>Next month</span></a></nav>
-</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>26 changes</span></header><ul><li class="change-entry">
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>25 changes</span></header><ul><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2024/W14/">W14</a><span aria-hidden="true"> · </span><a href="/daily/2024/04/01/">Apr 1</a></div>
   <div class="entry-copy">Hack now permits global function declarations whose names differ only by case, matching the language&#x27;s case-sensitive function lookup. Exact duplicate declarations remain invalid. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/bf677366a73ac455e3c6964c536fd5430fa7803a" target="_blank" rel="noopener noreferrer">bf677366a7</a></div>
 </li><li class="change-entry">
@@ -54,7 +54,7 @@
   <div class="entry-copy"><code>debugger_dump(null)</code> is now a no-op instead of printing <code>null</code>. This also keeps null-valued notebook and debugger evaluations from producing a redundant display value. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ced9997e2122868488958e80ddb8cf5eb31113ea" target="_blank" rel="noopener noreferrer">ced9997e21</a></div>
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2024/W15/">W15</a><span aria-hidden="true"> · </span><a href="/daily/2024/04/08/">Apr 8</a></div>
-  <div class="entry-copy">HHVM now agrees with the typechecker when a variadic method implements a variadic abstract method while declaring additional compatible non-variadic parameters. These implementations no longer fail at class loading. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/743fc08410e6225991de7081c0549d8a0402781b" target="_blank" rel="noopener noreferrer">743fc08410</a></div>
+  <div class="entry-copy">HHVM now agrees with the typechecker when a variadic implementation absorbs compatible fixed parameters declared by an interface or abstract method into its variadic parameter. These implementations no longer fail at class loading. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/743fc08410e6225991de7081c0549d8a0402781b" target="_blank" rel="noopener noreferrer">743fc08410</a></div>
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2024/W15/">W15</a><span aria-hidden="true"> · </span><a href="/daily/2024/04/08/">Apr 8</a></div>
   <div class="entry-copy">Repo-authoritative builds now stop on directory-open or file-stat errors instead of silently omitting affected Hack files from the compiled repository. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/915842a0ce3368d07e6b5d9e9ae7512df669c786" target="_blank" rel="noopener noreferrer">915842a0ce</a></div>
@@ -101,9 +101,6 @@
   <div class="entry-meta"><a href="/weekly/2024/W17/">W17</a><span aria-hidden="true"> · </span><a href="/daily/2024/04/25/">Apr 25</a></div>
   <div class="entry-copy">Repo-authoritative optimization now models the concrete values written to memoization caches, avoiding incorrect bottom or return types for forwarded late-static-binding calls such as memoized methods inherited from traits. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9056a5bf64df15b923d93084d8f0920df2cb810c" target="_blank" rel="noopener noreferrer">9056a5bf64</a></div>
 </li><li class="change-entry">
-  <div class="entry-meta"><a href="/weekly/2024/W17/">W17</a><span aria-hidden="true"> · </span><a href="/daily/2024/04/25/">Apr 25</a></div>
-  <div class="entry-copy">Top-level autocomplete backed by Glean now matches a declaration&#x27;s autocomplete sort text as well as its name, allowing appropriately ranked declarations to appear for additional prefixes. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/891e663ebc22acdf7da68a16e128f7d367a166c1" target="_blank" rel="noopener noreferrer">891e663ebc</a></div>
-</li><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2024/W17/">W17</a><span aria-hidden="true"> · </span><a href="/daily/2024/04/26/">Apr 26</a></div>
   <div class="entry-copy">JSON diagnostics now include a top-level <code>severity</code> field. Consumers of <code>hh --json</code> can distinguish errors from the new warning severity without parsing rendered text. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e19bd61dd072a4fa61629e506d7b24a1be8da992" target="_blank" rel="noopener noreferrer">e19bd61dd0</a></div>
 </li><li class="change-entry">
@@ -126,7 +123,7 @@
   <div class="entry-copy">JSON rendering of pre-stable function types, including <code>hh --type-at-pos-batch</code>, now preserves whether a parameter is <code>optional</code>. Consumers can distinguish <code>(function(int, optional bool): int)</code> from a function whose second parameter is required. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8fb398ec3149e42a4923936d1af98ef193b7a4ab" target="_blank" rel="noopener noreferrer">8fb398ec31</a></div>
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2024/W15/">W15</a><span aria-hidden="true"> · </span><a href="/daily/2024/04/11/">Apr 11</a></div>
-  <div class="entry-copy">Expression-tree lowering now passes XHP element names to <code>visitXhp()</code> using <code>nameof</code>, producing strings instead of the class-pointer values previously emitted with <code>::class</code>. This affects experimental expression-tree DSLs that inspect those visitor arguments. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0f8bb1e8f813ee6bfc8956b800c0e94453b3577c" target="_blank" rel="noopener noreferrer">0f8bb1e8f8</a></div>
+  <div class="entry-copy">Expression-tree lowering now passes XHP element names to <code>visitXhp()</code> using <code>nameof</code> instead of <code>::class</code>. This affects experimental expression-tree DSLs that inspect those visitor arguments. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0f8bb1e8f813ee6bfc8956b800c0e94453b3577c" target="_blank" rel="noopener noreferrer">0f8bb1e8f8</a></div>
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2024/W15/">W15</a><span aria-hidden="true"> · </span><a href="/daily/2024/04/11/">Apr 11</a></div>
   <div class="entry-copy">A disabled-by-default <code>class_pointer_levels</code> migration setting can lint or reject a direct <code>C::class</code> argument where a string parameter would trigger an implicit conversion, and offers <code>nameof C</code> as the fix. The first implementation is deliberately syntactic and does not follow the value through a local variable; it is groundwork for the future <code>class&lt;C&gt;</code> type. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ffb5154a1189c545a0bc6c5164c15dadda74e88d" target="_blank" rel="noopener noreferrer">ffb5154a11</a></div>

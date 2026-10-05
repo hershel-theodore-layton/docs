@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="15 noteworthy changes, organized by the source changelog sections.">
+  <meta name="description" content="14 noteworthy changes, organized by the source changelog sections.">
   <title>Week 38: Sep 16–Sep 22, 2024 | HHVM Change Digest</title>
   <link rel="stylesheet" href="/static/css/main.css">
   <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
@@ -30,7 +30,7 @@
   <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
   <p class="post-authorName">Weekly digest</p>
   <h1 class="post-title">Week 38: Sep 16–Sep 22, 2024</h1>
-  <p class="post-meta">15 noteworthy changes, organized by the source changelog sections.</p>
+  <p class="post-meta">14 noteworthy changes, organized by the source changelog sections.</p>
   
   <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/09/16/">Day</a><a href="/weekly/2024/W38/" aria-current="page">Week</a><a href="/monthly/2024/09/">Month</a></nav>
   <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2024/W37/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2024/W39/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
@@ -55,12 +55,9 @@
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/daily/2024/09/20/">Fri, Sep 20</a></div>
   <div class="entry-copy">A literal <code>nameof C</code> used as an array key is now folded directly into the member key, matching literal-string access and avoiding the generic expression path. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b6fc70430d6ee43216ffed426c1c2a3c5e99dd12" target="_blank" rel="noopener noreferrer">b6fc70430d</a></div>
-</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>6 changes</span></header><ul><li class="change-entry">
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>5 changes</span></header><ul><li class="change-entry">
   <div class="entry-meta"><a href="/daily/2024/09/16/">Mon, Sep 16</a></div>
   <div class="entry-copy">Staged package-v2 checking now permits a function pointer to a static method in another package, matching the symbol-reference traversal used for deployment boundaries. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/38d78565b8a1cea605ebe826e34629044f007671" target="_blank" rel="noopener noreferrer">38d78565b8</a></div>
-</li><li class="change-entry">
-  <div class="entry-meta"><a href="/daily/2024/09/16/">Mon, Sep 16</a></div>
-  <div class="entry-copy">Work on <code>recursive_case_types</code> now models newtype bounds, enum bounds, and function-type variants when checking recursive case definitions. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/99e7aa82298132f98cf84c45aef7cbf256c88ada" target="_blank" rel="noopener noreferrer">99e7aa8229</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c8b31f79f2bb7ed3cd5881bf86c26cb871c4f762" target="_blank" rel="noopener noreferrer">c8b31f79f2</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d34c456b075504d118d8386f2811d57848055786" target="_blank" rel="noopener noreferrer">d34c456b07</a></div>
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/daily/2024/09/18/">Wed, Sep 18</a></div>
   <div class="entry-copy">The configurable class-pointer migration check now covers <code>C::class</code> values used as enum members through the <code>enum</code> key in <code>class_pointer_levels</code>, recommending <code>nameof C</code> before implicit class-to-string conversion is removed. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/dc08ae9cb2b8e3b67e974dd6bf41c65e90d1660f" target="_blank" rel="noopener noreferrer">dc08ae9cb2</a></div>

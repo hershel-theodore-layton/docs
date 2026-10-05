@@ -45,7 +45,7 @@
   <div class="entry-copy">The “Extract into variable” code action now works in top-level notebook statements. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9f0236914832342408d425410dd8c7db36a6212e" target="_blank" rel="noopener noreferrer">9f02369148</a></div>
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/daily/2023/11/14/">Tue, Nov 14</a></div>
-  <div class="entry-copy">Hack&#x27;s LSP now defaults to pull diagnostics, allowing the editor to request current diagnostics rather than relying solely on pushed updates. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a8624fccda45c4377c44a95feac2ebf96bfb8f7c" target="_blank" rel="noopener noreferrer">a8624fccda</a></div>
+  <div class="entry-copy">Hack&#x27;s language server now defaults to deferring diagnostic recomputation after file opens and edits until it becomes idle. It then obtains errors from the IDE service and publishes them to the editor, avoiding unnecessary work while edits are arriving. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a8624fccda45c4377c44a95feac2ebf96bfb8f7c" target="_blank" rel="noopener noreferrer">a8624fccda</a></div>
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/daily/2023/11/16/">Thu, Nov 16</a></div>
   <div class="entry-copy"><code>nameof</code> has graduated from the <code>nameof_class</code> unstable feature and can now be used without a file-level opt-in. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/24c626761ee952c31c09e3efb49aefc42fdd3939" target="_blank" rel="noopener noreferrer">24c626761e</a></div>

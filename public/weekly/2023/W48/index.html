@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="21 noteworthy changes, organized by the source changelog sections.">
+  <meta name="description" content="22 noteworthy changes, organized by the source changelog sections.">
   <title>Week 48: Nov 27–Dec 3, 2023 | HHVM Change Digest</title>
   <link rel="stylesheet" href="/static/css/main.css">
   <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
@@ -30,11 +30,11 @@
   <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
   <p class="post-authorName">Weekly digest</p>
   <h1 class="post-title">Week 48: Nov 27–Dec 3, 2023</h1>
-  <p class="post-meta">21 noteworthy changes, organized by the source changelog sections.</p>
+  <p class="post-meta">22 noteworthy changes, organized by the source changelog sections.</p>
   
   <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/11/27/">Day</a><a href="/weekly/2023/W48/" aria-current="page">Week</a><a href="/monthly/2023/11/">Month</a></nav>
   <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2023/W47/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2023/W49/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
-</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>13 changes</span></header><ul><li class="change-entry">
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>14 changes</span></header><ul><li class="change-entry">
   <div class="entry-meta"><a href="/daily/2023/11/27/">Mon, Nov 27</a></div>
   <div class="entry-copy"><code>hh_single_fanout</code> now includes files with stale errors in its recheck set, keeping reported positions current after dependency changes. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/85c8967bbdb24fa1effcbc40177fe1500d41e205" target="_blank" rel="noopener noreferrer">85c8967bbd</a></div>
 </li><li class="change-entry">
@@ -73,6 +73,9 @@
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/daily/2023/12/01/">Fri, Dec 1</a></div>
   <div class="entry-copy">The Hack manual now documents <code>__AutocompleteSortText</code>, which lets a declaration supply the sort key used for its IDE completion entry. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1785b081e2583ba5562b863c0d8e3195ea01659e" target="_blank" rel="noopener noreferrer">1785b081e2</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/12/01/">Fri, Dec 1</a></div>
+  <div class="entry-copy">The language server now honors <code>__AutocompleteSortText</code> only when the <code>autocomplete_sort_text</code> rollout option is enabled. The option defaults to <code>false</code>, so custom completion ordering is disabled by default at this stage. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7e6667afeab473b3a6b3ec45ec6713d6a009daae" target="_blank" rel="noopener noreferrer">7e6667afea</a></div>
 </li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>5 changes</span></header><ul><li class="change-entry">
   <div class="entry-meta"><a href="/daily/2023/11/27/">Mon, Nov 27</a></div>
   <div class="entry-copy"><code>HH\FIXME\UNSAFE_CAST&lt;Tin, Tout&gt;()</code> now requires both type arguments to support <code>dynamic</code> and returns <code>~Tout</code>; <code>UNSAFE_NONNULL_CAST&lt;T&gt;()</code> similarly returns <code>~T</code>. This soundness fix applies even without <code>everything_sdt</code> and may expose code that treated unsafe-cast results as trustworthy precise types. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7040cd5beb56b2d4bd3434d3a28a00d6a241caea" target="_blank" rel="noopener noreferrer">7040cd5beb</a></div>

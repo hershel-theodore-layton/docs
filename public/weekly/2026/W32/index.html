@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="8 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 32: Aug 3–Aug 9, 2026 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 32: Aug 3–Aug 9, 2026</h1>
+  <p class="post-meta">8 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2026/08/03/">Day</a><a href="/weekly/2026/W32/" aria-current="page">Week</a><a href="/monthly/2026/08/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2026/W31/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2026/W33/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>4 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/08/03/">Mon, Aug 3</a></div>
+  <div class="entry-copy">HHVM no longer crashes when a failed unit compilation is configured to return a null result. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/33e66bebb3b558188eafb78ece0d6daed38b2642" target="_blank" rel="noopener noreferrer">33e66bebb3</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/08/05/">Wed, Aug 5</a></div>
+  <div class="entry-copy">HHVM now includes the original message from standard C++ exceptions in request failure diagnostics, improving errors such as Native Facts initialization failures. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4d451e6f58667bcbb5efe72b6411d86a54c06e32" target="_blank" rel="noopener noreferrer">4d451e6f58</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/08/05/">Wed, Aug 5</a></div>
+  <div class="entry-copy">The typechecker now recognizes <code>HH\get_all_packages()</code> and <code>HH\get_all_deployments()</code>. Their declared shape return types now match the package and deployment metadata already returned at runtime. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9daedec5ab91c78d5f9f48c378d5f03d9b3ed4ac" target="_blank" rel="noopener noreferrer">9daedec5ab</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/08/07/">Fri, Aug 7</a></div>
+  <div class="entry-copy"><code>DOMDocument</code> now provides <code>createElementTyped()</code> and <code>createElementNSTyped()</code>, which return a <code>DOMElement</code> and throw an invariant violation if element creation fails. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/01b830d2c55f6b662c97ebd259ff5c66656ad10b" target="_blank" rel="noopener noreferrer">01b830d2c5</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/08/05/">Wed, Aug 5</a></div>
+  <div class="entry-copy">The experimental <code>enable_implicit_packages</code> typechecker option now implements implicit package families: each direct child directory of a configured family path becomes a package without a separate <code>PACKAGES.toml</code> entry. The option is disabled by default. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f1d95b65bc55555c9ad4af2536412728df60df26" target="_blank" rel="noopener noreferrer">f1d95b65bc</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/08/05/">Wed, Aug 5</a></div>
+  <div class="entry-copy">Experimental named variadic parameters in function, method, and lambda definitions now use an unnamed form such as <code>named int...</code>; the previous <code>named int ...$xs</code> spelling is rejected. The existing named-parameter and variadic-named-parameter gates still apply. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a3b29158ba2881348b6d905ee5b6f8b19c070804" target="_blank" rel="noopener noreferrer">a3b29158ba</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/08/07/">Fri, Aug 7</a></div>
+  <div class="entry-copy">Experimental named-parameter definitions now reject multiple named variadic parameters, matching the existing restriction on function types. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2d2abb164e403d0381d39ff5e645efa4d0050e48" target="_blank" rel="noopener noreferrer">2d2abb164e</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/08/06/">Thu, Aug 6</a></div>
+  <div class="entry-copy">The parser now rejects <code>$prosecco_tap</code> as a variable name, including parameters and local variables. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d01a7126e623ceedf6275a752c77d61087a26013" target="_blank" rel="noopener noreferrer">d01a7126e6</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

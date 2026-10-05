@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="15 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 33: Aug 10–Aug 16, 2026 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 33: Aug 10–Aug 16, 2026</h1>
+  <p class="post-meta">15 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2026/08/10/">Day</a><a href="/weekly/2026/W33/" aria-current="page">Week</a><a href="/monthly/2026/08/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2026/W32/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2026/W34/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Future Changes</h2><span>9 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/08/10/">Mon, Aug 10</a></div>
+  <div class="entry-copy">Expression trees now preserve literal string and integer subscript keys so shape-field reads and writes can be typechecked correctly. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/fc26c6291095737c265d54b96649d823be0d2e95" target="_blank" rel="noopener noreferrer">fc26c62910</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/08/12/">Wed, Aug 12</a></div>
+  <div class="entry-copy">The opt-in <code>check_duplicate_enum_values</code> setting now reports duplicate values in plain enums, including conflicts introduced through enum <code>use</code> inclusions. It remains disabled by default. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ab8c2c1907c62cd0eff08c7f18f63df8d3534b21" target="_blank" rel="noopener noreferrer">ab8c2c1907</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/08/12/">Wed, Aug 12</a></div>
+  <div class="entry-copy">The opt-in duplicate-enum-value check now also reports enum values it cannot statically evaluate, rather than silently skipping them. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/15b11435989322b67b88555f498ff2da6f046718" target="_blank" rel="noopener noreferrer">15b1143598</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/08/12/">Wed, Aug 12</a></div>
+  <div class="entry-copy"><code>&lt;&lt;__AllowUncheckedEnumValues&gt;&gt;</code> lets an enum opt out of the experimental duplicate-value and uncheckable-value diagnostics. Enums that include an opted-out enum must also opt out. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/41fb35f4abff55ce0ce0eb58fe395461ceaff9c3" target="_blank" rel="noopener noreferrer">41fb35f4ab</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/08/12/">Wed, Aug 12</a></div>
+  <div class="entry-copy">The opt-in <code>Eval.EnableLazyGC</code> setting, when garbage collection is enabled, raises the default garbage-collection trigger from 50% to 80% of the remaining memory budget and allows a temporary memory grace buffer before collection. It is disabled by default, and explicit trigger and grace settings take precedence. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b41450e50e1a76e6db183e899c03944b11fd54db" target="_blank" rel="noopener noreferrer">b41450e50e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/08/13/">Thu, Aug 13</a></div>
+  <div class="entry-copy">The opt-in duplicate-enum-value check now catches collisions between integer values and their canonical integer-string equivalents in <code>arraykey</code> enums, such as <code>0</code> and <code>&quot;0&quot;</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/261eb911c460e1f93d83f000457b4b18c8fc3738" target="_blank" rel="noopener noreferrer">261eb911c4</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/08/13/">Thu, Aug 13</a></div>
+  <div class="entry-copy">The experimental enum-value check exempts pure aliases of a single enum when all referenced values are statically known and distinct. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/84710a4acf69f876d5f38966b53f236e46cf87e7" target="_blank" rel="noopener noreferrer">84710a4acf</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/08/14/">Fri, Aug 14</a></div>
+  <div class="entry-copy">Typed open-shape subtyping now compares the types of unknown fields, rejecting incompatible tails such as <code>shape(string...)</code> where <code>shape(int...)</code> is required. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8bbd0ed22397bb86caec9b564bc09945830a01a6" target="_blank" rel="noopener noreferrer">8bbd0ed223</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/08/14/">Fri, Aug 14</a></div>
+  <div class="entry-copy">Expression-tree subscripting has advanced from <code>Preview</code> to <code>OngoingRelease</code> in the experimental-feature rollout. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/72a8b4317f30d3d3d715891d2df2cb7257890a3e" target="_blank" rel="noopener noreferrer">72a8b4317f</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Highlights</h2><span>5 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/08/11/">Tue, Aug 11</a></div>
+  <div class="entry-copy">The EXIF parser now clears stale buffers when reallocation fails, preventing use-after-free and double-free errors during subsequent parsing and cleanup. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/116eb7f48915d0c0bb4f472f5f8e8992d21bf6a0" target="_blank" rel="noopener noreferrer">116eb7f489</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/08/11/">Tue, Aug 11</a></div>
+  <div class="entry-copy">HHBBC now safely retains named-argument names while analyzing compressed bytecode, fixing an ownership bug in whole-program optimization. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b3dd86ffdf5ae4bca535860e3ab577afd114819d" target="_blank" rel="noopener noreferrer">b3dd86ffdf</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/08/12/">Wed, Aug 12</a></div>
+  <div class="entry-copy">The typechecker now knows that <code>DOMDocument::createElementTyped()</code> and <code>createElementNSTyped()</code> return <code>DOMElement</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/130929a5fe542efb70099a8b866ab70d5ee376da" target="_blank" rel="noopener noreferrer">130929a5fe</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/08/12/">Wed, Aug 12</a></div>
+  <div class="entry-copy"><code>hh_client --single</code> now typechecks explicitly supplied files that the server does not monitor, rather than incorrectly reusing global diagnostics that can make those files appear error-free. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3594deeb464e31c5f3dce447e349687fc82e3f9c" target="_blank" rel="noopener noreferrer">3594deeb46</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/08/14/">Fri, Aug 14</a></div>
+  <div class="entry-copy">The JIT no longer assumes that an unloaded user type alias denotes an object, preventing incorrect handling of shape or dict values returned synchronously, through <code>await</code>, or through <code>inout</code> parameters. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e02dc92e310ae00834b7c83613a1d689a4d1884a" target="_blank" rel="noopener noreferrer">e02dc92e31</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/08/13/">Thu, Aug 13</a></div>
+  <div class="entry-copy"><code>__PackageOverride</code> now produces an error when it names the file’s path-derived package itself or a package that the path-derived package neither includes nor soft-includes. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/66027d0ebff7e00481785a76fca0d18e17e5c044" target="_blank" rel="noopener noreferrer">66027d0ebf</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

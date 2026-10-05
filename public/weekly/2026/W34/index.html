@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="10 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 34: Aug 17–Aug 23, 2026 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 34: Aug 17–Aug 23, 2026</h1>
+  <p class="post-meta">10 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2026/08/17/">Day</a><a href="/weekly/2026/W34/" aria-current="page">Week</a><a href="/monthly/2026/08/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2026/W33/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2026/W35/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>6 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/08/17/">Mon, Aug 17</a></div>
+  <div class="entry-copy"><code>unserialize()</code> now rejects aggregate values in serialized key positions, preventing use-after-free when later serialized references point into a discarded temporary key. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8ba37ca1577bf53cfb528cff99d6cc366f7a1fee" target="_blank" rel="noopener noreferrer">8ba37ca157</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/08/17/">Mon, Aug 17</a></div>
+  <div class="entry-copy"><code>HH\Facts</code> now supports function-attribute queries through <code>functions_with_attribute()</code>, <code>function_attributes()</code>, and <code>function_attribute_parameters()</code>. Index the desired attributes with <code>Autoload.IndexedFunctionAttributes</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/12950b15d1d0fabecd95424390970674684029ee" target="_blank" rel="noopener noreferrer">12950b15d1</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/08/17/">Mon, Aug 17</a></div>
+  <div class="entry-copy">A public method overriding an internal or protected method no longer has to propagate <code>__TestsBypassVisibility</code>, since the public override does not bypass visibility. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e25704eea5cf5e10cc2ea9a8743f8e37393a8891" target="_blank" rel="noopener noreferrer">e25704eea5</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/08/17/">Mon, Aug 17</a></div>
+  <div class="entry-copy">The typechecker now correctly expands recursive type-constant refinements involving <code>this</code>, closing a type hole that could silently accept incompatible values. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a60607b1849f8070146c3d4052bc0389af42f0b8" target="_blank" rel="noopener noreferrer">a60607b184</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/08/18/">Tue, Aug 18</a></div>
+  <div class="entry-copy">HHVM no longer dereferences a null JIT region when profile-guided region selection produces an empty result, avoiding a crash during offline retranslations. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8539c42f3dee93cc3c3fb58d6ca2376c39464225" target="_blank" rel="noopener noreferrer">8539c42f3d</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/08/19/">Wed, Aug 19</a></div>
+  <div class="entry-copy">HHVM now avoids a null-pointer crash in the ExtTSP machine-code layout algorithm. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e3136fcde6342e520bb914490feb926f39e02b00" target="_blank" rel="noopener noreferrer">e3136fcde6</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/08/20/">Thu, Aug 20</a></div>
+  <div class="entry-copy">Abstract class constants can no longer be used as shape keys in type annotations or shape expressions. The typechecker reports <code>Typing[4129]</code> instead of permitting a reference that can fail at runtime. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0f529ca6c2fd2b29c575ba3a9ff0d0d23358e3de" target="_blank" rel="noopener noreferrer">0f529ca6c2</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/08/21/">Fri, Aug 21</a></div>
+  <div class="entry-copy"><code>unset()</code> now requires an indexed array-access target. Unsetting a local variable or an object property produces <code>Typing[4521]</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c0048a4355e5ac3bb026a67ca86a281167a3551d" target="_blank" rel="noopener noreferrer">c0048a4355</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/08/21/">Fri, Aug 21</a></div>
+  <div class="entry-copy">When implicit packages are enabled, Hack files directly under a family path now produce <code>Naming[2135]</code>; files must live under a member directory even if they use <code>__PackageOverride</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f4f84cbd733c64184db1017bfa912b5f6552a676" target="_blank" rel="noopener noreferrer">f4f84cbd73</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/08/21/">Fri, Aug 21</a></div>
+  <div class="entry-copy">When implicit packages are enabled, member directory names must be valid Hack identifiers. Invalid member names now produce <code>Naming[2136]</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1dea159d3d9a94b7bae7972eb24a955bd4726201" target="_blank" rel="noopener noreferrer">1dea159d3d</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

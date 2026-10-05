@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="16 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 35: Aug 24–Aug 30, 2026 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 35: Aug 24–Aug 30, 2026</h1>
+  <p class="post-meta">16 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2026/08/24/">Day</a><a href="/weekly/2026/W35/" aria-current="page">Week</a><a href="/monthly/2026/08/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2026/W34/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2026/W36/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>12 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/08/24/">Mon, Aug 24</a></div>
+  <div class="entry-copy">Serialization now clamps the remaining request-memory budget to a nonnegative value when determining its output limit, avoiding integer overflow from negative memory accounting. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7f1182a3c124479f96b21a0006eb6a46d6ccef71" target="_blank" rel="noopener noreferrer">7f1182a3c1</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/08/25/">Tue, Aug 25</a></div>
+  <div class="entry-copy"><code>hh_client --type-at-pos</code> now prints named variadic parameter types with three dots instead of six. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/320a938303d0e6273e831cb0f90588afb5129119" target="_blank" rel="noopener noreferrer">320a938303</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/08/25/">Tue, Aug 25</a></div>
+  <div class="entry-copy">The cross-package override lint now also reports references that become illegal when the caller’s <code>__PackageOverride</code> is removed, including references where both endpoints carry an override. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b6083be80a77195ce57e77c5ed4723a39404aa60" target="_blank" rel="noopener noreferrer">b6083be80a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/08/26/">Wed, Aug 26</a></div>
+  <div class="entry-copy">The typechecker avoids expanding hidden portions of type-error explanations, preventing exponential memory use while preserving the rendered diagnostics. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/849605f257272888bd030d6d288ab54858d0744c" target="_blank" rel="noopener noreferrer">849605f257</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/08/26/">Wed, Aug 26</a></div>
+  <div class="entry-copy">Hackfmt no longer crashes when formatting typed open shapes such as <code>shape(string...)</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f1d80663d83d093cde996720e2fed1df8adf8593" target="_blank" rel="noopener noreferrer">f1d80663d8</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/08/26/">Wed, Aug 26</a></div>
+  <div class="entry-copy"><code>hhvm --version</code> now includes a <code>(roar)</code> marker when the binary was built with ROAR support. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5fd092015c1fb73b7bbdc4b368881be06c090671" target="_blank" rel="noopener noreferrer">5fd092015c</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/08/27/">Thu, Aug 27</a></div>
+  <div class="entry-copy">Open-source HHVM builds now include additional x64 and Arm64 portability fixes. ImageMagick OpenMP is disabled to avoid shutdown crashes. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/222f52c75b6e1334a3c4523b5d1d5b7f3ec037f6" target="_blank" rel="noopener noreferrer">222f52c75b</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/08/27/">Thu, Aug 27</a></div>
+  <div class="entry-copy"><code>hh_client</code> now gives clearer diagnostics for invalid command-line arguments, including malformed <code>--download-saved-state</code> arguments, and avoids unnecessary backtraces in some argument-error cases. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5615eb178ae0d249b44d0bcff83945b24790a319" target="_blank" rel="noopener noreferrer">5615eb178a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/08/28/">Fri, Aug 28</a></div>
+  <div class="entry-copy">The typechecker now updates module dependencies correctly after an interrupted typecheck, preventing stale unbound-name errors when a module is added. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4e7aa03c400338fa705b0d8fe5ca3d37612cdf82" target="_blank" rel="noopener noreferrer">4e7aa03c40</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/08/28/">Fri, Aug 28</a></div>
+  <div class="entry-copy"><code>hh_client</code> accepts <code>--reason</code> to describe why an invocation was made; the description is recorded in invocation telemetry. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/aceaff4c744c196db8635a6dba2284b01b1fbe08" target="_blank" rel="noopener noreferrer">aceaff4c74</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/08/28/">Fri, Aug 28</a></div>
+  <div class="entry-copy">HHVM fixes a <code>curl_getinfo()</code> linked-list memory leak, integer-key handling in LMDB, temporary-string lifetime in Unix-socket Memcache connections, and temporary parameter-name lifetime during SOAP serialization. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0c786cb796b0a6383635669d2df7ca00aa826e53" target="_blank" rel="noopener noreferrer">0c786cb796</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/08/28/">Fri, Aug 28</a></div>
+  <div class="entry-copy">HHVM fixes bounds checks in Fileinfo, XML tag skipping, and numeric-string conversion, and an output-buffer overflow in FriBidi, plus allocation-size overflow in <code>Imagick::exportImagePixels()</code> and invalid Sodium secretstream header lengths. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0c786cb796b0a6383635669d2df7ca00aa826e53" target="_blank" rel="noopener noreferrer">0c786cb796</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/08/26/">Wed, Aug 26</a></div>
+  <div class="entry-copy"><code>__PackageOverride</code> can no longer assign a file to a package with strict isolation enabled, including members of experimental implicit package families. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/258c0664f65136f5a8133016ffadc28d2d01794f" target="_blank" rel="noopener noreferrer">258c0664f6</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/08/26/">Wed, Aug 26</a></div>
+  <div class="entry-copy">Experimental shape splats now support type parameters, newtypes, and type constants, with subtyping and field operations that account for the fields those types may provide. Type-parameter splats require the unstable <code>shape_splat_type_parameters</code> feature gate. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/caef41ad022eb60bb92c9c57e95ae9ab6a604931" target="_blank" rel="noopener noreferrer">caef41ad02</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/08/26/">Wed, Aug 26</a></div>
+  <div class="entry-copy">Implicit-package configuration diagnostics now identify conflicting package names and paths and point at the written member reference. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/cba11c4c5e77ebcc804184bcadc0e41d091790be" target="_blank" rel="noopener noreferrer">cba11c4c5e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/08/28/">Fri, Aug 28</a></div>
+  <div class="entry-copy">The opt-in <code>class_pointer_array_literal_keys</code> setting infers <code>classname&lt;T&gt;</code> for collection-literal keys whose class-pointer type is already resolved, reflecting their runtime conversion to strings. The setting is disabled by default. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/fe6dba7d83225f8c60026ed316e0e359c8a0cb8b" target="_blank" rel="noopener noreferrer">fe6dba7d83</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

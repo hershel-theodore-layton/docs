@@ -66,7 +66,7 @@
   <div class="entry-copy">Accessing a known-absent field on a nullable closed shape is now a type error even when using <code>Shapes::idx()</code> or <code>??</code>. Previously, adding nullability could reduce this to a lint or suppress it. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9e49acc366a744eaf0dd7c199c938542e2438f82" target="_blank" rel="noopener noreferrer">9e49acc366</a></div>
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/daily/2022/11/09/">Wed, Nov 9</a></div>
-  <div class="entry-copy"><code>SplPriorityQueue&lt;T&gt;</code> is now declared as an iterator over <code>~T</code>, reflecting that its extraction flags can make <code>current()</code> return a priority or a value/priority pair instead of <code>T</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4110107aae954fcc77661724be80578d85480796" target="_blank" rel="noopener noreferrer">4110107aae</a></div>
+  <div class="entry-copy"><code>SplPriorityQueue&lt;T&gt;</code> is now declared as an iterator over <code>HH\FIXME\POISON_MARKER&lt;T&gt;</code> (<code>T</code> in legacy mode, <code>~T</code> in sound-dynamic mode), reflecting that its extraction flags can make <code>current()</code> return a priority or a value/priority pair instead of <code>T</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4110107aae954fcc77661724be80578d85480796" target="_blank" rel="noopener noreferrer">4110107aae</a></div>
 </li></ul></section></div></div></article></div></div></main>
     </div>
     <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>

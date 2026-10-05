@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="5 noteworthy changes recorded on this day.">
+  <title>Monday, September 21, 2026 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Monday, September 21, 2026</h1>
+  <p class="post-meta">5 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2026/09/21/" aria-current="page">Day</a><a href="/weekly/2026/W39/">Week</a><a href="/monthly/2026/09/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2026/09/18/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2026/09/22/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">HHVM fixes an allocation/free size mismatch for shared logging arrays wrapping arrays with a string-key table, which could pass an interior pointer and incorrect allocation size to jemalloc. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3514f777ed2a967ce49690612f4ba04395efba29" target="_blank" rel="noopener noreferrer">3514f777ed</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy"><code>__PackageOverride</code> is also rejected when a file physically belongs to an explicit package with strict isolation, closing the same escape route already blocked for implicit packages. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e48e4b7856ff8a8195173240a664bd6ce178917f" target="_blank" rel="noopener noreferrer">e48e4b7856</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">Named callback arguments now participate in the same staged lambda-inference passes as positional arguments, removing inference failures that depended on argument order. Function subtyping also keeps named parameters out of positional variadic and type-splat tails. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e62016324711df2248ca233ac00bdcdb3fb5a04e" target="_blank" rel="noopener noreferrer">e620163247</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d708f251ce33ee930c09d2b7b917cb91da05bc80" target="_blank" rel="noopener noreferrer">d708f251ce</a></div></li><li class="change-entry"><div class="entry-copy">HHVM now compares named method parameters by label and optionality separately from positional parameters. This accepts implementations with extra optional named parameters and rejects missing parameters or incompatible <code>inout</code> positions that combined slot counts could conceal. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7cb12ea0effb207a727830f12a7a8631d7f58d05" target="_blank" rel="noopener noreferrer">7cb12ea0ef</a></div></li><li class="change-entry"><div class="entry-copy">Runtime checks now keep reordered named parameters paired with their original type hints and defaults. Readonly checks also bind passed arguments to the correct parameter when optional named arguments are omitted, fixing both false rejections and missed violations in the interpreter and JIT. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d9825e5b775a723f5fc261e955f5cab764f16cdc" target="_blank" rel="noopener noreferrer">d9825e5b77</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9fed0ff97f97d5b5ce7e159c69bd72a2594b3bce" target="_blank" rel="noopener noreferrer">9fed0ff97f</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="9 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 40: Sep 28–Oct 4, 2026 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 40: Sep 28–Oct 4, 2026</h1>
+  <p class="post-meta">9 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2026/09/28/">Day</a><a href="/weekly/2026/W40/" aria-current="page">Week</a><a href="/monthly/2026/09/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2026/W39/"><span aria-hidden="true">←</span><span>Previous week</span></a><span class="period-button next disabled" aria-disabled="true"><span aria-hidden="true">→</span><span>Next week</span></span></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>6 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/09/28/">Mon, Sep 28</a></div>
+  <div class="entry-copy">Typed open shapes are now enabled by default through <code>typed_open_shapes=true</code>. Normalizing <code>supportdyn</code> over open shape tails also correctly distributes union tails. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b60a3f7001b6a31da44bdfafa0a30a8a8e8b41b7" target="_blank" rel="noopener noreferrer">b60a3f7001</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5ba371e121156c0ea0df1f637a2f5348baae6e1c" target="_blank" rel="noopener noreferrer">5ba371e121</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/09/28/">Mon, Sep 28</a></div>
+  <div class="entry-copy">A new warning detects expressions typed <code>dynamic</code> returned through an explicitly declared return type that is not fully enforced at runtime. Fully enforced and like-typed return positions, including async return-value enforcement, are exempt. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/64f7043e62329803b10a7b28f876538b3136c5c0" target="_blank" rel="noopener noreferrer">64f7043e62</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/09/28/">Mon, Sep 28</a></div>
+  <div class="entry-copy"><code>--validate-isolation &lt;file&gt;</code> checks a candidate list of repo-relative file paths against a temporary strict package and reports boundary violations. Exit statuses distinguish a successful check (0), violations (2), and unknown or overridden input paths (10); <code>--json</code> provides structured output. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b3a8b8384f8ac5cbd135e066939196559c776300" target="_blank" rel="noopener noreferrer">b3a8b8384f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/09/29/">Tue, Sep 29</a></div>
+  <div class="entry-copy">Hershel&#x27;s HHVM 26.09.29 build now passes the selected <code>JOBS</code> limit through dependency builds, Cargo, OPAM, CMake, and the Hack Dune build. The runtime and Debian package version are reported as <code>26.9.29</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d647defffa8a6102f4c7131e09415c520f64cf97" target="_blank" rel="noopener noreferrer">d647defffa8</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1467c534eae52ddd4ba3d4eb6d02f71bd85ee736" target="_blank" rel="noopener noreferrer">1467c534ea</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/09/29/">Tue, Sep 29</a></div>
+  <div class="entry-copy">Debian package builds can preserve the existing build tree with <code>HHVM_INCREMENTAL_BUILD=1</code>, avoiding the normal clean step. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d51b53256c2d93b6e7299f3f8de6a9cc67c1b8c6" target="_blank" rel="noopener noreferrer">d51b53256c</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/673255ed70d5146f9ab2a8cf3dfe528da7fc276d" target="_blank" rel="noopener noreferrer">673255ed70</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/09/29/">Tue, Sep 29</a></div>
+  <div class="entry-copy">The Ubuntu build script pins Rust to <code>nightly-2026-08-24</code>, and the Debian rules resolve the compiler through <code>rustup</code>, keeping the Hack build on a toolchain that supports its box patterns. Source dependency builds also set the CMake policy minimum to 3.5 for compatibility with CMake 4. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2530b1b13e8ae91b70806c3c38bab79aea413b6a" target="_blank" rel="noopener noreferrer">2530b1b13e</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6da7c58a9654c7d97c86adc1f9f74ff49b3f3a89" target="_blank" rel="noopener noreferrer">6da7c58a96</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/09/28/">Mon, Sep 28</a></div>
+  <div class="entry-copy">Class-pointer bound widening gains separate source-level settings for which class-pointer types are widened, independently of the string-like constraint levels that trigger widening. These settings remain zero by default. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1307864bdedf111bc0c9adfb0c291188a323af65" target="_blank" rel="noopener noreferrer">1307864bde</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/09/28/">Mon, Sep 28</a></div>
+  <div class="entry-copy">Experimental shape splats used with <code>RepresentableAs</code> now resolve residual polymorphic splats before checking the represented key and value types. The conversion remains one-way; <code>RepresentableAs</code> cannot itself be unpacked as a shape. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8e614e9db27545532d2acd2cfc1393a3f71a3e61" target="_blank" rel="noopener noreferrer">8e614e9db2</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/09/28/">Mon, Sep 28</a></div>
+  <div class="entry-copy">Experimental shape splats that introduce non-denotable union field types are rejected in aliases, newtypes, parameter hints, and return hints unless <code>union_intersection_type_hints</code> is enabled. Redundant singleton <code>shape(...T)</code> hints receive a diagnostic and quickfix, with a specialized rewrite for <code>shape(...dynamic)</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9407783fdd7388b4c458c72f8462214cf8efdba1" target="_blank" rel="noopener noreferrer">9407783fdd</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c8419798fb82cba1803db29f9588c8a0cff7680c" target="_blank" rel="noopener noreferrer">c8419798fb</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c549af8941e8009a610329c63d5b1b36ffbb3039" target="_blank" rel="noopener noreferrer">c549af8941</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

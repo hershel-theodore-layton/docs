@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="4 noteworthy changes recorded on this day.">
+  <title>Thursday, September 3, 2026 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/" aria-current="page">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Daily digest</p>
+  <h1 class="post-title">Thursday, September 3, 2026</h1>
+  <p class="post-meta">4 noteworthy changes recorded on this day.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2026/09/03/" aria-current="page">Day</a><a href="/weekly/2026/W36/">Week</a><a href="/monthly/2026/09/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2026/09/02/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2026/09/04/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">If a saved-state dependency graph disappears before a worker opens it, <code>hh_server</code> reports an unavailable graph and the monitor can restart it to restore the graph, instead of panicking through the dependency-query FFI. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/838b5ecfe8849858e5cf1d451b3c218a4ee40020" target="_blank" rel="noopener noreferrer">838b5ecfe8</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">The default-off <code>reject_promoted_property_redeclaration</code> option adds a typechecker diagnostic for constructor parameters that re-promote inherited properties. Private non-LSB ancestor properties remain legal to shadow. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/56beee3a0a11da14ecb5e4476112706033aea6ee" target="_blank" rel="noopener noreferrer">56beee3a0a</a></div></li><li class="change-entry"><div class="entry-copy">The variadic-named-parameter proposal now specifies contravariant argument acceptance correctly and documents its memoization and readonly restrictions. These are proposal edits, not newly enabled language features. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b5adffd6275338ba4cd4a476cad78556fb5f1fe9" target="_blank" rel="noopener noreferrer">b5adffd627</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0044eee66ed4ea4f094552534945b5a15b8126ef" target="_blank" rel="noopener noreferrer">0044eee66e</a></div></li><li class="change-entry"><div class="entry-copy">Experimental named-variadic subtyping now checks an explicit optional parameter against the expected named-variadic type when that parameter shadows the implementation’s variadic, preventing incompatible functions from being accepted. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e41f9dc70810da8017c02ff29d5dcac4e06fb14b" target="_blank" rel="noopener noreferrer">e41f9dc708</a></div></li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

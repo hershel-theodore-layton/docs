@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="6 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 37: Sep 7–Sep 13, 2026 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 37: Sep 7–Sep 13, 2026</h1>
+  <p class="post-meta">6 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2026/09/07/">Day</a><a href="/weekly/2026/W37/" aria-current="page">Week</a><a href="/monthly/2026/09/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2026/W36/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2026/W38/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Breaking Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/09/07/">Mon, Sep 7</a></div>
+  <div class="entry-copy">Computed property and method access now requires a receiver that is a subtype of <code>dynamic</code> under ordinary subtyping. A concrete value merely compatible with dynamic no longer suffices. Nullsafe access permits the nullable arm while checking the non-null receiver; failures use <code>Typing[4524]</code> instead of <code>Naming[2011]</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/dea7d004c309eeb363479cb825a9a0defa9a8d03" target="_blank" rel="noopener noreferrer">dea7d004c3</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/09/08/">Tue, Sep 8</a></div>
+  <div class="entry-copy">The parser now rejects combining <code>inout</code> and <code>named</code> parameter modifiers in either order, closing a validation gap in the experimental named-parameters feature. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/53b29e97fa58e25500a68066735730cef4179588" target="_blank" rel="noopener noreferrer">53b29e97fa</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/09/09/">Wed, Sep 9</a></div>
+  <div class="entry-copy">Opt-in class-pointer key widening now covers dictionary keys and values appended to <code>keyset</code> or <code>Set</code>, using <code>classname&lt;T&gt;</code> where runtime coercion turns a <code>class&lt;T&gt;</code> value into a string. The <code>class_pointer_array_literal_keys</code> and <code>class_pointer_array_write_keys</code> rollout levels remain zero by default. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2f116d635b30248c5b2a4f8ca065f47d054497e9" target="_blank" rel="noopener noreferrer">2f116d635b</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0f74e9d03312945bc0e77b0101e840b4987383d4" target="_blank" rel="noopener noreferrer">0f74e9d033</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Highlights</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/09/09/">Wed, Sep 9</a></div>
+  <div class="entry-copy">Setting <code>Eval.AllowManualGC=false</code> makes <code>gc_collect_cycles()</code> skip collection. Manual collection remains enabled by default. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/bb180afe2e568c782c05cedfed94e1e87a07d635" target="_blank" rel="noopener noreferrer">bb180afe2e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/09/10/">Thu, Sep 10</a></div>
+  <div class="entry-copy">The typed AST now records the correct <code>classname&lt;T&gt;</code> or <code>class&lt;T&gt;</code> result on <code>HH\type_structure_classname()</code> and <code>HH\type_structure_class()</code> calls, avoiding spurious invalid-comparison warnings from checks that read the expression annotation. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b9e0ca8265ed1b11ffc375908f48d54f1236192f" target="_blank" rel="noopener noreferrer">b9e0ca8265</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/09/11/">Fri, Sep 11</a></div>
+  <div class="entry-copy">Outside repo-authoritative mode, inherited private properties annotated with <code>&lt;&lt;__TestsBypassVisibility&gt;&gt;</code> can now resolve correctly on subclass instances when the calling test context is authorized to bypass visibility. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/55d22e25511a575fc5dd32b1055f5a379517af0e" target="_blank" rel="noopener noreferrer">55d22e2551</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

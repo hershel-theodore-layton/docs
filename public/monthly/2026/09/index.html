@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="57 noteworthy changes, organized by the source changelog sections.">
+  <title>September 2026 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/">Weekly digests</a></li><li><a href="/monthly/" aria-current="page">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Monthly digest</p>
+  <h1 class="post-title">September 2026</h1>
+  <p class="post-meta">57 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2026/09/01/">Day</a><a href="/weekly/2026/W36/">Week</a><a href="/monthly/2026/09/" aria-current="page">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/monthly/2026/08/"><span aria-hidden="true">←</span><span>Previous month</span></a><span class="period-button next disabled" aria-disabled="true"><span aria-hidden="true">→</span><span>Next month</span></span></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>20 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W36/">W36</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/01/">Sep 1</a></div>
+  <div class="entry-copy">HHVM avoids a crash when an external-thread task result invokes <code>HH\Asio\join()</code> on that same task during deserialization, such as from <code>__wakeup()</code>. A task already being processed cannot be re-entered or cancelled as though it were still waiting. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/fe5bf06c3c69b5ace8e256baca8dfedd96f28576" target="_blank" rel="noopener noreferrer">fe5bf06c3c</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W36/">W36</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/01/">Sep 1</a></div>
+  <div class="entry-copy">Facts symbol-to-file lookups avoid constructing an unnecessary filesystem path before returning the resolved filename. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1e7673c9fb0bb013df9a704bad219d798afc88b8" target="_blank" rel="noopener noreferrer">1e7673c9fb</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W36/">W36</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/02/">Sep 2</a></div>
+  <div class="entry-copy">Uncaught internal failures in <code>hh_client</code> now use exit status 221 rather than the type-error status 2. Malformed key-value command-line arguments use status 64 and no longer print a backtrace. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/bab52cef3db7d7d1783fbb527c9e4db875aab1a6" target="_blank" rel="noopener noreferrer">bab52cef3d</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3148255d19fd6c7145670ad8ea751d256709ce6a" target="_blank" rel="noopener noreferrer">3148255d19</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W36/">W36</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/03/">Sep 3</a></div>
+  <div class="entry-copy">If a saved-state dependency graph disappears before a worker opens it, <code>hh_server</code> reports an unavailable graph and the monitor can restart it to restore the graph, instead of panicking through the dependency-query FFI. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/838b5ecfe8849858e5cf1d451b3c218a4ee40020" target="_blank" rel="noopener noreferrer">838b5ecfe8</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W36/">W36</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/04/">Sep 4</a></div>
+  <div class="entry-copy">The analysis command <code>--find-isolatable-clusters</code> discovers seed files with no incoming references; <code>--json</code> exposes the seed paths and count for scripts. This initial discovery does not yet compute complete movable clusters. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ee4c52b940f67f90b783f9cbee8f1a6d9ed27ca3" target="_blank" rel="noopener noreferrer">ee4c52b940</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/fa20924e45d3d518a15c99b402c5761a2781fed4" target="_blank" rel="noopener noreferrer">fa20924e45</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W37/">W37</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/09/">Sep 9</a></div>
+  <div class="entry-copy">Setting <code>Eval.AllowManualGC=false</code> makes <code>gc_collect_cycles()</code> skip collection. Manual collection remains enabled by default. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/bb180afe2e568c782c05cedfed94e1e87a07d635" target="_blank" rel="noopener noreferrer">bb180afe2e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W37/">W37</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/10/">Sep 10</a></div>
+  <div class="entry-copy">The typed AST now records the correct <code>classname&lt;T&gt;</code> or <code>class&lt;T&gt;</code> result on <code>HH\type_structure_classname()</code> and <code>HH\type_structure_class()</code> calls, avoiding spurious invalid-comparison warnings from checks that read the expression annotation. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b9e0ca8265ed1b11ffc375908f48d54f1236192f" target="_blank" rel="noopener noreferrer">b9e0ca8265</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W37/">W37</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/11/">Sep 11</a></div>
+  <div class="entry-copy">Outside repo-authoritative mode, inherited private properties annotated with <code>&lt;&lt;__TestsBypassVisibility&gt;&gt;</code> can now resolve correctly on subclass instances when the calling test context is authorized to bypass visibility. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/55d22e25511a575fc5dd32b1055f5a379517af0e" target="_blank" rel="noopener noreferrer">55d22e2551</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W38/">W38</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/14/">Sep 14</a></div>
+  <div class="entry-copy"><code>serialize()</code> accepts an options dictionary, including <code>zstd=true</code>; <code>HH\serialize_with_options()</code> and <code>unserialize()</code> also support streaming zstd compression or decompression. This avoids materializing the full uncompressed serialized string at once. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/35e214ff7aadd1a23832ab009cdff88c79fce064" target="_blank" rel="noopener noreferrer">35e214ff7a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W38/">W38</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/14/">Sep 14</a></div>
+  <div class="entry-copy"><code>HH\ImplicitContext\PreparedContext::runBatch()</code> and <code>runBatchAsync()</code> no longer fail with a coeffect violation before running callbacks with <code>[]</code> or <code>[zoned_shallow]</code> contexts. Their shared preparation helper now declares <code>[leak_safe]</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1d894fd5cce291c54975382e5f4818864c8dcc92" target="_blank" rel="noopener noreferrer">1d894fd5cc</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W38/">W38</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/18/">Sep 18</a></div>
+  <div class="entry-copy">The new <code>HH\BlobKV\Reader</code> and <code>HH\BlobKV\Writer</code> APIs read and write binary key/value data in Blob containers. Writers require explicit <code>finalize()</code>, enforce a single in-progress writer per output path, and are rejected in repo-authoritative mode; readers remain available there. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d3cbd3bacb356f2387b2300496fae3d7d6576524" target="_blank" rel="noopener noreferrer">d3cbd3bacb</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W39/">W39</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/21/">Sep 21</a></div>
+  <div class="entry-copy">HHVM fixes an allocation/free size mismatch for shared logging arrays wrapping arrays with a string-key table, which could pass an interior pointer and incorrect allocation size to jemalloc. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3514f777ed2a967ce49690612f4ba04395efba29" target="_blank" rel="noopener noreferrer">3514f777ed</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W39/">W39</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/25/">Sep 25</a></div>
+  <div class="entry-copy">Under implicit pessimization, functions and non-overridable methods returning <code>vec&lt;mixed&gt;</code>, <code>dict&lt;arraykey, mixed&gt;</code>, <code>vec_or_dict&lt;arraykey, mixed&gt;</code>, or <code>keyset&lt;arraykey&gt;</code> can retain those exact return types as fully runtime-enforced top container types. Overridable methods retain pessimization so narrower element-type overrides remain sound. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1a3b9802b4053b67ee2c59e273b880c29d0f7190" target="_blank" rel="noopener noreferrer">1a3b9802b4</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W39/">W39</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/25/">Sep 25</a></div>
+  <div class="entry-copy">Explicit reified type arguments on parent instance-method calls such as <code>parent::method&lt;int&gt;()</code> are now preserved by the typechecker, avoiding false missing-type-argument errors. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ee3fbe441ce9e3923453f57b026809d4df5aa0f2" target="_blank" rel="noopener noreferrer">ee3fbe441c</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W40/">W40</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/28/">Sep 28</a></div>
+  <div class="entry-copy">Typed open shapes are now enabled by default through <code>typed_open_shapes=true</code>. Normalizing <code>supportdyn</code> over open shape tails also correctly distributes union tails. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b60a3f7001b6a31da44bdfafa0a30a8a8e8b41b7" target="_blank" rel="noopener noreferrer">b60a3f7001</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5ba371e121156c0ea0df1f637a2f5348baae6e1c" target="_blank" rel="noopener noreferrer">5ba371e121</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W40/">W40</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/28/">Sep 28</a></div>
+  <div class="entry-copy">A new warning detects expressions typed <code>dynamic</code> returned through an explicitly declared return type that is not fully enforced at runtime. Fully enforced and like-typed return positions, including async return-value enforcement, are exempt. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/64f7043e62329803b10a7b28f876538b3136c5c0" target="_blank" rel="noopener noreferrer">64f7043e62</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W40/">W40</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/28/">Sep 28</a></div>
+  <div class="entry-copy"><code>--validate-isolation &lt;file&gt;</code> checks a candidate list of repo-relative file paths against a temporary strict package and reports boundary violations. Exit statuses distinguish a successful check (0), violations (2), and unknown or overridden input paths (10); <code>--json</code> provides structured output. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b3a8b8384f8ac5cbd135e066939196559c776300" target="_blank" rel="noopener noreferrer">b3a8b8384f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W40/">W40</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/29/">Sep 29</a></div>
+  <div class="entry-copy">Hershel&#x27;s HHVM 26.09.29 build now passes the selected <code>JOBS</code> limit through dependency builds, Cargo, OPAM, CMake, and the Hack Dune build. The runtime and Debian package version are reported as <code>26.9.29</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d647defffa8a6102f4c7131e09415c520f64cf97" target="_blank" rel="noopener noreferrer">d647defffa8</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1467c534eae52ddd4ba3d4eb6d02f71bd85ee736" target="_blank" rel="noopener noreferrer">1467c534ea</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W40/">W40</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/29/">Sep 29</a></div>
+  <div class="entry-copy">Debian package builds can preserve the existing build tree with <code>HHVM_INCREMENTAL_BUILD=1</code>, avoiding the normal clean step. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d51b53256c2d93b6e7299f3f8de6a9cc67c1b8c6" target="_blank" rel="noopener noreferrer">d51b53256c</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/673255ed70d5146f9ab2a8cf3dfe528da7fc276d" target="_blank" rel="noopener noreferrer">673255ed70</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W40/">W40</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/29/">Sep 29</a></div>
+  <div class="entry-copy">The Ubuntu build script pins Rust to <code>nightly-2026-08-24</code>, and the Debian rules resolve the compiler through <code>rustup</code>, keeping the Hack build on a toolchain that supports its box patterns. Source dependency builds also set the CMake policy minimum to 3.5 for compatibility with CMake 4. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2530b1b13e8ae91b70806c3c38bab79aea413b6a" target="_blank" rel="noopener noreferrer">2530b1b13e</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6da7c58a9654c7d97c86adc1f9f74ff49b3f3a89" target="_blank" rel="noopener noreferrer">6da7c58a96</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>32 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W36/">W36</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/01/">Sep 1</a></div>
+  <div class="entry-copy">Experimental named parameters may now be optional before required parameters in function-type hints, matching function declarations. Optional positional parameters must still follow required positional parameters. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3e8b127f4944b27ee3b8cdfb9a9de9f4d91de331" target="_blank" rel="noopener noreferrer">3e8b127f49</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W36/">W36</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/02/">Sep 2</a></div>
+  <div class="entry-copy">A draft proposal documents limited variadic named parameters for typed mocking, including accepting additional named arguments without exposing them in the function body. This commit changes the proposal only; the prototype remains behind the default-off <code>named_variadic_type</code> and <code>variadic_named_parameters</code> typechecker options. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/46a19fe934b9eaaa443d625399f9b67b0964233e" target="_blank" rel="noopener noreferrer">46a19fe934</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W36/">W36</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/02/">Sep 2</a></div>
+  <div class="entry-copy">Function-type displays now print <code>optional named</code> in the order accepted by the parser, making displayed hints easier to copy into source. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c66ce9b3dc8ddc175d16ee0ff8488263d090405c" target="_blank" rel="noopener noreferrer">c66ce9b3dc</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W36/">W36</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/03/">Sep 3</a></div>
+  <div class="entry-copy">The default-off <code>reject_promoted_property_redeclaration</code> option adds a typechecker diagnostic for constructor parameters that re-promote inherited properties. Private non-LSB ancestor properties remain legal to shadow. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/56beee3a0a11da14ecb5e4476112706033aea6ee" target="_blank" rel="noopener noreferrer">56beee3a0a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W36/">W36</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/03/">Sep 3</a></div>
+  <div class="entry-copy">The variadic-named-parameter proposal now specifies contravariant argument acceptance correctly and documents its memoization and readonly restrictions. These are proposal edits, not newly enabled language features. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b5adffd6275338ba4cd4a476cad78556fb5f1fe9" target="_blank" rel="noopener noreferrer">b5adffd627</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0044eee66ed4ea4f094552534945b5a15b8126ef" target="_blank" rel="noopener noreferrer">0044eee66e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W36/">W36</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/03/">Sep 3</a></div>
+  <div class="entry-copy">Experimental named-variadic subtyping now checks an explicit optional parameter against the expected named-variadic type when that parameter shadows the implementation’s variadic, preventing incompatible functions from being accepted. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e41f9dc70810da8017c02ff29d5dcac4e06fb14b" target="_blank" rel="noopener noreferrer">e41f9dc708</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W36/">W36</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/04/">Sep 4</a></div>
+  <div class="entry-copy">IDE autocomplete now suggests unused optional named argument labels as well as required ones, ordering required labels first and preserving declaration order within each group. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a6237234b57644eda53c9efd3eb9b5c267145376" target="_blank" rel="noopener noreferrer">a6237234b5</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W36/">W36</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/04/">Sep 4</a></div>
+  <div class="entry-copy">Experimental named-variadic method overrides now track positional and named variadics separately, avoiding incorrect arity and compatibility results. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/39180f36f81c2ad32f236476214053728b7ece97" target="_blank" rel="noopener noreferrer">39180f36f8</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W37/">W37</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/08/">Sep 8</a></div>
+  <div class="entry-copy">The parser now rejects combining <code>inout</code> and <code>named</code> parameter modifiers in either order, closing a validation gap in the experimental named-parameters feature. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/53b29e97fa58e25500a68066735730cef4179588" target="_blank" rel="noopener noreferrer">53b29e97fa</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W37/">W37</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/09/">Sep 9</a></div>
+  <div class="entry-copy">Opt-in class-pointer key widening now covers dictionary keys and values appended to <code>keyset</code> or <code>Set</code>, using <code>classname&lt;T&gt;</code> where runtime coercion turns a <code>class&lt;T&gt;</code> value into a string. The <code>class_pointer_array_literal_keys</code> and <code>class_pointer_array_write_keys</code> rollout levels remain zero by default. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2f116d635b30248c5b2a4f8ca065f47d054497e9" target="_blank" rel="noopener noreferrer">2f116d635b</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0f74e9d03312945bc0e77b0101e840b4987383d4" target="_blank" rel="noopener noreferrer">0f74e9d033</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W38/">W38</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/16/">Sep 16</a></div>
+  <div class="entry-copy">With the default-off <code>use_module_error_for_member_access</code> option enabled, member-level module boundary violations use <code>Typing[4444]</code> instead of the general visibility code 4112. Protected-internal members receive separate module and protected-visibility checks. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/38c3759cf4acf903ab6d436677bbdfe6d83fdcb2" target="_blank" rel="noopener noreferrer">38c3759cf4</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W38/">W38</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/16/">Sep 16</a></div>
+  <div class="entry-copy">The runtime and typechecker expose <code>HH\implicit_package_family_exists()</code> and <code>HH\get_all_implicit_package_families()</code> for configured implicit package families. Family availability follows hard deployment membership, while enumeration returns declared family paths and dependencies without materializing member packages. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1ae3ff40058ef3e14ed9dfb15bbb6c8310b33e98" target="_blank" rel="noopener noreferrer">1ae3ff4005</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W38/">W38</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/18/">Sep 18</a></div>
+  <div class="entry-copy">The typechecker temporarily rejects named parameters on <code>&lt;&lt;__Memoize&gt;&gt;</code> functions and <code>&lt;&lt;__Memoize&gt;&gt;</code>/<code>&lt;&lt;__MemoizeLSB&gt;&gt;</code> methods with <code>NastCheck[3113]</code>, because their generated wrappers can fail at runtime. Make the parameter positional or remove memoization. The restriction remains in HHVM 26.09.29 even after the runtime fix on September 22. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b74f9bcdcaf500203170fccabe8cf301fa9cc1a5" target="_blank" rel="noopener noreferrer">b74f9bcdca</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W39/">W39</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/21/">Sep 21</a></div>
+  <div class="entry-copy">Named callback arguments now participate in the same staged lambda-inference passes as positional arguments, removing inference failures that depended on argument order. Function subtyping also keeps named parameters out of positional variadic and type-splat tails. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e62016324711df2248ca233ac00bdcdb3fb5a04e" target="_blank" rel="noopener noreferrer">e620163247</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d708f251ce33ee930c09d2b7b917cb91da05bc80" target="_blank" rel="noopener noreferrer">d708f251ce</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W39/">W39</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/21/">Sep 21</a></div>
+  <div class="entry-copy">HHVM now compares named method parameters by label and optionality separately from positional parameters. This accepts implementations with extra optional named parameters and rejects missing parameters or incompatible <code>inout</code> positions that combined slot counts could conceal. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7cb12ea0effb207a727830f12a7a8631d7f58d05" target="_blank" rel="noopener noreferrer">7cb12ea0ef</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W39/">W39</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/21/">Sep 21</a></div>
+  <div class="entry-copy">Runtime checks now keep reordered named parameters paired with their original type hints and defaults. Readonly checks also bind passed arguments to the correct parameter when optional named arguments are omitted, fixing both false rejections and missed violations in the interpreter and JIT. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d9825e5b775a723f5fc261e955f5cab764f16cdc" target="_blank" rel="noopener noreferrer">d9825e5b77</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9fed0ff97f97d5b5ce7e159c69bd72a2594b3bce" target="_blank" rel="noopener noreferrer">9fed0ff97f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W39/">W39</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/22/">Sep 22</a></div>
+  <div class="entry-copy">Explicit <code>null</code> supplied to an optional named parameter is now preserved instead of being replaced by its default, including under repo-authoritative optimization. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3255cabee6561c8f56584d0901941edb81ec6f9a" target="_blank" rel="noopener noreferrer">3255cabee6</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W39/">W39</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/22/">Sep 22</a></div>
+  <div class="entry-copy">Readonly argument flags now follow the same reordering as named argument values, including constructor calls, fixing incorrect acceptance and rejection of calls. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3dac710c75a951ff9d37b8e11678a151f367f166" target="_blank" rel="noopener noreferrer">3dac710c75</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W39/">W39</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/22/">Sep 22</a></div>
+  <div class="entry-copy">Memoization wrappers now order and forward named parameters correctly, fixing runtime failures for memoized functions and methods. The temporary typechecker restriction from September 18 remains active; this commit does not yet make the combination available to normally typechecked code. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d3597e3fe5770b4c3b95eda4c58db04437c6b4cf" target="_blank" rel="noopener noreferrer">d3597e3fe5</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W39/">W39</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/23/">Sep 23</a></div>
+  <div class="entry-copy">Renaming a named parameter now counts as a declaration change during saved-state initialization, ensuring callers are rechecked for missing or unexpected argument labels. Positional parameter names remain irrelevant to that comparison. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7ce004b6be921a38ce5b3048f6c93136cff551f9" target="_blank" rel="noopener noreferrer">7ce004b6be</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W39/">W39</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/24/">Sep 24</a></div>
+  <div class="entry-copy">Opt-in class-pointer bound widening can infer <code>classname&lt;T&gt;</code> when generic constraints coerce a <code>class&lt;T&gt;</code> value into a string-like type, preventing overly narrow inferred types. The lower- and upper-bound rollout levels remain zero by default. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d0bdd39d7fed5190aecf3d33bacf74313dba27db" target="_blank" rel="noopener noreferrer">d0bdd39d7f</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W39/">W39</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/24/">Sep 24</a></div>
+  <div class="entry-copy">Readonly values may now be passed as named arguments when the corresponding parameter accepts readonly values. The typechecker binds readonly checks by label, fixing errors caused by omitted or reordered named arguments. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/45fa38f59cc7249f53c93b1dcaf6f832c8b20505" target="_blank" rel="noopener noreferrer">45fa38f59c</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3e1ffa6122105f186a68ba8b6a38ab86f9e08b36" target="_blank" rel="noopener noreferrer">3e1ffa6122</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W39/">W39</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/24/">Sep 24</a></div>
+  <div class="entry-copy">Argument-unpacking checks now count only positional parameters and arguments, fixing spurious arity errors around optional named parameters. Positional variadics followed by named parameters are also identified correctly during lambda checking. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0cf2a094cf33f75fc73ee95fbaf06f52ef536803" target="_blank" rel="noopener noreferrer">0cf2a094cf</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/626c5ea84849bce55c0552e86b0c210faefc7f3b" target="_blank" rel="noopener noreferrer">626c5ea848</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W39/">W39</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/24/">Sep 24</a></div>
+  <div class="entry-copy"><code>--infer-dynamic</code> now preserves named labels in suggested callback types; a call such as <code>$f(n=1)</code> produces <code>(function(named int $n): mixed)</code> instead of a positional function type. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c7a7d272a9c6f9a02db6ddde62d0a3e883f7f420" target="_blank" rel="noopener noreferrer">c7a7d272a9</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W39/">W39</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/24/">Sep 24</a></div>
+  <div class="entry-copy"><code>meth_caller</code> now rejects methods with named parameters, including named variadics, with <code>Typing[4527]</code> because the runtime cannot call those methods through that helper. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4b05630dabf2eff10086ffe8a98b0f07cbcaf9a3" target="_blank" rel="noopener noreferrer">4b05630dab</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W39/">W39</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/24/">Sep 24</a></div>
+  <div class="entry-copy">Repo-authoritative analysis no longer assigns argument types to incorrect parameter slots when named arguments are omitted, preventing an HHBBC invariant failure. Compiler-generated coeffect rules also skip unemitted nameless variadics when calculating parameter indexes. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1c03d83d74387f7d2027a51b9d0e0d02814bf4f0" target="_blank" rel="noopener noreferrer">1c03d83d74</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b32892d48203d4a4484eb353f6059b6800b560dd" target="_blank" rel="noopener noreferrer">b32892d482</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W39/">W39</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/26/">Sep 26</a></div>
+  <div class="entry-copy"><code>--enforcement-at-pos</code> and <code>--enforcement-at-pos-batch</code> now match named arguments by label and count positional arguments separately, restoring correct enforcement information for reordered calls, constructors, and variadics. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/47ddda6381ceb8b81271cf45ffe952d41ef5836d" target="_blank" rel="noopener noreferrer">47ddda6381</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W39/">W39</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/27/">Sep 27</a></div>
+  <div class="entry-copy">Experimental shape-splat <code>is</code> refinement now resolves splatted type-parameter bounds into a shape view, so impossible shape tests can refine the true branch to <code>nothing</code>. This refines the tested value, not the type parameter; <code>as</code> casts are unchanged. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9be68998a0b2e290f38c585d8cb460e7a635c6de" target="_blank" rel="noopener noreferrer">9be68998a0</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W39/">W39</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/27/">Sep 27</a></div>
+  <div class="entry-copy">Experimental shape-splat normalization avoids repeated map insertion, optional-field widening, and repeated merging that could cause quadratic work on large splats. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3020a207bd245e1eec2db83d6700d3eb9d0dc9e5" target="_blank" rel="noopener noreferrer">3020a207bd</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/faa6de4b640fbe59487d2693073ce0382588b7ff" target="_blank" rel="noopener noreferrer">faa6de4b64</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d2f0bd921a79bc5c0e21a4b434af67f4d8d116a8" target="_blank" rel="noopener noreferrer">d2f0bd921a</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9cff0cce3426395a1397bc728c1df9e22b14c4cd" target="_blank" rel="noopener noreferrer">9cff0cce34</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W40/">W40</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/28/">Sep 28</a></div>
+  <div class="entry-copy">Class-pointer bound widening gains separate source-level settings for which class-pointer types are widened, independently of the string-like constraint levels that trigger widening. These settings remain zero by default. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1307864bdedf111bc0c9adfb0c291188a323af65" target="_blank" rel="noopener noreferrer">1307864bde</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W40/">W40</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/28/">Sep 28</a></div>
+  <div class="entry-copy">Experimental shape splats used with <code>RepresentableAs</code> now resolve residual polymorphic splats before checking the represented key and value types. The conversion remains one-way; <code>RepresentableAs</code> cannot itself be unpacked as a shape. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8e614e9db27545532d2acd2cfc1393a3f71a3e61" target="_blank" rel="noopener noreferrer">8e614e9db2</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W40/">W40</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/28/">Sep 28</a></div>
+  <div class="entry-copy">Experimental shape splats that introduce non-denotable union field types are rejected in aliases, newtypes, parameter hints, and return hints unless <code>union_intersection_type_hints</code> is enabled. Redundant singleton <code>shape(...T)</code> hints receive a diagnostic and quickfix, with a specialized rewrite for <code>shape(...dynamic)</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9407783fdd7388b4c458c72f8462214cf8efdba1" target="_blank" rel="noopener noreferrer">9407783fdd</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c8419798fb82cba1803db29f9588c8a0cff7680c" target="_blank" rel="noopener noreferrer">c8419798fb</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c549af8941e8009a610329c63d5b1b36ffbb3039" target="_blank" rel="noopener noreferrer">c549af8941</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>5 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W37/">W37</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/07/">Sep 7</a></div>
+  <div class="entry-copy">Computed property and method access now requires a receiver that is a subtype of <code>dynamic</code> under ordinary subtyping. A concrete value merely compatible with dynamic no longer suffices. Nullsafe access permits the nullable arm while checking the non-null receiver; failures use <code>Typing[4524]</code> instead of <code>Naming[2011]</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/dea7d004c309eeb363479cb825a9a0defa9a8d03" target="_blank" rel="noopener noreferrer">dea7d004c3</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W38/">W38</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/14/">Sep 14</a></div>
+  <div class="entry-copy">Files assigned to implicit packages by their paths may no longer use <code>__PackageOverride</code> to escape that membership. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/51094a61e4b1fd55c7b199594b4eedcaa5fd31a1" target="_blank" rel="noopener noreferrer">51094a61e4</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W38/">W38</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/18/">Sep 18</a></div>
+  <div class="entry-copy">Packages must opt into deployed-package checks with <code>allow_deployed_packages_checking=true</code> before code can use <code>package</code>, <code>__RequirePackage</code>, or <code>__SoftRequirePackage</code> for them. This flag cannot be combined with <code>enable_strict_isolation</code>. The separate prohibition based only on a soft-include edge is removed; ordinary strict-inclusion checks still apply. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/55e411dea018a2ca14839ce78899f988bf4811b6" target="_blank" rel="noopener noreferrer">55e411dea0</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5a43f0ec1fb0bf41d3843743bf1d958787fc0470" target="_blank" rel="noopener noreferrer">5a43f0ec1f</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e5f9e4c4614ce94d3acfb2d7fde99e44d8a41009" target="_blank" rel="noopener noreferrer">e5f9e4c461</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W39/">W39</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/21/">Sep 21</a></div>
+  <div class="entry-copy"><code>__PackageOverride</code> is also rejected when a file physically belongs to an explicit package with strict isolation, closing the same escape route already blocked for implicit packages. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e48e4b7856ff8a8195173240a664bd6ce178917f" target="_blank" rel="noopener noreferrer">e48e4b7856</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2026/W39/">W39</a><span aria-hidden="true"> · </span><a href="/daily/2026/09/23/">Sep 23</a></div>
+  <div class="entry-copy">Dynamic string-to-class references to classes in strict packages now receive an independent strict-package check in the interpreter, JIT, and native class APIs. <code>raise_dynamic_class_load_error</code> defaults to true for strict packages; explicit false selects sampled notices. <code>__DynamicallyReferenced</code> does not bypass this policy. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/cb6bca1916cf070fbc19b008c0daebf8970ea90b" target="_blank" rel="noopener noreferrer">cb6bca1916</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8eecec3bf185643ba81f792811909c76981fdd8c" target="_blank" rel="noopener noreferrer">8eecec3bf1</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9495634c20e32fd3dd70a83050d7e9e5a0a3735c" target="_blank" rel="noopener noreferrer">9495634c20</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/aaef0e62600f165f0fe0e378ac13cf7238621abb" target="_blank" rel="noopener noreferrer">aaef0e6260</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

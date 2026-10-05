@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="8 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 38: Sep 14–Sep 20, 2026 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 38: Sep 14–Sep 20, 2026</h1>
+  <p class="post-meta">8 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2026/09/14/">Day</a><a href="/weekly/2026/W38/" aria-current="page">Week</a><a href="/monthly/2026/09/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2026/W37/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2026/W39/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/09/14/">Mon, Sep 14</a></div>
+  <div class="entry-copy"><code>serialize()</code> accepts an options dictionary, including <code>zstd=true</code>; <code>HH\serialize_with_options()</code> and <code>unserialize()</code> also support streaming zstd compression or decompression. This avoids materializing the full uncompressed serialized string at once. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/35e214ff7aadd1a23832ab009cdff88c79fce064" target="_blank" rel="noopener noreferrer">35e214ff7a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/09/14/">Mon, Sep 14</a></div>
+  <div class="entry-copy"><code>HH\ImplicitContext\PreparedContext::runBatch()</code> and <code>runBatchAsync()</code> no longer fail with a coeffect violation before running callbacks with <code>[]</code> or <code>[zoned_shallow]</code> contexts. Their shared preparation helper now declares <code>[leak_safe]</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1d894fd5cce291c54975382e5f4818864c8dcc92" target="_blank" rel="noopener noreferrer">1d894fd5cc</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/09/18/">Fri, Sep 18</a></div>
+  <div class="entry-copy">The new <code>HH\BlobKV\Reader</code> and <code>HH\BlobKV\Writer</code> APIs read and write binary key/value data in Blob containers. Writers require explicit <code>finalize()</code>, enforce a single in-progress writer per output path, and are rejected in repo-authoritative mode; readers remain available there. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d3cbd3bacb356f2387b2300496fae3d7d6576524" target="_blank" rel="noopener noreferrer">d3cbd3bacb</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/09/14/">Mon, Sep 14</a></div>
+  <div class="entry-copy">Files assigned to implicit packages by their paths may no longer use <code>__PackageOverride</code> to escape that membership. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/51094a61e4b1fd55c7b199594b4eedcaa5fd31a1" target="_blank" rel="noopener noreferrer">51094a61e4</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/09/18/">Fri, Sep 18</a></div>
+  <div class="entry-copy">Packages must opt into deployed-package checks with <code>allow_deployed_packages_checking=true</code> before code can use <code>package</code>, <code>__RequirePackage</code>, or <code>__SoftRequirePackage</code> for them. This flag cannot be combined with <code>enable_strict_isolation</code>. The separate prohibition based only on a soft-include edge is removed; ordinary strict-inclusion checks still apply. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/55e411dea018a2ca14839ce78899f988bf4811b6" target="_blank" rel="noopener noreferrer">55e411dea0</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5a43f0ec1fb0bf41d3843743bf1d958787fc0470" target="_blank" rel="noopener noreferrer">5a43f0ec1f</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e5f9e4c4614ce94d3acfb2d7fde99e44d8a41009" target="_blank" rel="noopener noreferrer">e5f9e4c461</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/09/16/">Wed, Sep 16</a></div>
+  <div class="entry-copy">With the default-off <code>use_module_error_for_member_access</code> option enabled, member-level module boundary violations use <code>Typing[4444]</code> instead of the general visibility code 4112. Protected-internal members receive separate module and protected-visibility checks. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/38c3759cf4acf903ab6d436677bbdfe6d83fdcb2" target="_blank" rel="noopener noreferrer">38c3759cf4</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/09/16/">Wed, Sep 16</a></div>
+  <div class="entry-copy">The runtime and typechecker expose <code>HH\implicit_package_family_exists()</code> and <code>HH\get_all_implicit_package_families()</code> for configured implicit package families. Family availability follows hard deployment membership, while enumeration returns declared family paths and dependencies without materializing member packages. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1ae3ff40058ef3e14ed9dfb15bbb6c8310b33e98" target="_blank" rel="noopener noreferrer">1ae3ff4005</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/09/18/">Fri, Sep 18</a></div>
+  <div class="entry-copy">The typechecker temporarily rejects named parameters on <code>&lt;&lt;__Memoize&gt;&gt;</code> functions and <code>&lt;&lt;__Memoize&gt;&gt;</code>/<code>&lt;&lt;__MemoizeLSB&gt;&gt;</code> methods with <code>NastCheck[3113]</code>, because their generated wrappers can fail at runtime. Make the parameter positional or remove memoization. The restriction remains in HHVM 26.09.29 even after the runtime fix on September 22. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b74f9bcdcaf500203170fccabe8cf301fa9cc1a5" target="_blank" rel="noopener noreferrer">b74f9bcdca</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

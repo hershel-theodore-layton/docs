@@ -34,7 +34,7 @@
   
   <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/06/01/">Day</a><a href="/weekly/2024/W22/">Week</a><a href="/monthly/2024/06/" aria-current="page">Month</a></nav>
   <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/monthly/2024/05/"><span aria-hidden="true">←</span><span>Previous month</span></a><a class="period-button next" rel="next" href="/monthly/2024/07/"><span aria-hidden="true">→</span><span>Next month</span></a></nav>
-</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Breaking Changes</h2><span>6 changes</span></header><ul><li class="change-entry">
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Breaking Changes</h2><span>7 changes</span></header><ul><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2024/W23/">W23</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/03/">Jun 3</a></div>
   <div class="entry-copy">Hack now rejects calls to protected methods through an interface-typed receiver. The concrete implementing class might be outside the caller&#x27;s class hierarchy, making the apparently valid call fail at runtime. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7b9882a0aef1aec5af80092610b22c88821a09f4" target="_blank" rel="noopener noreferrer">7b9882a0ae</a></div>
 </li><li class="change-entry">
@@ -47,12 +47,15 @@
   <div class="entry-meta"><a href="/weekly/2024/W24/">W24</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/11/">Jun 11</a></div>
   <div class="entry-copy"><code>get_class()</code> and <code>get_parent_class()</code> now require an explicit argument; the implicit current-class form has been removed. <code>get_class()</code> also enforces an object argument through its builtin type hint and returns a <code>classname</code> rather than <code>mixed</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/aa31bd583b6bbaffd8c576c354658175bb544d33" target="_blank" rel="noopener noreferrer">aa31bd583b</a></div>
 </li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W24/">W24</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/12/">Jun 12</a></div>
+  <div class="entry-copy">Public classes and interfaces may no longer extend internal types. This restores a firm module boundary and prevents public APIs from exposing a base type that callers outside the module cannot name. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f971a6634fa5375dc0a03ef6046fc63326e9ccf2" target="_blank" rel="noopener noreferrer">f971a6634f</a></div>
+</li><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2024/W25/">W25</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/18/">Jun 18</a></div>
   <div class="entry-copy">The obsolete <code>HH\class_get_class_name()</code> helper has been removed; use the pure <code>HH\class_to_classname()</code> migration helper instead. The internal <code>__hhvm_intrinsics\create_class_pointer()</code> spelling was likewise replaced by <code>HH\classname_to_class()</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/172eb8c361dbd3685815bd48bcac5130e9e4767b" target="_blank" rel="noopener noreferrer">172eb8c361</a></div>
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2024/W26/">W26</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/25/">Jun 25</a></div>
   <div class="entry-copy">A generic used contravariantly inside <code>HH\EnumClass\Label</code> is now an error when covariance leaves it underconstrained. Replace the redundant parameter with its effective bound or redesign the signature so the label actually determines it. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5832019e44a105c291c3d37f371303b5a2038483" target="_blank" rel="noopener noreferrer">5832019e44</a></div>
-</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>14 changes</span></header><ul><li class="change-entry">
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>13 changes</span></header><ul><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2024/W23/">W23</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/03/">Jun 3</a></div>
   <div class="entry-copy">Preview case types now handle nullable unions and bottom cases such as empty or null-only unions without crashing during runtime type-constraint canonicalization. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/25c4c950e97422b4ad88f28302a25b6ec521e270" target="_blank" rel="noopener noreferrer">25c4c950e9</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7c6ce997e6a18da6f74137e41ea456026cb58699" target="_blank" rel="noopener noreferrer">7c6ce997e6</a></div>
 </li><li class="change-entry">
@@ -64,9 +67,6 @@
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2024/W24/">W24</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/14/">Jun 14</a></div>
   <div class="entry-copy">With Packages v2 enabled, <code>&lt;&lt;file: __PackageOverride(&#x27;name&#x27;)&gt;&gt;</code> no longer needs an <code>__EnableUnstableFeatures</code> declaration. The attribute lets a file opt into the named package for access checking. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ff5b55092bf1bee50dbf854290dbf23e53e9c431" target="_blank" rel="noopener noreferrer">ff5b55092b</a></div>
-</li><li class="change-entry">
-  <div class="entry-meta"><a href="/weekly/2024/W25/">W25</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/17/">Jun 17</a></div>
-  <div class="entry-copy">Under the preview readonly feature, <code>get_class&lt;T&gt;(readonly T)[]: classname&lt;T&gt;</code> now preserves the object&#x27;s static class type instead of returning an unparameterized class name. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/537dfe98b057399a5dad6ac26df087f23cb22a60" target="_blank" rel="noopener noreferrer">537dfe98b0</a></div>
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2024/W25/">W25</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/17/">Jun 17</a></div>
   <div class="entry-copy">Packages v2 now diagnoses an unknown package named by <code>__PackageOverride</code>, catching misspelled or stale package overrides at typechecking time. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/02462c0d87c439c8e7dca1cdb66cbe011d25cd0d" target="_blank" rel="noopener noreferrer">02462c0d87</a></div>
@@ -94,7 +94,7 @@
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2024/W26/">W26</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/24/">Jun 24</a></div>
   <div class="entry-copy">Packages v2 now ignores package boundaries while resolving generic type arguments, completing the relaxation for type-only references while retaining checks on value-level symbols. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/cc000535ac3ebec1450f82bac13cae83df4208f1" target="_blank" rel="noopener noreferrer">cc000535ac</a></div>
-</li></ul></section><section class="subject-group"><header><h2>Highlights</h2><span>20 changes</span></header><ul><li class="change-entry">
+</li></ul></section><section class="subject-group"><header><h2>Highlights</h2><span>21 changes</span></header><ul><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2024/W23/">W23</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/05/">Jun 5</a></div>
   <div class="entry-copy">Failed union and intersection subtype checks now retain the errors from every invalid branch. Diagnostics no longer disappear when a disjunction is deferred or collapse to only the last failed alternative. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b92226235f52400986008d6c388382af42eb72f3" target="_blank" rel="noopener noreferrer">b92226235f</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/608d6b4b0781b2447f445ae84e251a4926285dca" target="_blank" rel="noopener noreferrer">608d6b4b07</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b24c0c17515fcfa2ba45314dd47da3ba842fac80" target="_blank" rel="noopener noreferrer">b24c0c1751</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0c7f97fbe87cae01e9a4d373cff538b9a0d5286a" target="_blank" rel="noopener noreferrer">0c7f97fbe8</a></div>
 </li><li class="change-entry">
@@ -134,6 +134,9 @@
   <div class="entry-meta"><a href="/weekly/2024/W24/">W24</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/15/">Jun 15</a></div>
   <div class="entry-copy">Subclasses of <code>HH\ImplicitContext</code> can now call the inherited protected <code>exists()[zoned]: bool</code> helper to test whether their keyed context is present without reading its value. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9e3108de07a793b87d9927b9a62eebc4440b1003" target="_blank" rel="noopener noreferrer">9e3108de07</a></div>
 </li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W25/">W25</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/17/">Jun 17</a></div>
+  <div class="entry-copy">The Hack declaration of <code>get_class&lt;T&gt;(readonly T)[]: classname&lt;T&gt;</code> now preserves the object&#x27;s static class type instead of using a missing-return-type placeholder. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/537dfe98b057399a5dad6ac26df087f23cb22a60" target="_blank" rel="noopener noreferrer">537dfe98b0</a></div>
+</li><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2024/W25/">W25</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/19/">Jun 19</a></div>
   <div class="entry-copy">Sound Dynamic like-pushing now handles more types containing unsolved variables, avoiding false incompatibility errors for relationships such as <code>Box&lt;~T&gt; &lt;: ~Box&lt;string&gt;</code> while preserving errors for genuinely mismatched inner types. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9968b678adce4e02b29bf90e6d41d217f5397625" target="_blank" rel="noopener noreferrer">9968b678ad</a></div>
 </li><li class="change-entry">
@@ -154,9 +157,6 @@
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2024/W26/">W26</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/25/">Jun 25</a></div>
   <div class="entry-copy">JIT deployment-boundary checks now match the interpreter when the caller is itself outside the active deployment, avoiding a spurious violation on calls from that code. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e8f6d775daeb1a3fb744fd3ab9f9724a7dc55f3d" target="_blank" rel="noopener noreferrer">e8f6d775da</a></div>
-</li></ul></section><section class="subject-group"><header><h2>Security</h2><span>1 change</span></header><ul><li class="change-entry">
-  <div class="entry-meta"><a href="/weekly/2024/W24/">W24</a><span aria-hidden="true"> · </span><a href="/daily/2024/06/12/">Jun 12</a></div>
-  <div class="entry-copy">Public classes and interfaces may no longer extend internal types. This restores a firm module boundary and prevents public APIs from exposing a base type that callers outside the module cannot name. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f971a6634fa5375dc0a03ef6046fc63326e9ccf2" target="_blank" rel="noopener noreferrer">f971a6634f</a></div>
 </li></ul></section></div></div></article></div></div></main>
     </div>
     <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>

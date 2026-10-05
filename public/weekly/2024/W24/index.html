@@ -52,10 +52,10 @@
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/daily/2024/06/15/">Sat, Jun 15</a></div>
   <div class="entry-copy">Subclasses of <code>HH\ImplicitContext</code> can now call the inherited protected <code>exists()[zoned]: bool</code> helper to test whether their keyed context is present without reading its value. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9e3108de07a793b87d9927b9a62eebc4440b1003" target="_blank" rel="noopener noreferrer">9e3108de07</a></div>
-</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>2 changes</span></header><ul><li class="change-entry">
   <div class="entry-meta"><a href="/daily/2024/06/11/">Tue, Jun 11</a></div>
   <div class="entry-copy"><code>get_class()</code> and <code>get_parent_class()</code> now require an explicit argument; the implicit current-class form has been removed. <code>get_class()</code> also enforces an object argument through its builtin type hint and returns a <code>classname</code> rather than <code>mixed</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/aa31bd583b6bbaffd8c576c354658175bb544d33" target="_blank" rel="noopener noreferrer">aa31bd583b</a></div>
-</li></ul></section><section class="subject-group"><header><h2>Security</h2><span>1 change</span></header><ul><li class="change-entry">
+</li><li class="change-entry">
   <div class="entry-meta"><a href="/daily/2024/06/12/">Wed, Jun 12</a></div>
   <div class="entry-copy">Public classes and interfaces may no longer extend internal types. This restores a firm module boundary and prevents public APIs from exposing a base type that callers outside the module cannot name. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f971a6634fa5375dc0a03ef6046fc63326e9ccf2" target="_blank" rel="noopener noreferrer">f971a6634f</a></div>
 </li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>1 change</span></header><ul><li class="change-entry">

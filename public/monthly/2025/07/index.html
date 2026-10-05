@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="66 noteworthy changes, organized by the source changelog sections.">
+  <meta name="description" content="65 noteworthy changes, organized by the source changelog sections.">
   <title>July 2025 | HHVM Change Digest</title>
   <link rel="stylesheet" href="/static/css/main.css">
   <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
@@ -30,7 +30,7 @@
   <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
   <p class="post-authorName">Monthly digest</p>
   <h1 class="post-title">July 2025</h1>
-  <p class="post-meta">66 noteworthy changes, organized by the source changelog sections.</p>
+  <p class="post-meta">65 noteworthy changes, organized by the source changelog sections.</p>
   
   <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2025/07/01/">Day</a><a href="/weekly/2025/W27/">Week</a><a href="/monthly/2025/07/" aria-current="page">Month</a></nav>
   <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/monthly/2025/06/"><span aria-hidden="true">←</span><span>Previous month</span></a><a class="period-button next" rel="next" href="/monthly/2025/08/"><span aria-hidden="true">→</span><span>Next month</span></a></nav>
@@ -111,10 +111,10 @@
   <div class="entry-copy">The experimental EdenFS watcher adds <code>edenfs_file_watcher_throttle_time_ms</code>, allowing projects to set the minimum interval between change notifications. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5f9013dd5596476dee7b818dfb8fe4c6deedc83b" target="_blank" rel="noopener noreferrer">5f9013dd55</a></div>
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2025/W30/">W30</a><span aria-hidden="true"> · </span><a href="/daily/2025/07/24/">Jul 24</a></div>
-  <div class="entry-copy">Experimental <code>can_index</code> solving now permits dynamic keys in sound-dynamic code and treats the key parameter covariantly, improving inference for indexed generic values. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b4e92a8d51b15391fdbeca4a1d914eb51378f771" target="_blank" rel="noopener noreferrer">b4e92a8d51</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/11d432e4d1babb4502059171741291bc7cc1983a" target="_blank" rel="noopener noreferrer">11d432e4d1</a></div>
+  <div class="entry-copy">Experimental <code>can_index</code> solving now permits dynamic keys in sound-dynamic code and avoids forcing fresh indexed result types to be invariant, improving inference for indexed generic values. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b4e92a8d51b15391fdbeca4a1d914eb51378f771" target="_blank" rel="noopener noreferrer">b4e92a8d51</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/11d432e4d1babb4502059171741291bc7cc1983a" target="_blank" rel="noopener noreferrer">11d432e4d1</a></div>
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2025/W30/">W30</a><span aria-hidden="true"> · </span><a href="/daily/2025/07/25/">Jul 25</a></div>
-  <div class="entry-copy">Experimental <code>can_index</code> solving now understands optional and variadic tuple elements and produces more specific tuple-index diagnostics. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/65834b5156eeaedd41a567da4e3c3867fca48edc" target="_blank" rel="noopener noreferrer">65834b5156</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/532dd723e59e52338c5fb8d55a71390aa78a93eb" target="_blank" rel="noopener noreferrer">532dd723e5</a></div>
+  <div class="entry-copy">Experimental <code>can_index</code> solving now understands optional and variadic tuple elements. Invalid shape-field names now receive a dedicated shape diagnostic. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/65834b5156eeaedd41a567da4e3c3867fca48edc" target="_blank" rel="noopener noreferrer">65834b5156</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/532dd723e59e52338c5fb8d55a71390aa78a93eb" target="_blank" rel="noopener noreferrer">532dd723e5</a></div>
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2025/W31/">W31</a><span aria-hidden="true"> · </span><a href="/daily/2025/07/28/">Jul 28</a></div>
   <div class="entry-copy">Experimental <code>can_index</code> solving now handles aliases, pessimised types, optional shape keys, constant keys, and <code>TypeStructure</code> values more consistently. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3b66e2c9913a573ec16e3628a5fdc8350a5d2cef" target="_blank" rel="noopener noreferrer">3b66e2c991</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1b126653a71886ae21a8df32f9c27459f4f54846" target="_blank" rel="noopener noreferrer">1b126653a7</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/82ed90eceb259264646d80d4a8f2777337a99095" target="_blank" rel="noopener noreferrer">82ed90eceb</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ab0d241d9cbc62730df199a3aa38e1502fcb7220" target="_blank" rel="noopener noreferrer">ab0d241d9c</a></div>
@@ -201,7 +201,7 @@
   <div class="entry-copy">Type refinements for runtime generic-class tests now instantiate wildcard arguments existentially. Checks such as <code>$x is C&lt;_&gt;</code> can therefore partition and refine generic values without inventing a concrete wildcard type. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/a2835215c6905cec11a6c06bd6d4af72087d95a5" target="_blank" rel="noopener noreferrer">a2835215c6</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/215bdd8e7ee8019521c5d0cecce7ec0fc4567997" target="_blank" rel="noopener noreferrer">215bdd8e7e</a></div>
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2025/W30/">W30</a><span aria-hidden="true"> · </span><a href="/daily/2025/07/22/">Jul 22</a></div>
-  <div class="entry-copy">Runtime <code>is</code> checks and type verification now treat <code>&lt;&lt;__Soft&gt;&gt;</code> constraints as <code>mixed</code>, matching the textual bytecode backend and preventing a soft annotation from being accidentally enforced as a hard type. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/32c03fcd51a3c7929e6eec8a2ea99410baba494a" target="_blank" rel="noopener noreferrer">32c03fcd51</a></div>
+  <div class="entry-copy">HackC’s IR backend now treats <code>&lt;&lt;__Soft&gt;&gt;</code> constraints as <code>mixed</code> when generating type checks for its textual output, matching the soft-type representation already used by that backend. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/32c03fcd51a3c7929e6eec8a2ea99410baba494a" target="_blank" rel="noopener noreferrer">32c03fcd51</a></div>
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2025/W31/">W31</a><span aria-hidden="true"> · </span><a href="/daily/2025/07/28/">Jul 28</a></div>
   <div class="entry-copy"><code>HH\FileDecls::getPublicApiForClass(string $name)[]</code> returns a source-like rendering of a class&#x27;s public methods, constants, type constants, inheritance, and implemented interfaces. Its explicit <code>[]</code> means tooling can call it from any capability context. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/920bfa05ee2e0794f7cfe6d51241bc6b175cc0d5" target="_blank" rel="noopener noreferrer">920bfa05ee</a></div>
@@ -225,11 +225,8 @@
   <div class="entry-copy">HHVM no longer attempts to load Package V1 deployment data when deployment enforcement is disabled, fixing commands such as <code>hphpd -h</code> that run without an active deployment. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/90fc996b294d9f6a5f832a42bfac60bb6c6e1775" target="_blank" rel="noopener noreferrer">90fc996b29</a></div>
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2025/W31/">W31</a><span aria-hidden="true"> · </span><a href="/daily/2025/07/31/">Jul 31</a></div>
-  <div class="entry-copy">Hack notebooks now run the legacy debugger in server mode, enabling clients to connect to their evaluation process. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4b5791d1ba8934977f4acd314c1b8654a8df7b83" target="_blank" rel="noopener noreferrer">4b5791d1ba</a></div>
-</li></ul></section><section class="subject-group"><header><h2>Security</h2><span>2 changes</span></header><ul><li class="change-entry">
-  <div class="entry-meta"><a href="/weekly/2025/W28/">W28</a><span aria-hidden="true"> · </span><a href="/daily/2025/07/09/">Jul 9</a></div>
-  <div class="entry-copy">Hack&#x27;s Rust dependency lockfile no longer transitively includes the vulnerable <code>owning_ref</code> crate affected by RUSTSEC-2022-0040. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b20fefa60cd62383d1ead53d923c4482d4a32672" target="_blank" rel="noopener noreferrer">b20fefa60c</a></div>
-</li><li class="change-entry">
+  <div class="entry-copy">Notebook mode now accepts <code>--debug-host</code> instead of printing command-line help. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4b5791d1ba8934977f4acd314c1b8654a8df7b83" target="_blank" rel="noopener noreferrer">4b5791d1ba</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Security</h2><span>1 change</span></header><ul><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2025/W28/">W28</a><span aria-hidden="true"> · </span><a href="/daily/2025/07/09/">Jul 9</a></div>
   <div class="entry-copy">HHVM fixes a heap-use-after-free when mutating bespoke <code>LoggingArray</code> values by constructing the replacement before invalidating the old array. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2dbe10d8a1921f7f28430155a8d096b99aa68c2e" target="_blank" rel="noopener noreferrer">2dbe10d8a1</a></div>
 </li></ul></section></div></div></article></div></div></main>

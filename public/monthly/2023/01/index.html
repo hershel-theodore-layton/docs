@@ -34,7 +34,7 @@
   
   <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/01/01/">Day</a><a href="/weekly/2022/W52/">Week</a><a href="/monthly/2023/01/" aria-current="page">Month</a></nav>
   <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/monthly/2022/12/"><span aria-hidden="true">←</span><span>Previous month</span></a><a class="period-button next" rel="next" href="/monthly/2023/02/"><span aria-hidden="true">→</span><span>Next month</span></a></nav>
-</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>38 changes</span></header><ul><li class="change-entry">
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>39 changes</span></header><ul><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2023/W01/">W01</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/03/">Jan 3</a></div>
   <div class="entry-copy">HHVM no longer reports a false <code>Cannot declare self-referencing constant</code> fatal when an interval-timer callback interrupts the initialization of a large global or class constant. Genuine recursive constants remain invalid. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/bc6c72f81aeeaf173f872ecfba1eecf97db25153" target="_blank" rel="noopener noreferrer">bc6c72f81a</a></div>
 </li><li class="change-entry">
@@ -69,7 +69,7 @@
   <div class="entry-copy">Sound-dynamic checking no longer rejects assigning a value of type <code>~T</code> back to an <code>inout T</code> parameter solely because the function or method is being checked for dynamic calls. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/fab2e559dd7e8bacda3181001ef4492cb705736e" target="_blank" rel="noopener noreferrer">fab2e559dd</a></div>
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2023/W02/">W02</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/11/">Jan 11</a></div>
-  <div class="entry-copy">Objects created by the DOM extension now use canonical class capitalization such as <code>DOMDocument</code> and <code>DOMElement</code>. <code>DOMDocument::registerNodeClass()</code> remains case-insensitive, but reflection and <code>get_class()</code> now see the correctly cased built-in name. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/df0d4d282730014560bd50a111631b459bc6d945" target="_blank" rel="noopener noreferrer">df0d4d2827</a></div>
+  <div class="entry-copy">The DOM extension now uses canonical class capitalization such as <code>DOMDocument</code> and <code>DOMElement</code> when looking up classes to instantiate. <code>DOMDocument::registerNodeClass()</code> continues to use case-insensitive lookup. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/df0d4d282730014560bd50a111631b459bc6d945" target="_blank" rel="noopener noreferrer">df0d4d2827</a></div>
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2023/W02/">W02</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/12/">Jan 12</a></div>
   <div class="entry-copy">Incremental typechecking now rechecks dependents when an inherited XHP attribute becomes required or a new required attribute is added. Projects should receive the same missing-attribute errors without needing a full check. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3fba663915e013e60cf802435d5715c8e1667ed0" target="_blank" rel="noopener noreferrer">3fba663915</a></div>
@@ -106,6 +106,9 @@
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2023/W03/">W03</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/20/">Jan 20</a></div>
   <div class="entry-copy">The dead-<code>UNSAFE_CAST</code> codemod now omits redundant parentheses for expressions that cannot be captured by surrounding syntax, producing smaller and more idiomatic patches. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/952e984837ca498828e3269a79c0e8c1795288f9" target="_blank" rel="noopener noreferrer">952e984837</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W03/">W03</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/20/">Jan 20</a></div>
+  <div class="entry-copy"><code>tls://</code> stream sockets now use OpenSSL&#x27;s version-negotiating TLS client and server methods instead of methods fixed to TLS 1.0. The negotiated version depends on the protocols permitted by the OpenSSL configuration and supported by the peer; this change does not itself set a minimum TLS version. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/083f5ffdee661f61512909d16f9a5b98cff3cf0b" target="_blank" rel="noopener noreferrer">083f5ffdee</a></div>
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2023/W03/">W03</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/22/">Jan 22</a></div>
   <div class="entry-copy">Expressions involving a missing class now receive type <code>nothing</code> instead of an unconstrained fresh type variable. This avoids large, misleading inferred unions and reflects that executing the unresolved class reference will fatal, even if its naming error was suppressed. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1a16e3c578bedec0e742fb3b29f3deb4c32da4ac" target="_blank" rel="noopener noreferrer">1a16e3c578</a></div>
@@ -148,7 +151,7 @@
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2023/W05/">W05</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/31/">Jan 31</a></div>
   <div class="entry-copy">A trait is now considered to support dynamic only when it is marked <code>&lt;&lt;__SupportDynamicType&gt;&gt;</code> and one of its requirements restricts it to SDT classes. This fixes both false acceptance and false rejection around SDT traits and their consumers. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c07151edf950fb717e6d4c25984355065d30af0a" target="_blank" rel="noopener noreferrer">c07151edf9</a></div>
-</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>5 changes</span></header><ul><li class="change-entry">
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>4 changes</span></header><ul><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2023/W01/">W01</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/06/">Jan 6</a></div>
   <div class="entry-copy">The Thrift extension no longer implements or registers <code>RpcOptions::setFaultToInject()</code>. Projects using this fault-injection API must remove those calls. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/64a89b91a6da25dd42330a3d01de0ad4f3236935" target="_blank" rel="noopener noreferrer">64a89b91a6</a></div>
 </li><li class="change-entry">
@@ -157,9 +160,6 @@
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2023/W03/">W03</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/19/">Jan 19</a></div>
   <div class="entry-copy">HHI declarations must now provide explicit parameter, return, method, and property types. Authors of project-specific HHIs should add real types where known and use an appropriate placeholder only where the declaration truly cannot be typed. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/96f6e5b16fe743d5df959620efdde74ecf15425b" target="_blank" rel="noopener noreferrer">96f6e5b16f</a></div>
-</li><li class="change-entry">
-  <div class="entry-meta"><a href="/weekly/2023/W03/">W03</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/20/">Jan 20</a></div>
-  <div class="entry-copy"><code>tls://</code> stream sockets no longer negotiate TLS 1.0 and instead use the modern TLS client or server method. Connections to endpoints that only support TLS 1.0 will now fail and should be migrated to a current protocol. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/083f5ffdee661f61512909d16f9a5b98cff3cf0b" target="_blank" rel="noopener noreferrer">083f5ffdee</a></div>
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2023/W04/">W04</a><span aria-hidden="true"> · </span><a href="/daily/2023/01/23/">Jan 23</a></div>
   <div class="entry-copy">The stale systemlib declaration of <code>RpcOptions::setFaultToInject()</code> has been removed, completing the earlier runtime removal. Calls now fail typechecking as well as at runtime. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/084d4228442db4dc501f5f9b8e4ad28438ddd063" target="_blank" rel="noopener noreferrer">084d422844</a></div>

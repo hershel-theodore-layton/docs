@@ -34,7 +34,7 @@
   
   <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/09/01/">Day</a><a href="/weekly/2023/W35/">Week</a><a href="/monthly/2023/09/" aria-current="page">Month</a></nav>
   <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/monthly/2023/08/"><span aria-hidden="true">←</span><span>Previous month</span></a><a class="period-button next" rel="next" href="/monthly/2023/10/"><span aria-hidden="true">→</span><span>Next month</span></a></nav>
-</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>33 changes</span></header><ul><li class="change-entry">
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>34 changes</span></header><ul><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2023/W35/">W35</a><span aria-hidden="true"> · </span><a href="/daily/2023/09/01/">Sep 1</a></div>
   <div class="entry-copy">Sound Dynamic joins now simplify unions and intersections through <code>supportdyn</code> wrappers, avoiding unnecessarily large or imprecise inferred unions after control-flow joins. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/55f4a9ddff54126c1aca1aacf4ad7e9e71245ced" target="_blank" rel="noopener noreferrer">55f4a9ddff</a></div>
 </li><li class="change-entry">
@@ -107,6 +107,9 @@
   <div class="entry-meta"><a href="/weekly/2023/W38/">W38</a><span aria-hidden="true"> · </span><a href="/daily/2023/09/22/">Sep 22</a></div>
   <div class="entry-copy">Errors for inaccessible or invalid attribute classes now point to the attribute use site, rather than manufacturing a source position from the attribute class declaration. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0a9d3a9db666d64682c2ceb2cb1c6ec163a344bf" target="_blank" rel="noopener noreferrer">0a9d3a9db6</a></div>
 </li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W38/">W38</a><span aria-hidden="true"> · </span><a href="/daily/2023/09/22/">Sep 22</a></div>
+  <div class="entry-copy">Diagnostics for abstract members that override concrete inherited members now use the current class’s source position when the offending member comes from elsewhere, avoiding invalid primary error locations. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/eb118e95464b49dd85bbfdb645cdc3468ce11955" target="_blank" rel="noopener noreferrer">eb118e9546</a></div>
+</li><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2023/W39/">W39</a><span aria-hidden="true"> · </span><a href="/daily/2023/09/25/">Sep 25</a></div>
   <div class="entry-copy">HackC no longer constant-folds <code>T::class</code> when <code>T</code> is a reified generic; the emitted code resolves the runtime class supplied for <code>T</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8068a8e3a6b2b9f3479a42f125c7393f1fa233e4" target="_blank" rel="noopener noreferrer">8068a8e3a6</a></div>
 </li><li class="change-entry">
@@ -133,7 +136,7 @@
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2023/W39/">W39</a><span aria-hidden="true"> · </span><a href="/daily/2023/09/29/">Sep 29</a></div>
   <div class="entry-copy"><code>ReflectionMethod::getCanonicalMethod()</code> and <code>getCanonicalClassname()</code> can locate the trait that actually defines an inherited method in non-repo mode. They throw in repo-authoritative mode, where traits have already been flattened. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/45c1f1f8e9ec0782ed572a388b825a9aecddc687" target="_blank" rel="noopener noreferrer">45c1f1f8e9</a></div>
-</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>12 changes</span></header><ul><li class="change-entry">
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>11 changes</span></header><ul><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2023/W35/">W35</a><span aria-hidden="true"> · </span><a href="/daily/2023/09/01/">Sep 1</a></div>
   <div class="entry-copy">Sound Dynamic has backed out the all-dynamic fallback for calls through <code>supportdyn</code> function types. Calls that only typechecked after pessimising every parameter may now report argument errors. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/349eca7fa11453cd3102b9c998bea260da788ddb" target="_blank" rel="noopener noreferrer">349eca7fa1</a></div>
 </li><li class="change-entry">
@@ -166,9 +169,6 @@
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2023/W38/">W38</a><span aria-hidden="true"> · </span><a href="/daily/2023/09/19/">Sep 19</a></div>
   <div class="entry-copy"><code>hh_single_type_check --custom-hhi-path</code> now requires <code>--no-builtins</code>, preventing concurrent invocations from truncating generated builtin files in the shared custom directory. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/27e9b0384d243e4a62434c2947c4587f6411d1e2" target="_blank" rel="noopener noreferrer">27e9b0384d</a></div>
-</li><li class="change-entry">
-  <div class="entry-meta"><a href="/weekly/2023/W38/">W38</a><span aria-hidden="true"> · </span><a href="/daily/2023/09/22/">Sep 22</a></div>
-  <div class="entry-copy">Abstract methods and type constants inherited from traits no longer silently override concrete inherited members. The typechecker now reports the invalid redeclaration while preserving the correct primary source position. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/eb118e95464b49dd85bbfdb645cdc3468ce11955" target="_blank" rel="noopener noreferrer">eb118e9546</a></div>
 </li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>20 changes</span></header><ul><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2023/W36/">W36</a><span aria-hidden="true"> · </span><a href="/daily/2023/09/04/">Sep 4</a></div>
   <div class="entry-copy">Work begins on an opt-in strict-switch checker. Its first stage requires <code>default</code> for open-ended types and rejects a redundant <code>default</code> when the scrutinee has no possible values; broader literal and enum coverage is still being built. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ece08a97a1c634a3a0a079a4fd417ec071f8a09a" target="_blank" rel="noopener noreferrer">ece08a97a1</a></div>

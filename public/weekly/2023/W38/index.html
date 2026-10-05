@@ -34,7 +34,7 @@
   
   <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/09/18/">Day</a><a href="/weekly/2023/W38/" aria-current="page">Week</a><a href="/monthly/2023/09/">Month</a></nav>
   <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2023/W37/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2023/W39/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
-</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>8 changes</span></header><ul><li class="change-entry">
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>9 changes</span></header><ul><li class="change-entry">
   <div class="entry-meta"><a href="/daily/2023/09/18/">Mon, Sep 18</a></div>
   <div class="entry-copy">Corrected repo-authoritative support for soft deployments has relanded. Soft-package functions, classes, methods, and constants remain in the repo and emit boundary warnings rather than collapsing into undefined-symbol failures. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d786fbef34a10f405fea153e6d3601b9a061a915" target="_blank" rel="noopener noreferrer">d786fbef34</a></div>
 </li><li class="change-entry">
@@ -58,15 +58,15 @@
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/daily/2023/09/22/">Fri, Sep 22</a></div>
   <div class="entry-copy">Errors for inaccessible or invalid attribute classes now point to the attribute use site, rather than manufacturing a source position from the attribute class declaration. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0a9d3a9db666d64682c2ceb2cb1c6ec163a344bf" target="_blank" rel="noopener noreferrer">0a9d3a9db6</a></div>
-</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/09/22/">Fri, Sep 22</a></div>
+  <div class="entry-copy">Diagnostics for abstract members that override concrete inherited members now use the current class’s source position when the offending member comes from elsewhere, avoiding invalid primary error locations. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/eb118e95464b49dd85bbfdb645cdc3468ce11955" target="_blank" rel="noopener noreferrer">eb118e9546</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>2 changes</span></header><ul><li class="change-entry">
   <div class="entry-meta"><a href="/daily/2023/09/18/">Mon, Sep 18</a></div>
   <div class="entry-copy">A source file may now contain at most one <code>new module</code> declaration. Projects that collected several module definitions into one file must split them into standalone files. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/21f428203bad0ca6f4e765b4dcd8388bee8682d4" target="_blank" rel="noopener noreferrer">21f428203b</a></div>
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/daily/2023/09/19/">Tue, Sep 19</a></div>
   <div class="entry-copy"><code>hh_single_type_check --custom-hhi-path</code> now requires <code>--no-builtins</code>, preventing concurrent invocations from truncating generated builtin files in the shared custom directory. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/27e9b0384d243e4a62434c2947c4587f6411d1e2" target="_blank" rel="noopener noreferrer">27e9b0384d</a></div>
-</li><li class="change-entry">
-  <div class="entry-meta"><a href="/daily/2023/09/22/">Fri, Sep 22</a></div>
-  <div class="entry-copy">Abstract methods and type constants inherited from traits no longer silently override concrete inherited members. The typechecker now reports the invalid redeclaration while preserving the correct primary source position. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/eb118e95464b49dd85bbfdb645cdc3468ce11955" target="_blank" rel="noopener noreferrer">eb118e9546</a></div>
 </li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>3 changes</span></header><ul><li class="change-entry">
   <div class="entry-meta"><a href="/daily/2023/09/19/">Tue, Sep 19</a></div>
   <div class="entry-copy">Strict-switch checking is now an explicitly unstable, per-function feature: opt in with <code>&lt;&lt;file:__EnableUnstableFeatures(&#x27;strict_switch&#x27;)&gt;&gt;</code>, then apply <code>&lt;&lt;__StrictSwitch&gt;&gt;</code> to a function or method. The old project-wide <code>enable_strict_switch</code> option is removed. String literals and string-valued class constants are also supported. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/dd6849b13bed341badf2c6ddeeaed83ad677aa07" target="_blank" rel="noopener noreferrer">dd6849b13b</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e172d60f7cbeff193ccfcebc9cc50846eb3afffa" target="_blank" rel="noopener noreferrer">e172d60f7c</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/02bd9d5a82c64d144ff92f1d24a8331e323672dc" target="_blank" rel="noopener noreferrer">02bd9d5a82</a></div>

@@ -34,7 +34,7 @@
   
   <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2023/08/01/">Day</a><a href="/weekly/2023/W31/">Week</a><a href="/monthly/2023/08/" aria-current="page">Month</a></nav>
   <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/monthly/2023/07/"><span aria-hidden="true">←</span><span>Previous month</span></a><a class="period-button next" rel="next" href="/monthly/2023/09/"><span aria-hidden="true">→</span><span>Next month</span></a></nav>
-</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>29 changes</span></header><ul><li class="change-entry">
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>30 changes</span></header><ul><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2023/W31/">W31</a><span aria-hidden="true"> · </span><a href="/daily/2023/08/01/">Aug 1</a></div>
   <div class="entry-copy">Under Sound Dynamic, hovering a method call through a like-typed receiver now shows the method&#x27;s ordinary signature instead of rendering the whole callable as a like type. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/bdfd6dc2e9215e764f370d205bf560b2fbc7f206" target="_blank" rel="noopener noreferrer">bdfd6dc2e9</a></div>
 </li><li class="change-entry">
@@ -58,6 +58,9 @@
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2023/W32/">W32</a><span aria-hidden="true"> · </span><a href="/daily/2023/08/09/">Aug 9</a></div>
   <div class="entry-copy">Targeted explicit pessimisation now honors <code>&lt;&lt;__NoAutoLikes&gt;&gt;</code> on return types, function types, and <code>inout</code> parameters. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5bc783525a34168951dbca181ca66816fe11e517" target="_blank" rel="noopener noreferrer">5bc783525a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2023/W32/">W32</a><span aria-hidden="true"> · </span><a href="/daily/2023/08/09/">Aug 9</a></div>
+  <div class="entry-copy"><code>require class</code> can now be used in production without a per-file unstable-feature opt-in. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ad27a74ee0cab6f406e8a8576f8629a9a5013a7f" target="_blank" rel="noopener noreferrer">ad27a74ee0</a></div>
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2023/W32/">W32</a><span aria-hidden="true"> · </span><a href="/daily/2023/08/10/">Aug 10</a></div>
   <div class="entry-copy">Symbol-info indexes now include inherited class, interface, and trait members by default, improving the accuracy of tools that consume Hack&#x27;s symbol index. The behavior can be gated with <code>symbol_write_index_inherited_members</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c4ad5562ac8b4005b501d1d12f699aafcfb9aa01" target="_blank" rel="noopener noreferrer">c4ad5562ac</a></div>
@@ -133,7 +136,7 @@
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2023/W35/">W35</a><span aria-hidden="true"> · </span><a href="/daily/2023/08/31/">Aug 31</a></div>
   <div class="entry-copy"><code>Eval.DisableParsedCookies</code> can now stop parsing cookies into <code>$_COOKIE</code> and <code>$_REQUEST</code>, and removes the <code>$_COOKIE</code> superglobal entirely when enabled. Raw headers remain available for application-controlled parsing. The compatibility default remains disabled. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3b831a6debce1e8802ac1242bd249ef8cce436e8" target="_blank" rel="noopener noreferrer">3b831a6deb</a></div>
-</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>9 changes</span></header><ul><li class="change-entry">
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>8 changes</span></header><ul><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2023/W31/">W31</a><span aria-hidden="true"> · </span><a href="/daily/2023/08/01/">Aug 1</a></div>
   <div class="entry-copy">Experimental typed-local enforcement now treats tuple indexing like shape indexing when checking assignments such as <code>$x[$i] = $value</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9fa6b85eeaf14f8b83cb2084b46dc14bf9e3beb0" target="_blank" rel="noopener noreferrer">9fa6b85eea</a></div>
 </li><li class="change-entry">
@@ -142,9 +145,6 @@
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2023/W31/">W31</a><span aria-hidden="true"> · </span><a href="/daily/2023/08/03/">Aug 3</a></div>
   <div class="entry-copy">Experimental expression-tree lowering no longer forms cycles between freshly synthesized generic parameters, preventing stack overflows when a lambda&#x27;s inferred generic escapes. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/1a94612ae3ded9e930c13e44417258926bdc7b4c" target="_blank" rel="noopener noreferrer">1a94612ae3</a></div>
-</li><li class="change-entry">
-  <div class="entry-meta"><a href="/weekly/2023/W32/">W32</a><span aria-hidden="true"> · </span><a href="/daily/2023/08/09/">Aug 9</a></div>
-  <div class="entry-copy"><code>require class</code> has entered an ungated rollout and can now be used without a per-file unstable-feature opt-in, but it remains pre-stable. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ad27a74ee0cab6f406e8a8576f8629a9a5013a7f" target="_blank" rel="noopener noreferrer">ad27a74ee0</a></div>
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2023/W34/">W34</a><span aria-hidden="true"> · </span><a href="/daily/2023/08/21/">Aug 21</a></div>
   <div class="entry-copy">During the ongoing module rollout, files without an explicit module declaration are now assigned to the internal <code>default</code> module for runtime module and package enforcement. Reflection continues to return <code>null</code> for their module, but boundary errors describe callers as being in the default module rather than outside all modules. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0977c6dffcb28e2ff0b26000ab92d2be6249443d" target="_blank" rel="noopener noreferrer">0977c6dffc</a></div>

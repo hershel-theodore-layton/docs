@@ -52,7 +52,7 @@
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/daily/2023/08/10/">Thu, Aug 10</a></div>
   <div class="entry-copy">The unused <code>arg_separator.input</code> setting and configurable <code>arg_separator.output</code> setting have been removed. APIs that used the output default now hard-code <code>&amp;</code> unless a separator is supplied directly. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e4ffa04d4831b370b37789a9236515d6ad913995" target="_blank" rel="noopener noreferrer">e4ffa04d48</a></div>
-</li></ul></section><section class="subject-group"><header><h2>Highlights</h2><span>7 changes</span></header><ul><li class="change-entry">
+</li></ul></section><section class="subject-group"><header><h2>Highlights</h2><span>8 changes</span></header><ul><li class="change-entry">
   <div class="entry-meta"><a href="/daily/2023/08/09/">Wed, Aug 9</a></div>
   <div class="entry-copy">Bidirectional inference now uses the upper bound of an expected type variable when typing lambdas. Generic helpers such as <code>makeSingle($x ==&gt; $x-&gt;foo())</code> can therefore infer the lambda parameter from the surrounding expected type. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6cb17946fa0a9cc3c8b4f95291ec8e99291bc711" target="_blank" rel="noopener noreferrer">6cb17946fa</a></div>
 </li><li class="change-entry">
@@ -61,6 +61,9 @@
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/daily/2023/08/09/">Wed, Aug 9</a></div>
   <div class="entry-copy">Targeted explicit pessimisation now honors <code>&lt;&lt;__NoAutoLikes&gt;&gt;</code> on return types, function types, and <code>inout</code> parameters. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/5bc783525a34168951dbca181ca66816fe11e517" target="_blank" rel="noopener noreferrer">5bc783525a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2023/08/09/">Wed, Aug 9</a></div>
+  <div class="entry-copy"><code>require class</code> can now be used in production without a per-file unstable-feature opt-in. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ad27a74ee0cab6f406e8a8576f8629a9a5013a7f" target="_blank" rel="noopener noreferrer">ad27a74ee0</a></div>
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/daily/2023/08/10/">Thu, Aug 10</a></div>
   <div class="entry-copy">Symbol-info indexes now include inherited class, interface, and trait members by default, improving the accuracy of tools that consume Hack&#x27;s symbol index. The behavior can be gated with <code>symbol_write_index_inherited_members</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/c4ad5562ac8b4005b501d1d12f699aafcfb9aa01" target="_blank" rel="noopener noreferrer">c4ad5562ac</a></div>
@@ -73,9 +76,6 @@
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/daily/2023/08/11/">Fri, Aug 11</a></div>
   <div class="entry-copy">Soft package-deployment violation warnings can now be sampled with <code>Eval.DeploymentViolationWarningSampleRate</code>, reducing log volume during migrations. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/38b77e9ac5e7f368f203c755c6784dba05a2fe7e" target="_blank" rel="noopener noreferrer">38b77e9ac5</a></div>
-</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>1 change</span></header><ul><li class="change-entry">
-  <div class="entry-meta"><a href="/daily/2023/08/09/">Wed, Aug 9</a></div>
-  <div class="entry-copy"><code>require class</code> has entered an ungated rollout and can now be used without a per-file unstable-feature opt-in, but it remains pre-stable. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ad27a74ee0cab6f406e8a8576f8629a9a5013a7f" target="_blank" rel="noopener noreferrer">ad27a74ee0</a></div>
 </li></ul></section></div></div></article></div></div></main>
     </div>
     <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>

@@ -34,7 +34,7 @@
   
   <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2024/03/01/">Day</a><a href="/weekly/2024/W09/">Week</a><a href="/monthly/2024/03/" aria-current="page">Month</a></nav>
   <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/monthly/2024/02/"><span aria-hidden="true">←</span><span>Previous month</span></a><a class="period-button next" rel="next" href="/monthly/2024/04/"><span aria-hidden="true">→</span><span>Next month</span></a></nav>
-</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>19 changes</span></header><ul><li class="change-entry">
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>20 changes</span></header><ul><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2024/W09/">W09</a><span aria-hidden="true"> · </span><a href="/daily/2024/03/01/">Mar 1</a></div>
   <div class="entry-copy">Under Sound Dynamic, calls through like-typed receivers and like-typed function values now produce like-typed results. For example, calling an <code>int</code>-returning method through <code>~C</code> yields <code>~int</code>, closing an unsound path that previously inferred plain <code>int</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2b51ce34b0a9f43fec7f3d7d6fad7cce04e4f13e" target="_blank" rel="noopener noreferrer">2b51ce34b0</a></div>
 </li><li class="change-entry">
@@ -49,6 +49,9 @@
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2024/W10/">W10</a><span aria-hidden="true"> · </span><a href="/daily/2024/03/04/">Mar 4</a></div>
   <div class="entry-copy">Image metadata detection gained AVIF and HEIC support through libheif, notably for <code>getimagesize()</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/80f15c38721f1839a34414cacb9e8e3e7d93a9b1" target="_blank" rel="noopener noreferrer">80f15c3872</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/weekly/2024/W10/">W10</a><span aria-hidden="true"> · </span><a href="/daily/2024/03/06/">Mar 6</a></div>
+  <div class="entry-copy">Function type hints now support the <code>optional</code> qualifier without a per-file opt-in. Types such as <code>(function(int, optional int): void)</code> can describe functions whose trailing parameter has a default. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6e9dfb645d49ecc835d0ed238f54434d9b945af9" target="_blank" rel="noopener noreferrer">6e9dfb645d</a></div>
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2024/W10/">W10</a><span aria-hidden="true"> · </span><a href="/daily/2024/03/08/">Mar 8</a></div>
   <div class="entry-copy">The false branch of <code>if ($x)</code> no longer narrows <code>$x</code> to <code>null</code>: Hack now accounts for other falsy values such as <code>false</code> and the empty string, closing an unsound refinement. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/afee63e475d87af1d9b74d632ade801d5266c393" target="_blank" rel="noopener noreferrer">afee63e475</a></div>
@@ -91,15 +94,12 @@
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2024/W13/">W13</a><span aria-hidden="true"> · </span><a href="/daily/2024/03/27/">Mar 27</a></div>
   <div class="entry-copy"><code>debugger_dump()</code> now writes exclusively through debugger stdout hooks, so debug-display output reaches the debugger without also entering the application&#x27;s ordinary output buffer. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e5794da8996e56627a36edb8b16044c9265d716b" target="_blank" rel="noopener noreferrer">e5794da899</a></div>
-</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>7 changes</span></header><ul><li class="change-entry">
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>6 changes</span></header><ul><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2024/W09/">W09</a><span aria-hidden="true"> · </span><a href="/daily/2024/03/01/">Mar 1</a></div>
   <div class="entry-copy">The experimental <code>sound_enum_class_this_type</code> feature now localizes <code>this</code> in enum-class member types against the enum class being accessed, rather than the surrounding class. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2d28f2b3ba80d5fb99330d82faf25c946fcd8abe" target="_blank" rel="noopener noreferrer">2d28f2b3ba</a></div>
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2024/W10/">W10</a><span aria-hidden="true"> · </span><a href="/daily/2024/03/06/">Mar 6</a></div>
   <div class="entry-copy"><code>HH\classname_to_class()</code> and <code>HH\class_to_classname()</code> now accept preview <code>readonly classname&lt;T&gt;</code> arguments while remaining pure, allowing readonly class values to pass through the migration helpers without a mutable-value error. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/03233e7456d5bf587c7c9850e921180ec51f2d61" target="_blank" rel="noopener noreferrer">03233e7456</a></div>
-</li><li class="change-entry">
-  <div class="entry-meta"><a href="/weekly/2024/W10/">W10</a><span aria-hidden="true"> · </span><a href="/daily/2024/03/06/">Mar 6</a></div>
-  <div class="entry-copy">Function type hints in ongoing release now support the <code>optional</code> qualifier without a per-file opt-in. Types such as <code>(function(int, optional int): void)</code> can describe functions whose trailing parameter has a default, but the feature remains pre-stable. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6e9dfb645d49ecc835d0ed238f54434d9b945af9" target="_blank" rel="noopener noreferrer">6e9dfb645d</a></div>
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/weekly/2024/W11/">W11</a><span aria-hidden="true"> · </span><a href="/daily/2024/03/13/">Mar 13</a></div>
   <div class="entry-copy">Under the ongoing <code>module_level_traits_extensions</code> feature, a public <code>&lt;&lt;__ModuleLevelTrait&gt;&gt;</code> may now declare <code>internal</code> methods. Internal properties remain restricted to internal traits. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/6cad9f87c5cff31d9445b81e4a34f205495e922f" target="_blank" rel="noopener noreferrer">6cad9f87c5</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/f1bc12cf99f5592aa6220f518c6def94a4d86d58" target="_blank" rel="noopener noreferrer">f1bc12cf99</a></div>

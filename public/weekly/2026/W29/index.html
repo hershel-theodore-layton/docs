@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="5 noteworthy changes, organized by the source changelog sections.">
+  <title>Week 29: Jul 13–Jul 19, 2026 | HHVM Change Digest</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
+</head>
+<body class="docsNavVisible">
+  <div class="fixedHeaderContainer">
+    <div class="headerWrapper wrapper">
+      <header>
+        <a class="brand" href="/" aria-label="HHVM Change Digest home"><h2>HOME</h2></a>
+      </header>
+    </div>
+  </div>
+  <div class="navPusher">
+    <div class="docMainWrapper wrapper">
+      <aside class="docsNavContainer">
+        <nav class="toc" aria-label="Change digest navigation">
+          <div class="navBreadcrumb"><strong>Change Digests</strong></div>
+          <div class="navGroups">
+            <section class="navGroup navGroupActive"><h3>Change Digests</h3><ul><li><a href="/daily/">Daily digests</a></li><li><a href="/weekly/" aria-current="page">Weekly digests</a></li><li><a href="/monthly/">Monthly digests</a></li></ul></section>
+          </div>
+        </nav>
+      </aside>
+      <main class="mainContainer blogContainer postContainer"><div class="mainWrapper"><div class="page-wrapper posts"><article class="post digest-post"><header class="post-header hero">
+  <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
+  <p class="post-authorName">Weekly digest</p>
+  <h1 class="post-title">Week 29: Jul 13–Jul 19, 2026</h1>
+  <p class="post-meta">5 noteworthy changes, organized by the source changelog sections.</p>
+  
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2026/07/13/">Day</a><a href="/weekly/2026/W29/" aria-current="page">Week</a><a href="/monthly/2026/07/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2026/W28/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2026/W30/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Breaking Changes</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/07/13/">Mon, Jul 13</a></div>
+  <div class="entry-copy">Assignments cannot be used as expressions, and <code>Hack.Lang.DisableLvalAsAnExpression</code> can no longer restore that syntax. The parser reports <code>Assignments can no longer be used as expressions</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/04ed8194b9c76decc53d8890373e1bb294acf640" target="_blank" rel="noopener noreferrer">04ed8194b9</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/07/15/">Wed, Jul 15</a></div>
+  <div class="entry-copy">Numeric literals containing underscore separators, such as <code>1_000</code>, are no longer accepted. Remove separators from integer and floating-point literals. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e05fa0d5ca847e6656a8f0d127a63260c79806bc" target="_blank" rel="noopener noreferrer">e05fa0d5ca</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Highlights</h2><span>3 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/07/14/">Tue, Jul 14</a></div>
+  <div class="entry-copy">HHBBC no longer removes unused increment or decrement operations that can throw, such as incrementing a null value, preserving exceptions in optimized repositories. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/3233b87b44ef228c6d0b29329aa7ebf87496872e" target="_blank" rel="noopener noreferrer">3233b87b44</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/07/15/">Wed, Jul 15</a></div>
+  <div class="entry-copy">HHBBC preserves unused compound arithmetic operations that can throw, including division or modulo by zero and non-numeric operands. A fractional modulo divisor that truncates to zero is also handled safely. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/057bffc3ee8969809b7c1d1264e83ef46f9b76ef" target="_blank" rel="noopener noreferrer">057bffc3ee</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/07/17/">Fri, Jul 17</a></div>
+  <div class="entry-copy">Case types may combine an object variant with <code>class&lt;T&gt;</code>: the typechecker now recognizes class pointers as disjoint from objects. Class-pointer variants still overlap strings during the ongoing class-pointer migration. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/9067cd722c01d28acecfa9d78617efb46eed8b41" target="_blank" rel="noopener noreferrer">9067cd722c</a></div>
+</li></ul></section></div></div></article></div></div></main>
+    </div>
+    <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
+  </div>
+</body>
+</html>

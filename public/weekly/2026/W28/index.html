@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="2 noteworthy changes, organized by the source changelog sections.">
+  <meta name="description" content="12 noteworthy changes, organized by the source changelog sections.">
   <title>Week 28: Jul 6–Jul 12, 2026 | HHVM Change Digest</title>
   <link rel="stylesheet" href="/static/css/main.css">
   <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
@@ -30,16 +30,46 @@
   <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
   <p class="post-authorName">Weekly digest</p>
   <h1 class="post-title">Week 28: Jul 6–Jul 12, 2026</h1>
-  <p class="post-meta">2 noteworthy changes, organized by the source changelog sections.</p>
+  <p class="post-meta">12 noteworthy changes, organized by the source changelog sections.</p>
   
-  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2026/07/08/">Day</a><a href="/weekly/2026/W28/" aria-current="page">Week</a><a href="/monthly/2026/07/">Month</a></nav>
-  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2026/W27/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2026/W30/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
-</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2026/07/07/">Day</a><a href="/weekly/2026/W28/" aria-current="page">Week</a><a href="/monthly/2026/07/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2026/W27/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2026/W29/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Future Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/07/07/">Tue, Jul 7</a></div>
+  <div class="entry-copy">Function type hints can describe variadic named arguments using syntax such as <code>(function(int, named string...): void)</code>. The initial implementation requires <code>named_variadic_type=true</code>; call checking and subtyping support follow later in the release cycle. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/4315b4c0244d15b7d552e539bb018fbd04be5925" target="_blank" rel="noopener noreferrer">4315b4c024</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Highlights</h2><span>4 changes</span></header><ul><li class="change-entry">
   <div class="entry-meta"><a href="/daily/2026/07/08/">Wed, Jul 8</a></div>
   <div class="entry-copy">Hershel&#x27;s HHVM now includes a Ubuntu 24.04 Noble build script. The repository now includes a clean-container build entry point and Debian metadata for regular, nightly, debug-symbol, and development packages; this package build identifies the runtime as HHVM 26.6.5. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e8b37975a048a47fec4de16482e01d2c573b4b6f" target="_blank" rel="noopener noreferrer">e8b37975a0</a></div>
 </li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/07/08/">Wed, Jul 8</a></div>
+  <div class="entry-copy">Hack enum hints now participate in predicate-based <code>is</code>/<code>as</code> refinement, including the legacy numeric-string behavior of enum checks and sound-dynamic builtin pessimization. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/99592e454f2160ef00f6209623c6e4826c4a95d2" target="_blank" rel="noopener noreferrer">99592e454f</a></div>
+</li><li class="change-entry">
   <div class="entry-meta"><a href="/daily/2026/07/09/">Thu, Jul 9</a></div>
   <div class="entry-copy">Build support has landed in Hershel&#x27;s HHVM for Ubuntu 26.04 Resolute. <code>./build.sh --ubuntu-26.04</code> selects it, with bundled PCRE and libdwarf compatibility work for the newer distribution; Ubuntu 24.04 remains the default. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0a1acba1cb9adf2489535d992f0584a62233ed64" target="_blank" rel="noopener noreferrer">0a1acba1cb</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/07/09/">Thu, Jul 9</a></div>
+  <div class="entry-copy">Incremental typechecking now rechecks descendant classes when a parent member gains or loses <code>__TestsBypassVisibility</code>, keeping override and private-shadowing diagnostics up to date. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/2d646e5e2353d626795cbb83b33ff9bdd0f046a4" target="_blank" rel="noopener noreferrer">2d646e5e23</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Breaking Changes</h2><span>7 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/07/09/">Thu, Jul 9</a></div>
+  <div class="entry-copy">The <code>$_REQUEST</code> superglobal has been removed, together with <code>Eval.DisableRequestSuperglobal</code>. Read request parameters from <code>$_GET</code> and <code>$_POST</code> as appropriate. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e9cb94b3ae8d5f6bd8200b5997bcacf112a8f4a1" target="_blank" rel="noopener noreferrer">e9cb94b3ae</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/07/09/">Thu, Jul 9</a></div>
+  <div class="entry-copy">The <code>$_COOKIE</code> superglobal and automatic Cookie-header parsing into it have been removed, together with <code>Eval.DisableParsedCookies</code>. The raw request header and <code>parse_cookies()</code> remain available. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e6ac19eb7afc3d0bcb34e214f6f9652cb62f499f" target="_blank" rel="noopener noreferrer">e6ac19eb7a</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/07/09/">Thu, Jul 9</a></div>
+  <div class="entry-copy">Storing a <code>meth_caller</code> in APC now always throws, including when nested in a container. <code>Eval.ForbidMethCallerAPCSerialize</code> no longer permits a warning-only or permissive mode. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/87298f974e371e38b49fa4a5c86ad5949c7e3b18" target="_blank" rel="noopener noreferrer">87298f974e</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/07/09/">Thu, Jul 9</a></div>
+  <div class="entry-copy"><code>HH\dynamic_fun()</code> now always throws <code>InvalidArgumentException</code> when its target lacks <code>&lt;&lt;__DynamicallyCallable&gt;&gt;</code>; <code>Eval.DynamicFunLevel</code> no longer permits the call or reduces it to a warning. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/70fc6271ce6c1481e263f7bac39f31dd57458b13" target="_blank" rel="noopener noreferrer">70fc6271ce</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/07/10/">Fri, Jul 10</a></div>
+  <div class="entry-copy">String concatenation now always throws on disallowed implicit string coercions instead of permitting warning-only or permissive behavior through <code>Eval.NoticeOnCoerceForStrConcat</code>. Integers and strings remain supported. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/eda918a5d9cc8d0d3dca84cd3b3106a0793cdfa5" target="_blank" rel="noopener noreferrer">eda918a5d9</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/07/10/">Fri, Jul 10</a></div>
+  <div class="entry-copy">The left operand of <code>.=</code> now always throws on disallowed string coercion; the <code>Eval.NoticeOnCoerceForStrConcat2</code> rollout option has been removed. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/92c8ae13c2143179bc0a85bd62e584711d1add05" target="_blank" rel="noopener noreferrer">92c8ae13c2</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/07/10/">Fri, Jul 10</a></div>
+  <div class="entry-copy">Implicit conversion of an object to a string no longer invokes its <code>__toString()</code> method; HHVM throws <code>TypecastException</code> instead. Call <code>__toString()</code> explicitly when that conversion is intended. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ba521c3324950ba824dbde56edac66ddb23de04c" target="_blank" rel="noopener noreferrer">ba521c3324</a></div>
 </li></ul></section></div></div></article></div></div></main>
     </div>
     <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>

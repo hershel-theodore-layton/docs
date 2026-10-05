@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="1 noteworthy change recorded on this day.">
+  <meta name="description" content="2 noteworthy changes recorded on this day.">
   <title>Thursday, July 2, 2026 | HHVM Change Digest</title>
   <link rel="stylesheet" href="/static/css/main.css">
   <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
@@ -30,11 +30,11 @@
   <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
   <p class="post-authorName">Daily digest</p>
   <h1 class="post-title">Thursday, July 2, 2026</h1>
-  <p class="post-meta">1 noteworthy change recorded on this day.</p>
+  <p class="post-meta">2 noteworthy changes recorded on this day.</p>
   
   <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2026/07/02/" aria-current="page">Day</a><a href="/weekly/2026/W27/">Week</a><a href="/monthly/2026/07/">Month</a></nav>
-  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2026/06/30/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2026/07/08/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
-</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">Open-source HHVM no longer collects its low-level per-request JIT and interpreter timing measurements. On platforms where reading current-thread CPU time requires <code>clock_gettime()</code>, collecting these measurements consumed about 37% of CPU time during JIT warmup; removing them avoids that overhead. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e412a40b27f907f2d9c112fa3a2a2258a818ced1" target="_blank" rel="noopener noreferrer">e412a40b27</a></div></li></ul></section></div></div></article></div></div></main>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2026/06/30/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2026/07/07/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">Open-source HHVM no longer collects its low-level per-request JIT and interpreter timing measurements. On platforms where reading current-thread CPU time requires <code>clock_gettime()</code>, collecting these measurements consumed about 37% of CPU time during JIT warmup; removing them avoids that overhead. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e412a40b27f907f2d9c112fa3a2a2258a818ced1" target="_blank" rel="noopener noreferrer">e412a40b27</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy"><code>wordwrap()</code> now throws <code>InvalidArgumentException</code> for an empty break string or a zero width with forced cutting, instead of emitting a warning and returning <code>false</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/34e33d25f667459665a34605fa975d52bd62585b" target="_blank" rel="noopener noreferrer">34e33d25f6</a></div></li></ul></section></div></div></article></div></div></main>
     </div>
     <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
   </div>

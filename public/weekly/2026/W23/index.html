@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="17 noteworthy changes, organized by the source changelog sections.">
+  <meta name="description" content="18 noteworthy changes, organized by the source changelog sections.">
   <title>Week 23: Jun 1–Jun 7, 2026 | HHVM Change Digest</title>
   <link rel="stylesheet" href="/static/css/main.css">
   <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
@@ -30,10 +30,10 @@
   <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
   <p class="post-authorName">Weekly digest</p>
   <h1 class="post-title">Week 23: Jun 1–Jun 7, 2026</h1>
-  <p class="post-meta">17 noteworthy changes, organized by the source changelog sections.</p>
+  <p class="post-meta">18 noteworthy changes, organized by the source changelog sections.</p>
   
   <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2026/06/01/">Day</a><a href="/weekly/2026/W23/" aria-current="page">Week</a><a href="/monthly/2026/06/">Month</a></nav>
-  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2026/W22/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2026/W27/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2026/W22/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2026/W24/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
 </header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Breaking Changes</h2><span>6 changes</span></header><ul><li class="change-entry">
   <div class="entry-meta"><a href="/daily/2026/06/01/">Mon, Jun 1</a></div>
   <div class="entry-copy">More public HHI declarations now expose their concrete return types: <code>Exception::getTraceOptions()</code> and <code>RecursiveIteratorIterator::getDepth()</code> return <code>int</code>, while <code>HH\asio_get_running()</code> returns <code>ResumableWaitHandle&lt;mixed&gt;</code>. This improves inference but can reject code that used the old missing return types as arbitrary values. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/92f693af87842361efa60ca5542d3afac6033409" target="_blank" rel="noopener noreferrer">92f693af87</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ea4dc7bf50edb8ee875d312233e1914b945d4e52" target="_blank" rel="noopener noreferrer">ea4dc7bf50</a> <a href="https://github.com/hershel-theodore-layton/hhvm/commit/b7291dea21384472de8507bef36bac6a36065a7b" target="_blank" rel="noopener noreferrer">b7291dea21</a></div>
@@ -64,7 +64,7 @@
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/daily/2026/06/05/">Fri, Jun 5</a></div>
   <div class="entry-copy">A public HIP and Lean formalization now specify the proposed shape-polymorphism and shape-splat typing rules, including field requiredness, splat order, and inference bounds. This is a design artifact rather than a released language feature. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/263c872c37cca6b946c7180ff46ec3a674d751f7" target="_blank" rel="noopener noreferrer">263c872c37</a></div>
-</li></ul></section><section class="subject-group"><header><h2>Highlights</h2><span>6 changes</span></header><ul><li class="change-entry">
+</li></ul></section><section class="subject-group"><header><h2>Highlights</h2><span>7 changes</span></header><ul><li class="change-entry">
   <div class="entry-meta"><a href="/daily/2026/06/02/">Tue, Jun 2</a></div>
   <div class="entry-copy"><code>.hhconfig</code> values can now span several lines. An indented line continues the preceding value with trimmed content and no inserted separator, making JSON-valued settings such as <code>enable_experimental_stx_features</code> easier to maintain; blank or unindented comment lines end the continuation. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e9fd08104c9e060b138172bec60bb228f8f92665" target="_blank" rel="noopener noreferrer">e9fd08104c</a></div>
 </li><li class="change-entry">
@@ -82,6 +82,9 @@
 </li><li class="change-entry">
   <div class="entry-meta"><a href="/daily/2026/06/05/">Fri, Jun 5</a></div>
   <div class="entry-copy"><code>&lt;&lt;__TestsBypassVisibility&gt;&gt;</code> is now understood throughout the Hack typechecker. With <code>permits_bypassing_visibility</code> configured, descendants of the named test base classes may access annotated private, protected, and internal members or classes, while ordinary callers retain normal visibility. Concrete private annotated members cannot be shadowed; method overrides must preserve the attribute, and an annotated internal member requires its internal class to be annotated too. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/d386a0d0d4c990309db75112ddf12886f18f07c9" target="_blank" rel="noopener noreferrer">d386a0d0d4</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/06/06/">Sat, Jun 6</a></div>
+  <div class="entry-copy">Hack warns when a trait uses <code>require this as C</code> but <code>C</code> does not use that trait, directly or transitively. The warning suggests <code>require extends C</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ea950afff1192e103ab568a3cb8f3efdbd23e520" target="_blank" rel="noopener noreferrer">ea950afff1</a></div>
 </li></ul></section><section class="subject-group"><header><h2>Security</h2><span>1 change</span></header><ul><li class="change-entry">
   <div class="entry-meta"><a href="/daily/2026/06/04/">Thu, Jun 4</a></div>
   <div class="entry-copy">The CLI-server handshake now sends and validates a fixed-size magic value before any other data. A non-CLI client can no longer make HHVM interpret attacker-controlled bytes as an arbitrary <code>size_t</code> string length and attempt a process-killing allocation. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/724ce26e558a4c5399200564e77adf25a4d1ea2c" target="_blank" rel="noopener noreferrer">724ce26e55</a></div>

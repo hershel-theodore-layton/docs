@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Changes not yet included in Hershel&#x27;s HHVM fork">
+  <meta name="description" content="2 noteworthy changes recorded on this day.">
   <title>Wednesday, June 10, 2026 | HHVM Change Digest</title>
   <link rel="stylesheet" href="/static/css/main.css">
   <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
@@ -30,14 +30,11 @@
   <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
   <p class="post-authorName">Daily digest</p>
   <h1 class="post-title">Wednesday, June 10, 2026</h1>
-  <p class="post-meta">Changes not yet included in Hershel&#x27;s HHVM fork</p>
+  <p class="post-meta">2 noteworthy changes recorded on this day.</p>
   
   <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2026/06/10/" aria-current="page">Day</a><a href="/weekly/2026/W24/">Week</a><a href="/monthly/2026/06/">Month</a></nav>
-  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2026/06/05/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2026/07/02/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
-</header><div class="post-content digest-card"><section class="empty-state">
-  <span aria-hidden="true">✓</span><h2>No relevant changes</h2>
-  <p>Changes not yet included in Hershel&#x27;s HHVM fork</p>
-</section></div></article></div></div></main>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2026/06/09/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2026/06/11/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">Strict comparisons between incompatible types, such as <code>&quot;5&quot; === 5</code>, now produce <code>Warn[12001]</code> instead of the hard <code>Typing[4118]</code> error. The corresponding always-true <code>!==</code> comparisons receive the same treatment. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/97fcd1dfa91135884d5d8ea5d2616336a75e03d4" target="_blank" rel="noopener noreferrer">97fcd1dfa9</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy"><code>ReflectionParameter::getTypehintText()</code> has been removed; use <code>getTypeText()</code> to read the source-level type hint. Reflection nullability checks now consider all runtime type constraints, and builtin-type detection recognizes Hack primitive types rather than relying on the first constraint. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0f058d8f8a4e2c1e94cab6759fcbf752b860c272" target="_blank" rel="noopener noreferrer">0f058d8f8a</a></div></li></ul></section></div></div></article></div></div></main>
     </div>
     <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
   </div>

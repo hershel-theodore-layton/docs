@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Changes not yet included in Hershel&#x27;s HHVM fork">
+  <meta name="description" content="5 noteworthy changes recorded on this day.">
   <title>Friday, June 26, 2026 | HHVM Change Digest</title>
   <link rel="stylesheet" href="/static/css/main.css">
   <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
@@ -30,14 +30,11 @@
   <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
   <p class="post-authorName">Daily digest</p>
   <h1 class="post-title">Friday, June 26, 2026</h1>
-  <p class="post-meta">Changes not yet included in Hershel&#x27;s HHVM fork</p>
+  <p class="post-meta">5 noteworthy changes recorded on this day.</p>
   
   <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2026/06/26/" aria-current="page">Day</a><a href="/weekly/2026/W26/">Week</a><a href="/monthly/2026/06/">Month</a></nav>
-  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2026/06/05/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2026/07/02/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
-</header><div class="post-content digest-card"><section class="empty-state">
-  <span aria-hidden="true">✓</span><h2>No relevant changes</h2>
-  <p>Changes not yet included in Hershel&#x27;s HHVM fork</p>
-</section></div></article></div></div></main>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2026/06/25/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2026/06/29/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy"><code>is vec_or_dict&lt;_&gt;</code> now participates in predicate-based refinement, preserving useful information about the vec or dict branches and their inferred key types. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e09ba51794a9db0fb9c957128bbd852fdfc71e60" target="_blank" rel="noopener noreferrer">e09ba51794</a></div></li></ul></section><section class="daily-section"><h2>Breaking Changes</h2><ul><li class="change-entry"><div class="entry-copy">The typechecker always rejects <code>(bool)</code> casts; the <code>disallow_bool_cast</code> project option has been removed. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7c19298944f2c8f10cac4c382551c5bac9a1d6e4" target="_blank" rel="noopener noreferrer">7c19298944</a></div></li><li class="change-entry"><div class="entry-copy">Function pointers are no longer permitted in constant expressions or property initializers. The <code>disallow_func_ptrs_in_constants</code> and <code>Hack.Lang.DisallowFuncPtrsInConstants</code> options have been removed. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/167cdef425ef5df5a0b52f910c1b57916526794a" target="_blank" rel="noopener noreferrer">167cdef425</a></div></li><li class="change-entry"><div class="entry-copy">The <code>@</code> error-suppression operator is unconditionally rejected by the Hack typechecker; the <code>disallow_silence</code> option has been removed. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ead6d41ac8e217d57bb9bc062684d26b34f1ba99" target="_blank" rel="noopener noreferrer">ead6d41ac8</a></div></li><li class="change-entry"><div class="entry-copy">The typechecker always reports redundant generic parameters, and the <code>check_redundant_generics</code> option has been removed. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0f73b73373f465306cb3f62ea1a1b9920db155e5" target="_blank" rel="noopener noreferrer">0f73b73373</a></div></li></ul></section></div></div></article></div></div></main>
     </div>
     <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
   </div>

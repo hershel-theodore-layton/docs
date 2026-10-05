@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Changes not yet included in Hershel&#x27;s HHVM fork">
+  <meta name="description" content="9 noteworthy changes, organized by the source changelog sections.">
   <title>Week 26: Jun 22–Jun 28, 2026 | HHVM Change Digest</title>
   <link rel="stylesheet" href="/static/css/main.css">
   <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
@@ -30,14 +30,38 @@
   <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
   <p class="post-authorName">Weekly digest</p>
   <h1 class="post-title">Week 26: Jun 22–Jun 28, 2026</h1>
-  <p class="post-meta">Changes not yet included in Hershel&#x27;s HHVM fork</p>
+  <p class="post-meta">9 noteworthy changes, organized by the source changelog sections.</p>
   
-  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2026/06/22/">Day</a><a href="/weekly/2026/W26/" aria-current="page">Week</a><a href="/monthly/2026/06/">Month</a></nav>
-  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2026/W23/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2026/W27/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
-</header><div class="post-content"><section class="empty-state">
-  <span aria-hidden="true">✓</span><h2>No relevant changes</h2>
-  <p>Changes not yet included in Hershel&#x27;s HHVM fork</p>
-</section></div></article></div></div></main>
+  <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2026/06/23/">Day</a><a href="/weekly/2026/W26/" aria-current="page">Week</a><a href="/monthly/2026/06/">Month</a></nav>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2026/W25/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2026/W27/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Breaking Changes</h2><span>7 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/06/23/">Tue, Jun 23</a></div>
+  <div class="entry-copy">Hack rejects method pointers from non-final classes when their parameters can supply two or more <code>this</code> values, counting an instance method&#x27;s implicit receiver. This prevents pointers from relating unrelated subclasses; methods of final classes remain exempt. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e8d75e6183c3130bc72ee193cd149faa1577e61f" target="_blank" rel="noopener noreferrer">e8d75e6183</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/06/24/">Wed, Jun 24</a></div>
+  <div class="entry-copy">The normal typechecker now checks required XHP attributes by default. The <code>check_xhp_attribute</code> project configuration override has been removed, and the standalone completion tool no longer accepts <code>--check-xhp-attribute</code>. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/8d86d36862520453f9199bd12a088478a75aa169" target="_blank" rel="noopener noreferrer">8d86d36862</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/06/25/">Thu, Jun 25</a></div>
+  <div class="entry-copy">Cross-package references to non-class-like type aliases are now always checked in runtime-enforced positions, including parameter, return, and property hints and <code>as</code> constraints. The <code>package_allow_enforceable_type_alias_violations</code> escape hatch has been removed. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/65c848a477501a57a6e05a220ecf0214adee91a4" target="_blank" rel="noopener noreferrer">65c848a477</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/06/26/">Fri, Jun 26</a></div>
+  <div class="entry-copy">The typechecker always rejects <code>(bool)</code> casts; the <code>disallow_bool_cast</code> project option has been removed. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/7c19298944f2c8f10cac4c382551c5bac9a1d6e4" target="_blank" rel="noopener noreferrer">7c19298944</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/06/26/">Fri, Jun 26</a></div>
+  <div class="entry-copy">Function pointers are no longer permitted in constant expressions or property initializers. The <code>disallow_func_ptrs_in_constants</code> and <code>Hack.Lang.DisallowFuncPtrsInConstants</code> options have been removed. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/167cdef425ef5df5a0b52f910c1b57916526794a" target="_blank" rel="noopener noreferrer">167cdef425</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/06/26/">Fri, Jun 26</a></div>
+  <div class="entry-copy">The <code>@</code> error-suppression operator is unconditionally rejected by the Hack typechecker; the <code>disallow_silence</code> option has been removed. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/ead6d41ac8e217d57bb9bc062684d26b34f1ba99" target="_blank" rel="noopener noreferrer">ead6d41ac8</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/06/26/">Fri, Jun 26</a></div>
+  <div class="entry-copy">The typechecker always reports redundant generic parameters, and the <code>check_redundant_generics</code> option has been removed. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0f73b73373f465306cb3f62ea1a1b9920db155e5" target="_blank" rel="noopener noreferrer">0f73b73373</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Highlights</h2><span>2 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/06/25/">Thu, Jun 25</a></div>
+  <div class="entry-copy">Single-file and IDE typechecking now honor file-level <code>__EnableUnstableFeatures</code> attributes consistently with a full check, avoiding spurious feature-gating errors in opted-in files. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/670045794396f85f48af4c0567b4e45e2c939fe7" target="_blank" rel="noopener noreferrer">6700457943</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/06/26/">Fri, Jun 26</a></div>
+  <div class="entry-copy"><code>is vec_or_dict&lt;_&gt;</code> now participates in predicate-based refinement, preserving useful information about the vec or dict branches and their inferred key types. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e09ba51794a9db0fb9c957128bbd852fdfc71e60" target="_blank" rel="noopener noreferrer">e09ba51794</a></div>
+</li></ul></section></div></div></article></div></div></main>
     </div>
     <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
   </div>

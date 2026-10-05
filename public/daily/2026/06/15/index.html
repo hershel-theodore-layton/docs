@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Changes not yet included in Hershel&#x27;s HHVM fork">
+  <meta name="description" content="2 noteworthy changes recorded on this day.">
   <title>Monday, June 15, 2026 | HHVM Change Digest</title>
   <link rel="stylesheet" href="/static/css/main.css">
   <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
@@ -30,14 +30,11 @@
   <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
   <p class="post-authorName">Daily digest</p>
   <h1 class="post-title">Monday, June 15, 2026</h1>
-  <p class="post-meta">Changes not yet included in Hershel&#x27;s HHVM fork</p>
+  <p class="post-meta">2 noteworthy changes recorded on this day.</p>
   
   <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2026/06/15/" aria-current="page">Day</a><a href="/weekly/2026/W25/">Week</a><a href="/monthly/2026/06/">Month</a></nav>
-  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2026/06/05/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2026/07/02/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
-</header><div class="post-content digest-card"><section class="empty-state">
-  <span aria-hidden="true">✓</span><h2>No relevant changes</h2>
-  <p>Changes not yet included in Hershel&#x27;s HHVM fork</p>
-</section></div></article></div></div></main>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/daily/2026/06/14/"><span aria-hidden="true">←</span><span>Previous day</span></a><a class="period-button next" rel="next" href="/daily/2026/06/17/"><span aria-hidden="true">→</span><span>Next day</span></a></nav>
+</header><div class="post-content digest-card"><div class="daily-sections"><section class="daily-section"><h2>Highlights</h2><ul><li class="change-entry"><div class="entry-copy">The repeated-return-value lint no longer recommends collapsing branches when the function body also contains a throwing path, preventing a suggested refactor from discarding an exception. Throws inside nested lambdas do not suppress the lint. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/80d93facbc80a00bbc1730c9c231e82d979a33fd" target="_blank" rel="noopener noreferrer">80d93facbc</a></div></li></ul></section><section class="daily-section"><h2>Future Changes</h2><ul><li class="change-entry"><div class="entry-copy">Typed open shapes let a hint such as <code>shape(&#x27;a&#x27; =&gt; int, string...)</code> require all unknown fields to be strings. The initial implementation requires <code>typed_open_shapes=true</code> and rejects this syntax in <code>is</code>/<code>as</code> tests; it is enabled by default later in this release cycle. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/fef78a70ddf0c57acd39d12b12aae0239236dfa6" target="_blank" rel="noopener noreferrer">fef78a70dd</a></div></li></ul></section></div></div></article></div></div></main>
     </div>
     <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
   </div>

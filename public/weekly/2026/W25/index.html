@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Changes not yet included in Hershel&#x27;s HHVM fork">
+  <meta name="description" content="5 noteworthy changes, organized by the source changelog sections.">
   <title>Week 25: Jun 15–Jun 21, 2026 | HHVM Change Digest</title>
   <link rel="stylesheet" href="/static/css/main.css">
   <link rel="icon" href="/static/logo.svg" type="image/svg+xml">
@@ -30,14 +30,26 @@
   <div class="authorPhoto"><img src="/static/logo.svg" alt=""></div>
   <p class="post-authorName">Weekly digest</p>
   <h1 class="post-title">Week 25: Jun 15–Jun 21, 2026</h1>
-  <p class="post-meta">Changes not yet included in Hershel&#x27;s HHVM fork</p>
+  <p class="post-meta">5 noteworthy changes, organized by the source changelog sections.</p>
   
   <nav class="period-switcher" aria-label="View this date by period"><a href="/daily/2026/06/15/">Day</a><a href="/weekly/2026/W25/" aria-current="page">Week</a><a href="/monthly/2026/06/">Month</a></nav>
-  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2026/W23/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2026/W27/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
-</header><div class="post-content"><section class="empty-state">
-  <span aria-hidden="true">✓</span><h2>No relevant changes</h2>
-  <p>Changes not yet included in Hershel&#x27;s HHVM fork</p>
-</section></div></article></div></div></main>
+  <nav class="period-pagination" aria-label="Period navigation"><a class="period-button prev" rel="prev" href="/weekly/2026/W24/"><span aria-hidden="true">←</span><span>Previous week</span></a><a class="period-button next" rel="next" href="/weekly/2026/W26/"><span aria-hidden="true">→</span><span>Next week</span></a></nav>
+</header><div class="post-content"><div class="subject-groups"><section class="subject-group"><header><h2>Highlights</h2><span>4 changes</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/06/15/">Mon, Jun 15</a></div>
+  <div class="entry-copy">The repeated-return-value lint no longer recommends collapsing branches when the function body also contains a throwing path, preventing a suggested refactor from discarding an exception. Throws inside nested lambdas do not suppress the lint. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/80d93facbc80a00bbc1730c9c231e82d979a33fd" target="_blank" rel="noopener noreferrer">80d93facbc</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/06/17/">Wed, Jun 17</a></div>
+  <div class="entry-copy"><code>--error-format plain_highlighted</code> adds a plain-text diagnostic format with <code>^</code> underlines for primary and secondary source spans, including multiline spans, without ANSI colors. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e44c2066bc85f58add08663224cde0e0e99a284e" target="_blank" rel="noopener noreferrer">e44c2066bc</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/06/17/">Wed, Jun 17</a></div>
+  <div class="entry-copy">Native Facts database setup failures now report explanatory exceptions, including missing or invalid <code>Autoload.DB</code> configuration and SQLite opening, schema, or journal errors, instead of aborting on assertions or allowing setup failures to escape without context. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/0d1775929d79bea514ad3dbc08fbb2a4a5bb8ca9" target="_blank" rel="noopener noreferrer">0d1775929d</a></div>
+</li><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/06/18/">Thu, Jun 18</a></div>
+  <div class="entry-copy">IDE hover cards now show class-constant values alongside their type and name, reducing the need to jump to the declaration. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/e82584e208962eef026a6308c361801016d2e774" target="_blank" rel="noopener noreferrer">e82584e208</a></div>
+</li></ul></section><section class="subject-group"><header><h2>Future Changes</h2><span>1 change</span></header><ul><li class="change-entry">
+  <div class="entry-meta"><a href="/daily/2026/06/15/">Mon, Jun 15</a></div>
+  <div class="entry-copy">Typed open shapes let a hint such as <code>shape(&#x27;a&#x27; =&gt; int, string...)</code> require all unknown fields to be strings. The initial implementation requires <code>typed_open_shapes=true</code> and rejects this syntax in <code>is</code>/<code>as</code> tests; it is enabled by default later in this release cycle. <a href="https://github.com/hershel-theodore-layton/hhvm/commit/fef78a70ddf0c57acd39d12b12aae0239236dfa6" target="_blank" rel="noopener noreferrer">fef78a70dd</a></div>
+</li></ul></section></div></div></article></div></div></main>
     </div>
     <footer class="footerContainer"><div class="footerWrapper wrapper"><p>This community documentation is not affiliated with Meta.</p></div></footer>
   </div>
